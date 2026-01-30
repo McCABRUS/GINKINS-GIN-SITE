@@ -24,7 +24,7 @@ export default function HeritageHomeSection() {
         </h1>
 
         {/* Copper still – intercalado en el título */}
-        <div className="absolute -top-92.5 placeSelfImage mr-7.5 w-40 h-56 pointer-events-none">
+        <div className="absolute -top-35 left-[49.5%] -translate-x-1/2 mr-7.5 w-40 h-56 pointer-events-none">
           <Image
             src="/HeritageHome/still.png"
             alt="Copper still"
@@ -33,7 +33,7 @@ export default function HeritageHomeSection() {
             priority
           />
         </div>
-        <div className="absolute top-22.5 w-40 h-40 -left-262.5 placeSelfImage">
+        <div className="absolute top-22.5 w-40 h-40 -ml-132.5 left-1/2 -translate-x-1/2">
           <Image
             src="/HeritageHome/barn.png"
             alt="Barn"

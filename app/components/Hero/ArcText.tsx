@@ -1,6 +1,6 @@
 export default function ArcText() {
   return (
-    <div className="absolute arcText">
+    <div className="absolute left-2/4 -translate-x-1/2 top-36.25">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="486"

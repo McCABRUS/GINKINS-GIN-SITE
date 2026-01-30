@@ -132,26 +132,3 @@ h6 {
 .font-cormorant-garamond {
   font-family: 'Cormorant Garamond';
 }
-
-@layer components {
-  .arcText {
-    justify-self: anchor-center;
-    top: 145px;
-  }
-
-  .placeSelfImage {
-    place-self: anchor-center;
-  }
-
-  .mask-arch {
-    -webkit-mask-image: url('/masks/arch-mask.svg');
-    mask-image: url('/masks/arch-mask.svg');
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-    -webkit-mask-position: center;
-    mask-position: center;
-    -webkit-mask-size: contain;
-    mask-size: contain;
-    justify-self: anchor-center;
-  }
-}
