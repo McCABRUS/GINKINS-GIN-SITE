@@ -1,6 +1,7 @@
 import Hero from './components/Hero/Hero';
 import WelcomeHome from './components/WelcomeHome';
 import HeritageHomeSection from './components/HeritageHomeSection';
+import BannerHomeMantaGin from './components/BannerHomeMantaGin';
 export default function Home() {
   return (
     <div className="flex min-h-screen items-center justify-center">
@@ -8,6 +9,7 @@ export default function Home() {
         <Hero />
         <WelcomeHome />
         <HeritageHomeSection />
+        <BannerHomeMantaGin />
       </main>
     </div>
   );

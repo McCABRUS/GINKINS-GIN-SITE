@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function HeritageHomeSection() {
   return (
-    <section className="relative w-full bg-(--secundary-beige) py-71 overflow-hidden">
+    <section className="relative w-full bg-(--secundary-beige) pt-71 -mb-35.25 overflow-hidden">
       {/* ================= TITULO – FULL WIDTH ================= */}
       <div className="relative mb-32 px-6 lg:px-24">
         <h1
@@ -83,12 +83,11 @@ export default function HeritageHomeSection() {
             light of bourbon country. Here, roots run deep and quality means
             everything. We distill legacy into every citrus-bright bottle,
             honoring the traditions that shape us while crafting something
-            unmistakably new.
-            <br />
-            <br />
-            From the first vibrant sip of our Louisville Dry to the delicate
-            bloom of elderflower in our Golden Bloom Gin, Ginkins isn’t just
-            made to mix—it’s made to matter.
+            unmistakably new. From the first vibrant sip of our Louisville Dry
+            to the delicate bloom of elderflower in our Golden Bloom Gin,
+            Ginkins isn’t just made to mix—it’s made to matter. This is more
+            than gin. It’s a celebration of connection, flavor, and the moments
+            that bring us together.
           </p>
 
           <button className="mt-15.75 inline-flex items-center justify-center bg-(--primary-red-main) px-8 py-3 text-sm font-medium uppercase tracking-wide text-white transition hover:bg-(--primary-gold-main)">
