@@ -1,0 +1,27 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 386 633"
+  preserveAspectRatio="xMidYMid meet"
+>
+  <!-- Fondo negro (oculto) -->
+  <rect width="100%" height="100%" fill="black" />
+
+  <!-- Arco blanco (visible) -->
+  <path
+    fill="white"
+    d="
+      M189.981 0
+      H195.216
+      C300.14 0 385.198 85.058 385.198 189.982
+      V311.847
+      C385.198 312.787 385.19 313.715 385.177 314.625
+      V632.455
+      H0
+      V314.517
+      C0.007 313.638 0 312.747 0 311.847
+      V189.982
+      C0 85.058 85.058 0 189.981 0
+      Z
+    "
+  />
+</svg>
