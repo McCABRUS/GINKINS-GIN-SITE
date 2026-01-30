@@ -24,7 +24,7 @@ export default function BottleCarousel() {
           src={windows[active]}
           alt="Gin Background"
           fill
-          className="object-cover carouselImage"
+          className="object-cover placeSelfImage"
           priority
         />
       </div>
@@ -33,7 +33,7 @@ export default function BottleCarousel() {
         alt="Gin bottle"
         height={553}
         width={272}
-        className="absolute object-contain carouselImage -top-72.5 -left-12.5"
+        className="absolute object-contain placeSelfImage -top-72.5 -left-12.5"
         priority
       />
     </div>

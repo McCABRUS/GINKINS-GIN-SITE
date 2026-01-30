@@ -27,14 +27,14 @@ export default function WelcomeHome() {
         <div>
           <Image
             src="/WelcomeContainer/iconRight.svg"
-            alt="Left Icon"
+            alt="Right Icon"
             height={42}
             width={20}
             className="mr-3.5 hidden md:block"
           />
           <Image
             src="/WelcomeContainer/iconRight_m.svg"
-            alt="Left Icon"
+            alt="Right Icon"
             height={21}
             width={10}
             className="mr-3.5 block md:hidden"
