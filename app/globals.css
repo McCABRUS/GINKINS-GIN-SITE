@@ -132,3 +132,23 @@ h6 {
 .font-cormorant-garamond {
   font-family: 'Cormorant Garamond';
 }
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(calc(-724px * 3));
+  }
+}
+
+@layer components {
+  .animate-scroll {
+    animation: scroll 15s linear infinite;
+  }
+
+  .stop-animation {
+    animation: scroll 0s linear infinite;
+  }
+}

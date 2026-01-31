@@ -7,7 +7,7 @@ export default function BannerHomeMantaGin() {
         src="/manta-gin.png"
         alt="Manta Gin Bottle"
         fill
-        className="object-cover"
+        className="object-cover object-right"
       />
     </div>
   );
