@@ -143,9 +143,36 @@ h6 {
   }
 }
 
+@keyframes connectionsScrollLeft {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(calc(-306px * 6 - 16px * 6));
+  }
+}
+
+@keyframes connectionsScrollRight {
+  0% {
+    transform: translateY(calc(-306px * 6 - 16px * 6));
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
 @layer components {
   .animate-scroll {
     animation: scroll 15s linear infinite;
+  }
+
+  .animate-left-carousel {
+    animation: connectionsScrollLeft 30s linear infinite;
+  }
+  .animate-right-carousel {
+    animation: connectionsScrollRight 30s linear infinite;
   }
 
   .stop-animation {

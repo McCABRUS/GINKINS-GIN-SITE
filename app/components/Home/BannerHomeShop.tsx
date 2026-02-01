@@ -6,7 +6,7 @@ export default function BannerHomeShop() {
       <div className="w-full h-full relative border-4 border-solid border-(--primary-gold-main) py-20 flex items-center justify-center">
         <div className="absolute left-1/4 top-1/2 -translate-y-1/2">
           <Image
-            src="/HomeShop/HomeShopBannerIcon_left.svg"
+            src="/HomeShop/shopBannerIcon_Left.svg"
             alt="Leaf icon"
             height={60}
             width={46}
@@ -30,7 +30,7 @@ export default function BannerHomeShop() {
         </div>
         <div className="absolute right-1/4 top-1/2 -translate-y-1/2">
           <Image
-            src="/HomeShop/HomeShopBannerIcon_right.svg"
+            src="/HomeShop/shopBannerIcon_Right.svg"
             alt="Coctail Cup icon"
             height={67}
             width={52}

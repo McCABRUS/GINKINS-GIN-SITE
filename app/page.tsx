@@ -5,6 +5,7 @@ import BannerHomeMantaGin from './components/Home/BannerHomeMantaGin';
 import CollectionHome from './components/Home/Collection/CollectionHome';
 import BannerHomeShop from './components/Home/BannerHomeShop';
 import HeritageInnovation from './components/Home/HeritageInnovation';
+import Connections from './components/Home/Connections/Connections';
 export default function Home() {
   return (
     <div className="flex min-h-screen items-center justify-center">
@@ -16,6 +17,7 @@ export default function Home() {
         <CollectionHome />
         <BannerHomeShop />
         <HeritageInnovation />
+        <Connections />
       </main>
     </div>
   );
