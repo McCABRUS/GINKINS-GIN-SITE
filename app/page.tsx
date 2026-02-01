@@ -6,6 +6,7 @@ import CollectionHome from './components/Home/Collection/CollectionHome';
 import BannerHomeShop from './components/Home/BannerHomeShop';
 import HeritageInnovation from './components/Home/HeritageInnovation';
 import Connections from './components/Home/Connections/Connections';
+import AboutHomeMenu from './components/Home/AboutMenuHome';
 export default function Home() {
   return (
     <div className="flex min-h-screen items-center justify-center">
@@ -18,6 +19,7 @@ export default function Home() {
         <BannerHomeShop />
         <HeritageInnovation />
         <Connections />
+        <AboutHomeMenu />
       </main>
     </div>
   );
