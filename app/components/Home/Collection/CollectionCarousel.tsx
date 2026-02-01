@@ -2,15 +2,18 @@ import CollectionCard from './CollectionCard';
 import { collectionData } from './data';
 
 export default function CollectionCarousel() {
-  const collectionDataFull = [...collectionData, ...collectionData];
+  const collectionDataFull = [
+    ...collectionData,
+    ...collectionData,
+    ...collectionData,
+  ];
   return (
-    <div className="h-175.25 relative top-81.75">
+    <div className="pt-25 top-56.25 h-205 relative overflow-hidden">
       <div className="container">
         <div className="w-full">
           <div className="flex whitespace-nowrap animate-scroll hover:stop-animation">
             {collectionDataFull.map((card, index) => (
               <CollectionCard
-                id={card.id}
                 title={card.title}
                 text={card.text}
                 img={card.img}
