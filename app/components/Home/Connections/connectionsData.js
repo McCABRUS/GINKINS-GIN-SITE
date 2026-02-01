@@ -35,7 +35,7 @@ export const connectionsRightData = [
     alt: 'Barn',
   },
   {
-    img: '/connections/Horses.png',
+    img: '/connections/horses.png',
     alt: 'Horses',
   },
   {
