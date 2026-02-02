@@ -10,7 +10,7 @@ export default function Hero() {
         <div className="h-[65%] bg-(--primary-black)" />
         <div className="h-[35%] bg-(--secundary-beige)" />
       </div>
-      <div className="relative mx-auto max-w-400 h-250">
+      <div className="relative mx-auto max-w-400 h-250 z-30">
         <ArcText />
         <div className="absolute left-[8%] top-[38%] text-background text-center">
           <p className="font-cormorant-garamond leading-relaxed  text-3xl">
