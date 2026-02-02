@@ -3,14 +3,14 @@ import Link from 'next/link';
 export default function Footer() {
   return (
     <footer className="bg-(--primary-black) text-background">
-      <div className="max-w-6xl mx-auto px-6 py-12">
+      <div className="max-w-6xl mx-auto px-8.25 md:px-6 py-12">
         <div className="mt-10 mb-10 flex items-center justify-center">
-          <div className="flex items-center gap-30 w-full">
+          <div className="flex items-center gap-11 md:gap-30 w-full">
             <hr
-              className="hidden sm:block w-full text-(--primary-red-main)"
+              className="w-full text-(--primary-red-main)"
               aria-hidden="true"
             />
-            <span className="flex items-center justify-center">
+            <span className="flex items-center justify-center relative -top-10.5 md:top-0">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="40"
@@ -40,16 +40,27 @@ export default function Footer() {
               </svg>
             </span>
             <hr
-              className="hidden sm:block w-full text-(--primary-red-main)"
+              className="w-full text-(--primary-red-main)"
               aria-hidden="true"
             />
           </div>
         </div>
+        <div className="items-center justify-center flex md:hidden gap-6 text-sm mt-7.5 mb-9.5">
+          <Link href="/privacy" className="hover:text-(--primary-red-main)">
+            Privacy Policy
+          </Link>
+          <Link href="/terms" className="hover:text-(--primary-red-main)">
+            Terms of Service
+          </Link>
+          <Link href="/faqs" className="hover:text-(--primary-red-main)">
+            About US
+          </Link>
+        </div>
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          <div className="lg:col-span-5">
+          <div className="col-span-5">
             <Link
               href="/"
-              className="inline-flex items-center gap-3 text-(--primary-gold-main) hover:text-(--primary-red-main)"
+              className="hidden md:inline-flex items-center gap-3 text-(--primary-gold-main) hover:text-(--primary-red-main)"
               aria-label="Ginkins home"
             >
               <svg
@@ -66,14 +77,14 @@ export default function Footer() {
               </svg>
             </Link>
 
-            <p className="mt-6 text-lg text-background max-w-sm">
+            <h5 className="mt-6 text-background! text-lg! leading-normal! text-center md:text-start px-2.5 md:px-0 mb-9.5 md:0b-0">
               JOIN OUR NEWSLETTER TO STAY UP TO DATE ON FEATURES AND RELEASES.
-            </p>
+            </h5>
 
             <form
               action="/api/subscribe"
               method="post"
-              className="mt-4 flex flex-col sm:flex-row gap-3 sm:items-center"
+              className="mt-4 flex flex-col sm:flex-row gap-3 md:items-center"
               aria-label="Subscribe to newsletter"
             >
               <label htmlFor="footer-email" className="sr-only">
@@ -85,23 +96,42 @@ export default function Footer() {
                 type="email"
                 required
                 placeholder="Your Email Here"
-                className="text-base w-full sm:flex-1 px-4 py-2 bg-(--primary-black) border-b border-(--primary-gold-main) text-background placeholder-(--primary-red-main) focus:outline-none focus:ring-2 focus:ring-(--primary-gold-main)"
+                className="text-center md:text-start text-base w-full sm:flex-1 py-2 bg-(--primary-black) border-b border-(--primary-white-100) text-background placeholder-(--primary-red-main) focus:outline-none focus:ring-2 focus:ring-(--primary-gold-main) mb-4 md:mb-0"
               />
               <button
                 type="submit"
-                className="inline-flex items-center justify-center px-5 py-2 bg-(--primary-red-main) text-background font-medium hover:bg-(--primary-gold-main) transition-colors"
+                className="self-center inline-flex items-center justify-center px-3 py-1.5 bg-(--primary-red-main) text-background font-medium hover:bg-(--primary-gold-main) transition-colors h-9 w-14.5"
               >
                 Join
               </button>
             </form>
 
-            <p className="mt-3 text-sm text-background max-w-sm">
+            <p className="mt-10 text-sm text-background w-full text-center md:text-start">
               By subscribing you agree with our Privacy Policy and provide
               consent to receive updates from our company.
             </p>
+
+            <Link
+              href="/"
+              className="block md:hidden place-self-center text-(--primary-gold-main) hover:text-(--primary-red-main) mt-17.25"
+              aria-label="Ginkins home"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="92"
+                height="90"
+                viewBox="0 0 92 90"
+                fill="none"
+              >
+                <path
+                  d="M30.0082 12.6811C30.6221 13.0648 31.1209 13.5636 31.5046 14.1775C31.8883 14.7914 32.0801 15.4245 32.0801 16.0768C31.4279 16.0768 30.7948 15.8849 30.1809 15.5013C29.5669 15.1176 29.0681 14.6188 28.6845 14.0048C28.3008 13.3909 28.1089 12.7578 28.1089 12.0864C28.7612 12.0864 29.3943 12.2782 30.0082 12.6619M28.6653 18.1296C28.2816 18.7435 28.0897 19.3766 28.0897 20.048C28.742 20.048 29.3751 19.8562 29.989 19.4725C30.6029 19.0888 31.1017 18.59 31.4854 17.9761C31.8691 17.3622 32.061 16.7291 32.061 16.0768C31.4087 16.0768 30.7756 16.2686 30.1617 16.6523C29.5478 17.036 29.049 17.5348 28.6653 18.1487M28.3391 31.7123C32.8092 31.7123 35.7828 30.1967 39.9075 28.6812V15.6931H36.1473V27.0313C34.5933 29.4485 31.0442 30.849 28.3583 30.849C20.6844 30.849 17.5381 24.4413 17.5381 15.7698C17.5381 7.09834 20.6844 0.863312 28.3008 0.863312C35.9171 0.863312 36.6077 2.99282 38.1809 4.20145V0.69065C34.3248 0.422064 32.1953 0 28.3008 0C17.5573 0 13.6244 7.36693 13.6244 15.7698C13.6244 24.1727 17.5573 31.7123 28.3583 31.7123M46.8907 5.06477C48.0994 5.06477 49.097 4.06716 49.097 2.85852C49.097 1.64989 48.0994 0.65228 46.8907 0.65228C45.6821 0.65228 44.6845 1.64989 44.6845 2.85852C44.6845 4.06716 45.6821 5.06477 46.8907 5.06477ZM44.6845 31.0025H49.7109C49.3656 29.4485 49.1545 28.662 49.1545 27.0121V7.61633L44.6845 9.34296C45.0298 10.8969 45.2409 11.6835 45.2409 13.3334V27.0121C45.2409 28.662 45.0298 29.4294 44.6845 31.0025ZM54.4687 31.0025H59.4951C59.1498 29.4485 58.9388 28.662 58.9388 27.0121V15.0216C62.1042 12.1631 65.0011 10.7434 68.205 10.7434C71.4088 10.7434 74.3633 13.506 74.3633 18.6667V27.0313C74.3633 28.6812 74.1522 29.4485 73.8069 31.0217H78.8333C78.488 29.4677 78.2769 28.6812 78.2769 27.0313V16.6715C78.2769 10.5132 73.2122 8.57557 69.7014 8.57557C66.1906 8.57557 62.0275 10.7434 58.9579 13.813V7.61633L54.4879 9.34296C54.8332 10.8969 55.0443 11.6835 55.0443 13.3334V27.0121C55.0443 28.662 54.8332 29.4294 54.4879 31.0025M23.6772 60.969C21.8931 56.806 17.4422 54.2928 12.7611 54.2928C8.08007 54.2928 8.08007 54.9067 6.00812 56.2496L17.5381 46.8875C20.3583 44.6428 21.7396 43.4726 23.0825 42.5517H18.0561C18.3631 43.5109 17.1928 46.1009 14.4686 48.2688L5.20236 55.7124V32.1536L0.713135 33.8994C1.05846 35.4534 1.26949 36.2399 1.26949 37.8898V60.24C1.26949 61.8899 1.05846 62.6573 0.713135 64.2304H5.73953C5.39421 62.6765 5.18317 61.8899 5.18317 60.24V58.4175C6.25752 56.5565 8.73235 55.6932 10.8043 55.6932C14.3151 55.6932 17.6916 57.9379 19.4182 60.9307C20.0321 62.1393 20.2432 62.8875 19.9362 64.2304H25.3847C24.5981 62.9259 24.2528 62.1585 23.6964 60.9882H23.6581L23.6772 60.969ZM28.2624 36.0481C28.2624 37.2567 29.26 38.2543 30.4686 38.2543C31.6773 38.2543 32.6749 37.2567 32.6749 36.0481C32.6749 34.8394 31.6773 33.8418 30.4686 33.8418C29.26 33.8418 28.2624 34.8394 28.2624 36.0481ZM32.7132 40.8251L28.2432 42.5517C28.5885 44.1057 28.7996 44.8922 28.7996 46.5421V60.2208C28.7996 61.8707 28.5885 62.6381 28.2432 64.2113H33.2696C32.9243 62.6573 32.7132 61.8707 32.7132 60.2208V40.8251ZM61.8356 49.8803C61.8356 43.722 56.7709 41.7843 53.2601 41.7843C49.7493 41.7843 45.5862 43.9522 42.5166 47.0217V40.8251L38.0466 42.5517C38.3919 44.1057 38.603 44.8922 38.603 46.5421V60.2208C38.603 61.8707 38.3919 62.6381 38.0466 64.2113H43.073C42.7277 62.6573 42.5166 61.8707 42.5166 60.2208V48.2304C45.6821 45.3719 48.579 43.9522 51.7829 43.9522C54.9867 43.9522 57.9411 46.7148 57.9411 51.8755V60.24C57.9411 61.8899 57.7301 62.6573 57.3848 64.2304H62.4112C62.0659 62.6765 61.8548 61.8899 61.8548 60.24V49.8803H61.8356ZM70.6606 47.4438C70.6606 43.722 75.7254 42.7244 80.675 42.7244C85.6247 42.7244 88.1187 44.8539 89.5192 46.0625V42.5517C86.0468 42.2831 84.1475 41.8611 80.675 41.8611C73.7493 41.8611 67.5911 43.5109 67.5911 48.6524C67.5911 58.6669 89.1547 53.1992 89.1547 60.1249C89.1547 62.1585 86.7758 64.0194 81.4424 64.0194C76.1091 64.0194 71.6582 61.4295 67.7637 57.3048V62.1585C71.4472 64.499 76.9916 64.8827 81.3273 64.8827C85.6631 64.8827 91.7254 64.2304 91.7254 58.8971C91.7254 49.7652 70.6798 55.6549 70.6798 47.4246"
+                  fill="currentColor"
+                />
+              </svg>
+            </Link>
           </div>
 
-          <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-3 gap-6 ml-20">
+          <div className="hidden md:grid col-span-7 grid-cols-1 sm:grid-cols-3 gap-6 ml-20">
             <div>
               <span className="text-lg font-medium text-background tracking-wide">
                 About Us
@@ -261,13 +291,13 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className="border-t border-yellow-900 mt-6 pt-6">
+        <div className="border-t border-(--primary-red-main) mt-6 pt-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-sm text-background">
               © 2026 Ginkins Distillery. All rights reserved.
             </p>
 
-            <div className="flex items-center gap-4 text-sm">
+            <div className="hidden md:flex items-center gap-4 text-sm">
               <Link href="/privacy" className="hover:text-(--primary-red-main)">
                 Privacy Policy
               </Link>
