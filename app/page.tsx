@@ -10,6 +10,7 @@ import AboutHomeMenu from './components/Home/AboutMenuHome';
 import CocktailsHome from './components/Home/CocktailsHome';
 import Testimonials from './components/Home/Testimonials';
 import BottleConnection from './components/Home/BottleConnection';
+import FooterMerch from './components/FooterMerchCarousel/FooterMerch';
 export default function Home() {
   return (
     <div className="flex min-h-screen items-center justify-center overflow-x-hidden">
@@ -26,6 +27,7 @@ export default function Home() {
         <CocktailsHome />
         <Testimonials />
         <BottleConnection />
+        <FooterMerch />
       </main>
     </div>
   );

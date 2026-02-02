@@ -54,8 +54,8 @@ export default function BottleConnection() {
               You pour it forward.
             </h4>
             <div className="mt-8">
-              <button className="inline-flex items-center justify-center bg-(--primary-red-main) px-8 py-3 text-sm font-medium uppercase tracking-wide text-background transition hover:bg-(--primary-gold-main)">
-                Shop Online
+              <button className="inline-flex items-center justify-center bg-(--primary-red-main) px-8 py-3 text-lg font-medium uppercase tracking-wide  transition hover:bg-(--primary-gold-main)">
+                <h5 className="text-background!">Shop Online</h5>
               </button>
             </div>
           </div>

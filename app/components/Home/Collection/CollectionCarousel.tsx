@@ -11,7 +11,7 @@ export default function CollectionCarousel() {
     <div className="pt-25 top-56.25 h-205 relative overflow-hidden">
       <div className="container">
         <div className="w-full">
-          <div className="flex whitespace-nowrap animate-scroll hover:stop-animation">
+          <div className="flex whitespace-nowrap animate-collection hover:stop-animation">
             {collectionDataFull.map((card, index) => (
               <CollectionCard
                 title={card.title}
