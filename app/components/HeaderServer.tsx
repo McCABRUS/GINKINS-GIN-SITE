@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import HeaderClient from './HeaderClient';
+import MobileMenu from './MobileMenu';
 
 export default function HeaderServer() {
   return (
@@ -8,18 +9,22 @@ export default function HeaderServer() {
         <div className="flex items-center justify-between">
           <div className="hidden md:flex items-center gap-4">
             <Link href="/about" className="px-1 py-1 hover:underline">
-              ABOUT GINKINS
+              <h5 className="text-(--primary-gold-main)! inline">
+                ABOUT GINKINS
+              </h5>
             </Link>
             <span className="mx-3">•</span>
             <Link href="/our-gins" className="px-1 py-1 hover:underline">
-              OUR GINS
+              <h5 className="text-(--primary-gold-main)! inline">OUR GINS</h5>
             </Link>
             <span className="mx-3">•</span>
             <Link href="/our-gins" className="px-1 py-1 hover:underline">
-              WHERE TO BUY
+              <h5 className="text-(--primary-gold-main)! inline">
+                WHERE TO BUY
+              </h5>
             </Link>
           </div>
-          <div className="flex-1 flex justify-center">
+          <div className="flex-1 hidden md:flex justify-center">
             <Link
               href="/"
               className="text-(--primary-gold-main) hover:text-(--primary-red-main)"
@@ -41,7 +46,9 @@ export default function HeaderServer() {
           </div>
           <div className="hidden md:flex items-center gap-4">
             <Link href="/our-gins" className="px-1 py-1 hover:underline">
-              COCKTAILS & PAIRINGS
+              <h5 className="text-(--primary-gold-main)! inline">
+                COCKTAILS & PAIRINGS
+              </h5>
             </Link>
             <span className="mx-3">•</span>
           </div>
@@ -53,11 +60,34 @@ export default function HeaderServer() {
               href="/subscribe"
               className="inline-block px-4 py-1 border border-(--primary-gold-main) rounded text-sm font-medium transition-colors hover:text-(--primary-red-main) hover:border-(--primary-red-main)"
             >
-              SUBSCRIBE
+              <h5 className="text-(--primary-gold-main)! inline">SUBSCRIBE</h5>
             </Link>
           </div>
-          <div className="md:hidden">
-            <button className="text-(--primary-gold-main)">Menu</button>
+          <div className="md:hidden w-full flex justify-between">
+            <div className="justify-start">
+              <Link href="#">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="19"
+                  height="22"
+                  viewBox="0 0 19 22"
+                  fill="none"
+                >
+                  <g clip-path="url(#clip0_2713_2152)">
+                    <path
+                      d="M11.835 8.79591C12.2757 9.06203 12.6382 9.41005 12.9083 9.83313C13.1785 10.2562 13.3206 10.6998 13.3206 11.1569C12.8444 11.1569 12.3895 11.0273 11.9416 10.7612C11.5009 10.5019 11.1384 10.1538 10.8683 9.72395C10.5982 9.29404 10.456 8.8505 10.456 8.40012C10.9323 8.40012 11.3872 8.52978 11.835 8.79591ZM10.8683 12.5831C10.5982 13.013 10.456 13.4566 10.456 13.9069C10.9323 13.9069 11.3872 13.7773 11.835 13.5112C12.2757 13.245 12.6382 12.897 12.9083 12.4739C13.1785 12.0509 13.3206 11.6073 13.3206 11.1501C12.8444 11.1501 12.3895 11.2798 11.9416 11.5459C11.5009 11.8052 11.1384 12.1532 10.8683 12.5831ZM10.6409 22C13.8679 22 16.0288 20.9491 19 19.8983V10.884H16.2776V18.7587C15.1474 20.4442 12.5814 21.4063 10.6409 21.4063C5.09652 21.4063 2.81481 16.9572 2.81481 10.9454C2.81481 4.93362 5.10363 0.600496 10.6124 0.600496C16.1212 0.600496 16.6259 2.07444 17.749 2.91377V0.477668C14.9626 0.300248 13.4272 0 10.6124 0C2.85036 0 0 5.11104 0 10.9386C0 16.7661 2.85036 22 10.6409 22Z"
+                      fill="#E3D384"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_2713_2152">
+                      <rect width="19" height="22" fill="white" />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </Link>
+            </div>
+            <MobileMenu />
           </div>
         </div>
       </nav>

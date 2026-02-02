@@ -22,8 +22,11 @@ export default function Hero() {
             YOU POUR IT <br /> FORWARD.
           </p>
         </div>
-        <BotanicalGrid side="left" />
-        <BotanicalGrid side="right" />
+        <div className="hidden md:block">
+          <BotanicalGrid side="left" />
+          <BotanicalGrid side="right" />
+        </div>
+
         <div className="absolute left-1/2 top-[18%] -translate-x-1/2 w-full h-full flex items-center justify-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"
