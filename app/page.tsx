@@ -9,9 +9,10 @@ import Connections from './components/Home/Connections/Connections';
 import AboutHomeMenu from './components/Home/AboutMenuHome';
 import CocktailsHome from './components/Home/CocktailsHome';
 import Testimonials from './components/Home/Testimonials';
+import BottleConnection from './components/Home/BottleConnection';
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center">
+    <div className="flex min-h-screen items-center justify-center overflow-x-hidden">
       <main className="flex min-h-screen w-full flex-col items-center justify-between">
         <Hero />
         <WelcomeHome />
@@ -24,6 +25,7 @@ export default function Home() {
         <AboutHomeMenu />
         <CocktailsHome />
         <Testimonials />
+        <BottleConnection />
       </main>
     </div>
   );

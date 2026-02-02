@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function CocktailsHome() {
   return (
-    <section className="w-screen bg-(--secundary-beige) py-28">
+    <section className="w-screen bg-(--secundary-beige) pt-28 pb-12">
       <div className="mx-auto max-w-350 px-6">
         <div className="text-center mx-auto">
           <h3 className="inline-block tracking-widest text-(--primary-red-main)! mb-10">
