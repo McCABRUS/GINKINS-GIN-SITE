@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function BannerHomeShop() {
   return (
-    <div className="w-full h-135.5 px-12.5 py-13.75 bg-(--secundary-beige)">
+    <section className="w-full h-135.5 px-12.5 py-13.75 bg-(--secundary-beige)">
       <div className="w-full h-full relative border-4 border-solid border-(--primary-gold-main) py-20 flex items-center justify-center">
         <div className="absolute left-1/4 top-1/2 -translate-y-1/2">
           <Image
@@ -37,6 +37,6 @@ export default function BannerHomeShop() {
           />
         </div>
       </div>
-    </div>
+    </section>
   );
 }
