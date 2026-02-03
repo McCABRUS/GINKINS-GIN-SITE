@@ -27,6 +27,8 @@
 
 @theme inline {
   --color-background: var(--white-100);
+  --breakpoint-xs: 26.3125rem;
+  --breakpoint-2xs: 23.4375rem;
 }
 
 body {
