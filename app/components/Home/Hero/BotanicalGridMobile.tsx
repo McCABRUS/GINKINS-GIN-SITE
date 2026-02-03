@@ -15,10 +15,14 @@ export default function BotanicalGridMobile() {
 
   return (
     <div className="-top-33.5 z-10 w-78.75 min-w-78.75 h-31.5">
-      <div className={`${visibility ? 'inline' : 'hidden'}`}>
+      <div
+        className={`items-center place-items-center ${visibility ? 'grid' : 'hidden'}`}
+      >
         <BotanicalGrid side="left" />
       </div>
-      <div className={`${visibility ? 'hidden' : 'block'}`}>
+      <div
+        className={`items-center place-items-center ${visibility ? 'hidden' : 'grid'}`}
+      >
         <BotanicalGrid side="right" />
       </div>
     </div>
