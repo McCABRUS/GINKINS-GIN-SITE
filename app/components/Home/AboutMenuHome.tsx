@@ -3,6 +3,12 @@ import Image from 'next/image';
 export default function AboutHomeMenu() {
   return (
     <section className="w-screen bg-[#1C1C1C] py-28">
+      <div
+        className="absolute border-solid border-background border-t border-r-0 border-b-0 border-l-0 shrink-0 w-17.75 -mt-19.25 h-0 z-20 left-1/2 -translate-x-1/2"
+        style={{
+          transform: 'rotate(90deg) scale(1, 1)',
+        }}
+      ></div>
       <div className="mx-auto max-w-350 px-6">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_480px] gap-20 items-center">
           <div>
@@ -57,6 +63,12 @@ export default function AboutHomeMenu() {
           </div>
         </div>
       </div>
+      <div
+        className="absolute border-solid border-background border-t border-r-0 border-b-0 border-l-0 shrink-0 w-22.75 mt-16.5 h-0 z-20 left-1/2 -translate-x-1/2"
+        style={{
+          transform: 'rotate(90deg) scale(1, 1)',
+        }}
+      ></div>
     </section>
   );
 }

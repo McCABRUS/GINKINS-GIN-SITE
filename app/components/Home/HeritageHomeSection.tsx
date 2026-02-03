@@ -95,6 +95,12 @@ export default function HeritageHomeSection() {
           </button>
         </div>
       </div>
+      <div
+        className="absolute border-solid border-black border-t border-r-0 border-b-0 border-l-0 shrink-0 w-13.75 h-0 z-20 bottom-42 left-1/2 -translate-x-1/2"
+        style={{
+          transform: 'rotate(90deg) scale(1, 1)',
+        }}
+      ></div>
     </section>
   );
 }

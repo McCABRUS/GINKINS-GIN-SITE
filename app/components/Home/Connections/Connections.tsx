@@ -13,8 +13,8 @@ export default function Connections() {
   return (
     <section className="w-screen h-246 bg-(--secundary-beige) overflow-hidden">
       <div className="mx-auto max-w-350 px-6">
-        <div className="flex gap-20">
-          <div className="max-w-md pt-43.25">
+        <div className="flex gap-39.5">
+          <div className="max-w-129.5 pt-43.25">
             <div className="mb-8">
               <Image
                 src="/connections/GinkinsMortarPestle.svg"

@@ -3,6 +3,12 @@ import CollectionCarousel from './CollectionCarousel';
 export default function CollectionHome() {
   return (
     <section className="relative w-full">
+      <div
+        className="absolute border-solid border-background border-t border-r-0 border-b-0 border-l-0 shrink-0 w-16.25 top-8 h-0 z-20 left-1/2 -translate-x-1/2"
+        style={{
+          transform: 'rotate(90deg) scale(1, 1)',
+        }}
+      ></div>
       <div className="bg-(--primary-black) w-full h-[1270.64px] absolute left-0"></div>
       <div className="flex flex-col gap-6 items-center justify-start w-full absolute top-23">
         <div className="p-2.5 flex flex-row gap-2.5 items-center justify-center shrink-0 w-113.5 relative">

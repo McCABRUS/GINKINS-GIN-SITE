@@ -3,6 +3,12 @@ import Image from 'next/image';
 export default function CocktailsHome() {
   return (
     <section className="w-screen bg-(--secundary-beige) pt-28 pb-12">
+      <div
+        className="absolute border-solid border-(--primary-black) border-t border-r-0 border-b-0 border-l-0 shrink-0 w-17.75 -mt-19.25 h-0 z-20 left-1/2 -translate-x-1/2"
+        style={{
+          transform: 'rotate(90deg) scale(1, 1)',
+        }}
+      ></div>
       <div className="mx-auto max-w-350 px-6">
         <div className="text-center mx-auto">
           <h3 className="inline-block tracking-widest text-(--primary-red-main)! mb-10">
