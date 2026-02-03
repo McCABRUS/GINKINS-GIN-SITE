@@ -12,6 +12,7 @@ export default function BotanicalGrid({ side }: { side: 'left' | 'right' }) {
               Grapefruit Peel
             </p>
             <Image
+              draggable={false}
               src="/hero-icons/icon-1.svg"
               alt="Logo"
               width={100}
@@ -19,6 +20,7 @@ export default function BotanicalGrid({ side }: { side: 'left' | 'right' }) {
               className="group-hover:invisible group-active:invisible"
             />
             <Image
+              draggable={false}
               src="/hero-icons/icon-hover-1.svg"
               alt="Logo"
               width={100}
@@ -26,6 +28,7 @@ export default function BotanicalGrid({ side }: { side: 'left' | 'right' }) {
               className="-mt-15 xl:-mt-18 2xl:-mt-25 invisible group-hover:visible group-active:visible"
             />
             <Image
+              draggable={false}
               src="/hero-icons/icon-image-1.png"
               alt="Logo"
               width={200}
@@ -35,6 +38,7 @@ export default function BotanicalGrid({ side }: { side: 'left' | 'right' }) {
           </div>
           <div className="relative w-15.75 xl:w-20 2xl:w-25 h-15.75 xl:h-20 2xl:h-25 group top-full hover:-top-7.5 active:-top-7.5">
             <Image
+              draggable={false}
               src="/hero-icons/icon-image-2.png"
               alt="Logo"
               width={100}
@@ -42,6 +46,7 @@ export default function BotanicalGrid({ side }: { side: 'left' | 'right' }) {
               className="mt-10 mb-16.75 xl:mb-9.5 2xl:mt-6.5 2xl:-mb-13.5 invisible group-hover:visible group-active:visible"
             />
             <Image
+              draggable={false}
               src="/hero-icons/icon-2.svg"
               alt="Logo"
               width={100}
@@ -49,6 +54,7 @@ export default function BotanicalGrid({ side }: { side: 'left' | 'right' }) {
               className="-mt-46 group-hover:invisible group-active:invisible"
             />
             <Image
+              draggable={false}
               src="/hero-icons/icon-hover-2.svg"
               alt="Logo"
               width={100}
@@ -64,6 +70,7 @@ export default function BotanicalGrid({ side }: { side: 'left' | 'right' }) {
               Angelica Root
             </p>
             <Image
+              draggable={false}
               src="/hero-icons/icon-3.svg"
               alt="Logo"
               width={100}
@@ -71,6 +78,7 @@ export default function BotanicalGrid({ side }: { side: 'left' | 'right' }) {
               className="group-hover:invisible group-active:invisible"
             />
             <Image
+              draggable={false}
               src="/hero-icons/icon-hover-3.svg"
               alt="Logo"
               width={100}
@@ -78,6 +86,7 @@ export default function BotanicalGrid({ side }: { side: 'left' | 'right' }) {
               className="-mt-15 xl:-mt-20 2xl:-mt-25 invisible group-hover:visible group-active:visible"
             />
             <Image
+              draggable={false}
               src="/hero-icons/icon-image-3.png"
               alt="Logo"
               width={100}
@@ -87,6 +96,7 @@ export default function BotanicalGrid({ side }: { side: 'left' | 'right' }) {
           </div>
           <div className="relative w-15.75 xl:w-20 2xl:w-25 h-15.75 xl:h-20 2xl:h-25 group top-full hover:-top-7.5 active:-top-7.5">
             <Image
+              draggable={false}
               src="/hero-icons/icon-image-4.png"
               alt="Logo"
               width={100}
@@ -94,6 +104,7 @@ export default function BotanicalGrid({ side }: { side: 'left' | 'right' }) {
               className="mt-7.5 2xl:mt-0 mb-12.25 xl:mb-5 2xl:-mb-5.75 invisible group-hover:visible group-active:visible"
             />
             <Image
+              draggable={false}
               src="/hero-icons/icon-4.svg"
               alt="Logo"
               width={100}
@@ -101,6 +112,7 @@ export default function BotanicalGrid({ side }: { side: 'left' | 'right' }) {
               className="-mt-38.25 group-hover:invisible group-active:invisible"
             />
             <Image
+              draggable={false}
               src="/hero-icons/icon-hover-4.svg"
               alt="Logo"
               width={100}
@@ -116,6 +128,7 @@ export default function BotanicalGrid({ side }: { side: 'left' | 'right' }) {
               Corianders Seeds
             </p>
             <Image
+              draggable={false}
               src="/hero-icons/icon-5.svg"
               alt="Logo"
               width={100}
@@ -123,6 +136,7 @@ export default function BotanicalGrid({ side }: { side: 'left' | 'right' }) {
               className="group-hover:invisible group-active:invisible"
             />
             <Image
+              draggable={false}
               src="/hero-icons/icon-hover-5.svg"
               alt="Logo"
               width={100}
@@ -130,6 +144,7 @@ export default function BotanicalGrid({ side }: { side: 'left' | 'right' }) {
               className="-mt-15 xl:-mt-20 2xl:-mt-25 invisible group-hover:visible group-active:visible"
             />
             <Image
+              draggable={false}
               src="/hero-icons/icon-image-5.png"
               alt="Logo"
               width={100}
@@ -145,6 +160,7 @@ export default function BotanicalGrid({ side }: { side: 'left' | 'right' }) {
               Juniper
             </p>
             <Image
+              draggable={false}
               src="/hero-icons/icon-6.svg"
               alt="Logo"
               width={100}
@@ -152,6 +168,7 @@ export default function BotanicalGrid({ side }: { side: 'left' | 'right' }) {
               className="group-hover:invisible group-active:invisible"
             />
             <Image
+              draggable={false}
               src="/hero-icons/icon-hover-6.svg"
               alt="Logo"
               width={100}
@@ -159,6 +176,7 @@ export default function BotanicalGrid({ side }: { side: 'left' | 'right' }) {
               className="-mt-15 xl:-mt-20 2xl:-mt-25 invisible group-hover:visible group-active:visible"
             />
             <Image
+              draggable={false}
               src="/hero-icons/icon-image-6.png"
               alt="Logo"
               width={100}
@@ -168,6 +186,7 @@ export default function BotanicalGrid({ side }: { side: 'left' | 'right' }) {
           </div>
           <div className="relative w-15.75 xl:w-20 2xl:w-25 h-15.75 xl:h-20 2xl:h-25 group top-full hover:-top-7.5 active:-top-7.5">
             <Image
+              draggable={false}
               src="/hero-icons/icon-image-7.png"
               alt="Logo"
               width={100}
@@ -175,6 +194,7 @@ export default function BotanicalGrid({ side }: { side: 'left' | 'right' }) {
               className=" mt-11.25 2xl:mt-5.75 mb-12.25 xl:mb-6 2xl:-mb-6 invisible group-hover:visible group-active:visible"
             />
             <Image
+              draggable={false}
               src="/hero-icons/icon-7.svg"
               alt="Logo"
               width={100}
@@ -182,6 +202,7 @@ export default function BotanicalGrid({ side }: { side: 'left' | 'right' }) {
               className="-mt-38.5 group-hover:invisible group-active:invisible"
             />
             <Image
+              draggable={false}
               src="/hero-icons/icon-hover-7.svg"
               alt="Logo"
               width={100}
@@ -197,6 +218,7 @@ export default function BotanicalGrid({ side }: { side: 'left' | 'right' }) {
               Nutmeg
             </p>
             <Image
+              draggable={false}
               src="/hero-icons/icon-8.svg"
               alt="Logo"
               width={100}
@@ -204,6 +226,7 @@ export default function BotanicalGrid({ side }: { side: 'left' | 'right' }) {
               className="group-hover:invisible group-active:invisible"
             />
             <Image
+              draggable={false}
               src="/hero-icons/icon-hover-8.svg"
               alt="Logo"
               width={100}
@@ -211,6 +234,7 @@ export default function BotanicalGrid({ side }: { side: 'left' | 'right' }) {
               className="-mt-15 xl:-mt-20 2xl:-mt-25 invisible group-hover:visible group-active:visible"
             />
             <Image
+              draggable={false}
               src="/hero-icons/icon-image-8.png"
               alt="Logo"
               width={100}
@@ -220,6 +244,7 @@ export default function BotanicalGrid({ side }: { side: 'left' | 'right' }) {
           </div>
           <div className="relative w-15.75 xl:w-20 2xl:w-25 h-15.75 xl:h-20 2xl:h-25 group top-full hover:-top-7.5 active:-top-7.5">
             <Image
+              draggable={false}
               src="/hero-icons/icon-image-9.png"
               alt="Logo"
               width={100}
@@ -227,6 +252,7 @@ export default function BotanicalGrid({ side }: { side: 'left' | 'right' }) {
               className="mt-10 2xl:mt-4 mb-12.25 xl:mb-6 2xl:-mb-6.25 invisible group-hover:visible group-active:visible"
             />
             <Image
+              draggable={false}
               src="/hero-icons/icon-9.svg"
               alt="Logo"
               width={100}
@@ -234,6 +260,7 @@ export default function BotanicalGrid({ side }: { side: 'left' | 'right' }) {
               className="-mt-38.75 group-hover:invisible group-active:invisible"
             />
             <Image
+              draggable={false}
               src="/hero-icons/icon-hover-9.svg"
               alt="Logo"
               width={100}
@@ -249,6 +276,7 @@ export default function BotanicalGrid({ side }: { side: 'left' | 'right' }) {
               Lemon Peel
             </p>
             <Image
+              draggable={false}
               src="/hero-icons/icon-10.svg"
               alt="Logo"
               width={100}
@@ -256,6 +284,7 @@ export default function BotanicalGrid({ side }: { side: 'left' | 'right' }) {
               className="group-hover:invisible group-active:invisible"
             />
             <Image
+              draggable={false}
               src="/hero-icons/icon-hover-10.svg"
               alt="Logo"
               width={100}
@@ -263,6 +292,7 @@ export default function BotanicalGrid({ side }: { side: 'left' | 'right' }) {
               className="-mt-15 xl:-mt-20 2xl:-mt-25 invisible group-hover:visible group-active:visible"
             />
             <Image
+              draggable={false}
               src="/hero-icons/icon-image-10.png"
               alt="Logo"
               width={100}
