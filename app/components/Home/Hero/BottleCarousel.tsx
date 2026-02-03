@@ -25,7 +25,6 @@ export default function BottleCarousel() {
           alt="Gin Background"
           fill
           className="object-cover"
-          priority
         />
       </div>
       <Image
@@ -34,7 +33,6 @@ export default function BottleCarousel() {
         height={553}
         width={272}
         className="w-44.75 xl:w-68 absolute object-contain top-42 xl:top-25 left-[48%] -translate-x-1/2"
-        priority
       />
     </div>
   );
