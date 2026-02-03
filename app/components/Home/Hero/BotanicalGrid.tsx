@@ -8,7 +8,7 @@ export default function BotanicalGrid({ side }: { side: 'left' | 'right' }) {
       {isLeft ? (
         <div className="relative xl:absolute -top-85 xl:top-[55%] z-20 left-1/2 -translate-x-1/2 xl:translate-x-0 xl:left-[3%] grid grid-cols-5 grid-rows-2 min-w-78.75">
           <div className="relative w-15.75 xl:w-20 2xl:w-25 h-15.75 xl:h-20 2xl:h-25 group">
-            <p className="text-base font-normal text-(--primary-black) xl:text-background justify-self-center text-center w-33.25 invisible group-hover:visible mt-0 xl:-mt-3.5 2xl:-mt-8.5 mb-0 xl:mb-2.5">
+            <p className="text-base font-normal text-(--primary-black) xl:text-background justify-self-center text-center w-33.25 invisible group-hover:visible group-active:visible mt-0 xl:-mt-3.5 2xl:-mt-8.5 mb-0 xl:mb-2.5">
               Grapefruit Peel
             </p>
             <Image
@@ -16,21 +16,21 @@ export default function BotanicalGrid({ side }: { side: 'left' | 'right' }) {
               alt="Logo"
               width={100}
               height={100}
-              className="group-hover:invisible"
+              className="group-hover:invisible group-active:invisible"
             />
             <Image
               src="/hero-icons/icon-hover-1.svg"
               alt="Logo"
               width={100}
               height={100}
-              className="-mt-15 xl:-mt-18 2xl:-mt-25 invisible group-hover:visible"
+              className="-mt-15 xl:-mt-18 2xl:-mt-25 invisible group-hover:visible group-active:visible"
             />
             <Image
               src="/hero-icons/icon-image-1.png"
               alt="Logo"
               width={200}
               height={100}
-              className="-mt-5 xl:-mt-6.25 invisible group-hover:visible"
+              className="-mt-5 xl:-mt-6.25 invisible group-hover:visible group-active:visible"
             />
           </div>
           <div className="relative  w-15.75 xl:w-20 2xl:w-25 h-15.75 xl:h-20 2xl:h-25 group top-full hover:-top-7.5">
