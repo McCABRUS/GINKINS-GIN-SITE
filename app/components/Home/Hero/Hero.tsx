@@ -9,8 +9,8 @@ export default function Hero() {
   return (
     <section className="relative w-full overflow-hidden">
       <div className="absolute inset-0 border-t-transparent">
-        <div className="h-[37%] xl:h-[65%] bg-(--primary-black)" />
-        <div className="h-[53%] bg-(--secundary-beige)" />
+        <div className="h-[37%] lg:h-[30%] xl:h-[65%] bg-(--primary-black)" />
+        <div className="h-[43%] lg:h-[34%] xl:h-[70%] bg-(--secundary-beige)" />
       </div>
       <div className="relative mx-auto max-w-400 h-250 z-30 justify-center flex">
         <div className="absolute top-10 xl:top-36.25 justify-self-center">
@@ -22,12 +22,12 @@ export default function Hero() {
             className="w-80 xl:w-121.5"
           />
         </div>
-        <div className="hidden lg:block absolute left-[4%] 2xl:left-[8%] top-[38%] text-background text-center">
+        <div className="hidden lg:block absolute left-[4%] 2xl:left-[8%] top-[15%] 2xl:top-[38%] text-background text-center">
           <p className="font-cormorant-garamond leading-relaxed  text-3xl">
             WE BOTTLE <br /> CONNECTION.
           </p>
         </div>
-        <div className="hidden lg:block absolute right-[4%] 2xl:right-[8%] top-[38%] text-background text-center">
+        <div className="hidden lg:block absolute right-[4%] 2xl:right-[8%] top-[15%] 2xl:top-[38%] text-background text-center">
           <p className="font-cormorant-garamond text-3xl leading-relaxed">
             YOU POUR IT <br /> FORWARD.
           </p>
@@ -79,7 +79,7 @@ export default function Hero() {
       </div>
       <div className="relative block xl:hidden text-center -top-33.5 ">
         <BotanicalGridMobile />
-        <div className="relative bg-background -top-70 -mb-102 h-41.25 py-[17.5px] grid">
+        <div className="lg:hidden relative bg-background -top-70 -mb-102 h-41.25 py-[17.5px] grid">
           <h2 className="text-(--primary-red-main)!">
             WE BOTTLE <br /> CONNECTION.
           </h2>
