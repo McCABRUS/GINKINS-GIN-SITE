@@ -12,7 +12,7 @@ export default function Hero() {
         <div className="h-[37%] xl:h-[65%] bg-(--primary-black)" />
         <div className="h-[53%] bg-(--secundary-beige)" />
       </div>
-      <div className="relative mx-auto max-w-400 h-250 z-30">
+      <div className="relative mx-auto max-w-400 h-250 z-30 justify-center flex">
         <div className="absolute top-10 xl:top-36.25 justify-self-center">
           <Image
             src="/hero-icons/arc.svg"
@@ -79,7 +79,7 @@ export default function Hero() {
       </div>
       <div className="relative block xl:hidden text-center -top-33.5 ">
         <BotanicalGridMobile />
-        <div className="relative bg-background -top-70 -mb-102 h-41.25 py-[17.5px]">
+        <div className="relative bg-background -top-70 -mb-102 h-41.25 py-[17.5px] grid">
           <h2 className="text-(--primary-red-main)!">
             WE BOTTLE <br /> CONNECTION.
           </h2>
