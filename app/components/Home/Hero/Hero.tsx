@@ -75,9 +75,9 @@ export default function Hero() {
             <BottleCarousel />
           </div>
         </div>
-        <div className="z-50">
-          <ExploreButton />
-        </div>
+      </div>
+      <div className="relative grid z-50 lg:top-0 xl:-top-25 m-auto justify-center">
+        <ExploreButton />
       </div>
       <div className="relative block xl:hidden text-center -top-33.5 ">
         <BotanicalGridMobile />
