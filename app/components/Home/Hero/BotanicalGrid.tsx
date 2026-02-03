@@ -33,34 +33,34 @@ export default function BotanicalGrid({ side }: { side: 'left' | 'right' }) {
               className="-mt-5 xl:-mt-6.25 invisible group-hover:visible group-active:visible"
             />
           </div>
-          <div className="relative  w-15.75 xl:w-20 2xl:w-25 h-15.75 xl:h-20 2xl:h-25 group top-full hover:-top-7.5">
+          <div className="relative  w-15.75 xl:w-20 2xl:w-25 h-15.75 xl:h-20 2xl:h-25 group top-full hover:-top-7.5 focus:-top-7.5">
             <Image
               src="/hero-icons/icon-image-2.png"
               alt="Logo"
               width={100}
               height={100}
-              className="mt-10 mb-16.75 xl:mb-9.5 2xl:mt-6.5 2xl:-mb-13.5 invisible group-hover:visible"
+              className="mt-10 mb-16.75 xl:mb-9.5 2xl:mt-6.5 2xl:-mb-13.5 invisible group-hover:visible group-focus:visible"
             />
             <Image
               src="/hero-icons/icon-2.svg"
               alt="Logo"
               width={100}
               height={100}
-              className="-mt-46 group-hover:invisible"
+              className="-mt-46 group-hover:invisible group-focus:invisible"
             />
             <Image
               src="/hero-icons/icon-hover-2.svg"
               alt="Logo"
               width={100}
               height={100}
-              className="mt-7.5 invisible group-hover:visible"
+              className="mt-7.5 invisible group-hover:visible group-focus:visible"
             />
-            <p className="text-base font-normal text-(--secondary-black) justify-self-center text-center w-33.25 mt-2.5 invisible group-hover:visible">
+            <p className="text-base font-normal text-(--secondary-black) justify-self-center text-center w-33.25 mt-2.5 invisible group-hover:visible group-focus:visible">
               Cardamon
             </p>
           </div>
           <div className="relative  w-15.75 xl:w-20 2xl:w-25 h-15.75 xl:h-20 2xl:h-25 group">
-            <p className="text-base font-normal text-(--primary-black) xl:text-background justify-self-center text-center w-33.25 invisible group-hover:visible  mt-0 xl:-mt-3.5 2xl:-mt-8.5 mb-0 xl:mb-2.5">
+            <p className="text-base font-normal text-(--primary-black) xl:text-background justify-self-center text-center w-33.25 invisible group-hover:visible group-active:visible group-focus:visible mt-0 xl:-mt-3.5 2xl:-mt-8.5 mb-0 xl:mb-2.5">
               Angelica Root
             </p>
             <Image
@@ -68,21 +68,21 @@ export default function BotanicalGrid({ side }: { side: 'left' | 'right' }) {
               alt="Logo"
               width={100}
               height={100}
-              className="group-hover:invisible"
+              className="group-hover:invisible group-active:invisible group-focus:invisible"
             />
             <Image
               src="/hero-icons/icon-hover-3.svg"
               alt="Logo"
               width={100}
               height={100}
-              className="-mt-15 xl:-mt-20 2xl:-mt-25 invisible group-hover:visible"
+              className="-mt-15 xl:-mt-20 2xl:-mt-25 invisible group-hover:visible group-active:visible group-focus:visible"
             />
             <Image
               src="/hero-icons/icon-image-3.png"
               alt="Logo"
               width={100}
               height={100}
-              className="-mt-5 xl:-mt-7.5 invisible group-hover:visible"
+              className="-mt-5 xl:-mt-7.5 invisible group-hover:visible group-active:visible group-focus:visible"
             />
           </div>
           <div className="relative  w-15.75 xl:w-20 2xl:w-25 h-15.75 xl:h-20 2xl:h-25 group top-full hover:-top-7.5">
