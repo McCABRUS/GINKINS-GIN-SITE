@@ -8,7 +8,7 @@ export default function BotanicalGridMobile() {
   useEffect(() => {
     const interval = setInterval(() => {
       setVisibility((prev) => !prev);
-    }, 5000);
+    }, 10000);
 
     return () => clearInterval(interval);
   }, []);
