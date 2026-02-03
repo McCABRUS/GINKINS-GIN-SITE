@@ -1,40 +1,50 @@
+import Image from 'next/image';
+
 import BottleCarousel from './BottleCarousel';
 import BotanicalGrid from './BotanicalGrid';
 import ExploreButton from './ExploreButton';
-import ArcText from './ArcText';
+import BotanicalGridMobile from './BotanicalGridMobile';
 
 export default function Hero() {
   return (
     <section className="relative w-full overflow-hidden">
       <div className="absolute inset-0 border-t-transparent">
-        <div className="h-[65%] bg-(--primary-black)" />
-        <div className="h-[35%] bg-(--secundary-beige)" />
+        <div className="h-[37%] xl:h-[65%] bg-(--primary-black)" />
+        <div className="h-[53%] bg-(--secundary-beige)" />
       </div>
       <div className="relative mx-auto max-w-400 h-250 z-30">
-        <ArcText />
-        <div className="absolute left-[8%] top-[38%] text-background text-center">
+        <div className="absolute top-10 xl:top-36.25 justify-self-center">
+          <Image
+            src="/hero-icons/arc.svg"
+            alt=""
+            width={486}
+            height={310}
+            className="w-80 xl:w-121.5"
+          />
+        </div>
+        <div className="hidden lg:block absolute left-[4%] 2xl:left-[8%] top-[38%] text-background text-center">
           <p className="font-cormorant-garamond leading-relaxed  text-3xl">
             WE BOTTLE <br /> CONNECTION.
           </p>
         </div>
-        <div className="absolute right-[8%] top-[38%] text-background text-center">
+        <div className="hidden lg:block absolute right-[4%] 2xl:right-[8%] top-[38%] text-background text-center">
           <p className="font-cormorant-garamond text-3xl leading-relaxed">
             YOU POUR IT <br /> FORWARD.
           </p>
         </div>
-        <div className="hidden md:block">
+        <div className="hidden xl:block">
           <BotanicalGrid side="left" />
           <BotanicalGrid side="right" />
         </div>
 
-        <div className="absolute left-1/2 top-[18%] -translate-x-1/2 w-full h-full flex items-center justify-center">
+        <div className="absolute left-1/2 top-[-5%] xl:top-[18%] -translate-x-1/2 w-full h-full flex items-center justify-center z-0">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="374"
             height="614"
             viewBox="0 0 374 614"
             fill="none"
-            className="z-10 -mt-88.5"
+            className="z-10 -mt-88.5 w-61.5 xl:w-93.5"
           >
             <g
               clipPath="url(#paint0_angular_2821_1268_clip_path)"
@@ -66,6 +76,21 @@ export default function Hero() {
           </div>
         </div>
         <ExploreButton />
+      </div>
+      <div className="relative block xl:hidden text-center -top-33.5 ">
+        <BotanicalGridMobile />
+        <div className="relative bg-background -top-70 -mb-102 h-41.25 py-[17.5px]">
+          <h2 className="text-(--primary-red-main)!">
+            WE BOTTLE <br /> CONNECTION.
+          </h2>
+          <hr
+            className="w-16 text-(--primary-black) place-self-center my-1.25"
+            aria-hidden="true"
+          />
+          <h2 className="text-(--primary-red-main)!">
+            YOU POUR IT <br /> FORWARD.
+          </h2>
+        </div>
       </div>
     </section>
   );

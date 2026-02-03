@@ -30,19 +30,19 @@ export default function ExploreButtonWithModal() {
   return (
     <>
       {/* ===== TRIGGER ===== */}
-      <div className="absolute left-1/2 bottom-[6%] -translate-x-1/2 z-10">
+      <div className="absolute left-1/2 bottom-118 xl:bottom-[6%] -translate-x-1/2 z-40">
         <button
           onClick={() => setOpen(true)}
           className="
-            px-10 py-4
+            px-5 py-1.5
             bg-(--primary-red-main)
-            text-background
             tracking-widest text-sm
             hover:bg-(--primary-gold-main)
             transition
+            w-81.25
           "
         >
-          EXPLORE THE COLLECTION
+          <h5 className="text-background! text-lg!">EXPLORE THE COLLECTION</h5>
         </button>
       </div>
 

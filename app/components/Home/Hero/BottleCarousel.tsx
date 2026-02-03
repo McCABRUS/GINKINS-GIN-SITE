@@ -19,7 +19,7 @@ export default function BottleCarousel() {
 
   return (
     <div>
-      <div className="absolute w-96.5 h-158.25 top-1 left-2/4 -translate-x-1/2">
+      <div className="absolute w-63.5 xl:w-96.5 h-104 xl:h-158.25 top-29 xl:top-1 left-2/4 -translate-x-1/2">
         <Image
           src={windows[active]}
           alt="Gin Background"
@@ -33,7 +33,7 @@ export default function BottleCarousel() {
         alt="Gin bottle"
         height={553}
         width={272}
-        className="absolute object-contain top-25 left-[48%] -translate-x-1/2"
+        className="w-44.75 xl:w-68 absolute object-contain top-42 xl:top-25 left-[48%] -translate-x-1/2"
         priority
       />
     </div>
