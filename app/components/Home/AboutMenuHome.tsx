@@ -9,10 +9,10 @@ export default function AboutHomeMenu() {
           transform: 'rotate(90deg) scale(1, 1)',
         }}
       ></div>
-      <div className="mx-auto max-w-350 px-6">
+      <div className="mx-auto max-w-350 px-15 xl:px-6">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_480px] gap-20 items-center">
-          <div>
-            <h3 className="inline-block uppercase tracking-widest text-background! mb-10">
+          <div className="text-center lg:text-left">
+            <h3 className="text-lg!  inline-block uppercase tracking-widest text-background! mb-10">
               About Us
             </h3>
             <ul className="space-y-14">
@@ -24,7 +24,7 @@ export default function AboutHomeMenu() {
               ].map((item, i) => (
                 <li key={i}>
                   <div className="flex items-center gap-6">
-                    <h6 className="text-(--secundary-gray-300)!">
+                    <h6 className="text-[35px]! text-(--secundary-gray-300)!">
                       {String(i + 1).padStart(2, '0')}
                     </h6>
 
@@ -40,7 +40,7 @@ export default function AboutHomeMenu() {
           </div>
 
           <div className="relative flex justify-center">
-            <div className="absolute -right-12.5 top-6 z-10 fill-(--primary-red-main)">
+            <div className="absolute left-3/5 lg:-right-12.5 top-6 z-10 fill-(--primary-red-main)">
               <Image
                 src="/icon-stars-ginkins-gin.svg"
                 alt=""
