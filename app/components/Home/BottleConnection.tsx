@@ -18,7 +18,7 @@ export default function BottleConnection() {
             lg:justify-end
           "
         >
-          <div className="max-w-127.25 text-center mr-0 md:mr-34.75">
+          <div className="max-w-127.25 text-center mr-0 md:-mr-100 lg:mr-34.75 py-20 2xs:py-0">
             <div className="flex justify-center">
               <div className="h-14.25 w-14.25 rounded-full bg-background flex items-center justify-center">
                 <svg
@@ -48,7 +48,7 @@ export default function BottleConnection() {
                 </svg>
               </div>
             </div>
-            <h4 className="my-17.25 leading-tight text-background!">
+            <h4 className="text-[35px]! font-medium my-17.25 leading-tight text-background!">
               We bottle connection.
               <br />
               You pour it forward.
