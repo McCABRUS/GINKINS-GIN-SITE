@@ -35,9 +35,9 @@ export default function Testimonials() {
   const { quote, author, rating } = testimonials[index];
 
   return (
-    <section className="w-full h-135.5 px-12.5 py-13.75 bg-(--secundary-beige)">
+    <section className="w-full h-135.5 px-5.5 lg:px-12.5 py-5.5 lg:py-13.75 bg-(--secundary-beige)">
       <div className="w-full h-full relative border-4 border-solid border-(--primary-gold-main) py-20 flex items-center justify-center">
-        <div className="relative py-20 px-38.5 text-center w-full">
+        <div className="relative md:py-20 md:px-38.5 text-center w-full">
           <button
             onClick={prev}
             className="absolute left-14.5 top-1/2 -translate-y-1/2 h-14.5 w-14.5 rounded-full border border-[#D6B25E] flex items-center justify-center hover:bg-[#D6B25E]/10 transition"
@@ -87,7 +87,7 @@ export default function Testimonials() {
               <span key={i}>★</span>
             ))}
           </div>
-          <blockquote className="font-cormorant-garamond font-medium mx-auto italic text-4xl leading-relaxed text-(--secondary-black)">
+          <blockquote className="font-cormorant-garamond font-medium mx-auto italic text-3xl md:text-4xl leading-relaxed text-(--secondary-black)">
             “{quote}”
           </blockquote>
           <h5 className="mt-8 tracking-widest text-(--secondary-black)!">

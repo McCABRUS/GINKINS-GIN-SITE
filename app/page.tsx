@@ -7,7 +7,7 @@ import BannerHomeShop from './components/Home/BannerHomeShop';
 import HeritageInnovation from './components/Home/HeritageInnovation';
 import Connections from './components/Home/Connections/Connections';
 import AboutHomeMenu from './components/Home/AboutMenuHome';
-import CocktailsHome from './components/Home/CocktailsHome';
+import CocktailsHome from './components/Home/Cocktails/CocktailsHome';
 import Testimonials from './components/Home/Testimonials';
 import BottleConnection from './components/Home/BottleConnection';
 import FooterMerch from './components/FooterMerchCarousel/FooterMerch';

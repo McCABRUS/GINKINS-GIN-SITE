@@ -28,7 +28,7 @@ export default function AboutHomeMenu() {
                       {String(i + 1).padStart(2, '0')}
                     </h6>
 
-                    <h4 className="text-(--secundary-gray-300)! hover:text-(--primary-red-main)! transition">
+                    <h4 className="text-left text-(--secundary-gray-300)! hover:text-(--primary-red-main)! transition">
                       {item}
                     </h4>
                   </div>
