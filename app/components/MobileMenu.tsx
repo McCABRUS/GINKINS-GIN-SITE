@@ -48,10 +48,30 @@ export default function MobileMenu() {
           </button>
 
           <nav className="px-8 pt-24 space-y-8 text-sm tracking-widest uppercase">
-            <MenuItem label="About Ginkins" link="/about-ginkins" />
-            <MenuItem label="Our Gins" link="#" />
-            <MenuItem label="Where to Buy" link="#" />
-            <MenuItem label="Cocktails & Pairings" link="#" />
+            <MenuItem
+              label="About Ginkins"
+              link="/about-ginkins"
+              setOpen={setOpen}
+              setMoreOpen={setMoreOpen}
+            />
+            <MenuItem
+              label="Our Gins"
+              link="#"
+              setOpen={setOpen}
+              setMoreOpen={setMoreOpen}
+            />
+            <MenuItem
+              label="Where to Buy"
+              link="#"
+              setOpen={setOpen}
+              setMoreOpen={setMoreOpen}
+            />
+            <MenuItem
+              label="Cocktails & Pairings"
+              link="#"
+              setOpen={setOpen}
+              setMoreOpen={setMoreOpen}
+            />
 
             <div>
               <button
