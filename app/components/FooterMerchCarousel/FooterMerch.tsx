@@ -7,7 +7,7 @@ export default function FooterMerch() {
   ];
 
   return (
-    <section className="w-screen h-140.75 bg-(--secundary-beige) overflow-hidden my-[17.5px]">
+    <section className="w-screen h-95 md:h-140.75 bg-(--secundary-beige) overflow-hidden my-[17.5px]">
       <div className="relative overflow-hidden">
         <div className="flex whitespace-nowrap animate-merch gap-5">
           {FooterMerchCarouselDataFull.map((images, index) => (

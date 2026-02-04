@@ -10,7 +10,7 @@ export default function FooterMerchCarousel({ img, alt }: ImagesProps) {
     <Image
       src={img}
       alt={alt}
-      className="h-140.75 w-100 object-cover"
+      className="h-95 md:h-140.75 w-100 object-cover"
       height={563}
       width={400}
     />
