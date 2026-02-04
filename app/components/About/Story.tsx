@@ -1,0 +1,59 @@
+import Image from 'next/image';
+
+export default function Story() {
+  return (
+    <section className="w-screen bg-(--secundary-beige)">
+      <div className="mx-auto px-39.5 py-8.25">
+        <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
+          <div className="">
+            <div className="mb-6">
+              <Image
+                src="/about/ginkins-icon-martini-decorations.svg"
+                alt="Martini Ginkins Gin icon"
+                width={56}
+                height={71}
+                className="mb-10.75"
+              />
+            </div>
+            <div className="text-base leading-6 text-(--primary-black)">
+              <p className="mb-4">
+                When people think of Louisville, they picture Derby hats,
+                hometown legends, crackling bats, and that unmistakable bourbon
+                swagger. But look a little closer and you’ll find a city alive
+                with fresh ideas, forward momentum, and a creative spirit that
+                refuses to be boxed in. That’s the soul of Ginkins Gin.
+              </p>
+              <p className="mb-4">
+                Born from tradition but built for what’s next, it’s our tribute
+                to a city that honors its heritage while embracing its future.
+              </p>
+              <p>
+                Founded by Phillip Scott Ginkins, this gin was inspired by the
+                warmth of Southern hospitality and the thrill of discovery. With
+                a last name that almost predestined his calling, Scott set out
+                to create a spirit that reflects the heart of his hometown—bold,
+                bright, and full of flavor.
+              </p>
+            </div>
+
+            <button className="w-40 lg:w-44.25 h-9.75 mt-10.75 flex items-center justify-center bg-(--primary-red-main) px-5 lg:px-8 py-1.5 lg:py-3 text-sm font-medium uppercase tracking-wide text-background transition hover:bg-(--primary-gold-main)">
+              <h5 className="text-background! text-lg!">Shop ONLINE</h5>
+            </button>
+          </div>
+
+          <div className="flex mx-auto">
+            <div className="relative h-105 w-80 overflow-hidden rounded-t-full sm:h-130 sm:w-95 lg:h-160 lg:w-120">
+              <Image
+                src="/about/meaningful-connections-ginkins-gin.webp"
+                alt="Creating connections over a premium gin cocktail with red fruits and citrus in an elegant bar setting."
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

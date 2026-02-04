@@ -12,12 +12,8 @@ export default function Hero() {
           priority
         />
       </div>
-
       <div className="relative  text-center">
-        {/* Label */}
         <h3 className="mb-6 text-left">About us</h3>
-
-        {/* Title */}
         <h1 className="text-center text-(--primary-black)!">
           Connections that distill
           <br />
@@ -33,10 +29,8 @@ export default function Hero() {
             />
           </div>
         </div>
-
-        {/* Footer caption */}
         <div className="flex flex-col items-center gap-4">
-          <span className="h-12 w-px bg-neutral-400" />
+          <span className="h-12 w-px" />
           <h3 className="text-center">The soul of Ginking’s Gin</h3>
         </div>
       </div>
