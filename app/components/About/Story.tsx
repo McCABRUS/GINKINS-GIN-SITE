@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function Story() {
   return (
-    <section className="w-screen bg-(--secundary-beige)">
+    <section className="w-screen bg-(--secundary-beige) relative">
       <div className="mx-auto px-39.5 py-8.25">
         <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
           <div className="">
@@ -48,11 +48,16 @@ export default function Story() {
                 alt="Creating connections over a premium gin cocktail with red fruits and citrus in an elegant bar setting."
                 fill
                 className="object-cover"
-                priority
               />
             </div>
           </div>
         </div>
+        <div
+          className="absolute border-solid border-(--primary-red-main) border-t border-r-0 border-b-0 border-l-0 shrink-0 w-24.5 h-0 z-20 bottom-70 2xs:bottom-80 xs:bottom-95 md:bottom-12.25 left-1/2 -translate-x-1/2"
+          style={{
+            transform: 'rotate(90deg) scale(1, 1)',
+          }}
+        ></div>
       </div>
     </section>
   );

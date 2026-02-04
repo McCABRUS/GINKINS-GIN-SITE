@@ -34,6 +34,12 @@ export default function Hero() {
           <h3 className="text-center">The soul of Ginking’s Gin</h3>
         </div>
       </div>
+      <div
+        className="absolute border-solid border-(--primary-red-main) border-t border-r-0 border-b-0 border-l-0 shrink-0 w-18.75 h-0 z-20 bottom-70 2xs:bottom-80 xs:bottom-95 md:bottom-25 left-1/2 -translate-x-1/2"
+        style={{
+          transform: 'rotate(90deg) scale(1, 1)',
+        }}
+      ></div>
     </section>
   );
 }

@@ -1,4 +1,5 @@
 import Hero from '../components/About/Hero';
+import People from '../components/About/People';
 import Story from '../components/About/Story';
 
 export default function About() {
@@ -7,6 +8,7 @@ export default function About() {
       <main className="flex min-h-screen w-full flex-col items-center justify-between">
         <Hero />
         <Story />
+        <People />
       </main>
     </div>
   );
