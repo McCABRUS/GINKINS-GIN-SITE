@@ -52,7 +52,10 @@ export default function Footer() {
           <Link href="/terms" className="hover:text-(--primary-red-main)">
             Terms of Service
           </Link>
-          <Link href="/faqs" className="hover:text-(--primary-red-main)">
+          <Link
+            href="/about-ginkins"
+            className="hover:text-(--primary-red-main)"
+          >
             About US
           </Link>
         </div>

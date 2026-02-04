@@ -36,7 +36,6 @@ export default function MobileMenu() {
 
       {open && (
         <div className="fixed inset-0 z-50 bg-[#121212] text-(--primary-gold-main)">
-          {/* Cerrar */}
           <button
             onClick={() => {
               setOpen(false);
@@ -49,7 +48,7 @@ export default function MobileMenu() {
           </button>
 
           <nav className="px-8 pt-24 space-y-8 text-sm tracking-widest uppercase">
-            <MenuItem label="About Ginkins" link="#" />
+            <MenuItem label="About Ginkins" link="/about-ginkins" />
             <MenuItem label="Our Gins" link="#" />
             <MenuItem label="Where to Buy" link="#" />
             <MenuItem label="Cocktails & Pairings" link="#" />
