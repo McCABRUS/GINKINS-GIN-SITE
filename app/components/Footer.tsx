@@ -140,7 +140,7 @@ export default function Footer() {
               <ul className="mt-4 space-y-2 text-sm text-background">
                 <li>
                   <Link
-                    href="/about"
+                    href="/about-ginkins"
                     className="hover:text-(--primary-red-main) text-base"
                   >
                     About Us

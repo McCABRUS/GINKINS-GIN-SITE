@@ -36,7 +36,7 @@ export default function ExploreButtonWithModal() {
       </div>
       {open && (
         <div
-          className="fixed inset-0 z-500 flex items-center justify-center bg-black/80 px-4 md:px-10"
+          className="fixed inset-0 z-500 flex items-center max-h-screen justify-center bg-black/80 px-4 md:px-10"
           onClick={() => setOpen(false)}
           role="dialog"
           aria-modal="true"
@@ -45,7 +45,7 @@ export default function ExploreButtonWithModal() {
             ref={modalRef}
             tabIndex={-1}
             onClick={(e) => e.stopPropagation()}
-            className="relative bg-background shadow-2xl overflow-hidden w-full md:w-auto h-200 2xs:h-180 md:h-155 lg:h-auto md:aspect-1186/853 lg:max-w-286.5 p-5"
+            className="relative bg-background shadow-2xl overflow-hidden w-full grow md:w-auto h-200 2xs:h-180 md:h-155 lg:h-auto md:aspect-1186/853 lg:max-w-286.5 p-5"
           >
             <button
               onClick={() => setOpen(false)}

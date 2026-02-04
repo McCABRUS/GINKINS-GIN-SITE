@@ -8,7 +8,7 @@ export default function HeaderServer() {
       <nav className="max-w-6xl mx-auto px-6 py-4" aria-label="Main navigation">
         <div className="flex items-center justify-between">
           <div className="hidden md:flex items-center gap-4">
-            <Link href="/about" className="px-1 py-1 hover:underline">
+            <Link href="/about-ginkins" className="px-1 py-1 hover:underline">
               <h5 className="text-(--primary-gold-main)! inline">
                 ABOUT GINKINS
               </h5>
