@@ -82,9 +82,24 @@ export default function MobileMenu() {
 
               {moreOpen && (
                 <div className="mt-6 ml-4 space-y-6 text-xs">
-                  <MenuItem label="Accolades" link="#" />
-                  <MenuItem label="FAQs" link="#" />
-                  <MenuItem label="Sustainability" link="#" />
+                  <MenuItem
+                    label="Accolades"
+                    link="#"
+                    setOpen={setOpen}
+                    setMoreOpen={setMoreOpen}
+                  />
+                  <MenuItem
+                    label="FAQs"
+                    link="#"
+                    setOpen={setOpen}
+                    setMoreOpen={setMoreOpen}
+                  />
+                  <MenuItem
+                    label="Sustainability"
+                    link="#"
+                    setOpen={setOpen}
+                    setMoreOpen={setMoreOpen}
+                  />
                 </div>
               )}
             </div>
@@ -106,11 +121,28 @@ export default function MobileMenu() {
   );
 }
 
-function MenuItem({ label, link }: { label: string; link: string }) {
+function MenuItem({
+  label,
+  link,
+  setOpen,
+  setMoreOpen,
+}: {
+  label: string;
+  link: string;
+  setOpen: (v: boolean) => void;
+  setMoreOpen: (v: boolean) => void;
+}) {
   return (
     <div className="block">
       <span className="mx-3">•</span>
-      <Link href={link} aria-label={label}>
+      <Link
+        href={link}
+        aria-label={label}
+        onClick={() => {
+          setOpen(false);
+          setMoreOpen(false);
+        }}
+      >
         <h5 className="text-(--primary-gold-main)! inline">{label}</h5>
       </Link>
     </div>
