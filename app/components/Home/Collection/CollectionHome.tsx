@@ -9,7 +9,7 @@ export default function CollectionHome() {
           transform: 'rotate(90deg) scale(1, 1)',
         }}
       ></div>
-      <div className="bg-(--primary-black) w-full h-380 md:h-337.5 lg:h-317.5 absolute left-0"></div>
+      <div className="bg-(--primary-black) w-full h-409 md:h-346.5 lg:h-317.5 absolute left-0"></div>
       <div className="flex flex-col gap-6 items-center justify-start w-full absolute top-23">
         <div className="p-2.5 flex flex-row gap-2.5 items-center justify-center shrink-0 w-113.5 relative">
           <h3 className="text-(--primary-gold-main)! text-center uppercase relative flex-1">
@@ -46,7 +46,7 @@ export default function CollectionHome() {
       </div>
       <div className="flex flex-col gap-11 w-full absolute px-8 md:px-37.25  top-266.5">
         <div
-          className="border-solid border-[#e3d384] border-t -mt-14 border-r-0 border-b-0 border-l-0 self-stretch shrink-0 h-0 relative"
+          className="border-solid border-(--primary-gold-main) border-t mt-15 md:-mt-5 lg:-mt-14 border-r-0 border-b-0 border-l-0 self-stretch shrink-0 h-0 relative"
           style={{
             transformOrigin: 'top',
             transform: 'rotate(0deg) scale(1, 1)',

@@ -8,7 +8,7 @@ export default function CollectionCarousel() {
     ...collectionData,
   ];
   return (
-    <div className="pt-25 top-56.25 h-285 lg:h-205 relative overflow-hidden">
+    <div className="pt-25 top-56.25 h-312.5 md:h-295 lg:h-205 relative overflow-hidden">
       <div className="container">
         <div className="w-full">
           <div className="flex whitespace-nowrap animate-collection hover:stop-animation">
