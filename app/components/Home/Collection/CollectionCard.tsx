@@ -18,7 +18,7 @@ export default function CollectionCard({ title, text, img, alt }: CardProps) {
           src={img}
         />
         <div
-          className="bg-[rgba(0,0,0,0.40)] rounded-[50%] w-45.75 h-6 absolute left-35 top-[648.99px]"
+          className="bg-[rgba(0,0,0,0.40)] rounded-[50%] w-25 lg:w-45.75 h-6 absolute left-[47%] lg:left-35 top-82 lg:top-162.25"
           style={{ filter: 'blur(5.72px)' }}
         ></div>
       </div>
