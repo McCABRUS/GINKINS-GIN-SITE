@@ -165,6 +165,26 @@ h6 {
   }
 }
 
+@keyframes connectionsScrollLeftMobile {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(calc(-287px * 6 - 16px * 6));
+  }
+}
+
+@keyframes connectionsScrollRightMobile {
+  0% {
+    transform: translateX(calc(-287px * 6 - 16px * 6));
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
 @keyframes merchScroll {
   0% {
     transform: translateX(0);
@@ -181,9 +201,15 @@ h6 {
   }
   .animate-left-carousel {
     animation: connectionsScrollLeft 30s linear infinite;
+    @media (width < 64rem) {
+      animation: connectionsScrollLeftMobile 30s linear infinite;
+    }
   }
   .animate-right-carousel {
     animation: connectionsScrollRight 30s linear infinite;
+    @media (width < 64rem) {
+      animation: connectionsScrollRightMobile 30s linear infinite;
+    }
   }
   .animate-merch {
     animation: merchScroll 20s linear infinite;

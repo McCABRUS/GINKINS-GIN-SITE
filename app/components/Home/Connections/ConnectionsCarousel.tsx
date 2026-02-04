@@ -10,7 +10,7 @@ export default function ConnectionsCarousel({ img, alt }: ImagesProps) {
     <Image
       src={img}
       alt={alt}
-      className="h-76.5 w-71.75 object-cover my-4"
+      className="h-60 xl:h-76.5 w-90 xl:w-71.75 object-cover my-4"
       height={306}
       width={287}
     />
