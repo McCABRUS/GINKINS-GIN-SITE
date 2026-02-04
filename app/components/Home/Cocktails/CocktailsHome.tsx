@@ -26,7 +26,7 @@ export default function CocktailsHome() {
             <span className="relative inline-block align-text-top mx-2 z-0 ">
               <span className="inline-block w-40.25 h-40.25 md:h-52.5 md:w-52.5 rounded-full overflow-hidden relative z-10">
                 <Image
-                  src="/CocktailsHome/cocktail-circle.png"
+                  src="/cocktails_home/cocktail-circle.png"
                   alt=""
                   className="h-full w-full object-cover"
                   width={238}
