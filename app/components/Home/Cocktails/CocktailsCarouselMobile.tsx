@@ -28,7 +28,7 @@ export default function CocktailsCarouselMobile() {
         <button
           onClick={prev}
           className="absolute left-5 top-1/2 -translate-y-1/2 h-14.5 w-14.5 rounded-full  flex items-center justify-cente"
-          aria-label="Previous testimonial"
+          aria-label="Previous cocktail"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -53,7 +53,7 @@ export default function CocktailsCarouselMobile() {
         <button
           onClick={next}
           className="absolute right-5 top-1/2 -translate-y-1/2 h-14.5 w-14.5 rounded-full flex items-center justify-center"
-          aria-label="Next testimonial"
+          aria-label="Next cocktail"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
