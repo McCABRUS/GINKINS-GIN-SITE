@@ -3,10 +3,10 @@ import Image from 'next/image';
 export default function Hero() {
   return (
     <section className="relative w-screen overflow-hidden bg-(--secundary-beige) px-5 sm:px-28.25 pt-27.75">
-      <div className="absolute inset-0 pointer-events-none">
+      <div className="absolute inset-0 pointer-events-none xl:mt-87.5">
         <Image
-          src="/about/background-farm.png"
-          alt="Copper still"
+          src="/about/ginkins-gin-heritage-farm-illustration.png"
+          alt="Golden line art illustration of a Kentucky farm and distillery at sunset for Ginkins Gin background"
           fill
           className="object-cover"
           priority

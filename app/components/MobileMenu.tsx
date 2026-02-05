@@ -56,7 +56,7 @@ export default function MobileMenu() {
             />
             <MenuItem
               label="Our Gins"
-              link="#"
+              link="/our-gins"
               setOpen={setOpen}
               setMoreOpen={setMoreOpen}
             />
