@@ -53,7 +53,7 @@ export default function Story() {
           </div>
         </div>
         <div
-          className="absolute border-solid border-(--primary-red-main) border-t border-r-0 border-b-0 border-l-0 shrink-0 w-24.5 h-0 z-20 bottom-70 md:bottom-135 left-1/2 -translate-x-1/2"
+          className="absolute border-solid border-(--primary-red-main) border-t border-r-0 border-b-0 border-l-0 shrink-0 w-22.5 lg:w-24.5 h-0 z-20 bottom-90 md:bottom-137.5 lg:bottom-12.25 left-1/2 -translate-x-1/2"
           style={{
             transform: 'rotate(90deg) scale(1, 1)',
           }}
