@@ -57,7 +57,7 @@ export default function Founder() {
               <div className="absolute bottom-0 -right-11.25 h-50 w-131.25 bg-(--primary-red-main) z-10" />
             </div>
 
-            <h5 className="mt-4">“The man behind the gin.”</h5>
+            <h5 className="mt-4 -ml-12.25">“The man behind the gin.”</h5>
           </div>
           <div className="order-5 space-y-6 max-w-131.25">
             <h4 className="text-(--primary-black)!">Phillip Scott Ginkins</h4>

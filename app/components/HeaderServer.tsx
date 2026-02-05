@@ -65,7 +65,7 @@ export default function HeaderServer() {
           </div>
           <div className="md:hidden w-full flex justify-between">
             <div className="justify-start">
-              <Link href="#">
+              <Link href="/">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="19"

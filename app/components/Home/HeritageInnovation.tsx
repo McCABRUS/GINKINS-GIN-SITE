@@ -33,7 +33,7 @@ export default function HeritageInnovation() {
             <div className="h-24 w-24 hidden md:flex">
               <Image
                 src="/ginkins-isotype.svg"
-                alt="ginkins isotype"
+                alt="Ginkins Gin Isotype"
                 height={81}
                 width={81}
               />
