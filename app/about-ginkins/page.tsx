@@ -2,7 +2,9 @@ import Founder from '../components/About/Founder';
 import Heritage from '../components/About/Heritage';
 import Hero from '../components/About/Hero';
 import People from '../components/About/People';
+import ShopBanner from '../components/About/ShopBanner';
 import Story from '../components/About/Story';
+import FooterMerch from '../components/FooterMerchCarousel/FooterMerch';
 
 export default function About() {
   return (
@@ -13,6 +15,8 @@ export default function About() {
         <People />
         <Founder />
         <Heritage />
+        <ShopBanner />
+        <FooterMerch />
       </main>
     </div>
   );

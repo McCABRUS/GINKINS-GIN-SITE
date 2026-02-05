@@ -1,15 +1,15 @@
-export default function BottleConnection() {
+export default function ShopBanner() {
   return (
     <section
       className="relative w-full aspect-4/5 md:aspect-16/7 bg-cover bg-center"
       style={{
-        backgroundImage: "url('/bottle-connection-bg.png')",
+        backgroundImage: "url('/about/ginkins-gin-products.webp')",
       }}
     >
       <div className="absolute inset-0 bg-black/60 visible md:invisible" />
       <div className="relative mx-auto w-full px-6 h-full">
-        <div className="flex h-full items-center justify-center lg:justify-end">
-          <div className="max-w-127.25 text-center mr-0 md:-mr-100 lg:mr-34.75 py-20 2xs:py-0">
+        <div className="flex h-full items-center justify-center">
+          <div className="max-w-127.25 text-center mr-0 py-20 2xs:py-0">
             <div className="flex justify-center">
               <div className="h-14.25 w-14.25 rounded-full bg-background flex items-center justify-center">
                 <svg
@@ -40,9 +40,12 @@ export default function BottleConnection() {
               </div>
             </div>
             <h4 className="text-[35px]! xl:text-[56px]! my-17.25 text-background!">
-              We bottle connection.
+              Rooted in tradition.
               <br />
-              You pour it forward.
+              Refined by craft.
+              <br />
+              Raised in Louisville.
+              <br />
             </h4>
             <div className="mt-8">
               <button className="inline-flex items-center justify-center bg-(--primary-red-main) px-8 py-3 text-lg font-medium uppercase tracking-wide  transition hover:bg-(--primary-gold-main)">
