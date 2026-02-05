@@ -7,7 +7,7 @@ export default function HeaderServer() {
     <header className="bg-(--primary-black) text-(--primary-gold-main)">
       <nav className="max-w-6xl mx-auto px-6 py-4" aria-label="Main navigation">
         <div className="flex items-center justify-between">
-          <div className="hidden md:flex items-center gap-4">
+          <div className="hidden md:flex items-center gap-0 lg:gap-4">
             <Link href="/about-ginkins" className="px-1 py-1 hover:underline">
               <h5 className="text-(--primary-gold-main)! inline">
                 ABOUT GINKINS
@@ -24,7 +24,7 @@ export default function HeaderServer() {
               </h5>
             </Link>
           </div>
-          <div className="flex-1 hidden md:flex justify-center">
+          <div className="flex-1 hidden md:flex justify-center mx-2.5">
             <Link
               href="/"
               className="text-(--primary-gold-main) hover:text-(--primary-red-main)"
@@ -44,7 +44,7 @@ export default function HeaderServer() {
               </svg>
             </Link>
           </div>
-          <div className="hidden md:flex items-center gap-4">
+          <div className="hidden md:flex items-center gap-0 lg:gap-4">
             <Link href="/our-gins" className="px-1 py-1 hover:underline">
               <h5 className="text-(--primary-gold-main)! inline">
                 COCKTAILS & PAIRINGS
@@ -55,7 +55,7 @@ export default function HeaderServer() {
           <div className="hidden md:flex items-center">
             <HeaderClient />
           </div>
-          <div className="hidden md:flex items-center gap-4">
+          <div className="hidden md:flex items-center gap-0 lg:gap-4">
             <Link
               href="/subscribe"
               className="inline-block px-4 py-1 border border-(--primary-gold-main) rounded text-sm font-medium transition-colors hover:text-(--primary-red-main) hover:border-(--primary-red-main)"
