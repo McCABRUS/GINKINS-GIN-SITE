@@ -3,10 +3,10 @@ import Image from 'next/image';
 export default function Founder() {
   return (
     <section className="w-screen bg-[#F6F1E7]">
-      <div className="mx-auto px-37.25 2xl:px-80 py-32">
+      <div className="mx-auto px-37.25 2xl:px-80 py-32 relative">
         <div className="grid grid-cols-1 gap-y-20 lg:grid-cols-2 lg:gap-x-24">
           {/* INTRO LEFT */}
-          <div className="order-1 space-y-6">
+          <div className="mx-auto order-1 space-y-6 max-w-131.25">
             <h6 className="text-(--primary-black)!">
               We’re here to build more than a spirit.
             </h6>
@@ -19,7 +19,7 @@ export default function Founder() {
             </p>
           </div>
 
-          <div className="order-2 space-y-6">
+          <div className="order-2 space-y-6 max-w-131.25">
             <h2 className="">
               Because at Ginkins,
               <br />
@@ -43,7 +43,7 @@ export default function Founder() {
             <span className="h-px w-[41%] bg-(--primary-red-main)" />
           </div>
 
-          <div className="order-4">
+          <div className="mx-auto order-4">
             <h3 className="mb-13.75">Meet the creator</h3>
 
             <div className="relative h-159.25 w-108.75">
@@ -59,7 +59,7 @@ export default function Founder() {
 
             <h5 className="mt-4">“The man behind the gin.”</h5>
           </div>
-          <div className="order-5 space-y-6">
+          <div className="order-5 space-y-6 max-w-131.25">
             <h4 className="text-(--primary-black)!">Phillip Scott Ginkins</h4>
 
             <div className="space-y-4 text-base leading-6 text-(--primary-black)">
@@ -96,6 +96,18 @@ export default function Founder() {
             </p>
           </div>
         </div>
+        <div
+          className="absolute border-solid border-(--primary-black) border-t border-r-0 border-b-0 border-l-0 shrink-0 w-84.25 h-0 z-20 top-[168.5px] left-1/2 -translate-x-1/2"
+          style={{
+            transform: 'rotate(90deg) scale(1, 1)',
+          }}
+        ></div>
+        <div
+          className="absolute border-solid border-(--primary-black) border-t border-r-0 border-b-0 border-l-0 shrink-0 w-24.5 h-0 z-20  2xs:bottom-80 xs:bottom-95 md:bottom-12.25 left-1/2 -translate-x-1/2"
+          style={{
+            transform: 'rotate(90deg) scale(1, 1)',
+          }}
+        ></div>
       </div>
     </section>
   );
