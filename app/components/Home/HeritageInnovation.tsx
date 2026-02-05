@@ -1,7 +1,7 @@
 import Image from 'next/image';
 export default function HeritageInnovation() {
   return (
-    <section className="w-screen bg-(--primary-red-main) h-182.5 md:h-auto py-20 md:py-37">
+    <section className="w-screen bg-(--primary-red-main) h-182.5 md:h-auto py-24 md:py-37">
       <div className="mx-auto max-x-full md:max-w-350 px-6">
         <div className="flex flex-col md:flex-row items-center justify-between gap-12">
           <div>
@@ -17,7 +17,7 @@ export default function HeritageInnovation() {
               The Ginkins Story
             </h3>
 
-            <h1 className="text-center md:text-left text-background! mb-16.5 md:mb-0">
+            <h1 className="text-center md:text-left text-background! mb-16.5 md:mb-0 xl:text-[90px]! lg-text-[70px]!">
               A Heritage
               <br />
               of <br className="inline md:hidden" />
