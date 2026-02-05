@@ -39,7 +39,7 @@ export default function BottleConnection() {
                 </svg>
               </div>
             </div>
-            <h4 className="text-[35px]! xl:text-[56px]! my-17.25 text-background!">
+            <h4 className="text-[35px]! xl:text-[56px]! my-9.5 xl:my-17.25 text-background!">
               We bottle connection.
               <br />
               You pour it forward.

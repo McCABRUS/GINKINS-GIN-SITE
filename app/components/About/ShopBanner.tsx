@@ -34,7 +34,7 @@ export default function ShopBanner() {
                 </svg>
               </div>
             </div>
-            <h4 className="text-[35px]! xl:text-[56px]! my-17.25 text-background!">
+            <h4 className="text-[35px]! xl:text-[56px]! my-9.5 xl:my-17.25 text-background!">
               Rooted in tradition.
               <br />
               Refined by craft.
