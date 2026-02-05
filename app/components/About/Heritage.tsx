@@ -22,7 +22,6 @@ export default function Heritage() {
       </div>
 
       <div className="mx-auto max-x-full md:max-w-350 px-6px-6 py-24 grid grid-cols-1 gap-16 lg:grid-cols-2 lg:gap-24">
-        {/* TEXT */}
         <div className="space-y-6">
           <p className="text-lg leading-6.75 font-medium text-(--primary-black)">
             Ginkins began with a simple idea:
@@ -57,24 +56,9 @@ export default function Heritage() {
             </strong>
           </p>
         </div>
-
-        {/* IMAGE */}
-        <div className="flex justify-center">
-          <div className="relative w-[320px] h-105 overflow-hidden rounded-t-full">
-            <Image
-              src="/images/founder.jpg"
-              alt="Founder"
-              fill
-              className="object-cover"
-            />
-          </div>
-        </div>
       </div>
-
-      {/* ================= HERITAGE GRID ================= */}
       <div className="mx-auto max-w-7xl px-6 pb-28">
         <div className="grid grid-cols-1 gap-5.25 lg:grid-cols-3">
-          {/* CARD 1 – hidden mobile */}
           <div className="hidden lg:block space-y-6">
             <Image
               src="/about/ginkins-gin-botanicals.webp"
