@@ -35,7 +35,7 @@ export default function MobileMenu() {
       </button>
 
       {open && (
-        <div className="fixed inset-0 z-50 bg-[#121212] text-(--primary-gold-main)">
+        <div className="fixed inset-0 z-2000 bg-[#121212] text-(--primary-gold-main)">
           <button
             onClick={() => {
               setOpen(false);
