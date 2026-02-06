@@ -62,7 +62,7 @@ export default function MobileMenu() {
             />
             <MenuItem
               label="Where to Buy"
-              link="#"
+              link="/where-to-buy"
               setOpen={setOpen}
               setMoreOpen={setMoreOpen}
             />

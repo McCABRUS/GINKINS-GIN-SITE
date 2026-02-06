@@ -18,7 +18,7 @@ export default function HeaderServer() {
               <h5 className="text-(--primary-gold-main)! inline">OUR GINS</h5>
             </Link>
             <span className="mx-3">•</span>
-            <Link href="/our-gins" className="px-1 py-1 hover:underline">
+            <Link href="/where-to-buy" className="px-1 py-1 hover:underline">
               <h5 className="text-(--primary-gold-main)! inline">
                 WHERE TO BUY
               </h5>
