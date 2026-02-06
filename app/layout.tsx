@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${cormorant.className} ${barlow.className} antialiased bg-(--secundary-beige)!`}
+        className={`${cormorant.className} ${barlow.className} antialiased bg-(--secondary-beige)!`}
       >
         <HeaderServer />
         {children}

@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function Story() {
   return (
-    <section className="w-screen bg-(--secundary-beige) relative">
+    <section className="w-screen bg-(--secondary-beige) relative">
       <div className="mx-auto px-5 md:px-20 lg:px-39.5 py-8.25">
         <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
           <div>

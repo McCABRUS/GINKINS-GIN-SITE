@@ -16,7 +16,7 @@ export default function CocktailsCarouselMobile() {
   const { img, title, text, alt } = cocktailsData[index];
 
   return (
-    <section className="w-full bg-(--secundary-beige)">
+    <section className="w-full bg-(--secondary-beige)">
       <div className="relative text-center w-full">
         <Image
           src={img}

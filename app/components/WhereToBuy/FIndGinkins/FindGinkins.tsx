@@ -42,19 +42,19 @@ export default function FindGinkins() {
         </div>
       </div>
       <div
-        className="absolute border-solid border-(--primary-gold-main) border-t border-r-0 border-b-0 border-l-0 shrink-0 w-93.25 h-0 z-20 top-46.5 left-1/2 -translate-x-1/2"
+        className="absolute border-solid border-(--primary-gold-main) border-t border-r-0 border-b-0 border-l-0 shrink-0 w-100.5 h-0 z-20 top-50 left-1/2 -translate-x-1/2"
         style={{
           transform: 'rotate(90deg) scale(1, 1)',
         }}
       ></div>
       <div
-        className="absolute border-solid border-(--primary-gold-main) border-t border-r-0 border-b-0 border-l-0 shrink-0 w-93.25 h-0 z-20 bottom-46.5 left-1/2 -translate-x-1/2"
+        className="absolute border-solid border-(--primary-gold-main) border-t border-r-0 border-b-0 border-l-0 shrink-0 w-100.5 h-0 z-20 bottom-50 left-1/2 -translate-x-1/2"
         style={{
           transform: 'rotate(90deg) scale(1, 1)',
         }}
       ></div>
-      <div className="absolute border-solid border-(--primary-gold-main) border-t border-r-0 border-b-0 border-l-0 shrink-0 w-93.25 h-0 z-20 top-1/2 left-48.75 -translate-x-1/2"></div>
-      <div className="absolute border-solid border-(--primary-gold-main) border-t border-r-0 border-b-0 border-l-0 shrink-0 w-93.25 h-0 z-20 top-1/2 -right-44.5 -translate-x-1/2"></div>
+      <div className="absolute border-solid border-(--primary-gold-main) border-t border-r-0 border-b-0 border-l-0 shrink-0 w-118.25 h-0 z-20 top-1/2 left-61 -translate-x-1/2"></div>
+      <div className="absolute border-solid border-(--primary-gold-main) border-t border-r-0 border-b-0 border-l-0 shrink-0 w-118.25 h-0 z-20 top-1/2 -right-57 -translate-x-1/2"></div>
     </section>
   );
 }

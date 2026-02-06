@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function Founder() {
   return (
-    <section className="w-screen bg-(--secundary-beige)">
+    <section className="w-screen bg-(--secondary-beige)">
       <div className="mx-auto px-5 md:px-10 lg:px-37.25 2xl:px-80 py-32 relative">
         <div className="grid grid-cols-1 gap-y-20 lg:grid-cols-2 lg:gap-x-24">
           {/* INTRO LEFT */}

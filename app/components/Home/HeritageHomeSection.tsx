@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function HeritageHomeSection() {
   return (
-    <section className="relative w-full bg-(--secundary-beige) pt-37.25 md:pt-30 xl:pt-71 -mb-12 xs:-mb-35.25 overflow-hidden">
+    <section className="relative w-full bg-(--secondary-beige) pt-37.25 md:pt-30 xl:pt-71 -mb-12 xs:-mb-35.25 overflow-hidden">
       <div className="relative mb-32 px-6 2xl:px-24">
         <h1 className="mt-30 md:mt-0 mx-auto text-center leading-[1.05] tracking-[-0.015em]">
           ROOTED IN

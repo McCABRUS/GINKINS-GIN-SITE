@@ -43,7 +43,6 @@ export default function FindUs() {
                 width={608}
                 height={693}
                 className="w-full object-cover"
-                priority
               />
             </div>
           </div>

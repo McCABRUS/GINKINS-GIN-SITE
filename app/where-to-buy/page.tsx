@@ -1,5 +1,6 @@
-import FindGinkins from '../components/WhereToBuy/FIndGinkins/FindGinkins';
-import FindUs from '../components/WhereToBuy/FIndUs';
+import Contact from '../components/WhereToBuy/Contact/Contact';
+import FindGinkins from '../components/WhereToBuy/FindGinkins/FindGinkins';
+import FindUs from '../components/WhereToBuy/FindUs';
 import ShopHero from '../components/WhereToBuy/ShopHero';
 
 export default function WhereToBuy() {
@@ -9,6 +10,7 @@ export default function WhereToBuy() {
         <ShopHero />
         <FindUs />
         <FindGinkins />
+        <Contact />
       </main>
     </div>
   );

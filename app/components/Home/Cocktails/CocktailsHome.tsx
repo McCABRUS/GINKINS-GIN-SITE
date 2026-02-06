@@ -4,7 +4,7 @@ import CocktailsCarouselMobile from './CocktailsCarouselMobile';
 
 export default function CocktailsHome() {
   return (
-    <section className="w-screen bg-(--secundary-beige) pt-28 pb-12">
+    <section className="w-screen bg-(--secondary-beige) pt-28 pb-12">
       <div
         className="absolute border-solid border-(--primary-black) border-t border-r-0 border-b-0 border-l-0 shrink-0 w-17.75 -mt-19.25 h-0 z-20 left-1/2 -translate-x-1/2"
         style={{

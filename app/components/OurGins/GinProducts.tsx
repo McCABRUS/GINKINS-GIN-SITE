@@ -4,7 +4,7 @@ import { ProductBottle } from './ProductBottle';
 
 export default function GinProductsSection() {
   return (
-    <section className="w-screen bg-(--secundary-beige) lg:mt-0 -mt-9.75">
+    <section className="w-screen bg-(--secondary-beige) lg:mt-0 -mt-9.75">
       <div className="mx-auto px-0 lg:px-37 pt-28.5 xl:pb-21.5 space-y-32">
         <ProductRow
           title="Louisville Dry Gin"
@@ -50,7 +50,7 @@ export default function GinProductsSection() {
           serving="Serving Tip: Best enjoyed over a large ice cube or in a Negroni variation."
           bottle={
             <ProductBottle
-              bgColor="bg-(--secundary-gray-500)"
+              bgColor="bg-(--secondary-gray-500)"
               iconColor="#E5D88A"
               bottleSrc="/our_gins/ginkins-heritage-reserve-gin-bottle.png"
               bottleAlt="Ginkins Heritage Reserve Gin bottle - Bold and traditional craft gin"

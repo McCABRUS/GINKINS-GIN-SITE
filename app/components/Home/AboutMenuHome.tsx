@@ -24,11 +24,11 @@ export default function AboutHomeMenu() {
               ].map((item, i) => (
                 <li key={i}>
                   <div className="flex items-center gap-6">
-                    <h6 className="text-[35px]! text-(--secundary-gray-300)!">
+                    <h6 className="text-[35px]! text-(--secondary-gray-300)!">
                       {String(i + 1).padStart(2, '0')}
                     </h6>
 
-                    <h4 className="text-left text-(--secundary-gray-300)! hover:text-(--primary-red-main)! transition">
+                    <h4 className="text-left text-(--secondary-gray-300)! hover:text-(--primary-red-main)! transition">
                       {item}
                     </h4>
                   </div>

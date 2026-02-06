@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function Hero() {
   return (
-    <section className="relative w-screen overflow-hidden bg-(--secundary-beige) px-5 sm:px-28.25 pt-27.75">
+    <section className="relative w-screen overflow-hidden bg-(--secondary-beige) px-5 sm:px-28.25 pt-27.75">
       <div className="absolute inset-0 pointer-events-none xl:mt-87.5">
         <Image
           src="/about/ginkins-gin-heritage-farm-illustration.png"

@@ -1,0 +1,99 @@
+import Image from 'next/image';
+import IconBlock from './IconBlock';
+import { ContactForm } from './ContactForm';
+
+export default function Contact() {
+  return (
+    <section className="w-screen bg-(--secondary-beige) pt-45.25 pb-27 px-37.5">
+      <div className="mx-auto px-6 pt-32 text-center">
+        <h3>Contact & Partnerships</h3>
+        <h1 className="mt-10 mb-26.5 text-(--primary-black)!">
+          Let’s Make Something
+          <br />
+          Great Together
+        </h1>
+        <h5>Get in touch</h5>
+
+        <h4 className="mt-4 mb-6 text-(--primary-black)! ">
+          Whether You’re Pouring or Partnering,
+          <br />
+          We’re Listening.
+        </h4>
+
+        <p className="text-base leading-6 text-(--primary-black) font-normal">
+          We believe the best things happen when passionate people connect.
+          Whether you&apos;re looking to stock Ginkins in your bar, collaborate
+          on a killer event, or just want to say hello—we’re all ears (and good
+          vibes).
+        </p>
+        <div className="mt-20 grid grid-cols-1 gap-16 lg:grid-cols-3">
+          {/* LEFT COLUMN */}
+          <div className="flex flex-col justify-center space-y-16">
+            <IconBlock
+              label="General Inquiries"
+              svgImg="/where_to_buy/ginkins-gin-icon-cocktail-shaker.svg"
+              svgAlt=""
+              svgWidth={96}
+              svgHeight={120}
+            />
+            <IconBlock
+              label="Events & Collaborations"
+              svgImg="/where_to_buy/ginkins-gin-icon-botanical-pattern.svg"
+              svgAlt=""
+              svgWidth={128}
+              svgHeight={120}
+            />
+          </div>
+
+          {/* CENTER IMAGE */}
+          <div className="flex justify-center">
+            <Image
+              src="/where_to_buy/ginkins-gin-golden-bloom-outdoor.png"
+              alt="Ginkins Golden Bloom Gin bottle placed on a stone pedestal in a sunny Mediterranean garden"
+              width={405}
+              height={628}
+              className="object-cover"
+            />
+          </div>
+
+          {/* RIGHT COLUMN */}
+          <div className="flex flex-col justify-center space-y-16">
+            <IconBlock
+              label="Wholesale & Distribution"
+              svgImg="/where_to_buy/ginkins-gin-icon-bottle-slim.svg"
+              svgAlt=""
+              svgWidth={96}
+              svgHeight={120}
+            />
+            <IconBlock
+              label="Retailers"
+              svgImg="/where_to_buy/ginkins-gin-icon-round-glass.svg"
+              svgAlt=""
+              svgWidth={108}
+              svgHeight={120}
+            />
+          </div>
+        </div>
+
+        <div className="mt-16">
+          <a
+            href="mailto:info@ginkins.com"
+            className="relative w-40 lg:w-44.25 h-9.75 mt-9.5 flex mx-auto items-center justify-center bg-(--primary-red-main) px-5 lg:px-8 py-1.5 lg:py-3 text-sm font-medium uppercase tracking-wide text-background transition hover:bg-(--primary-gold-main)"
+          >
+            <h5 className="text-background!">INFO@GINKINS.COM</h5>
+          </a>
+        </div>
+        <div>
+          <h5 className="">Connect</h5>
+
+          <h4 className="mt-4 mb-6 text-(--primary-black)!">Let’s Partner</h4>
+
+          <p className="mt-2 text-base leading-6 font-normal text-(--primary-black)">
+            Whether You&apos;re Pouring or Partnering—We’re Listening.
+          </p>
+          <ContactForm />
+        </div>
+      </div>
+    </section>
+  );
+}

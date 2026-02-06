@@ -3,7 +3,7 @@ import HeritageInnovation from '../Home/HeritageInnovation';
 
 export default function Heritage() {
   return (
-    <section className="w-screen bg-(--secundary-beige) relative">
+    <section className="w-screen bg-(--secondary-beige) relative">
       <HeritageInnovation />
       <div className="w-full bg-(--primary-red-main) -mt-15 lg:-mt-px">
         <div className="bg-(--primary-red-main) lg:max-h-50 lg:mx-auto w-screen relative lg:grid-cols-2 lg:md:max-w-350 lg:px-6 grid">

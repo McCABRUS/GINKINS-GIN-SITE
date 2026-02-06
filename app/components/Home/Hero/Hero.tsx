@@ -10,7 +10,7 @@ export default function Hero() {
     <section className="relative w-full overflow-hidden">
       <div className="absolute inset-0 border-t-transparent">
         <div className="h-[37%] lg:h-[30%] xl:h-[65%] bg-(--primary-black)" />
-        <div className="h-[43%] lg:h-[34%] xl:h-[70%] bg-(--secundary-beige)" />
+        <div className="h-[43%] lg:h-[34%] xl:h-[70%] bg-(--secondary-beige)" />
       </div>
       <div className="relative mx-auto max-w-400 h-250 z-30 justify-center flex">
         <div className="absolute top-10 xl:top-36.25 justify-self-center">

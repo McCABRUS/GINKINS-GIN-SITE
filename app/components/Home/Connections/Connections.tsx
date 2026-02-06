@@ -11,7 +11,7 @@ export default function Connections() {
     ...connectionsRightData,
   ];
   return (
-    <section className="w-screen 2xs:h-395.75 xs:h-379.25 md:h-339.75 lg:h-246 bg-(--secundary-beige) overflow-hidden">
+    <section className="w-screen 2xs:h-395.75 xs:h-379.25 md:h-339.75 lg:h-246 bg-(--secondary-beige) overflow-hidden">
       <div className="mx-auto max-w-350 px-10 xl:px-6">
         <div className="flex lg:flex-row flex-col gap-3.75 xl:gap-39.5">
           <div className="max-w-178.25 lg:w-178.25 xl:max-w-129.5 pt-8.25 lg:pt-43.25">

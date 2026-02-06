@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function GinsHero() {
   return (
-    <section className="relative w-screen overflow-hidden bg-(--secundary-beige) pt-46">
+    <section className="relative w-screen overflow-hidden bg-(--secondary-beige) pt-46">
       <div className="absolute inset-0 pointer-events-none z-0 2xl:mt-50">
         <Image
           src="/about/ginkins-gin-heritage-farm-illustration.png"

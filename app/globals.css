@@ -16,13 +16,13 @@
   --primary-gold-300: #d4bb40;
   --primary-gold-400: #9d8824;
 
-  --secundary-gray-100: #ced0d1;
-  --secundary-gray-300: #6d7275;
-  --secundary-gray-500: #3d3f41;
+  --secondary-gray-100: #ced0d1;
+  --secondary-gray-300: #6d7275;
+  --secondary-gray-500: #3d3f41;
 
-  --secundary-beige: #fff8e8;
+  --secondary-beige: #fff8e8;
 
-  --secundary-humo: #f6f8f7;
+  --secondary-humo: #f6f8f7;
 }
 
 @theme inline {
