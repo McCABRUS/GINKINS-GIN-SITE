@@ -27,33 +27,38 @@ export default function GinsHero() {
             alt="Red Gin"
             width={160}
             height={350}
-            className="lg:w-40"
+            className="md:w-40 w-16"
           />
           <Image
             src="/our_gins/ginkins-gin-icon-bottle-gold.svg"
             alt="Gold Gin"
             width={160}
             height={350}
-            className="lg:w-40"
+            className="md:w-40 w-16"
           />
           <Image
             src="/our_gins/ginkins-gin-icon-bottle-black.svg"
             alt="Black Gin"
             width={160}
             height={350}
-            className="lg:w-40"
+            className="md:w-40 w-16"
           />
         </div>
       </div>
-      <div className="bg-(--primary-black) -mt-19 relative z-10 pl-37.25 pr-38">
-        <div className="mx-auto px-6 py-45">
-          <div className="grid grid-cols-1 gap-20 lg:grid-cols-2">
-            <h4 className="text-background! whitespace-nowrap">
-              Three Expressions. One
-              <br />
-              Spirit of Connection.
+      <div className="bg-(--primary-black) -mt-19 relative z-10 xl:pl-37.25 xl:pr-38 px-10">
+        <div className="mx-auto md:py-45 pb-18.5 pt-22.75">
+          <div className="grid grid-cols-1 gap-20 xl:grid-cols-2">
+            <h4 className="text-background! whitespace-nowrap text-center xl:text-left">
+              Three Expressions. <br className="block xl:hidden" />
+              One <br className="hidden xl:block" />
+              Spirit of <br className="block 2xs:hidden" />
+              Connection.
             </h4>
-            <div className="text-base leading-6 text-background">
+            <hr
+              className="w-full text-background block xl:hidden"
+              aria-hidden
+            />
+            <div className="text-center xl:text-left text-base leading-6 text-background">
               <p>
                 Every bottle of Ginkins is a celebration—of tradition
                 reimagined, of botanicals brought to life, and of the shared joy
@@ -69,7 +74,7 @@ export default function GinsHero() {
         </div>
       </div>
       <div
-        className="absolute border-solid border-background border-t border-r-0 border-b-0 border-l-0 shrink-0 w-78 h-0 z-20 bottom-39 left-1/2 -translate-x-1/2"
+        className="hidden xl:block absolute border-solid border-background border-t border-r-0 border-b-0 border-l-0 shrink-0 w-78 h-0 z-20 bottom-39 left-1/2 -translate-x-1/2"
         style={{
           transform: 'rotate(90deg) scale(1, 1)',
         }}
