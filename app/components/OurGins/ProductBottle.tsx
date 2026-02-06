@@ -15,14 +15,14 @@ export function ProductBottle({
   bottleAlt,
 }: ProductBottleProps) {
   return (
-    <div className="relative w-full max-w-137.5 overflow-visible">
-      <div className={`aspect-549/507 w-[80%] ${bgColor}`} />
-      <div className="pointer-events-none absolute top-[12%] productsBackgroundAdapter bottom-[-32.5%] bg-(--primary-black) rounded-t-full" />
-      <div className="absolute top-[25%] left-[41%] -translate-x-1/2 z-10 w-[13.25%]">
+    <div className="relative w-full lg:max-w-137.5 overflow-visible">
+      <div className={`aspect-549/507 w-full xl:w-[80%] ${bgColor}`} />
+      <div className="pointer-events-none absolute top-[12%] productsBackgroundAdapter max-xl:inset-x-[17%]  bottom-[-32.5%] bg-(--primary-black) rounded-t-full" />
+      <div className="absolute top-[25%] xl:left-[41%] left-1/2 -translate-x-1/2 z-10 w-[20%]">
         <IconPetal color={iconColor} />
       </div>
 
-      <div className="absolute bottom-[-50%] left-[42%] -translate-x-1/2 z-20 w-[53%]">
+      <div className="absolute bottom-[-50%] xl:left-[42%] left-[51%] -translate-x-1/2 z-20 xl:w-[53%] w-[65%]">
         <Image
           src={bottleSrc}
           alt={bottleAlt}

@@ -216,7 +216,9 @@ h6 {
   }
 
   .productsBackgroundAdapter {
-    inset-inline-start: 15%;
-    inset-inline-end: 33%;
+    @media (width > 64rem) {
+      inset-inline-start: 15%;
+      inset-inline-end: 33%;
+    }
   }
 }

@@ -4,8 +4,8 @@ import { ProductBottle } from './ProductBottle';
 
 export default function GinProductsSection() {
   return (
-    <section className="w-screen bg-(--secundary-beige)">
-      <div className="mx-auto px-37 pt-28.5 pb-21.5 space-y-32">
+    <section className="w-screen bg-(--secundary-beige) lg:mt-0 -mt-9.75">
+      <div className="mx-auto px-0 lg:px-37 pt-28.5 xl:pb-21.5 space-y-32">
         <ProductRow
           title="Louisville Dry Gin"
           subtitle="Bright. Balanced. Boldly Louisville."
@@ -58,7 +58,7 @@ export default function GinProductsSection() {
           }
         />
         <Divider />
-        <div className="pt-24 lg:grid-cols-2 lg:gap-24 hidden lg:grid">
+        <div className="pt-24 lg:grid-cols-2 lg:gap-24 hidden xl:grid">
           <div>
             <h5>Crafted</h5>
             <h4 className="text-(--secondary-black)!">
@@ -126,14 +126,19 @@ function ProductRow({
 }) {
   return (
     <div className="grid grid-cols-1 items-center gap-29.25 lg:grid-cols-2 mb-21">
-      <div className="order-1 justify-end flex lg:order-2 -top-18.75 relative">
+      <div className="order-1 justify-center lg:justify-end flex lg:order-2 -top-18.75 relative">
         {bottle}
       </div>
-      <div className="order-2 space-y-6 lg:order-1">
-        <h4 className="text-(--primary-red-main)!">{title}</h4>
-        <hr className="w-20 text-(--primary-red-main) my-8.5" aria-hidden />
-        <h2>{subtitle}</h2>
-        <p className="text-base leading-6 text-(--secondary-black) mb-9.5">
+      <div className="order-2 space-y-6 lg:order-1 mt-5 md:mt-45 lg:mt-0 px-5 lg:px-0">
+        <h4 className="text-(--primary-red-main)! text-[35px]! xl:text-[56px]! font-medium! xl:font-normal! text-center lg:text-left leading-10.5! xl:leading-16.75!">
+          {title}
+        </h4>
+        <hr
+          className="w-25 text-(--primary-red-main) my-8.5 mx-auto lg:mx-0"
+          aria-hidden
+        />
+        <h2 className="text-center lg:text-left">{subtitle}</h2>
+        <p className="text-base leading-6 text-(--secondary-black) mb-9.5 text-center lg:text-left">
           {description}
         </p>
         <ul className="space-y-4 list-disc text-base leading-6 text-(--secondary-black) marker:text-(--primary-red-main) pl-5">
@@ -172,7 +177,7 @@ function Divider() {
         width={40}
         aria-hidden
         height={50}
-        className="mx-29.75"
+        className="2xs:mx-29.75 mx-20"
       />
       <span className="h-px w-full bg-(--primary-red-main)" aria-hidden />
     </div>
