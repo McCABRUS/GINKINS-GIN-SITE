@@ -57,6 +57,7 @@ export default function GinProductsSection() {
             />
           }
         />
+        <Divider />
         <div className="pt-24 lg:grid-cols-2 lg:gap-24 hidden lg:grid">
           <div>
             <h5>Crafted</h5>
