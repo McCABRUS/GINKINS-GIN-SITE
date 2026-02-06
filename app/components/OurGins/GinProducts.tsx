@@ -1,0 +1,179 @@
+import Image from 'next/image';
+
+import { ProductBottle } from './ProductBottle';
+
+export default function GinProductsSection() {
+  return (
+    <section className="w-screen bg-(--secundary-beige)">
+      <div className="mx-auto px-37 pt-28.5 pb-21.5 space-y-32">
+        <ProductRow
+          title="Louisville Dry Gin"
+          subtitle="Bright. Balanced. Boldly Louisville."
+          description="Our signature gin. Inspired by the Southern hospitality of Louisville, Kentucky, this award-winning expression invites you to reimagine what a classic gin can be. With a bright base of juniper, grapefruit, and lemon peel, Louisville Dry Gin is infused with local botanicals and distilled using pure Kentucky water. It’s timeless, yet totally unexpected. At its very best, it transforms life’s simplest moments into something a little brighter, a little bolder, and a lot more memorable."
+          tasting="Delicate dry with bold hints of citrus."
+          serving="Try it in a G&T with a grapefruit twist or sip it neat to let the citrus shine."
+          awards1="Gold Medal – Gin of the Year™ 2024, Gold Medal – 2024 Gin Masters (Microdistillery Round)"
+          awards2="2025 IWSC Winner - 92 points - Silver Medal"
+          bottle={
+            <ProductBottle
+              bgColor="bg-(--primary-red-main)"
+              iconColor="#ac1f2c"
+              bottleSrc="/our_gins/ginkins-louisville-dry-gin-bottle.png"
+              bottleAlt="Ginkins Louisville Dry Gin bottle - Bright citrus and classic juniper gin"
+            />
+          }
+        />
+
+        <Divider />
+        <ProductRow
+          title="Golden Bloom Gin"
+          subtitle="Floral Finesse Meets Refreshing Ease."
+          description="Infused with elderflower, juniper, and a delicate botanical bouquet, Golden Bloom is an invitation to slow down and savor the softer side of gin. Crafted with precision and care, this crisp, floral expression captures the essence of nature in every sip. Light, fragrant, and endlessly mixable, it balances the natural sweetness of elderflower with bright citrus, subtle herbs, and the grounding clarity of juniper for a refined, aromatic experience."
+          tasting="Elderflower’s elegance, orange zest, and juniper"
+          serving="Ideal in a spritz with tonic, ice, and a slice of cucumber or lemon."
+          bottle={
+            <ProductBottle
+              bgColor="bg-(--primary-gold-main)"
+              iconColor="#E5D88A"
+              bottleSrc="/our_gins/ginkins-golden-bloom-gin-bottle.png"
+              bottleAlt="Ginkins Golden Bloom Gin bottle - Floral and honeyed premium gin"
+            />
+          }
+        />
+
+        <Divider />
+        <ProductRow
+          title="Heritage Reserve"
+          subtitle="Spice-Driven. Deeply Layered. Unexpectedly Smooth."
+          description="For those who seek warmth and complexity, Heritage Reserve delivers. Bold cinnamon, smooth nutmeg, and crisp juniper meet in a slow-sipped blend that honors old-world flavor with a modern edge. It opens with a deep, spiced warmth on the nose, followed by a rich taste of cinnamon, nutmeg, and crisp juniper. The finish is long, layered, and unforgettable—crafted for those who appreciate depth in every detail."
+          tasting="Spiced and sophisticated, with warming notes of cinnamon and nutmeg, brightened by crisp juniper and finished with smooth depth."
+          serving="Serving Tip: Best enjoyed over a large ice cube or in a Negroni variation."
+          bottle={
+            <ProductBottle
+              bgColor="bg-(--secundary-gray-500)"
+              iconColor="#E5D88A"
+              bottleSrc="/our_gins/ginkins-heritage-reserve-gin-bottle.png"
+              bottleAlt="Ginkins Heritage Reserve Gin bottle - Bold and traditional craft gin"
+            />
+          }
+        />
+        <div className="pt-24 lg:grid-cols-2 lg:gap-24 hidden lg:grid">
+          <div>
+            <h5>Crafted</h5>
+            <h4 className="text-(--secondary-black)!">
+              Limited Editions <br /> &amp; Future Releases
+            </h4>
+          </div>
+          <div className="space-y-4 text-sm leading-relaxed text-neutral-700 grid grid-cols-2 gap-5">
+            <div>
+              <p className="text-lg leading-6.75 font-medium mb-4">
+                Crafted in curiosity.
+                <br />
+                Made for discovery.
+              </p>
+              <p className="text-base leading-6">
+                We’re always experimenting always evolving. From seasonal
+                infusions to rare barrel-aged releases, our limited-edition gins
+                are crafted for the curious and the collectors alike.
+              </p>
+            </div>
+            <div>
+              <p className="text-lg leading-6.75 font-medium mb-4">
+                Crafted with
+                <br />
+                Precision
+              </p>
+              <p className="text-base leading-6">
+                The expertise of Scott Ginkins, a master distiller trained in
+                Edinburgh, combined with Kentucky’s pristine limestone-rich
+                water and a carefully curated selection of botanicals, results
+                in a gin that’s both bold and beautifully balanced.
+              </p>
+            </div>
+            <button className="inline-flex items-center justify-center bg-(--primary-red-main) px-5 py-1.5 text-lg font-medium uppercase tracking-wide  transition hover:bg-(--primary-gold-main) w-[200%]">
+              <h5 className="text-background! whitespace-nowrap text-lg! lg:text-base!">
+                SIGN UP FOR OUR NEWSLETTER TO BE THE FIRST KNOW WHAT’S NEXT
+              </h5>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ================= SUBCOMPONENTS ================= */
+
+function ProductRow({
+  title,
+  subtitle,
+  description,
+  tasting,
+  serving,
+  awards1,
+  awards2,
+  bottle,
+}: {
+  title: string;
+  subtitle: string;
+  description: string;
+  tasting: string;
+  serving: string;
+  awards1?: string;
+  awards2?: string;
+  bottle: React.ReactNode;
+}) {
+  return (
+    <div className="grid grid-cols-1 items-center gap-29.25 lg:grid-cols-2 mb-21">
+      <div className="order-1 flex justify-center lg:order-2 -top-18.75 relative">
+        {bottle}
+      </div>
+      <div className="order-2 space-y-6 lg:order-1">
+        <h4 className="text-(--primary-red-main)!">{title}</h4>
+        <hr className="w-20 text-(--primary-red-main) my-8.5" aria-hidden />
+        <h2>{subtitle}</h2>
+        <p className="text-base leading-6 text-(--secondary-black) mb-9.5">
+          {description}
+        </p>
+        <ul className="space-y-4 list-disc text-base leading-6 text-(--secondary-black) marker:text-(--primary-red-main) pl-5">
+          <li>
+            <strong>Tasting Notes:</strong> {tasting}
+          </li>
+          <li>
+            <strong>Serving Tip:</strong> {serving}
+          </li>
+          {awards1 && (
+            <li>
+              <strong>Awards:</strong> {awards1}
+            </li>
+          )}
+          {awards2 && (
+            <li>
+              <strong>Awards:</strong> {awards2}
+            </li>
+          )}
+        </ul>
+        <button className="w-40 lg:w-44.25 h-9.75 mt-9.5 flex items-center justify-center bg-(--primary-red-main) px-5 lg:px-8 py-1.5 lg:py-3 text-sm font-medium uppercase tracking-wide text-background transition hover:bg-(--primary-gold-main) mx-auto lg:mx-0">
+          <h5 className="text-background!">Shop ONLINE</h5>
+        </button>
+      </div>
+    </div>
+  );
+}
+
+function Divider() {
+  return (
+    <div className="flex items-center justify-center gap-6">
+      <span className="h-px w-full bg-(--primary-red-main)" aria-hidden />
+      <Image
+        src="/our_gins/ginkins-gin-icon-sparkle-shield.svg"
+        alt="Divider"
+        width={40}
+        aria-hidden
+        height={50}
+        className="mx-29.75"
+      />
+      <span className="h-px w-full bg-(--primary-red-main)" aria-hidden />
+    </div>
+  );
+}

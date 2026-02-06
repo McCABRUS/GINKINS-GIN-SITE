@@ -214,4 +214,9 @@ h6 {
   .animate-merch {
     animation: merchScroll 20s linear infinite;
   }
+
+  .productsBackgroundAdapter {
+    inset-inline-start: 15%;
+    inset-inline-end: 33%;
+  }
 }

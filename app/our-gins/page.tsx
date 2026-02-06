@@ -1,3 +1,6 @@
+import FooterMerch from '../components/FooterMerchCarousel/FooterMerch';
+import BottleConnection from '../components/Home/BottleConnection';
+import GinProducts from '../components/OurGins/GinProducts';
 import GinsHero from '../components/OurGins/GinsHero';
 
 export default function About() {
@@ -5,6 +8,9 @@ export default function About() {
     <div className="flex min-h-screen items-center justify-center overflow-x-hidden">
       <main className="flex min-h-screen w-full flex-col items-center justify-between">
         <GinsHero />
+        <GinProducts />
+        <BottleConnection />
+        <FooterMerch />
       </main>
     </div>
   );
