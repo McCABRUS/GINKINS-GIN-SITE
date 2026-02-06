@@ -126,7 +126,7 @@ function ProductRow({
 }) {
   return (
     <div className="grid grid-cols-1 items-center gap-29.25 lg:grid-cols-2 mb-21">
-      <div className="order-1 flex justify-center lg:order-2 -top-18.75 relative">
+      <div className="order-1 justify-end flex lg:order-2 -top-18.75 relative">
         {bottle}
       </div>
       <div className="order-2 space-y-6 lg:order-1">
