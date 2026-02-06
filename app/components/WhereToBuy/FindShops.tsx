@@ -1,8 +1,8 @@
 import Image from 'next/image';
 
-export default function FindUs() {
+export default function FindShops() {
   return (
-    <section className="bg-(--secundary-beige) py-24">
+    <section className="bg-(--secondary-beige) py-24">
       <div className="mx-auto px-[12.5%]">
         <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
           <div className="space-y-6">

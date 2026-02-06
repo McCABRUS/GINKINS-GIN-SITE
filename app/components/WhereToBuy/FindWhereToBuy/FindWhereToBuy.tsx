@@ -1,7 +1,7 @@
 import GridCard from './GridCard';
 import CentralGridCard from './CentralGridCard';
 
-export default function FindGinkins() {
+export default function FindWhereToBuy() {
   return (
     <section className="bg-(--primary-black) text-background py-16 w-screen pt-25 relative">
       <div className="mx-auto px-6">
