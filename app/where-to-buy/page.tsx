@@ -1,3 +1,5 @@
+import FooterMerch from '../components/FooterMerchCarousel/FooterMerch';
+import BottleConnectionBuy from '../components/WhereToBuy/BottleConnectionBuy';
 import Contact from '../components/WhereToBuy/Contact/Contact';
 import FindGinkins from '../components/WhereToBuy/FindGinkins/FindGinkins';
 import FindUs from '../components/WhereToBuy/FindUs';
@@ -11,6 +13,8 @@ export default function WhereToBuy() {
         <FindUs />
         <FindGinkins />
         <Contact />
+        <BottleConnectionBuy />
+        <FooterMerch />
       </main>
     </div>
   );
