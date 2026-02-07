@@ -2,24 +2,22 @@ import CocktailCard from './CocktailCard';
 
 export default function ClassicGinkinsCocktails() {
   return (
-    <section className="w-full bg-(--primary-black) py-24">
-      <div className="mx-auto pl-28.75 pr-31 pt-27 pb-19">
-        <div className="mb-16 text-center lg:hidden">
-          <p className="mb-4 text-xs uppercase tracking-widest text-gold">
-            Enjoy
-          </p>
-          <h2 className="font-serif text-4xl leading-tight">
+    <section className="w-full bg-(--primary-black)">
+      <div className="mx-auto pb-5 px-5 lg:pl-28.75 lg:pr-31 lg:pt-27 lg:pb-19">
+        <div className="text-center lg:hidden py-15">
+          <h3 className="mb-9.25 text-(--primary-gold-main)!">Enjoy</h3>
+          <h1 className="text-[#7E8589]! my-16 ">
             Classic Ginkins
             <br />
             Cocktails
-          </h2>
-          <p className="mt-6 text-sm text-gold">
+          </h1>
+          <p className="text-lg text-(--primary-gold-main)! uppercase">
             Recipes that showcase our gin’s character.
           </p>
         </div>
         <div
           className="
-            grid gap-8
+            grid gap-4 lg:gap-8
             grid-cols-2
             lg:grid-cols-4
           "
