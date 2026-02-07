@@ -45,7 +45,7 @@ export default function HeaderServer() {
             </Link>
           </div>
           <div className="hidden md:flex items-center gap-0 lg:gap-4">
-            <Link href="/our-gins" className="px-1 py-1 hover:underline">
+            <Link href="/cocktails" className="px-1 py-1 hover:underline">
               <h5 className="text-(--primary-gold-main)! inline">
                 COCKTAILS & PAIRINGS
               </h5>

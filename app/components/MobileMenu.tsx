@@ -68,7 +68,7 @@ export default function MobileMenu() {
             />
             <MenuItem
               label="Cocktails & Pairings"
-              link="#"
+              link="/cocktails"
               setOpen={setOpen}
               setMoreOpen={setMoreOpen}
             />
