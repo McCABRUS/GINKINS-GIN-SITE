@@ -1,4 +1,4 @@
-import ClassicGinkinsCocktails from '../components/Cocktails/ClasiccCocktails/ClassicGinkinsCocktails';
+import ClassicGinkinsCocktails from '../components/Cocktails/ClassicCocktails/ClassicGinkinsCocktails';
 import CocktailsHero from '../components/Cocktails/CocktailsHero';
 import CocktailsMenu from '../components/Cocktails/CocktailsMenu';
 import FoodPairings from '../components/Cocktails/Pairings/FoodPairings';
