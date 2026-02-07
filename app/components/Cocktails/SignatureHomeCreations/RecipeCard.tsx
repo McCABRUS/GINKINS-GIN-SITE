@@ -63,7 +63,7 @@ export default function RecipeCard({
           group-active-within:translate-y-0
         "
       >
-        <div className="px-7.5 py-8 text-sm text-background space-y-6 max-h-full overflow-y-auto">
+        <div className="px-7.5 py-23.25 text-sm text-background space-y-6 max-h-full overflow-y-auto">
           <p className="leading-relaxed">
             <strong>{description}</strong>
           </p>

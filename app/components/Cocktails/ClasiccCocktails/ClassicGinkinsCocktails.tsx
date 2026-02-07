@@ -1,0 +1,95 @@
+import CocktailCard from './CocktailCard';
+
+export default function ClassicGinkinsCocktails() {
+  return (
+    <section className="w-full bg-(--primary-black) py-24">
+      <div className="mx-auto pl-28.75 pr-31 pt-27 pb-19">
+        <div className="mb-16 text-center lg:hidden">
+          <p className="mb-4 text-xs uppercase tracking-widest text-gold">
+            Enjoy
+          </p>
+          <h2 className="font-serif text-4xl leading-tight">
+            Classic Ginkins
+            <br />
+            Cocktails
+          </h2>
+          <p className="mt-6 text-sm text-gold">
+            Recipes that showcase our gin’s character.
+          </p>
+        </div>
+        <div
+          className="
+            grid gap-8
+            grid-cols-2
+            lg:grid-cols-4
+          "
+        >
+          <CocktailCard
+            title="Ginkins Martini"
+            image="/cocktails/classic-ginkins-cocktails/GinkinsMartini.png"
+            alt=""
+          />
+          <div className="hidden lg:flex lg:col-span-2 justify-center text-center">
+            <div>
+              <h3 className="text-(--primary-gold-main)!">Enjoy</h3>
+              <h4 className="text-[#7E8589]! uppercase my-8">
+                Classic Ginkins
+                <br />
+                Cocktails
+              </h4>
+              <h5 className="text-(--primary-gold-main)!">
+                Recipes that showcase our gin’s character.
+              </h5>
+            </div>
+          </div>
+
+          <CocktailCard
+            title="Tom Collins"
+            image="/cocktails/classic-ginkins-cocktails/ginkins-gin-tom-collins-cocktail.png"
+            alt="Tom Collins cocktail in a highball glass with Ginkins Gin, lemon, and a maraschino cherry”"
+          />
+          <CocktailCard
+            title="Clover Club"
+            image="/cocktails/classic-ginkins-cocktails/ginkins-gin-clover-club-cocktail.png"
+            alt="Pink Clover Club gin cocktail with egg white foam and fresh raspberries"
+          />
+          <CocktailCard
+            title="Southside"
+            image="/cocktails/classic-ginkins-cocktails/ginkins-gin-southside-cocktail.png"
+            alt="Refreshing Southside gin cocktail with fresh mint leaves and lime wedges"
+          />
+          <CocktailCard
+            title="Bee’s Knees"
+            image="/cocktails/classic-ginkins-cocktails/ginkins-gin-bees-knees-cocktail.png"
+            alt="Bees Knees cocktail with Ginkins Gin, honey, and lavender garnish on a dark background"
+          />
+          <CocktailCard
+            title="Corpse Reviver #2"
+            image="/cocktails/classic-ginkins-cocktails/corpse-reviver.png"
+            alt=""
+          />
+          <CocktailCard
+            title="Aviation"
+            image="/cocktails/classic-ginkins-cocktails/ginkins-gin-aviation-cocktail.png"
+            alt="Aviation cocktail made with Ginkins Gin, garnished with cherries on a branded coaster"
+          />
+          <CocktailCard
+            title="French 75"
+            image="/cocktails/classic-ginkins-cocktails/ginkins-gin-french-75-cocktail.png"
+            alt="Classic French 75 cocktail featuring Ginkins Gin and a lemon twist garnish"
+          />
+          <CocktailCard
+            title="Golden French 75"
+            image="/cocktails/classic-ginkins-cocktails/ginkins-gin-golden-french-cocktail.png"
+            alt="Ginkins Golden French cocktail served in a flute against a warm terracotta background"
+          />
+          <CocktailCard
+            title="Heritage Martini"
+            image="/cocktails/classic-ginkins-cocktails/ginkins-gin-heritage-martini-cocktail.png"
+            alt="Crystal clear Heritage Martini made with Ginkins Gin and a classic lemon peel"
+          />
+        </div>
+      </div>
+    </section>
+  );
+}
