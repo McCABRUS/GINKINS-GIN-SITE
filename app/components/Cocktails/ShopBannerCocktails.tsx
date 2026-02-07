@@ -7,7 +7,7 @@ export default function ShopBannerCocktails() {
           "url('/cocktails/ginkins-gin-lifestyle-hands-red-curtain.jpg')",
       }}
     >
-      <div className="absolute inset-0 bg-black/85 visible md:invisible" />
+      <div className="absolute inset-0 bg-black/70 visible md:invisible" />
       <div className="relative mx-auto w-full px-6 h-full">
         <div className="flex h-full items-center justify-center">
           <div className="max-w-127.25 text-center mr-0 py-20 2xs:py-0">

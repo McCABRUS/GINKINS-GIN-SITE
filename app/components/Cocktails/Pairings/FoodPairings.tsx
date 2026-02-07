@@ -3,14 +3,16 @@ import Image from 'next/image';
 
 export default function FoodPairings() {
   return (
-    <section className="w-full bg-(--secondary-beige) py-27 px-37 relative">
-      <div className="mx-auto px-6">
+    <section className="w-full bg-(--secondary-beige) py-15 lg:py-27 px-5 lg:px-15 xl:px-37 relative">
+      <div className="mx-auto">
         <div className="text-center">
-          <h3 className="uppercase text-(--primary-red-main)!">Discover</h3>
-          <h4 className="my-13.25 text-(--primary-black)!">
+          <h3 className="uppercase text-(--primary-red-main)! text-[18px]! leading-6.75!">
+            Discover
+          </h3>
+          <h1 className="my-13.25 text-(--primary-black)! lg:text-[56px]! leading-16.75! lg:font-normal!">
             Food Pairings by Ginkins
-          </h4>
-          <h5 className="text-(--primary-red-main)! mb-23.5">
+          </h1>
+          <h5 className="text-(--primary-red-main)! mb-23.5 text-[18px]! leading-6.75!">
             Perfect dishes to complement your gin.
           </h5>
         </div>
