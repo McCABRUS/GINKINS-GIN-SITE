@@ -75,7 +75,7 @@ export default function Contact() {
           </div>
         </div>
 
-        <div className="mt-16">
+        <div className="mt-16 mb-26.5">
           <a
             href="mailto:info@ginkins.com"
             className="relative w-40 lg:w-44.25 h-9.75 mt-9.5 flex mx-auto items-center justify-center bg-(--primary-red-main) px-5 lg:px-8 py-1.5 lg:py-3 text-sm font-medium uppercase tracking-wide text-background transition hover:bg-(--primary-gold-main)"
