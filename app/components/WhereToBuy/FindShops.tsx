@@ -3,9 +3,9 @@ import Image from 'next/image';
 export default function FindShops() {
   return (
     <section className="bg-(--secondary-beige) py-24">
-      <div className="mx-auto px-[12.5%]">
+      <div className="mx-auto lg:px-[12.5%]">
         <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
-          <div className="space-y-6">
+          <div className="space-y-6 px-5">
             <h5 className="mb-18.75">Find us</h5>
             <Image
               src="/connections/GinkinsMortarPestle.svg"
