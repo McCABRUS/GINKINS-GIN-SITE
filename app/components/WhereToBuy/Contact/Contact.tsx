@@ -4,18 +4,21 @@ import { ContactForm } from './ContactForm';
 
 export default function Contact() {
   return (
-    <section className="w-screen bg-(--secondary-beige) pt-45.25 pb-27 px-37.5">
-      <div className="mx-auto px-6 pt-32 text-center">
+    <section className="w-screen bg-(--secondary-beige) pt-45.25 pb-27 px-5 lg:px-37.5 relative">
+      <div className="mx-auto px-6 lg:pt-32 text-center">
         <h3>Contact & Partnerships</h3>
         <h1 className="mt-10 mb-26.5 text-(--primary-black)!">
-          Let’s Make Something
+          Let’s Make <br className="block lg:hidden" />
+          Something
           <br />
-          Great Together
+          Great <br className="block lg:hidden" />
+          Together
         </h1>
         <h5>Get in touch</h5>
 
         <h4 className="mt-4 mb-6 text-(--primary-black)! ">
-          Whether You’re Pouring or Partnering,
+          Whether You’re Pouring or <br className="block lg:hidden" />
+          Partnering,
           <br />
           We’re Listening.
         </h4>
@@ -94,6 +97,12 @@ export default function Contact() {
           <ContactForm />
         </div>
       </div>
+      <div
+        className="absolute border-solid border-(--primary-black) border-t border-r-0 border-b-0 border-l-0 shrink-0 w-18.25 h-0 z-20 top-9 left-1/2 -translate-x-1/2"
+        style={{
+          transform: 'rotate(90deg) scale(1, 1)',
+        }}
+      ></div>
     </section>
   );
 }

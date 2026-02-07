@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function FindShops() {
   return (
-    <section className="bg-(--secondary-beige) pt-15 lg:pt-24 lg:pb-24">
+    <section className="bg-(--secondary-beige) pt-15 lg:pt-24 lg:pb-24 relative">
       <div className="mx-auto lg:px-[12.5%]">
         <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
           <div className="space-y-6 px-5">
@@ -48,6 +48,12 @@ export default function FindShops() {
           </div>
         </div>
       </div>
+      <div
+        className="block lg:hidden absolute border-solid border-background border-t border-r-0 border-b-0 border-l-0 shrink-0 w-9.75 h-0 z-20 bottom-5 left-1/2 -translate-x-1/2"
+        style={{
+          transform: 'rotate(90deg) scale(1, 1)',
+        }}
+      ></div>
     </section>
   );
 }
