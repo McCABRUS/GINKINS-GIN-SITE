@@ -1,6 +1,7 @@
 import CocktailsHero from '../components/Cocktails/CocktailsHero';
 import CocktailsMenu from '../components/Cocktails/CocktailsMenu';
 import RecipesIntro from '../components/Cocktails/RecipesIntro';
+import SignatureCreations from '../components/Cocktails/SignatureHomeCreations/SignatureCreations';
 
 export default function Cocktails() {
   return (
@@ -9,6 +10,7 @@ export default function Cocktails() {
         <CocktailsHero />
         <RecipesIntro />
         <CocktailsMenu />
+        <SignatureCreations />
       </main>
     </div>
   );

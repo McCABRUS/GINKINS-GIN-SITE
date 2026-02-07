@@ -221,4 +221,43 @@ h6 {
       inset-inline-end: 33%;
     }
   }
+  @media (min-width: 1024px) {
+    .signature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+      grid-template-areas:
+        'card1 title card2'
+        'card3 card4 card5'
+        'card6 card7 card8';
+      gap: 3rem;
+    }
+
+    .area-title {
+      grid-area: title;
+    }
+    .area-card1 {
+      grid-area: card1;
+    }
+    .area-card2 {
+      grid-area: card2;
+    }
+    .area-card3 {
+      grid-area: card3;
+    }
+    .area-card4 {
+      grid-area: card4;
+    }
+    .area-card5 {
+      grid-area: card5;
+    }
+    .area-card6 {
+      grid-area: card6;
+    }
+    .area-card7 {
+      grid-area: card7;
+    }
+    .area-card8 {
+      grid-area: card8;
+    }
+  }
 }
