@@ -57,10 +57,16 @@ export default function RecipeCard({
           group-hover:translate-y-0
           group-focus-within:opacity-100
           group-focus-within:translate-y-0
+          group-active:opacity-100
+          group-active:translate-y-0
+          group-active-within:opacity-100
+          group-active-within:translate-y-0
         "
       >
-        <div className="px-6 py-8 text-sm text-white space-y-6 max-h-full overflow-y-auto">
-          <p className="leading-relaxed">{description}</p>
+        <div className="px-7.5 py-8 text-sm text-background space-y-6 max-h-full overflow-y-auto">
+          <p className="leading-relaxed">
+            <strong>{description}</strong>
+          </p>
           {ingredients.length > 0 && (
             <div>
               <p className="font-semibold mb-2">Ingredients</p>
