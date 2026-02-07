@@ -2,16 +2,16 @@ import RecipeCard from './RecipeCard';
 
 export default function SignatureHouseCreations() {
   return (
-    <section className="w-screen bg-(--secondary-beige) py-27 px-[116.5px]">
-      <div className="mx-auto px-6">
-        <div className="signature-grid grid grid-cols-1 gap-x-10.5 gap-y-8">
-          <div className="area-title text-center space-y-9">
+    <section className="w-screen bg-(--secondary-beige) py-0 lg:py-27 px-0 lg:px-[116.5px]">
+      <div className="mx-auto">
+        <div className="signature-grid grid grid-cols-1 gap-x-0 gap-y-0 lg:gap-x-10.5 lg:gap-y-8">
+          <div className="area-title text-center space-y-9 mt-15 lg:mt-0 mb-14.75 lg:mb-0">
             <h3 className="text-(--primary-red-main)!">Savor</h3>
-            <h4 className="text-(--secondary-black)!">
+            <h1 className="text-(--secondary-black)! xl:text-[56px]! xl:leading-16.75!">
               Signature <br />
               House <br />
               Creations
-            </h4>
+            </h1>
             <h5 className="text-(--primary-red-main)!">
               Try a recipe | Mix it up | Pair & pour
             </h5>
