@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-export default function AboutHomeMenu() {
+export default function CocktailsMenu() {
   return (
     <section className="w-screen bg-(--primary-black) py-28 xl:px-37.25">
       <div
@@ -13,14 +13,13 @@ export default function AboutHomeMenu() {
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_480px] gap-20 items-center">
           <div className="text-center lg:text-left">
             <h3 className="text-lg!  inline-block uppercase tracking-widest text-background! mb-10">
-              About Us
+              Try a Recipe | Mix It Up | Pair & Pour
             </h3>
             <ul className="space-y-14">
               {[
-                'Ginkins Story',
-                'Meet the Maker',
-                'Sustainability Practices',
-                'Accolades and Press',
+                'Signature House Creations',
+                'Classic Ginkins Cocktails',
+                'Food Pairings',
               ].map((item, i) => (
                 <li key={i}>
                   <div className="flex items-center gap-6">
@@ -40,22 +39,22 @@ export default function AboutHomeMenu() {
           </div>
 
           <div className="relative flex justify-center">
-            <div className="absolute left-3/5 lg:-right-12.5 top-6 z-10 fill-(--primary-red-main)">
+            <div className="absolute right-35 md:right-4 top-1/3 z-10 fill-(--primary-gold-main) w-24.5 h-30.5 md:w-40 md:h-49.75">
               <Image
-                src="/icon-stars-ginkins-gin.svg"
+                src="/cocktails/icon-stars-ginkins-gin.svg"
                 alt=""
                 width={159}
                 height={157}
-                className="fill-(--primary-red-main)"
+                className="fill-(--primary-gold-main)"
               />
             </div>
-            <div className="h-78.75 sm:h-127.5 w-53.75 sm:w-87 overflow-hidden">
+            <div className="h-72.75 md:h-118 w-53.75 md:w-87 overflow-hidden">
               <Image
-                src="/scott-ginkins-gin-master-distiller.webp"
-                alt="Master Distiller"
-                width={348}
-                height={510}
-                className="h-full w-full object-cover rounded-[200px_200px_0px_0px]"
+                src="/cocktails/ginkins-gin-lifestyle-tan-suit-cocktail.png"
+                alt="Man in a tailored tan suit with Ginkins Gin embroidery holding a Negroni cocktail with orange zest"
+                width={328}
+                height={472}
+                className="h-full w-full object-cover object-center rounded-[200px_200px_200px_200px]"
                 quality={100}
                 //unoptimized={true}
               />
