@@ -3,9 +3,9 @@ import CentralGridCard from './CentralGridCard';
 
 export default function FindWhereToBuy() {
   return (
-    <section className="bg-(--primary-black) text-background py-16 w-screen pt-25 relative">
-      <div className="mx-auto px-6">
-        <div className="grid grid-cols-1 gap-24 lg:grid-cols-2 lg:gap-0">
+    <section className="bg-(--primary-black) text-background pb-16 w-screen pt-25 relative">
+      <div className="mx-auto lg:px-6">
+        <div className="grid grid-cols-1 gap-31 lg:grid-cols-2 lg:gap-11 xl-gap-0">
           <GridCard
             order="lg:order-1"
             alt="Luxury red shopping bag with gold botanical pattern for Ginkins Gin"
@@ -13,6 +13,10 @@ export default function FindWhereToBuy() {
             description="From boutique bottle shops to trusted liquor stores, Ginkins is on shelves across Kentucky and beyond."
             image="/where_to_buy/ginkins-gin-premium-shopping-bag.png"
             bgColor="bg-(--primary-gold-main)"
+          />
+          <hr
+            className="block lg:hidden mx-auto  w-[80%] text-(--primary-gold-main)"
+            aria-hidden
           />
           <GridCard
             order="lg:order-2"
@@ -22,6 +26,10 @@ export default function FindWhereToBuy() {
             image="/where_to_buy/ginkins-gin-branded-coasters-set.png"
             bgColor="bg-(--primary-red-main)"
           />
+          <hr
+            className="block lg:hidden mx-auto  w-[80%] text-(--primary-gold-main)"
+            aria-hidden
+          />
           <GridCard
             order="lg:order-4"
             bgColor="bg-(--primary-gold-main)"
@@ -29,6 +37,10 @@ export default function FindWhereToBuy() {
             title="Order Online"
             description="Prefer delivery to your door? Check out our online retail partners for easy, secure ordering."
             image="/where_to_buy/ginkins-gin-single-bottle-gift-box.png"
+          />
+          <hr
+            className="block lg:hidden mx-auto  w-[80%] text-(--primary-gold-main)"
+            aria-hidden
           />
           <GridCard
             order="lg:order-5"
@@ -38,23 +50,27 @@ export default function FindWhereToBuy() {
             description="Interested in bringing Ginkins to your bar, store, or event? We’d love to connect."
             image="/where_to_buy/ginkins-gin-botanical-gift-box.png"
           />
+          <hr
+            className="block lg:hidden mx-auto  w-[80%] text-(--primary-gold-main)"
+            aria-hidden
+          />
           <CentralGridCard />
         </div>
       </div>
       <div
-        className="absolute border-solid border-(--primary-gold-main) border-t border-r-0 border-b-0 border-l-0 shrink-0 w-100.5 h-0 z-20 top-50 left-1/2 -translate-x-1/2"
+        className="absolute border-solid border-(--primary-gold-main) border-t border-r-0 border-b-0 border-l-0 shrink-0 w-9.75 lg:w-100.5 h-0 z-20 top-4.75 lg:top-50 left-1/2 -translate-x-1/2"
         style={{
           transform: 'rotate(90deg) scale(1, 1)',
         }}
       ></div>
       <div
-        className="absolute border-solid border-(--primary-gold-main) border-t border-r-0 border-b-0 border-l-0 shrink-0 w-100.5 h-0 z-20 bottom-50 left-1/2 -translate-x-1/2"
+        className="absolute border-solid border-(--primary-gold-main) border-t border-r-0 border-b-0 border-l-0 shrink-0 w-18 lg:w-100.5 h-0 z-20 bottom-9 lg:bottom-50 left-1/2 -translate-x-1/2"
         style={{
           transform: 'rotate(90deg) scale(1, 1)',
         }}
       ></div>
-      <div className="absolute border-solid border-(--primary-gold-main) border-t border-r-0 border-b-0 border-l-0 shrink-0 w-118.25 h-0 z-20 top-1/2 left-61 -translate-x-1/2"></div>
-      <div className="absolute border-solid border-(--primary-gold-main) border-t border-r-0 border-b-0 border-l-0 shrink-0 w-118.25 h-0 z-20 top-1/2 -right-57 -translate-x-1/2"></div>
+      <div className="hidden lg:block absolute border-solid border-(--primary-gold-main) border-t border-r-0 border-b-0 border-l-0 shrink-0 w-50 xl:w-118.25 h-0 z-20 top-1/2 left-25 xl:left-61 -translate-x-1/2"></div>
+      <div className="hidden lg:block absolute border-solid border-(--primary-gold-main) border-t border-r-0 border-b-0 border-l-0 shrink-0 w-50 xl:w-118.25 h-0 z-20 top-1/2 -right-25 xl:-right-57 -translate-x-1/2"></div>
     </section>
   );
 }

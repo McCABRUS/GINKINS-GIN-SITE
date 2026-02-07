@@ -3,8 +3,8 @@ import { StarIcon } from './StarIcon';
 
 export default function CentralGridCard() {
   return (
-    <div className="relative flex flex-col items-center justify-center -my-20 lg:col-span-2 lg:order-3 z-10">
-      <div className="relative h-131 w-89.25">
+    <div className="relative flex flex-col items-center justify-center my-10 lg:-my-20 lg:col-span-2 lg:order-3 z-10">
+      <div className="relative w-63 h-92.5 xl:h-131 xl:w-89.25">
         <Image
           src="/where_to_buy/ginkins-gin-ice-cube-logo-detail.png"
           alt="Top down view of a cocktail glass with a large clear ice cube embossed with the Ginkins Gin G logo"
@@ -15,6 +15,12 @@ export default function CentralGridCard() {
           <StarIcon className="w-full h-auto fill-background" />
         </div>
       </div>
+      <div
+        className="block lg:hidden absolute border-solid border-(--primary-gold-main) border-t border-r-0 border-b-0 border-l-0 shrink-0 w-18 h-0 z-20 -top-18  left-1/2 -translate-x-1/2"
+        style={{
+          transform: 'rotate(90deg) scale(1, 1)',
+        }}
+      ></div>
     </div>
   );
 }
