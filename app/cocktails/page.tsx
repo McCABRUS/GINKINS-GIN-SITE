@@ -1,6 +1,7 @@
 import ClassicGinkinsCocktails from '../components/Cocktails/ClasiccCocktails/ClassicGinkinsCocktails';
 import CocktailsHero from '../components/Cocktails/CocktailsHero';
 import CocktailsMenu from '../components/Cocktails/CocktailsMenu';
+import FoodPairings from '../components/Cocktails/Pairings/FoodPairings';
 import RecipesIntro from '../components/Cocktails/RecipesIntro';
 import SignatureCreations from '../components/Cocktails/SignatureHomeCreations/SignatureCreations';
 
@@ -13,6 +14,7 @@ export default function Cocktails() {
         <CocktailsMenu />
         <SignatureCreations />
         <ClassicGinkinsCocktails />
+        <FoodPairings />
       </main>
     </div>
   );
