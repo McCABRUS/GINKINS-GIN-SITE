@@ -2,8 +2,8 @@ import Image from 'next/image';
 
 export default function BarBookFeature() {
   return (
-    <section className="w-full bg-(--secondary-beige) py-24">
-      <div className="mx-auto px-37.5 py-37.5">
+    <section className="w-full bg-(--secondary-beige) py-15 lg:py-24">
+      <div className="mx-auto px-5 md:px-20 lg:px-37.5 lg:py-37.5">
         <div className="text-center">
           <h1 className="mb-5">The Bar Book</h1>
 
@@ -12,17 +12,17 @@ export default function BarBookFeature() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 items-center gap-36 lg:grid-cols-2">
-          <div className="flex justify-center lg:justify-start">
+        <div className="grid grid-cols-1 items-center gap-9 lg:gap-36 lg:grid-cols-2">
+          <div className="flex justify-center">
             <div className="relative h-77 md:h-110 md:w-80 lg:h-120 xl:h-159.25 lg:w-auto max-w-108.75">
               <Image
                 src="/accolades/ginkins-gin-trio-silver-tray.png"
                 alt="Elegant hands holding a silver tray with a trio of Ginkins Gin bottles against a red velvet curtain"
                 width={414}
                 height={637}
-                className="relative z-20 h-77 w-52.5 rounded-t-full object-cover md:h-110 md:w-80 lg:h-120 lg:w-auto xl:h-159.25 lg:max-w-108.75"
+                className="aspect-434/637 relative z-20 h-77 w-52.5 rounded-t-full object-cover md:h-110 md:w-80 lg:h-120 lg:w-auto xl:h-159.25 lg:max-w-108.75"
               />
-              <div className="absolute bottom-0 -right-5.5 lg:-right-11.25 h-37.25 md:h-55 xl:h-80 lg:h-60 w-63.5 md:w-91 lg:w-101.5 xl:w-131.25 bg-(--primary-gold-main) z-10" />
+              <div className="absolute bottom-0 -right-5.5 lg:-right-9.5 xl:-right-11.25 h-37.25 md:h-55 xl:h-80 lg:h-60 w-63.5 md:w-91 lg:w-101.5 xl:w-131.25 bg-(--primary-gold-main) z-10" />
               <div className="absolute inset-x-0 bottom-8 z-30 flex justify-center">
                 <Image
                   src="/accolades/ginkins-gin-the-bar-book-feature.png"
@@ -44,16 +44,19 @@ export default function BarBookFeature() {
                 aria-hidden
               />
             </div>
-            <h4 className="mb-6 text-(--primary-black)! ">Tasting Room</h4>
-            <p className="mb-7 text-base leading-6 text-(--primary-black) font-normal max-w-125">
+            <h4 className="mb-6 text-(--primary-black)! text-[35px]! lg:text-[56px]! lg:font-normal! font-medium! leading-10.5! lg:leading-16.75! ">
+              Tasting Room
+            </h4>
+            <p className="mb-7 text-base leading-6 text-(--primary-black) font-normal lg:max-w-125">
               Ginkins Louisville Dry Gin was featured in The Bar Book’s Bar
               Stories – Tasting Room series, highlighting our Kentucky-crafted
               London Dry–style gin and its distinctive character.
             </p>
-            <p className="mb-10 text-4xl font-cormorant-garamond italic leading-normal font-medium max-w-125 text-(--primary-black)">
+            <p className="mb-10 text-3xl lg:text-4xl font-cormorant-garamond italic leading-normal font-bold lg:font-medium lg:max-w-125 text-(--primary-black)">
               The Bar Book – Bar Stories:
               <br />
-              Ginkins Louisville Dry Gin Tasting Room
+              Ginkins Louisville Dry Gin <br className="block lg:hidden" />
+              Tasting Room
               <br />
               November 5, 2025
             </p>
