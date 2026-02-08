@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import AwardItem from './AwardItem';
 import Star from './Star';
 

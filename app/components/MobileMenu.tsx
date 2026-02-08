@@ -116,7 +116,7 @@ export default function MobileMenu() {
                   />
                   <MenuItem
                     label="Sustainability"
-                    link="#"
+                    link="/sustainability"
                     setOpen={setOpen}
                     setMoreOpen={setMoreOpen}
                   />

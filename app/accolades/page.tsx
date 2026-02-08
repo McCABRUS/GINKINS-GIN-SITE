@@ -6,7 +6,7 @@ import PressHighlights from '../components/Accolades/Press/PressHighlights';
 import ShopBannerCocktails from '../components/Cocktails/ShopBannerCocktails';
 import FooterMerch from '../components/FooterMerchCarousel/FooterMerch';
 
-export default function Subscribe() {
+export default function Accolades() {
   return (
     <div className="flex min-h-screen items-center justify-center overflow-x-hidden">
       <main className="flex min-h-screen w-full flex-col items-center justify-between">

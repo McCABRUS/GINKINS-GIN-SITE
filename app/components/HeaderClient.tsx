@@ -125,7 +125,6 @@ export default function HeaderClient() {
               </li>
               <hr
                 className="text-background w-1/2 -m-2 mx-auto"
-                mx-auto
                 aria-hidden="true"
               />
               <li>
