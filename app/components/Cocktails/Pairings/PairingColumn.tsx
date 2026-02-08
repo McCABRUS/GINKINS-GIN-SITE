@@ -28,7 +28,7 @@ export default function PairingColumn({
         <span className="block h-px w-full bg-(--primary-black)" aria-hidden />
       </div>
 
-      <h2 className="text-center text-(--primary-red-main)! mb-12.5 lg:mb-0">
+      <h2 className="text-center text-(--primary-red-main)! mb-12.5">
         {title}
       </h2>
       <ul className="space-y-6">

@@ -100,7 +100,7 @@ export default function HeaderClient() {
                 <Link
                   href="/accolades"
                   ref={firstItemRef}
-                  className="block px-4 py-2 text-(--primary-gold-main) hover:text-background hover:underline transition-colors focus:outline-none"
+                  className="block px-4 py-2 text-(--primary-gold-main) hover:text-background hover:underline transition-colors focus:outline-none text-center"
                   role="menuitem"
                 >
                   <h5 className="text-(--primary-gold-main)! inline">
@@ -108,21 +108,30 @@ export default function HeaderClient() {
                   </h5>
                 </Link>
               </li>
-              <hr className="text-background w-1/2 -m-2" aria-hidden="true" />
+              <hr
+                className="text-background w-1/2 -m-2 mx-auto"
+                aria-hidden="true"
+              />
               <li>
                 <Link
                   href="/faqs"
-                  className="block px-4 py-2 text-(--primary-gold-main) hover:text-background hover:underline transition-colors"
+                  className="block px-4 py-2 text-(--primary-gold-main) hover:text-background hover:underline transition-colors text-center"
                   role="menuitem"
                 >
-                  <h5 className="text-(--primary-gold-main)! inline">FAQs</h5>
+                  <h5 className="text-center text-(--primary-gold-main)! inline">
+                    FAQs
+                  </h5>
                 </Link>
               </li>
-              <hr className="text-backgroun w-1/2 -m-2" aria-hidden="true" />
+              <hr
+                className="text-background w-1/2 -m-2 mx-auto"
+                mx-auto
+                aria-hidden="true"
+              />
               <li>
                 <Link
                   href="/sustainability"
-                  className="block px-4 py-2 text-(--primary-gold-main) hover:text-background hover:underline transition-colors"
+                  className="block px-4 py-2 text-(--primary-gold-main) hover:text-background hover:underline transition-colors text-center"
                   role="menuitem"
                 >
                   <h5 className="text-(--primary-gold-main)! inline">
