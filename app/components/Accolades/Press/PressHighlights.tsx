@@ -43,14 +43,14 @@ export default function PressHighlights() {
   const rightSlide = slides[(index + 1) % slides.length];
 
   return (
-    <section className="relative bg-(--primary-gold-main) py-25 overflow-hidden w-full px-13">
+    <section className="relative bg-(--primary-gold-main) py-25 overflow-hidden w-full px-5 lg:px-13">
       {/* Title */}
       <h1 className="text-center text-(--primary-gold-400)! mb-20">
-        PRESS HIGHLIGHTS
+        PRESS <br className="block lg:hidden" /> HIGHLIGHTS
       </h1>
       <button
         onClick={prev}
-        className="absolute left-5 lg:left-13.25  md:top-1/2 -translate-y-1/2 h-14.5 w-14.5 rounded-full border border-(--primary-gold-main) flex items-center justify-center text-background hover:text-(--primary-gold-400) transition duration-300 ease-in-out z-10"
+        className="absolute left-5 xl:left-13.25  md:top-1/2 -translate-y-1/2 h-7.5 w-7.5 lg:w-12 lg:h-12 xl:h-14.5 xl:w-14.5 rounded-full border border-(--primary-gold-main) flex items-center justify-center text-background hover:text-(--primary-gold-400) transition duration-300 ease-in-out z-10"
         aria-label="Previous Press Highlight"
       >
         <svg
@@ -75,7 +75,7 @@ export default function PressHighlights() {
       </button>
       <button
         onClick={next}
-        className="absolute right-5 lg:right-12.5 md:top-1/2 -translate-y-1/2 h-14.5 w-14.5 rounded-full border border-(--primary-gold-main) flex items-center justify-center text-background hover:text-(--primary-gold-400) transition duration-300 ease-in-out z-10"
+        className="absolute right-5 xl:right-12.5 md:top-1/2 -translate-y-1/2 h-7.5 w-7.5 lg:w-12 lg:h-12 xl:h-14.5 xl:w-14.5 rounded-full border border-(--primary-gold-main) flex items-center justify-center text-background hover:text-(--primary-gold-400) transition duration-300 ease-in-out z-10"
         aria-label="Next Press Highlight"
       >
         <svg
@@ -96,7 +96,7 @@ export default function PressHighlights() {
       {/* Content */}
       <div className="relative mx-auto px-6">
         {/* Divider (desktop only) */}
-        <div className="pointer-events-none absolute left-1/2 top-0 hidden h-95.5 w-px bg-white lg:block" />
+        <div className="pointer-events-none absolute left-1/2 top-0 hidden xl:h-95.5 h-65 w-px bg-white lg:block" />
 
         <div className="grid grid-cols-1 gap-16 lg:grid-cols-2 lg:gap-24">
           <PressSlide {...leftSlide} />
