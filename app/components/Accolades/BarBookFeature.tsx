@@ -12,9 +12,11 @@ export default function BarBookFeature() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 items-center gap-9 lg:gap-36 lg:grid-cols-2">
+        <div className="grid grid-cols-1 items-center gap-18.25 lg:gap-36 lg:grid-cols-2">
           <div className="flex justify-center">
             <div className="relative h-77 md:h-110 md:w-80 lg:h-120 xl:h-159.25 lg:w-auto max-w-108.75">
+              <div className="pointer-events-none absolute inset-0 rounded-t-full z-30 bg-linear-to-b from-black/0 to-black/90" />
+
               <Image
                 src="/accolades/ginkins-gin-trio-silver-tray.png"
                 alt="Elegant hands holding a silver tray with a trio of Ginkins Gin bottles against a red velvet curtain"
@@ -60,7 +62,7 @@ export default function BarBookFeature() {
               <br />
               November 5, 2025
             </p>
-            <button className="inline-flex items-center justify-center bg-(--primary-red-main) px-8 py-3 text-lg font-medium uppercase tracking-wide  transition hover:bg-(--primary-gold-main)">
+            <button className="inline-flex items-center justify-center bg-(--primary-red-main) md:px-8 py-3 text-lg font-medium uppercase tracking-wide  transition hover:bg-(--primary-gold-main)">
               <h5 className="text-background!">
                 Read the feature on The Bar Book
               </h5>
