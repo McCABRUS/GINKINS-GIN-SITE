@@ -1,6 +1,7 @@
 import AccoladesHero from '../components/Accolades/AccoladesHero';
 import RecentAwards from '../components/Accolades/Awards/RecentAwards';
 import Celebrated from '../components/Accolades/Celebrated';
+import PressHighlights from '../components/Accolades/Press/PressHighlights';
 import ShopBannerCocktails from '../components/Cocktails/ShopBannerCocktails';
 import FooterMerch from '../components/FooterMerchCarousel/FooterMerch';
 
@@ -11,6 +12,7 @@ export default function Subscribe() {
         <AccoladesHero />
         <Celebrated />
         <RecentAwards />
+        <PressHighlights />
         <ShopBannerCocktails />
         <FooterMerch />
       </main>
