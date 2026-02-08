@@ -8,7 +8,7 @@ export default function Celebrated() {
             "url('/accolades/ginkins-gin-serving-martini-box.png')",
         }}
       />
-      <div className="pointer-events-none absolute inset-0 vignette-overlay bg-black/60 xl:bg-black/10" />
+      <div className="pointer-events-none absolute inset-0 vignette-overlay bg-black/50 xl:bg-black/10" />
       <div className="relative mx-auto xl:px-43 px-6 py-15 xl:py-16.5 h-full">
         <div className="grid grid-cols-1 gap-16 lg:grid-cols-2 lg:gap-20 h-full">
           <div className="flex items-end lg:items-baseline justify-center px-10 xs:px-19">

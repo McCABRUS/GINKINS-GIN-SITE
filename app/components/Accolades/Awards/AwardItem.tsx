@@ -18,18 +18,22 @@ export default function AwardItem({
   return (
     <div
       className={`
-        flex flex-col items-center text-center px-6 
-        ${showDivider ? 'lg:border-r lg:border-neutral-400' : ''}
+        flex flex-col items-center text-center lg:px-6 
+        ${showDivider ? 'lg:border-r lg:border-(--primary-black)' : ''}
       `}
     >
-      <Image src={image} alt={alt} width={133} height={110} />
+      <Image
+        src={image}
+        alt={alt}
+        width={130}
+        height={130}
+        className="w-32.5 h-32.5 object-cover"
+      />
 
-      <h5 className="text-(--primary-red-main)! text-lg! leading-6.75 my-5 max-w-[143px]">
+      <h5 className="text-(--primary-red-main)! text-lg! leading-6.75 my-5 max-w-35.75">
         {title}
       </h5>
-      <p className="text-base text-(--primary-black) max-w-[143px]">
-        {subtitle}
-      </p>
+      <p className="text-base text-(--primary-black) max-w-35.75">{subtitle}</p>
     </div>
   );
 }

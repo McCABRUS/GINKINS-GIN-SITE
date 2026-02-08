@@ -4,8 +4,8 @@ import Star from './Star';
 
 export default function RecentAwards() {
   return (
-    <section className="relative w-full bg-(--primary-cream) py-50">
-      <div className="relative mx-auto px-37.5">
+    <section className="relative w-full bg-(--primary-cream) py-15 xl:py-50">
+      <div className="relative mx-auto px-5 lg:px-0 xl:px-37.5 pb-15 lg:pb-0">
         <div
           className="
             pointer-events-none absolute
@@ -14,19 +14,20 @@ export default function RecentAwards() {
             h-full
           "
         >
-          <div className="relative -top-63.75">
+          <div className="relative top-31 xl:-top-63.75 lg:-top-23.75">
             <Star />
           </div>
-          <div className="flex-1 w-px bg-(--primary-red-main) -mt-72.5 -mb-45" />
-          <div className="relative top-40">
+          <div className="flex-1 w-px bg-(--primary-red-main) mt-27 lg:-mt-26 lg:-mb-12 xl:-mt-72.5 xl:-mb-45" />
+          <div className="relative -top-1 lg:top-10 xl:top-40 ">
             <Star />
           </div>
         </div>
-        <h1 className="relative z-10 mb-16 text-center">
-          <span className="mr-21">RECENT</span>{' '}
-          <span className="ml-21">AWARDS</span>
+        <h1 className="relative z-10 mb-37.5 lg:mb-16 text-center">
+          <span className="lg:mr-21">RECENT</span>
+          <br className="inline lg:hidden" />
+          <span className="lg:ml-21">AWARDS</span>
         </h1>
-        <div className="relative z-10 grid grid-cols-2 gap-y-20 lg:grid-cols-6 lg:gap-y-0">
+        <div className="relative z-10 grid grid-cols-2 gap-y-20 lg:grid-cols-6 lg:gap-y-0 gap-x-5 lg:gap-x-0">
           <AwardItem
             image="/accolades/ginkins-gin-usa-spirits-ratings-gold-2025.png"
             alt="USA Spirits Ratings Gold 2025 award medal for Ginkins Gin"

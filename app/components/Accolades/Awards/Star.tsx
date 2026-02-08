@@ -7,7 +7,7 @@ export default function Star() {
       alt="Sparkle icon"
       height={110}
       width={113}
-      className=""
+      className="w-18 h-17.5 xl:w-28.25 xl:h-27.5"
       aria-hidden
     />
   );
