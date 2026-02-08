@@ -104,7 +104,7 @@ export default function MobileMenu() {
                 <div className="mt-6 ml-4 space-y-6 text-xs">
                   <MenuItem
                     label="Accolades"
-                    link="#"
+                    link="/accolades"
                     setOpen={setOpen}
                     setMoreOpen={setMoreOpen}
                   />
