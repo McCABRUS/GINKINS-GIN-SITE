@@ -1,8 +1,6 @@
-import Image from 'next/image';
-
 export default function Celebrated() {
   return (
-    <section className="relative aspect-3/5 md:aspect-16/7 bg-cover bg-center  w-full z-10">
+    <section className="relative aspect-3/5 md:aspect-16/7 bg-cover bg-center  w-full">
       <div
         className="absolute inset-0 bg-cover bg-center "
         style={{
@@ -42,14 +40,6 @@ export default function Celebrated() {
           </div>
         </div>
       </div>
-      <Image
-        src="/accolades/ginkins-gin-icon-sparkle-red.svg"
-        alt="Sparkle icon"
-        height={110}
-        width={113}
-        className="absolute -bottom-13.75 left-1/2 -translate-x-1/2"
-        aria-hidden
-      />
     </section>
   );
 }
