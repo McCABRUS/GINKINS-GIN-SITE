@@ -1,3 +1,4 @@
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import type { Metadata } from 'next';
 import { cormorant, barlow } from './ui/fonts';
 import HeaderServer from './components/HeaderServer';
@@ -21,6 +22,7 @@ export default function RootLayout({
         className={`${cormorant.className} ${barlow.className} antialiased bg-(--secondary-beige)!`}
       >
         <HeaderServer />
+        <SpeedInsights />
         {children}
         <Footer />
       </body>
