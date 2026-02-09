@@ -110,7 +110,7 @@ export default function MobileMenu() {
                   />
                   <MenuItem
                     label="FAQs"
-                    link="#"
+                    link="/faqs"
                     setOpen={setOpen}
                     setMoreOpen={setMoreOpen}
                   />
