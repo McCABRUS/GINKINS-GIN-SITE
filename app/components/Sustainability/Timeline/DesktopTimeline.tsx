@@ -4,11 +4,11 @@ import TimelineMarker from './TimelineMarker';
 export default function DesktopTimeline() {
   return (
     <div className="relative hidden lg:block">
-      <div className="absolute left-1/2 top-[-17.7%] h-226 w-px bg-(--primary-red-main)" />
+      <div className="absolute left-1/2 top-[-17.7%] h-263.25 xl:h-226 w-px bg-(--primary-red-main)" />
       <div className="absolute left-1/2 top-0 -translate-x-1/2">
         <TimelineMarker />
       </div>
-      <div className="absolute left-1/2 top-[37%] -translate-x-1/2">
+      <div className="absolute left-1/2 xl:top-[37%] top-[31%] -translate-x-1/2">
         <TimelineMarker />
       </div>
       <div className="absolute left-1/2 top-[72%] -translate-x-1/2">
