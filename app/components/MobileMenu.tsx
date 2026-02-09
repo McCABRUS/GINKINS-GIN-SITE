@@ -78,6 +78,7 @@ export default function MobileMenu() {
                 onClick={() => setMoreOpen((v) => !v)}
                 className="flex items-center gap-3"
               >
+                <span className="mx-3">•</span>{' '}
                 <h5 className="text-(--primary-gold-main)! inline">More</h5>
                 <span
                   className={`
@@ -101,25 +102,50 @@ export default function MobileMenu() {
               </button>
 
               {moreOpen && (
-                <div className="mt-6 ml-4 space-y-6 text-xs">
-                  <MenuItem
-                    label="Accolades"
-                    link="/accolades"
-                    setOpen={setOpen}
-                    setMoreOpen={setMoreOpen}
-                  />
-                  <MenuItem
-                    label="FAQs"
-                    link="/faqs"
-                    setOpen={setOpen}
-                    setMoreOpen={setMoreOpen}
-                  />
-                  <MenuItem
-                    label="Sustainability"
-                    link="/sustainability"
-                    setOpen={setOpen}
-                    setMoreOpen={setMoreOpen}
-                  />
+                <div className="mt-6 space-y-6 text-xs">
+                  <ul className="py-2">
+                    <li>
+                      <Link
+                        href="/accolades"
+                        className="block px-4 py-2 text-(--primary-gold-main) hover:text-background hover:underline transition-colors focus:outline-none text-left"
+                        role="menuitem"
+                      >
+                        <h5 className="text-(--primary-gold-main)! inline">
+                          ACCOLADES
+                        </h5>
+                      </Link>
+                    </li>
+                    <hr
+                      className="text-background w-1/2 mx-4"
+                      aria-hidden="true"
+                    />
+                    <li>
+                      <Link
+                        href="/faqs"
+                        className="block px-4 py-2 text-(--primary-gold-main) hover:text-background hover:underline transition-colors text-left"
+                        role="menuitem"
+                      >
+                        <h5 className="text-left text-(--primary-gold-main)! inline">
+                          FAQs
+                        </h5>
+                      </Link>
+                    </li>
+                    <hr
+                      className="text-background w-1/2 mx-4"
+                      aria-hidden="true"
+                    />
+                    <li>
+                      <Link
+                        href="/sustainability"
+                        className="block px-4 py-2 text-(--primary-gold-main) hover:text-background hover:underline transition-colors text-left"
+                        role="menuitem"
+                      >
+                        <h5 className="text-(--primary-gold-main)! inline">
+                          SUSTAINABILITY
+                        </h5>
+                      </Link>
+                    </li>
+                  </ul>
                 </div>
               )}
             </div>
