@@ -195,6 +195,15 @@ h6 {
   }
 }
 
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 @layer components {
   .animate-collection {
     animation: collectionScroll 15s linear infinite;
@@ -271,5 +280,8 @@ h6 {
       rgba(0, 0, 0, 0.75) 100%
     );
     mix-blend-mode: multiply;
+  }
+  .animate-spin-slow {
+    animation: spin-slow 3.5s linear infinite;
   }
 }
