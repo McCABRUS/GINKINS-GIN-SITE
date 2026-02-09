@@ -1,12 +1,12 @@
-import FAQsSection from '../components/faqs/FAQsSection';
-import HeroFAQs from '../components/faqs/HeroFAQs';
+import TermsHero from '../components/Terms/TermsHero';
+import TermsSection from '../components/Terms/TermsSection';
 
-export default function FAQs() {
+export default function Terms() {
   return (
     <div className="flex min-h-screen items-center justify-center overflow-x-hidden">
       <main className="flex min-h-screen w-full flex-col items-center justify-between">
-        <HeroFAQs />
-        <FAQsSection />
+        <TermsHero />
+        <TermsSection />
       </main>
     </div>
   );
