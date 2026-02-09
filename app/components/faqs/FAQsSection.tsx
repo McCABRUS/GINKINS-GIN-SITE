@@ -12,7 +12,7 @@ export default function FAQsSection() {
   };
 
   return (
-    <section className="bg-(--primary-cream) py-20 relative">
+    <section className="bg-(--secondary-beige) py-20 relative">
       <div className="mx-auto px-6">
         <h2 className="text-center text-(--primary-black)! text-4xl!">
           FREQUENTLY ASKED QUESTIONS
