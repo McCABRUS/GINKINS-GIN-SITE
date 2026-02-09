@@ -18,7 +18,7 @@ export default function SustainabilityHero() {
         <div className="my-16 flex justify-center">
           <div className="h-48 w-48">
             <Image
-              src="/sustainability/Rooted in Craft. Grown with Care.svg"
+              src="/sustainability/ginkins-gin-icon-botanical-flower-red.svg"
               alt="Leaves icon"
               height={192}
               width={192}
