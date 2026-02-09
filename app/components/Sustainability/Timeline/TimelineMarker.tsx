@@ -1,6 +1,5 @@
 import Image from 'next/image';
 
-/* ========= SVG MARKER ========= */
 export default function TimelineMarker() {
   return (
     <div className="flex items-center justify-center">
