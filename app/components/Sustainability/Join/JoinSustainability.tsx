@@ -2,7 +2,7 @@ import CornerIcon from './CornerIcon';
 
 export default function JoinSustainability() {
   return (
-    <section className="relative w-full bg-(--primary-gold-main) overflow-hidden">
+    <section className="relative w-full bg-(--primary-gold-main) overflow-hidden py-9 px-9 lg:py-20 lg:px-20">
       <div className="hidden md:block">
         <CornerIcon className="absolute top-22.5 left-28 h-20.75 w-20.75" />
         <CornerIcon className="absolute top-22.5 right-28 h-20.75 w-20.75" />
