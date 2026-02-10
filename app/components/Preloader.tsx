@@ -14,6 +14,11 @@ export default function Preloader() {
         setExiting(true);
         setTimeout(() => {
           setVisible(false);
+          window.__APP_STATE__ = {
+            ...(window.__APP_STATE__ || {}),
+            preloaderDone: true,
+          };
+          window.dispatchEvent(new Event('app:state-changed'));
         }, 600);
       }, 300);
     };

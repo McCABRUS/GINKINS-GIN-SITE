@@ -66,6 +66,12 @@ export default function AgeGate() {
                   onClick={() => {
                     setAgeVerified();
                     setIsOpen(false);
+                    window.__APP_STATE__ = {
+                      ...(window.__APP_STATE__ || {}),
+                      ageGateAccepted: true,
+                    };
+
+                    window.dispatchEvent(new Event('app:state-changed'));
                   }}
                 />
                 <AgeGateButton label="NO" onClick={() => setDenied(true)} />

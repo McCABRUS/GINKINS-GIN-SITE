@@ -93,7 +93,7 @@ export default function HeaderClient() {
           <div
             role="menu"
             aria-label="More menu"
-            className="absolute left-1/2 top-full transform -translate-x-1/2 mt-3 w-auto bg-(--primary-black) shadow-lg z-20"
+            className="absolute left-1/2 top-full transform -translate-x-1/2 mt-3 w-auto bg-(--primary-black) shadow-lg z-499"
           >
             <ul className="py-2 justify-items-center">
               <li>

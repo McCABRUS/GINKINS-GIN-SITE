@@ -56,7 +56,7 @@ export default function AboutHomeMenu() {
                 width={348}
                 height={510}
                 className="h-full w-full object-cover rounded-[200px_200px_0px_0px]"
-                quality={100}
+
                 //unoptimized={true}
               />
             </div>

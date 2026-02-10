@@ -4,8 +4,7 @@ import { cormorant, barlow } from './ui/fonts';
 import HeaderServer from './components/HeaderServer';
 import Footer from './components/Footer';
 import './globals.css';
-import Preloader from './components/Preloader';
-import AgeGate from '@/components/AgeGate';
+import ClientShell from './components/ClientShell';
 
 export const metadata: Metadata = {
   title: 'Ginkins: Explore the Exquisite Range of Masterfully Distilled Gins',
@@ -32,9 +31,8 @@ export default function RootLayout({
         className={`${cormorant.className} ${barlow.className} antialiased bg-(--secondary-beige)!`}
       >
         <HeaderServer />
-        <AgeGate />
         <SpeedInsights />
-        <Preloader />
+        <ClientShell />
         {children}
         <Footer />
       </body>
