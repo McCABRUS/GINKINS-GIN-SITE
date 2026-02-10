@@ -27,28 +27,27 @@ export default function CocktailsHome() {
             <span className="relative inline-block align-text-top mx-2 z-0 ">
               <span className="inline-block w-40.25 h-40.25 md:h-52.5 md:w-52.5 rounded-full overflow-hidden relative z-10">
                 <Image
-                  src="/cocktails_home/cocktail-circle.png"
-                  alt=""
+                  src="/home/ginkins-gin-signature-cocktail-grapefruit.webp"
+                  alt="Ginkins Gin signature cocktail being prepared with fresh grapefruit and premium botanicals"
                   className="h-full w-full object-cover"
                   width={238}
                   height={210}
                 />
               </span>
               <Image
-                src="/HeritageHome/flower.svg"
-                alt="Decorative flower"
+                src="/home/ginkins-gin-icon-botanical-flower.svg"
+                alt=""
                 width={227}
                 height={226}
-                className="top-20 md:top-25 -right-12 md:-right-25 absolute z-0"
+                className="top-20 md:top-25 -right-12 md:-right-25 absolute z-0 blur-sm"
+                aria-hidden
               />
             </span>
-            <div className="z-20 relative">
-              <span className="block md:hidden">Sip</span> Something{' '}
-              <br className="block md:hidden" /> New.
-            </div>
+            <span className="block md:hidden">Sip</span> Something
+            <br className="block md:hidden" /> New.
           </h1>
         </div>
-        <div className="mt-16 max-w-2xl md:mx-auto text-left mx-7.5 md:ml-[50%] grid">
+        <div className="mt-16 lg:-mt-20 max-w-2xl md:mx-auto text-left mx-7.5 md:ml-[50%] grid">
           <p className="text-center md:text-left text-base leading-relaxed text-(--primary-black)">
             At Ginkins, we believe cocktails should be both elevated and easy to
             enjoy. Whether you’re mixing for one or making magic for a crowd,

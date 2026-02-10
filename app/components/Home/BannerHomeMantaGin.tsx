@@ -10,7 +10,7 @@ export default function BannerHomeMantaGin() {
         }}
       ></div>
       <Image
-        src="/manta-gin.png"
+        src="/home/ginkins-gin-lifestyle-picnic.webp"
         alt="Manta Gin Bottle"
         fill
         className="object-cover object-right"

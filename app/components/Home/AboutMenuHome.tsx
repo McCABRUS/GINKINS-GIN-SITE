@@ -44,19 +44,20 @@ export default function AboutHomeMenu() {
           <div className="relative flex justify-center">
             <div className="absolute left-3/5 lg:-right-12.5 top-6 z-10 fill-(--primary-red-main)">
               <Image
-                src="/icon-stars-ginkins-gin.svg"
+                src="/home/ginkins-gin-icon-star-sparkles.svg"
                 alt=""
                 width={159}
                 height={157}
                 className="fill-(--primary-red-main)"
+                aria-hidden
               />
             </div>
             <div className="h-78.75 sm:h-127.5 w-53.75 sm:w-87 overflow-hidden">
               <Image
-                src="/scott-ginkins-gin-master-distiller.webp"
-                alt="Master Distiller"
-                width={348}
-                height={510}
+                src="/home/scott-ginkins-founder-master-distiller.webp"
+                alt="Scott Ginkins, Founder and Master Distiller of Ginkins Gin"
+                width={565}
+                height={534}
                 className="h-full w-full object-cover rounded-[200px_200px_0px_0px]"
               />
             </div>

@@ -25,7 +25,7 @@ export default function CollectionHome() {
           </h1>
         </div>
       </div>
-      <CollectionCarousel></CollectionCarousel>
+      <CollectionCarousel />
       <div className="w-full h-300 md:h-257 lg:h-317.25 static -mt-204.5">
         <div
           className="w-108 h-317.25 absolute left-0 top-0 hidden lg:block"

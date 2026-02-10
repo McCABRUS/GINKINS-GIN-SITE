@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export default function HeritageHomeSection() {
   return (
-    <section className="relative w-full bg-(--secondary-beige) pt-37.25 md:pt-30 xl:pt-71 -mb-12 xs:-mb-35.25 overflow-hidden">
+    <section className="relative w-full bg-(--secondary-beige) pt-37.25 md:pt-30 xl:pt-71 mb-0 xs:-mb-35.25 overflow-hidden">
       <div className="relative mb-32 px-6 2xl:px-24">
         <h1 className="mt-30 md:mt-0 mx-auto text-center leading-[1.05] tracking-[-0.015em]">
           ROOTED IN
@@ -21,55 +21,49 @@ export default function HeritageHomeSection() {
         </h1>
         <div className="absolute -top-57 md:-top-17.5 xl:-top-35 left-[75%] md:left-[49%] -translate-x-1/2 mr-7.5 w-20.25 h-27.5 xl:w-40 xl:h-56 pointer-events-none">
           <Image
-            src="/HeritageHome/still.png"
-            alt="Copper still"
+            src="/home/ginkins-gin-distillation-process.webp"
+            alt="Handcrafted distillation in copper stills at Ginkins Distillery"
             fill
             className="object-cover rounded-[999px]"
-            priority
           />
         </div>
         <div className="absolute -top-32 md:top-10.5 xl:top-22.5 w-25 h-25 xl:w-40 xl:h-40 -ml-10 md:-ml-66.25 xl:-ml-132.5  left-1/2 -translate-x-1/2">
           <Image
-            src="/HeritageHome/barn.png"
-            alt="Barn"
+            src="/home/ginkins-gin-heritage-barn.webp"
+            alt="Ginkins Gin historic red barn in the Kentucky countryside"
             fill
             className="object-cover rounded-full"
           />
         </div>
-        <div className="absolute -ml-10 left-1/2 -translate-x-1/2 h-21.25 w-26.25 -top-47 md:hidden pointer-events-none">
+        <div className="absolute -ml-10 left-1/2 -translate-x-1/2 h-21 w-21.5 -top-47 md:hidden pointer-events-none">
           <Image
-            src="/HeritageHome/flower_m.svg"
+            src="/home/ginkins-gin-icon-botanical-flower.svg"
             alt="Decorative flower"
-            width={105}
+            width={86}
             height={84}
-            className="block md:hidden"
+            className="blur-xs"
+            aria-hidden
           />
         </div>
       </div>
       <div className="relative grid grid-cols-1 md:grid-cols-2 gap-20 px-6 lg:px-24 md:mb-10 lg:mb-0">
         <div className="relative h-150">
-          <div className="absolute top-100 2xs:top-80 xs:top-70  md:top-0 right-0 w-33.5 h-44 xl:w-52 xl:h-72">
+          <div className="absolute top-110 2xs:top-80 xs:top-70  md:top-0 right-0 w-33.5 h-44 xl:w-52 xl:h-72">
             <Image
-              src="/HeritageHome/louisville.png"
-              alt="Louisville skyline"
+              src="/home/ginkins-gin-louisville-skyline.webp"
+              alt="Louisville skyline at sunset - The heart of Ginkins Gin roots"
               fill
               className="object-cover rounded-[999px]"
             />
           </div>
-          <div className="absolute h-52 w-50.5 top-110 xs:top-82 md:top-15 xl:top-25 right-15 xl:right-25 pointer-events-none">
+          <div className="absolute w-39 h-38 md:w-58.25 md:h-56.5 top-125 xs:top-90 md:top-15 xl:top-30 right-25 xl:right-35 pointer-events-none">
             <Image
-              src="/HeritageHome/flower.svg"
-              alt="Decorative flower"
-              width={309}
-              height={301}
-              className="hidden md:block"
-            />
-            <Image
-              src="/HeritageHome/flower_m.svg"
-              alt="Decorative flower"
-              width={202}
-              height={208}
-              className="block md:hidden"
+              src="/home/ginkins-gin-icon-botanical-flower.svg"
+              alt=""
+              width={233}
+              height={226}
+              className="blur-sm w-39 h-38 md:w-58.25 md:h-56.5"
+              aria-hidden
             />
           </div>
         </div>

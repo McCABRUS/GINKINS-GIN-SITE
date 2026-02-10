@@ -7,10 +7,11 @@ export default function BannerHomeShop() {
       <div className="w-full h-full relative border-4 border-solid border-(--primary-gold-main) px-11.25 md:px-0 py-20 flex items-center justify-center">
         <div className="absolute lg:left-1/10 xl:left-1/4 top-1/10 lg:top-1/2 -translate-y-1/2">
           <Image
-            src="/HomeShop/shopBannerIcon_Left.svg"
-            alt="Leaf icon"
+            src="/home/ginkins-gin-icon-martini-decoration.svg"
+            alt=""
             height={60}
             width={46}
+            aria-hidden
           />
         </div>
         <div className="text-center">
@@ -35,10 +36,11 @@ export default function BannerHomeShop() {
         </div>
         <div className="absolute  lg:right-1/10 xl:right-1/4 top-9/10 lg:top-1/2 -translate-y-1/2">
           <Image
-            src="/HomeShop/shopBannerIcon_Right.svg"
-            alt="Coctail Cup icon"
+            src="/home/ginkins-gin-icon-cocktail-cup.svg"
+            alt=""
             height={67}
             width={52}
+            aria-hidden
           />
         </div>
       </div>
