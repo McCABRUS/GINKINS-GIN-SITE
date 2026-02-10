@@ -68,7 +68,7 @@ export default function JoinModal({ open, onClose }: Props) {
             <h2 className="text-(--primary-red-main)!">
               Join the Inner Circle
             </h2>
-            <h5 className="block tracking-widest text-(--primary-red-main)! mb-10.5">
+            <h5 className="block text-(--primary-red-main)! mb-10.5">
               Gin Notes Newsletter
             </h5>
             <div className="flex justify-center mb-4.25">
@@ -83,7 +83,7 @@ export default function JoinModal({ open, onClose }: Props) {
             <div className="flex justify-center mb-4.25">
               <div className="h-18.75 w-px bg-(--primary-red-main)" />
             </div>
-            <h3 className="tracking-widest mb-10.5">Get Early Access</h3>
+            <h3 className="mb-10.5">Get Early Access</h3>
             <p className="text-sm leading-relaxed text-[#4A4A4A] mb-10.5">
               This isn’t just a mailing list. It’s a front-row seat to
               everything we’re creating and an invitation to be part of it. When
@@ -100,7 +100,7 @@ export default function JoinModal({ open, onClose }: Props) {
               />
               <button
                 type="submit"
-                className="min-w-min[124px] h-10 inline-flex items-center justify-center bg-(--primary-red-main) px-5 py-1.5 tracking-wide  transition hover:bg-(--primary-gold-main)"
+                className="min-w-min[124px] h-10 inline-flex items-center justify-center bg-(--primary-red-main) px-5 py-1.5   transition hover:bg-(--primary-gold-main)"
               >
                 <h5 className="text-background! whitespace-nowrap">Join Now</h5>
               </button>

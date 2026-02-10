@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 import BottleCarousel from './BottleCarousel';
 import BotanicalGrid from './BotanicalGrid';
@@ -77,11 +78,15 @@ export default function Hero() {
       </div>
       <div className="relative grid z-50 lg:top-0 xl:-top-25 m-auto justify-center">
         <div className="absolute left-1/2 bottom-118 xl:bottom-[6%] -translate-x-1/2 z-40">
-          <button className="px-5 py-1.5 bg-(--primary-red-main) tracking-widest text-sm hover:bg-(--primary-gold-main) transition w-81.25">
+          <Link
+            href="/our-gins"
+            role="button"
+            className="inline-flex items-center justify-center px-5 py-1.5 w-81.25 bg-(--primary-red-main) text-sm transition hover:bg-(--primary-gold-main)"
+          >
             <h5 className="text-background! text-lg!">
               EXPLORE THE COLLECTION
             </h5>
-          </button>
+          </Link>
         </div>
       </div>
       <div className="relative block xl:hidden text-center -top-33.5 ">

@@ -1,6 +1,13 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function AboutHomeMenu() {
+  const items = [
+    { label: 'Ginkins Story', href: '/about-ginkins' },
+    { label: 'Meet the Maker', href: '/about-ginkins' },
+    { label: 'Sustainability Practices', href: '/sustainability' },
+    { label: 'Accolades and Press', href: '/accolades' },
+  ];
   return (
     <section className="w-screen bg-(--primary-black) py-28 xl:px-37.25">
       <div
@@ -12,27 +19,22 @@ export default function AboutHomeMenu() {
       <div className="mx-auto px-15 xl:px-6">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_480px] gap-20 items-center">
           <div className="text-center lg:text-left">
-            <h3 className="text-lg!  inline-block uppercase tracking-widest text-background! mb-10">
+            <h3 className="text-lg!  inline-block uppercase text-background! mb-10">
               About Us
             </h3>
             <ul className="space-y-14">
-              {[
-                'Ginkins Story',
-                'Meet the Maker',
-                'Sustainability Practices',
-                'Accolades and Press',
-              ].map((item, i) => (
+              {items.map((item, i) => (
                 <li key={i}>
                   <div className="flex items-center gap-6">
                     <h6 className="text-[35px]! text-(--secondary-gray-300)!">
                       {String(i + 1).padStart(2, '0')}
                     </h6>
-
-                    <h4 className="text-left text-(--secondary-gray-300)! hover:text-(--primary-red-main)! transition">
-                      {item}
-                    </h4>
+                    <Link href={item.href}>
+                      <h4 className="text-left text-(--secondary-gray-300)! hover:text-(--primary-red-main)! transition">
+                        {item.label}
+                      </h4>
+                    </Link>
                   </div>
-
                   <div className="mt-6 h-px w-full bg-(--primary-red-main)" />
                 </li>
               ))}
@@ -56,8 +58,6 @@ export default function AboutHomeMenu() {
                 width={348}
                 height={510}
                 className="h-full w-full object-cover rounded-[200px_200px_0px_0px]"
-
-                //unoptimized={true}
               />
             </div>
           </div>

@@ -108,7 +108,7 @@ export default function PressHighlights() {
 
       {/* CTA */}
       <div className="mt-20 text-center">
-        <button className="inline-flex items-center justify-center bg-(--primary-red-main) px-8 py-3 text-lg font-medium uppercase tracking-wide  transition hover:bg-(--primary-gold-400) mt-1">
+        <button className="inline-flex items-center justify-center bg-(--primary-red-main) px-8 py-3 text-lg font-medium uppercase   transition hover:bg-(--primary-gold-400) mt-1">
           <h5 className="text-background!">SEE ALL AWARDS</h5>
         </button>
       </div>

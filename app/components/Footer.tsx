@@ -137,7 +137,7 @@ export default function Footer() {
 
           <div className="hidden md:grid col-span-7 grid-cols-1 sm:grid-cols-3 gap-6 ml-20">
             <div>
-              <span className="text-lg font-medium text-background tracking-wide">
+              <span className="text-lg font-medium text-background ">
                 About Us
               </span>
               <ul className="mt-4 space-y-2 text-sm text-background">
@@ -177,7 +177,7 @@ export default function Footer() {
             </div>
 
             <div>
-              <span className="text-lg font-medium text-background tracking-wide">
+              <span className="text-lg font-medium text-background ">
                 Useful
               </span>
               <ul className="mt-4 space-y-2 text-sm text-background">
@@ -217,7 +217,7 @@ export default function Footer() {
             </div>
 
             <div>
-              <span className="text-lg font-medium text-background tracking-wide">
+              <span className="text-lg font-medium text-background ">
                 Follow Us
               </span>
               <ul className="mt-4 space-y-3 text-sm text-background">

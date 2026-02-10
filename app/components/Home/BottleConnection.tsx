@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function BottleConnection() {
   return (
     <section
@@ -45,9 +47,12 @@ export default function BottleConnection() {
               You pour it forward.
             </h4>
             <div className="mt-8">
-              <button className="inline-flex items-center justify-center bg-(--primary-red-main) px-8 py-3 text-lg font-medium uppercase tracking-wide  transition hover:bg-(--primary-gold-main)">
+              <Link
+                href="/where-to-buy"
+                className="inline-flex items-center justify-center bg-(--primary-red-main) px-5 py-1.5 transition hover:bg-(--primary-gold-main)"
+              >
                 <h5 className="text-background!">Shop Online</h5>
-              </button>
+              </Link>
             </div>
           </div>
         </div>

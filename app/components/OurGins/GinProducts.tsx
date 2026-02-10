@@ -91,7 +91,7 @@ export default function GinProductsSection() {
                 in a gin that’s both bold and beautifully balanced.
               </p>
             </div>
-            <button className="inline-flex items-center justify-center bg-(--primary-red-main) px-5 py-1.5 text-lg font-medium uppercase tracking-wide  transition hover:bg-(--primary-gold-main) w-[200%]">
+            <button className="inline-flex items-center justify-center bg-(--primary-red-main) px-5 py-1.5 text-lg font-medium uppercase   transition hover:bg-(--primary-gold-main) w-[200%]">
               <h5 className="text-background! whitespace-nowrap text-lg! lg:text-base!">
                 SIGN UP FOR OUR NEWSLETTER TO BE THE FIRST KNOW WHAT’S NEXT
               </h5>
@@ -159,7 +159,7 @@ function ProductRow({
             </li>
           )}
         </ul>
-        <button className="w-40 lg:w-44.25 h-9.75 mt-9.5 flex items-center justify-center bg-(--primary-red-main) px-5 lg:px-8 py-1.5 lg:py-3 text-sm font-medium uppercase tracking-wide text-background transition hover:bg-(--primary-gold-main) mx-auto lg:mx-0">
+        <button className="w-40 lg:w-44.25 h-9.75 mt-9.5 flex items-center justify-center bg-(--primary-red-main) px-5 lg:px-8 py-1.5 lg:py-3 text-sm font-medium uppercase  text-background transition hover:bg-(--primary-gold-main) mx-auto lg:mx-0">
           <h5 className="text-background!">Shop ONLINE</h5>
         </button>
       </div>

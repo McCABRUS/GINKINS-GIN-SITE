@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function BannerHomeShop() {
   return (
@@ -13,19 +14,22 @@ export default function BannerHomeShop() {
           />
         </div>
         <div className="text-center">
-          <h2 className="text-[42px]! md:text-4xl! leading-12! tracking-wide">
+          <h2 className="text-[42px]! md:text-4xl! leading-12! ">
             Where to find Ginkins
             <br />
             from our still to your glass
           </h2>
-          <h3 className="mt-12.5 text-lg! inline-block tracking-widest uppercase text-[#1A1A1A] underline underline-offset-4">
+          <h3 className="mt-12.5 text-lg! inline-block uppercase text-[#1A1A1A] underline underline-offset-4">
             Great gin travels. Let’s get you a pour
           </h3>
 
           <div className="mt-14">
-            <button className=" inline-block items-center justify-center bg-(--primary-red-main) px-8 py-3 text-sm font-medium uppercase tracking-wide transition hover:bg-(--primary-gold-main)">
+            <Link
+              href="/where-to-buy"
+              className=" inline-block items-center justify-center bg-(--primary-red-main) px-5 py-1.5 text-sm font-medium uppercase  transition hover:bg-(--primary-gold-main)"
+            >
               <h5 className="text-background!">Shop online</h5>
-            </button>
+            </Link>
           </div>
         </div>
         <div className="absolute  lg:right-1/10 xl:right-1/4 top-9/10 lg:top-1/2 -translate-y-1/2">

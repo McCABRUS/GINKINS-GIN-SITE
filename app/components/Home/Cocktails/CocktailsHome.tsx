@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { cocktailsData } from './CocktailsData';
 import CocktailsCarouselMobile from './CocktailsCarouselMobile';
 
@@ -13,7 +14,7 @@ export default function CocktailsHome() {
       ></div>
       <div className="mx-auto max-w-350 md:px-6">
         <div className="text-center mx-auto">
-          <h3 className="text-lg! inline-block tracking-widest text-(--primary-red-main)! mb-10">
+          <h3 className="text-lg! inline-block text-(--primary-red-main)! mb-10">
             Cocktails & Pairings – Drink <br className="block md:hidden" /> Like
             a Pro
           </h3>
@@ -58,9 +59,12 @@ export default function CocktailsHome() {
           </p>
 
           <div className="mt-8 place-self-center sm:place-self-start">
-            <button className="inline-flex bg-(--primary-red-main) px-8 py-3 text-sm font-medium uppercase tracking-wide text-background transition hover:bg-(--primary-gold-main)">
-              Shop Online
-            </button>
+            <Link
+              href="/where-to-buy"
+              className="inline-flex bg-(--primary-red-main) px-5 py-1.5 transition hover:bg-(--primary-gold-main)"
+            >
+              <h5 className="text-background! text-lg!">Shop Online</h5>
+            </Link>
           </div>
         </div>
         <div className="mt-28 grid grid-cols-1 md:grid-cols-3 gap-5.25">
@@ -81,9 +85,12 @@ export default function CocktailsHome() {
                 {card.text}
               </p>
               <div className="mt-6">
-                <button className="inline-flex items-baseline justify-center bg-(--primary-red-main) px-8 py-3 text-sm font-medium uppercase tracking-wide text-white transition hover:bg-(--primary-gold-main)">
-                  See More
-                </button>
+                <Link
+                  href="/cocktails"
+                  className="inline-flex items-baseline justify-center bg-(--primary-red-main) px-5 py-1.5 transition hover:bg-(--primary-gold-main)"
+                >
+                  <h5 className="text-background! text-lg!">See More</h5>
+                </Link>
               </div>
             </div>
           ))}

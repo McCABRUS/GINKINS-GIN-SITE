@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 interface CardProps {
   title: string;
@@ -32,9 +33,14 @@ export default function CollectionCard({ title, text, img, alt }: CardProps) {
           </div>
         </div>
         <div className="flex flex-col gap-2.5 items-start justify-start shrink-0 relative top-18 xs:top-18 md:-top-4 lg:-top-25 mx-auto lg:mx-0">
-          <button className="inline-flex items-center justify-center bg-(--primary-red-main) px-8 py-3 text-sm font-medium uppercase tracking-wide text-white transition hover:bg-(--primary-gold-main)">
-            FIND GINKINS NEAR TO YOU
-          </button>
+          <Link
+            href="/where-to-buy"
+            className="mt-15.75 items-center justify-center bg-(--primary-red-main) px-5 py-1.5  transition hover:bg-(--primary-gold-main) mx-auto md:mx-0 grid max-w-65"
+          >
+            <h5 className="text-background! text-lg!">
+              Find Ginkins Near to You
+            </h5>
+          </Link>
         </div>
       </div>
     </div>

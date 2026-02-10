@@ -13,7 +13,7 @@ export default function HeritageInnovation() {
                 width={60}
               />
             </div>
-            <h3 className="block text-center md:text-left tracking-widest text-(--primary-gold-main)! mb-4.25 md:mb-6">
+            <h3 className="block text-center md:text-left text-(--primary-gold-main)! mb-4.25 md:mb-6">
               The Ginkins Story
             </h3>
 

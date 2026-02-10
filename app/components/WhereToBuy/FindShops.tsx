@@ -29,7 +29,7 @@ export default function FindShops() {
               find your next favorite pour.
             </p>
 
-            <button className="w-40 lg:w-44.25 h-9.75 mt-9.5 flex items-center justify-center bg-(--primary-red-main) px-5 lg:px-8 py-1.5 lg:py-3 text-sm font-medium uppercase tracking-wide text-background transition hover:bg-(--primary-gold-main)">
+            <button className="w-40 lg:w-44.25 h-9.75 mt-9.5 flex items-center justify-center bg-(--primary-red-main) px-5 lg:px-8 py-1.5 lg:py-3 text-sm font-medium uppercase  text-background transition hover:bg-(--primary-gold-main)">
               <h5 className="text-background!">Shop ONLINE</h5>
             </button>
           </div>

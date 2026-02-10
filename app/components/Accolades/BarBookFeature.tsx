@@ -62,7 +62,7 @@ export default function BarBookFeature() {
               <br />
               November 5, 2025
             </p>
-            <button className="inline-flex items-center justify-center bg-(--primary-red-main) md:px-8 py-3 text-lg font-medium uppercase tracking-wide  transition hover:bg-(--primary-gold-main)">
+            <button className="inline-flex items-center justify-center bg-(--primary-red-main) md:px-8 py-3 text-lg font-medium uppercase   transition hover:bg-(--primary-gold-main)">
               <h5 className="text-background!">
                 Read the feature on The Bar Book
               </h5>

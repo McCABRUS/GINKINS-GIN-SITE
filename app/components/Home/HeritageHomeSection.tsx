@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function HeritageHomeSection() {
   return (
@@ -84,9 +85,14 @@ export default function HeritageHomeSection() {
             than gin. It’s a celebration of connection, flavor, and the moments
             that bring us together.
           </p>
-          <button className="mt-15.75 items-center justify-center bg-(--primary-red-main) px-8 py-3 text-sm font-medium uppercase tracking-wide text-white transition hover:bg-(--primary-gold-main) mx-auto md:mx-0 grid">
-            Find Ginkins Near to You
-          </button>
+          <Link
+            href="/where-to-buy"
+            className="mt-15.75 items-center justify-center bg-(--primary-red-main) px-5 py-1.5  transition hover:bg-(--primary-gold-main) mx-auto md:mx-0 grid max-w-65"
+          >
+            <h5 className="text-background! text-lg!">
+              Find Ginkins Near to You
+            </h5>
+          </Link>
         </div>
       </div>
       <div

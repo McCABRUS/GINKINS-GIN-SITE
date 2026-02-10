@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { connectionsLeftData, connectionsRightData } from './connectionsData';
 import ConnectionsCarousel from './ConnectionsCarousel';
 export default function Connections() {
@@ -48,9 +49,12 @@ export default function Connections() {
             </p>
 
             <div className="flex lg:items-start items-center justify-center lg:justify-start mt-10 lg:mt-8 lg:mb-0 mb-13.25">
-              <button className="w-40 lg:w-87.5 h-9.75 xl:mt-15.75 flex items-center justify-center bg-(--primary-red-main) px-5 lg:px-8 py-1.5 lg:py-3 text-sm font-medium uppercase tracking-wide text-background transition hover:bg-(--primary-gold-main)">
+              <Link
+                href="/where-to-buy"
+                className="w-40 lg:w-87.5 h-9.75 xl:mt-15.75 flex items-center justify-center bg-(--primary-red-main) px-5 py-1.5 transition hover:bg-(--primary-gold-main)"
+              >
                 <h5 className="text-background! text-lg!">Shop ONLINE</h5>
-              </button>
+              </Link>
             </div>
           </div>
           <div className="relative overflow-hidden">
