@@ -11,14 +11,56 @@ const testimonials = [
   },
   {
     quote:
-      'Exceptionally smooth and thoughtfully crafted. Ginkins delivers a refined experience that feels both modern and timeless.',
-    author: 'James Porter',
+      'Ginkins Gin delivers a refined, well-structured profile that speaks to craftsmanship. You can taste the care in the process — it’s smooth, expressive, and exceptionally well made.',
+    author: 'Mark Burkley',
     rating: 5,
   },
   {
     quote:
-      'A gin with character and restraint. Every botanical has a purpose, and it shows in every pour.',
-    author: 'Elena Brooks',
+      'Ginkins Gin feels thoughtful and honest. It’s not trying to impress — it simply does. Every pour reflects balance, quality, and a clear respect for the craft.',
+    author: 'Freddy Elias',
+    rating: 5,
+  },
+  {
+    quote:
+      'What I appreciate most about Ginkins Gin is its consistency. From bottle to bottle, the experience is elegant, smooth, and intentional. It’s a gin built with purpose.',
+    author: 'Michael Lambert',
+    rating: 5,
+  },
+  {
+    quote:
+      'Ginkins Gin brings together tradition and modern creativity in a very natural way. It’s refined without being rigid — a gin you can enjoy neat, in a cocktail, or simply on its own.',
+    author: 'Claudio Abreu',
+    rating: 5,
+  },
+  {
+    quote:
+      'Introducing Ginkins Gin to people is easy — the quality speaks for itself. Once they try it, they immediately recognize the balance and craftsmanship behind it.',
+    author: 'Robert Christian',
+    rating: 5,
+  },
+  {
+    quote:
+      'What stands out is the balance. It’s clean, expressive, and holds its character beautifully in a Gin & Tonic or a Negroni. This is a gin that respects the classics.',
+    author: 'Bartender | Louisville, KY',
+    rating: 5,
+  },
+  {
+    quote:
+      'There’s a quiet confidence to this gin. It’s well-structured, intentional, and doesn’t rely on excess botanicals to make a statement. Elegant and versatile behind the bar.',
+    author: 'Mixologist | London, UK',
+    rating: 5,
+  },
+  {
+    quote:
+      'From the first sip, you can tell this gin was made with purpose. Nothing feels accidental—every note has its place.',
+    author: 'Private Tasting Guest',
+    rating: 5,
+  },
+  {
+    quote:
+      'It doesn’t taste like something new trying to prove itself. It tastes established, thoughtful, and incredibly smooth.',
+    author: 'Private Tasting Guest',
     rating: 5,
   },
 ];
@@ -90,9 +132,7 @@ export default function Testimonials() {
           <blockquote className="font-cormorant-garamond font-medium mx-auto italic text-3xl md:text-4xl leading-relaxed text-(--secondary-black)">
             “{quote}”
           </blockquote>
-          <h5 className="text-lg! mt-8 tracking-widest text-(--secondary-black)!">
-            {author}
-          </h5>
+          <h5 className="text-lg! mt-8 text-(--secondary-black)!">{author}</h5>
         </div>
       </div>
     </section>
