@@ -1,5 +1,11 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
+const items = [
+  { label: 'Signature House Creations', href: '/cocktails#signature' },
+  { label: 'Classic Ginkins Cocktails', href: '/cocktails#classic' },
+  { label: 'Food Pairings', href: '/cocktails#pairings' },
+];
 export default function CocktailsMenu() {
   return (
     <section className="w-screen bg-(--primary-black) py-36.5 px-5 lg:px-37.25 -mt-px">
@@ -10,20 +16,18 @@ export default function CocktailsMenu() {
               Try a Recipe | Mix It Up | Pair & Pour
             </h3>
             <ul className="space-y-14">
-              {[
-                'Signature House Creations',
-                'Classic Ginkins Cocktails',
-                'Food Pairings',
-              ].map((item, i) => (
+              {items.map((item, i) => (
                 <li key={i}>
                   <div className="flex items-center gap-6">
                     <h6 className="text-[35px]! text-(--secondary-gray-300)!">
                       {String(i + 1).padStart(2, '0')}
                     </h6>
 
-                    <h4 className="text-left text-(--secondary-gray-300)! hover:text-(--primary-red-main)! transition">
-                      {item}
-                    </h4>
+                    <Link href={item.href}>
+                      <h4 className="text-left text-(--secondary-gray-300)! hover:text-(--primary-red-main)! transition">
+                        {item.label}
+                      </h4>
+                    </Link>
                   </div>
 
                   <div className="mt-6 h-px w-full bg-(--primary-red-main)" />

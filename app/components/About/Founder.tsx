@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function Founder() {
   return (
-    <section className="w-screen bg-(--secondary-beige)">
+    <section className="w-screen bg-(--secondary-beige)" id="founder">
       <div className="mx-auto px-5 md:px-10 lg:px-37.25 2xl:px-80 py-32 relative">
         <div className="grid grid-cols-1 gap-y-20 lg:grid-cols-2 lg:gap-x-24">
           <div className="mx-auto order-1 space-y-6 max-w-131.25">
@@ -39,6 +39,7 @@ export default function Founder() {
               width={40}
               height={50}
               className="mx-10 lg:mx-29.75"
+              aria-hidden
             />
             <span className="h-px w-[41%] bg-(--primary-red-main)" />
           </div>

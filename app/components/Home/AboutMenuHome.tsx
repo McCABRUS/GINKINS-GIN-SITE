@@ -3,8 +3,8 @@ import Link from 'next/link';
 
 export default function AboutHomeMenu() {
   const items = [
-    { label: 'Ginkins Story', href: '/about-ginkins' },
-    { label: 'Meet the Maker', href: '/about-ginkins' },
+    { label: 'Ginkins Story', href: '/about-ginkins#story' },
+    { label: 'Meet the Maker', href: '/about-ginkins#founder' },
     { label: 'Sustainability Practices', href: '/sustainability' },
     { label: 'Accolades and Press', href: '/accolades' },
   ];

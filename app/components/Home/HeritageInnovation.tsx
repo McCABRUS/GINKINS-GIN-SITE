@@ -7,10 +7,11 @@ export default function HeritageInnovation() {
           <div>
             <div className="mx-auto h-15 w-15 flex md:hidden mb-16.5">
               <Image
-                src="/ginkins-isotype.svg"
+                src="/home/ginkins-gin-isotype.svg"
                 alt="ginkins isotype"
                 height={60}
                 width={60}
+                aria-hidden
               />
             </div>
             <h3 className="block text-center md:text-left text-(--primary-gold-main)! mb-4.25 md:mb-6">

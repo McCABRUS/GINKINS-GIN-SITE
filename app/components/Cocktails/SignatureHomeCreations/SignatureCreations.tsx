@@ -2,7 +2,10 @@ import RecipeCard from './RecipeCard';
 
 export default function SignatureHouseCreations() {
   return (
-    <section className="w-screen bg-(--secondary-beige) py-0 lg:py-27 px-0 lg:px-[116.5px]">
+    <section
+      className="w-screen bg-(--secondary-beige) py-0 lg:py-27 px-0 lg:px-[116.5px]"
+      id="signature"
+    >
       <div className="mx-auto">
         <div className="signature-grid grid grid-cols-1 gap-x-0 gap-y-0 lg:gap-x-10.5 lg:gap-y-8">
           <div className="area-title text-center space-y-9 mt-15 lg:mt-0 mb-14.75 lg:mb-0">

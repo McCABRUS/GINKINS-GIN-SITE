@@ -3,7 +3,10 @@ import Image from 'next/image';
 
 export default function FoodPairings() {
   return (
-    <section className="w-full bg-(--secondary-beige) py-15 lg:py-27 px-5 lg:px-15 xl:px-37 relative">
+    <section
+      className="w-full bg-(--secondary-beige) py-15 lg:py-27 px-5 lg:px-15 xl:px-37 relative"
+      id="pairings"
+    >
       <div className="mx-auto">
         <div className="text-center">
           <h3 className="uppercase text-(--primary-red-main)! text-[18px]! leading-6.75!">

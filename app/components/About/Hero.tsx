@@ -28,6 +28,7 @@ export default function Hero() {
               alt="Ginkins gin copper distiller icon"
               height={262}
               width={257}
+              aria-hidden
             />
           </div>
         </div>

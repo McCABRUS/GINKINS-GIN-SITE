@@ -2,7 +2,7 @@ import CocktailCard from './CocktailCard';
 
 export default function ClassicGinkinsCocktails() {
   return (
-    <section className="w-full bg-(--primary-black)">
+    <section className="w-full bg-(--primary-black)" id="classic">
       <div className="mx-auto pb-5 px-5 lg:pl-28.75 lg:pr-31 lg:pt-27 lg:pb-19">
         <div className="text-center lg:hidden py-15">
           <h3 className="mb-9.25 text-(--primary-gold-main)!">Enjoy</h3>

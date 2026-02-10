@@ -62,6 +62,7 @@ export default function RecentAwards() {
             title="Excellence Award"
             subtitle="Gin Guide Awards 2024"
             showDivider={false}
+            atia-hidden
           />
         </div>
       </div>
