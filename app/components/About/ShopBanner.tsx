@@ -45,7 +45,8 @@ export default function ShopBanner() {
             </h4>
             <div className="mt-8">
               <Link
-                href="/where-to-buy"
+                href="https://ginkinsgin.distilleryspirits.com"
+                target="_blank"
                 className="inline-flex items-center justify-center bg-(--primary-red-main) px-5 py-1.5 transition hover:bg-(--primary-gold-main)"
               >
                 <h5 className="text-background!">Shop Online</h5>

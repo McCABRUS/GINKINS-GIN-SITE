@@ -60,7 +60,8 @@ export default function CocktailsHome() {
 
           <div className="mt-8 place-self-center sm:place-self-start">
             <Link
-              href="/where-to-buy"
+              href="https://ginkinsgin.distilleryspirits.com"
+              target="_blank"
               className="inline-flex bg-(--primary-red-main) px-5 py-1.5 transition hover:bg-(--primary-gold-main)"
             >
               <h5 className="text-background! text-lg!">Shop Online</h5>

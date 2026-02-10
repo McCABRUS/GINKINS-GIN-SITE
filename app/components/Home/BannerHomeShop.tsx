@@ -25,7 +25,8 @@ export default function BannerHomeShop() {
 
           <div className="mt-14">
             <Link
-              href="/where-to-buy"
+              href="https://ginkinsgin.distilleryspirits.com"
+              target="_blank"
               className=" inline-block items-center justify-center bg-(--primary-red-main) px-5 py-1.5 text-sm font-medium uppercase  transition hover:bg-(--primary-gold-main)"
             >
               <h5 className="text-background!">Shop online</h5>
