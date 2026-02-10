@@ -5,7 +5,6 @@ export default function Founder() {
     <section className="w-screen bg-(--secondary-beige)">
       <div className="mx-auto px-5 md:px-10 lg:px-37.25 2xl:px-80 py-32 relative">
         <div className="grid grid-cols-1 gap-y-20 lg:grid-cols-2 lg:gap-x-24">
-          {/* INTRO LEFT */}
           <div className="mx-auto order-1 space-y-6 max-w-131.25">
             <h6 className="text-center lg:text-left text-[35px]! text-(--secondary-black)!">
               We’re here to build more than a spirit.
@@ -72,28 +71,29 @@ export default function Founder() {
             <div className="text-center lg:text-left space-y-4 text-base leading-6 text-(--secondary-black)">
               <p>
                 Born in Southern Indiana and shaped by the culture of nearby
-                Louisville, Scott Ginkins grew up where the spirit of
-                craftsmanship runs as deep as the Ohio River. With a background
-                in manufacturing and a mind for precision, he always had a
-                passion for how things are made—and why they matter.
+                Louisville, <strong>Scott Ginkins</strong> grew up where the
+                spirit of craftsmanship runs as deep as the Ohio River. With a
+                background in manufacturing and a mind for precision, he always
+                had a passion for how things are made—and why they matter.
               </p>
 
               <p>
-                That passion led him across the Atlantic to Heriot-Watt
-                University in Edinburgh, where he earned a postgraduate degree
-                in distilling and immersed himself in the science, art, and
-                legacy of spirits. But it was back home—surrounded by the
-                hospitality, grit, and creative energy of the region—that the
-                idea for Ginkins Gin came to life.
+                That passion led him across the Atlantic to
+                <strong>Heriot-Watt University in Edinburgh</strong>, where he
+                earned a postgraduate degree in distilling and immersed himself
+                in the science, art, and legacy of spirits. But it was back
+                home—surrounded by the hospitality, grit, and creative energy of
+                the region—that the idea for Ginkins Gin came to life.
               </p>
 
               <p>
-                More than just a product, Ginkins is his namesake and his
-                purpose—a gin that speaks to tradition, yet embraces the bold.
-                With vibrant citrus, refined botanicals, and the unmistakable
-                smoothness of Kentucky’s limestone-rich water, Scott created a
-                spirit that connects people not just through taste, but through
-                the moments shared around it.
+                More than just a product,
+                <strong>Ginkins is his namesake and his purpose</strong>—a gin
+                that speaks to tradition, yet embraces the bold. With vibrant
+                citrus, refined botanicals, and the unmistakable smoothness of
+                Kentucky’s limestone-rich water, Scott created a spirit that
+                connects people not just through taste, but through the moments
+                shared around it.
               </p>
             </div>
 

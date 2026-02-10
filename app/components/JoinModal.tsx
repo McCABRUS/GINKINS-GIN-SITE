@@ -48,19 +48,19 @@ export default function JoinModal({ open, onClose }: Props) {
           className="absolute top-5 right-5 z-20"
         >
           <Image
-            src="/HomePopup/close-pop-up-button.svg"
+            src="/join-popup/ginkins-gin-ui-close-button.svg"
             alt=""
             width={33}
             height={33}
+            aria-hidden
           />
         </button>
         <div className="grid grid-cols-1 lg:grid-cols-2 h-full bg-background lg:w-auto lg:h-auto">
           <div className="relative hidden lg:block md:aspect-566/794">
             <Image
-              src="/HomePopup/hands-cocktail-ginkins-gin.webp"
-              alt=""
+              src="/join-popup/ginkins-gin-hands-red-curtain-campaign.webp"
+              alt="Elegant red-gloved hands holding a Ginkins Gin bottle and cocktail glass against a velvet curtain"
               fill
-              priority
               className="object-cover"
             />
           </div>
@@ -73,22 +73,23 @@ export default function JoinModal({ open, onClose }: Props) {
             </h5>
             <div className="flex justify-center mb-4.25">
               <Image
-                src="/HomePopup/icon-leaves-ginkins-gin.svg"
+                src="/join-popup/ginkins-gin-icon-botanical-leaves.svg"
                 alt=""
                 width={121}
                 height={120}
                 className="h-full w-auto"
+                aria-hidden
               />
             </div>
             <div className="flex justify-center mb-4.25">
               <div className="h-18.75 w-px bg-(--primary-red-main)" />
             </div>
             <h3 className="mb-10.5">Get Early Access</h3>
-            <p className="text-sm leading-relaxed text-[#4A4A4A] mb-10.5">
+            <p className="text-sm leading-relaxed text-(--primary-black) mb-10.5">
               This isn’t just a mailing list. It’s a front-row seat to
-              everything we’re creating and an invitation to be part of it. When
+              everything we’re creating—and an invitation to be part of it. When
               you join the Inner Circle, you’ll get early access to limited
-              releases, private tastings, and behind the scenes peeks at what’s
+              releases, private tastings, and behind-the-scenes peeks at what’s
               brewing (or distilling) at Ginkins HQ.
             </p>
 

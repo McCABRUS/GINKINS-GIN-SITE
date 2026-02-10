@@ -49,7 +49,7 @@ export default function Heritage() {
           </p>
 
           <p className="text-(--primary-red-main) text-3xl lg:text-4xl font-cormorant-garamond font-medium">
-            The name Ginkins isn’t just a brand, it’s his family name.{' '}
+            The name Ginkins isn’t just a brand—it’s his family name.
             <strong>
               And every bottle is a personal expression of craftsmanship,
               connection, and pride.
@@ -121,7 +121,7 @@ export default function Heritage() {
               className="w-7.75 object-cover mx-auto lg:mx-0"
             />
             <p className="text-base leading-6 text-(--primary-black)">
-              Because great gin doesn’t just taste good. <br />{' '}
+              Because great gin doesn’t just taste good. <br />
               <strong>It means something.</strong>
             </p>
           </div>

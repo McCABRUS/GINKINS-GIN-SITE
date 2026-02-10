@@ -37,7 +37,7 @@ export default function RecentAwards() {
           <AwardItem
             image="/accolades/ginkins-gin-iwsc-92-points-2025.png"
             alt="IWSC 92 points 2025 silver award medal for Ginkins Gin"
-            title="Silver Medal (92 Points)"
+            title="92 Points Silver Medal"
             subtitle="International Wine & Spirit Competition 2025"
           />
 

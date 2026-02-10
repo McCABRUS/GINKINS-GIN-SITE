@@ -18,7 +18,7 @@ export default function SingUpButton() {
         }}
       >
         <h5 className="text-background! whitespace-nowrap text-lg! lg:text-base!">
-          SIGN UP FOR OUR NEWSLETTER TO BE THE FIRST KNOW WHAT’S NEXT
+          Sign up for our newsletter to be the first to know what’s next
         </h5>
       </button>
     </>

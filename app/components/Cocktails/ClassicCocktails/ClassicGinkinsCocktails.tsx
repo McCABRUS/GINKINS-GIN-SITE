@@ -47,7 +47,7 @@ export default function ClassicGinkinsCocktails() {
             alt="Tom Collins cocktail in a highball glass with Ginkins Gin, lemon, and a maraschino cherry”"
           />
           <CocktailCard
-            title="Clover Club"
+            title="Clover Club – Heritage Style"
             image="/cocktails/classic-ginkins-cocktails/ginkins-gin-clover-club-cocktail.png"
             alt="Pink Clover Club gin cocktail with egg white foam and fresh raspberries"
           />

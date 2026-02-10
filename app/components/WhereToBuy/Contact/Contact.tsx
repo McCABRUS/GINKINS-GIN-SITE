@@ -30,7 +30,6 @@ export default function Contact() {
           vibes).
         </p>
         <div className="mt-20 grid grid-cols-1 gap-16 lg:grid-cols-3">
-          {/* LEFT COLUMN */}
           <div className="flex flex-col justify-center space-y-16">
             <IconBlock
               label="General Inquiries"
@@ -47,8 +46,6 @@ export default function Contact() {
               svgHeight={120}
             />
           </div>
-
-          {/* CENTER IMAGE */}
           <div className="flex justify-center">
             <Image
               src="/where_to_buy/ginkins-gin-golden-bloom-outdoor.png"
@@ -58,8 +55,6 @@ export default function Contact() {
               className="object-cover"
             />
           </div>
-
-          {/* RIGHT COLUMN */}
           <div className="flex flex-col justify-center space-y-16">
             <IconBlock
               label="Wholesale & Distribution"

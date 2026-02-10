@@ -9,11 +9,12 @@ export default function FindShops() {
           <div className="space-y-6 px-5">
             <h5 className="mb-18.75">Find us</h5>
             <Image
-              src="/connections/GinkinsMortarPestle.svg"
+              src="/home/ginkins-gin-icon-mortar-pestle.svg"
               alt=""
               width={56}
               height={69}
               className=""
+              aria-hidden
             />
             <h4 className="text-(--primary-black)!  py-6">
               Great Gin Travels.

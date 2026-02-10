@@ -34,7 +34,7 @@ export default function Celebrated() {
                 way:
               </p>
               <p className="text-3xl lg:text-4xl italic font-cormorant-garamond text-(--primary-gold-main) text-center lg:text-left">
-                Bold, refined, and rooted in connection.
+                bold, refined, and rooted in connection.
               </p>
             </div>
           </div>

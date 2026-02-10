@@ -23,7 +23,7 @@ export default function JoinSustainability() {
         <p className="mt-6 max-w-xl text-base md:text-lg leading-relaxed text-black/80">
           So when you choose Ginkins, you&apos;re not just enjoying a remarkable
           spirit. You&apos;re joining us in raising the bar—for sustainability,
-          craftsmanship, and the future of small-batch distilling
+          craftsmanship, and the future of small-batch distilling.
         </p>
       </div>
     </section>

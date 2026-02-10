@@ -11,12 +11,10 @@ export default function HeritageHomeSection() {
           <br className="inline md:hidden" />
           TRADITION.
           <br />
-          REFINED BY
-          <br className="inline md:hidden" />
+          REFINED BY <br className="inline md:hidden" />
           CRAFT.
           <br />
-          RAISED IN
-          <br className="inline md:hidden" />
+          RAISED IN <br className="inline md:hidden" />
           LOUISVILLE
         </h1>
         <div className="absolute -top-57 md:-top-17.5 xl:-top-35 left-[75%] md:left-[49%] -translate-x-1/2 mr-7.5 w-20.25 h-27.5 xl:w-40 xl:h-56 pointer-events-none">

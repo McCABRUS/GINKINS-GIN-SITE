@@ -14,8 +14,8 @@ export default function GinProductsSection() {
           description="Our signature gin. Inspired by the Southern hospitality of Louisville, Kentucky, this award-winning expression invites you to reimagine what a classic gin can be. With a bright base of juniper, grapefruit, and lemon peel, Louisville Dry Gin is infused with local botanicals and distilled using pure Kentucky water. It’s timeless, yet totally unexpected. At its very best, it transforms life’s simplest moments into something a little brighter, a little bolder, and a lot more memorable."
           tasting="Delicate dry with bold hints of citrus."
           serving="Try it in a G&T with a grapefruit twist or sip it neat to let the citrus shine."
-          awards1="Gold Medal – Gin of the Year™ 2024, Gold Medal – 2024 Gin Masters (Microdistillery Round)"
-          awards2="2025 IWSC Winner - 92 points - Silver Medal"
+          awards1="Gold Medal – Gin of the Year™ 2024"
+          awards2="Gold Medal – 2024 Gin Masters (Microdistillery Round)"
           bottle={
             <ProductBottle
               bgColor="bg-(--primary-red-main)"
@@ -31,7 +31,7 @@ export default function GinProductsSection() {
           title="Golden Bloom Gin"
           subtitle="Floral Finesse Meets Refreshing Ease."
           description="Infused with elderflower, juniper, and a delicate botanical bouquet, Golden Bloom is an invitation to slow down and savor the softer side of gin. Crafted with precision and care, this crisp, floral expression captures the essence of nature in every sip. Light, fragrant, and endlessly mixable, it balances the natural sweetness of elderflower with bright citrus, subtle herbs, and the grounding clarity of juniper for a refined, aromatic experience."
-          tasting="Elderflower’s elegance, orange zest, and juniper"
+          tasting="Elderflower’s elegance, orange zest, and juniper."
           serving="Ideal in a spritz with tonic, ice, and a slice of cucumber or lemon."
           bottle={
             <ProductBottle
@@ -49,7 +49,7 @@ export default function GinProductsSection() {
           subtitle="Spice-Driven. Deeply Layered. Unexpectedly Smooth."
           description="For those who seek warmth and complexity, Heritage Reserve delivers. Bold cinnamon, smooth nutmeg, and crisp juniper meet in a slow-sipped blend that honors old-world flavor with a modern edge. It opens with a deep, spiced warmth on the nose, followed by a rich taste of cinnamon, nutmeg, and crisp juniper. The finish is long, layered, and unforgettable—crafted for those who appreciate depth in every detail."
           tasting="Spiced and sophisticated, with warming notes of cinnamon and nutmeg, brightened by crisp juniper and finished with smooth depth."
-          serving="Serving Tip: Best enjoyed over a large ice cube or in a Negroni variation."
+          serving="Best enjoyed over a large ice cube or in a Negroni variation."
           bottle={
             <ProductBottle
               bgColor="bg-(--secondary-gray-500)"
@@ -75,7 +75,7 @@ export default function GinProductsSection() {
                 Made for discovery.
               </p>
               <p className="text-base leading-6">
-                We’re always experimenting always evolving. From seasonal
+                We’re always experimenting—always evolving. From seasonal
                 infusions to rare barrel-aged releases, our limited-edition gins
                 are crafted for the curious and the collectors alike.
               </p>
