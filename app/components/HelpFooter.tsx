@@ -6,9 +6,12 @@ export default function HelpFooter() {
           Need help or want to access your data? Email us at <br />
           <span className="text-(--primary-red-main)!">info@ginkins.com.</span>
         </h5>
-        <button className="mt-6 w-40 lg:w-44.25 h-9.75 flex items-center justify-center bg-(--primary-red-main) px-5 lg:px-8 py-1.5 lg:py-3 text-sm font-medium uppercase  text-background transition hover:bg-(--primary-gold-main) mx-auto lg:mx-0">
+        <a
+          href={`mailto:${'info'}@${'ginkins'}.com`}
+          className="relative w-40 lg:w-44.25 h-9.75 mt-9.5 flex mx-auto items-center justify-center bg-(--primary-red-main) px-5 py-1.5 transition hover:bg-(--primary-gold-main)"
+        >
           <h5 className="text-background!">CONTACT</h5>
-        </button>
+        </a>
       </div>
       <div
         className="absolute border-solid border-(--primary-red-main) border-t border-r-0 border-b-0 border-l-0 shrink-0 w-18.75 h-0 z-20 bottom-82.5 left-1/2 -translate-x-1/2"

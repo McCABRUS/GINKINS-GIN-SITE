@@ -34,8 +34,6 @@ export default function ModalTriggerController({ openModal }: Props) {
 
     const maybeStartTimer = () => {
       const { preloaderDone, ageGateAccepted } = window.__APP_STATE__!;
-
-      // 🚨 CONDICIÓN ÚNICA
       if (
         preloaderDone &&
         (ageGateAccepted || isAgeVerified()) &&
@@ -49,8 +47,6 @@ export default function ModalTriggerController({ openModal }: Props) {
         }, 10_000);
       }
     };
-
-    // 👉 chequeo inmediato (caso: usuario ya verificado)
     maybeStartTimer();
 
     const onStateChange = () => {

@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function FindShops() {
   return (
@@ -29,12 +30,13 @@ export default function FindShops() {
               find your next favorite pour.
             </p>
 
-            <button className="w-40 lg:w-44.25 h-9.75 mt-9.5 flex items-center justify-center bg-(--primary-red-main) px-5 lg:px-8 py-1.5 lg:py-3 text-sm font-medium uppercase  text-background transition hover:bg-(--primary-gold-main)">
+            <Link
+              href="/where-to-buy"
+              className="w-40 lg:w-44.25 h-9.75 mt-9.5 flex items-center justify-center bg-(--primary-red-main) px-5 py-1.5 transition hover:bg-(--primary-gold-main)"
+            >
               <h5 className="text-background!">Shop ONLINE</h5>
-            </button>
+            </Link>
           </div>
-
-          {/* IMAGE */}
           <div className="relative">
             <div className="mx-0 w-full">
               <Image

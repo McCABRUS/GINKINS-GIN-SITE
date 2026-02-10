@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 export default function GridCard({
   title,
   alt,
@@ -29,9 +30,12 @@ export default function GridCard({
         <p className="text-center lg:text-left text-base leading-6 font-normal text-background  my-5">
           {description}
         </p>
-        <button className="relative w-40 lg:w-44.25 h-9.75 mt-9.5 flex mx-auto lg:mx-0 content-start items-center justify-center bg-(--primary-red-main) px-5 lg:px-8 py-1.5 lg:py-3 text-sm font-medium uppercase  text-background transition hover:bg-(--primary-gold-main)">
+        <Link
+          href="/where-to-buy"
+          className="relative w-40 lg:w-44.25 h-9.75 mt-9.5 flex mx-auto lg:mx-0 content-start items-center justify-center bg-(--primary-red-main) px-5 py-1.5 transition hover:bg-(--primary-gold-main)"
+        >
           <h5 className="text-background!">Shop ONLINE</h5>
-        </button>
+        </Link>
       </div>
     </div>
   );

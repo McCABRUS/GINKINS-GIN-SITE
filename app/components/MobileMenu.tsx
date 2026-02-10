@@ -47,7 +47,7 @@ export default function MobileMenu() {
             ✕
           </button>
 
-          <nav className="px-8 pt-24 space-y-8 text-sm tracking-widest uppercase">
+          <nav className="px-8 pt-24 space-y-8 text-sm uppercase">
             <MenuItem
               label="About Ginkins"
               link="/about-ginkins"
@@ -102,7 +102,7 @@ export default function MobileMenu() {
               </button>
 
               {moreOpen && (
-                <div className="mt-6 space-y-6 text-xs">
+                <div className="mt-6 space-y-6 text-xs z-499">
                   <ul className="py-2">
                     <li>
                       <Link

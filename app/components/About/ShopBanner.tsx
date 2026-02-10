@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function ShopBanner() {
   return (
     <section className="relative w-full aspect-4/5 md:aspect-16/7 bg-cover bg-center md:bg-[url('/about/ginkins-gin-products.webp')]">
@@ -42,9 +44,12 @@ export default function ShopBanner() {
               Raised in Louisville.
             </h4>
             <div className="mt-8">
-              <button className="inline-flex items-center justify-center bg-(--primary-red-main) px-8 py-3 text-lg font-medium uppercase   transition hover:bg-(--primary-gold-main)">
+              <Link
+                href="/where-to-buy"
+                className="inline-flex items-center justify-center bg-(--primary-red-main) px-5 py-1.5 transition hover:bg-(--primary-gold-main)"
+              >
                 <h5 className="text-background!">Shop Online</h5>
-              </button>
+              </Link>
             </div>
           </div>
         </div>
