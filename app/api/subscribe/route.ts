@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { subscribeSchema } from '@/app/lib/schemas/newsletter';
+import { subscribeSchema } from '@/lib/schemas/newsletter';
 
 export async function POST(request: Request) {
   try {
