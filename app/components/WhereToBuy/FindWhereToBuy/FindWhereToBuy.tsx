@@ -11,7 +11,7 @@ export default function FindWhereToBuy() {
             alt="Luxury red shopping bag with gold botanical pattern for Ginkins Gin"
             title="Retailers Near You"
             description="From boutique bottle shops to trusted liquor stores, Ginkins is on shelves across Kentucky and beyond."
-            image="/where_to_buy/ginkins-gin-premium-shopping-bag.png"
+            image="/where_to_buy/ginkins-gin-premium-shopping-bag--high.png"
             bgColor="bg-(--primary-gold-main)"
           />
           <hr
@@ -23,7 +23,7 @@ export default function FindWhereToBuy() {
             alt="Set of Ginkins Gin branded coasters with Stay Ginspired slogan"
             title="Bars & Restaurants"
             description="Discover where our gins are being shaken, stirred, and served in cocktails crafted by some of the best in the business."
-            image="/where_to_buy/ginkins-gin-branded-coasters-set.png"
+            image="/where_to_buy/ginkins-gin-branded-coasters-set--opt.png"
             bgColor="bg-(--primary-red-main)"
           />
           <hr
@@ -36,7 +36,7 @@ export default function FindWhereToBuy() {
             alt="Red and gold luxury gift box containing a Ginkins Gin bottle"
             title="Order Online"
             description="Prefer delivery to your door? Check out our online retail partners for easy, secure ordering."
-            image="/where_to_buy/ginkins-gin-single-bottle-gift-box.png"
+            image="/where_to_buy/ginkins-gin-single-bottle-gift-box--high.png"
           />
           <hr
             className="block lg:hidden mx-auto  w-[80%] text-(--primary-gold-main)"
@@ -48,7 +48,7 @@ export default function FindWhereToBuy() {
             alt="Black and gold square gift box with intricate botanical pattern for Ginkins Gin"
             title="Wholesale & Distribution"
             description="Interested in bringing Ginkins to your bar, store, or event? We’d love to connect."
-            image="/where_to_buy/ginkins-gin-botanical-gift-box.png"
+            image="/where_to_buy/ginkins-gin-botanical-gift-box--high-res.png"
           />
           <hr
             className="block lg:hidden mx-auto  w-[80%] text-(--primary-gold-main)"

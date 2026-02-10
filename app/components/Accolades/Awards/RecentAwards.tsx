@@ -5,14 +5,7 @@ export default function RecentAwards() {
   return (
     <section className="relative w-full bg-(--primary-cream) py-15 xl:py-50">
       <div className="relative mx-auto px-5 lg:px-0 xl:px-37.5 pb-15 lg:pb-0">
-        <div
-          className="
-            pointer-events-none absolute
-            left-1/2 top-0 -translate-x-1/2
-            flex flex-col items-center
-            h-full
-          "
-        >
+        <div className="pointer-events-none absolute left-1/2 top-0 -translate-x-1/2 flex flex-col items-center h-full">
           <div className="relative top-31 xl:-top-63.75 lg:-top-23.75">
             <Star />
           </div>

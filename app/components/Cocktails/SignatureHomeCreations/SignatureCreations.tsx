@@ -19,7 +19,7 @@ export default function SignatureHouseCreations() {
           <RecipeCard
             area="area-card1"
             title="Southern Negroni"
-            image="/cocktails/signature-house-creations/ginkins-gin-negroni-cocktail.png"
+            image="/cocktails/signature-house-creations/ginkins-gin-negroni-cocktail.webp"
             alt="Classic Negroni cocktail with Ginkins Gin, served over ice on a stone coaster with a large orange peel twis"
             description="Bold, bitter-sweet, and unmistakably smooth. A Southern spin on the Italian classic—Ginkins Louisville Dry meets Aperol and sweet vermouth for a citrus-forward twist that lingers just right."
             ingredients={[
@@ -40,7 +40,7 @@ export default function SignatureHouseCreations() {
           <RecipeCard
             area="area-card2"
             title="Harvest Brew"
-            image="/cocktails/signature-house-creations/ginkins-gin-harvest-brew-cocktail.png"
+            image="/cocktails/signature-house-creations/ginkins-gin-harvest-brew-cocktail.webp"
             alt="Autumnal Harvest Brew cocktail with Ginkins Gin and cinnamon stick garnish on a dark setting"
             description="Where gin meets cozy cold brew."
             ingredients={[
@@ -58,7 +58,7 @@ export default function SignatureHouseCreations() {
           <RecipeCard
             area="area-card4"
             title="Mandarin Gimlet"
-            image="/cocktails/signature-house-creations/ginkins-gin-mandarin-gimlet-cocktail.png"
+            image="/cocktails/signature-house-creations/ginkins-gin-mandarin-gimlet-cocktail.webp"
             alt="Bright Mandarin Gimlet featuring Ginkins Gin, served with fresh mandarin segments on red"
             description="Zesty, vibrant, and refreshing."
             ingredients={[
@@ -75,7 +75,7 @@ export default function SignatureHouseCreations() {
           <RecipeCard
             area="area-card3"
             title="Heritage Espresso"
-            image="/cocktails/signature-house-creations/ginkins-gin-heritage-espresso-dark.png"
+            image="/cocktails/signature-house-creations/ginkins-gin-heritage-espresso-dark.webp"
             alt="Signature Espresso Martini made with Ginkins Heritage Reserve on a black background with coffee grounds"
             description="Rich, bold, and bittersweet. A luxurious after-dinner sipper combining gin with deep espresso flavor. Exact proportions not specified in the original — we recommend:"
             ingredients={[
@@ -93,7 +93,7 @@ export default function SignatureHouseCreations() {
           <RecipeCard
             area="area-card5"
             title="Golden Spritz"
-            image="/cocktails/signature-house-creations/ginkins-gin-golden-spritz-cocktail.png"
+            image="/cocktails/signature-house-creations/ginkins-gin-golden-spritz-cocktail.webp"
             alt="Effervescent Golden Spritz with Ginkins Gin, garnished with a cucumber ribbon and rosemary"
             description="Floral, fizzy, and perfect for sunny days."
             ingredients={[
@@ -109,7 +109,7 @@ export default function SignatureHouseCreations() {
           <RecipeCard
             area="area-card6"
             title="Hop & Herb Cocktail"
-            image="/cocktails/signature-house-creations/ginkins-gin-hop-herb-cocktail.png"
+            image="/cocktails/signature-house-creations/ginkins-gin-hop-herb-cocktail.webp"
             alt="Vibrant yellow Hop & Herb gin cocktail with a rosemary sprig and lime slice"
             description="Bright citrus meets IPA botanicals."
             ingredients={[
@@ -126,7 +126,7 @@ export default function SignatureHouseCreations() {
           <RecipeCard
             area="area-card7"
             title="Ginkins Gin Espresso"
-            image="/cocktails/signature-house-creations/ginkins-gin-espresso-martini-light.png"
+            image="/cocktails/signature-house-creations/ginkins-gin-espresso-martini-light.webp"
             alt="Ginkins Gin Espresso Martini served on a white marble coaster with scattered coffee beans"
             description="Rich, bold, and bittersweet."
             ingredients={[
@@ -142,7 +142,7 @@ export default function SignatureHouseCreations() {
           <RecipeCard
             area="area-card8"
             title="Basil Ginkins Smash"
-            image="/cocktails/signature-house-creations/ginkins-gin-basil-smash-cocktail.png"
+            image="/cocktails/signature-house-creations/ginkins-gin-basil-smash-cocktail.webp"
             alt="Refreshing Basil Smash cocktail with Ginkins Gin and fresh basil leaf garnish on a red background"
             description="Herbaceous, crisp, and ideal for warm nights."
             ingredients={[

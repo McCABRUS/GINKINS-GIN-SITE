@@ -9,7 +9,6 @@ export default function AccoladesHero() {
           alt="Golden line art illustration of a Kentucky farm and distillery at sunset for Ginkins Gin background"
           fill
           className="object-cover"
-          priority
         />
       </div>
       <div className="relative  text-center">
@@ -24,10 +23,11 @@ export default function AccoladesHero() {
         <div className="my-16 flex justify-center">
           <div className="h-79.75 w-76">
             <Image
-              src="/accolades/icon-stars-ginkins-gin.svg"
+              src="/accolades/ginkins-gin-icon-stars-black-duo.svg"
               alt="Leaves icon"
               height={304}
               width={319}
+              aria-hidden
             />
           </div>
         </div>

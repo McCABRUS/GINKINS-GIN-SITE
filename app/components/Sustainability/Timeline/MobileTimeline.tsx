@@ -5,7 +5,7 @@ export default function MobileTimeline() {
   return (
     <div className="lg:hidden flex flex-col items-center px-6">
       <TimelineImage
-        src="/sustainability/ginkins-gin-fresh-juniper-berries.png"
+        src="/sustainability/ginkins-gin-fresh-juniper-berries.webp"
         alt="Close-up of fresh blue juniper berries in a wooden spoon, the core botanical of Ginkins Gin"
       />
       <div className="flex flex-col items-start">
@@ -27,7 +27,7 @@ export default function MobileTimeline() {
         </div>
       </div>
       <TimelineImage
-        src="/sustainability/scott-ginkins-master-distiller-laboratory.png"
+        src="/sustainability/scott-ginkins-master-distiller-laboratory.webp"
         alt="Scott Ginkins, Master Distiller, in a white lab coat tasting spirits next to a copper pot still at the distillery"
       />
       <div className="flex flex-col items-start">
@@ -49,7 +49,7 @@ export default function MobileTimeline() {
         </div>
       </div>
       <TimelineImage
-        src="/sustainability/ginkins-gin-founder-and-team-outdoors.png"
+        src="/sustainability/ginkins-gin-founder-and-team-outdoors.webp"
         alt="Scott and the Ginkins Gin team discussing botanicals at a rustic wooden table outdoors"
       />
       <div className="flex flex-col items-start">

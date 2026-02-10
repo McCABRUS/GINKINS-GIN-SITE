@@ -29,7 +29,6 @@ export function ProductBottle({
           width={294}
           height={560}
           className="w-[80%] h-auto object-contain"
-          priority
         />
       </div>
     </div>

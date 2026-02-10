@@ -9,7 +9,6 @@ export default function CocktailsHero() {
           alt="Golden line art illustration of a Kentucky farm and distillery at sunset for Ginkins Gin background"
           fill
           className="object-cover"
-          priority
         />
       </div>
       <div className="relative  text-center">
@@ -24,6 +23,7 @@ export default function CocktailsHero() {
               alt="cocktail glass icon"
               height={231}
               width={175}
+              aria-hidden
             />
           </div>
         </div>

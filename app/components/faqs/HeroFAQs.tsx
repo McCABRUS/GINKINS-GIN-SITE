@@ -9,7 +9,6 @@ export default function HeroFAQs() {
           alt="Golden line art illustration of a Kentucky farm and distillery at sunset for Ginkins Gin background"
           fill
           className="object-cover object-bottom"
-          priority
         />
       </div>
       <div className="mx-auto text-center">

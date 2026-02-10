@@ -9,7 +9,6 @@ export default function Hero() {
           alt="Golden line art illustration of a Kentucky farm and distillery at sunset for Ginkins Gin background"
           fill
           className="object-cover"
-          priority
         />
       </div>
       <div className="relative  text-center">

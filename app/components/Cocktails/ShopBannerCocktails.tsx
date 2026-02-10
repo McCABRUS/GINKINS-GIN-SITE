@@ -6,7 +6,7 @@ export default function ShopBannerCocktails() {
       className="relative w-full aspect-4/5 md:aspect-16/7 bg-cover bg-left"
       style={{
         backgroundImage:
-          "url('/cocktails/ginkins-gin-lifestyle-hands-red-curtain.jpg')",
+          "url('/cocktails/ginkins-gin-lifestyle-hands-red-curtain.webp')",
       }}
     >
       <div className="absolute inset-0 bg-black/70 visible md:invisible" />

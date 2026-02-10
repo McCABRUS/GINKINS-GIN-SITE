@@ -5,7 +5,7 @@ export default function Celebrated() {
         className="absolute inset-0 bg-cover bg-center"
         style={{
           backgroundImage:
-            "url('/accolades/ginkins-gin-serving-martini-box.png')",
+            "url('/accolades/ginkins-gin-serving-martini-box.webp')",
         }}
       />
       <div className="pointer-events-none absolute inset-0 vignette-overlay bg-black/50 xl:bg-black/10" />

@@ -15,8 +15,8 @@ export default function Heritage() {
             src="/about/ginkins-gin-scott-botanicals.webp"
             alt="Expert distiller Scott Ginkins showcasing the botanical craftsmanship and traditional copper still used in creating Ginkins Gin."
             className="w-screen lg:w-142.25 h-129.5 lg:h-202.5 lg:justify-self-end lg:self-end object-cover relative object-top"
-            height={810}
-            width={569}
+            height={814}
+            width={852}
           />
         </div>
       </div>
@@ -61,18 +61,19 @@ export default function Heritage() {
         <div className="grid grid-cols-1 gap-5.25 lg:grid-cols-3 text-center lg:text-left">
           <div className="hidden lg:block space-y-6">
             <Image
-              src="/about/ginkins-gin-botanicals.webp"
+              src="/home/story-carrousel/ginkins-gin-botanicals-layout.webp"
               alt="Fresh gin ingredients and botanicals such as citrus, ginger, and juniper berries arranged for a craft spirits brand."
               width={391}
               height={563}
               className="w-full object-cover h-140.75"
             />
             <Image
-              src="/about/ginkins-icon-martini-decorations.svg"
+              src="/home/ginkins-gin-icon-martini-decoration.svg"
               alt="Ginkins Gin Isotype"
               width={31}
               height={39}
               className="w-7.75 object-cover mx-auto lg:mx-0"
+              aria-hidden
             />
             <p className="text-base leading-6 text-(--primary-black)">
               <strong>
@@ -83,18 +84,19 @@ export default function Heritage() {
           </div>
           <div className="space-y-6">
             <Image
-              src="/about/ginkins-gin-barn.webp"
+              src="/home/story-carrousel/ginkins-gin-heritage-barn.webp"
               alt="Red 'Ginkins' barn in a sunny rural field with autumn foliage."
               width={391}
               height={563}
               className="w-full h-140.75 object-cover"
             />
             <Image
-              src="/about/ginkins-icon-martini-decorations.svg"
+              src="/home/ginkins-gin-icon-martini-decoration.svg"
               alt="Ginkins Gin Isotype"
               width={31}
               height={39}
               className="w-7.75 object-cover mx-auto lg:mx-0"
+              aria-hidden
             />
             <p className="text-base leading-6 text-(--primary-black)">
               Scott didn’t just craft a gin—he created a philosophy:
@@ -114,11 +116,12 @@ export default function Heritage() {
               className="w-full object-cover h-140.75"
             />
             <Image
-              src="/about/ginkins-icon-martini-decorations.svg"
+              src="/home/ginkins-gin-icon-martini-decoration.svg"
               alt="Ginkins Gin Isotype"
               width={31}
               height={39}
               className="w-7.75 object-cover mx-auto lg:mx-0"
+              aria-hidden
             />
             <p className="text-base leading-6 text-(--primary-black)">
               Because great gin doesn’t just taste good. <br />

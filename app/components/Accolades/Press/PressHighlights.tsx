@@ -44,7 +44,6 @@ export default function PressHighlights() {
 
   return (
     <section className="relative bg-(--primary-gold-main) py-25 overflow-hidden w-full px-5 lg:px-13">
-      {/* Title */}
       <h1 className="text-center text-(--primary-gold-400)! mb-20">
         PRESS <br className="block lg:hidden" /> HIGHLIGHTS
       </h1>
@@ -92,10 +91,7 @@ export default function PressHighlights() {
           />
         </svg>
       </button>
-
-      {/* Content */}
       <div className="relative mx-auto px-6">
-        {/* Divider (desktop only) */}
         <div className="pointer-events-none absolute left-1/2 top-0 hidden xl:h-95.5 h-65 w-px bg-white lg:block" />
 
         <div className="grid grid-cols-1 gap-16 lg:grid-cols-2 lg:gap-24">
@@ -105,8 +101,6 @@ export default function PressHighlights() {
           </div>
         </div>
       </div>
-
-      {/* CTA */}
       <div className="mt-20 text-center">
         <button className="inline-flex items-center justify-center bg-(--primary-red-main) px-8 py-3 text-lg font-medium uppercase   transition hover:bg-(--primary-gold-400) mt-1">
           <h5 className="text-background!">SEE ALL AWARDS</h5>

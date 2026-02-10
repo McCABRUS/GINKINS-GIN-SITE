@@ -9,7 +9,6 @@ export default function GinsHero() {
           alt="Golden line art illustration of a Kentucky farm and distillery at sunset for Ginkins Gin background"
           fill
           className="object-cover w-full"
-          priority
         />
       </div>
       <div className="text-center relative mx-auto px-6 space-y-12 z-200">
@@ -24,24 +23,27 @@ export default function GinsHero() {
         <div className="flex justify-center gap-6 lg:gap-37.75 relative">
           <Image
             src="/our_gins/ginkins-gin-icon-bottle-red.svg"
-            alt="Red Gin"
+            alt=""
             width={160}
             height={350}
             className="md:w-40 w-16"
+            aria-hidden
           />
           <Image
             src="/our_gins/ginkins-gin-icon-bottle-gold.svg"
-            alt="Gold Gin"
+            alt=""
             width={160}
             height={350}
             className="md:w-40 w-16"
+            aria-hidden
           />
           <Image
             src="/our_gins/ginkins-gin-icon-bottle-black.svg"
-            alt="Black Gin"
+            alt=""
             width={160}
             height={350}
             className="md:w-40 w-16"
+            aria-hidden
           />
         </div>
       </div>

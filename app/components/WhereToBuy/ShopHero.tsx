@@ -5,10 +5,9 @@ export default function ShopHero() {
   return (
     <section className="relative w-screen h-250 min-h-130  overflow-hidden">
       <Image
-        src="/where_to_buy/ginkins-gin-premium-gift-boxes.jpg"
+        src="/where_to_buy/ginkins-gin-premium-gift-boxes.webp"
         alt="Person in a red dress holding a stack of Ginkins Gin luxury gold and black gift boxes"
         fill
-        priority
         className="object-cover object-center w-full"
       />
       <div className="absolute inset-0 bg-(--primary-red-main) mix-blend-multiply" />

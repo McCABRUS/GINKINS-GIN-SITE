@@ -9,11 +9,12 @@ export default function Story() {
           <div>
             <div className="mb-6">
               <Image
-                src="/about/ginkins-icon-martini-decorations.svg"
+                src="/home/ginkins-gin-icon-martini-decoration.svg"
                 alt="Martini Ginkins Gin icon"
                 width={56}
                 height={71}
                 className="mb-10.75 mx-auto lg:mx-0"
+                aria-hidden
               />
             </div>
             <div className="text-center lg:text-left text-base leading-6 text-(--primary-black)">

@@ -8,6 +8,7 @@ export default function TimelineMarker() {
         alt="Red stylized botanical flower icon for Ginkins Gin visual identity"
         width={28}
         height={28}
+        aria-hidden
       />
     </div>
   );

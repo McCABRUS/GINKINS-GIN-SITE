@@ -14,7 +14,13 @@ export default function IconBlock({
 }) {
   return (
     <div className="flex flex-col items-center gap-4 text-center">
-      <Image src={svgImg} alt={svgAlt} width={svgWidth} height={svgHeight} />
+      <Image
+        src={svgImg}
+        alt={svgAlt}
+        width={svgWidth}
+        height={svgHeight}
+        aria-hidden
+      />
       <h5 className="">{label}</h5>
     </div>
   );

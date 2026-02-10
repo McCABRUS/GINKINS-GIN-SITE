@@ -50,10 +50,10 @@ export default function Founder() {
 
             <div className="relative h-77 md:h-110 md:w-80 lg:h-120 xl:h-159.25 lg:w-auto max-w-108.75">
               <Image
-                src="/about/scott-ginkins-gin-master-distiller.webp"
+                src="/home/scott-ginkins-founder-master-distiller.webp"
                 alt="Professional master distiller presenting a bottle of premium gin at an elegant bar"
-                width={434}
-                height={637}
+                width={705}
+                height={667}
                 className="object-cover relative rounded-t-full z-20 w-52.5 md:w-80 h-77 md:h-110 lg:w-auto lg:h-120 xl:h-159.25 lg:max-w-w-108.75"
               />
               <div className="absolute bottom-0 -right-5.5 lg:-right-11.25 h-37.25 md:h-55 xl:h-80 lg:h-60 w-63.5 md:w-91 lg:w-101.5 xl:w-131.25 bg-(--primary-red-main) z-10" />

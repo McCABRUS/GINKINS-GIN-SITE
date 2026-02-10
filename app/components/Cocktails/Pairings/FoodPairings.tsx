@@ -43,7 +43,7 @@ export default function FoodPairings() {
                 label: 'Charcuterie',
               },
               {
-                icon: '/cocktails/food-pairings-icons/ginkins-gin-icon-botanical-seed.svg',
+                icon: '/cocktails/food-pairings-icons/ginkins-gin-icon-blossom-detail.svg',
                 label: 'Citrus-dressed greens',
               },
               {
@@ -74,7 +74,7 @@ export default function FoodPairings() {
                 label: 'Ginger-based desserts',
               },
               {
-                icon: '/cocktails/food-pairings-icons/ginkins-gin-icon-blossom-detail.svg',
+                icon: '/cocktails/food-pairings-icons/ginkins-gin-icon-botanical-seed.svg',
                 label: 'Spiced nuts',
               },
             ]}
@@ -86,6 +86,7 @@ export default function FoodPairings() {
             alt=""
             width={140}
             height={140}
+            aria-hidden
           />
         </div>
       </div>

@@ -18,7 +18,7 @@ export default function BarBookFeature() {
               <div className="pointer-events-none absolute inset-0 rounded-t-full z-30 bg-linear-to-b from-black/0 to-black/90" />
 
               <Image
-                src="/accolades/ginkins-gin-trio-silver-tray.png"
+                src="/accolades/ginkins-gin-trio-silver-tray.webp"
                 alt="Elegant hands holding a silver tray with a trio of Ginkins Gin bottles against a red velvet curtain"
                 width={414}
                 height={637}

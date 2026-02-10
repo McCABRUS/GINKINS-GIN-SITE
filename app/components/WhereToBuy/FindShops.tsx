@@ -42,7 +42,7 @@ export default function FindShops() {
           <div className="relative">
             <div className="mx-0 w-full">
               <Image
-                src="/where_to_buy/ginkins-gin-golden-tray-service.png"
+                src="/where_to_buy/ginkins-gin-golden-tray-service.webp"
                 alt="Ginkins Gin bottle and a martini glass served on a golden tray with a shaker"
                 width={608}
                 height={693}

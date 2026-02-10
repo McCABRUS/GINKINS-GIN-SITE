@@ -9,7 +9,6 @@ export default function SubscribeHero() {
           alt="Golden line art illustration of a Kentucky farm and distillery at sunset for Ginkins Gin background"
           fill
           className="object-cover"
-          priority
         />
       </div>
       <div className="relative  text-center">
@@ -25,6 +24,7 @@ export default function SubscribeHero() {
               alt="Leaves icon"
               height={231}
               width={232}
+              aria-hidden
             />
           </div>
         </div>

@@ -44,6 +44,7 @@ export default function SubscribeContainer() {
                     alt=""
                     width={41}
                     height={41}
+                    aria-hidden
                   />
                   {index !== benefits.length - 1 && (
                     <span className="my-4 h-6 w-px bg-black/30" />

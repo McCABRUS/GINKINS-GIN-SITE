@@ -6,7 +6,7 @@ export default function CocktailsMenu() {
       <div className="mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_480px] gap-0 items-center">
           <div className="text-center lg:text-left">
-            <h3 className="text-lg!  inline-block uppercase tracking-widest text-background! mb-10">
+            <h3 className="text-lg!  inline-block uppercase text-background! mb-10">
               Try a Recipe | Mix It Up | Pair & Pour
             </h3>
             <ul className="space-y-14">
@@ -40,17 +40,16 @@ export default function CocktailsMenu() {
                 width={159}
                 height={157}
                 className="fill-(--primary-gold-main)"
+                aria-hidden
               />
             </div>
             <div className="h-72.75 lg:h-118 w-53.75 lg:w-87 overflow-hidden">
               <Image
-                src="/cocktails/ginkins-gin-lifestyle-tan-suit-cocktail.png"
+                src="/cocktails/ginkins-gin-lifestyle-tan-suit-cocktail.webp"
                 alt="Man in a tailored tan suit with Ginkins Gin embroidery holding a Negroni cocktail with orange zest"
-                width={328}
-                height={472}
+                width={520}
+                height={492}
                 className="h-full w-full object-cover object-center rounded-[200px_200px_200px_200px]"
-                quality={100}
-                //unoptimized={true}
               />
             </div>
           </div>

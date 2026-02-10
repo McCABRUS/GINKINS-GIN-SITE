@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function BottleConnectionBuy() {
   return (
-    <section className="relative w-full aspect-4/5 md:aspect-16/7 bg-cover bg-center md:bg-[url('/where_to_buy/ginkins-gin-trio-serving-tray.png')]">
+    <section className="relative w-full aspect-4/5 md:aspect-16/7 bg-cover bg-center md:bg-[url('/where_to_buy/ginkins-gin-trio-serving-tray.webp')]">
       <div className="absolute inset-0 bg-black visible md:invisible" />
       <div className="relative mx-auto w-full px-6 h-full">
         <div className="flex h-full items-center justify-center lg:justify-start">

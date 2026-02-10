@@ -5,7 +5,8 @@ export default function BottleConnection() {
     <section
       className="relative w-full aspect-4/5 md:aspect-16/7 bg-cover bg-center"
       style={{
-        backgroundImage: "url('/bottle-connection-bg.png')",
+        backgroundImage:
+          "url('/home/ginkins-heritage-reserve-espresso-cocktails.webp')",
       }}
     >
       <div className="absolute inset-0 bg-black/60 visible md:invisible" />

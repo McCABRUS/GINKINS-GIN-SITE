@@ -48,7 +48,7 @@ export default function Contact() {
           </div>
           <div className="flex justify-center">
             <Image
-              src="/where_to_buy/ginkins-gin-golden-bloom-outdoor.png"
+              src="/where_to_buy/ginkins-gin-golden-bloom-outdoor.webp"
               alt="Ginkins Golden Bloom Gin bottle placed on a stone pedestal in a sunny Mediterranean garden"
               width={405}
               height={628}
