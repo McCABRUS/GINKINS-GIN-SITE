@@ -34,7 +34,7 @@ export default function Founder() {
           <div className="order-3 col-span-full flex items-center justify-center gap-8">
             <span className="h-px w-[41%] bg-(--primary-red-main)" />
             <Image
-              src="/about/ginkins-icon-martini-decorations.svg"
+              src="/home/ginkins-gin-icon-martini-decoration.svg"
               alt="Divider"
               width={40}
               height={50}

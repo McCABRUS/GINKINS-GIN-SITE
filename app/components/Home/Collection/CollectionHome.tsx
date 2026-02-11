@@ -2,14 +2,14 @@ import CollectionCarousel from './CollectionCarousel';
 
 export default function CollectionHome() {
   return (
-    <section className="relative w-full">
+    <section className="relative w-full pb-30 md:pb-0">
       <div
         className="absolute border-solid border-background border-t border-r-0 border-b-0 border-l-0 shrink-0 w-16.25 top-8 h-0 z-20 left-1/2 -translate-x-1/2"
         style={{
           transform: 'rotate(90deg) scale(1, 1)',
         }}
       ></div>
-      <div className="bg-(--primary-black) w-full h-409 md:h-346.5 lg:h-317.5 absolute left-0"></div>
+      <div className="bg-(--primary-black) w-full h-429 md:h-346.5 lg:h-317.5 absolute left-0"></div>
       <div className="flex flex-col gap-6 items-center justify-start w-full absolute top-23">
         <div className="p-2.5 flex flex-row gap-2.5 items-center justify-center shrink-0 w-113.5 relative">
           <h3 className="text-(--primary-gold-main)! text-center uppercase relative flex-1">
@@ -46,7 +46,7 @@ export default function CollectionHome() {
       </div>
       <div className="flex flex-col gap-11 w-full absolute px-8 md:px-37.25  top-266.5">
         <div
-          className="border-solid border-(--primary-gold-main) border-t mt-15 md:-mt-5 lg:-mt-14 border-r-0 border-b-0 border-l-0 self-stretch shrink-0 h-0 relative"
+          className="border-solid border-(--primary-gold-main) border-t mt-35 md:-mt-5 lg:-mt-14 border-r-0 border-b-0 border-l-0 self-stretch shrink-0 h-0 relative"
           style={{
             transformOrigin: 'top',
             transform: 'rotate(0deg) scale(1, 1)',
