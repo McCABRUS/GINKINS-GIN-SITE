@@ -166,6 +166,10 @@ export default function MobileMenu() {
               <Link
                 href="/subscribe"
                 className="inline-block px-4 py-1 border border-(--primary-gold-main) rounded text-sm font-medium transition-colors hover:text-(--primary-red-main) hover:border-(--primary-red-main)"
+                onClick={() => {
+                  setOpen(false);
+                  setMoreOpen(false);
+                }}
               >
                 <h5 className="text-(--primary-gold-main)! inline">
                   SUBSCRIBE
