@@ -26,7 +26,6 @@ export default function HeaderClient() {
 
   useEffect(() => {
     if (open) {
-      // focus al primer item para accesibilidad
       firstItemRef.current?.focus();
     }
   }, [open]);

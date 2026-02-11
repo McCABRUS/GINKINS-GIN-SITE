@@ -2,10 +2,10 @@ import Image from 'next/image';
 import { IconPetal } from './IconPedal';
 
 interface ProductBottleProps {
-  bgColor: string; // fondo cuadrado
-  iconColor: string; // color del SVG
+  bgColor: string;
+  iconColor: string;
   bottleSrc: string;
-  bottleAlt: string; // imagen botella
+  bottleAlt: string;
 }
 
 export function ProductBottle({
