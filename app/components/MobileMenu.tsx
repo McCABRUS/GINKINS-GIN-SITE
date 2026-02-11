@@ -109,6 +109,10 @@ export default function MobileMenu() {
                         href="/accolades"
                         className="block px-4 py-2 text-(--primary-gold-main) hover:text-background hover:underline transition-colors focus:outline-none text-left"
                         role="menuitem"
+                        onClick={() => {
+                          setOpen(false);
+                          setMoreOpen(false);
+                        }}
                       >
                         <h5 className="text-(--primary-gold-main)! inline">
                           ACCOLADES
@@ -124,6 +128,10 @@ export default function MobileMenu() {
                         href="/faqs"
                         className="block px-4 py-2 text-(--primary-gold-main) hover:text-background hover:underline transition-colors text-left"
                         role="menuitem"
+                        onClick={() => {
+                          setOpen(false);
+                          setMoreOpen(false);
+                        }}
                       >
                         <h5 className="text-left text-(--primary-gold-main)! inline">
                           FAQs
@@ -139,6 +147,10 @@ export default function MobileMenu() {
                         href="/sustainability"
                         className="block px-4 py-2 text-(--primary-gold-main) hover:text-background hover:underline transition-colors text-left"
                         role="menuitem"
+                        onClick={() => {
+                          setOpen(false);
+                          setMoreOpen(false);
+                        }}
                       >
                         <h5 className="text-(--primary-gold-main)! inline">
                           SUSTAINABILITY
