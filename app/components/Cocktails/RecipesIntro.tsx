@@ -13,7 +13,7 @@ export default function RecipesIntro() {
               At Ginkins, we believe cocktails should be both elevated and easy
               to enjoy. Whether you’re mixing for one or making magic for a
               crowd, our recipes are designed to spark joy, surprise your
-              palate, and make the moment unforgettable
+              palate, and make the moment unforgettable.
             </p>
             <p className="text-4xl leading-normal text-(--primary-red-main) font-medium italic font-cormorant-garamond">
               With simple ingredients, step-by-step instructions, and tips from
