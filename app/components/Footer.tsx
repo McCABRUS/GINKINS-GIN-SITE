@@ -81,11 +81,11 @@ export default function Footer() {
               </svg>
             </Link>
 
-            <h5 className="mt-6 text-background! text-lg! leading-normal! text-center md:text-start px-2.5 md:px-0 mb-9.5 md:0b-0">
+            <h5 className="text-background! text-lg! leading-normal! text-center md:text-start px-2.5 md:px-0 mb-6.25 md:0b-0">
               JOIN OUR NEWSLETTER TO STAY UP TO DATE ON FEATURES AND RELEASES.
             </h5>
             <NewsletterForm isFooter />
-            <p className="mt-10 text-sm text-background w-full text-center md:text-start">
+            <p className="mt-6.25 text-sm text-background w-full text-center md:text-start">
               By subscribing you agree with our Privacy Policy and provide
               consent to receive updates from our company.
             </p>
@@ -111,8 +111,8 @@ export default function Footer() {
             </Link>
           </div>
 
-          <div className="hidden md:grid col-span-7 grid-cols-1 sm:grid-cols-3 gap-6 ml-20">
-            <div>
+          <div className="justify-items-center hidden md:grid col-span-7 grid-cols-3 gap-10 ml-20 relative left-16.5">
+            <div className="w-45">
               <span className="text-lg font-medium text-background ">
                 About Us
               </span>
@@ -152,7 +152,7 @@ export default function Footer() {
               </ul>
             </div>
 
-            <div>
+            <div className="w-45 ml-8">
               <span className="text-lg font-medium text-background ">
                 Useful
               </span>
@@ -192,7 +192,7 @@ export default function Footer() {
               </ul>
             </div>
 
-            <div>
+            <div className="w-45">
               <span className="text-lg font-medium text-background ">
                 Follow Us
               </span>
@@ -271,22 +271,31 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className="border-t border-(--primary-red-main) mt-6 pt-6">
+        <div className="border-t border-(--primary-red-main) mt-6.25 pt-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-sm text-background">
               © 2026 Ginkins Distillery. All rights reserved.
             </p>
 
             <div className="hidden md:flex items-center gap-4 text-sm">
-              <Link href="/privacy" className="hover:text-(--primary-red-main)">
+              <Link
+                href="/privacy"
+                className="hover:text-(--primary-red-main) text-(--secondary-gray-300)"
+              >
                 Privacy Policy
               </Link>
               <span className="text-background text-sm">|</span>
-              <Link href="/terms" className="hover:text-(--primary-red-main)">
+              <Link
+                href="/terms"
+                className="hover:text-(--primary-red-main) text-(--secondary-gray-300)"
+              >
                 Terms of Service
               </Link>
               <span className="text-background text-sm">|</span>
-              <Link href="/faqs" className="hover:text-(--primary-red-main)">
+              <Link
+                href="/faqs"
+                className="hover:text-(--primary-red-main) text-(--secondary-gray-300)"
+              >
                 FAQs
               </Link>
             </div>
