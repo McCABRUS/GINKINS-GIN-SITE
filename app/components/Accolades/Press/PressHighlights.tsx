@@ -14,14 +14,14 @@ interface Slide {
 const slides: Slide[] = [
   {
     id: 1,
-    logo: '/accolades/ginkins-gin-swagger-magazine-feature.png',
+    logo: '/imgs/accolades/ginkins-gin-swagger-magazine-feature.png',
     title: 'Swagger Magazine’s Ultimate Fall Guide',
     description: 'Ginkins featured among standout artisanal spirits',
     alt: 'As featured in Swagger Magazine - Ginkins Gin press recognition',
   },
   {
     id: 2,
-    logo: '/accolades/ginkins-gin-one-to-watch-award.png',
+    logo: '/imgs/accolades/ginkins-gin-one-to-watch-award.png',
     title: '“One to Watch: Ginkins Redefines the American Gin Scene”',
     description: 'Highlighting our bold flavor and Southern soul',
     alt: 'One to Watch industry recognition award for Ginkins Gin',

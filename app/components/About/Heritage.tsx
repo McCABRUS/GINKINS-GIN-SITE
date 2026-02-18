@@ -12,7 +12,7 @@ export default function Heritage() {
             Crafted to Inspire.
           </h4>
           <Image
-            src="/about/ginkins-gin-scott-botanicals.webp"
+            src="/imgs/about/ginkins-gin-scott-botanicals.webp"
             alt="Expert distiller Scott Ginkins showcasing the botanical craftsmanship and traditional copper still used in creating Ginkins Gin."
             className="w-screen lg:w-142.25 h-129.5 lg:h-202.5 lg:justify-self-end lg:self-end object-cover relative object-top"
             height={814}
@@ -61,14 +61,14 @@ export default function Heritage() {
         <div className="grid grid-cols-1 gap-5.25 lg:grid-cols-3 text-center lg:text-left">
           <div className="hidden lg:block space-y-6">
             <Image
-              src="/home/story-carrousel/ginkins-gin-botanicals-layout.webp"
+              src="/imgs/home/story-carrousel/ginkins-gin-botanicals-layout.webp"
               alt="Fresh gin ingredients and botanicals such as citrus, ginger, and juniper berries arranged for a craft spirits brand."
               width={391}
               height={563}
               className="w-full object-cover h-140.75"
             />
             <Image
-              src="/home/ginkins-gin-icon-martini-decoration.svg"
+              src="/imgs/home/ginkins-gin-icon-martini-decoration.svg"
               alt="Ginkins Gin Isotype"
               width={31}
               height={39}
@@ -84,14 +84,14 @@ export default function Heritage() {
           </div>
           <div className="space-y-6">
             <Image
-              src="/home/story-carrousel/ginkins-gin-heritage-barn.webp"
+              src="/imgs/home/story-carrousel/ginkins-gin-heritage-barn.webp"
               alt="Red 'Ginkins' barn in a sunny rural field with autumn foliage."
               width={391}
               height={563}
               className="w-full h-140.75 object-cover"
             />
             <Image
-              src="/home/ginkins-gin-icon-martini-decoration.svg"
+              src="/imgs/home/ginkins-gin-icon-martini-decoration.svg"
               alt="Ginkins Gin Isotype"
               width={31}
               height={39}
@@ -109,14 +109,14 @@ export default function Heritage() {
           </div>
           <div className="hidden lg:block space-y-6">
             <Image
-              src="/about/quilt-ginkins-gin-premium.webp"
+              src="/imgs/about/quilt-ginkins-gin-premium.webp"
               alt="Custom Ginkins Gin premium quilt with botanical pattern"
               width={391}
               height={563}
               className="w-full object-cover h-140.75"
             />
             <Image
-              src="/home/ginkins-gin-icon-martini-decoration.svg"
+              src="/imgs/home/ginkins-gin-icon-martini-decoration.svg"
               alt="Ginkins Gin Isotype"
               width={31}
               height={39}

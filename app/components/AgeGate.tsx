@@ -10,7 +10,6 @@ export default function AgeGate() {
   const [isOpen, setIsOpen] = useState(false);
   const [denied, setDenied] = useState(false);
 
-  // 🔑 evita doble ejecución en StrictMode
   const hasCheckedRef = useRef(false);
 
   useEffect(() => {
@@ -26,11 +25,11 @@ export default function AgeGate() {
 
   return (
     <div className="fixed inset-0 z-9999 bg-(--secondary-beige)">
-      <div className="absolute inset-0 opacity-[0.04] bg-[url('/legal/ginkins-gin-logo-watermark.svg')] bg-center bg-no-repeat bg-cover bg-(--secondary-beige)" />
+      <div className="absolute inset-0 opacity-[0.04] bg-[url('/imgs/legal/ginkins-gin-logo-watermark.svg')] bg-center bg-no-repeat bg-cover bg-(--secondary-beige)" />
       <div className="relative flex h-full w-full flex-col items-center justify-between px-6 py-10 text-center">
         <div className="">
           <Image
-            src="/preloader/ginkins-gin-logo.svg"
+            src="/imgs/preloader/ginkins-gin-logo.svg"
             alt="Ginkins Gin official logo in gold finish"
             width={69}
             height={49}
@@ -41,7 +40,7 @@ export default function AgeGate() {
         <div className="flex flex-col items-center">
           <div className="mb-8 flex lg:hidden h-17.5 w-17.5 items-center justify-center">
             <Image
-              src="/legal/ginkins-gin-lemon-icon.svg"
+              src="/imgs/legal/ginkins-gin-lemon-icon.svg"
               alt="Ginkins Gin lemon brand element"
               width={70}
               height={70}
@@ -95,7 +94,7 @@ export default function AgeGate() {
       </div>
       <div className="hidden lg:flex h-24.25 w-24.25 items-center justify-center absolute top-1/2 right-64">
         <Image
-          src="/legal/ginkins-gin-lemon-icon.svg"
+          src="/imgs/legal/ginkins-gin-lemon-icon.svg"
           alt="Ginkins Gin lemon brand element"
           width={97}
           height={97}
@@ -105,7 +104,7 @@ export default function AgeGate() {
       </div>
       <div className="hidden lg:flex h-24.25 w-24.25 items-center justify-center absolute top-1/2 left-64">
         <Image
-          src="/legal/ginkins-gin-lemon-icon.svg"
+          src="/imgs/legal/ginkins-gin-lemon-icon.svg"
           alt="Ginkins Gin lemon brand element"
           width={97}
           height={97}

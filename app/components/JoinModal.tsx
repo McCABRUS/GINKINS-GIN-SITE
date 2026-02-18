@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { useRef, useEffect } from 'react';
+import NewsletterForm from './NewsletterForm';
 
 type Props = {
   open: boolean;
@@ -48,7 +49,7 @@ export default function JoinModal({ open, onClose }: Props) {
           className="absolute top-5 right-5 z-20"
         >
           <Image
-            src="/join-popup/ginkins-gin-ui-close-button.svg"
+            src="/imgs/join-popup/ginkins-gin-ui-close-button.svg"
             alt=""
             width={33}
             height={33}
@@ -58,7 +59,7 @@ export default function JoinModal({ open, onClose }: Props) {
         <div className="grid grid-cols-1 lg:grid-cols-2 h-full bg-background lg:w-auto lg:h-auto">
           <div className="relative hidden lg:block md:aspect-566/794">
             <Image
-              src="/join-popup/ginkins-gin-hands-red-curtain-campaign.webp"
+              src="/imgs/join-popup/ginkins-gin-hands-red-curtain-campaign.webp"
               alt="Elegant red-gloved hands holding a Ginkins Gin bottle and cocktail glass against a velvet curtain"
               fill
               className="object-cover"
@@ -73,7 +74,7 @@ export default function JoinModal({ open, onClose }: Props) {
             </h5>
             <div className="flex justify-center mb-4.25">
               <Image
-                src="/join-popup/ginkins-gin-icon-botanical-leaves.svg"
+                src="/imgs/join-popup/ginkins-gin-icon-botanical-leaves.svg"
                 alt=""
                 width={121}
                 height={120}
@@ -93,19 +94,7 @@ export default function JoinModal({ open, onClose }: Props) {
               brewing (or distilling) at Ginkins HQ.
             </p>
 
-            <form className="flex flex-nowrap place-items-center">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="w-full h-10 border-b border-(--secondary-black) bg-transparent py-2 text-sm placeholder:text-(--secondary-black) focus:outline-none mr-4"
-              />
-              <button
-                type="submit"
-                className="min-w-min[124px] h-10 inline-flex items-center justify-center bg-(--primary-red-main) px-5 py-1.5   transition hover:bg-(--primary-gold-main)"
-              >
-                <h5 className="text-background! whitespace-nowrap">Join Now</h5>
-              </button>
-            </form>
+            <NewsletterForm isFooter={false} />
             <p className="text-left mt-4 text-sm text-(--secondary-black)">
               By clicking Sign Up you’re confirming that you agree with our
               Terms and Conditions.

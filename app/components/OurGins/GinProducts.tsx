@@ -20,7 +20,7 @@ export default function GinProductsSection() {
             <ProductBottle
               bgColor="bg-(--primary-red-main)"
               iconColor="#ac1f2c"
-              bottleSrc="/our_gins/ginkins-louisville-dry-gin-bottle.png"
+              bottleSrc="/imgs/our_gins/ginkins-louisville-dry-gin-bottle.webp"
               bottleAlt="Ginkins Louisville Dry Gin bottle - Bright citrus and classic juniper gin"
             />
           }
@@ -37,7 +37,7 @@ export default function GinProductsSection() {
             <ProductBottle
               bgColor="bg-(--primary-gold-main)"
               iconColor="#E5D88A"
-              bottleSrc="/our_gins/ginkins-golden-bloom-gin-bottle.png"
+              bottleSrc="/imgs/our_gins/ginkins-golden-bloom-gin-bottle.webp"
               bottleAlt="Ginkins Golden Bloom Gin bottle - Floral and honeyed premium gin"
             />
           }
@@ -54,7 +54,7 @@ export default function GinProductsSection() {
             <ProductBottle
               bgColor="bg-(--secondary-gray-500)"
               iconColor="#E5D88A"
-              bottleSrc="/our_gins/ginkins-heritage-reserve-gin-bottle.png"
+              bottleSrc="/imgs/our_gins/ginkins-heritage-reserve-gin-bottle.webp"
               bottleAlt="Ginkins Heritage Reserve Gin bottle - Bold and traditional craft gin"
             />
           }
@@ -100,8 +100,6 @@ export default function GinProductsSection() {
     </section>
   );
 }
-
-/* ================= SUBCOMPONENTS ================= */
 
 function ProductRow({
   title,
@@ -174,7 +172,7 @@ function Divider() {
     <div className="flex items-center justify-center gap-6">
       <span className="h-px w-full bg-(--primary-red-main)" aria-hidden />
       <Image
-        src="/our_gins/ginkins-gin-icon-sparkle-shield.svg"
+        src="/imgs/our_gins/ginkins-gin-icon-sparkle-shield.svg"
         alt="Divider"
         width={40}
         aria-hidden

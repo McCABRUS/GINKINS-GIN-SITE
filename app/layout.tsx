@@ -22,9 +22,14 @@ export default function RootLayout({
       <head>
         <link
           rel="preload"
-          href="/preloader/ginkins-gin-logo-watermark.svg"
+          href="/imgs/preloader/ginkins-gin-logo-watermark.svg"
           as="image"
           type="image/svg+xml"
+        />
+        <script
+          src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+          async
+          defer
         />
       </head>
       <body

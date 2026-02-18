@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function ShopBanner() {
   return (
-    <section className="relative w-full aspect-4/5 md:aspect-16/7 bg-cover bg-center md:bg-[url('/about/ginkins-gin-products.webp')]">
+    <section className="relative w-full aspect-4/5 md:aspect-16/7 bg-cover bg-center md:bg-[url('/imgs/about/ginkins-gin-products.webp')]">
       <div className="absolute inset-0 bg-black visible md:invisible" />
       <div className="relative mx-auto w-full px-6 h-full">
         <div className="flex h-full items-center justify-center">

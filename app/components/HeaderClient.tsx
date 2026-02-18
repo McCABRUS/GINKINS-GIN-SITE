@@ -51,6 +51,7 @@ export default function HeaderClient() {
           aria-expanded={open}
           onClick={onToggle}
           onKeyDown={onKeyToggle}
+          onMouseEnter={onToggle}
           className="inline-flex items-center gap-2 px-1 py-1 cursor-pointer select-none focus:outline-none"
         >
           <h5
@@ -92,14 +93,15 @@ export default function HeaderClient() {
           <div
             role="menu"
             aria-label="More menu"
-            className="absolute left-1/2 top-full transform -translate-x-1/2 mt-3 w-auto bg-(--primary-black) shadow-lg z-499"
+            className="absolute left-8.75 top-full transform -translate-x-1/2 mt-3 w-auto bg-(--primary-black) shadow-lg z-499"
+            onMouseLeave={open ? () => setOpen(false) : undefined}
           >
             <ul className="py-2 justify-items-center">
               <li>
                 <Link
                   href="/accolades"
                   ref={firstItemRef}
-                  className="block px-4 py-2 text-(--primary-gold-main) hover:text-background hover:underline transition-colors focus:outline-none text-center"
+                  className="block px-4 py-4 text-(--primary-gold-main) hover:text-background hover:underline transition-colors focus:outline-none text-center"
                   role="menuitem"
                 >
                   <h5 className="text-(--primary-gold-main)! inline">
@@ -108,13 +110,13 @@ export default function HeaderClient() {
                 </Link>
               </li>
               <hr
-                className="text-background w-1/2 -m-2 mx-auto"
+                className="text-(--secondary-gray-500) w-1/2 -m-2 mx-auto"
                 aria-hidden="true"
               />
               <li>
                 <Link
                   href="/faqs"
-                  className="block px-4 py-2 text-(--primary-gold-main) hover:text-background hover:underline transition-colors text-center"
+                  className="block px-4 py-4 text-(--primary-gold-main) hover:text-background hover:underline transition-colors text-center"
                   role="menuitem"
                 >
                   <h5 className="text-center text-(--primary-gold-main)! inline">
@@ -123,13 +125,13 @@ export default function HeaderClient() {
                 </Link>
               </li>
               <hr
-                className="text-background w-1/2 -m-2 mx-auto"
+                className="text-(--secondary-gray-500) w-1/2 -m-2 mx-auto"
                 aria-hidden="true"
               />
               <li>
                 <Link
                   href="/sustainability"
-                  className="block px-4 py-2 text-(--primary-gold-main) hover:text-background hover:underline transition-colors text-center"
+                  className="block px-4 py-4 text-(--primary-gold-main) hover:text-background hover:underline transition-colors text-center"
                   role="menuitem"
                 >
                   <h5 className="text-(--primary-gold-main)! inline">
@@ -140,7 +142,7 @@ export default function HeaderClient() {
             </ul>
           </div>
         )}
-        <span className="mx-3">•</span>
+        <span className="ml-7 mr-3">•</span>
       </li>
     </ul>
   );

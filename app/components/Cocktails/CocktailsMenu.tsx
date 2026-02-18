@@ -39,7 +39,7 @@ export default function CocktailsMenu() {
           <div className="relative flex justify-center mt-10 lg:mt-0">
             <div className="absolute right-35 lg:right-4 top-1/3 z-10 fill-(--primary-gold-main) w-24.5 h-30.5 lg:w-40 lg:h-49.75">
               <Image
-                src="/cocktails/icon-stars-ginkins-gin.svg"
+                src="/imgs/cocktails/icon-stars-ginkins-gin.svg"
                 alt=""
                 width={159}
                 height={157}
@@ -49,7 +49,7 @@ export default function CocktailsMenu() {
             </div>
             <div className="h-72.75 lg:h-118 w-53.75 lg:w-87 overflow-hidden">
               <Image
-                src="/cocktails/ginkins-gin-lifestyle-tan-suit-cocktail.webp"
+                src="/imgs/cocktails/ginkins-gin-lifestyle-tan-suit-cocktail.webp"
                 alt="Man in a tailored tan suit with Ginkins Gin embroidery holding a Negroni cocktail with orange zest"
                 width={520}
                 height={492}

@@ -4,14 +4,14 @@ import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
 const windows = [
-  '/home/ginkins-gin-barn-window-red.png',
-  '/home/ginkins-gin-barn-window-white.png',
-  '/home/ginkins-gin-barn-window-black.png',
+  '/imgs/home/ginkins-gin-barn-window-red.png',
+  '/imgs/home/ginkins-gin-barn-window-white.png',
+  '/imgs/home/ginkins-gin-barn-window-black.png',
 ];
 const bottles = [
-  '/home/ginkins-louisville-dry-gin-bottle.png',
-  '/home/ginkins-golden-bloom-gin-bottle.png',
-  '/home/ginkins-heritage-reserve-gin-bottle.png',
+  '/imgs/home/ginkins-louisville-dry-gin-bottle.webp',
+  '/imgs/home/ginkins-golden-bloom-gin-bottle.webp',
+  '/imgs/home/ginkins-heritage-reserve-gin-bottle.webp',
 ];
 
 const bottleAlts = [
@@ -45,6 +45,7 @@ export default function BottleCarousel() {
           alt={windowAlts[active]}
           fill
           className="object-cover"
+          priority
         />
       </div>
       <Image
@@ -53,6 +54,7 @@ export default function BottleCarousel() {
         height={553}
         width={272}
         className="w-44.75 xl:w-68 absolute object-contain top-42 xl:top-25 left-[48%] -translate-x-1/2"
+        priority
       />
     </div>
   );

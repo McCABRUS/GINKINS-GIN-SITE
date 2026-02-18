@@ -3,13 +3,24 @@ import Image from 'next/image';
 export default function SustainabilityHero() {
   return (
     <section className="relative w-screen overflow-hidden bg-(--secondary-beige) px-5 sm:px-28.25 py-27.75">
-      <div className="absolute inset-0 pointer-events-none xl:mt-87.5">
-        <Image
-          src="/about/ginkins-gin-heritage-farm-illustration.png"
-          alt="Golden line art illustration of a Kentucky farm and distillery at sunset for Ginkins Gin background"
-          fill
-          className="object-cover"
-        />
+      <div className="absolute inset-0 pointer-events-none">
+        <picture>
+          <source
+            media="(max-width: 640px)"
+            srcSet="/imgs/about/ginkins-gin-heritage-farm-illustration-480.webp"
+          />
+          <source
+            media="(max-width: 1024px)"
+            srcSet="/imgs/about/ginkins-gin-heritage-farm-illustration-768.webp"
+          />
+          <img
+            src="/imgs/about/ginkins-gin-heritage-farm-illustration-1200.webp"
+            alt="Golden line art illustration of a Kentucky farm and distillery at sunset for Ginkins Gin background"
+            className="absolute inset-0 h-full w-full object-cover object-center xl:top-50"
+            loading="eager"
+            fetchPriority="high"
+          />
+        </picture>
       </div>
       <div className="relative  text-center">
         <h2 className="mb-6 text-center">Sustainability</h2>
@@ -17,11 +28,12 @@ export default function SustainabilityHero() {
         <div className="my-13.75 lg:my-16 flex justify-center">
           <div className="w-32.75 h-32.75 lg:h-48 lg:w-48">
             <Image
-              src="/sustainability/ginkins-gin-icon-botanical-flower-red.svg"
+              src="/imgs/sustainability/ginkins-gin-icon-botanical-flower-red.svg"
               alt="Leaves icon"
               height={192}
               width={192}
               aria-hidden
+              priority
             />
           </div>
         </div>

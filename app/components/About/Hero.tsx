@@ -3,13 +3,24 @@ import Image from 'next/image';
 export default function Hero() {
   return (
     <section className="relative w-screen overflow-hidden bg-(--secondary-beige) px-5 sm:px-28.25 pt-27.75">
-      <div className="absolute inset-0 pointer-events-none xl:mt-87.5">
-        <Image
-          src="/about/ginkins-gin-heritage-farm-illustration.png"
-          alt="Golden line art illustration of a Kentucky farm and distillery at sunset for Ginkins Gin background"
-          fill
-          className="object-cover"
-        />
+      <div className="absolute inset-0 pointer-events-none">
+        <picture>
+          <source
+            media="(max-width: 640px)"
+            srcSet="/imgs/about/ginkins-gin-heritage-farm-illustration-480.webp"
+          />
+          <source
+            media="(max-width: 1024px)"
+            srcSet="/imgs/about/ginkins-gin-heritage-farm-illustration-768.webp"
+          />
+          <img
+            src="/imgs/about/ginkins-gin-heritage-farm-illustration-1200.webp"
+            alt="Golden line art illustration of a Kentucky farm and distillery at sunset for Ginkins Gin background"
+            className="absolute inset-0 h-full w-full object-cover object-center xl:top-50"
+            loading="eager"
+            fetchPriority="high"
+          />
+        </picture>
       </div>
       <div className="relative  text-center">
         <h3 className="mb-6 text-center lg:text-left">About us</h3>
@@ -24,11 +35,12 @@ export default function Hero() {
         <div className="my-16 flex justify-center">
           <div className="h-47.5 w-50 md:h-64.25 md:w-65.5">
             <Image
-              src="/about/ginkins-copper-distiller.svg"
+              src="/imgs/about/ginkins-copper-distiller.svg"
               alt="Ginkins gin copper distiller icon"
               height={262}
               width={257}
               aria-hidden
+              priority
             />
           </div>
         </div>

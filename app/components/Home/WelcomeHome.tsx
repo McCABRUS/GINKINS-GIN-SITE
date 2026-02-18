@@ -4,7 +4,7 @@ export default function WelcomeHome() {
     <section className="bg-(--primary-red-main) flex w-full h-51.25 flex-col justify-center items-center lg:-mt-101 xl:mt-0">
       <div className="flex flex-wrap flex-row justify-between items-center content-center w-[80%] h-6.75 lg:h-13.25 ">
         <Image
-          src="/home/ginkins-gin-welcome-banner-ornament.svg"
+          src="/imgs/home/ginkins-gin-welcome-banner-ornament.svg"
           alt=""
           height={53}
           width={621}

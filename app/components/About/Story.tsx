@@ -9,12 +9,13 @@ export default function Story() {
           <div>
             <div className="mb-6">
               <Image
-                src="/home/ginkins-gin-icon-martini-decoration.svg"
+                src="/imgs/home/ginkins-gin-icon-martini-decoration.svg"
                 alt="Martini Ginkins Gin icon"
                 width={56}
                 height={71}
                 className="mb-10.75 mx-auto lg:mx-0"
                 aria-hidden
+                priority
               />
             </div>
             <div className="text-center lg:text-left text-base leading-6 text-(--primary-black)">
@@ -50,10 +51,11 @@ export default function Story() {
           <div className="flex mx-auto">
             <div className="relative h-81.75 w-62 overflow-hidden rounded-t-full sm:h-130 sm:w-95 xl:h-160 xl:w-120">
               <Image
-                src="/about/meaningful-connections-ginkins-gin.webp"
+                src="/imgs/about/meaningful-connections-ginkins-gin.webp"
                 alt="Creating connections over a premium gin cocktail with red fruits and citrus in an elegant bar setting."
                 fill
                 className="object-cover"
+                priority
               />
             </div>
           </div>

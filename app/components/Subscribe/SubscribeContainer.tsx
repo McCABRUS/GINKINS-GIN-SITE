@@ -1,4 +1,4 @@
-import JoinNowForm from './JoinNowForm';
+import NewsletterForm from '@/components/NewsletterForm';
 import Image from 'next/image';
 
 const benefits = [
@@ -22,7 +22,7 @@ export default function SubscribeContainer() {
             distilling) at Ginkins HQ.
           </p>
           <div className="mt-10">
-            <JoinNowForm />
+            <NewsletterForm isFooter={false} />
           </div>
           <p className="mt-4 text-[14px] text-(--primary-black) leading-5.25">
             By clicking Sign Up you&apos;re confirming that you agree with our
@@ -40,7 +40,7 @@ export default function SubscribeContainer() {
               <li key={index} className="flex gap-x-6 gap-y-0 mb-0">
                 <div className="flex flex-col items-center">
                   <Image
-                    src="/subscribe/icon-bullet.svg"
+                    src="/imgs/subscribe/icon-bullet.svg"
                     alt=""
                     width={41}
                     height={41}

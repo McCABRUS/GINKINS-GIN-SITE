@@ -14,16 +14,17 @@ export default function BotanicalGrid({ side }: { side: 'left' | 'right' }) {
             <Image
               draggable={false}
               aria-hidden
-              src="/home/botanicals/ginkins-gin-botanical-grapefruit.svg"
+              src="/imgs/home/botanicals/ginkins-gin-botanical-grapefruit.svg"
               alt=""
               width={102}
               height={101}
               className="group-hover:invisible group-active:invisible"
+              priority
             />
             <Image
               draggable={false}
               aria-hidden
-              src="/home/botanicals/ginkins-gin-botanical-grapefruit-hover.svg"
+              src="/imgs/home/botanicals/ginkins-gin-botanical-grapefruit-hover.svg"
               alt=""
               width={102}
               height={101}
@@ -32,7 +33,7 @@ export default function BotanicalGrid({ side }: { side: 'left' | 'right' }) {
             <Image
               draggable={false}
               aria-hidden
-              src="/home/botanicals/icon-image-1.png"
+              src="/imgs/home/botanicals/icon-image-1.png"
               alt=""
               width={200}
               height={100}
@@ -43,7 +44,7 @@ export default function BotanicalGrid({ side }: { side: 'left' | 'right' }) {
             <Image
               draggable={false}
               aria-hidden
-              src="/home/botanicals/icon-image-2.png"
+              src="/imgs/home/botanicals/icon-image-2.png"
               alt=""
               width={100}
               height={100}
@@ -52,16 +53,17 @@ export default function BotanicalGrid({ side }: { side: 'left' | 'right' }) {
             <Image
               draggable={false}
               aria-hidden
-              src="/home/botanicals/ginkins-gin-botanical-cardamom.svg"
+              src="/imgs/home/botanicals/ginkins-gin-botanical-cardamom.svg"
               alt=""
               width={100}
               height={100}
               className="-mt-45.75 group-hover:invisible group-active:invisible"
+              priority
             />
             <Image
               draggable={false}
               aria-hidden
-              src="/home/botanicals/ginkins-gin-botanical-cardamom-hover.svg"
+              src="/imgs/home/botanicals/ginkins-gin-botanical-cardamom-hover.svg"
               alt=""
               width={100}
               height={100}
@@ -78,16 +80,17 @@ export default function BotanicalGrid({ side }: { side: 'left' | 'right' }) {
             <Image
               draggable={false}
               aria-hidden
-              src="/home/botanicals/ginkins-gin-botanical-angelica.svg"
+              src="/imgs/home/botanicals/ginkins-gin-botanical-angelica.svg"
               alt=""
               width={100}
               height={100}
               className="group-hover:invisible group-active:invisible"
+              priority
             />
             <Image
               draggable={false}
               aria-hidden
-              src="/home/botanicals/ginkins-gin-botanical-angelica-hover.svg"
+              src="/imgs/home/botanicals/ginkins-gin-botanical-angelica-hover.svg"
               alt=""
               width={100}
               height={100}
@@ -96,7 +99,7 @@ export default function BotanicalGrid({ side }: { side: 'left' | 'right' }) {
             <Image
               draggable={false}
               aria-hidden
-              src="/home/botanicals/icon-image-3.png"
+              src="/imgs/home/botanicals/icon-image-3.png"
               alt=""
               width={100}
               height={100}
@@ -107,7 +110,7 @@ export default function BotanicalGrid({ side }: { side: 'left' | 'right' }) {
             <Image
               draggable={false}
               aria-hidden
-              src="/home/botanicals/icon-image-4.png"
+              src="/imgs/home/botanicals/icon-image-4.png"
               alt=""
               width={100}
               height={100}
@@ -116,16 +119,17 @@ export default function BotanicalGrid({ side }: { side: 'left' | 'right' }) {
             <Image
               draggable={false}
               aria-hidden
-              src="/home/botanicals/ginkins-gin-botanical-juniper.svg"
+              src="/imgs/home/botanicals/ginkins-gin-botanical-juniper.svg"
               alt=""
               width={100}
               height={100}
               className="-mt-38.5 group-hover:invisible group-active:invisible"
+              priority
             />
             <Image
               draggable={false}
               aria-hidden
-              src="/home/botanicals/ginkins-gin-botanical-juniper-hover.svg"
+              src="/imgs/home/botanicals/ginkins-gin-botanical-juniper-hover.svg"
               alt=""
               width={100}
               height={100}
@@ -142,16 +146,17 @@ export default function BotanicalGrid({ side }: { side: 'left' | 'right' }) {
             <Image
               draggable={false}
               aria-hidden
-              src="/home/botanicals/ginkins-gin-botanical-coriander.svg"
+              src="/imgs/home/botanicals/ginkins-gin-botanical-coriander.svg"
               alt=""
               width={100}
               height={100}
               className="group-hover:invisible group-active:invisible"
+              priority
             />
             <Image
               draggable={false}
               aria-hidden
-              src="/home/botanicals/ginkins-gin-botanical-coriander-hover.svg"
+              src="/imgs/home/botanicals/ginkins-gin-botanical-coriander-hover.svg"
               alt=""
               width={100}
               height={100}
@@ -160,7 +165,7 @@ export default function BotanicalGrid({ side }: { side: 'left' | 'right' }) {
             <Image
               draggable={false}
               aria-hidden
-              src="/home/botanicals/icon-image-5.png"
+              src="/imgs/home/botanicals/icon-image-5.png"
               alt=""
               width={100}
               height={100}
@@ -177,16 +182,17 @@ export default function BotanicalGrid({ side }: { side: 'left' | 'right' }) {
             <Image
               draggable={false}
               aria-hidden
-              src="/home/botanicals/ginkins-gin-botanical-juniper-icon.svg"
+              src="/imgs/home/botanicals/ginkins-gin-botanical-juniper-icon.svg"
               alt=""
               width={100}
               height={100}
               className="group-hover:invisible group-active:invisible"
+              priority
             />
             <Image
               draggable={false}
               aria-hidden
-              src="/home/botanicals/ginkins-gin-botanical-juniper-icon-hover.svg"
+              src="/imgs/home/botanicals/ginkins-gin-botanical-juniper-icon-hover.svg"
               alt=""
               width={100}
               height={100}
@@ -195,7 +201,7 @@ export default function BotanicalGrid({ side }: { side: 'left' | 'right' }) {
             <Image
               draggable={false}
               aria-hidden
-              src="/home/botanicals/icon-image-6.png"
+              src="/imgs/home/botanicals/icon-image-6.png"
               alt=""
               width={100}
               height={100}
@@ -206,7 +212,7 @@ export default function BotanicalGrid({ side }: { side: 'left' | 'right' }) {
             <Image
               draggable={false}
               aria-hidden
-              src="/home/botanicals/icon-image-7.png"
+              src="/imgs/home/botanicals/icon-image-7.png"
               alt=""
               width={100}
               height={100}
@@ -215,16 +221,17 @@ export default function BotanicalGrid({ side }: { side: 'left' | 'right' }) {
             <Image
               draggable={false}
               aria-hidden
-              src="/home/botanicals/ginkins-gin-botanical-orris.svg"
+              src="/imgs/home/botanicals/ginkins-gin-botanical-orris.svg"
               alt=""
               width={100}
               height={100}
               className="-mt-38.75 group-hover:invisible group-active:invisible"
+              priority
             />
             <Image
               draggable={false}
               aria-hidden
-              src="/home/botanicals/ginkins-gin-botanical-orris-hover.svg"
+              src="/imgs/home/botanicals/ginkins-gin-botanical-orris-hover.svg"
               alt=""
               width={100}
               height={100}
@@ -241,16 +248,17 @@ export default function BotanicalGrid({ side }: { side: 'left' | 'right' }) {
             <Image
               draggable={false}
               aria-hidden
-              src="/home/botanicals/ginkins-gin-botanical-nutmeg.svg"
+              src="/imgs/home/botanicals/ginkins-gin-botanical-nutmeg.svg"
               alt=""
               width={100}
               height={100}
               className="group-hover:invisible group-active:invisible"
+              priority
             />
             <Image
               draggable={false}
               aria-hidden
-              src="/home/botanicals/ginkins-gin-botanical-nutmeg-hover.svg"
+              src="/imgs/home/botanicals/ginkins-gin-botanical-nutmeg-hover.svg"
               alt=""
               width={100}
               height={100}
@@ -259,7 +267,7 @@ export default function BotanicalGrid({ side }: { side: 'left' | 'right' }) {
             <Image
               draggable={false}
               aria-hidden
-              src="/home/botanicals/icon-image-8.png"
+              src="/imgs/home/botanicals/icon-image-8.png"
               alt=""
               width={100}
               height={100}
@@ -270,7 +278,7 @@ export default function BotanicalGrid({ side }: { side: 'left' | 'right' }) {
             <Image
               draggable={false}
               aria-hidden
-              src="/home/botanicals/icon-image-9.png"
+              src="/imgs/home/botanicals/icon-image-9.png"
               alt=""
               width={100}
               height={100}
@@ -279,16 +287,17 @@ export default function BotanicalGrid({ side }: { side: 'left' | 'right' }) {
             <Image
               draggable={false}
               aria-hidden
-              src="/home/botanicals/ginkins-gin-botanical-cassia.svg"
+              src="/imgs/home/botanicals/ginkins-gin-botanical-cassia.svg"
               alt=""
               width={100}
               height={100}
               className="-mt-39 group-hover:invisible group-active:invisible"
+              priority
             />
             <Image
               draggable={false}
               aria-hidden
-              src="/home/botanicals/ginkins-gin-botanical-cassia-hover.svg"
+              src="/imgs/home/botanicals/ginkins-gin-botanical-cassia-hover.svg"
               alt=""
               width={100}
               height={100}
@@ -305,16 +314,17 @@ export default function BotanicalGrid({ side }: { side: 'left' | 'right' }) {
             <Image
               draggable={false}
               aria-hidden
-              src="/home/botanicals/ginkins-gin-botanical-lemon.svg"
+              src="/imgs/home/botanicals/ginkins-gin-botanical-lemon.svg"
               alt=""
               width={100}
               height={100}
               className="group-hover:invisible group-active:invisible"
+              priority
             />
             <Image
               draggable={false}
               aria-hidden
-              src="/home/botanicals/ginkins-gin-botanical-lemon-hover.svg"
+              src="/imgs/home/botanicals/ginkins-gin-botanical-lemon-hover.svg"
               alt=""
               width={100}
               height={100}
@@ -323,7 +333,7 @@ export default function BotanicalGrid({ side }: { side: 'left' | 'right' }) {
             <Image
               draggable={false}
               aria-hidden
-              src="/home/botanicals/icon-image-10.png"
+              src="/imgs/home/botanicals/icon-image-10.png"
               alt=""
               width={100}
               height={100}

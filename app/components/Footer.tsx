@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import NewsletterForm from './NewsletterForm';
 
 export default function Footer() {
   return (
@@ -83,32 +84,7 @@ export default function Footer() {
             <h5 className="mt-6 text-background! text-lg! leading-normal! text-center md:text-start px-2.5 md:px-0 mb-9.5 md:0b-0">
               JOIN OUR NEWSLETTER TO STAY UP TO DATE ON FEATURES AND RELEASES.
             </h5>
-
-            <form
-              action="/api/subscribe"
-              method="post"
-              className="mt-4 flex flex-col sm:flex-row gap-3 md:items-center"
-              aria-label="Subscribe to newsletter"
-            >
-              <label htmlFor="footer-email" className="sr-only">
-                Email address
-              </label>
-              <input
-                id="footer-email"
-                name="email"
-                type="email"
-                required
-                placeholder="Your Email Here"
-                className="text-center md:text-start text-base w-full sm:flex-1 py-2 bg-(--primary-black) border-b border-(--primary-white-100) text-background placeholder-(--primary-red-main) focus:outline-none focus:ring-2 focus:ring-(--primary-gold-main) mb-4 md:mb-0"
-              />
-              <button
-                type="submit"
-                className="self-center inline-flex items-center justify-center px-3 py-1.5 bg-(--primary-red-main) text-background font-medium hover:bg-(--primary-gold-main) transition-colors h-9 w-14.5"
-              >
-                Join
-              </button>
-            </form>
-
+            <NewsletterForm isFooter />
             <p className="mt-10 text-sm text-background w-full text-center md:text-start">
               By subscribing you agree with our Privacy Policy and provide
               consent to receive updates from our company.

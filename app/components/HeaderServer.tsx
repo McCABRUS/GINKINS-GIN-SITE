@@ -52,15 +52,17 @@ export default function HeaderServer() {
             </Link>
             <span className="mx-3">•</span>
           </div>
-          <div className="hidden md:flex items-center">
+          <div className="hidden md:flex items-center md:ml-4">
             <HeaderClient />
           </div>
-          <div className="hidden md:flex items-center gap-0 lg:gap-4">
+          <div className="hidden md:flex items-center gap-0 lg:gap-4 md:ml-4">
             <Link
               href="/subscribe"
-              className="inline-block px-4 py-1 border border-(--primary-gold-main) rounded text-sm font-medium transition-colors hover:text-(--primary-red-main) hover:border-(--primary-red-main)"
+              className="inline-block px-4 py-1 border border-(--primary-gold-main) rounded text-sm font-medium transition-colors group group-hover:text-(--primary-red-main) hover:border-(--primary-red-main)"
             >
-              <h5 className="text-(--primary-gold-main)! inline">SUBSCRIBE</h5>
+              <h5 className="text-(--primary-gold-main)! group-hover:text-(--primary-red-200)! inline">
+                SUBSCRIBE
+              </h5>
             </Link>
           </div>
           <div className="md:hidden w-full flex justify-between">

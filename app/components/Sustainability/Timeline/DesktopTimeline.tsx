@@ -20,7 +20,7 @@ export default function DesktopTimeline() {
           <div className="ml-auto max-w-130 text-left">
             <div className="flex justify-center -mt-11">
               <TimelineImage
-                src="/sustainability/scott-ginkins-master-distiller-laboratory.webp"
+                src="/imgs/sustainability/scott-ginkins-master-distiller-laboratory.webp"
                 alt="Scott Ginkins, Master Distiller, in a white lab coat tasting spirits next to a copper pot still at the distillery"
               />
             </div>
@@ -38,7 +38,7 @@ export default function DesktopTimeline() {
           </div>
           <div className="flex justify-end">
             <TimelineImage
-              src="/sustainability/ginkins-gin-founder-and-team-outdoors.webp"
+              src="/imgs/sustainability/ginkins-gin-founder-and-team-outdoors.webp"
               alt="Scott and the Ginkins Gin team discussing botanicals at a rustic wooden table outdoors"
             />
           </div>
@@ -58,7 +58,7 @@ export default function DesktopTimeline() {
             <div className="mt-8">
               <div className="flex justify-center  mt-17">
                 <TimelineImage
-                  src="/sustainability/ginkins-gin-fresh-juniper-berries.webp"
+                  src="/imgs/sustainability/ginkins-gin-fresh-juniper-berries.webp"
                   alt="Close-up of fresh blue juniper berries in a wooden spoon, the core botanical of Ginkins Gin"
                 />
               </div>

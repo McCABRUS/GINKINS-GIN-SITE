@@ -24,15 +24,15 @@ export default function FoodPairings() {
             title="Louisville Dry Gin"
             items={[
               {
-                icon: '/cocktails/food-pairings-icons/ginkins-gin-icon-fish-citrus-mix.svg',
+                icon: '/imgs/cocktails/food-pairings-icons/ginkins-gin-icon-fish-citrus-mix.svg',
                 label: 'Citrusy seafood',
               },
               {
-                icon: '/cocktails/food-pairings-icons/ginkins-gin-icon-botanical-leaf-slice.svg',
+                icon: '/imgs/cocktails/food-pairings-icons/ginkins-gin-icon-botanical-leaf-slice.svg',
                 label: 'Goat cheese salads',
               },
               {
-                icon: '/cocktails/food-pairings-icons/ginkins-gin-icon-bird-on-branch.svg',
+                icon: '/imgs/cocktails/food-pairings-icons/ginkins-gin-icon-bird-on-branch.svg',
                 label: 'Grilled chicken',
               },
             ]}
@@ -42,19 +42,19 @@ export default function FoodPairings() {
             title="Golden Bloom"
             items={[
               {
-                icon: '/cocktails/food-pairings-icons/ginkins-gin-icon-sparkle-botanical.svg',
+                icon: '/imgs/cocktails/food-pairings-icons/ginkins-gin-icon-sparkle-botanical.svg',
                 label: 'Charcuterie',
               },
               {
-                icon: '/cocktails/food-pairings-icons/ginkins-gin-icon-blossom-detail.svg',
+                icon: '/imgs/cocktails/food-pairings-icons/ginkins-gin-icon-blossom-detail.svg',
                 label: 'Citrus-dressed greens',
               },
               {
-                icon: '/cocktails/food-pairings-icons/ginkins-gin-icon-fish-minimalist.svg',
+                icon: '/imgs/cocktails/food-pairings-icons/ginkins-gin-icon-fish-minimalist.svg',
                 label: 'Sushi',
               },
               {
-                icon: '/cocktails/food-pairings-icons/ginkins-gin-icon-botanical-cross-section.svg',
+                icon: '/imgs/cocktails/food-pairings-icons/ginkins-gin-icon-botanical-cross-section.svg',
                 label: 'Soft cheeses',
               },
             ]}
@@ -65,19 +65,19 @@ export default function FoodPairings() {
             title="Heritage Reserve"
             items={[
               {
-                icon: '/cocktails/food-pairings-icons/ginkins-gin-icon-farm-animal-pig.svg',
+                icon: '/imgs/cocktails/food-pairings-icons/ginkins-gin-icon-farm-animal-pig.svg',
                 label: 'Roasted pork',
               },
               {
-                icon: '/cocktails/food-pairings-icons/ginkins-gin-icon-bird-abstract.svg',
+                icon: '/imgs/cocktails/food-pairings-icons/ginkins-gin-icon-bird-abstract.svg',
                 label: 'Duck breast',
               },
               {
-                icon: '/cocktails/food-pairings-icons/ginkins-gin-icon-sparkle-flower.svg',
+                icon: '/imgs/cocktails/food-pairings-icons/ginkins-gin-icon-sparkle-flower.svg',
                 label: 'Ginger-based desserts',
               },
               {
-                icon: '/cocktails/food-pairings-icons/ginkins-gin-icon-botanical-seed.svg',
+                icon: '/imgs/cocktails/food-pairings-icons/ginkins-gin-icon-botanical-seed.svg',
                 label: 'Spiced nuts',
               },
             ]}
@@ -85,7 +85,7 @@ export default function FoodPairings() {
         </div>
         <div className="mt-24 flex justify-center">
           <Image
-            src="/cocktails/food-pairings-icons/ginkins-gin-icon-fish-citrus-mix.svg"
+            src="/imgs/cocktails/food-pairings-icons/ginkins-gin-icon-fish-citrus-mix.svg"
             alt=""
             width={140}
             height={140}

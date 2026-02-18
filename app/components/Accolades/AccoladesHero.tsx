@@ -3,13 +3,24 @@ import Image from 'next/image';
 export default function AccoladesHero() {
   return (
     <section className="relative w-screen overflow-hidden bg-(--secondary-beige) px-5 sm:px-28.25 py-27.75">
-      <div className="absolute inset-0 pointer-events-none xl:mt-87.5">
-        <Image
-          src="/about/ginkins-gin-heritage-farm-illustration.png"
-          alt="Golden line art illustration of a Kentucky farm and distillery at sunset for Ginkins Gin background"
-          fill
-          className="object-cover"
-        />
+      <div className="absolute inset-0 pointer-events-none">
+        <picture>
+          <source
+            media="(max-width: 640px)"
+            srcSet="/imgs/about/ginkins-gin-heritage-farm-illustration-480.webp"
+          />
+          <source
+            media="(max-width: 1024px)"
+            srcSet="/imgs/about/ginkins-gin-heritage-farm-illustration-768.webp"
+          />
+          <img
+            src="/imgs/about/ginkins-gin-heritage-farm-illustration-1200.webp"
+            alt="Golden line art illustration of a Kentucky farm and distillery at sunset for Ginkins Gin background"
+            className="absolute inset-0 h-full w-full object-cover object-center xl:top-50"
+            loading="eager"
+            fetchPriority="high"
+          />
+        </picture>
       </div>
       <div className="relative  text-center">
         <h2 className="mb-6 text-center">ACCOLADES & PRESS</h2>
@@ -23,11 +34,12 @@ export default function AccoladesHero() {
         <div className="my-16 flex justify-center">
           <div className="h-79.75 w-76">
             <Image
-              src="/accolades/ginkins-gin-icon-stars-black-duo.svg"
+              src="/imgs/accolades/ginkins-gin-icon-stars-black-duo.svg"
               alt="Leaves icon"
               height={304}
               width={319}
               aria-hidden
+              priority
             />
           </div>
         </div>

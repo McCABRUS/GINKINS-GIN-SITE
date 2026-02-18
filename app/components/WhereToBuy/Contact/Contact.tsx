@@ -33,14 +33,14 @@ export default function Contact() {
           <div className="flex flex-col justify-center space-y-16">
             <IconBlock
               label="General Inquiries"
-              svgImg="/where_to_buy/ginkins-gin-icon-cocktail-shaker.svg"
+              svgImg="/imgs/where_to_buy/ginkins-gin-icon-cocktail-shaker.svg"
               svgAlt=""
               svgWidth={96}
               svgHeight={120}
             />
             <IconBlock
               label="Events & Collaborations"
-              svgImg="/where_to_buy/ginkins-gin-icon-botanical-pattern.svg"
+              svgImg="/imgs/where_to_buy/ginkins-gin-icon-botanical-pattern.svg"
               svgAlt=""
               svgWidth={128}
               svgHeight={120}
@@ -48,7 +48,7 @@ export default function Contact() {
           </div>
           <div className="flex justify-center">
             <Image
-              src="/where_to_buy/ginkins-gin-golden-bloom-outdoor.webp"
+              src="/imgs/where_to_buy/ginkins-gin-golden-bloom-outdoor.webp"
               alt="Ginkins Golden Bloom Gin bottle placed on a stone pedestal in a sunny Mediterranean garden"
               width={405}
               height={628}
@@ -58,14 +58,14 @@ export default function Contact() {
           <div className="flex flex-col justify-center space-y-16">
             <IconBlock
               label="Wholesale & Distribution"
-              svgImg="/where_to_buy/ginkins-gin-icon-bottle-slim.svg"
+              svgImg="/imgs/where_to_buy/ginkins-gin-icon-bottle-slim.svg"
               svgAlt=""
               svgWidth={96}
               svgHeight={120}
             />
             <IconBlock
               label="Retailers"
-              svgImg="/where_to_buy/ginkins-gin-icon-round-glass.svg"
+              svgImg="/imgs/where_to_buy/ginkins-gin-icon-round-glass.svg"
               svgAlt=""
               svgWidth={108}
               svgHeight={120}

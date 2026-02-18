@@ -41,10 +41,10 @@ export default function Preloader() {
         exiting && 'opacity-0 pointer-events-none',
       )}
     >
-      <div className="absolute inset-0 opacity-[0.04] bg-[url('/preloader/ginkins-gin-logo-watermark.svg')] bg-center bg-no-repeat bg-cover bg-(--primary-black)" />
+      <div className="absolute inset-0 opacity-[0.04] bg-[url('/imgs/preloader/ginkins-gin-logo-watermark.svg')] bg-center bg-no-repeat bg-cover bg-(--primary-black)" />
       <div className="pt-10 md:pt-14">
         <Image
-          src="/preloader/ginkins-gin-logo.svg"
+          src="/imgs/preloader/ginkins-gin-logo.svg"
           alt="Ginkins Gin official logo in gold finish"
           width={69}
           height={49}
@@ -55,7 +55,7 @@ export default function Preloader() {
       </div>
       <div className="relative flex items-center justify-center">
         <Image
-          src="/preloader/ginkins-gin-preloader-icon.svg"
+          src="/imgs/preloader/ginkins-gin-preloader-icon.svg"
           alt="Ginkins Gin brand symbol"
           width={164}
           height={164}

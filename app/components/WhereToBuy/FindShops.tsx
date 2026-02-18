@@ -9,7 +9,7 @@ export default function FindShops() {
           <div className="space-y-6 px-5">
             <h5 className="mb-18.75">Find us</h5>
             <Image
-              src="/home/ginkins-gin-icon-mortar-pestle.svg"
+              src="/imgs/home/ginkins-gin-icon-mortar-pestle.svg"
               alt=""
               width={56}
               height={69}
@@ -42,7 +42,7 @@ export default function FindShops() {
           <div className="relative">
             <div className="mx-0 w-full">
               <Image
-                src="/where_to_buy/ginkins-gin-golden-tray-service.webp"
+                src="/imgs/where_to_buy/ginkins-gin-golden-tray-service.webp"
                 alt="Ginkins Gin bottle and a martini glass served on a golden tray with a shaker"
                 width={608}
                 height={693}

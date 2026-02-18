@@ -15,12 +15,13 @@ export default function Hero() {
       <div className="relative mx-auto max-w-400 h-250 z-30 justify-center flex">
         <div className="absolute top-10 xl:top-36.25 justify-self-center">
           <Image
-            src="/home/arc.svg"
+            src="/imgs/home/arc.svg"
             alt=""
             width={486}
             height={310}
             className="w-80 xl:w-121.5"
             aria-hidden
+            priority
           />
         </div>
         <div className="hidden lg:block absolute left-[4%] 2xl:left-[8%] top-[15%] 2xl:top-[38%] text-background text-center">

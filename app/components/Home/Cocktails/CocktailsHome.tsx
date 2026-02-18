@@ -27,7 +27,7 @@ export default function CocktailsHome() {
             <span className="relative inline-block align-text-top mx-2 z-0 ">
               <span className="inline-block w-40.25 h-40.25 md:h-52.5 md:w-52.5 rounded-full overflow-hidden relative z-10">
                 <Image
-                  src="/home/ginkins-gin-signature-cocktail-grapefruit.webp"
+                  src="/imgs/home/ginkins-gin-signature-cocktail-grapefruit.webp"
                   alt="Ginkins Gin signature cocktail being prepared with fresh grapefruit and premium botanicals"
                   className="h-full w-full object-cover"
                   width={238}
@@ -35,7 +35,7 @@ export default function CocktailsHome() {
                 />
               </span>
               <Image
-                src="/home/ginkins-gin-icon-botanical-flower.svg"
+                src="/imgs/home/ginkins-gin-icon-botanical-flower.svg"
                 alt=""
                 width={227}
                 height={226}

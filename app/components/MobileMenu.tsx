@@ -107,7 +107,7 @@ export default function MobileMenu() {
                     <li>
                       <Link
                         href="/accolades"
-                        className="block px-4 py-2 text-(--primary-gold-main) hover:text-background hover:underline transition-colors focus:outline-none text-left"
+                        className="block px-4 py-4 text-(--primary-gold-main) hover:text-background hover:underline transition-colors focus:outline-none text-left"
                         role="menuitem"
                         onClick={() => {
                           setOpen(false);
@@ -120,13 +120,13 @@ export default function MobileMenu() {
                       </Link>
                     </li>
                     <hr
-                      className="text-background w-1/2 mx-4"
+                      className="text-(--secondary-gray-500) w-1/2 mx-4"
                       aria-hidden="true"
                     />
                     <li>
                       <Link
                         href="/faqs"
-                        className="block px-4 py-2 text-(--primary-gold-main) hover:text-background hover:underline transition-colors text-left"
+                        className="block px-4 py-4 text-(--primary-gold-main) hover:text-background hover:underline transition-colors text-left"
                         role="menuitem"
                         onClick={() => {
                           setOpen(false);
@@ -139,13 +139,13 @@ export default function MobileMenu() {
                       </Link>
                     </li>
                     <hr
-                      className="text-background w-1/2 mx-4"
+                      className="text-(--secondary-gray-500) w-1/2 mx-4"
                       aria-hidden="true"
                     />
                     <li>
                       <Link
                         href="/sustainability"
-                        className="block px-4 py-2 text-(--primary-gold-main) hover:text-background hover:underline transition-colors text-left"
+                        className="block px-4 py-4 text-(--primary-gold-main) hover:text-background hover:underline transition-colors text-left"
                         role="menuitem"
                         onClick={() => {
                           setOpen(false);
