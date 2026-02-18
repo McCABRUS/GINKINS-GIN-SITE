@@ -34,7 +34,7 @@ export default function NewsletterForm({ isFooter }: Props) {
     if (!window.turnstile || widgetIdRef.current) return;
 
     const id = window.turnstile.render('#turnstile-container', {
-      sitekey: process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!,
+      sitekey: '0x4AAAAAACbQx4jTii3yXBNt', //process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!, TEMP Vercel Preview
 
       callback: (token: string) => {
         tokenRef.current = token;

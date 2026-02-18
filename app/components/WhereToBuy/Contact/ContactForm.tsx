@@ -125,7 +125,7 @@ export function ContactForm() {
       </div>
       <Turnstile
         options={{ appearance: 'execute' }}
-        siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
+        siteKey="0x4AAAAAACbQx4jTii3yXBNt" //{process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!} TEMP Vercel Preview
         ref={turnstileRef}
         onSuccess={(t) => setToken(t)}
         onExpire={() => setToken(null)}
