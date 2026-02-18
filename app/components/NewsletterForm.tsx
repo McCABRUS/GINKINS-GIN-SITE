@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 
-type Status = 'idle' | 'loading' | 'success' | 'error';
+type Status = 'idle' | 'loading' | 'success' | 'error' | 'alreadySubscribed';
 
 interface Props {
   isFooter?: boolean;
@@ -74,7 +74,7 @@ export default function NewsletterForm({ isFooter }: Props) {
 
     try {
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/api/newsletter`,
+        `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/newsletter`,
         {
           cache: 'force-cache',
           method: 'POST',
@@ -86,10 +86,18 @@ export default function NewsletterForm({ isFooter }: Props) {
         },
       );
 
-      const data: { success?: boolean; message?: string } = await res.json();
+      const data: {
+        success?: boolean;
+        message?: string;
+        alreadySubscribed?: boolean;
+      } = await res.json();
 
       if (!res.ok || !data.success) {
         throw new Error(data.message || 'Subscription failed');
+      }
+      if (data.alreadySubscribed) {
+        setStatus('alreadySubscribed');
+        return;
       }
 
       setStatus('success');
@@ -109,8 +117,11 @@ export default function NewsletterForm({ isFooter }: Props) {
   return (
     <form onSubmit={handleSubmit} className={formStyles}>
       <div id="turnstile-container" className="hidden" />
-
-      {status === 'success' ? (
+      {status === 'alreadySubscribed' ? (
+        <p className="text-green-600 text-center">
+          You were already subscribed!
+        </p>
+      ) : status === 'success' ? (
         <p className="text-green-600 text-center">
           Thanks for joining the Inner Circle 🍸
         </p>

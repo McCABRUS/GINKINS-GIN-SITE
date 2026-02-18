@@ -1,0 +1,17 @@
+<IfModule mod_deflate.c>
+  SetEnvIfNoCase Request_URI \.(?:html)$ no-gzip dont-vary
+</IfModule>
+
+<IfModule mod_headers.c>
+  Header unset Content-Encoding
+</IfModule>
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /test/
+
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  RewriteRule ^ index.html [L]
+</IfModule>
