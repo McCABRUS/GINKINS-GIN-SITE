@@ -17,7 +17,7 @@ export default function HeritageHomeSection() {
           RAISED IN <br className="inline md:hidden" />
           LOUISVILLE
         </h1>
-        <div className="absolute -top-57 md:-top-17.5 xl:-top-35 left-[75%] md:left-[49.5%] -translate-x-1/2 mr-7.5 w-20.25 h-27.5 xl:w-40 xl:h-56 pointer-events-none">
+        <div className="absolute -top-57 md:-top-17.5 xl:-top-35 left-[64%] md:left-[49.5%] -translate-x-1/2 mr-7.5 w-20.25 h-27.5 xl:w-40 xl:h-56 pointer-events-none">
           <Image
             src="/imgs/home/ginkins-gin-distillation-process.webp"
             alt="Handcrafted distillation in copper stills at Ginkins Distillery"
