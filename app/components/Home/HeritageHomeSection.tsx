@@ -65,7 +65,7 @@ export default function HeritageHomeSection() {
             />
           </div>
         </div>
-        <div className="-mt-197 md:mt-0 max-w-full md:max-w-md z-10000">
+        <div className="-mt-197 md:mt-0 max-w-full md:max-w-md z-1">
           <p className="text-base leading-relaxed text-(--secondary-black) text-center md:text-left ">
             A gin born not in the shadows of the past, but in the bold, soulful
             light of bourbon country. Here, roots run deep and quality means
