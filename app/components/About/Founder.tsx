@@ -3,9 +3,9 @@ import Image from 'next/image';
 export default function Founder() {
   return (
     <section className="w-screen bg-(--secondary-beige)" id="founder">
-      <div className="mx-auto px-5 md:px-10 lg:px-37.25 2xl:px-80 py-32 relative">
-        <div className="grid grid-cols-1 gap-y-20 lg:grid-cols-2 lg:gap-x-24">
-          <div className="mx-auto order-1 space-y-6 max-w-131.25">
+      <div className="mx-auto max-xl:px-5 max-3xl:px-37.25 md:max-w-480 lg:pt-32 pb-16.75 lg:pb-32 pt-15 relative">
+        <div className="grid grid-cols-1 gap-y-15 lg:grid-cols-2 lg:gap-x-24">
+          <div className="max-lg:mx-auto order-1 space-y-6">
             <h6 className="text-center lg:text-left text-[35px]! text-(--secondary-black)!">
               We’re here to build more than a spirit.
             </h6>
@@ -18,17 +18,10 @@ export default function Founder() {
             </p>
           </div>
 
-          <div className="text-center lg:text-left order-2 space-y-6 lg:max-w-131.25">
-            <h2>
-              Because at Ginkins,
-              <br />
-              we know:
-            </h2>
+          <div className="lg:ml-auto text-center lg:text-left order-2 space-y-6">
+            <h2>Because at Ginkins, we know:</h2>
             <h2 className="text-(--primary-red-main)!">
-              It’s not just what’s in <br className="block lg:hidden" /> the
-              <br className="hidden lg:block" />
-              glass. It’s who’s
-              <br className="block lg:hidden" /> around it.
+              It’s not just what’s in the glass. It’s who’s around it.
             </h2>
           </div>
           <div className="order-3 col-span-full flex items-center justify-center gap-8">
@@ -44,27 +37,27 @@ export default function Founder() {
             <span className="h-px w-[41%] bg-(--primary-red-main)" />
           </div>
 
-          <div className="mx-auto order-4">
-            <h3 className="mb-13.75 text-center lg:text-left ">
+          <div className="max-lg:mx-auto order-4">
+            <h3 className="mb-15 lg:mb-13.75 text-center lg:text-left ">
               Meet the creator
             </h3>
 
-            <div className="relative h-77 md:h-110 md:w-80 lg:h-120 xl:h-159.25 lg:w-auto max-w-108.75">
+            <div className="ml-11.25 relative w-full pr-24">
               <Image
                 src="/imgs/home/scott-ginkins-founder-master-distiller.webp"
                 alt="Professional master distiller presenting a bottle of premium gin at an elegant bar"
-                width={705}
-                height={667}
-                className="object-cover relative rounded-t-full z-20 w-52.5 md:w-80 h-77 md:h-110 lg:w-auto lg:h-120 xl:h-159.25 lg:max-w-w-108.75"
+                width={816}
+                height={1198}
+                className="aspect-434/637 object-cover relative rounded-t-full z-20 w-full"
               />
-              <div className="absolute bottom-0 -right-5.5 lg:-right-11.25 h-37.25 md:h-55 xl:h-80 lg:h-60 w-63.5 md:w-91 lg:w-101.5 xl:w-131.25 bg-(--primary-red-main) z-10" />
+              <div className="absolute bottom-0 -left-11 h-37.25 2xs:h-50 md:h-120 2xl:h-150 xl:h-80 lg:h-60 w-full bg-(--primary-red-main) z-10" />
             </div>
 
-            <h5 className="mt-4 lg:-ml-12.25 text-center lg:text-left">
+            <h5 className="mt-4 text-center lg:text-left">
               “The man behind the gin.”
             </h5>
           </div>
-          <div className="order-5 space-y-6 lg:max-w-131.25">
+          <div className="lg:ml-auto order-5 space-y-6">
             <h4 className="text-(--secondary-black)! text-center lg:text-left text-[35px]! font-medium! leading-10.5! lg:leading-16.75!">
               Phillip Scott Ginkins
             </h4>
@@ -79,7 +72,7 @@ export default function Founder() {
               </p>
 
               <p>
-                That passion led him across the Atlantic to
+                That passion led him across the Atlantic to{' '}
                 <strong>Heriot-Watt University in Edinburgh</strong>, where he
                 earned a postgraduate degree in distilling and immersed himself
                 in the science, art, and legacy of spirits. But it was back
@@ -88,7 +81,7 @@ export default function Founder() {
               </p>
 
               <p>
-                More than just a product,
+                More than just a product,{' '}
                 <strong>Ginkins is his namesake and his purpose</strong>—a gin
                 that speaks to tradition, yet embraces the bold. With vibrant
                 citrus, refined botanicals, and the unmistakable smoothness of

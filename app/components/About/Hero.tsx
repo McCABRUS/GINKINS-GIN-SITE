@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function Hero() {
   return (
-    <section className="relative w-screen overflow-hidden bg-(--secondary-beige) px-5 sm:px-28.25 pt-27.75">
+    <section className="relative w-screen overflow-hidden bg-(--secondary-beige) pt-27.75">
       <div className="absolute inset-0 pointer-events-none">
         <picture>
           <source
@@ -16,21 +16,16 @@ export default function Hero() {
           <img
             src="/imgs/about/ginkins-gin-heritage-farm-illustration-1200.webp"
             alt="Golden line art illustration of a Kentucky farm and distillery at sunset for Ginkins Gin background"
-            className="absolute inset-0 h-full w-full object-cover object-center xl:top-50"
+            className="h-full w-full object-cover object-center xl:top-50"
             loading="eager"
             fetchPriority="high"
           />
         </picture>
+        <div className="absolute inset-x-0 bottom-0 h-20 bg-linear-to-t from-(--secondary-beige) to-transparent" />
       </div>
-      <div className="relative text-center">
-        <h3 className="mb-6 text-center lg:text-left">About us</h3>
+      <div className="relative text-center max-xl:px-5 max-3xl:px-37.25 md:max-w-480 place-self-center">
         <h1 className="text-center text-(--primary-black)!">
-          Connections <br className="inline lg:hidden" />
-          that distill
-          <br />
-          into <br className="inline lg:hidden" />
-          something <br className="inline lg:hidden" />
-          greater
+          Connections that distill into something greater
         </h1>
         <div className="my-16 flex justify-center">
           <div className="h-47.5 w-50 md:h-64.25 md:w-65.5">

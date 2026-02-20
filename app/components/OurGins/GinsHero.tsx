@@ -3,7 +3,7 @@ import Image from 'next/image';
 export default function GinsHero() {
   return (
     <section className="relative w-screen overflow-hidden bg-(--secondary-beige) pt-46">
-      <div className="absolute inset-0 pointer-events-none z-0 2xl:mt-50">
+      <div className="absolute inset-0 pointer-events-none">
         <picture>
           <source
             media="(max-width: 640px)"
@@ -16,11 +16,12 @@ export default function GinsHero() {
           <img
             src="/imgs/about/ginkins-gin-heritage-farm-illustration-1200.webp"
             alt="Golden line art illustration of a Kentucky farm and distillery at sunset for Ginkins Gin background"
-            className="absolute inset-0 h-full w-full object-cover object-bottom"
+            className="h-full w-full object-cover object-center xl:top-50"
             loading="eager"
             fetchPriority="high"
           />
         </picture>
+        <div className="absolute inset-x-0 bottom-0 h-20 bg-linear-to-t from-(--secondary-beige) to-transparent" />
       </div>
       <div className="text-center relative mx-auto px-6 space-y-12 z-200">
         <h1 className="font-serif text-4xl leading-tight lg:text-6xl mb-32.75">

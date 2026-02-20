@@ -16,11 +16,12 @@ export default function SustainabilityHero() {
           <img
             src="/imgs/about/ginkins-gin-heritage-farm-illustration-1200.webp"
             alt="Golden line art illustration of a Kentucky farm and distillery at sunset for Ginkins Gin background"
-            className="absolute inset-0 h-full w-full object-cover object-center xl:top-50"
+            className="h-full w-full object-cover object-center xl:top-50"
             loading="eager"
             fetchPriority="high"
           />
         </picture>
+        <div className="absolute inset-x-0 bottom-0 h-20 bg-linear-to-t from-(--secondary-beige) to-transparent" />
       </div>
       <div className="relative  text-center">
         <h2 className="mb-6 text-center">Sustainability</h2>

@@ -18,7 +18,7 @@ export default function HeritageInnovation() {
               The Ginkins Story
             </h3>
 
-            <h1 className="text-center md:text-left text-background! mb-16.5 md:mb-0 xl:text-[90px]! lg-text-[70px]!">
+            <h1 className="text-center md:text-left text-background! mb-0 xl:text-[90px]! lg-text-[70px]!">
               A Heritage
               <br />
               of <br className="inline md:hidden" />
