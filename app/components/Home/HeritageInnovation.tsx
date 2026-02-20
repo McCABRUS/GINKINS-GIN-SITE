@@ -2,7 +2,7 @@ import Image from 'next/image';
 export default function HeritageInnovation() {
   return (
     <section className="w-screen bg-(--primary-red-main) h-182.5 md:h-auto py-24 md:py-37">
-      <div className="mx-auto max-x-full md:max-w-350 px-6">
+      <div className="max-md:px-6 max-3xl:px-37.25 md:max-w-480 place-self-center w-full">
         <div className="flex flex-col md:flex-row items-center justify-between gap-12">
           <div>
             <div className="mx-auto h-15 w-15 flex md:hidden mb-16.5">
@@ -26,12 +26,12 @@ export default function HeritageInnovation() {
             </h1>
           </div>
           <div className="flex gap-10 flex-col items-end justify-end">
-            <p className="text-4xl font-cormorant-garamond leading-snug text-(--primary-gold-main) text-right italic max-w-full md:max-w-xs">
+            <p className="text-4xl font-cormorant-garamond leading-snug text-(--primary-gold-main) text-right italic max-w-full">
               Rooted in Louisville.
               <br />
               Crafted to Inspire.
             </p>
-            <div className="h-24 w-24 hidden md:flex">
+            <div className="h-24 w-20.25 hidden md:flex">
               <Image
                 src="/imgs/home/ginkins-gin-isotype.svg"
                 alt=""

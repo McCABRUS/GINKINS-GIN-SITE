@@ -17,7 +17,7 @@ export default function MobileMenu() {
   return (
     <>
       <button
-        className="md:hidden text-(--primary-gold-main)"
+        className="lg:hidden text-(--primary-gold-main)"
         onClick={() => setOpen(true)}
         aria-label="Open menu"
       >

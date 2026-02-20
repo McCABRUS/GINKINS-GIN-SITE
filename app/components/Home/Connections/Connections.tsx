@@ -13,9 +13,9 @@ export default function Connections() {
   ];
   return (
     <section className="w-screen 2xs:h-395.75 xs:h-379.25 md:h-339.75 lg:h-246 bg-(--secondary-beige) overflow-hidden">
-      <div className="mx-auto max-w-350 px-10 xl:px-6">
-        <div className="flex lg:flex-row flex-col gap-3.75 xl:gap-39.5">
-          <div className="max-w-178.25 lg:w-178.25 xl:max-w-129.5 pt-8.25 lg:pt-43.25">
+      <div className="mx-auto max-md:px-10 max-3xl:px-37.25 md:max-w-480">
+        <div className="flex lg:flex-row flex-col gap-3.75 xl:gap-25.5 relative">
+          <div className="max-w-178.25 xl:max-w-169.5 pt-8.25 lg:pt-43.25 md:mr-20">
             <div className="mb-8">
               <Image
                 src="/imgs/home/ginkins-gin-icon-mortar-pestle.svg"
@@ -51,15 +51,16 @@ export default function Connections() {
 
             <div className="flex lg:items-start items-center justify-center lg:justify-start mt-10 lg:mt-8 lg:mb-0 mb-13.25">
               <Link
-                href="https://ginkinsgin.distilleryspirits.com"
-                target="_blank"
-                className="w-40 lg:w-87.5 h-9.75 xl:mt-15.75 flex items-center justify-center bg-(--primary-red-main) px-5 py-1.5 transition hover:bg-(--primary-gold-main)"
+                href="/about-ginkins"
+                className="w-40 lg:w-87.5 h-9.75 xl:mt-15.75 flex items-center justify-center bg-(--primary-red-main) px-5 py-1.5 transition hover:bg-(--primary-gold-main) active:bg-(--primary-gold-main) focus:bg-(--primary-gold-main) group"
               >
-                <h5 className="text-background! text-lg!">Shop ONLINE</h5>
+                <h5 className="text-background! text-lg! group-hover:text-(--primary-black)! group-active:text-(--primary-black)! group-focus:text-(--primary-black)!">
+                  Know more
+                </h5>
               </Link>
             </div>
           </div>
-          <div className="relative overflow-hidden">
+          <div className="relative overflow-hidden ml-auto">
             <div className="lg:grid lg:grid-rows-2 lg:grid-cols-2 gap-4">
               <div className="animate-left-carousel lg:inline flex gap-4">
                 {connectionLeftDataFull.map((images, index) => (

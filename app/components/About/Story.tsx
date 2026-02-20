@@ -42,9 +42,11 @@ export default function Story() {
             <Link
               href="https://ginkinsgin.distilleryspirits.com"
               target="_blank"
-              className="w-40 lg:w-44.25 h-9.75 mt-10.75 flex items-center justify-center bg-(--primary-red-main) px-5 py-1.5  transition hover:bg-(--primary-gold-main) mx-auto lg:mx-0"
+              className="w-40 lg:w-44.25 h-9.75 mt-10.75 flex items-center justify-center bg-(--primary-red-main) px-5 py-1.5  transition hover:bg-(--primary-gold-main) active:bg-(--primary-gold-main) focus:bg-(--primary-gold-main) mx-auto lg:mx-0 group"
             >
-              <h5 className="text-background! text-lg!">Shop ONLINE</h5>
+              <h5 className="text-background! text-lg! group-hover:text-(--primary-black)! group-active:text-(--primary-black)! group-focus:text-(--primary-black)!">
+                Shop ONLINE
+              </h5>
             </Link>
           </div>
 

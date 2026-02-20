@@ -12,7 +12,7 @@ export default function CocktailsMenu() {
       <div className="mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_480px] gap-0 items-center">
           <div className="text-center lg:text-left">
-            <h3 className="text-lg!  inline-block uppercase text-background! mb-10">
+            <h3 className="text-lg! inline-block uppercase text-background! mb-10">
               Try a Recipe | Mix It Up | Pair & Pour
             </h3>
             <ul className="space-y-14">

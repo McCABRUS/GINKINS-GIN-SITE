@@ -34,9 +34,11 @@ export default function FindShops() {
             <Link
               href="https://ginkinsgin.distilleryspirits.com"
               target="_blank"
-              className="w-40 lg:w-44.25 h-9.75 mt-9.5 flex items-center justify-center bg-(--primary-red-main) px-5 py-1.5 transition hover:bg-(--primary-gold-main)"
+              className="w-40 lg:w-44.25 h-9.75 mt-9.5 flex items-center justify-center bg-(--primary-red-main) px-5 py-1.5 transition hover:bg-(--primary-gold-main) active:bg-(--primary-gold-main) focus:bg-(--primary-gold-main) group"
             >
-              <h5 className="text-background!">Shop ONLINE</h5>
+              <h5 className="text-background! group-hover:text-(--primary-black)! group-active:text-(--primary-black)! group-focus:text-(--primary-black)!">
+                Shop ONLINE
+              </h5>
             </Link>
           </div>
           <div className="relative">

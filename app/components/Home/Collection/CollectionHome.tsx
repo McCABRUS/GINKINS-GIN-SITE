@@ -44,7 +44,7 @@ export default function CollectionHome() {
           }}
         ></div>
       </div>
-      <div className="flex flex-col gap-11 w-full absolute px-8 md:px-37.25  top-266.5">
+      <div className="flex flex-col gap-11 w-full absolute max-lg:px-5 top-266.5 max-3xl:px-37.25 md:max-w-480 place-self-center">
         <div
           className="border-solid border-(--primary-gold-main) border-t mt-35 md:-mt-5 lg:-mt-14 border-r-0 border-b-0 border-l-0 self-stretch shrink-0 h-0 relative"
           style={{
@@ -52,9 +52,9 @@ export default function CollectionHome() {
             transform: 'rotate(0deg) scale(1, 1)',
           }}
         ></div>
-        <div className="flex flex-row items-start justify-center self-stretch shrink-0 h-[216.43px] relative mt-20 md:mt-0">
-          <div className="flex flex-col lg:flex-row gap-0 items-start justify-center flex-1 h-[216.43px] relative">
-            <div className="text-background text-left text-base leading-[24.16px] relative flex-1 h-[147.98px] mb-20 md:mb-0">
+        <div className="flex flex-row items-start justify-center self-stretch shrink-0 h-[216.5px] relative mt-20 md:mt-0">
+          <div className="flex flex-col lg:flex-row gap-0 items-start justify-center flex-1 h-[216.5px] relative">
+            <div className="text-background text-left text-base leading-[24.16px] relative flex-1 h-37 mb-20 md:mb-0">
               Every bottle of Ginkins is a celebration—of tradition reimagined,
               of botanicals brought to life, and of the shared joy in
               discovering something truly exceptional.{' '}

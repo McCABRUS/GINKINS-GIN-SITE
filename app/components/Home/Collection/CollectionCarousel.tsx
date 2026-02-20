@@ -19,6 +19,7 @@ export default function CollectionCarousel() {
                 img={card.img}
                 key={index}
                 alt={card.alt}
+                linkId={card.linkId}
               />
             ))}
           </div>

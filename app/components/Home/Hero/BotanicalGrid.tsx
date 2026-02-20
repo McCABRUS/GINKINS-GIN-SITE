@@ -48,7 +48,7 @@ export default function BotanicalGrid({ side }: { side: 'left' | 'right' }) {
               alt=""
               width={100}
               height={100}
-              className="mt-10 mb-16.75 xl:mb-9.5 2xl:mt-6.25 2xl:-mb-13.5 invisible group-hover:visible group-active:visible"
+              className="mt-9.5 mb-16.75 xl:mb-9.5 2xl:mt-[24.5px] 2xl:-mb-13.5 invisible group-hover:visible group-active:visible"
             />
             <Image
               draggable={false}

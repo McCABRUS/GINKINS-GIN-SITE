@@ -76,9 +76,11 @@ export default function Contact() {
         <div className="mt-16 mb-26.5">
           <a
             href={`mailto:${'info'}@${'ginkins'}.com`}
-            className="relative w-40 lg:w-44.25 h-9.75 mt-9.5 flex mx-auto items-center justify-center bg-(--primary-red-main) px-5 py-1.5 transition hover:bg-(--primary-gold-main)"
+            className="relative w-40 lg:w-44.25 h-9.75 mt-9.5 flex mx-auto items-center justify-center bg-(--primary-red-main) px-5 py-1.5 transition hover:bg-(--primary-gold-main) active:bg-(--primary-gold-main) focus:bg-(--primary-gold-main) group"
           >
-            <h5 className="text-background!">INFO@GINKINS.COM</h5>
+            <h5 className="text-background! group-hover:text-(--primary-black)! group-active:text-(--primary-black)! group-focus:text-(--primary-black)!">
+              INFO@GINKINS.COM
+            </h5>
           </a>
         </div>
         <div>

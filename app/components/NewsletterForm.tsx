@@ -18,13 +18,13 @@ export default function NewsletterForm({ isFooter }: Props) {
   let inputStyles =
     'w-full max-w-sm border-b border-(--primary-black) bg-transparent py-2 text-left text-base outline-none placeholder:text-(--primary-black) placeholder:opacity-60 text-(--primary-black)';
   let buttonStyles =
-    'min-w-min[124px] h-10 inline-flex items-center justify-center bg-(--primary-red-main) px-5 py-1.5  transition hover:bg-(--primary-gold-main) disabled:opacity-50';
+    'min-w-min[124px] h-10 inline-flex items-center justify-center bg-(--primary-red-main) px-5 py-1.5  transition hover:bg-(--primary-gold-main) active:bg-(--primary-gold-main) focus:bg-(--primary-gold-main) disabled:opacity-50 group';
 
   const tokenRef = useRef<string | null>(null);
   const widgetIdRef = useRef<string | null>(null);
   if (isFooter) {
     buttonStyles =
-      'self-center inline-flex items-center justify-center px-3 py-1.5 bg-(--primary-red-main) text-background font-medium hover:bg-(--primary-gold-main) transition-colors h-9 w-14.5 disabled:opacity-50';
+      'self-center inline-flex items-center justify-center px-3 py-1.5 bg-(--primary-red-main) text-background font-medium hover:bg-(--primary-gold-main) active:bg-(--primary-gold-main) focus:bg-(--primary-gold-main) transition-colors h-9 w-14.5 disabled:opacity-50 group';
     formStyles = 'mt-4 flex flex-col sm:flex-row gap-3 md:items-center';
     inputStyles =
       'text-center md:text-start text-base w-full sm:flex-1 py-2 bg-(--primary-black) border-b border-(--primary-white-100) text-background placeholder-(--secondary-gray-500) focus:placeholder-background focus:outline-none focus:ring-2 focus:ring-(--primary-gold-main) mb-4 md:mb-0';
@@ -141,7 +141,7 @@ export default function NewsletterForm({ isFooter }: Props) {
             disabled={status === 'loading' || !isTurnstileReady}
             className={buttonStyles}
           >
-            <h5 className="text-background! whitespace-nowrap">
+            <h5 className="text-background! whitespace-nowrap group-hover:text-(--primary-black)! group-active:text-(--primary-black)! group-focus:text-(--primary-black)!">
               {status === 'loading'
                 ? 'Sending…'
                 : isFooter

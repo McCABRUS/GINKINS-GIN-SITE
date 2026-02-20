@@ -1,6 +1,8 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
+import clsx from 'clsx';
 
 import { useEffect, useState, useRef } from 'react';
 import { isAgeVerified, setAgeVerified } from '@/lib/ageGate';
@@ -9,6 +11,7 @@ import AgeGateButton from './AgeGateButton';
 export default function AgeGate() {
   const [isOpen, setIsOpen] = useState(false);
   const [denied, setDenied] = useState(false);
+  const [exiting, setExiting] = useState(false);
 
   const hasCheckedRef = useRef(false);
 
@@ -24,7 +27,12 @@ export default function AgeGate() {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-9999 bg-(--secondary-beige)">
+    <div
+      className={clsx(
+        'fixed inset-0 z-9999 bg-(--secondary-beige) transition-opacity duration-600',
+        exiting && 'opacity-0',
+      )}
+    >
       <div className="absolute inset-0 opacity-[0.04] bg-[url('/imgs/legal/ginkins-gin-logo-watermark.svg')] bg-center bg-no-repeat bg-cover bg-(--secondary-beige)" />
       <div className="relative flex h-full w-full flex-col items-center justify-between px-6 py-10 text-center">
         <div className="">
@@ -63,14 +71,19 @@ export default function AgeGate() {
                 <AgeGateButton
                   label="YES"
                   onClick={() => {
-                    setAgeVerified();
-                    setIsOpen(false);
-                    window.__APP_STATE__ = {
-                      ...(window.__APP_STATE__ || {}),
-                      ageGateAccepted: true,
-                    };
+                    setTimeout(() => {
+                      setExiting(true);
+                      setTimeout(() => {
+                        setAgeVerified();
+                        setIsOpen(false);
+                        window.__APP_STATE__ = {
+                          ...(window.__APP_STATE__ || {}),
+                          ageGateAccepted: true,
+                        };
 
-                    window.dispatchEvent(new Event('app:state-changed'));
+                        window.dispatchEvent(new Event('app:state-changed'));
+                      }, 400);
+                    }, 200);
                   }}
                 />
                 <AgeGateButton label="NO" onClick={() => setDenied(true)} />
@@ -89,7 +102,23 @@ export default function AgeGate() {
         </div>
         <p className="max-w-217.75 text-[14px] text-(--primary-red-main) leading-5.25">
           * The cookies on this website are used for offering you a better
-          browsing experience. To know more read our privacy policy here
+          browsing experience. To know more read our privacy policy{' '}
+          <Link
+            className="underline hover:font-bold"
+            href="/privacy"
+            onClick={() => {
+              setAgeVerified();
+              setIsOpen(false);
+              window.__APP_STATE__ = {
+                ...(window.__APP_STATE__ || {}),
+                ageGateAccepted: true,
+              };
+
+              window.dispatchEvent(new Event('app:state-changed'));
+            }}
+          >
+            here
+          </Link>
         </p>
       </div>
       <div className="hidden lg:flex h-24.25 w-24.25 items-center justify-center absolute top-1/2 right-64">

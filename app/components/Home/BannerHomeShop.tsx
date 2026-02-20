@@ -5,7 +5,7 @@ export default function BannerHomeShop() {
   return (
     <section className="w-full h-250 2xs:h-230 sm:h-135.5 p-5 md:px-12.5 md:py-13.75 bg-(--secondary-beige)">
       <div className="w-full h-full relative border-4 border-solid border-(--primary-gold-main) px-11.25 md:px-0 py-20 flex items-center justify-center">
-        <div className="absolute lg:left-1/10 xl:left-1/4 top-1/10 lg:top-1/2 -translate-y-1/2">
+        <div className="absolute lg:left-1/10 xl:left-1/4 top-1/10 lg:top-1/2 -translate-y-1/2  max-w-480 place-self-center">
           <Image
             src="/imgs/home/ginkins-gin-icon-martini-decoration.svg"
             alt=""
@@ -20,7 +20,7 @@ export default function BannerHomeShop() {
             <br />
             from our still to your glass
           </h2>
-          <h3 className="mt-12.5 text-lg! inline-block uppercase text-[#1A1A1A] underline underline-offset-4">
+          <h3 className="mt-12.5 text-lg! inline-block uppercase text-[#1A1A1A]">
             Great gin travels. Let’s get you a pour
           </h3>
 
@@ -28,9 +28,11 @@ export default function BannerHomeShop() {
             <Link
               href="https://ginkinsgin.distilleryspirits.com"
               target="_blank"
-              className=" inline-block items-center justify-center bg-(--primary-red-main) px-5 py-1.5 text-sm font-medium uppercase  transition hover:bg-(--primary-gold-main)"
+              className=" inline-block items-center justify-center bg-(--primary-red-main) px-5 py-1.5 text-sm font-medium uppercase  transition hover:bg-(--primary-gold-main) active:bg-(--primary-gold-main) focus:bg-(--primary-gold-main) group"
             >
-              <h5 className="text-background!">Shop online</h5>
+              <h5 className="text-background! group-hover:text-(--primary-black)! group-active:text-(--primary-black)! group-focus:text-(--primary-black)!">
+                Find Ginkins
+              </h5>
             </Link>
           </div>
         </div>

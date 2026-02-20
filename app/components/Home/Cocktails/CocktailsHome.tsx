@@ -12,14 +12,14 @@ export default function CocktailsHome() {
           transform: 'rotate(90deg) scale(1, 1)',
         }}
       ></div>
-      <div className="mx-auto max-w-350 md:px-6">
-        <div className="text-center mx-auto">
+      <div className="mx-auto max-3xl:px-37.25 max-w-480 max-xl:px-5">
+        <div className="text-center mx-auto relative">
           <h3 className="text-lg! inline-block text-(--primary-red-main)! mb-10">
             Cocktails & Pairings – Drink <br className="block md:hidden" /> Like
             a Pro
           </h3>
 
-          <h1 className="font-serif text-[56px] leading-[1.05] uppercase text-(--primary-black)!">
+          <h1 className="font-serif text-[56px] leading-[1.05] uppercase text-(--primary-black)! relative">
             Shake
             <br className="block md:hidden" /> Things Up.
             <br />
@@ -43,11 +43,13 @@ export default function CocktailsHome() {
                 aria-hidden
               />
             </span>
-            <span className="block md:hidden">Sip</span> Something
-            <br className="block md:hidden" /> New.
+            <span className="block md:hidden relative z-50">Sip</span>{' '}
+            <span className="z-50 relative">Something</span>
+            <br className="block md:hidden" />{' '}
+            <span className="z-50 relative">New</span>.
           </h1>
         </div>
-        <div className="mt-16 lg:-mt-20 max-w-2xl md:mx-auto text-left mx-7.5 md:ml-[50%] grid">
+        <div className="mt-16 lg:-mt-20 max-w-2xl md:mx-auto text-left mx-7.5 md:ml-[50%] grid z-1 relative">
           <p className="text-center md:text-left text-base leading-relaxed text-(--primary-black)">
             At Ginkins, we believe cocktails should be both elevated and easy to
             enjoy. Whether you’re mixing for one or making magic for a crowd,
@@ -56,21 +58,11 @@ export default function CocktailsHome() {
             instructions, and tips from the Ginkins team—you’ve got everything
             you need to sip like a pro.
           </p>
-
-          <div className="mt-8 place-self-center sm:place-self-start">
-            <Link
-              href="https://ginkinsgin.distilleryspirits.com"
-              target="_blank"
-              className="inline-flex bg-(--primary-red-main) px-5 py-1.5 transition hover:bg-(--primary-gold-main)"
-            >
-              <h5 className="text-background! text-lg!">Shop Online</h5>
-            </Link>
-          </div>
         </div>
         <div className="mt-28 grid grid-cols-1 md:grid-cols-3 gap-5.25">
           {cocktailsData.map((card, i) => (
             <div key={i} className="hidden md:block">
-              <div className="h-148 overflow-hidden">
+              <div className="aspect-390/565 overflow-hidden">
                 <Image
                   src={card.img}
                   height={565}
@@ -86,10 +78,12 @@ export default function CocktailsHome() {
               </p>
               <div className="mt-6">
                 <Link
-                  href="/cocktails"
-                  className="inline-flex items-baseline justify-center bg-(--primary-red-main) px-5 py-1.5 transition hover:bg-(--primary-gold-main)"
+                  href={`/cocktails#${card.sectionTarget}`}
+                  className="inline-flex items-baseline justify-center bg-(--primary-red-main) px-5 py-1.5 transition hover:bg-(--primary-gold-main) active:bg-(--primary-gold-main) focus:bg-(--primary-gold-main) group"
                 >
-                  <h5 className="text-background! text-lg!">See More</h5>
+                  <h5 className="text-background! text-lg! group-hover:text-(--primary-black)! group-active:text-(--primary-black)! group-focus:text-(--primary-black)!">
+                    See More
+                  </h5>
                 </Link>
               </div>
             </div>

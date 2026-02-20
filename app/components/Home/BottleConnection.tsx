@@ -10,9 +10,9 @@ export default function BottleConnection() {
       }}
     >
       <div className="absolute inset-0 bg-black/60 visible md:invisible" />
-      <div className="relative mx-auto w-full px-6 h-full">
+      <div className="relative mx-auto w-full max-md:px-6 h-full max-3xl:px-37.25 md:max-w-480">
         <div className="flex h-full items-center justify-center lg:justify-end">
-          <div className="max-w-127.25 text-center mr-0 md:-mr-100 lg:mr-34.75 py-20 2xs:py-0">
+          <div className="max-w-127.25 text-center py-20 2xs:py-0">
             <div className="flex justify-center">
               <div className="h-14.25 w-14.25 rounded-full bg-background flex items-center justify-center">
                 <svg
@@ -51,9 +51,11 @@ export default function BottleConnection() {
               <Link
                 href="https://ginkinsgin.distilleryspirits.com"
                 target="_blank"
-                className="inline-flex items-center justify-center bg-(--primary-red-main) px-5 py-1.5 transition hover:bg-(--primary-gold-main)"
+                className="inline-flex items-center justify-center bg-(--primary-red-main) px-5 py-1.5 transition hover:bg-(--primary-gold-main) active:bg-(--primary-gold-main) focus:bg-(--primary-gold-main) group"
               >
-                <h5 className="text-background!">Shop Online</h5>
+                <h5 className="text-background! group-hover:text-(--primary-black)! group-active:text-(--primary-black)! group-focus:text-(--primary-black)!">
+                  Shop Online
+                </h5>
               </Link>
             </div>
           </div>

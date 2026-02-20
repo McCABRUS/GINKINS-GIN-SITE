@@ -9,5 +9,5 @@ export function isAgeVerified(): boolean {
 }
 
 export function setAgeVerified(): void {
-  document.cookie = `${COOKIE_NAME}=true; path=/; max-age=1; SameSite=Lax`;
+  document.cookie = `${COOKIE_NAME}=true; path=/; max-age=15; SameSite=Lax`;
 }

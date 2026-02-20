@@ -39,7 +39,7 @@ export default function Hero() {
           <BotanicalGrid side="right" />
         </div>
 
-        <div className="absolute left-1/2 top-[-5%] xl:top-[18%] -translate-x-1/2 w-full h-full flex items-center justify-center z-0">
+        <div className="absolute left-1/2 top-[-5%] xl:top-[18%] -translate-x-1/2 w-full h-full flex items-center justify-center z-0 max-w-480">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="374"
@@ -83,9 +83,9 @@ export default function Hero() {
           <Link
             href="/our-gins"
             role="button"
-            className="inline-flex items-center justify-center px-5 py-1.5 w-81.25 bg-(--primary-red-main) text-sm transition hover:bg-(--primary-gold-main)"
+            className="inline-flex items-center justify-center px-5 py-1.5 w-81.25 bg-(--primary-red-main) text-sm transition hover:bg-(--primary-gold-main) active:bg-(--primary-gold-main) focus:bg-(--primary-gold-main) group"
           >
-            <h5 className="text-background! text-lg!">
+            <h5 className="text-background! text-lg! group-hover:text-(--primary-black)! group-active:text-(--primary-black)! group-focus:text-(--primary-black)!">
               EXPLORE THE COLLECTION
             </h5>
           </Link>
@@ -93,15 +93,15 @@ export default function Hero() {
       </div>
       <div className="relative block xl:hidden text-center -top-33.5 ">
         <BotanicalGridMobile />
-        <div className="lg:hidden relative bg-background -top-70 -mb-102 h-41.25 py-[17.5px] grid">
-          <h2 className="text-(--primary-red-main)!">
+        <div className="lg:hidden relative bg-background -top-70 -mb-102 h-41.25 py-[17.5px] grid ">
+          <h2 className="text-3xl! text-(--primary-red-main)! content-end">
             WE BOTTLE <br /> CONNECTION.
           </h2>
           <hr
-            className="w-16 text-(--primary-black) place-self-center my-1.25"
+            className="w-16 text-(--primary-black) place-self-center lg:my-1.25"
             aria-hidden="true"
           />
-          <h2 className="text-(--primary-red-main)!">
+          <h2 className="text-3xl! text-(--primary-red-main)!">
             YOU POUR IT <br /> FORWARD.
           </h2>
         </div>

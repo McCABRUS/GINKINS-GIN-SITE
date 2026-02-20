@@ -22,7 +22,7 @@ export default function Hero() {
           />
         </picture>
       </div>
-      <div className="relative  text-center">
+      <div className="relative text-center">
         <h3 className="mb-6 text-center lg:text-left">About us</h3>
         <h1 className="text-center text-(--primary-black)!">
           Connections <br className="inline lg:hidden" />

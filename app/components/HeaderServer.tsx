@@ -5,9 +5,9 @@ import MobileMenu from './MobileMenu';
 export default function HeaderServer() {
   return (
     <header className="bg-(--primary-black) text-(--primary-gold-main)">
-      <nav className="max-w-6xl mx-auto px-6 py-4" aria-label="Main navigation">
+      <nav className="max-w-360 mx-auto px-6 py-4" aria-label="Main navigation">
         <div className="flex items-center justify-between">
-          <div className="hidden md:flex items-center gap-0 lg:gap-4">
+          <div className="hidden lg:flex items-center gap-0 lg:gap-4">
             <Link href="/about-ginkins" className="px-1 py-1 hover:underline">
               <h5 className="text-(--primary-gold-main)! inline">
                 ABOUT GINKINS
@@ -24,7 +24,7 @@ export default function HeaderServer() {
               </h5>
             </Link>
           </div>
-          <div className="flex-1 hidden md:flex justify-center mx-2.5">
+          <div className="flex-1 hidden lg:flex justify-center mx-20">
             <Link
               href="/"
               className="text-(--primary-gold-main) hover:text-(--primary-red-main)"
@@ -44,7 +44,7 @@ export default function HeaderServer() {
               </svg>
             </Link>
           </div>
-          <div className="hidden md:flex items-center gap-0 lg:gap-4">
+          <div className="hidden lg:flex items-center gap-0 lg:gap-4">
             <Link href="/cocktails" className="px-1 py-1 hover:underline">
               <h5 className="text-(--primary-gold-main)! inline">
                 COCKTAILS & PAIRINGS
@@ -52,10 +52,10 @@ export default function HeaderServer() {
             </Link>
             <span className="mx-3">•</span>
           </div>
-          <div className="hidden md:flex items-center md:ml-4">
+          <div className="hidden lg:flex items-center lg:ml-4">
             <HeaderClient />
           </div>
-          <div className="hidden md:flex items-center gap-0 lg:gap-4 md:ml-4">
+          <div className="hidden lg:flex items-center gap-0 lg:gap-4 md:ml-4">
             <Link
               href="/subscribe"
               className="inline-block px-4 py-1 border border-(--primary-gold-main) rounded text-sm font-medium transition-colors group group-hover:text-(--primary-red-main) hover:border-(--primary-red-main)"
@@ -65,7 +65,7 @@ export default function HeaderServer() {
               </h5>
             </Link>
           </div>
-          <div className="md:hidden w-full flex justify-between">
+          <div className="lg:hidden w-full flex justify-between">
             <div className="justify-start">
               <Link href="/">
                 <svg
