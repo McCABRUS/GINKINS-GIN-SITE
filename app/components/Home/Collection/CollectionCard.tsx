@@ -30,7 +30,7 @@ export default function CollectionCard({
           style={{ filter: 'blur(5.72px)' }}
         ></div>
       </div>
-      <div className="pb-16.5 flex flex-col gap-13.5 items-start justify-start shrink-0 w-full lg:w-82 relative top-5 lg:top-30 px-0 lg:px-25 sm:px-0">
+      <div className="pb-16.5 flex flex-col gap-13.5 items-start justify-start shrink-0 w-full lg:w-82 relative top-5 lg:top-30 px-0">
         <div className="flex flex-col gap-8.25 items-start justify-start self-stretch shrink-0 relative flex-1 px-10 lg:px-0">
           <h2 className="text-(--primary-gold-main)! text-center lg:text-left w-full lg:w-65 whitespace-pre-wrap uppercase relative self-stretch">
             {title}
