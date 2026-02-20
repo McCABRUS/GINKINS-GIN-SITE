@@ -280,6 +280,6 @@ h6 {
     mix-blend-mode: multiply;
   }
   .animate-spin-slow {
-    animation: spin-slow 3.5s linear infinite;
+    animation: spin-slow 20s linear infinite;
   }
 }
