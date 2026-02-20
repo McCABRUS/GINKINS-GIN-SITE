@@ -12,10 +12,6 @@ export default function Preloader() {
   const router = useRouter();
 
   useEffect(() => {
-    console.log('PRELOADER HYDRATED');
-  }, []);
-
-  useEffect(() => {
     const handleLoad = () => {
       setTimeout(() => {
         setExiting(true);
@@ -78,8 +74,6 @@ export default function Preloader() {
           onClick={(e) => {
             e.preventDefault();
             e.stopPropagation();
-            alert('Click');
-            console.log('Here Preloader privacy policy clicked');
             setAgeVerified();
             setTimeout(() => {
               setExiting(true);
