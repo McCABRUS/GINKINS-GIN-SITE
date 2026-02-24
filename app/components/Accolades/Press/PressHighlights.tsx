@@ -43,70 +43,72 @@ export default function PressHighlights() {
   const rightSlide = slides[(index + 1) % slides.length];
 
   return (
-    <section className="relative bg-(--primary-gold-main) py-25 overflow-hidden w-full px-5 lg:px-13">
-      <h1 className="text-center text-(--primary-gold-400)! mb-20">
-        PRESS <br className="block lg:hidden" /> HIGHLIGHTS
-      </h1>
-      <button
-        onClick={prev}
-        className="absolute left-5 xl:left-13.25  md:top-1/2 -translate-y-1/2 h-7.5 w-7.5 lg:w-12 lg:h-12 xl:h-14.5 xl:w-14.5 rounded-full border border-(--primary-gold-main) flex items-center justify-center text-background hover:text-(--primary-gold-400) transition duration-300 ease-in-out z-10"
-        aria-label="Previous Press Highlight"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="58"
-          height="58"
-          viewBox="0 0 58 58"
-          fill="none"
+    <section className="relative bg-(--primary-gold-main) py-25 overflow-hidden w-full">
+      <div className="relative mx-auto max-xl:px-5 max-3xl:px-37.25 md:max-w-480">
+        <h1 className="text-center text-(--primary-gold-400)! mb-20">
+          PRESS <br className="block lg:hidden" /> HIGHLIGHTS
+        </h1>
+        <button
+          onClick={prev}
+          className="absolute left-5 xl:left-0  md:top-1/2 -translate-y-1/2 h-7.5 w-7.5 lg:w-12 lg:h-12 xl:h-14.5 xl:w-14.5 rounded-full border border-(--primary-gold-main) bg-background flex items-center justify-center text-(--primary-gold-main) hover:bg-(--primary-gold-main) hover:text-background hover:border-background transition duration-300 ease-in-out z-10"
+          aria-label="Previous Press Highlight"
         >
-          <circle
-            cx="29"
-            cy="29"
-            r="29"
-            transform="rotate(-180 29 29)"
-            fill="currentColor"
-          />
-          <path
-            d="M21.5471 28.2796L42.247 28.2796L42.247 31.4057L21.5471 31.4057L30.6692 39.7899L28.2645 42L15.0371 29.8427L28.2645 17.6853L30.6692 19.8954L21.5471 28.2796Z"
-            fill="#D4BB40"
-          />
-        </svg>
-      </button>
-      <button
-        onClick={next}
-        className="absolute right-5 xl:right-12.5 md:top-1/2 -translate-y-1/2 h-7.5 w-7.5 lg:w-12 lg:h-12 xl:h-14.5 xl:w-14.5 rounded-full border border-(--primary-gold-main) flex items-center justify-center text-background hover:text-(--primary-gold-400) transition duration-300 ease-in-out z-10"
-        aria-label="Next Press Highlight"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="58"
-          height="58"
-          viewBox="0 0 58 58"
-          fill="none"
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="58"
+            height="58"
+            viewBox="0 0 58 58"
+            fill="none"
+          >
+            <circle
+              cx="29"
+              cy="29"
+              r="29"
+              transform="rotate(-180 29 29)"
+              fill="currentBackgroundColor"
+            />
+            <path
+              d="M21.5471 28.2796L42.247 28.2796L42.247 31.4057L21.5471 31.4057L30.6692 39.7899L28.2645 42L15.0371 29.8427L28.2645 17.6853L30.6692 19.8954L21.5471 28.2796Z"
+              fill="currentColor"
+            />
+          </svg>
+        </button>
+        <button
+          onClick={next}
+          className="absolute right-5 xl:right-0 md:top-1/2 -translate-y-1/2 h-7.5 w-7.5 lg:w-12 lg:h-12 xl:h-14.5 xl:w-14.5 rounded-full border border-(--primary-gold-main) bg-background flex items-center justify-center text-(--primary-gold-main) hover:bg-(--primary-gold-main) hover:text-background hover:border-background transition duration-300 ease-in-out z-10"
+          aria-label="Next Press Highlight"
         >
-          <circle cx="29" cy="29" r="29" fill="currentColor" />
-          <path
-            d="M36.4529 29.7204L15.753 29.7204L15.753 26.5943L36.4529 26.5943L27.3308 18.2101L29.7355 16L42.9629 28.1574L29.7355 40.3147L27.3308 38.1046L36.4529 29.7204Z"
-            fill="#D4BB40"
-          />
-        </svg>
-      </button>
-      <div className="relative mx-auto px-6">
-        <div className="pointer-events-none absolute left-1/2 top-0 hidden xl:h-95.5 h-65 w-px bg-white lg:block" />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="58"
+            height="58"
+            viewBox="0 0 58 58"
+            fill="none"
+          >
+            <circle cx="29" cy="29" r="29" fill="CurrentBackgroundColor" />
+            <path
+              d="M36.4529 29.7204L15.753 29.7204L15.753 26.5943L36.4529 26.5943L27.3308 18.2101L29.7355 16L42.9629 28.1574L29.7355 40.3147L27.3308 38.1046L36.4529 29.7204Z"
+              fill="CurrentColor"
+            />
+          </svg>
+        </button>
+        <div className="relative mx-auto">
+          <div className="pointer-events-none absolute left-1/2 top-0 hidden xl:h-95.5 h-65 w-px bg-white lg:block" />
 
-        <div className="grid grid-cols-1 gap-16 lg:grid-cols-2 lg:gap-24">
-          <PressSlide {...leftSlide} />
-          <div className="hidden lg:block">
-            <PressSlide {...rightSlide} />
+          <div className="grid grid-cols-1 gap-16 lg:grid-cols-2 lg:gap-24">
+            <PressSlide {...leftSlide} />
+            <div className="hidden lg:block">
+              <PressSlide {...rightSlide} />
+            </div>
           </div>
         </div>
-      </div>
-      <div className="mt-20 text-center">
-        <button className="inline-flex items-center justify-center bg-(--primary-red-main) px-8 py-3 text-lg font-medium uppercase   transition hover:bg-(--primary-gold-400) mt-1 group">
-          <h5 className="text-background! group-hover:text-(--primary-black)! group-active:text-(--primary-black)! group-focus:text-(--primary-black)!">
-            SEE ALL AWARDS
-          </h5>
-        </button>
+        <div className="mt-20 text-center">
+          <button className="inline-flex items-center justify-center bg-(--primary-red-main) px-8 py-3 text-lg font-medium uppercase   transition hover:bg-(--primary-gold-400) mt-1 group">
+            <h5 className="text-background! group-hover:text-(--primary-black)! group-active:text-(--primary-black)! group-focus:text-(--primary-black)!">
+              SEE ALL AWARDS
+            </h5>
+          </button>
+        </div>
       </div>
     </section>
   );

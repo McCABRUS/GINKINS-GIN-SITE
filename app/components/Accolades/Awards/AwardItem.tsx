@@ -17,10 +17,7 @@ export default function AwardItem({
 }: AwardItemProps) {
   return (
     <div
-      className={`
-        flex flex-col items-center text-center lg:px-6 
-        ${showDivider ? 'lg:border-r lg:border-(--primary-black)' : ''}
-      `}
+      className={`flex flex-col items-center text-center ${showDivider ? 'lg:border-r lg:border-(--primary-black)' : ''}`}
     >
       <Image
         src={image}
