@@ -11,7 +11,7 @@ export default function SingUpButton() {
       <JoinModal open={isJoinOpen} onClose={() => setIsJoinOpen(false)} />
       <button
         type="button"
-        className="inline-flex items-center justify-center bg-(--primary-red-main) px-5 py-1.5 transition hover:bg-(--primary-gold-main) active:bg-(--primary-gold-main) focus:bg-(--primary-gold-main) w-[200%] group"
+        className="inline-flex items-center justify-center bg-(--primary-red-main) px-5 py-1.5 transition hover:bg-(--primary-gold-main) active:bg-(--primary-gold-main) focus:bg-(--primary-gold-main) w-full grou absolute -bottom-14"
         onClick={() => {
           setIsJoinOpen(true);
         }}

@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function GinsHero() {
   return (
-    <section className="relative w-screen overflow-hidden bg-(--secondary-beige) pt-46">
+    <section className="relative w-screen overflow-hidden bg-(--secondary-beige) pt-12.75">
       <div className="absolute inset-0 pointer-events-none">
         <picture>
           <source
@@ -16,7 +16,7 @@ export default function GinsHero() {
           <img
             src="/imgs/about/ginkins-gin-heritage-farm-illustration-1200.webp"
             alt="Golden line art illustration of a Kentucky farm and distillery at sunset for Ginkins Gin background"
-            className="h-full w-full object-cover object-center xl:top-50"
+            className="h-full w-full object-none md:object-cover object-center relative -top-55 xl:-top-62.5"
             loading="eager"
             fetchPriority="high"
           />
@@ -62,10 +62,10 @@ export default function GinsHero() {
           />
         </div>
       </div>
-      <div className="bg-(--primary-black) -mt-19 relative z-10 xl:pl-37.25 xl:pr-38 px-10">
-        <div className="mx-auto md:py-45 pb-18.5 pt-22.75">
-          <div className="grid grid-cols-1 gap-20 xl:grid-cols-2">
-            <h4 className="text-background! whitespace-nowrap text-center xl:text-left">
+      <div className="bg-(--primary-black) -mt-19 relative z-10">
+        <div className="mx-auto md:py-45 pb-18.5 pt-22.75 max-xl:px-5 max-3xl:px-37.25 md:max-w-480">
+          <div className="grid grid-cols-1 gap-10 md:gap-20 xl:grid-cols-2">
+            <h4 className="text-background! whitespace-nowrap text-center xl:text-left mt-30 md:mt-0">
               Three Expressions. <br className="block xl:hidden" />
               One <br className="hidden xl:block" />
               Spirit of <br className="block 2xs:hidden" />
