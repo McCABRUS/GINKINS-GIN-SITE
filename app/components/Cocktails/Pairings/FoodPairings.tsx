@@ -4,10 +4,10 @@ import Image from 'next/image';
 export default function FoodPairings() {
   return (
     <section
-      className="w-full bg-(--secondary-beige) py-15 lg:py-27 px-5 lg:px-15 xl:px-37 relative"
+      className="w-full bg-(--secondary-beige) py-15 lg:py-27 relative"
       id="pairings"
     >
-      <div className="mx-auto">
+      <div className="mx-auto max-xl:px-0 max-3xl:px-37.25 md:max-w-480">
         <div className="text-center">
           <h3 className="uppercase text-(--primary-red-main)! text-[18px]! leading-6.75!">
             Discover
@@ -15,7 +15,7 @@ export default function FoodPairings() {
           <h1 className="my-13.25 text-(--primary-black)! lg:text-[56px]! leading-16.75! lg:font-normal!">
             Food Pairings by Ginkins
           </h1>
-          <h5 className="text-(--primary-red-main)! mb-23.5 text-[18px]! leading-6.75!">
+          <h5 className="text-(--primary-red-main)! mb-15 text-[18px]! leading-6.75!">
             Perfect dishes to complement your gin.
           </h5>
         </div>
@@ -83,7 +83,7 @@ export default function FoodPairings() {
             ]}
           />
         </div>
-        <div className="mt-24 flex justify-center">
+        <div className="mt-15 flex justify-center">
           <Image
             src="/imgs/cocktails/food-pairings-icons/ginkins-gin-icon-fish-citrus-mix.svg"
             alt=""

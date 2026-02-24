@@ -3,12 +3,12 @@ import RecipeCard from './RecipeCard';
 export default function SignatureHouseCreations() {
   return (
     <section
-      className="w-screen bg-(--secondary-beige) py-0 lg:py-27 px-0 lg:px-[116.5px]"
+      className="w-screen bg-(--secondary-beige) py-0 lg:py-27"
       id="signature"
     >
-      <div className="mx-auto">
+      <div className="mx-auto max-xl:px-0 max-3xl:px-37.25 md:max-w-480">
         <div className="signature-grid grid grid-cols-1 gap-x-0 gap-y-0 lg:gap-x-10.5 lg:gap-y-8">
-          <div className="area-title text-center space-y-9 mt-15 lg:mt-0 mb-14.75 lg:mb-0">
+          <div className="area-title text-center space-y-9 mt-20 lg:mt-0 mb-20 lg:mb-0">
             <h3 className="text-(--primary-red-main)!">Savor</h3>
             <h1 className="text-(--secondary-black)! xl:text-[56px]! xl:leading-16.75!">
               Signature <br />

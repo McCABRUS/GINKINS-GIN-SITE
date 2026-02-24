@@ -2,16 +2,16 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 const items = [
-  { label: 'Signature House Creations', href: '/cocktails#signature' },
-  { label: 'Classic Ginkins Cocktails', href: '/cocktails#classic' },
-  { label: 'Food Pairings', href: '/cocktails#pairings' },
+  { label: 'Signature House Creations', href: '#signature' },
+  { label: 'Classic Ginkins Cocktails', href: '#classic' },
+  { label: 'Food Pairings', href: '#pairings' },
 ];
 export default function CocktailsMenu() {
   return (
-    <section className="w-screen bg-(--primary-black) py-36.5 px-5 lg:px-37.25 -mt-px">
-      <div className="mx-auto">
+    <section className="w-screen bg-(--primary-black) pt-15 pb-32.5 lg:pb-36.5 lg:pt-36.5 -mt-px">
+      <div className="mx-auto max-xl:px-5 max-3xl:px-37.25 md:max-w-480">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_480px] gap-0 items-center">
-          <div className="text-center lg:text-left">
+          <div className="text-center lg:text-left order-2 lg:order-1">
             <h3 className="text-lg! inline-block uppercase text-background! mb-10">
               Try a Recipe | Mix It Up | Pair &amp; Pour
             </h3>
@@ -19,14 +19,15 @@ export default function CocktailsMenu() {
               {items.map((item, i) => (
                 <li key={i}>
                   <div className="flex items-center gap-6">
-                    <h6 className="text-[35px]! text-(--secondary-gray-300)!">
-                      {String(i + 1).padStart(2, '0')}
-                    </h6>
-
                     <Link href={item.href}>
-                      <h4 className="text-left text-(--secondary-gray-300)! hover:text-(--primary-red-main)! transition">
-                        {item.label}
-                      </h4>
+                      <div className="group">
+                        <h6 className="text-[35px]! text-(--secondary-gray-300)! group-hover:text-(--primary-red-200)! relative inline mr-8 -top-2.5 group-hover:font-bold! align-bottom">
+                          {String(i + 1).padStart(2, '0')}
+                        </h6>
+                        <h4 className="text-left text-background! xl:text-(--secondary-gray-300)! group-hover:text-(--primary-red-200)! transition inline group-hover:font-bold!">
+                          {item.label}
+                        </h4>
+                      </div>
                     </Link>
                   </div>
 
@@ -36,7 +37,7 @@ export default function CocktailsMenu() {
             </ul>
           </div>
 
-          <div className="relative flex justify-center mt-10 lg:mt-0">
+          <div className="relative flex justify-center mb-10 lg:mb-0 order-1 lg:order-2">
             <div className="absolute right-35 lg:right-4 top-1/3 z-10 fill-(--primary-gold-main) w-24.5 h-30.5 lg:w-40 lg:h-49.75">
               <Image
                 src="/imgs/cocktails/icon-stars-ginkins-gin.svg"

@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function CocktailsHero() {
   return (
-    <section className="relative w-screen overflow-hidden bg-(--secondary-beige) px-5 sm:px-28.25 py-27.75">
+    <section className="relative w-screen overflow-hidden bg-(--secondary-beige) px-5 sm:px-28.25 py-12.75">
       <div className="absolute inset-0 pointer-events-none">
         <picture>
           <source
@@ -46,7 +46,7 @@ export default function CocktailsHero() {
         </div>
       </div>
       <div
-        className="absolute border-solid border-(--primary-red-main) border-t border-r-0 border-b-0 border-l-0 shrink-0 w-18.75 h-0 z-20 bottom-45.5 left-1/2 -translate-x-1/2"
+        className="absolute border-solid border-(--primary-red-main) border-t border-r-0 border-b-0 border-l-0 shrink-0 w-18.75 h-0 z-20 bottom-30 left-1/2 -translate-x-1/2"
         style={{
           transform: 'rotate(90deg) scale(1, 1)',
         }}

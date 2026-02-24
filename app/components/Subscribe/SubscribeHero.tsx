@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function SubscribeHero() {
   return (
-    <section className="relative w-screen overflow-hidden bg-(--secondary-beige) px-5 sm:px-28.25 py-27.75">
+    <section className="relative w-screen overflow-hidden bg-(--secondary-beige) px-5 sm:px-28.25 py-12.75">
       <div className="absolute inset-0 pointer-events-none">
         <picture>
           <source

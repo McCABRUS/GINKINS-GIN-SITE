@@ -20,7 +20,7 @@ export default function PairingColumn({
     <div className="relative mx-auto lg:mx-0">
       {withDivider && (
         <span
-          className="absolute -right-8 top-0 hidden h-full w-px bg-(--primary-black) lg:block"
+          className="absolute -right-5.75 top-0 hidden h-full w-px bg-(--primary-black) lg:block"
           aria-hidden
         />
       )}
