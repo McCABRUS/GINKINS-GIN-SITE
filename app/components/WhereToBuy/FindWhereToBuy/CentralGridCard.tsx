@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function CentralGridCard() {
   return (
-    <div className="relative flex flex-col items-center justify-center my-10 lg:-my-20 lg:col-span-2 lg:order-3 z-10">
+    <div className="relative hidden lg:flex flex-col items-center justify-center -my-20 col-span-2 order-3 z-10">
       <div className="relative w-63 h-92.5 xl:h-131 xl:w-89.25">
         <Image
           src="/imgs/where_to_buy/ginkins-gin-ice-cube-logo-detail.webp"

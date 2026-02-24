@@ -16,7 +16,7 @@ export default function SignatureHouseCreations() {
               Creations
             </h1>
             <h5 className="text-(--primary-red-main)!">
-              Try a recipe | Mix it up | Pair & pour
+              Try a recipe | Mix it up | Pair &amp; pour
             </h5>
           </div>
           <RecipeCard
@@ -111,9 +111,9 @@ export default function SignatureHouseCreations() {
           />
           <RecipeCard
             area="area-card6"
-            title="Hop & Herb Cocktail"
+            title="Hop &amp; Herb Cocktail"
             image="/imgs/cocktails/signature-house-creations/ginkins-gin-hop-herb-cocktail.webp"
-            alt="Vibrant yellow Hop & Herb gin cocktail with a rosemary sprig and lime slice"
+            alt="Vibrant yellow Hop &amp; Herb gin cocktail with a rosemary sprig and lime slice"
             description="Bright citrus meets IPA botanicals."
             ingredients={[
               '2 oz Ginkins Gin',

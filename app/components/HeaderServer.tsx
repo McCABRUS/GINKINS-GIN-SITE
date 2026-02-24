@@ -47,7 +47,7 @@ export default function HeaderServer() {
           <div className="hidden lg:flex items-center gap-0 lg:gap-4">
             <Link href="/cocktails" className="px-1 py-1 hover:underline">
               <h5 className="text-(--primary-gold-main)! inline">
-                COCKTAILS & PAIRINGS
+                COCKTAILS &amp; PAIRINGS
               </h5>
             </Link>
             <span className="mx-3">•</span>

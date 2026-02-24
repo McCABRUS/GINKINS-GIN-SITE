@@ -4,7 +4,7 @@ export default function ShopBanner() {
   return (
     <section className="relative w-full aspect-4/5 md:aspect-16/7 bg-cover md:bg-center bg-left bg-[url('/imgs/about/ginkins-gin-products.webp')]">
       <div className="absolute inset-0 bg-black/60 visible md:invisible" />
-      <div className="relative mx-auto w-full px-6 h-full">
+      <div className="relative mx-auto w-full max-xl:px-5 max-3xl:px-37.25 md:max-w-480 h-full">
         <div className="flex h-full items-center justify-center">
           <div className="max-w-127.25 text-center mr-0 py-20 2xs:py-0">
             <div className="flex justify-center">

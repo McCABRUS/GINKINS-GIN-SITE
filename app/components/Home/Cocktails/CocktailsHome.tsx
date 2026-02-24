@@ -15,8 +15,8 @@ export default function CocktailsHome() {
       <div className="mx-auto max-3xl:px-37.25 max-w-480 max-xl:px-5">
         <div className="text-center mx-auto relative">
           <h3 className="text-lg! inline-block text-(--primary-red-main)! mb-10">
-            Cocktails & Pairings – Drink <br className="block md:hidden" /> Like
-            a Pro
+            Cocktails &amp; Pairings – Drink <br className="block md:hidden" />{' '}
+            Like a Pro
           </h3>
 
           <h1 className="font-serif text-[56px] leading-[1.05] uppercase text-(--primary-black)! relative">

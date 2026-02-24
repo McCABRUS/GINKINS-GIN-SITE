@@ -23,7 +23,7 @@ export default function TermsHero() {
       </div>
       <div className="mx-auto text-center">
         <h1 className="text-(--primary-black)!">
-          Terms & <br />
+          Terms &amp; <br />
           Conditions
         </h1>
         <h2 className="mt-11.5 text-(--primary-red-main)! md:mt-8">

@@ -3,11 +3,11 @@ import Link from 'next/link';
 
 export default function FindShops() {
   return (
-    <section className="bg-(--secondary-beige) pt-15 lg:pt-24 lg:pb-24 relative">
-      <div className="mx-auto lg:px-[12.5%]">
-        <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
-          <div className="space-y-6 px-5">
-            <h5 className="mb-18.75">Find us</h5>
+    <section className="bg-(--secondary-beige) pt-24 lg:pb-24 relative">
+      <div className="mx-auto max-xl:px-0 max-3xl:px-37.25 md:max-w-480">
+        <div className="grid grid-cols-1 lg:items-start items-center gap-24 lg:gap-16 lg:grid-cols-2">
+          <div className="space-y-6 px-5 xl:px-0">
+            <h5 className="mb-6 lg:mb-18.75">Find us</h5>
             <Image
               src="/imgs/home/ginkins-gin-icon-mortar-pestle.svg"
               alt=""
@@ -16,13 +16,13 @@ export default function FindShops() {
               className=""
               aria-hidden
             />
-            <h4 className="text-(--primary-black)!  py-6">
+            <h4 className="text-(--primary-black)! lg:py-6">
               Great Gin Travels.
               <br />
               Let’s Get You a Pour.
             </h4>
 
-            <p className="text-base leading-6 font-normal text-(--primary-black) mb-22.5">
+            <p className="text-base leading-6 font-normal text-(--primary-black) mb-6 lg:mb-12">
               Whether you’re sipping in a cozy cocktail bar, toasting at home,
               or stocking up for your next gathering—Ginkins is never far away.
               We’ve partnered with incredible retailers, restaurants, and
@@ -34,7 +34,7 @@ export default function FindShops() {
             <Link
               href="https://ginkinsgin.distilleryspirits.com"
               target="_blank"
-              className="w-40 lg:w-44.25 h-9.75 mt-9.5 flex items-center justify-center bg-(--primary-red-main) px-5 py-1.5 transition hover:bg-(--primary-gold-main) active:bg-(--primary-gold-main) focus:bg-(--primary-gold-main) group"
+              className="w-40 lg:w-44.25 h-9.75 lg:mt-9.5 flex items-center justify-center bg-(--primary-red-main) px-5 py-1.5 transition hover:bg-(--primary-gold-main) active:bg-(--primary-gold-main) focus:bg-(--primary-gold-main) group"
             >
               <h5 className="text-background! group-hover:text-(--primary-black)! group-active:text-(--primary-black)! group-focus:text-(--primary-black)!">
                 Shop ONLINE

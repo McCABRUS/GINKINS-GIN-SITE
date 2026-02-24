@@ -41,7 +41,7 @@ const testimonials = [
   },
   {
     quote:
-      'What stands out is the balance. It’s clean, expressive, and holds its character beautifully in a Gin & Tonic or a Negroni. This is a gin that respects the classics.',
+      'What stands out is the balance. It’s clean, expressive, and holds its character beautifully in a Gin &amp; Tonic or a Negroni. This is a gin that respects the classics.',
     author: 'Bartender | Louisville, KY',
     rating: 5,
   },

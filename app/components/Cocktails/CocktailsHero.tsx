@@ -25,7 +25,7 @@ export default function CocktailsHero() {
       </div>
       <div className="relative  text-center">
         <h1 className="text-center">
-          Cocktails & Pairings <br />
+          Cocktails &amp; Pairings <br />
           <span className="text-(--primary-black)!">Drink Like a Pro</span>
         </h1>
         <div className="my-16 flex justify-center">

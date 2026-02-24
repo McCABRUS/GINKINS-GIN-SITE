@@ -74,7 +74,7 @@ export function ContactForm() {
     <form
       ref={formRef}
       onSubmit={handleSubmit}
-      className="mt-12 space-y-6 text-left max-w-140 mx-auto text-(--primary-black) text-base leading-6"
+      className="mt-12 space-y-6 text-left max-w-480 mx-auto text-(--primary-black) text-base leading-6"
     >
       <div>
         <label className="block mb-1">Name</label>
@@ -120,7 +120,12 @@ export function ContactForm() {
         )}
       </div>
       <div className="flex items-center gap-2">
-        <input type="checkbox" id="terms" required className="bg-background" />
+        <input
+          type="checkbox"
+          id="terms"
+          required
+          className="bg-background accent-(--primary-red-main)"
+        />
         <label htmlFor="terms">I accept the Terms</label>
       </div>
       <Turnstile
@@ -133,7 +138,7 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={loading || !token}
-        className="relative w-40 lg:w-44.25 h-9.75 mt-9.5 flex mx-auto items-center justify-center bg-(--primary-red-main) px-5 lg:px-8 py-1.5 lg:py-3 text-sm font-medium uppercase text-background transition hover:bg-(--primary-gold-main) active:bg-(--primary-gold-main) focus:bg-(--primary-gold-main) disabled:opacity-50 group"
+        className="relative w-40 lg:w-44.25 h-9.75 mt-9.5 flex mx-auto items-center justify-center bg-(--primary-red-200) px-5 lg:px-8 py-1.5 lg:py-3 text-sm font-medium uppercase text-background transition hover:bg-(--primary-gold-main) active:bg-(--primary-gold-main) focus:bg-(--primary-gold-main) disabled:opacity-50 group"
       >
         <h5 className="text-background! group-hover:text-(--primary-black)! group-active:text-(--primary-black)! group-focus:text-(--primary-black)!">
           {loading ? 'Sending…' : 'Submit'}

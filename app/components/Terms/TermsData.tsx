@@ -7,7 +7,7 @@ type TermsItem = {
 export const Terms: TermsItem[] = [
   {
     id: 1,
-    title: 'Purchase & Shipping Policies:',
+    title: 'Purchase &amp; Shipping Policies:',
     description: (
       <p>
         Orders are subject to availability. Shipping rates and delivery times

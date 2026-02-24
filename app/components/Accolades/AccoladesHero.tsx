@@ -24,7 +24,7 @@ export default function AccoladesHero() {
         <div className="absolute inset-x-0 bottom-0 h-20 bg-linear-to-t from-(--secondary-beige) to-transparent" />
       </div>
       <div className="relative  text-center">
-        <h2 className="mb-6 text-center">ACCOLADES & PRESS</h2>
+        <h2 className="mb-6 text-center">ACCOLADES &amp; PRESS</h2>
         <h1 className="text-center">
           RAISING THE BAR,{' '}
           <span className="text-(--primary-black)!">

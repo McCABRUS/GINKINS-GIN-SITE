@@ -251,7 +251,7 @@ export default function Footer() {
                       href="/accolades"
                       className="hover:text-(--primary-red-main) active:text-(--primary-red-main) focus:text-(--primary-red-main) text-base"
                     >
-                      Accolades & Press
+                      Accolades &amp; Press
                     </Link>
                   </li>
                   <li>
@@ -291,7 +291,7 @@ export default function Footer() {
                       href="/cocktails"
                       className="hover:text-(--primary-red-main) active:text-(--primary-red-main) focus:text-(--primary-red-main) text-base"
                     >
-                      Cocktails & Pairings
+                      Cocktails &amp; Pairings
                     </Link>
                   </li>
                   <li>

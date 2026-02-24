@@ -3,10 +3,10 @@ import Link from 'next/link';
 export default function BottleConnectionBuy() {
   return (
     <section className="relative w-full aspect-4/5 md:aspect-16/7 bg-cover bg-center md:bg-[url('/imgs/where_to_buy/ginkins-gin-trio-serving-tray.webp')]">
-      <div className="absolute inset-0 bg-black visible md:invisible" />
-      <div className="relative mx-auto w-full px-6 h-full">
+      <div className="absolute inset-0 bg-black visible lg:invisible" />
+      <div className="relative mx-auto w-full max-xl:px-5 max-3xl:px-37.25 md:max-w-480 h-full">
         <div className="flex h-full items-center justify-center lg:justify-start">
-          <div className="max-w-127.25 text-center ml-0 md:-ml-100 lg:ml-42.75 py-20 2xs:py-0">
+          <div className="max-w-127.25 text-center py-20 2xs:py-0">
             <div className="flex justify-center">
               <div className="h-14.25 w-14.25 rounded-full bg-background flex items-center justify-center">
                 <svg
@@ -45,10 +45,10 @@ export default function BottleConnectionBuy() {
               <Link
                 href="https://ginkinsgin.distilleryspirits.com"
                 target="_blank"
-                className="inline-flex items-center justify-center bg-(--primary-red-main) px-5 py-1.5 transition hover:bg-(--primary-gold-main) active:bg-(--primary-gold-main) focus:bg-(--primary-gold-main) group"
+                className="relative w-40 lg:w-44.25 h-9.75 mt-9.5 flex mx-auto xl:mx-0 content-start items-center justify-center bg-(--primary-red-main) px-5 py-1.5 transition hover:bg-(--primary-gold-main) active:bg-(--primary-gold-main) focus:bg-(--primary-gold-main) group"
               >
                 <h5 className="text-background! group-hover:text-(--primary-black)! group-active:text-(--primary-black)! group-focus:text-(--primary-black)!">
-                  Shop Online
+                  Shop ONLINE
                 </h5>
               </Link>
             </div>

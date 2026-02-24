@@ -23,7 +23,7 @@ export default function PrivacyHero() {
       </div>
       <div className="mx-auto text-center">
         <h1 className="text-(--primary-black)!">
-          Privacy & <br />
+          Privacy &amp; <br />
           Cookies Policy
         </h1>
         <h2 className="mt-11.5 text-(--primary-red-main)! md:mt-8">
