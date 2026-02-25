@@ -11,7 +11,7 @@ const benefits = [
 
 export default function SubscribeContainer() {
   return (
-    <section className="w-full bg-[#fbf4e6] py-28 px-5 lg:px-20 xl:pl-74.5 xl:pr-57.75">
+    <section className="w-full bg-(--secondary-beige) py-28 max-xl:px-5 max-3xl:px-37.25 md:max-w-360">
       <div className="mx-auto ">
         <div className="mx-auto text-center">
           <p className="text-lg leading-6.75 font-medium text-(--primary-black)">
@@ -29,8 +29,8 @@ export default function SubscribeContainer() {
             Terms and Conditions.
           </p>
         </div>
-        <div className="mt-20.75 grid gap-16 lg:grid-cols-2 px-5 xs:px-17 lg:px-0">
-          <h4 className="text-(--primary-black)! text-center lg:text-left">
+        <div className="mt-20.75 grid gap-16 lg:grid-cols-2">
+          <h4 className="lg:text-[56px]! text-[46px]! text-(--primary-black)! text-center lg:text-left font-medium! lg:font-normal! leading-12! lg:leading-16.75!">
             As a Member,
             <br />
             You’ll Get:

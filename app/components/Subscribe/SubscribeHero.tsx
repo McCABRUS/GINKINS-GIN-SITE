@@ -24,6 +24,9 @@ export default function SubscribeHero() {
         <div className="absolute inset-x-0 bottom-0 h-20 bg-linear-to-t from-(--secondary-beige) to-transparent" />
       </div>
       <div className="relative  text-center">
+        <h2 className="mb-11.25 text-center block lg:hidden">
+          Join the Inner Circle – Gin Notes Newsletter
+        </h2>
         <h1 className="text-center">
           Sip First. Know First.
           <br />
@@ -47,7 +50,7 @@ export default function SubscribeHero() {
         </div>
       </div>
       <div
-        className="absolute border-solid border-(--primary-red-main) border-t border-r-0 border-b-0 border-l-0 shrink-0 w-18.75 h-0 z-20 bottom-51.25 left-1/2 -translate-x-1/2"
+        className="absolute border-solid border-(--primary-red-main) border-t border-r-0 border-b-0 border-l-0 shrink-0 w-18.75 h-0 z-20 bottom-38 lg:bottom-51.25 left-1/2 -translate-x-1/2"
         style={{
           transform: 'rotate(90deg) scale(1, 1)',
         }}
