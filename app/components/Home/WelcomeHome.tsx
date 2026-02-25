@@ -8,10 +8,18 @@ export default function WelcomeHome() {
           alt=""
           height={53}
           width={621}
-          className="absolute left-1/2 -translate-x-1/2"
+          className="absolute left-1/2 -translate-x-1/2 hidden lg:block"
           aria-hidden
         />
-        <h2 className="text-center text-background! text-2xl! md:text-4xl! z-10 left-1/2 -translate-x-1/2 absolute whitespace-nowrap">
+        <Image
+          src="/imgs/home/ginkins-gin-welcome-banner-ornament-mobile.svg"
+          alt=""
+          height={53}
+          width={621}
+          className="absolute left-1/2 -translate-x-1/2 block lg:hidden"
+          aria-hidden
+        />
+        <h2 className="text-center text-background! text-2xl! 2xs:text-3xl! xs:text-4xl! md:text-6xl! lg:text-4xl! z-10 left-1/2 -translate-x-1/2 absolute lg:whitespace-nowrap">
           WELCOME TO GINKINS
         </h2>
         <div></div>

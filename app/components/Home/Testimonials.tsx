@@ -82,7 +82,7 @@ export default function Testimonials() {
         <div className="relative py-5 lg:py-5 xl:py-20 md:py-10 px-5 md:px-25 lg:px-38.5 text-center w-full h-full md:max-w-480">
           <button
             onClick={prev}
-            className="absolute left-8 lg:left-0 top-[106%] xs:top-[108%] md:top-1/2 -translate-y-1/2 h-14.5 w-14.5 rounded-full border border-(--primary-gold-main) flex items-center justify-center text-(--primary-gold-main) hover:bg-(--primary-gold-main) active:bg-(--primary-gold-main) focus:bg-(--primary-gold-main) hover:text-background active:text-background focus:text-background transition duration-300 ease-in-out"
+            className="absolute left-8 lg:left-0 3xl:left-10 top-[106%] xs:top-[108%] md:top-1/2 -translate-y-1/2 h-14.5 w-14.5 rounded-full border border-(--primary-gold-main) flex items-center justify-center text-(--primary-gold-main) hover:bg-(--primary-gold-main) hover:text-background transition duration-300 ease-in-out"
             aria-label="Previous testimonial"
           >
             <svg
@@ -107,7 +107,7 @@ export default function Testimonials() {
           </button>
           <button
             onClick={next}
-            className="absolute right-8 lg:right-0 top-[106%] xs:top-[108%] md:top-1/2 -translate-y-1/2 h-14.5 w-14.5 rounded-full border border-(--primary-gold-main) flex items-center justify-center text-(--primary-gold-main) hover:bg-(--primary-gold-main) active:bg-(--primary-gold-main) focus:bg-(--primary-gold-main) hover:text-background active:text-background focus:text-background transition duration-300 ease-in-out"
+            className="absolute right-8 3xl:right-10 lg:right-0 top-[106%] xs:top-[108%] md:top-1/2 -translate-y-1/2 h-14.5 w-14.5 rounded-full border border-(--primary-gold-main) flex items-center justify-center text-(--primary-gold-main) hover:bg-(--primary-gold-main) hover:text-background transition duration-300 ease-in-out"
             aria-label="Next testimonial"
           >
             <svg
