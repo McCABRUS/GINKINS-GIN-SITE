@@ -1,12 +1,15 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { cocktailsData } from './CocktailsData';
 import Image from 'next/image';
 
 export default function CocktailsCarouselMobile() {
   const [index, setIndex] = useState(0);
+  const touchStartX = useRef<number | null>(null);
+  const touchEndX = useRef<number | null>(null);
 
+  const SWIPE_THRESHOLD = 50;
   const prev = () =>
     setIndex((prev) => (prev === 0 ? cocktailsData.length - 1 : prev - 1));
 
@@ -15,9 +18,37 @@ export default function CocktailsCarouselMobile() {
 
   const { img, title, text, alt } = cocktailsData[index];
 
+  const onTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.targetTouches[0].clientX;
+  };
+
+  const onTouchMove = (e: React.TouchEvent) => {
+    touchEndX.current = e.targetTouches[0].clientX;
+  };
+
+  const onTouchEnd = () => {
+    if (touchStartX.current === null || touchEndX.current === null) {
+      return;
+    }
+
+    const deltaX = touchStartX.current - touchEndX.current;
+
+    if (Math.abs(deltaX) > SWIPE_THRESHOLD) {
+      deltaX > 0 ? next() : prev();
+    }
+
+    touchStartX.current = null;
+    touchEndX.current = null;
+  };
+
   return (
     <section className="w-full bg-(--secondary-beige)">
-      <div className="relative text-center w-full">
+      <div
+        className="relative text-center w-full touch-pan-y"
+        onTouchStart={onTouchStart}
+        onTouchMove={onTouchMove}
+        onTouchEnd={onTouchEnd}
+      >
         <Image
           src={img}
           height={565}
@@ -71,10 +102,17 @@ export default function CocktailsCarouselMobile() {
         </button>
       </div>
 
-      <h6 className="mt-8 px-10 2xs:px-15 text-center text-[36px]! leading-10.5!">
-        {title}
+      <h6 className="mt-8 text-center text-[36px]! leading-10.5!">
+        {title === 'Food Pairings' ? (
+          <>
+            <span className="block xs:inline">Food</span>{' '}
+            <span className="block xs:inline">Pairings</span>
+          </>
+        ) : (
+          title
+        )}
       </h6>
-      <p className="text-center mt-4 text-base leading-relaxed text-(--primary-black)  px-7.5">
+      <p className="text-center mt-4 text-base leading-relaxed text-(--primary-black)">
         {text}
       </p>
       <div className="mt-6 grid w-40 mx-auto">
