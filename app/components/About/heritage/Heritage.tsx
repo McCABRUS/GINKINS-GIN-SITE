@@ -1,5 +1,7 @@
 import Image from 'next/image';
-import HeritageInnovation from '../Home/HeritageInnovation';
+import { heritageData } from './HeritageData';
+import HeritageInnovation from '../../Home/HeritageInnovation';
+import HeritageMobile from './HeritageMobile';
 
 export default function Heritage() {
   return (
@@ -58,76 +60,32 @@ export default function Heritage() {
         </div>
       </div>
       <div className="mx-auto max-xl:px-5 max-4xl:px-37.25 md:max-w-480 pb-28 lg:mt-15.75">
-        <div className="grid grid-cols-1 gap-5.25 lg:grid-cols-3 text-center lg:text-left">
-          <div className="hidden lg:block space-y-6">
-            <Image
-              src="/imgs/home/story-carrousel/ginkins-gin-botanicals-layout.webp"
-              alt="Fresh gin ingredients and botanicals such as citrus, ginger, and juniper berries arranged for a craft spirits brand."
-              width={391}
-              height={563}
-              className="w-full object-cover h-140.75"
-            />
-            <Image
-              src="/imgs/home/ginkins-gin-icon-martini-decoration.svg"
-              alt="Ginkins Gin Isotype"
-              width={31}
-              height={39}
-              className="w-7.75 object-cover mx-auto lg:mx-0"
-              aria-hidden
-            />
-            <p className="text-base leading-6 text-(--primary-black)">
-              <strong>
-                Hand-selected botanicals. Kentucky’s limestone-rich spring
-                water. A balance of citrus, spice, and story in every pour.
-              </strong>
-            </p>
-          </div>
-          <div className="space-y-6">
-            <Image
-              src="/imgs/home/story-carrousel/ginkins-gin-heritage-barn.webp"
-              alt="Red 'Ginkins' barn in a sunny rural field with autumn foliage."
-              width={391}
-              height={563}
-              className="w-full h-140.75 object-cover"
-            />
-            <Image
-              src="/imgs/home/ginkins-gin-icon-martini-decoration.svg"
-              alt="Ginkins Gin Isotype"
-              width={31}
-              height={39}
-              className="w-7.75 object-cover mx-auto lg:mx-0"
-              aria-hidden
-            />
-            <p className="text-base leading-6 text-(--primary-black)">
-              Scott didn’t just craft a gin—he created a philosophy:
-              <br />{' '}
-              <strong>
-                That the best spirits connect people. Through flavor. Through
-                place. Through moments that matter.
-              </strong>
-            </p>
-          </div>
-          <div className="hidden lg:block space-y-6">
-            <Image
-              src="/imgs/about/quilt-ginkins-gin-premium.webp"
-              alt="Custom Ginkins Gin premium quilt with botanical pattern"
-              width={391}
-              height={563}
-              className="w-full object-cover h-140.75"
-            />
-            <Image
-              src="/imgs/home/ginkins-gin-icon-martini-decoration.svg"
-              alt="Ginkins Gin Isotype"
-              width={31}
-              height={39}
-              className="w-7.75 object-cover mx-auto lg:mx-0"
-              aria-hidden
-            />
-            <p className="text-base leading-6 text-(--primary-black)">
-              Because great gin doesn’t just taste good. <br />
-              <strong>It means something.</strong>
-            </p>
-          </div>
+        <div className="grid-cols-1 gap-5.25 lg:grid-cols-3 text-center lg:text-left hidden lg:grid">
+          {heritageData.map((item, index) => (
+            <div className="space-y-6" key={index}>
+              <Image
+                src={item.img}
+                alt={item.alt}
+                width={391}
+                height={563}
+                className="w-full h-140.75 object-cover"
+              />
+              <Image
+                src="/imgs/home/ginkins-gin-icon-martini-decoration.svg"
+                alt="Ginkins Gin Isotype"
+                width={31}
+                height={39}
+                className="w-7.75 object-cover mx-auto lg:mx-0"
+                aria-hidden
+              />
+              <p className="text-base leading-6 text-(--primary-black)">
+                <strong>{item.text}</strong>
+              </p>
+            </div>
+          ))}
+        </div>
+        <div className="mx-auto max-xl:px-5 max-4xl:px-37.25 md:max-w-480 pb-28 lg:mt-15.75 lg:hidden">
+          <HeritageMobile />
         </div>
       </div>
       <div

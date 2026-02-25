@@ -1,5 +1,5 @@
 import Founder from '../components/About/Founder';
-import Heritage from '../components/About/Heritage';
+import Heritage from '../components/About/heritage/Heritage';
 import Hero from '../components/About/Hero';
 import People from '../components/About/People';
 import ShopBanner from '../components/About/ShopBanner';
