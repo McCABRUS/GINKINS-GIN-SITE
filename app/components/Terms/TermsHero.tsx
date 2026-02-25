@@ -1,7 +1,7 @@
 export default function TermsHero() {
   return (
-    <section className="w-full bg-(--primary-cream) px-6 py-15 md:px-12 lg:px-36.75">
-      <div className="absolute inset-0 pointer-events-none">
+    <section className="w-full bg-(--primary-beige) py-15">
+      <div className="absolute inset-0 pointer-events-none max-xl:px-5 max-3xl:px-37.25 md:max-w-480">
         <picture>
           <source
             media="(max-width: 640px)"
@@ -14,7 +14,7 @@ export default function TermsHero() {
           <img
             src="/imgs/about/ginkins-gin-heritage-farm-illustration-1200.webp"
             alt="Golden line art illustration of a Kentucky farm and distillery at sunset for Ginkins Gin background"
-            className="h-full w-full object-cover object-center xl:top-50"
+            className="h-full w-full object-cover object-bottom xl:-top-45 opacity-20 relative"
             loading="eager"
             fetchPriority="high"
           />

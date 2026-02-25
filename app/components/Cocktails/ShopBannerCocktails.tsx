@@ -13,7 +13,7 @@ export default function ShopBannerCocktails() {
       <div className="relative mx-auto w-full max-xl:px-5 max-3xl:px-37.25 md:max-w-480 h-full">
         <div className="flex h-full items-center justify-center">
           <div className="max-w-127.25 text-center mr-0 py-20 2xs:py-0">
-            <h4 className="text-[35px]! xl:text-[56px]! mb-9.5 xl:my-17.25 text-background!">
+            <h4 className="text-[35px]! xl:text-[56px]! mb-9.5 xl:mb-17.25 text-background!">
               Experience <br />
               Ginkins Gin
             </h4>
