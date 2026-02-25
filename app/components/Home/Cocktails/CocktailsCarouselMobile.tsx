@@ -34,6 +34,7 @@ export default function CocktailsCarouselMobile() {
     const deltaX = touchStartX.current - touchEndX.current;
 
     if (Math.abs(deltaX) > SWIPE_THRESHOLD) {
+      // eslint-disable-next-line @typescript-eslint/no-unused-expressions
       deltaX > 0 ? next() : prev();
     }
 

@@ -6,6 +6,7 @@ import Image from 'next/image';
 
 export default function HeritageMobile() {
   const [index, setIndex] = useState(0);
+  const RESISTANCE = 0.7;
 
   const [translateX, setTranslateX] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
@@ -14,15 +15,13 @@ export default function HeritageMobile() {
   const nextIndex = (index + 1) % heritageData.length;
 
   const touchStartX = useRef<number | null>(null);
-
+  const lastTranslateX = useRef(0);
   const autoplayRef = useRef<NodeJS.Timeout | null>(null);
   const resumeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const AUTOPLAY_DELAY = 5000;
   const RESUME_DELAY = 6000;
   const SWIPE_THRESHOLD = 50;
-
-  /* ---------- autoplay control ---------- */
 
   const startAutoplay = () => {
     stopAutoplay();
@@ -56,8 +55,6 @@ export default function HeritageMobile() {
     resumeTimeoutRef.current = setTimeout(startAutoplay, RESUME_DELAY);
   };
 
-  /* ---------- touch handlers ---------- */
-
   const onTouchStart = (e: React.TouchEvent) => {
     pauseAndScheduleResume();
     setIsDragging(true);
@@ -69,7 +66,14 @@ export default function HeritageMobile() {
     const currentX = e.targetTouches[0].clientX;
     const delta = currentX - touchStartX.current;
 
-    setTranslateX(delta);
+    const target = delta * 0.45;
+
+    // interpolación suave (lerp)
+    const eased =
+      lastTranslateX.current + (target - lastTranslateX.current) * 0.18;
+
+    lastTranslateX.current = eased;
+    setTranslateX(eased * RESISTANCE);
   };
 
   const onTouchEnd = () => {
@@ -85,8 +89,8 @@ export default function HeritageMobile() {
       );
     }
 
-    // reset visual
-    setTranslateX(0);
+    setTranslateX((prev) => prev * 0.6);
+    setTimeout(() => setTranslateX(0), 16);
     touchStartX.current = null;
   };
 
@@ -99,7 +103,9 @@ export default function HeritageMobile() {
     >
       <div
         className={`flex ${
-          isDragging ? '' : 'transition-transform duration-300 ease-out'
+          isDragging
+            ? ''
+            : 'transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]'
         }`}
         style={{
           transform: `translateX(calc(-100% + ${translateX}px))`,
@@ -108,7 +114,7 @@ export default function HeritageMobile() {
         {[prevIndex, index, nextIndex].map((i) => {
           const item = heritageData[i];
           return (
-            <div key={i} className="min-w-full text-center">
+            <div key={i} className="min-w-full text-center px-5">
               <Image
                 src={item.img}
                 alt={item.alt}

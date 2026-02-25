@@ -84,7 +84,7 @@ export default function Heritage() {
             </div>
           ))}
         </div>
-        <div className="mx-auto max-xl:px-5 max-4xl:px-37.25 md:max-w-480 pb-28 lg:mt-15.75 lg:hidden">
+        <div className="mx-auto max-xl:px-5 max-lg:px-0 max-4xl:px-37.25 md:max-w-480 pb-28 lg:mt-15.75 lg:hidden">
           <HeritageMobile />
         </div>
       </div>
