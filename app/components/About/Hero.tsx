@@ -23,7 +23,7 @@ export default function Hero() {
         </picture>
         <div className="absolute inset-x-0 bottom-0 h-20 bg-linear-to-t from-(--secondary-beige) to-transparent" />
       </div>
-      <div className="relative text-center max-xl:px-5 max-3xl:px-37.25 md:max-w-480 place-self-center">
+      <div className="relative text-center max-xl:px-5 max-4xl:px-37.25 md:max-w-480 place-self-center">
         <h1 className="text-center text-(--primary-black)!">
           Connections that distill into something greater
         </h1>

@@ -13,7 +13,7 @@ export default function FAQsSection() {
 
   return (
     <section className="w-screen bg-transparent pt-9 lg:pt-20 pb-24 lg:pb-31.5 relative">
-      <div className="mx-auto max-xl:px-5 max-3xl:px-37.25 md:max-w-480">
+      <div className="mx-auto max-xl:px-5 max-4xl:px-37.25 md:max-w-480">
         <h2 className="text-center text-(--primary-black)! text-4xl!">
           FREQUENTLY ASKED QUESTIONS
         </h2>

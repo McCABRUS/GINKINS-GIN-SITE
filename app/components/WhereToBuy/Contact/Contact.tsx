@@ -17,7 +17,7 @@ export default function Contact() {
           Together
         </h1>
       </div>
-      <div className="mt-13.25 mx-auto max-xl:px-5 max-3xl:px-37.25 md:max-w-480 text-center flex flex-col">
+      <div className="mt-13.25 mx-auto max-xl:px-5 max-4xl:px-37.25 md:max-w-480 text-center flex flex-col">
         <h5>Get in touch</h5>
 
         <h4 className="mt-4 mb-6 text-(--primary-black)! max-xl:text-[42px]!">
@@ -105,7 +105,7 @@ export default function Contact() {
         ></div>
       </div>
       <Divider />
-      <div className="place-self-center max-xl:px-5 max-3xl:px-37.25 md:max-w-480 mt-20 text-center w-full">
+      <div className="place-self-center max-xl:px-5 max-4xl:px-37.25 md:max-w-480 mt-20 text-center w-full">
         <h5 className="">Connect</h5>
 
         <h4 className="mt-4 mb-6 text-(--primary-black)! max-xl:text-[42px]!">

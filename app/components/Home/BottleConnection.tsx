@@ -10,7 +10,7 @@ export default function BottleConnection() {
       }}
     >
       <div className="absolute inset-0 bg-black/60 visible md:invisible" />
-      <div className="relative mx-auto w-full max-lg:px-5 h-full max-3xl:px-37.25 md:max-w-480">
+      <div className="relative mx-auto w-full max-lg:px-5 h-full max-4xl:px-37.25 md:max-w-480">
         <div className="flex h-full items-center justify-center md:justify-end">
           <div className="max-w-127.25 text-center py-20 2xs:py-0">
             <div className="flex justify-center">

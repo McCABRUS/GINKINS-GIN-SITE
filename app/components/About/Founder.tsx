@@ -3,7 +3,7 @@ import Image from 'next/image';
 export default function Founder() {
   return (
     <section className="w-screen bg-(--secondary-beige)" id="founder">
-      <div className="mx-auto max-xl:px-5 max-3xl:px-37.25 md:max-w-480 lg:pt-32 pb-16.75 lg:pb-32 pt-15 relative">
+      <div className="mx-auto max-xl:px-5 max-4xl:px-37.25 md:max-w-480 lg:pt-32 pb-16.75 lg:pb-32 pt-15 relative">
         <div className="grid grid-cols-1 gap-y-15 lg:grid-cols-2 lg:gap-x-24">
           <div className="max-lg:mx-auto order-1 space-y-6">
             <h6 className="text-center lg:text-left text-[35px]! text-(--secondary-black)!">

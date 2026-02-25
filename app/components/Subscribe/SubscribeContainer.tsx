@@ -11,7 +11,7 @@ const benefits = [
 
 export default function SubscribeContainer() {
   return (
-    <section className="w-full bg-(--secondary-beige) py-28 max-xl:px-5 max-3xl:px-37.25 md:max-w-360">
+    <section className="w-full bg-(--secondary-beige) py-28 max-xl:px-5 max-4xl:px-37.25 md:max-w-360">
       <div className="mx-auto ">
         <div className="mx-auto text-center">
           <p className="text-lg leading-6.75 font-medium text-(--primary-black)">

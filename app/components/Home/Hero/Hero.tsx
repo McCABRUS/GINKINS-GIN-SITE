@@ -8,7 +8,7 @@ import BotanicalGridMobile from './BotanicalGridMobile';
 export default function Hero() {
   return (
     <section className="relative w-full overflow-hidden">
-      <div className="absolute inset-0 border-t-transparent">
+      <div className="absolute inset-0">
         <div className="h-[37%] lg:h-[30%] xl:h-[65%] bg-(--primary-black)" />
         <div className="h-[43%] lg:h-[34%] xl:h-[70%] bg-(--secondary-beige)" />
       </div>

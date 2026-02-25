@@ -1,7 +1,7 @@
 export default function TermsHero() {
   return (
     <section className="w-full bg-(--primary-beige) py-15">
-      <div className="absolute inset-0 pointer-events-none max-xl:px-5 max-3xl:px-37.25 md:max-w-480">
+      <div className="absolute inset-0 pointer-events-none max-xl:px-5 max-4xl:px-37.25 md:max-w-480">
         <picture>
           <source
             media="(max-width: 640px)"

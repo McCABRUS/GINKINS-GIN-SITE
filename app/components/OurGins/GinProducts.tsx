@@ -63,7 +63,7 @@ export default function GinProductsSection() {
           }
         />
         <Divider />
-        <div className="pt-24 lg:grid-cols-2 lg:gap-24 hidden xl:grid max-xl:px-5 max-3xl:px-37.25 md:max-w-480 place-self-center">
+        <div className="pt-24 lg:grid-cols-2 lg:gap-24 hidden xl:grid max-xl:px-5 max-4xl:px-37.25 md:max-w-480 place-self-center">
           <div>
             <h5>Crafted</h5>
             <h4 className="text-(--secondary-black)!">
@@ -126,7 +126,7 @@ function ProductRow({
   linkId: string;
 }) {
   return (
-    <div className="grid grid-cols-1 items-center gap-29.25 lg:grid-cols-2 max-xl:px-5 max-3xl:px-37.25 md:max-w-480 place-self-center">
+    <div className="grid grid-cols-1 items-center gap-29.25 lg:grid-cols-2 max-xl:px-5 max-4xl:px-37.25 md:max-w-480 place-self-center">
       <div className="order-1 justify-center lg:justify-end flex lg:order-2 mb-15 xl:mb-30 relative">
         {bottle}
       </div>

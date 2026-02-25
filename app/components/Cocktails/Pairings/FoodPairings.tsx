@@ -7,7 +7,7 @@ export default function FoodPairings() {
       className="w-full bg-(--secondary-beige) py-15 lg:py-27 relative"
       id="pairings"
     >
-      <div className="mx-auto max-xl:px-0 max-3xl:px-37.25 md:max-w-480">
+      <div className="mx-auto max-xl:px-0 max-4xl:px-37.25 md:max-w-480">
         <div className="text-center">
           <h3 className="uppercase text-(--primary-red-main)! text-[18px]! leading-6.75!">
             Discover

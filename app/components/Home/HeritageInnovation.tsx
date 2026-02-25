@@ -2,7 +2,7 @@ import Image from 'next/image';
 export default function HeritageInnovation() {
   return (
     <section className="w-screen bg-(--primary-red-main) h-182.5 md:h-auto py-24 md:py-37">
-      <div className="max-lg:px-5 max-3xl:px-37.25 md:max-w-480 place-self-center w-full">
+      <div className="max-lg:px-5 max-4xl:px-37.25 md:max-w-480 place-self-center w-full">
         <div className="flex flex-col md:flex-row items-center justify-between gap-12">
           <div>
             <div className="mx-auto h-15 w-15 flex md:hidden mb-16.5">

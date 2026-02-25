@@ -44,7 +44,7 @@ export default function PressHighlights() {
 
   return (
     <section className="relative bg-(--primary-gold-main) py-25 overflow-hidden w-full">
-      <div className="relative mx-auto max-xl:px-5 max-3xl:px-37.25 md:max-w-480">
+      <div className="relative mx-auto max-xl:px-5 max-4xl:px-37.25 md:max-w-480">
         <h1 className="text-center text-(--primary-gold-400)! mb-20">
           PRESS <br className="block lg:hidden" /> HIGHLIGHTS
         </h1>

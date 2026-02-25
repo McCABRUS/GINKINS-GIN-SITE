@@ -16,7 +16,7 @@ export default function AboutHomeMenu() {
           transform: 'rotate(90deg) scale(1, 1)',
         }}
       ></div>
-      <div className="mx-auto max-xl:px-5 max-3xl:px-37.25 md:max-w-480">
+      <div className="mx-auto max-xl:px-5 max-4xl:px-37.25 md:max-w-480">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_480px] gap-20 items-center">
           <div className="text-center lg:text-left">
             <h3 className="text-lg! inline-block uppercase text-background! mb-10">

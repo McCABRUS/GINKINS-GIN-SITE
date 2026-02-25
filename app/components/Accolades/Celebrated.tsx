@@ -9,7 +9,7 @@ export default function Celebrated() {
         }}
       />
       <div className="pointer-events-none absolute inset-0 vignette-overlay bg-black/50 xl:bg-black/10" />
-      <div className="relative mx-auto max-xl:px-5 max-3xl:px-37.25 md:max-w-480 py-15 xl:py-16.5 h-full">
+      <div className="relative mx-auto max-xl:px-5 max-4xl:px-37.25 md:max-w-480 py-15 xl:py-16.5 h-full">
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-20 h-full">
           <div className="flex items-end lg:items-baseline justify-center lg:justify-start">
             <h4 className="text-background! text-center lg:text-left">

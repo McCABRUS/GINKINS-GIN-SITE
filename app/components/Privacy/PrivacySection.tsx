@@ -4,7 +4,7 @@ import HelpFooter from '../HelpFooter';
 export default function PrivacySection() {
   return (
     <section className="bg-transparent w-screen pb-20 relative">
-      <div className="mx-auto max-xl:px-5 max-3xl:px-37.25 md:max-w-480">
+      <div className="mx-auto max-xl:px-5 max-4xl:px-37.25 md:max-w-480">
         {PrivacyItems.map((item) => {
           return (
             <div

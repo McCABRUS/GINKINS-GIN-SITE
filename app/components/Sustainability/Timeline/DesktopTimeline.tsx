@@ -3,7 +3,7 @@ import TimelineMarker from './TimelineMarker';
 
 export default function DesktopTimeline() {
   return (
-    <div className="relative hidden lg:block max-xl:px-5 max-3xl:px-37.25 md:max-w-480 place-content-center mx-auto">
+    <div className="relative hidden lg:block max-xl:px-5 max-4xl:px-37.25 md:max-w-480 place-content-center mx-auto">
       <div className="absolute left-1/2 top-[-17.7%] h-263.25 xl:h-226 w-px bg-(--primary-red-main)" />
       <div className="absolute left-1/2 top-0 -translate-x-1/2">
         <TimelineMarker />

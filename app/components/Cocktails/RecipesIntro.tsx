@@ -1,7 +1,7 @@
 export default function RecipesIntro() {
   return (
     <section className="w-screen bg-(--primary-black) text-background relative overflow-hidden">
-      <div className="mx-auto py-15 lg:py-27 max-xl:px-5 max-3xl:px-37.25 md:max-w-480">
+      <div className="mx-auto py-15 lg:py-27 max-xl:px-5 max-4xl:px-37.25 md:max-w-480">
         <div className="grid grid-cols-1 gap-15 md:gap-41.25 lg:grid-cols-2">
           <h4 className="text-background!">
             Shake Things Up.

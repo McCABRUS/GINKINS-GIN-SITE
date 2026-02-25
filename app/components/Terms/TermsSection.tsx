@@ -4,7 +4,7 @@ import HelpFooter from '../HelpFooter';
 export default function TermsSection() {
   return (
     <section className="bg-transparent pb-20 relative w-screen">
-      <div className="mx-auto max-xl:px-5 max-3xl:px-37.25 md:max-w-480">
+      <div className="mx-auto max-xl:px-5 max-4xl:px-37.25 md:max-w-480">
         <div className="divide-y divide-black/20">
           {Terms.map((item) => {
             return (

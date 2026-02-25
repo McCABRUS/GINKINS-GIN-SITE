@@ -30,6 +30,7 @@
   --breakpoint-xs: 26.3125rem;
   --breakpoint-2xs: 23.4375rem;
   --breakpoint-3xl: 120rem;
+  --breakpoint-4xl: 130rem;
 }
 
 body {

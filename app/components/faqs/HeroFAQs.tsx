@@ -1,7 +1,7 @@
 export default function HeroFAQs() {
   return (
     <section className="w-full bg-(--primary-beige) py-15">
-      <div className="absolute inset-0 pointer-events-none max-xl:px-5 max-3xl:px-37.25 md:max-w-480">
+      <div className="absolute inset-0 pointer-events-none max-xl:px-5 max-4xl:px-37.25 md:max-w-480">
         <picture>
           <source
             media="(max-width: 640px)"
@@ -21,7 +21,7 @@ export default function HeroFAQs() {
         </picture>
         <div className="absolute inset-x-0 bottom-0 h-20 bg-linear-to-t from-(--secondary-beige) to-transparent" />
       </div>
-      <div className="mx-auto text-center max-xl:px-5 max-3xl:px-37.25 md:max-w-480">
+      <div className="mx-auto text-center max-xl:px-5 max-4xl:px-37.25 md:max-w-480">
         <h1 className="text-(--primary-black)!">FAQS</h1>
         <h2 className="mt-11.5 text-(--primary-red-main)! md:mt-8">
           Ginkins <br className="block md:hidden" />

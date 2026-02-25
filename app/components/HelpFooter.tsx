@@ -1,7 +1,7 @@
 export default function HelpFooter() {
   return (
     <>
-      <div className="flex flex-col items-center justify-center mt-42.75 lg:mt-58.75 max-xl:px-5 max-3xl:px-37.25 md:max-w-480 place-content-center mx-auto">
+      <div className="flex flex-col items-center justify-center mt-42.75 lg:mt-58.75 max-xl:px-5 max-4xl:px-37.25 md:max-w-480 place-content-center mx-auto">
         <h5 className="text-center text-lg! font-normal! text-(--primary-black)! leading-6.75!">
           Need help or want to access your data? Email us at <br />
           <span className="text-(--primary-red-main)!">info@ginkins.com.</span>

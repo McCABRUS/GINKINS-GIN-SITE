@@ -4,7 +4,7 @@ import Link from 'next/link';
 export default function FindShops() {
   return (
     <section className="bg-(--secondary-beige) pt-24 lg:pb-24 relative">
-      <div className="mx-auto max-xl:px-0 max-3xl:px-37.25 md:max-w-480">
+      <div className="mx-auto max-xl:px-0 max-4xl:px-37.25 md:max-w-480">
         <div className="grid grid-cols-1 lg:items-start items-center gap-24 lg:gap-16 lg:grid-cols-2">
           <div className="space-y-6 px-5 xl:px-0">
             <h5 className="mb-6 lg:mb-18.75">Find us</h5>

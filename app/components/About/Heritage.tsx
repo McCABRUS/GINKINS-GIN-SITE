@@ -6,7 +6,7 @@ export default function Heritage() {
     <section className="w-screen bg-(--secondary-beige) relative">
       <HeritageInnovation />
       <div className="w-full bg-(--primary-red-main) -mt-24 lg:-mt-px">
-        <div className="bg-(--primary-red-main) lg:max-h-50 lg:mx-auto w-screen relative lg:grid-cols-2 max-xl:px-5 max-3xl:px-37.25 md:max-w-480 grid">
+        <div className="bg-(--primary-red-main) lg:max-h-50 lg:mx-auto w-screen relative lg:grid-cols-2 max-xl:px-5 max-4xl:px-37.25 md:max-w-480 grid">
           <h4 className="text-background! justify-self-start self-start text-left hidden lg:block">
             Rooted in Louisville. <br />
             Crafted to Inspire.
@@ -21,7 +21,7 @@ export default function Heritage() {
         </div>
       </div>
 
-      <div className="mx-auto max-xl:px-5 max-3xl:px-37.25 md:max-w-480 py-10 2xl:py-24 grid grid-cols-1 gap-16 lg:grid-cols-2 lg:gap-24">
+      <div className="mx-auto max-xl:px-5 max-4xl:px-37.25 md:max-w-480 py-10 2xl:py-24 grid grid-cols-1 gap-16 lg:grid-cols-2 lg:gap-24">
         <div className="space-y-2 2xl:space-y-15">
           <p className="text-center lg:text-left text-lg leading-6.75 font-medium text-(--primary-black)">
             Ginkins began with a simple idea:
@@ -57,7 +57,7 @@ export default function Heritage() {
           </p>
         </div>
       </div>
-      <div className="mx-auto max-xl:px-5 max-3xl:px-37.25 md:max-w-480 pb-28 lg:mt-15.75">
+      <div className="mx-auto max-xl:px-5 max-4xl:px-37.25 md:max-w-480 pb-28 lg:mt-15.75">
         <div className="grid grid-cols-1 gap-5.25 lg:grid-cols-3 text-center lg:text-left">
           <div className="hidden lg:block space-y-6">
             <Image

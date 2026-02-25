@@ -4,7 +4,7 @@ import CentralGridCard from './CentralGridCard';
 export default function FindWhereToBuy() {
   return (
     <section className="bg-(--primary-black) text-background pb-30 lg:pb-16 w-screen pt-25 relative overflow-hidden">
-      <div className="mx-auto max-xl:px-5 max-3xl:px-37.25 md:max-w-480">
+      <div className="mx-auto max-xl:px-5 max-4xl:px-37.25 md:max-w-480">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-11 xl-gap-0">
           <GridCard
             order="lg:order-1"

@@ -4,7 +4,7 @@ import Link from 'next/link';
 export default function Story() {
   return (
     <section className="w-screen bg-(--secondary-beige) relative" id="story">
-      <div className="mx-auto max-xl:px-5 max-3xl:px-37.25 md:max-w-480 py-8.25">
+      <div className="mx-auto max-xl:px-5 max-4xl:px-37.25 md:max-w-480 py-8.25">
         <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
           <div>
             <div className="mb-6">

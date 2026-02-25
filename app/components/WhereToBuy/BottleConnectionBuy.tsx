@@ -4,7 +4,7 @@ export default function BottleConnectionBuy() {
   return (
     <section className="relative w-full aspect-4/5 md:aspect-16/7 bg-cover bg-center md:bg-[url('/imgs/where_to_buy/ginkins-gin-trio-serving-tray.webp')]">
       <div className="absolute inset-0 bg-black visible lg:invisible" />
-      <div className="relative mx-auto w-full max-xl:px-5 max-3xl:px-37.25 md:max-w-480 h-full">
+      <div className="relative mx-auto w-full max-xl:px-5 max-4xl:px-37.25 md:max-w-480 h-full">
         <div className="flex h-full items-center justify-center lg:justify-start">
           <div className="max-w-127.25 text-center py-20 2xs:py-0">
             <div className="flex justify-center">

@@ -12,7 +12,7 @@ export default function CocktailsHome() {
           transform: 'rotate(90deg) scale(1, 1)',
         }}
       ></div>
-      <div className="mx-auto max-3xl:px-37.25 max-w-480 max-xl:px-5">
+      <div className="mx-auto max-4xl:px-37.25 max-w-480 max-xl:px-5">
         <div className="text-center mx-auto relative">
           <h3 className="text-lg! inline-block text-(--primary-red-main)! mb-10">
             Cocktails &amp; Pairings – Drink <br className="block md:hidden" />{' '}

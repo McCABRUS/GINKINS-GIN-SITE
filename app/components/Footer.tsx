@@ -4,7 +4,7 @@ import NewsletterForm from './NewsletterForm';
 export default function Footer() {
   return (
     <footer className="bg-(--primary-black) text-background">
-      <div className="mx-auto max-xl:px-5 max-3xl:px-37.25 md:max-w-480 py-12">
+      <div className="mx-auto max-xl:px-5 max-4xl:px-37.25 md:max-w-480 py-12">
         <div className="xl:hidden flex flex-col items-center text-center">
           <Link
             href="/"

@@ -101,7 +101,7 @@ export default function HeaderClient() {
                 <Link
                   href="/accolades"
                   ref={firstItemRef}
-                  className="block px-4 py-4 text-(--primary-gold-main) hover:text-background hover:underline transition-colors focus:outline-none text-center"
+                  className="block px-4 py-4 text-(--primary-gold-main) hover:text-background hover:underline transition-colors focus:outline-none text-center underline-offset-4 decoration-(--primary-gold-main)"
                   role="menuitem"
                 >
                   <h5 className="text-(--primary-gold-main)! inline">
@@ -116,7 +116,7 @@ export default function HeaderClient() {
               <li>
                 <Link
                   href="/faqs"
-                  className="block px-4 py-4 text-(--primary-gold-main) hover:text-background hover:underline transition-colors text-center"
+                  className="block px-4 py-4 text-(--primary-gold-main) hover:text-background hover:underline transition-colors text-center underline-offset-4 decoration-(--primary-gold-main)"
                   role="menuitem"
                 >
                   <h5 className="text-center text-(--primary-gold-main)! inline">
@@ -131,7 +131,7 @@ export default function HeaderClient() {
               <li>
                 <Link
                   href="/sustainability"
-                  className="block px-4 py-4 text-(--primary-gold-main) hover:text-background hover:underline transition-colors text-center"
+                  className="block px-4 py-4 text-(--primary-gold-main) hover:text-background hover:underline transition-colors text-center underline-offset-4 decoration-(--primary-gold-main)"
                   role="menuitem"
                 >
                   <h5 className="text-(--primary-gold-main)! inline">

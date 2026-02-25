@@ -3,7 +3,7 @@ import CocktailCard from './CocktailCard';
 export default function ClassicGinkinsCocktails() {
   return (
     <section className="w-full bg-(--primary-black)" id="classic">
-      <div className="mx-auto pb-5 max-xl:px-5 max-3xl:px-37.25 md:max-w-480 lg:pt-27 lg:pb-19">
+      <div className="mx-auto pb-5 max-xl:px-5 max-4xl:px-37.25 md:max-w-480 lg:pt-27 lg:pb-19">
         <div className="text-center lg:hidden py-20">
           <h3 className="mb-9.25 text-(--primary-gold-main)!">Enjoy</h3>
           <h1 className="text-[#7E8589]! my-16 ">

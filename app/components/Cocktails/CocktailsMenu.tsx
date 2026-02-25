@@ -9,7 +9,7 @@ const items = [
 export default function CocktailsMenu() {
   return (
     <section className="w-screen bg-(--primary-black) pt-15 pb-32.5 lg:pb-36.5 lg:pt-36.5 -mt-px">
-      <div className="mx-auto max-xl:px-5 max-3xl:px-37.25 md:max-w-480">
+      <div className="mx-auto max-xl:px-5 max-4xl:px-37.25 md:max-w-480">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_480px] gap-0 items-center">
           <div className="text-center lg:text-left order-2 lg:order-1">
             <h3 className="text-lg! inline-block uppercase text-background! mb-10">

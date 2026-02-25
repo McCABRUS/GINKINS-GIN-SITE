@@ -3,7 +3,7 @@ import Image from 'next/image';
 export default function BarBookFeature() {
   return (
     <section className="w-full bg-(--secondary-beige) py-15 lg:py-24">
-      <div className="mx-auto max-xl:px-5 max-3xl:px-37.25 md:max-w-480 lg:py-37.5">
+      <div className="mx-auto max-xl:px-5 max-4xl:px-37.25 md:max-w-480 lg:py-37.5">
         <div className="text-center">
           <h1 className="mb-5">The Bar Book</h1>
 
