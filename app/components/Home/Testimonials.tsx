@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 
 const testimonials = [
   {
@@ -67,6 +67,10 @@ const testimonials = [
 
 export default function Testimonials() {
   const [index, setIndex] = useState(0);
+  const touchStartX = useRef<number | null>(null);
+  const touchEndX = useRef<number | null>(null);
+
+  const SWIPE_THRESHOLD = 50;
 
   const prev = () =>
     setIndex((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1));
@@ -76,10 +80,43 @@ export default function Testimonials() {
 
   const { quote, author, rating } = testimonials[index];
 
+  const onTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.targetTouches[0].clientX;
+  };
+
+  const onTouchMove = (e: React.TouchEvent) => {
+    touchEndX.current = e.targetTouches[0].clientX;
+  };
+
+  const onTouchEnd = () => {
+    if (touchStartX.current === null || touchEndX.current === null) {
+      return;
+    }
+
+    const deltaX = touchStartX.current - touchEndX.current;
+
+    if (Math.abs(deltaX) > SWIPE_THRESHOLD) {
+      if (deltaX > 0) {
+        next();
+      } else {
+        prev();
+      }
+    }
+
+    // reset
+    touchStartX.current = null;
+    touchEndX.current = null;
+  };
+
   return (
-    <section className="w-full h-auto px-5.5 lg:px-12.5 py-5.5 lg:py-13.75 bg-(--secondary-beige) mb-15 md:mb-0">
+    <section className="w-full h-200 xs:h-150 lg:h-135.5 px-5.5 lg:px-12.5 py-5.5 lg:py-13.75 bg-(--secondary-beige) mb-15 md:mb-0">
       <div className="w-full h-full relative border-4 border-solid border-(--primary-gold-main) flex items-center justify-center">
-        <div className="relative py-5 lg:py-5 xl:py-20 md:py-10 px-5 md:px-25 lg:px-38.5 text-center w-full h-full md:max-w-480">
+        <div
+          className="relative py-5 lg:py-5 xl:py-20 md:py-10 px-5 md:px-25 lg:px-38.5 text-center w-full h-full md:max-w-480 content-center touch-pan-y"
+          onTouchStart={onTouchStart}
+          onTouchMove={onTouchMove}
+          onTouchEnd={onTouchEnd}
+        >
           <button
             onClick={prev}
             className="absolute left-8 lg:left-0 3xl:left-10 top-[106%] xs:top-[108%] md:top-1/2 -translate-y-1/2 h-14.5 w-14.5 rounded-full border border-(--primary-gold-main) flex items-center justify-center text-(--primary-gold-main) hover:bg-(--primary-gold-main) hover:text-background transition duration-300 ease-in-out"
