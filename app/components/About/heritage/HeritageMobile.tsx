@@ -5,21 +5,25 @@ import { heritageData } from './HeritageData';
 import Image from 'next/image';
 
 export default function HeritageMobile() {
+  const [index, setIndex] = useState(0);
   const [dragX, setDragX] = useState(0);
   const [slideWidth, setSlideWidth] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
-  const [committedIndex, setCommittedIndex] = useState(0);
 
   const SWIPE_RATIO = 0.28;
+  const AUTOPLAY_ANIMATION_DURATION = 420;
   const GAP_PX = 12;
-  const AUTOPLAY_DELAY = 5000;
+
+  const prevIndex = (index - 1 + heritageData.length) % heritageData.length;
+  const nextIndex = (index + 1) % heritageData.length;
 
   const touchStartX = useRef<number | null>(null);
   const autoplayRef = useRef<NodeJS.Timeout | null>(null);
   const resumeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const containerRef = useRef<HTMLDivElement | null>(null);
-  const pendingDirectionRef = useRef<'next' | 'prev' | null>(null);
   const dragXRef = useRef(0);
+
+  const AUTOPLAY_DELAY = 5000;
 
   const stopAutoplay = () => {
     if (autoplayRef.current) {
@@ -57,25 +61,10 @@ export default function HeritageMobile() {
     } else {
       setIsAnimating(true);
       setDragX(0);
+      setTimeout(() => setIsAnimating(false), 200);
     }
 
     touchStartX.current = null;
-  };
-
-  const onTransitionEnd = () => {
-    const direction = pendingDirectionRef.current;
-    if (!direction) return;
-    pendingDirectionRef.current = null;
-
-    setIsAnimating(false);
-    setCommittedIndex((prev) =>
-      direction === 'next'
-        ? (prev + 1) % heritageData.length
-        : (prev - 1 + heritageData.length) % heritageData.length,
-    );
-    dragXRef.current = 0;
-    setDragX(0);
-    startAutoplay();
   };
 
   const startAutoplay = () => {
@@ -86,15 +75,27 @@ export default function HeritageMobile() {
   };
 
   const animateTo = (direction: 'next' | 'prev') => {
-    if (!slideWidth || isAnimating) return;
-    stopAutoplay();
+    if (!slideWidth) return;
 
     const target =
       direction === 'next' ? -(slideWidth + GAP_PX) : slideWidth + GAP_PX;
-
-    pendingDirectionRef.current = direction;
     setIsAnimating(true);
+
     setDragX(target);
+
+    setTimeout(() => {
+      setIsAnimating(false);
+      setIndex((prev) =>
+        direction === 'next'
+          ? (prev + 1) % heritageData.length
+          : (prev - 1 + heritageData.length) % heritageData.length,
+      );
+      dragXRef.current = 0;
+      setDragX(0);
+      requestAnimationFrame(() => {
+        setIsAnimating(false);
+      });
+    }, AUTOPLAY_ANIMATION_DURATION);
   };
 
   const resetAutoplayTimer = () => {
@@ -131,17 +132,6 @@ export default function HeritageMobile() {
     };
   }, []);
 
-  const getIndex = (offset: number) =>
-    (committedIndex + offset + heritageData.length) % heritageData.length;
-
-  const visibleIndexes = [
-    getIndex(-2),
-    getIndex(-1),
-    getIndex(0),
-    getIndex(1),
-    getIndex(2),
-  ];
-
   return (
     <div
       className="overflow-hidden touch-pan-y"
@@ -151,25 +141,21 @@ export default function HeritageMobile() {
     >
       <div
         ref={containerRef}
-        onTransitionEnd={onTransitionEnd}
         className={`flex gap-3 ${
           isAnimating
             ? 'transition-transform duration-420 ease-[cubic-bezier(0.22,1,0.36,1)]'
             : ''
         }`}
         style={{
-          transform: slideWidth
-            ? `translate3d(-${slideWidth * 2 + GAP_PX * 2}px,0,0) translateX(${dragX}px)`
-            : 'translate3d(0,0,0)',
-          willChange: 'transform',
+          transform: `translateX(calc(-${slideWidth}px - ${GAP_PX}px + ${dragX}px))`,
         }}
       >
-        {visibleIndexes.map((i, renderIndex) => {
+        {[prevIndex, index, nextIndex].map((i) => {
           const item = heritageData[i];
           return (
             <div
-              key={`${i}-${renderIndex}`}
-              className="shrink-0 text-center"
+              key={i}
+              className="shrink-0 text-center px-0"
               style={{ width: `${slideWidth}px` }}
             >
               <Image
