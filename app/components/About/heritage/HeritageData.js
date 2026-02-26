@@ -30,7 +30,7 @@ export const heritageData = [
     alt: 'Custom Ginkins Gin premium quilt with botanical pattern',
     text: (
       <>
-        BBecause great gin doesn’t just taste good.
+        Because great gin doesn’t just taste good.
         <br />
         <strong>It means something.</strong>
       </>

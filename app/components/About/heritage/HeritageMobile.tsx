@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useRef, useLayoutEffect } from 'react';
+import { useState, useEffect, useRef, useLayoutEffect, useMemo } from 'react';
 import { heritageData } from './HeritageData';
 import Image from 'next/image';
 
@@ -14,8 +14,15 @@ export default function HeritageMobile() {
   const AUTOPLAY_ANIMATION_DURATION = 420;
   const GAP_PX = 12;
 
-  const prevIndex = (index - 1 + heritageData.length) % heritageData.length;
-  const nextIndex = (index + 1) % heritageData.length;
+  const indicesToRender = useMemo(() => {
+    const total = heritageData.length;
+    return [
+      (index - 1 + total) % total,
+      index,
+      (index + 1) % total,
+      (index + 2) % total,
+    ];
+  }, [index]);
 
   const touchStartX = useRef<number | null>(null);
   const autoplayRef = useRef<NodeJS.Timeout | null>(null);
@@ -150,11 +157,12 @@ export default function HeritageMobile() {
           transform: `translateX(calc(-${slideWidth}px - ${GAP_PX}px + ${dragX}px))`,
         }}
       >
-        {[prevIndex, index, nextIndex].map((i) => {
+        {indicesToRender.map((i, index) => {
           const item = heritageData[i];
+
           return (
             <div
-              key={i}
+              key={`i-${index}`}
               className="shrink-0 text-center px-0"
               style={{ width: `${slideWidth}px` }}
             >
