@@ -1,40 +1,102 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useLayoutEffect } from 'react';
 import { heritageData } from './HeritageData';
 import Image from 'next/image';
 
 export default function HeritageMobile() {
   const [index, setIndex] = useState(0);
-  const RESISTANCE = 0.7;
+  const [dragX, setDragX] = useState(0);
+  const [slideWidth, setSlideWidth] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
 
-  const [translateX, setTranslateX] = useState(0);
-  const [isDragging, setIsDragging] = useState(false);
+  const SWIPE_RATIO = 0.28;
+  const AUTOPLAY_ANIMATION_DURATION = 420;
+  const GAP_PX = 12;
+  const AUTOPLAY_DELAY = 5000;
 
-  const prevIndex = (index - 1 + heritageData.length) % heritageData.length;
-  const nextIndex = (index + 1) % heritageData.length;
+  const baseOffset = slideWidth > 0 ? slideWidth * 2 + GAP_PX * 2 : 0;
 
   const touchStartX = useRef<number | null>(null);
-  const lastTranslateX = useRef(0);
   const autoplayRef = useRef<NodeJS.Timeout | null>(null);
   const resumeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
-
-  const AUTOPLAY_DELAY = 5000;
-  const RESUME_DELAY = 6000;
-  const SWIPE_THRESHOLD = 50;
-
-  const startAutoplay = () => {
-    stopAutoplay();
-    autoplayRef.current = setInterval(() => {
-      setIndex((prev) => (prev + 1) % heritageData.length);
-    }, AUTOPLAY_DELAY);
-  };
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const dragXRef = useRef(0);
 
   const stopAutoplay = () => {
     if (autoplayRef.current) {
       clearInterval(autoplayRef.current);
       autoplayRef.current = null;
     }
+  };
+
+  const onTouchStart = (e: React.TouchEvent) => {
+    resetAutoplayTimer();
+    touchStartX.current = e.targetTouches[0].clientX;
+  };
+  const onTouchMove = (e: React.TouchEvent) => {
+    if (!touchStartX.current || !containerRef.current) return;
+
+    const currentX = e.targetTouches[0].clientX;
+    const deltaPx = currentX - touchStartX.current;
+    const width = containerRef.current.offsetWidth;
+    const deltaRatio = deltaPx / width;
+    const resisted =
+      Math.sign(deltaRatio) * Math.min(Math.abs(deltaRatio), 0.75) * width;
+
+    dragXRef.current += (resisted - dragXRef.current) * 0.22;
+    setDragX(dragXRef.current);
+  };
+
+  const onTouchEnd = () => {
+    if (!containerRef.current) return;
+
+    const width = containerRef.current.offsetWidth;
+    const ratio = dragX / width;
+
+    if (Math.abs(ratio) > SWIPE_RATIO) {
+      animateTo(ratio < 0 ? 'next' : 'prev');
+    } else {
+      setIsAnimating(true);
+      setDragX(0);
+      setTimeout(() => setIsAnimating(false), 100);
+    }
+
+    touchStartX.current = null;
+  };
+
+  const startAutoplay = () => {
+    stopAutoplay();
+    autoplayRef.current = setInterval(() => {
+      animateTo('next');
+    }, AUTOPLAY_DELAY);
+  };
+
+  const animateTo = (direction: 'next' | 'prev') => {
+    if (!slideWidth) return;
+
+    const target =
+      direction === 'next' ? -(slideWidth + GAP_PX) : slideWidth + GAP_PX;
+    setIsAnimating(true);
+    setDragX(target);
+    setTimeout(() => {
+      setIsAnimating(false);
+      setIndex((prev) =>
+        direction === 'next'
+          ? (prev + 1) % heritageData.length
+          : (prev - 1 + heritageData.length) % heritageData.length,
+      );
+      dragXRef.current = 0;
+      setDragX(0);
+    }, AUTOPLAY_ANIMATION_DURATION);
+  };
+
+  const resetAutoplayTimer = () => {
+    stopAutoplay();
+    if (resumeTimeoutRef.current) {
+      clearTimeout(resumeTimeoutRef.current);
+    }
+    resumeTimeoutRef.current = setTimeout(startAutoplay, AUTOPLAY_DELAY);
   };
 
   useEffect(() => {
@@ -47,52 +109,32 @@ export default function HeritageMobile() {
     };
   });
 
-  const pauseAndScheduleResume = () => {
-    stopAutoplay();
-    if (resumeTimeoutRef.current) {
-      clearTimeout(resumeTimeoutRef.current);
-    }
-    resumeTimeoutRef.current = setTimeout(startAutoplay, RESUME_DELAY);
-  };
+  useLayoutEffect(() => {
+    if (!containerRef.current) return;
 
-  const onTouchStart = (e: React.TouchEvent) => {
-    pauseAndScheduleResume();
-    setIsDragging(true);
-    touchStartX.current = e.targetTouches[0].clientX;
-  };
-  const onTouchMove = (e: React.TouchEvent) => {
-    if (!touchStartX.current) return;
+    const updateWidth = () => {
+      const containerWidth = containerRef.current!.offsetWidth;
+      setSlideWidth(containerWidth * 0.93);
+    };
 
-    const currentX = e.targetTouches[0].clientX;
-    const delta = currentX - touchStartX.current;
+    updateWidth();
+    window.addEventListener('resize', updateWidth);
 
-    const target = delta * 0.45;
+    return () => {
+      window.removeEventListener('resize', updateWidth);
+    };
+  }, []);
 
-    // interpolación suave (lerp)
-    const eased =
-      lastTranslateX.current + (target - lastTranslateX.current) * 0.18;
+  const getIndex = (offset: number) =>
+    (index + offset + heritageData.length) % heritageData.length;
 
-    lastTranslateX.current = eased;
-    setTranslateX(eased * RESISTANCE);
-  };
-
-  const onTouchEnd = () => {
-    if (!touchStartX.current) return;
-
-    setIsDragging(false);
-
-    if (Math.abs(translateX) > SWIPE_THRESHOLD) {
-      setIndex((prev) =>
-        translateX < 0
-          ? (prev + 1) % heritageData.length
-          : (prev - 1 + heritageData.length) % heritageData.length,
-      );
-    }
-
-    setTranslateX((prev) => prev * 0.6);
-    setTimeout(() => setTranslateX(0), 16);
-    touchStartX.current = null;
-  };
+  const visibleIndexes = [
+    getIndex(-2),
+    getIndex(-1),
+    getIndex(0),
+    getIndex(1),
+    getIndex(2),
+  ];
 
   return (
     <div
@@ -102,19 +144,24 @@ export default function HeritageMobile() {
       onTouchEnd={onTouchEnd}
     >
       <div
-        className={`flex ${
-          isDragging
-            ? ''
-            : 'transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]'
+        ref={containerRef}
+        className={`flex gap-3 ${
+          isAnimating
+            ? 'transition-transform duration-420 ease-[cubic-bezier(0.22,1,0.36,1)]'
+            : ''
         }`}
         style={{
-          transform: `translateX(calc(-100% + ${translateX}px))`,
+          transform: `translateX(calc(-${baseOffset}px + ${dragX}px))`,
         }}
       >
-        {[prevIndex, index, nextIndex].map((i) => {
+        {visibleIndexes.map((i, renderIndex) => {
           const item = heritageData[i];
           return (
-            <div key={i} className="min-w-full text-center px-5">
+            <div
+              key={`${i}-${renderIndex}`}
+              className="shrink-0 text-center"
+              style={{ width: `${slideWidth}px` }}
+            >
               <Image
                 src={item.img}
                 alt={item.alt}
