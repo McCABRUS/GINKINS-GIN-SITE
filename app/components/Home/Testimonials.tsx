@@ -103,7 +103,6 @@ export default function Testimonials() {
       }
     }
 
-    // reset
     touchStartX.current = null;
     touchEndX.current = null;
   };
