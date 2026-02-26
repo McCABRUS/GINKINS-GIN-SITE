@@ -5,17 +5,15 @@ import { heritageData } from './HeritageData';
 import Image from 'next/image';
 
 export default function HeritageMobile() {
-  const [index, setIndex] = useState(0);
   const [dragX, setDragX] = useState(0);
   const [slideWidth, setSlideWidth] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
+  const [committedIndex, setCommittedIndex] = useState(0);
 
   const SWIPE_RATIO = 0.28;
   const AUTOPLAY_ANIMATION_DURATION = 420;
   const GAP_PX = 12;
   const AUTOPLAY_DELAY = 5000;
-
-  const baseOffset = slideWidth > 0 ? slideWidth * 2 + GAP_PX * 2 : 0;
 
   const touchStartX = useRef<number | null>(null);
   const autoplayRef = useRef<NodeJS.Timeout | null>(null);
@@ -73,15 +71,14 @@ export default function HeritageMobile() {
   };
 
   const animateTo = (direction: 'next' | 'prev') => {
-    if (!slideWidth) return;
-
+    if (!slideWidth || isAnimating) return;
     const target =
       direction === 'next' ? -(slideWidth + GAP_PX) : slideWidth + GAP_PX;
     setIsAnimating(true);
     setDragX(target);
     setTimeout(() => {
       setIsAnimating(false);
-      setIndex((prev) =>
+      setCommittedIndex((prev) =>
         direction === 'next'
           ? (prev + 1) % heritageData.length
           : (prev - 1 + heritageData.length) % heritageData.length,
@@ -126,7 +123,7 @@ export default function HeritageMobile() {
   }, []);
 
   const getIndex = (offset: number) =>
-    (index + offset + heritageData.length) % heritageData.length;
+    (committedIndex + offset + heritageData.length) % heritageData.length;
 
   const visibleIndexes = [
     getIndex(-2),
@@ -151,7 +148,10 @@ export default function HeritageMobile() {
             : ''
         }`}
         style={{
-          transform: `translateX(calc(-${baseOffset}px + ${dragX}px))`,
+          transform: slideWidth
+            ? `translate3d(-${slideWidth * 2 + GAP_PX * 2}px,0,0) translateX(${dragX}px)`
+            : 'translate3d(0,0,0)',
+          willChange: 'transform',
         }}
       >
         {visibleIndexes.map((i, renderIndex) => {
