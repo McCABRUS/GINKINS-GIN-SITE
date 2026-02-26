@@ -59,7 +59,7 @@ export default function CocktailsHome() {
             you need to sip like a pro.
           </p>
         </div>
-        <div className="mt-28 grid grid-cols-1 md:grid-cols-3 gap-5.25">
+        <div className="mt-28 grid grid-cols-1 md:grid-cols-3 gap-4">
           {cocktailsData.map((card, i) => (
             <div key={i} className="hidden md:block">
               <div className="aspect-390/565 overflow-hidden">

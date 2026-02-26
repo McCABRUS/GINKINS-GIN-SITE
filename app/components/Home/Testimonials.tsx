@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect, useLayoutEffect, useMemo } from 'react';
 
 const testimonials = [
   {
@@ -67,109 +67,215 @@ const testimonials = [
 
 export default function Testimonials() {
   const [index, setIndex] = useState(0);
+  const [dragX, setDragX] = useState(0);
+  const [slideWidth, setSlideWidth] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
+
+  const SWIPE_RATIO = 0.22;
+  const AUTOPLAY_DELAY = 6000;
+  const ANIMATION_DURATION = 320;
+
+  const total = testimonials.length;
+
+  const indicesToRender = useMemo(() => {
+    return [(index - 1 + total) % total, index, (index + 1) % total];
+  }, [index, total]);
+
+  const containerRef = useRef<HTMLDivElement | null>(null);
   const touchStartX = useRef<number | null>(null);
-  const touchEndX = useRef<number | null>(null);
+  const dragXRef = useRef(0);
+  const autoplayRef = useRef<NodeJS.Timeout | null>(null);
+  const resumeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
-  const SWIPE_THRESHOLD = 50;
+  const stopAutoplay = () => {
+    if (autoplayRef.current) {
+      clearInterval(autoplayRef.current);
+      autoplayRef.current = null;
+    }
+  };
 
-  const prev = () =>
-    setIndex((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1));
+  const startAutoplay = () => {
+    stopAutoplay();
+    autoplayRef.current = setInterval(() => {
+      animateTo('next');
+    }, AUTOPLAY_DELAY);
+  };
 
-  const next = () =>
-    setIndex((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1));
-
-  const { quote, author, rating } = testimonials[index];
+  const resetAutoplayTimer = () => {
+    stopAutoplay();
+    if (resumeTimeoutRef.current) {
+      clearTimeout(resumeTimeoutRef.current);
+    }
+    resumeTimeoutRef.current = setTimeout(startAutoplay, AUTOPLAY_DELAY);
+  };
 
   const onTouchStart = (e: React.TouchEvent) => {
+    resetAutoplayTimer();
     touchStartX.current = e.targetTouches[0].clientX;
   };
 
   const onTouchMove = (e: React.TouchEvent) => {
-    touchEndX.current = e.targetTouches[0].clientX;
+    if (!touchStartX.current || !containerRef.current) return;
+
+    const currentX = e.targetTouches[0].clientX;
+    const deltaPx = currentX - touchStartX.current;
+    const width = containerRef.current.offsetWidth;
+    const deltaRatio = deltaPx / width;
+
+    const resisted =
+      Math.sign(deltaRatio) * Math.min(Math.abs(deltaRatio), 0.7) * width;
+
+    dragXRef.current += (resisted - dragXRef.current) * 0.25;
+    setDragX(dragXRef.current);
   };
 
   const onTouchEnd = () => {
-    if (touchStartX.current === null || touchEndX.current === null) {
-      return;
-    }
+    if (!containerRef.current) return;
 
-    const deltaX = touchStartX.current - touchEndX.current;
+    const width = containerRef.current.offsetWidth;
+    const ratio = dragX / width;
 
-    if (Math.abs(deltaX) > SWIPE_THRESHOLD) {
-      if (deltaX > 0) {
-        next();
-      } else {
-        prev();
-      }
+    if (Math.abs(ratio) > SWIPE_RATIO) {
+      animateTo(ratio < 0 ? 'next' : 'prev');
+    } else {
+      setIsAnimating(true);
+      setDragX(0);
+      setTimeout(() => setIsAnimating(false), 180);
     }
 
     touchStartX.current = null;
-    touchEndX.current = null;
   };
 
+  const animateTo = (direction: 'next' | 'prev') => {
+    if (!slideWidth) return;
+
+    const target = direction === 'next' ? -slideWidth : slideWidth;
+
+    setIsAnimating(true);
+    setDragX(target);
+
+    setTimeout(() => {
+      setIndex((prev) =>
+        direction === 'next' ? (prev + 1) % total : (prev - 1 + total) % total,
+      );
+
+      dragXRef.current = 0;
+      setDragX(0);
+      setIsAnimating(false);
+    }, ANIMATION_DURATION);
+  };
+
+  useEffect(() => {
+    startAutoplay();
+    return () => {
+      stopAutoplay();
+      if (resumeTimeoutRef.current) {
+        clearTimeout(resumeTimeoutRef.current);
+      }
+    };
+  });
+
+  useLayoutEffect(() => {
+    if (!containerRef.current) return;
+
+    const updateWidth = () => {
+      setSlideWidth(containerRef.current!.offsetWidth);
+    };
+
+    updateWidth();
+    window.addEventListener('resize', updateWidth);
+    return () => window.removeEventListener('resize', updateWidth);
+  }, []);
+
   return (
-    <section className="w-full h-200 xs:h-150 lg:h-135.5 px-5.5 lg:px-12.5 py-5.5 lg:py-13.75 bg-(--secondary-beige) mb-15 md:mb-0">
-      <div className="w-full h-full relative border-4 border-solid border-(--primary-gold-main) flex items-center justify-center">
+    <section className="w-full h-200 xs:h-150 lg:h-135.5 px-5.5 lg:px-12.5 py-5.5 lg:py-13.75 bg-(--secondary-beige)">
+      <div className="w-full h-full relative border-4 border-(--primary-gold-main) overflow-hidden">
         <div
-          className="relative py-5 lg:py-5 xl:py-20 md:py-10 px-5 md:px-25 lg:px-38.5 text-center w-full h-full md:max-w-480 content-center touch-pan-y"
+          ref={containerRef}
+          className={`flex h-full ${
+            isAnimating
+              ? 'transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)]'
+              : ''
+          }`}
+          style={{
+            transform: `translateX(calc(-100% + ${dragX}px))`,
+          }}
           onTouchStart={onTouchStart}
           onTouchMove={onTouchMove}
           onTouchEnd={onTouchEnd}
         >
-          <button
-            onClick={prev}
-            className="absolute left-8 lg:left-0 3xl:left-10 top-[106%] xs:top-[108%] md:top-1/2 -translate-y-1/2 h-14.5 w-14.5 rounded-full border border-(--primary-gold-main) flex items-center justify-center text-(--primary-gold-main) hover:bg-(--primary-gold-main) hover:text-background transition duration-300 ease-in-out"
-            aria-label="Previous testimonial"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="58"
-              height="58"
-              viewBox="0 0 58 58"
-              fill="none"
-            >
-              <circle
-                cx="29"
-                cy="29"
-                r="29"
-                transform="rotate(-180 29 29)"
-                fill="currentBackgroundColor"
-              />
-              <path
-                d="M21.5471 28.2796L42.247 28.2796L42.247 31.4057L21.5471 31.4057L30.6692 39.7899L28.2645 42L15.0371 29.8427L28.2645 17.6853L30.6692 19.8954L21.5471 28.2796Z"
-                fill="currentColor"
-              />
-            </svg>
-          </button>
-          <button
-            onClick={next}
-            className="absolute right-8 3xl:right-10 lg:right-0 top-[106%] xs:top-[108%] md:top-1/2 -translate-y-1/2 h-14.5 w-14.5 rounded-full border border-(--primary-gold-main) flex items-center justify-center text-(--primary-gold-main) hover:bg-(--primary-gold-main) hover:text-background transition duration-300 ease-in-out"
-            aria-label="Next testimonial"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="58"
-              height="58"
-              viewBox="0 0 58 58"
-              fill="none"
-            >
-              <circle cx="29" cy="29" r="29" fill="CurrentBackgroundColor" />
-              <path
-                d="M36.4529 29.7204L15.753 29.7204L15.753 26.5943L36.4529 26.5943L27.3308 18.2101L29.7355 16L42.9629 28.1574L29.7355 40.3147L27.3308 38.1046L36.4529 29.7204Z"
-                fill="CurrentColor"
-              />
-            </svg>
-          </button>
-          <div className="mb-6 flex justify-center gap-1 text-(--secondary-black) text-xl">
-            {Array.from({ length: rating }).map((_, i) => (
-              <span key={i}>★</span>
-            ))}
-          </div>
-          <blockquote className="font-cormorant-garamond font-medium mx-auto italic text-3xl md:text-4xl leading-relaxed text-(--secondary-black)">
-            “{quote}”
-          </blockquote>
-          <h5 className="text-lg! mt-8 text-(--secondary-black)!">{author}</h5>
+          {indicesToRender.map((i, renderIndex) => {
+            const { quote, author, rating } = testimonials[i];
+
+            return (
+              <div
+                key={`testimonial-${renderIndex}`}
+                className="w-full shrink-0 flex items-center justify-center text-center px-5 md:px-25 lg:px-38.5"
+              >
+                <div>
+                  <div className="mb-6 flex justify-center gap-1 text-xl">
+                    {Array.from({ length: rating }).map((_, i) => (
+                      <span key={i}>★</span>
+                    ))}
+                  </div>
+
+                  <blockquote className="font-cormorant-garamond font-medium mx-auto italic text-3xl md:text-4xl leading-relaxed text-(--secondary-black)">
+                    “{quote}”
+                  </blockquote>
+
+                  <h5 className="text-lg! mt-8 text-(--secondary-black)!">
+                    {author}
+                  </h5>
+                </div>
+              </div>
+            );
+          })}
         </div>
+        <button
+          onClick={() => animateTo('prev')}
+          className="absolute md:flex hidden left-5 3xl:left-10 top-[106%] xs:top-[108%] md:top-1/2 -translate-y-1/2 h-14.5 w-14.5 rounded-full border border-(--primary-gold-main) items-center justify-center text-(--primary-gold-main) hover:bg-(--primary-gold-main) hover:text-background transition duration-300 ease-in-out"
+          aria-label="Previous testimonial"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="58"
+            height="58"
+            viewBox="0 0 58 58"
+            fill="none"
+          >
+            <circle
+              cx="29"
+              cy="29"
+              r="29"
+              transform="rotate(-180 29 29)"
+              fill="currentBackgroundColor"
+            />
+            <path
+              d="M21.5471 28.2796L42.247 28.2796L42.247 31.4057L21.5471 31.4057L30.6692 39.7899L28.2645 42L15.0371 29.8427L28.2645 17.6853L30.6692 19.8954L21.5471 28.2796Z"
+              fill="currentColor"
+            />
+          </svg>
+        </button>
+
+        <button
+          onClick={() => animateTo('next')}
+          className="absolute md:flex hidden right-5 3xl:right-10 top-[106%] xs:top-[108%] md:top-1/2 -translate-y-1/2 h-14.5 w-14.5 rounded-full border border-(--primary-gold-main) items-center justify-center text-(--primary-gold-main) hover:bg-(--primary-gold-main) hover:text-background transition duration-300 ease-in-out"
+          aria-label="Next testimonial"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="58"
+            height="58"
+            viewBox="0 0 58 58"
+            fill="none"
+          >
+            <circle cx="29" cy="29" r="29" fill="CurrentBackgroundColor" />
+            <path
+              d="M36.4529 29.7204L15.753 29.7204L15.753 26.5943L36.4529 26.5943L27.3308 18.2101L29.7355 16L42.9629 28.1574L29.7355 40.3147L27.3308 38.1046L36.4529 29.7204Z"
+              fill="CurrentColor"
+            />
+          </svg>
+        </button>
       </div>
     </section>
   );
