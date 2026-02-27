@@ -26,8 +26,6 @@ export default function FooterMerch() {
       if (!carouselRef.current) return;
 
       position.current += speed * direction.current;
-
-      // 🔁 WRAP INFINITO
       if (position.current <= -SET_WIDTH) {
         position.current += SET_WIDTH;
       }
