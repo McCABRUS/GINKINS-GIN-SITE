@@ -121,23 +121,23 @@ export default function AgeGate() {
           </Link>
         </p>
       </div>
-      <div className="hidden lg:flex h-24.25 w-24.25 items-center justify-center absolute top-1/2 right-64">
+      <div className="hidden lg:flex h-24.25 w-24.25 items-center justify-center absolute top-1/2 right-64 -translate-y-1/2">
         <Image
           src="/imgs/legal/ginkins-gin-lemon-icon.svg"
           alt="Ginkins Gin lemon brand element"
           width={97}
           height={97}
-          className="w-24.25 h-24.25"
+          className="w-24.25 h-24.25 lemomIconReverse"
           aria-hidden
         />
       </div>
-      <div className="hidden lg:flex h-24.25 w-24.25 items-center justify-center absolute top-1/2 left-64">
+      <div className="hidden lg:flex h-24.25 w-24.25 items-center justify-center absolute top-1/2 left-64 -translate-y-1/2">
         <Image
           src="/imgs/legal/ginkins-gin-lemon-icon.svg"
           alt="Ginkins Gin lemon brand element"
           width={97}
           height={97}
-          className="w-24.25 h-24.25"
+          className="w-24.25 h-24.25 lemomIcon"
           aria-hidden
         />
       </div>

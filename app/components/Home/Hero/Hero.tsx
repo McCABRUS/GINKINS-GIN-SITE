@@ -7,7 +7,7 @@ import BotanicalGridMobile from './BotanicalGridMobile';
 
 export default function Hero() {
   return (
-    <section className="relative w-full overflow-hidden">
+    <section className="relative w-full overflow-hidden xl:-mt-34 lg:-mt-9">
       <div className="absolute inset-0">
         <div className="h-[37%] lg:h-[30%] xl:h-[65%] bg-(--primary-black)" />
         <div className="h-[43%] lg:h-[34%] xl:h-[70%] bg-(--secondary-beige)" />
@@ -24,13 +24,13 @@ export default function Hero() {
             priority
           />
         </div>
-        <div className="hidden lg:block absolute left-[4%] 2xl:left-[8%] top-[15%] 2xl:top-[38%] text-background text-center">
-          <p className="font-cormorant-garamond leading-relaxed  text-3xl">
+        <div className="hidden lg:block absolute left-[10.25%] xl:top-86 lg:top-22 text-background text-center">
+          <p className="font-cormorant-garamond leading-relaxed text-3xl ">
             WE BOTTLE <br /> CONNECTION.
           </p>
         </div>
-        <div className="hidden lg:block absolute right-[4%] 2xl:right-[8%] top-[15%] 2xl:top-[38%] text-background text-center">
-          <p className="font-cormorant-garamond text-3xl leading-relaxed">
+        <div className="hidden lg:block absolute right-[10.25%] xl:top-86 lg:top-22 text-background text-center">
+          <p className="font-cormorant-garamond text-3xl leading-relaxed top-86">
             YOU POUR IT <br /> FORWARD.
           </p>
         </div>
@@ -59,7 +59,7 @@ export default function Hero() {
                   width="2230.64"
                   height="2230.64"
                 >
-                  <div className="bg-[conic-gradient(from_90deg,rgba(0,0,0,1)_0deg,rgba(57,57,57,1)_141.923deg,rgba(0,0,0,1)_360deg)] h-full w-full opacity-[11]"></div>
+                  <div className="h-full w-full opacity-[11]"></div>
                 </foreignObject>
               </g>
             </g>
@@ -83,7 +83,7 @@ export default function Hero() {
           <Link
             href="/our-gins"
             role="button"
-            className="inline-flex items-center justify-center px-5 py-1.5 w-81.25 bg-(--primary-red-main) text-sm transition hover:bg-(--primary-gold-main) active:bg-(--primary-gold-main) focus:bg-(--primary-gold-main) group"
+            className="inline-flex items-center justify-center px-5 py-1.5 w-81.25  text-sm transition group animatedButton"
           >
             <h5 className="text-background! text-lg! group-hover:text-(--primary-black)! group-active:text-(--primary-black)! group-focus:text-(--primary-black)!">
               EXPLORE THE COLLECTION

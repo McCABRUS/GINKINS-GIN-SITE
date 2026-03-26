@@ -25,6 +25,24 @@
   --secondary-humo: #f6f8f7;
 }
 
+.animatedButton {
+  will-change: background-position;
+  transition: background-position 0.6666666667s
+    cubic-bezier(0.24, 0.22, 0.31, 1.07);
+  background-size: 210% 100%;
+  background-position: 99% center;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(
+    100deg,
+    var(--primary-gold-main) 50%,
+    var(--primary-red-main) 50%
+  );
+}
+
+.animatedButton:hover {
+  background-position: 0% center;
+}
+
 @theme inline {
   --color-background: var(--white-100);
   --breakpoint-xs: 26.3125rem;
@@ -130,6 +148,14 @@ h6 {
   }
 }
 
+.lemomIcon {
+  animation: spin-slow 15s linear infinite;
+}
+
+.lemomIconReverse {
+  animation: spin-slow-reverse 15s linear infinite;
+}
+
 .font-cormorant-garamond {
   font-family: 'Cormorant Garamond';
 }
@@ -190,6 +216,15 @@ h6 {
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes spin-slow-reverse {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
   }
 }
 

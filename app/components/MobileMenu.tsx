@@ -17,7 +17,7 @@ export default function MobileMenu() {
   return (
     <>
       <button
-        className="lg:hidden text-(--primary-gold-main)"
+        className="xl:hidden text-(--primary-gold-main)"
         onClick={() => setOpen(true)}
         aria-label="Open menu"
       >
@@ -35,19 +35,19 @@ export default function MobileMenu() {
       </button>
 
       {open && (
-        <div className="fixed inset-0 z-2000 bg-[#121212] text-(--primary-gold-main)">
+        <div className="fixed inset-0 z-2000 bg-[#121212] text-(--primary-gold-main) opacity-95">
           <button
             onClick={() => {
               setOpen(false);
               setMoreOpen(false);
             }}
             aria-label="Close menu"
-            className="absolute top-6 right-6 text-2xl"
+            className="absolute top-6 right-12 text-2xl"
           >
             ✕
           </button>
 
-          <nav className="px-8 pt-24 space-y-8 text-sm uppercase">
+          <nav className="px-12 pt-24 space-y-8 text-sm uppercase">
             <MenuItem
               label="About Ginkins"
               link="/about-ginkins"
