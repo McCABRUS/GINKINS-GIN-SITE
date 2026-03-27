@@ -41,7 +41,7 @@ export default function JoinModal({ open, onClose }: Props) {
         ref={modalRef}
         tabIndex={-1}
         onClick={(e) => e.stopPropagation()}
-        className="relative bg-background shadow-2xl overflow-hidden w-full grow md:w-auto h-auto lg:max-w-296.5 p-10 lg:p-5"
+        className="relative bg-background shadow-2xl overflow-hidden w-full grow md:w-auto h-dvh lg:max-w-296.5 p-10 lg:p-5"
       >
         <button
           onClick={onClose}
