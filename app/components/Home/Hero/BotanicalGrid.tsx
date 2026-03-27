@@ -142,7 +142,7 @@ const LEFT_ITEMS: BotanicalItem[] = [
     wrapperClassName:
       'relative w-15.75 xl:w-20 2xl:w-25 h-15.75 xl:h-20 2xl:h-25 group',
     labelClassName:
-      'text-base font-normal text-(--primary-black) xl:text-background justify-self-center text-center whitespace-nowrap mt-0 xl:-mt-3.5 2xl:-mt-8.5 mb-0 xl:mb-2.5 invisible group-hover:visible group-active:visible [.is-auto-active_&]:visible',
+      'text-base font-normal text-(--primary-black) xl:text-background justify-self-center text-center whitespace-nowrap mt-0 xl:-mt-3.5 2xl:-mt-8.5 mb-0 xl:mb-2.5 invisible group-hover:visible group-active:visible [.is-auto-active_&]:visible place-content-center grid',
     baseClassName:
       'group-hover:invisible group-active:invisible [.is-auto-active_&]:invisible',
     hoverClassName:
@@ -167,7 +167,7 @@ const LEFT_ITEMS: BotanicalItem[] = [
     wrapperClassName:
       'relative w-15.75 xl:w-20 2xl:w-25 h-15.75 xl:h-20 2xl:h-25 group top-full hover:-top-7.5 active:-top-7.5 [&.is-auto-active]:-top-7.5',
     labelClassName:
-      'text-base font-normal text-(--secondary-black) justify-self-center text-center whitespace-nowrap xl:mt-2.5 invisible group-hover:visible group-active:visible [.is-auto-active_&]:visible',
+      'text-base font-normal text-(--secondary-black) justify-self-center text-center whitespace-nowrap xl:mt-2.5 invisible group-hover:visible group-active:visible [.is-auto-active_&]:visible place-content-center grid',
     baseClassName:
       '-mt-45 xl:-mt-55.75 2xl:-mt-65.75 group-hover:invisible group-active:invisible [.is-auto-active_&]:invisible',
     hoverClassName:
@@ -187,7 +187,7 @@ const LEFT_ITEMS: BotanicalItem[] = [
     wrapperClassName:
       'relative w-15.75 xl:w-20 2xl:w-25 h-15.75 xl:h-20 2xl:h-25 group',
     labelClassName:
-      'text-base font-normal text-(--primary-black) xl:text-background justify-self-center text-center whitespace-nowrap mt-0 xl:-mt-3.5 2xl:-mt-8.5 mb-0 xl:mb-2.5 invisible group-hover:visible group-active:visible [.is-auto-active_&]:visible',
+      'text-base font-normal text-(--primary-black) xl:text-background justify-self-center text-center whitespace-nowrap mt-0 xl:-mt-3.5 2xl:-mt-8.5 mb-0 xl:mb-2.5 invisible group-hover:visible group-active:visible [.is-auto-active_&]:visible place-content-center grid',
     baseClassName:
       'group-hover:invisible group-active:invisible [.is-auto-active_&]:invisible',
     hoverClassName:
@@ -206,7 +206,7 @@ const LEFT_ITEMS: BotanicalItem[] = [
     wrapperClassName:
       'relative w-15.75 xl:w-20 2xl:w-25 h-15.75 xl:h-20 2xl:h-25 group top-full hover:-top-7.5 active:-top-7.5 [&.is-auto-active]:-top-7.5',
     labelClassName:
-      'text-base font-normal text-(--secondary-black) justify-self-center text-center whitespace-nowrap xl:mt-2.5 invisible group-hover:visible group-active:visible [.is-auto-active_&]:visible',
+      'text-base font-normal text-(--secondary-black) justify-self-center text-center whitespace-nowrap xl:mt-2.5 invisible group-hover:visible group-active:visible [.is-auto-active_&]:visible place-content-center grid',
     baseClassName:
       '-mt-45 xl:-mt-55.75 2xl:-mt-65.75 group-hover:invisible group-active:invisible [.is-auto-active_&]:invisible',
     hoverClassName:
@@ -226,7 +226,7 @@ const LEFT_ITEMS: BotanicalItem[] = [
     wrapperClassName:
       'relative w-15.75 xl:w-20 2xl:w-25 h-15.75 xl:h-20 2xl:h-25 group',
     labelClassName:
-      'text-base font-normal text-(--primary-black) xl:text-background justify-self-center text-center whitespace-nowrap mt-0 xl:-mt-3.5 2xl:-mt-8.5 mb-0 xl:mb-2.5 invisible group-hover:visible group-active:visible [.is-auto-active_&]:visible',
+      'text-base font-normal text-(--primary-black) xl:text-background justify-self-center text-center whitespace-nowrap mt-0 xl:-mt-3.5 2xl:-mt-8.5 mb-0 xl:mb-2.5 invisible group-hover:visible group-active:visible [.is-auto-active_&]:visible place-content-center grid',
     baseClassName:
       'group-hover:invisible group-active:invisible [.is-auto-active_&]:invisible',
     hoverClassName:
@@ -249,7 +249,7 @@ const RIGHT_ITEMS: BotanicalItem[] = [
     wrapperClassName:
       'relative w-15.75 xl:w-20 2xl:w-25 h-15.75 xl:h-20 2xl:h-25 group',
     labelClassName:
-      'text-base font-normal text-(--primary-black) xl:text-background justify-self-center text-center whitespace-nowrap mt-0 xl:-mt-3.5 2xl:-mt-8.5 mb-0 xl:mb-2.5 invisible group-hover:visible group-active:visible [.is-auto-active_&]:visible',
+      'text-base font-normal text-(--primary-black) xl:text-background justify-self-center text-center whitespace-nowrap mt-0 xl:-mt-3.5 2xl:-mt-8.5 mb-0 xl:mb-2.5 invisible group-hover:visible group-active:visible [.is-auto-active_&]:visible place-content-center grid',
     baseClassName:
       'group-hover:invisible group-active:invisible [.is-auto-active_&]:invisible',
     hoverClassName:
@@ -268,7 +268,7 @@ const RIGHT_ITEMS: BotanicalItem[] = [
     wrapperClassName:
       'relative w-15.75 xl:w-20 2xl:w-25 h-15.75 xl:h-20 2xl:h-25 group top-full hover:-top-7.5 active:-top-7.5 [&.is-auto-active]:-top-7.5',
     labelClassName:
-      'text-base font-normal text-(--secondary-black) justify-self-center text-center whitespace-nowrap xl:mt-2.5 invisible group-hover:visible group-active:visible [.is-auto-active_&]:visible',
+      'text-base font-normal text-(--secondary-black) justify-self-center text-center whitespace-nowrap xl:mt-2.5 invisible group-hover:visible group-active:visible [.is-auto-active_&]:visible place-content-center grid',
     baseClassName:
       '-mt-45 xl:-mt-55.75 2xl:-mt-65.75 group-hover:invisible group-active:invisible [.is-auto-active_&]:invisible',
     hoverClassName:
@@ -288,7 +288,7 @@ const RIGHT_ITEMS: BotanicalItem[] = [
     wrapperClassName:
       'relative w-15.75 xl:w-20 2xl:w-25 h-15.75 xl:h-20 2xl:h-25 group',
     labelClassName:
-      'text-base font-normal text-(--primary-black) xl:text-background justify-self-center text-center whitespace-nowrap mt-0 xl:-mt-3.5 2xl:-mt-8.5 mb-0 xl:mb-2.5 invisible group-hover:visible group-active:visible [.is-auto-active_&]:visible',
+      'text-base font-normal text-(--primary-black) xl:text-background justify-self-center text-center whitespace-nowrap mt-0 xl:-mt-3.5 2xl:-mt-8.5 mb-0 xl:mb-2.5 invisible group-hover:visible group-active:visible [.is-auto-active_&]:visible place-content-center grid',
     baseClassName:
       'group-hover:invisible group-active:invisible [.is-auto-active_&]:invisible',
     hoverClassName:
@@ -307,7 +307,7 @@ const RIGHT_ITEMS: BotanicalItem[] = [
     wrapperClassName:
       'relative w-15.75 xl:w-20 2xl:w-25 h-15.75 xl:h-20 2xl:h-25 group top-full hover:-top-7.5 active:-top-7.5 [&.is-auto-active]:-top-7.5',
     labelClassName:
-      'text-base font-normal text-(--secondary-black) justify-self-center text-center whitespace-nowrap mt-2.5 invisible group-hover:visible group-active:visible [.is-auto-active_&]:visible',
+      'text-base font-normal text-(--secondary-black) justify-self-center text-center whitespace-nowrap mt-2.5 invisible group-hover:visible group-active:visible [.is-auto-active_&]:visible place-content-center grid',
     baseClassName:
       '-mt-47.75 2xl:-mt-65.75 group-hover:invisible group-active:invisible [.is-auto-active_&]:invisible',
     hoverClassName:
@@ -327,7 +327,7 @@ const RIGHT_ITEMS: BotanicalItem[] = [
     wrapperClassName:
       'relative w-15.75 xl:w-20 2xl:w-25 h-15.75 xl:h-20 2xl:h-25 group',
     labelClassName:
-      'text-base font-normal text-(--primary-black) xl:text-background justify-self-center text-center whitespace-nowrap mt-0 xl:-mt-3.5 2xl:-mt-8.5 mb-0 xl:mb-2.5 invisible group-hover:visible group-active:visible [.is-auto-active_&]:visible',
+      'text-base font-normal text-(--primary-black) xl:text-background justify-self-center text-center whitespace-nowrap mt-0 xl:-mt-3.5 2xl:-mt-8.5 mb-0 xl:mb-2.5 invisible group-hover:visible group-active:visible [.is-auto-active_&]:visible place-content-center grid',
     baseClassName:
       'group-hover:invisible group-active:invisible [.is-auto-active_&]:invisible',
     hoverClassName:
