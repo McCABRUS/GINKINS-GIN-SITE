@@ -32,19 +32,19 @@ body {
 }
 
 .ios-botanical-fix .ios-fix-cardamom {
-  transform: translateY(18px);
+  transform: translateY(64px);
 }
 
 .ios-botanical-fix .ios-fix-juniper-berries {
-  transform: translateY(18px);
+  transform: translateY(63px);
 }
 
 .ios-botanical-fix .ios-fix-orris {
-  transform: translateY(18px);
+  transform: translateY(62px);
 }
 
 .ios-botanical-fix .ios-fix-cassia {
-  transform: translateY(18px);
+  transform: translateY(61px);
 }
 
 .animatedButton {
