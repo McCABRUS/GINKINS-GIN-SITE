@@ -31,22 +31,6 @@ body {
   text-size-adjust: 100%;
 }
 
-.ios-botanical-fix .ios-fix-cardamom {
-  transform: translateY(64px);
-}
-
-.ios-botanical-fix .ios-fix-juniper-berries {
-  transform: translateY(63px);
-}
-
-.ios-botanical-fix .ios-fix-orris {
-  transform: translateY(62px);
-}
-
-.ios-botanical-fix .ios-fix-cassia {
-  transform: translateY(61px);
-}
-
 .animatedButton {
   will-change: background-position;
   transition: background-position 0.6666666667s

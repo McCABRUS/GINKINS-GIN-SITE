@@ -174,7 +174,7 @@ const LEFT_ITEMS: BotanicalItem[] = [
       '-mt-22.25 xl:-mt-18.25 2xl:mt-0.25 invisible group-hover:visible group-active:visible [.is-auto-active_&]:visible',
     extraClassName:
       'mt-9.5 mb-16.75 xl:mb-9.5 2xl:mt-[24.5px] 2xl:-mb-13.5 invisible group-hover:visible group-active:visible [.is-auto-active_&]:visible',
-    iosBaseFixClassName: 'translate-y-[18px]',
+    iosBaseFixClassName: 'translate-y-[64px]',
   },
   {
     id: 'angelica',
@@ -213,7 +213,7 @@ const LEFT_ITEMS: BotanicalItem[] = [
       '-mt-15.25 xl:-mt-11 2xl:-mt-6 invisible group-hover:visible group-active:visible [.is-auto-active_&]:visible',
     extraClassName:
       'mt-7.5 2xl:mt-0 mb-12.25 xl:mb-5 2xl:-mb-5.75 invisible group-hover:visible group-active:visible [.is-auto-active_&]:visible',
-    iosBaseFixClassName: 'translate-y-[18px]',
+    iosBaseFixClassName: 'translate-y-[63px]',
   },
   {
     id: 'coriander',
@@ -275,7 +275,7 @@ const RIGHT_ITEMS: BotanicalItem[] = [
       '-mt-15 xl:-mt-11 2xl:-mt-6 invisible group-hover:visible group-active:visible [.is-auto-active_&]:visible',
     extraClassName:
       'mt-11.25 2xl:mt-5.75 mb-12.25 xl:mb-6 2xl:-mb-6 invisible group-hover:visible group-active:visible [.is-auto-active_&]:visible',
-    iosBaseFixClassName: 'translate-y-[18px]',
+    iosBaseFixClassName: 'translate-y-[62px]',
   },
   {
     id: 'nutmeg',
@@ -314,7 +314,7 @@ const RIGHT_ITEMS: BotanicalItem[] = [
       '-mt-15.25 2xl:-mt-6.5 invisible group-hover:visible group-active:visible [.is-auto-active_&]:visible',
     extraClassName:
       'mt-10 2xl:mt-4 mb-12.25 xl:mb-6 2xl:-mb-6.25 invisible group-hover:visible group-active:visible [.is-auto-active_&]:visible',
-    iosBaseFixClassName: 'translate-y-[18px]',
+    iosBaseFixClassName: 'translate-y-[61px]',
   },
   {
     id: 'lemon-peel',
