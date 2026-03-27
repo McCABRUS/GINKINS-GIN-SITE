@@ -18,6 +18,7 @@ type BotanicalItem = {
   baseClassName: string;
   hoverClassName: string;
   extraClassName?: string;
+  iosBaseFixClassName?: string;
   baseWidth?: number;
   baseHeight?: number;
   hoverWidth?: number;
@@ -52,11 +53,7 @@ function BotanicalCard({
   const handleInteract = () => {
     onItemInteract?.(item.id);
   };
-  const iosFixClass =
-    isIOSFix &&
-    ['cardamom', 'juniper-berries', 'orris', 'cassia'].includes(item.id)
-      ? `ios-fix-${item.id}`
-      : '';
+
   const renderPart = (part: RenderPart, index: number) => {
     switch (part) {
       case 'label':
@@ -77,7 +74,10 @@ function BotanicalCard({
             width={item.baseWidth ?? 100}
             height={item.baseHeight ?? 100}
             priority={item.priority}
-            className={item.baseClassName}
+            className={cx(
+              item.baseClassName,
+              isIOSFix && item.iosBaseFixClassName,
+            )}
           />
         );
 
@@ -116,11 +116,7 @@ function BotanicalCard({
 
   return (
     <div
-      className={cx(
-        item.wrapperClassName,
-        isAutoActive && 'is-auto-active',
-        iosFixClass,
-      )}
+      className={cx(item.wrapperClassName, isAutoActive && 'is-auto-active')}
       onPointerEnter={(e) => {
         if (e.pointerType === 'mouse') handleInteract();
       }}
@@ -132,6 +128,7 @@ function BotanicalCard({
     </div>
   );
 }
+
 const LEFT_ITEMS: BotanicalItem[] = [
   {
     id: 'grapefruit',
@@ -177,6 +174,7 @@ const LEFT_ITEMS: BotanicalItem[] = [
       '-mt-22.25 xl:-mt-18.25 2xl:mt-0.25 invisible group-hover:visible group-active:visible [.is-auto-active_&]:visible',
     extraClassName:
       'mt-9.5 mb-16.75 xl:mb-9.5 2xl:mt-[24.5px] 2xl:-mb-13.5 invisible group-hover:visible group-active:visible [.is-auto-active_&]:visible',
+    iosBaseFixClassName: 'translate-y-[18px]',
   },
   {
     id: 'angelica',
@@ -215,6 +213,7 @@ const LEFT_ITEMS: BotanicalItem[] = [
       '-mt-15.25 xl:-mt-11 2xl:-mt-6 invisible group-hover:visible group-active:visible [.is-auto-active_&]:visible',
     extraClassName:
       'mt-7.5 2xl:mt-0 mb-12.25 xl:mb-5 2xl:-mb-5.75 invisible group-hover:visible group-active:visible [.is-auto-active_&]:visible',
+    iosBaseFixClassName: 'translate-y-[18px]',
   },
   {
     id: 'coriander',
@@ -271,11 +270,12 @@ const RIGHT_ITEMS: BotanicalItem[] = [
     labelClassName:
       'text-base font-normal text-(--secondary-black) justify-self-center text-center whitespace-nowrap xl:mt-2.5 invisible group-hover:visible group-active:visible [.is-auto-active_&]:visible',
     baseClassName:
-      '-mt-45 xl:-mt-56 2xl:-mt-65.75 group-hover:invisible group-active:invisible [.is-auto-active_&]:invisible',
+      '-mt-45 xl:-mt-55.75 2xl:-mt-65.75 group-hover:invisible group-active:invisible [.is-auto-active_&]:invisible',
     hoverClassName:
-      '-mt-15.5 xl:-mt-11.25 2xl:-mt-6.5 invisible group-hover:visible group-active:visible [.is-auto-active_&]:visible',
+      '-mt-15 xl:-mt-11 2xl:-mt-6 invisible group-hover:visible group-active:visible [.is-auto-active_&]:visible',
     extraClassName:
       'mt-11.25 2xl:mt-5.75 mb-12.25 xl:mb-6 2xl:-mb-6 invisible group-hover:visible group-active:visible [.is-auto-active_&]:visible',
+    iosBaseFixClassName: 'translate-y-[18px]',
   },
   {
     id: 'nutmeg',
@@ -292,7 +292,7 @@ const RIGHT_ITEMS: BotanicalItem[] = [
     baseClassName:
       'group-hover:invisible group-active:invisible [.is-auto-active_&]:invisible',
     hoverClassName:
-      '-mt-16 xl:-mt-19.75 2xl:-mt-24.75 invisible group-hover:visible group-active:visible [.is-auto-active_&]:visible',
+      '-mt-15 xl:-mt-19.75 2xl:-mt-24.75 invisible group-hover:visible group-active:visible [.is-auto-active_&]:visible',
     extraClassName:
       '-mt-5 xl:-mt-4.5 invisible group-hover:visible group-active:visible [.is-auto-active_&]:visible',
   },
@@ -307,13 +307,14 @@ const RIGHT_ITEMS: BotanicalItem[] = [
     wrapperClassName:
       'relative w-15.75 xl:w-20 2xl:w-25 h-15.75 xl:h-20 2xl:h-25 group top-full hover:-top-7.5 active:-top-7.5 [&.is-auto-active]:-top-7.5',
     labelClassName:
-      'text-base font-normal text-(--secondary-black) justify-self-center text-center whitespace-nowrap xl:mt-2.5 invisible group-hover:visible group-active:visible [.is-auto-active_&]:visible',
+      'text-base font-normal text-(--secondary-black) justify-self-center text-center whitespace-nowrap mt-2.5 invisible group-hover:visible group-active:visible [.is-auto-active_&]:visible',
     baseClassName:
-      '-mt-45 xl:-mt-55.75 2xl:-mt-65.75 group-hover:invisible group-active:invisible [.is-auto-active_&]:invisible',
+      '-mt-47.75 2xl:-mt-65.75 group-hover:invisible group-active:invisible [.is-auto-active_&]:invisible',
     hoverClassName:
-      '-mt-15.5 xl:-mt-11.5 2xl:-mt-6.5 invisible group-hover:visible group-active:visible [.is-auto-active_&]:visible',
+      '-mt-15.25 2xl:-mt-6.5 invisible group-hover:visible group-active:visible [.is-auto-active_&]:visible',
     extraClassName:
       'mt-10 2xl:mt-4 mb-12.25 xl:mb-6 2xl:-mb-6.25 invisible group-hover:visible group-active:visible [.is-auto-active_&]:visible',
+    iosBaseFixClassName: 'translate-y-[18px]',
   },
   {
     id: 'lemon-peel',
@@ -330,7 +331,7 @@ const RIGHT_ITEMS: BotanicalItem[] = [
     baseClassName:
       'group-hover:invisible group-active:invisible [.is-auto-active_&]:invisible',
     hoverClassName:
-      '-mt-16 xl:-mt-19.75 2xl:-mt-24.75 invisible group-hover:visible group-active:visible [.is-auto-active_&]:visible',
+      '-mt-15 xl:-mt-19.75 2xl:-mt-24.75 invisible group-hover:visible group-active:visible [.is-auto-active_&]:visible',
     extraClassName:
       '-mt-5 xl:-mt-7.5 invisible group-hover:visible group-active:visible [.is-auto-active_&]:visible',
   },
@@ -339,7 +340,6 @@ const RIGHT_ITEMS: BotanicalItem[] = [
 export default function BotanicalGrid({
   side,
   activeId,
-  isHovering,
   onItemInteract,
   isIOSFix = false,
 }: BotanicalGridProps) {
@@ -347,14 +347,11 @@ export default function BotanicalGrid({
   const items = isLeft ? LEFT_ITEMS : RIGHT_ITEMS;
 
   const containerClassName = isLeft
-    ? 'relative xl:absolute -top-82.5 xl:top-[55.1%] z-30 left-1/2 -translate-x-1/2 xl:translate-x-0 xl:left-[3%] grid grid-cols-5 grid-rows-2 min-w-78.75'
-    : 'relative xl:absolute -top-82.5 xl:top-[55.1%] z-30 left-1/2 -translate-x-1/2 xl:translate-x-0 xl:left-auto xl:right-[3%] grid grid-cols-5 grid-rows-2 min-w-78.75';
+    ? 'relative xl:absolute -top-85 xl:top-[55.1%] z-30 left-1/2 -translate-x-1/2 xl:translate-x-0 xl:left-[3%] grid grid-cols-5 grid-rows-2 min-w-78.75'
+    : 'relative xl:absolute -top-85 xl:top-[55.1%] z-30 left-1/2 -translate-x-1/2 xl:translate-x-0 xl:left-auto xl:right-[3%] grid grid-cols-5 grid-rows-2 min-w-78.75';
 
   return (
-    <div
-      className={containerClassName}
-      data-hovering={isHovering ? 'true' : 'false'}
-    >
+    <div className={containerClassName}>
       {items.map((item) => (
         <BotanicalCard
           key={item.id}

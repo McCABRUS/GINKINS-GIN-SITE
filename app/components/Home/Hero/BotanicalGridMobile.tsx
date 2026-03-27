@@ -6,7 +6,7 @@ import BotanicalGrid from './BotanicalGrid';
 type Side = 'left' | 'right';
 
 const STEP_MS = 2400;
-const RESUME_DELAY_MS = 1800;
+const RESUME_DELAY_MS = 2500;
 
 const SIDE_IDS: Record<Side, string[]> = {
   left: ['grapefruit', 'cardamom', 'angelica', 'juniper-berries', 'coriander'],
@@ -24,103 +24,68 @@ function shuffle<T>(array: T[]) {
 
 function useMobileBotanicalCycle() {
   const [side, setSide] = useState<Side>('left');
-  const [autoActiveId, setAutoActiveId] = useState<string | null>(null);
-  const [manualActiveId, setManualActiveId] = useState<string | null>(null);
+  const [activeId, setActiveId] = useState<string | null>(null);
   const [isPaused, setIsPaused] = useState(false);
-
-  const sequenceRef = useRef<string[]>([]);
-  const indexRef = useRef(0);
-  const sideRef = useRef<Side>('left');
-  const timerRef = useRef<number | null>(null);
-  const resumeTimerRef = useRef<number | null>(null);
-
-  const clearTimers = useCallback(() => {
-    if (timerRef.current !== null) window.clearTimeout(timerRef.current);
-    if (resumeTimerRef.current !== null)
-      window.clearTimeout(resumeTimerRef.current);
-    timerRef.current = null;
-    resumeTimerRef.current = null;
-  }, []);
-
-  const buildSideSequence = useCallback((nextSide: Side) => {
-    sideRef.current = nextSide;
-    sequenceRef.current = shuffle(SIDE_IDS[nextSide]);
-    indexRef.current = 0;
-    setSide(nextSide);
-    setAutoActiveId(sequenceRef.current[0] ?? null);
-    indexRef.current = 1;
-  }, []);
-
-  const scheduleNext = useCallback(() => {
-    clearTimers();
-
-    const tick = () => {
-      if (manualActiveId !== null) return;
-
-      const seq = sequenceRef.current;
-      if (!seq.length) {
-        buildSideSequence(sideRef.current);
-      } else if (indexRef.current >= seq.length) {
-        const nextSide: Side = sideRef.current === 'left' ? 'right' : 'left';
-        buildSideSequence(nextSide);
-      } else {
-        setAutoActiveId(seq[indexRef.current] ?? null);
-        indexRef.current += 1;
-      }
-
-      timerRef.current = window.setTimeout(tick, STEP_MS);
-    };
-
-    timerRef.current = window.setTimeout(tick, STEP_MS);
-  }, [buildSideSequence, clearTimers, manualActiveId]);
-
-  useEffect(() => {
-    buildSideSequence('left');
-    timerRef.current = window.setTimeout(scheduleNext, STEP_MS);
-
-    return () => clearTimers();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  const resumeAfterIdle = useCallback(() => {
-    if (resumeTimerRef.current !== null) {
-      window.clearTimeout(resumeTimerRef.current);
-    }
-
-    resumeTimerRef.current = window.setTimeout(() => {
-      setManualActiveId(null);
-      setIsPaused(false);
-      scheduleNext();
-    }, RESUME_DELAY_MS);
-  }, [scheduleNext]);
-
-  const registerInteraction = useCallback(
-    (id: string) => {
-      clearTimers();
-      setIsPaused(true);
-      setManualActiveId(id);
-      setAutoActiveId(id);
-      resumeAfterIdle();
-    },
-    [clearTimers, resumeAfterIdle],
-  );
-
-  return {
-    side,
-    activeId: manualActiveId ?? autoActiveId,
-    isPaused,
-    registerInteraction,
-  };
-}
-
-export default function BotanicalGridMobile() {
-  const { side, activeId, isPaused, registerInteraction } =
-    useMobileBotanicalCycle();
   const [isIOS, setIsIOS] = useState(false);
 
-  useEffect(() => {
-    if (typeof window === 'undefined') return;
+  const sideRef = useRef<Side>('left');
+  const sequenceRef = useRef<string[]>([]);
+  const indexRef = useRef(0);
 
+  const stepTimerRef = useRef<number | null>(null);
+  const resumeTimerRef = useRef<number | null>(null);
+
+  const clearTimers = () => {
+    if (stepTimerRef.current !== null) {
+      window.clearTimeout(stepTimerRef.current);
+      stepTimerRef.current = null;
+    }
+    if (resumeTimerRef.current !== null) {
+      window.clearTimeout(resumeTimerRef.current);
+      resumeTimerRef.current = null;
+    }
+  };
+
+  const buildSideSequence = (nextSide: Side) => {
+    const seq = shuffle(SIDE_IDS[nextSide]);
+    sideRef.current = nextSide;
+    sequenceRef.current = seq;
+    indexRef.current = 0;
+    setSide(nextSide);
+  };
+
+  // 🔥 CICLO AUTOMÁTICO (SIN useCallback)
+  useEffect(() => {
+    if (isPaused) return;
+
+    const run = () => {
+      const seq = sequenceRef.current;
+
+      if (!seq.length) return;
+
+      if (indexRef.current >= seq.length) {
+        const nextSide: Side = sideRef.current === 'left' ? 'right' : 'left';
+        buildSideSequence(nextSide);
+      }
+
+      const nextId = sequenceRef.current[indexRef.current] ?? null;
+      setActiveId(nextId);
+      indexRef.current += 1;
+
+      stepTimerRef.current = window.setTimeout(run, STEP_MS);
+    };
+
+    stepTimerRef.current = window.setTimeout(run, STEP_MS);
+
+    return () => {
+      if (stepTimerRef.current !== null) {
+        window.clearTimeout(stepTimerRef.current);
+      }
+    };
+  }, [isPaused]);
+
+  // INIT
+  useEffect(() => {
     const ua = window.navigator.userAgent;
     const platform = window.navigator.platform;
 
@@ -129,15 +94,48 @@ export default function BotanicalGridMobile() {
       (platform === 'MacIntel' && window.navigator.maxTouchPoints > 1);
 
     setIsIOS(ios);
+
+    buildSideSequence('left');
+
+    const seq = sequenceRef.current;
+    if (seq.length) {
+      setActiveId(seq[0]);
+      indexRef.current = 1;
+    }
+
+    return () => clearTimers();
   }, []);
 
+  // INTERACCIÓN
+  const registerInteraction = (id: string) => {
+    clearTimers();
+
+    setIsPaused(true);
+    setActiveId(id);
+
+    resumeTimerRef.current = window.setTimeout(() => {
+      setIsPaused(false);
+
+      // 🔥 IMPORTANTE: reiniciar índice para evitar quedarse pegado
+      indexRef.current = indexRef.current % sequenceRef.current.length;
+    }, RESUME_DELAY_MS);
+  };
+
+  return {
+    side,
+    activeId,
+    isPaused,
+    registerInteraction,
+    isIOS,
+  };
+}
+
+export default function BotanicalGridMobile() {
+  const { side, activeId, isPaused, registerInteraction, isIOS } =
+    useMobileBotanicalCycle();
+
   return (
-    <div
-      className={[
-        '-top-33.5 z-10 w-78.75 min-w-78.75 h-31.5 m-auto',
-        isIOS ? 'ios-botanical-fix' : '',
-      ].join(' ')}
-    >
+    <div className="-top-33.5 z-10 w-78.75 min-w-78.75 h-31.5 m-auto">
       <BotanicalGrid
         side={side}
         activeId={activeId}
