@@ -31,6 +31,7 @@ type BotanicalGridProps = {
   activeId: string | null;
   isHovering: boolean;
   onItemInteract?: (id: string) => void;
+  isIOSFix?: boolean;
 };
 
 function cx(...classes: Array<string | false | null | undefined>) {
@@ -41,15 +42,21 @@ function BotanicalCard({
   item,
   isAutoActive,
   onItemInteract,
+  isIOSFix,
 }: {
   item: BotanicalItem;
   isAutoActive: boolean;
   onItemInteract?: (id: string) => void;
+  isIOSFix?: boolean;
 }) {
   const handleInteract = () => {
     onItemInteract?.(item.id);
   };
-
+  const iosFixClass =
+    isIOSFix &&
+    ['cardamom', 'juniper-berries', 'orris', 'cassia'].includes(item.id)
+      ? `ios-fix-${item.id}`
+      : '';
   const renderPart = (part: RenderPart, index: number) => {
     switch (part) {
       case 'label':
@@ -109,7 +116,11 @@ function BotanicalCard({
 
   return (
     <div
-      className={cx(item.wrapperClassName, isAutoActive && 'is-auto-active')}
+      className={cx(
+        item.wrapperClassName,
+        isAutoActive && 'is-auto-active',
+        iosFixClass,
+      )}
       onPointerEnter={(e) => {
         if (e.pointerType === 'mouse') handleInteract();
       }}
@@ -330,6 +341,7 @@ export default function BotanicalGrid({
   activeId,
   isHovering,
   onItemInteract,
+  isIOSFix = false,
 }: BotanicalGridProps) {
   const isLeft = side === 'left';
   const items = isLeft ? LEFT_ITEMS : RIGHT_ITEMS;
@@ -349,6 +361,7 @@ export default function BotanicalGrid({
           item={item}
           isAutoActive={activeId === item.id}
           onItemInteract={onItemInteract}
+          isIOSFix={isIOSFix}
         />
       ))}
     </div>

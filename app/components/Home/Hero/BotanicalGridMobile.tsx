@@ -116,14 +116,34 @@ function useMobileBotanicalCycle() {
 export default function BotanicalGridMobile() {
   const { side, activeId, isPaused, registerInteraction } =
     useMobileBotanicalCycle();
+  const [isIOS, setIsIOS] = useState(false);
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    const ua = window.navigator.userAgent;
+    const platform = window.navigator.platform;
+
+    const ios =
+      /iPhone|iPad|iPod/i.test(ua) ||
+      (platform === 'MacIntel' && window.navigator.maxTouchPoints > 1);
+
+    setIsIOS(ios);
+  }, []);
 
   return (
-    <div className="-top-33.5 z-10 w-78.75 min-w-78.75 h-31.5 m-auto">
+    <div
+      className={[
+        '-top-33.5 z-10 w-78.75 min-w-78.75 h-31.5 m-auto',
+        isIOS ? 'ios-botanical-fix' : '',
+      ].join(' ')}
+    >
       <BotanicalGrid
         side={side}
         activeId={activeId}
         isHovering={isPaused}
         onItemInteract={registerInteraction}
+        isIOSFix={isIOS}
       />
     </div>
   );
