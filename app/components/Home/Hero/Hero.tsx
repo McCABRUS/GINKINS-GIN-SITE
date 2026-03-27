@@ -1,3 +1,6 @@
+'use client';
+
+import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -5,13 +8,150 @@ import BottleCarousel from './BottleCarousel';
 import BotanicalGrid from './BotanicalGrid';
 import BotanicalGridMobile from './BotanicalGridMobile';
 
+const STEP_MS = 2400;
+const RESUME_DELAY_MS = 1800;
+
+const leftIds = [
+  'grapefruit',
+  'cardamom',
+  'angelica',
+  'juniper-berries',
+  'coriander',
+];
+
+const rightIds = ['juniper', 'orris', 'nutmeg', 'cassia', 'lemon-peel'];
+
+function shuffle<T>(array: T[]): T[] {
+  const copy = [...array];
+  for (let i = copy.length - 1; i > 0; i -= 1) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [copy[i], copy[j]] = [copy[j], copy[i]];
+  }
+  return copy;
+}
+
+function buildSequence(left: string[], right: string[]) {
+  const l = shuffle(left);
+  const r = shuffle(right);
+  const seq: string[] = [];
+
+  const max = Math.max(l.length, r.length);
+
+  for (let i = 0; i < max; i += 1) {
+    if (l[i]) seq.push(l[i]);
+    if (r[i]) seq.push(r[i]);
+  }
+
+  return seq;
+}
+
+function useBotanicalCycle(leftIds: string[], rightIds: string[]) {
+  const [activeId, setActiveId] = useState<string | null>(null);
+  const [isHovering, setIsHovering] = useState(false);
+
+  const sequenceRef = useRef<string[]>([]);
+  const indexRef = useRef(0);
+  const timerRef = useRef<number | null>(null);
+  const resumeTimerRef = useRef<number | null>(null);
+
+  useEffect(() => {
+    sequenceRef.current = buildSequence(leftIds, rightIds);
+    indexRef.current = 0;
+  }, [leftIds, rightIds]);
+
+  useEffect(() => {
+    if (isHovering) {
+      if (timerRef.current !== null) {
+        window.clearTimeout(timerRef.current);
+      }
+      timerRef.current = null;
+      return;
+    }
+
+    const tick = () => {
+      const sequence = sequenceRef.current;
+      if (sequence.length === 0) return;
+
+      const nextId = sequence[indexRef.current] ?? null;
+      setActiveId(nextId);
+
+      indexRef.current += 1;
+
+      if (indexRef.current >= sequence.length) {
+        sequenceRef.current = buildSequence(leftIds, rightIds);
+        indexRef.current = 0;
+      }
+
+      timerRef.current = window.setTimeout(tick, STEP_MS);
+    };
+
+    timerRef.current = window.setTimeout(tick, STEP_MS);
+
+    return () => {
+      if (timerRef.current !== null) {
+        window.clearTimeout(timerRef.current);
+      }
+      timerRef.current = null;
+    };
+  }, [isHovering, leftIds, rightIds]);
+
+  const onEnter = () => {
+    if (resumeTimerRef.current !== null) {
+      window.clearTimeout(resumeTimerRef.current);
+      resumeTimerRef.current = null;
+    }
+
+    if (timerRef.current !== null) {
+      window.clearTimeout(timerRef.current);
+      timerRef.current = null;
+    }
+
+    setIsHovering(true);
+    setActiveId(null);
+  };
+
+  const onLeave = () => {
+    if (resumeTimerRef.current !== null) {
+      window.clearTimeout(resumeTimerRef.current);
+    }
+
+    resumeTimerRef.current = window.setTimeout(() => {
+      setIsHovering(false);
+    }, RESUME_DELAY_MS);
+  };
+
+  useEffect(() => {
+    return () => {
+      if (timerRef.current !== null) {
+        window.clearTimeout(timerRef.current);
+      }
+      if (resumeTimerRef.current !== null) {
+        window.clearTimeout(resumeTimerRef.current);
+      }
+    };
+  }, []);
+
+  return {
+    activeId,
+    isHovering,
+    onEnter,
+    onLeave,
+  };
+}
+
 export default function Hero() {
+  const { activeId, isHovering, onEnter, onLeave } = useBotanicalCycle(
+    leftIds,
+    rightIds,
+  );
+
   return (
     <section className="relative w-full overflow-hidden xl:-mt-34 lg:-mt-9">
       <div className="absolute inset-0">
         <div className="h-[37%] lg:h-[30%] xl:h-[65%] bg-(--primary-black)" />
         <div className="h-[43%] lg:h-[34%] xl:h-[70%] bg-(--secondary-beige)" />
       </div>
+
       <div className="relative mx-auto max-w-400 h-250 z-30 justify-center flex">
         <div className="absolute top-10 xl:top-36.25 justify-self-center">
           <Image
@@ -24,19 +164,34 @@ export default function Hero() {
             priority
           />
         </div>
+
         <div className="hidden lg:block absolute left-[10.25%] xl:top-86 lg:top-22 text-background text-center">
           <p className="font-cormorant-garamond leading-relaxed text-3xl ">
             WE BOTTLE <br /> CONNECTION.
           </p>
         </div>
+
         <div className="hidden lg:block absolute right-[10.25%] xl:top-86 lg:top-22 text-background text-center">
           <p className="font-cormorant-garamond text-3xl leading-relaxed top-86">
             YOU POUR IT <br /> FORWARD.
           </p>
         </div>
-        <div className="hidden xl:block">
-          <BotanicalGrid side="left" />
-          <BotanicalGrid side="right" />
+
+        <div
+          className="hidden xl:block"
+          onPointerEnter={onEnter}
+          onPointerLeave={onLeave}
+        >
+          <BotanicalGrid
+            side="left"
+            activeId={activeId}
+            isHovering={isHovering}
+          />
+          <BotanicalGrid
+            side="right"
+            activeId={activeId}
+            isHovering={isHovering}
+          />
         </div>
 
         <div className="absolute left-1/2 top-[-5%] xl:top-[18%] -translate-x-1/2 w-full h-full flex items-center justify-center z-0 max-w-480">
@@ -59,7 +214,7 @@ export default function Hero() {
                   width="2230.64"
                   height="2230.64"
                 >
-                  <div className="h-full w-full opacity-[11]"></div>
+                  <div className="h-full w-full opacity-[11]" />
                 </foreignObject>
               </g>
             </g>
@@ -73,17 +228,19 @@ export default function Hero() {
               </clipPath>
             </defs>
           </svg>
+
           <div className="z-0">
             <BottleCarousel />
           </div>
         </div>
       </div>
+
       <div className="relative grid z-50 lg:top-0 xl:-top-25 m-auto justify-center">
         <div className="absolute left-1/2 bottom-118 xl:bottom-[6%] -translate-x-1/2 z-40">
           <Link
             href="/our-gins"
             role="button"
-            className="inline-flex items-center justify-center px-5 py-1.5 w-81.25  text-sm transition group animatedButton"
+            className="inline-flex items-center justify-center px-5 py-1.5 w-81.25 text-sm transition group animatedButton"
           >
             <h5 className="text-background! text-lg! group-hover:text-(--primary-black)! group-active:text-(--primary-black)! group-focus:text-(--primary-black)!">
               EXPLORE THE COLLECTION
@@ -91,6 +248,7 @@ export default function Hero() {
           </Link>
         </div>
       </div>
+
       <div className="relative block xl:hidden text-center -top-33.5 ">
         <BotanicalGridMobile />
         <div className="lg:hidden relative bg-background -top-70 -mb-102 h-41.25 py-[17.5px] grid ">
