@@ -213,7 +213,7 @@ const LEFT_ITEMS: BotanicalItem[] = [
       '-mt-15.25 xl:-mt-11 2xl:-mt-6 invisible group-hover:visible group-active:visible [.is-auto-active_&]:visible',
     extraClassName:
       'mt-7.5 2xl:mt-0 mb-12.25 xl:mb-5 2xl:-mb-5.75 invisible group-hover:visible group-active:visible [.is-auto-active_&]:visible',
-    iosBaseFixClassName: 'translate-y-[62px]',
+    iosBaseFixClassName: 'translate-y-[64px]',
   },
   {
     id: 'coriander',
