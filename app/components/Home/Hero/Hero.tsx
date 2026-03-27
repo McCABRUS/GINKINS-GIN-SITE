@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -47,12 +47,23 @@ function buildSequence(left: string[], right: string[]) {
 
 function useBotanicalCycle(leftIds: string[], rightIds: string[]) {
   const [activeId, setActiveId] = useState<string | null>(null);
-  const [isHovering, setIsHovering] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
 
   const sequenceRef = useRef<string[]>([]);
   const indexRef = useRef(0);
   const timerRef = useRef<number | null>(null);
   const resumeTimerRef = useRef<number | null>(null);
+
+  const clearTimers = useCallback(() => {
+    if (timerRef.current !== null) {
+      window.clearTimeout(timerRef.current);
+    }
+    if (resumeTimerRef.current !== null) {
+      window.clearTimeout(resumeTimerRef.current);
+    }
+    timerRef.current = null;
+    resumeTimerRef.current = null;
+  }, []);
 
   useEffect(() => {
     sequenceRef.current = buildSequence(leftIds, rightIds);
@@ -60,32 +71,27 @@ function useBotanicalCycle(leftIds: string[], rightIds: string[]) {
   }, [leftIds, rightIds]);
 
   useEffect(() => {
-    if (isHovering) {
-      if (timerRef.current !== null) {
-        window.clearTimeout(timerRef.current);
-      }
-      timerRef.current = null;
-      return;
-    }
+    if (isPaused) return;
 
-    const tick = () => {
-      const sequence = sequenceRef.current;
-      if (sequence.length === 0) return;
+    const run = () => {
+      const seq = sequenceRef.current;
 
-      const nextId = sequence[indexRef.current] ?? null;
-      setActiveId(nextId);
+      if (!seq.length) return;
+
+      const next = seq[indexRef.current] ?? null;
+      setActiveId(next);
 
       indexRef.current += 1;
 
-      if (indexRef.current >= sequence.length) {
+      if (indexRef.current >= seq.length) {
         sequenceRef.current = buildSequence(leftIds, rightIds);
         indexRef.current = 0;
       }
 
-      timerRef.current = window.setTimeout(tick, STEP_MS);
+      timerRef.current = window.setTimeout(run, STEP_MS);
     };
 
-    timerRef.current = window.setTimeout(tick, STEP_MS);
+    timerRef.current = window.setTimeout(run, STEP_MS);
 
     return () => {
       if (timerRef.current !== null) {
@@ -93,57 +99,61 @@ function useBotanicalCycle(leftIds: string[], rightIds: string[]) {
       }
       timerRef.current = null;
     };
-  }, [isHovering, leftIds, rightIds]);
+  }, [isPaused, leftIds, rightIds]);
 
-  const onEnter = () => {
-    if (resumeTimerRef.current !== null) {
-      window.clearTimeout(resumeTimerRef.current);
-      resumeTimerRef.current = null;
-    }
-
-    if (timerRef.current !== null) {
-      window.clearTimeout(timerRef.current);
-      timerRef.current = null;
-    }
-
-    setIsHovering(true);
-    setActiveId(null);
-  };
-
-  const onLeave = () => {
+  const resumeAfterIdle = useCallback(() => {
     if (resumeTimerRef.current !== null) {
       window.clearTimeout(resumeTimerRef.current);
     }
 
     resumeTimerRef.current = window.setTimeout(() => {
-      setIsHovering(false);
+      setIsPaused(false);
+      indexRef.current = (indexRef.current + 1) % sequenceRef.current.length;
     }, RESUME_DELAY_MS);
-  };
+  }, []);
+
+  const onItemInteract = useCallback(
+    (id: string) => {
+      clearTimers();
+      setIsPaused(true);
+      setActiveId(id);
+      resumeAfterIdle();
+    },
+    [clearTimers, resumeAfterIdle],
+  );
+
+  const onContainerEnter = useCallback(() => {
+    clearTimers();
+    setIsPaused(true);
+  }, [clearTimers]);
+
+  const onContainerLeave = useCallback(() => {
+    resumeAfterIdle();
+  }, [resumeAfterIdle]);
 
   useEffect(() => {
     return () => {
-      if (timerRef.current !== null) {
-        window.clearTimeout(timerRef.current);
-      }
-      if (resumeTimerRef.current !== null) {
-        window.clearTimeout(resumeTimerRef.current);
-      }
+      clearTimers();
     };
-  }, []);
+  }, [clearTimers]);
 
   return {
     activeId,
-    isHovering,
-    onEnter,
-    onLeave,
+    isPaused,
+    onItemInteract,
+    onContainerEnter,
+    onContainerLeave,
   };
 }
 
 export default function Hero() {
-  const { activeId, isHovering, onEnter, onLeave } = useBotanicalCycle(
-    leftIds,
-    rightIds,
-  );
+  const {
+    activeId,
+    isPaused,
+    onItemInteract,
+    onContainerEnter,
+    onContainerLeave,
+  } = useBotanicalCycle(leftIds, rightIds);
 
   return (
     <section className="relative w-full overflow-hidden xl:-mt-34 lg:-mt-9">
@@ -166,7 +176,7 @@ export default function Hero() {
         </div>
 
         <div className="hidden lg:block absolute left-[10.25%] xl:top-86 lg:top-22 text-background text-center">
-          <p className="font-cormorant-garamond leading-relaxed text-3xl ">
+          <p className="font-cormorant-garamond leading-relaxed text-3xl">
             WE BOTTLE <br /> CONNECTION.
           </p>
         </div>
@@ -179,18 +189,20 @@ export default function Hero() {
 
         <div
           className="hidden xl:block"
-          onPointerEnter={onEnter}
-          onPointerLeave={onLeave}
+          onPointerEnter={onContainerEnter}
+          onPointerLeave={onContainerLeave}
         >
           <BotanicalGrid
             side="left"
             activeId={activeId}
-            isHovering={isHovering}
+            isHovering={isPaused}
+            onItemInteract={onItemInteract}
           />
           <BotanicalGrid
             side="right"
             activeId={activeId}
-            isHovering={isHovering}
+            isHovering={isPaused}
+            onItemInteract={onItemInteract}
           />
         </div>
 
@@ -249,9 +261,9 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="relative block xl:hidden text-center -top-33.5 ">
+      <div className="relative block xl:hidden text-center -top-33.5">
         <BotanicalGridMobile />
-        <div className="lg:hidden relative bg-background -top-70 -mb-102 h-41.25 py-[17.5px] grid ">
+        <div className="lg:hidden relative bg-background -top-70 -mb-102 h-41.25 py-[17.5px] grid">
           <h2 className="text-3xl! text-(--primary-red-main)! content-end">
             WE BOTTLE <br /> CONNECTION.
           </h2>
