@@ -28,11 +28,12 @@ export default function JoinModal({ open, onClose }: Props) {
       document.removeEventListener('keydown', onKey);
     };
   }, [open, onClose]);
+
   if (!open) return null;
 
   return (
     <div
-      className="fixed inset-0 z-500 flex items-center max-h-screen justify-center bg-black/80 px-4 md:px-10"
+      className="fixed inset-0 z-500 flex items-start justify-center overflow-y-auto bg-black/80 px-4 py-4 md:px-10 md:py-0 md:items-center"
       onClick={onClose}
       role="dialog"
       aria-modal="true"
@@ -41,7 +42,7 @@ export default function JoinModal({ open, onClose }: Props) {
         ref={modalRef}
         tabIndex={-1}
         onClick={(e) => e.stopPropagation()}
-        className="relative bg-background shadow-2xl overflow-hidden w-full grow md:w-auto h-dvh lg:max-w-296.5 p-10 lg:p-5"
+        className="relative w-full grow bg-background shadow-2xl max-h-[calc(100dvh-2rem)] overflow-y-auto overscroll-contain lg:max-w-296.5 p-10 lg:p-5 md:w-auto"
       >
         <button
           onClick={onClose}
@@ -62,6 +63,7 @@ export default function JoinModal({ open, onClose }: Props) {
             />
           </svg>
         </button>
+
         <div className="grid grid-cols-1 lg:grid-cols-[0.4815fr_0.5185fr] h-full bg-background lg:w-auto lg:h-auto gap-11.5">
           <div className="relative hidden lg:block md:aspect-533/818">
             <Image
@@ -71,7 +73,8 @@ export default function JoinModal({ open, onClose }: Props) {
               className="object-cover"
             />
           </div>
-          <div className="xl:pl-0 xl:py-0 xl:pr-8.25 text-center overflow-y-hidden relative content-center">
+
+          <div className="xl:pl-0 xl:py-0 xl:pr-8.25 text-center relative content-center">
             <h2 className="text-(--primary-red-main)! xs:max-w-133.5 2xs:max-w-58.25 place-self-center">
               Join the Inner Circle
             </h2>
