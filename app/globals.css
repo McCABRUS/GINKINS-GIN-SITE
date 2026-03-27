@@ -25,6 +25,12 @@
   --secondary-humo: #f6f8f7;
 }
 
+html,
+body {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
 .animatedButton {
   will-change: background-position;
   transition: background-position 0.6666666667s
