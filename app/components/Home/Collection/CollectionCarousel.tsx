@@ -16,6 +16,14 @@ import { collectionData } from './data';
 const AUTOPLAY_MS = 5500;
 const SWIPE_THRESHOLD = 48;
 
+const COMPACT_X = {
+  center: -25,
+  enterFromRight: 500,
+  enterFromLeft: -500,
+  exitToLeft: -500,
+  exitToRight: 500,
+};
+
 type Direction = 1 | -1;
 
 type GhostState = {
@@ -114,14 +122,6 @@ export default function CollectionCarousel() {
     },
     [],
   );
-
-  const COMPACT_X = {
-    center: 0,
-    enterFromRight: 120,
-    enterFromLeft: -120,
-    exitToLeft: -120,
-    exitToRight: 120,
-  };
 
   const computePositions = useCallback(() => {
     const stage = stageRef.current;
@@ -232,7 +232,7 @@ export default function CollectionCarousel() {
     if (slotRefs.current[0]) {
       gsap.set(slotRefs.current[0], {
         x: p.left,
-        opacity: 1,
+        opacity: 0.45,
         zIndex: 10,
       });
     }
@@ -248,7 +248,7 @@ export default function CollectionCarousel() {
     if (slotRefs.current[2]) {
       gsap.set(slotRefs.current[2], {
         x: p.right,
-        opacity: 1,
+        opacity: 0.45,
         zIndex: 10,
       });
     }
@@ -383,6 +383,7 @@ export default function CollectionCarousel() {
                 l,
                 {
                   x: p.offLeft,
+                  opacity: 0,
                   duration: 0.78,
                 },
                 0,
@@ -394,6 +395,7 @@ export default function CollectionCarousel() {
                 c,
                 {
                   x: p.left,
+                  opacity: 0.45,
                   duration: 0.78,
                 },
                 0,
@@ -405,6 +407,7 @@ export default function CollectionCarousel() {
                 r,
                 {
                   x: p.center,
+                  opacity: 1,
                   duration: 0.78,
                 },
                 0,
@@ -414,6 +417,7 @@ export default function CollectionCarousel() {
             if (g) {
               gsap.set(g, {
                 x: p.offRight,
+                opacity: 0,
                 zIndex: 10,
               });
 
@@ -421,6 +425,7 @@ export default function CollectionCarousel() {
                 g,
                 {
                   x: p.right,
+                  opacity: 0.45,
                   duration: 0.78,
                 },
                 0,
@@ -432,6 +437,7 @@ export default function CollectionCarousel() {
                 r,
                 {
                   x: p.offRight,
+                  opacity: 0,
                   duration: 0.78,
                 },
                 0,
@@ -443,6 +449,7 @@ export default function CollectionCarousel() {
                 c,
                 {
                   x: p.right,
+                  opacity: 0.45,
                   duration: 0.78,
                 },
                 0,
@@ -454,6 +461,7 @@ export default function CollectionCarousel() {
                 l,
                 {
                   x: p.center,
+                  opacity: 1,
                   duration: 0.78,
                 },
                 0,
@@ -463,6 +471,7 @@ export default function CollectionCarousel() {
             if (g) {
               gsap.set(g, {
                 x: p.offLeft,
+                opacity: 0,
                 zIndex: 10,
               });
 
@@ -470,6 +479,7 @@ export default function CollectionCarousel() {
                 g,
                 {
                   x: p.left,
+                  opacity: 0.45,
                   duration: 0.78,
                 },
                 0,
@@ -587,10 +597,13 @@ export default function CollectionCarousel() {
     pointerStartRef.current = null;
   };
 
+  const stopStageForButton = (e: React.PointerEvent<HTMLButtonElement>) => {
+    e.stopPropagation();
+    pointerStartRef.current = null;
+  };
+
   const compactWidthClass =
-    viewportMode === 'mobile'
-      ? 'w-[min(92vw,430px)] md:w-[min(92vw,724px)]'
-      : 'w-[min(92vw,724px)]';
+    viewportMode === 'mobile' ? 'w-[min(92vw,430px)]' : 'w-[min(96vw,724px)]';
 
   return (
     <div className="pt-25 top-56.25 h-312.5 md:h-295 lg:h-205 relative overflow-hidden">
@@ -611,19 +624,57 @@ export default function CollectionCarousel() {
           <button
             type="button"
             aria-label="Previous card"
-            onClick={prev}
-            className="absolute left-4 md:left-6 lg:left-[6%] top-[40%] z-30 grid h-10 w-10 -translate-y-1/2 place-items-center rounded-full bg-(--primary-red-main) text-background shadow-lg transition hover:scale-105 focus:scale-105 active:scale-105"
+            onPointerDown={stopStageForButton}
+            onPointerUp={(e) => {
+              stopStageForButton(e);
+              prev();
+            }}
+            className="absolute left-4 md:left-6 lg:left-[6%] top-[40%] z-30 grid h-10 w-10 -translate-y-1/2 place-items-center transition hover:scale-105 focus:scale-105 active:scale-105"
           >
-            <span className="text-2xl leading-none">←</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="58"
+              height="58"
+              viewBox="0 0 58 58"
+              fill="none"
+            >
+              <circle
+                cx="29"
+                cy="29"
+                r="29"
+                transform="rotate(-180 29 29)"
+                fill="#AC1F2C"
+              />
+              <path
+                d="M21.5471 28.2796L42.247 28.2796L42.247 31.4057L21.5471 31.4057L30.6692 39.7899L28.2645 42L15.0371 29.8427L28.2645 17.6853L30.6692 19.8954L21.5471 28.2796Z"
+                fill="black"
+              />
+            </svg>
           </button>
 
           <button
             type="button"
             aria-label="Next card"
-            onClick={next}
-            className="absolute right-4 md:right-6 lg:right-[6%] top-[40%] z-30 grid h-10 w-10 -translate-y-1/2 place-items-center rounded-full bg-(--primary-red-main) text-background shadow-lg transition hover:scale-105 focus:scale-105 active:scale-105"
+            onPointerDown={stopStageForButton}
+            onPointerUp={(e) => {
+              stopStageForButton(e);
+              next();
+            }}
+            className="absolute right-4 md:right-6 lg:right-[6%] top-[40%] z-30 grid h-10 w-10 -translate-y-1/2 place-items-center transition hover:scale-105 focus:scale-105 active:scale-105"
           >
-            <span className="text-2xl leading-none">→</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="58"
+              height="58"
+              viewBox="0 0 58 58"
+              fill="none"
+            >
+              <circle cx="29" cy="29" r="29" fill="#AC1F2C" />
+              <path
+                d="M36.4529 29.7204L15.753 29.7204L15.753 26.5943L36.4529 26.5943L27.3308 18.2101L29.7355 16L42.9629 28.1574L29.7355 40.3147L27.3308 38.1046L36.4529 29.7204Z"
+                fill="black"
+              />
+            </svg>
           </button>
 
           {viewportMode === 'desktop' ? (
