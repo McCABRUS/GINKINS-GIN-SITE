@@ -9,8 +9,8 @@ export default function CollectionHome() {
           transform: 'rotate(90deg) scale(1, 1)',
         }}
       ></div>
-      <div className="bg-(--primary-black) w-full h-429 md:h-346.5 lg:h-317.5 absolute left-0"></div>
-      <div className="flex flex-col gap-6 items-center justify-start w-full absolute top-23">
+      <div className="bg-(--primary-black) w-full h-393.5 xs:h-387.5 md:h-332.5 lg:h-329 absolute left-0"></div>
+      <div className="flex flex-col gap-4 items-center justify-start w-full absolute top-23">
         <div className="p-2.5 flex flex-row gap-2.5 items-center justify-center shrink-0 w-113.5 relative">
           <h3 className="text-(--primary-gold-main)! text-center uppercase relative flex-1">
             The Gin Collection (Our Craft, <br className="inline lg:hidden" />
@@ -44,9 +44,9 @@ export default function CollectionHome() {
           }}
         ></div>
       </div>
-      <div className="flex flex-col gap-11 w-full absolute px-5 top-266.5 max-4xl:px-37.25 md:max-w-480 place-self-center">
+      <div className="flex flex-col gap-11 w-full absolute max-md:px-10 2xs:bottom-86.75 xs:bottom-93 md:bottom-34.75 lg:-bottom-11.25 bottom-87 max-4xl:px-37.25 md:max-w-480 place-self-center">
         <div
-          className="border-solid border-(--primary-gold-main) border-t mt-35 md:-mt-5 lg:-mt-14 border-r-0 border-b-0 border-l-0 self-stretch shrink-0 h-0 relative"
+          className="border-solid border-(--primary-gold-main) border-t mt-35 md:-mt-5 lg:-mt-2.5 border-r-0 border-b-0 border-l-0 self-stretch shrink-0 h-0 relative"
           style={{
             transformOrigin: 'top',
             transform: 'rotate(0deg) scale(1, 1)',
@@ -54,7 +54,7 @@ export default function CollectionHome() {
         ></div>
         <div className="flex flex-row items-start justify-center self-stretch shrink-0 h-[216.5px] relative mt-20 md:mt-0">
           <div className="flex flex-col lg:flex-row gap-0 items-start justify-center flex-1 h-[216.5px] relative">
-            <div className="text-background text-left text-base leading-[24.16px] relative flex-1 h-37 mb-20 md:mb-0">
+            <div className="text-background text-left text-base leading-[24.16px] relative flex-1 h-37 mb-12.75 md:mb-0">
               Every bottle of Ginkins is a celebration—of tradition reimagined,
               of botanicals brought to life, and of the shared joy in
               discovering something truly exceptional.{' '}

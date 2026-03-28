@@ -17,7 +17,7 @@ const AUTOPLAY_MS = 5500;
 const SWIPE_THRESHOLD = 48;
 
 const COMPACT_X = {
-  center: -25,
+  center: 0,
   enterFromRight: 500,
   enterFromLeft: -500,
   exitToLeft: -500,
@@ -602,8 +602,7 @@ export default function CollectionCarousel() {
     pointerStartRef.current = null;
   };
 
-  const compactWidthClass =
-    viewportMode === 'mobile' ? 'w-[min(92vw,430px)]' : 'w-[min(96vw,724px)]';
+  const compactWidthClass = 'w-full';
 
   return (
     <div className="pt-25 top-56.25 h-312.5 md:h-295 lg:h-205 relative overflow-hidden">
@@ -629,7 +628,7 @@ export default function CollectionCarousel() {
               stopStageForButton(e);
               prev();
             }}
-            className="absolute left-4 md:left-6 lg:left-[6%] top-[40%] z-30 grid h-10 w-10 -translate-y-1/2 place-items-center transition hover:scale-105 focus:scale-105 active:scale-105"
+            className="absolute left-5.25 md:left-10 lg:left-12.5 xl:left-53.75 lg:top-35 top-64 z-30 grid -translate-y-1/2 place-items-center transition hover:scale-105 focus:scale-105 active:scale-105"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -637,6 +636,7 @@ export default function CollectionCarousel() {
               height="58"
               viewBox="0 0 58 58"
               fill="none"
+              className="h-10 w-10 lg:h-14.5 lg:w-14.5"
             >
               <circle
                 cx="29"
@@ -660,7 +660,7 @@ export default function CollectionCarousel() {
               stopStageForButton(e);
               next();
             }}
-            className="absolute right-4 md:right-6 lg:right-[6%] top-[40%] z-30 grid h-10 w-10 -translate-y-1/2 place-items-center transition hover:scale-105 focus:scale-105 active:scale-105"
+            className="absolute right-5.25 md:right-10 lg:right-12.5 xl:right-53.75 lg:top-35 top-64 z-30 grid -translate-y-1/2 place-items-center transition hover:scale-105 focus:scale-105 active:scale-105"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -668,6 +668,7 @@ export default function CollectionCarousel() {
               height="58"
               viewBox="0 0 58 58"
               fill="none"
+              className="h-10 w-10 lg:h-14.5 lg:w-14.5"
             >
               <circle cx="29" cy="29" r="29" fill="#AC1F2C" />
               <path
