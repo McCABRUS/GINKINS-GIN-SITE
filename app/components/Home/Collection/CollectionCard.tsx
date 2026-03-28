@@ -22,13 +22,13 @@ export default function CollectionCard({
     <article className="collection-card h-full w-full lg:flex shrink-0 cursor-pointer select-none gap-8 xl:ml-0 lg:ml-35">
       <div className="collection-card__media shrink-0 w-full lg:w-95 h-86 lg:h-168.25 relative mt-8 lg:mt-0">
         <Image
-          className="object-contain filter-[drop-shadow(26px_10px_4px_#111)] lg:filter-[drop-shadow(60px_8px_10px_#111)] -ml-6.25 md:ml-0"
+          className="object-contain filter-[drop-shadow(26px_10px_4px_#111)] lg:filter-[drop-shadow(60px_8px_10px_#111)] -ml-6.25 lg:ml-0"
           fill
           alt={alt}
           src={img}
         />
         <div
-          className="bg-[rgba(0,0,0,0.40)] rounded-[50%] w-25 lg:w-45.75 h-6 absolute left-[36%] lg:left-35 -bottom-3.75 lg:-bottom-5.5"
+          className="bg-[rgba(0,0,0,0.40)] rounded-[50%] w-25 lg:w-45.75 h-6 absolute left-[36%] md:left-[43%] lg:left-35 -bottom-3.75 lg:-bottom-5.5"
           style={{ filter: 'blur(5.72px)' }}
         />
       </div>
