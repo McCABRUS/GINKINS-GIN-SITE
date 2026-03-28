@@ -54,7 +54,6 @@ function useMobileBotanicalCycle() {
     setSide(nextSide);
   };
 
-  // 🔥 CICLO AUTOMÁTICO (SIN useCallback)
   useEffect(() => {
     if (isPaused) return;
 
@@ -84,7 +83,6 @@ function useMobileBotanicalCycle() {
     };
   }, [isPaused]);
 
-  // INIT
   useEffect(() => {
     const ua = window.navigator.userAgent;
     const platform = window.navigator.platform;
@@ -106,7 +104,6 @@ function useMobileBotanicalCycle() {
     return () => clearTimers();
   }, []);
 
-  // INTERACCIÓN
   const registerInteraction = (id: string) => {
     clearTimers();
 
@@ -115,8 +112,6 @@ function useMobileBotanicalCycle() {
 
     resumeTimerRef.current = window.setTimeout(() => {
       setIsPaused(false);
-
-      // 🔥 IMPORTANTE: reiniciar índice para evitar quedarse pegado
       indexRef.current = indexRef.current % sequenceRef.current.length;
     }, RESUME_DELAY_MS);
   };
