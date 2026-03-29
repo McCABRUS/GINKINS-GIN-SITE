@@ -48,9 +48,9 @@ export default function CollectionCard({
           <Link
             href={`https://ginkinsgin.distilleryspirits.com/#${linkId}`}
             target="_blank"
-            className="items-center justify-center bg-(--primary-red-main) px-5 py-1.5 transition hover:bg-(--primary-gold-main) active:bg-(--primary-gold-main) focus:bg-(--primary-gold-main) mx-auto md:mx-0 grid max-w-65 group"
+            className="items-center justify-center px-5 py-1.5 transition animatedButton mx-auto md:mx-0 grid max-w-65 group"
           >
-            <h5 className="text-background! text-lg! group-hover:text-(--primary-black)! group-active:text-(--primary-black)! group-focus:text-(--primary-black)!">
+            <h5 className="text-lg! group-hover:text-(--primary-black)! group-active:text-(--primary-black)! group-focus:text-(--primary-black)!">
               Find Ginkins Near to You
             </h5>
           </Link>

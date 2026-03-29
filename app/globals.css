@@ -43,10 +43,20 @@ body {
     var(--primary-gold-main) 50%,
     var(--primary-red-main) 50%
   );
+  color: var(--white-100) !important;
 }
 
 .animatedButton:hover {
   background-position: 0% center;
+  color: var(--primary-black) !important;
+}
+
+.animatedButton h5 {
+  color: var(--white-100) !important;
+}
+
+.animatedButton:hover h5 {
+  color: var(--primary-black) !important;
 }
 
 @theme inline {

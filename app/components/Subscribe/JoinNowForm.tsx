@@ -47,9 +47,9 @@ export default function JoinNowForm() {
         <button
           type="submit"
           disabled={loading}
-          className="min-w-min[124px] h-10 inline-flex items-center justify-center bg-(--primary-red-main) px-5 py-1.5 transition disabled:opacity-50 group"
+          className="min-w-min[124px] h-10 inline-flex items-center justify-center animatedButton px-5 py-1.5 transition disabled:opacity-50 group"
         >
-          <h5 className="text-background! whitespace-nowrap group-hover:text-(--primary-gold-300)! group-active:text-(--primary-gold-300)! group-focus:text-(--primary-gold-300)!">
+          <h5 className="whitespace-nowrap group-hover:text-(--primary-gold-300)! group-active:text-(--primary-gold-300)! group-focus:text-(--primary-gold-300)!">
             {loading ? 'Joining...' : 'Join Now'}
           </h5>
         </button>

@@ -684,7 +684,7 @@ export default function CollectionCarousel() {
         >
           <button
             type="button"
-            aria-label="Previous card"
+            aria-label="Previous Bottle"
             onPointerDown={stopStageForButton}
             onPointerUp={(e) => {
               stopStageForButton(e);
@@ -720,7 +720,7 @@ export default function CollectionCarousel() {
 
           <button
             type="button"
-            aria-label="Next card"
+            aria-label="Next Bottle"
             onPointerDown={stopStageForButton}
             onPointerUp={(e) => {
               stopStageForButton(e);

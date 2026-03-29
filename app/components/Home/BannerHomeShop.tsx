@@ -28,9 +28,9 @@ export default function BannerHomeShop() {
             <Link
               href="https://ginkinsgin.distilleryspirits.com"
               target="_blank"
-              className=" inline-block items-center justify-center bg-(--primary-red-main) px-5 py-1.5 text-sm font-medium uppercase  transition hover:bg-(--primary-gold-main) active:bg-(--primary-gold-main) focus:bg-(--primary-gold-main) group"
+              className=" inline-block items-center justify-center animatedButton px-5 py-1.5 text-sm font-medium uppercase  transition group"
             >
-              <h5 className="text-background! group-hover:text-(--primary-black)! group-active:text-(--primary-black)! group-focus:text-(--primary-black)!">
+              <h5 className="group-hover:text-(--primary-black)! group-active:text-(--primary-black)! group-focus:text-(--primary-black)!">
                 Find Ginkins
               </h5>
             </Link>

@@ -61,9 +61,9 @@ export default function Contact() {
             <div className="mt-16 w-full hidden lg:block">
               <a
                 href={`mailto:${'info'}@${'ginkins'}.com`}
-                className="relative w-full h-9.75 mt-9.5 flex mx-auto items-center justify-center bg-(--primary-red-main) px-5 py-1.5 transition hover:bg-(--primary-gold-main) active:bg-(--primary-gold-main) focus:bg-(--primary-gold-main) group"
+                className="relative w-full h-9.75 mt-9.5 flex mx-auto items-center justify-center px-5 py-1.5 transition animatedButton group"
               >
-                <h5 className="text-background! group-hover:text-(--primary-black)! group-active:text-(--primary-black)! group-focus:text-(--primary-black)!">
+                <h5 className="group-hover:text-(--primary-black)! group-active:text-(--primary-black)! group-focus:text-(--primary-black)!">
                   INFO@GINKINS.COM
                 </h5>
               </a>
@@ -89,9 +89,9 @@ export default function Contact() {
         <div className="mt-16 mb-26.5 w-full block lg:hidden">
           <a
             href={`mailto:${'info'}@${'ginkins'}.com`}
-            className="relative w-full lg:w-1/2 h-9.75 mt-9.5 flex mx-auto items-center justify-center bg-(--primary-red-main) px-5 py-1.5 transition hover:bg-(--primary-gold-main) active:bg-(--primary-gold-main) focus:bg-(--primary-gold-main) group"
+            className="relative w-full lg:w-1/2 h-9.75 mt-9.5 flex mx-auto items-center justify-center px-5 py-1.5 transition animatedButton group"
           >
-            <h5 className="text-background! group-hover:text-(--primary-black)! group-active:text-(--primary-black)! group-focus:text-(--primary-black)!">
+            <h5 className="group-hover:text-(--primary-black)! group-active:text-(--primary-black)! group-focus:text-(--primary-black)!">
               INFO@GINKINS.COM
             </h5>
           </a>

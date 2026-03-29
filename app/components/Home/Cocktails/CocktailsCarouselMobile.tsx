@@ -190,7 +190,7 @@ export default function CocktailsCarouselMobile() {
       </p>
 
       <div className="mt-6 grid w-40 mx-auto">
-        <button className="inline-flex items-baseline justify-center bg-(--primary-red-main) px-8 py-3 text-sm font-medium uppercase text-white transition hover:bg-(--primary-gold-main)">
+        <button className="inline-flex items-baseline justify-center px-8 py-3 text-sm font-medium uppercase text-white hover:text-(--primary-black) transition animatedButton">
           See More
         </button>
       </div>

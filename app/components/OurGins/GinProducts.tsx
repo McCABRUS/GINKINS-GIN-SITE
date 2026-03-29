@@ -163,9 +163,9 @@ function ProductRow({
         <Link
           href={`https://ginkinsgin.distilleryspirits.com` + `#${linkId}`}
           target="_blank"
-          className="w-40 lg:w-44.25 h-9.75 mt-9.5 flex items-center justify-center bg-(--primary-red-main) px-5 py-1.5 transition hover:bg-(--primary-gold-main) active:bg-(--primary-gold-main) focus:bg-(--primary-gold-main) mx-auto lg:mx-0 group"
+          className="w-40 lg:w-44.25 h-9.75 mt-9.5 flex items-center justify-center px-5 py-1.5 transition animatedButton mx-auto lg:mx-0 group"
         >
-          <h5 className="text-background! group-hover:text-(--primary-black)! group-active:text-(--primary-black)! group-focus:text-(--primary-black)!">
+          <h5 className="group-hover:text-(--primary-black)! group-active:text-(--primary-black)! group-focus:text-(--primary-black)!">
             Shop ONLINE
           </h5>
         </Link>

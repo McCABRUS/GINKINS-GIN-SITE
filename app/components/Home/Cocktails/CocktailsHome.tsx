@@ -79,9 +79,9 @@ export default function CocktailsHome() {
               <div className="mt-6">
                 <Link
                   href={`/cocktails#${card.sectionTarget}`}
-                  className="inline-flex items-baseline justify-center bg-(--primary-red-main) px-5 py-1.5 transition hover:bg-(--primary-gold-main) active:bg-(--primary-gold-main) focus:bg-(--primary-gold-main) group"
+                  className="inline-flex items-baseline justify-center animatedButton px-5 py-1.5 transition group"
                 >
-                  <h5 className="text-background! text-lg! group-hover:text-(--primary-black)! group-active:text-(--primary-black)! group-focus:text-(--primary-black)!">
+                  <h5 className="text-lg! group-hover:text-(--primary-black)! group-active:text-(--primary-black)! group-focus:text-(--primary-black)!">
                     See More
                   </h5>
                 </Link>

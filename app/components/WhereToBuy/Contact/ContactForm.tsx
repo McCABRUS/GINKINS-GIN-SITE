@@ -138,9 +138,9 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={loading || !token}
-        className="relative w-40 lg:w-44.25 h-9.75 mt-9.5 flex mx-auto items-center justify-center bg-(--primary-red-200) px-5 lg:px-8 py-1.5 lg:py-3 text-sm font-medium uppercase text-background transition hover:bg-(--primary-gold-main) active:bg-(--primary-gold-main) focus:bg-(--primary-gold-main) disabled:opacity-50 group"
+        className="relative w-40 lg:w-44.25 h-9.75 mt-9.5 flex mx-auto items-center justify-center px-5 lg:px-8 py-1.5 lg:py-3 text-sm font-medium uppercase text-background transition animatedButton disabled:opacity-50 group"
       >
-        <h5 className="text-background! group-hover:text-(--primary-black)! group-active:text-(--primary-black)! group-focus:text-(--primary-black)!">
+        <h5 className="group-hover:text-(--primary-black)! group-active:text-(--primary-black)! group-focus:text-(--primary-black)!">
           {loading ? 'Sending…' : 'Submit'}
         </h5>
       </button>

@@ -18,13 +18,13 @@ export default function NewsletterForm({ isFooter }: Props) {
   let inputStyles =
     'w-full max-w-sm border-b border-(--primary-black) bg-transparent py-2 text-left text-base outline-none placeholder:text-(--primary-black) placeholder:opacity-60 text-(--primary-black)';
   let buttonStyles =
-    'min-w-min[124px] h-10 inline-flex items-center justify-center bg-(--primary-red-main) px-5 py-1.5  transition disabled:opacity-50 group';
+    'min-w-min[124px] h-10 inline-flex items-center justify-center hover:text-(--primary-black) animatedButton px-5 py-1.5  transition disabled:opacity-50 group';
 
   const tokenRef = useRef<string | null>(null);
   const widgetIdRef = useRef<string | null>(null);
   if (isFooter) {
     buttonStyles =
-      'self-center inline-flex items-center justify-center px-3 py-1.5 bg-(--primary-red-main) text-background font-medium transition-colors h-9 w-14.5 disabled:opacity-50 group';
+      'self-center inline-flex items-center justify-center px-3 py-1.5 text-background hover:text-(--primary-black) animatedButton font-medium transition-colors h-9 w-14.5 disabled:opacity-50 group';
     formStyles = 'mt-4 flex flex-col sm:flex-row gap-3 md:items-center w-full';
     inputStyles =
       'text-center md:text-start text-base w-full sm:flex-1 py-2 bg-(--primary-black) border-b border-(--primary-white-100) text-background placeholder-(--secondary-gray-500) focus:placeholder-background focus:outline-none mb-4 md:mb-0';
@@ -141,7 +141,7 @@ export default function NewsletterForm({ isFooter }: Props) {
             disabled={status === 'loading' || !isTurnstileReady}
             className={buttonStyles}
           >
-            <h5 className="text-background! whitespace-nowrap group-hover:text-(--primary-gold-300)! group-active:text-(--primary-gold-300)! group-focus:text-(--primary-gold-300)!">
+            <h5 className="hover:text-(--primary-black)! whitespace-nowrap">
               {status === 'loading'
                 ? 'Sending…'
                 : isFooter

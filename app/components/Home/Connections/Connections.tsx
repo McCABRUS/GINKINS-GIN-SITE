@@ -52,9 +52,9 @@ export default function Connections() {
             <div className="flex lg:items-start items-center justify-center lg:justify-start mt-10 lg:mt-8 lg:mb-0 mb-13.25">
               <Link
                 href="/about-ginkins"
-                className="w-40 lg:w-87.5 h-9.75 xl:mt-15.75 flex items-center justify-center bg-(--primary-red-main) px-5 py-1.5 transition hover:bg-(--primary-gold-main) active:bg-(--primary-gold-main) focus:bg-(--primary-gold-main) group"
+                className="w-40 lg:w-87.5 h-9.75 xl:mt-15.75 flex items-center justify-center px-5 py-1.5 transition animatedButton group"
               >
-                <h5 className="text-background! text-lg! group-hover:text-(--primary-black)! group-active:text-(--primary-black)! group-focus:text-(--primary-black)!">
+                <h5 className="text-lg! group-hover:text-(--primary-black)! group-active:text-(--primary-black)! group-focus:text-(--primary-black)!">
                   Know more
                 </h5>
               </Link>

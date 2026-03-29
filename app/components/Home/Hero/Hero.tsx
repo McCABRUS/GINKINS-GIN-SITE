@@ -448,7 +448,7 @@ export default function Hero() {
             role="button"
             className="inline-flex items-center justify-center px-5 py-1.5 w-81.25 text-sm transition group animatedButton"
           >
-            <h5 className="text-background! text-lg! group-hover:text-(--primary-black)! group-active:text-(--primary-black)! group-focus:text-(--primary-black)!">
+            <h5 className="text-lg! group-hover:text-(--primary-black)! group-active:text-(--primary-black)! group-focus:text-(--primary-black)!">
               EXPLORE THE COLLECTION
             </h5>
           </Link>

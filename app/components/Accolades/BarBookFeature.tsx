@@ -61,8 +61,8 @@ export default function BarBookFeature() {
               <br />
               November 5, 2025
             </p>
-            <button className="inline-flex items-center justify-center bg-(--primary-red-main) px-1 md:px-8 py-3 text-lg font-medium uppercase transition hover:bg-(--primary-gold-main) active:bg-(--primary-gold-main) focus:bg-(--primary-gold-main) group">
-              <h5 className="text-background! group-hover:text-(--primary-black)! group-active:text-(--primary-black)! group-focus:text-(--primary-black)!">
+            <button className="inline-flex items-center justify-center px-1 md:px-8 py-3 text-lg font-medium uppercase transition animatedButton group">
+              <h5 className="group-hover:text-(--primary-black)! group-active:text-(--primary-black)! group-focus:text-(--primary-black)!">
                 Read the feature on The Bar Book
               </h5>
             </button>

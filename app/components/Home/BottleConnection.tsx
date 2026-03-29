@@ -51,9 +51,9 @@ export default function BottleConnection() {
               <Link
                 href="https://ginkinsgin.distilleryspirits.com"
                 target="_blank"
-                className="inline-flex items-center justify-center bg-(--primary-red-main) px-5 py-1.5 transition hover:bg-(--primary-gold-main) active:bg-(--primary-gold-main) focus:bg-(--primary-gold-main) group"
+                className="inline-flex items-center justify-center px-5 py-1.5 transition animatedButton group"
               >
-                <h5 className="text-background! group-hover:text-(--primary-black)! group-active:text-(--primary-black)! group-focus:text-(--primary-black)!">
+                <h5 className="group-hover:text-(--primary-black)! group-active:text-(--primary-black)! group-focus:text-(--primary-black)!">
                   Shop Online
                 </h5>
               </Link>
