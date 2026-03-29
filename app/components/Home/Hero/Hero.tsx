@@ -257,7 +257,7 @@ export default function Hero() {
         gradientUnits: 'userSpaceOnUse',
         x1: '-40',
         y1: '160',
-        x2: '491',
+        x2: '1000',
         y2: '160',
       },
     });
@@ -297,14 +297,14 @@ export default function Hero() {
 
         gsap.set(stopSweep, {
           attr: {
-            offset: '100%',
+            offset: '150%',
             'stop-color': nextColor,
           },
         });
 
         gsap.set(stopEnd, {
           attr: {
-            offset: '130%',
+            offset: '150%',
             'stop-color': nextColor,
           },
         });
@@ -328,7 +328,7 @@ export default function Hero() {
         {
           duration: 3.2,
           attr: {
-            offset: '125%',
+            offset: '150%',
           },
         },
         0,
@@ -373,7 +373,7 @@ export default function Hero() {
                 gradientUnits="userSpaceOnUse"
                 x1="0"
                 y1="160"
-                x2="451"
+                x2="1000"
                 y2="160"
               >
                 <stop
