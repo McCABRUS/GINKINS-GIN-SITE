@@ -105,12 +105,10 @@ export const FAQS: FAQItem[] = [
         <ul className="[list-style:inside] my-8">
           <li>
             Gin & Tonic with lime <strong>(Scott’s signature)</strong>
-            <li>Martini with a citrus twist</li>
           </li>
-          <li>
-            Negroni
-            <li>Served neat over ice</li>
-          </li>
+          <li>Martini with a citrus twist</li>
+          <li>Negroni</li>
+          <li>Served neat over ice</li>
         </ul>
         <p>
           Ginkins’ smooth botanical balance makes it versatile in both classic
