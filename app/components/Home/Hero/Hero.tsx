@@ -36,16 +36,16 @@ const bottleSlides = [
   {
     src: '/imgs/home/ginkins-gin-barn-window-white.webp',
     alt: 'Ginkins Golden Bloom Gin bottle - Floral and honeyed premium gin',
-    accent: '#F2E9D8',
+    accent: '#E3D384',
   },
   {
     src: '/imgs/home/ginkins-gin-barn-window-black.webp',
     alt: 'Ginkins Heritage Reserve Gin bottle - Bold and traditional craft gin',
-    accent: '#111111',
+    accent: '#FFFFFF',
   },
 ];
 
-const BOTTLE_STEP_MS = 6500;
+const BOTTLE_STEP_MS = 12000;
 
 function shuffle<T>(array: T[]): T[] {
   const copy = [...array];
@@ -187,7 +187,8 @@ export default function Hero() {
   const stopStartRef = useRef<SVGStopElement | null>(null);
   const stopSweepRef = useRef<SVGStopElement | null>(null);
   const stopEndRef = useRef<SVGStopElement | null>(null);
-  const prevAccentRef = useRef(bottleSlides[0].accent);
+  const previousBottleIndexRef = useRef(0);
+  const hasMountedRef = useRef(false);
 
   useEffect(() => {
     const id = window.setInterval(() => {
@@ -205,9 +206,49 @@ export default function Hero() {
 
     if (!gradient || !stopStart || !stopSweep || !stopEnd) return;
 
-    const prevColor = prevAccentRef.current;
+    const prevColor =
+      bottleSlides[previousBottleIndexRef.current]?.accent ??
+      bottleSlides[0].accent;
     const nextColor =
       bottleSlides[activeBottleIndex]?.accent ?? bottleSlides[0].accent;
+
+    if (!hasMountedRef.current) {
+      hasMountedRef.current = true;
+      previousBottleIndexRef.current = activeBottleIndex;
+
+      gsap.set(gradient, {
+        attr: {
+          gradientUnits: 'userSpaceOnUse',
+          x1: '-40',
+          y1: '160',
+          x2: '491',
+          y2: '160',
+        },
+      });
+
+      gsap.set(stopStart, {
+        attr: {
+          offset: '0%',
+          'stop-color': nextColor,
+        },
+      });
+
+      gsap.set(stopSweep, {
+        attr: {
+          offset: '100%',
+          'stop-color': nextColor,
+        },
+      });
+
+      gsap.set(stopEnd, {
+        attr: {
+          offset: '130%',
+          'stop-color': nextColor,
+        },
+      });
+
+      return;
+    }
 
     gsap.killTweensOf([gradient, stopStart, stopSweep, stopEnd]);
 
@@ -268,14 +309,14 @@ export default function Hero() {
           },
         });
 
-        prevAccentRef.current = nextColor;
+        previousBottleIndexRef.current = activeBottleIndex;
       },
     });
 
     tl.to(
       stopSweep,
       {
-        duration: 5.4,
+        duration: 3.2,
         attr: {
           offset: '72%',
         },
@@ -285,7 +326,7 @@ export default function Hero() {
       .to(
         stopEnd,
         {
-          duration: 5.4,
+          duration: 3.2,
           attr: {
             offset: '125%',
           },
@@ -295,12 +336,12 @@ export default function Hero() {
       .to(
         stopStart,
         {
-          duration: 5.4,
+          duration: 3.2,
           attr: {
             'stop-color': nextColor,
           },
         },
-        1.6,
+        0.8,
       );
 
     return () => {
