@@ -44,8 +44,8 @@ export const FAQS: FAQItem[] = [
     id: 4,
     question: 'What botanicals do you use?',
     answer: (
-      <p>
-        Each Ginkins expression features a curated blend of botanicals:
+      <>
+        <p>Each Ginkins expression features a curated blend of botanicals:</p>
         <ul className="[list-style:inside] my-8">
           <li>
             Louisville Dry Gin: Juniper, coriander, angelica, cardamom, orris
@@ -60,8 +60,11 @@ export const FAQS: FAQItem[] = [
             aromatic richness.
           </li>
         </ul>
-        Every blend is natural, intentional, and crafted for balance and flavor.
-      </p>
+        <p>
+          Every blend is natural, intentional, and crafted for balance and
+          flavor.
+        </p>
+      </>
     ),
   },
   {
@@ -99,18 +102,16 @@ export const FAQS: FAQItem[] = [
         <p>There’s no wrong way—just your way.</p>
         <br />
         <p>Some favorites include:</p>
-        <p>
-          <ul className="[list-style:inside] my-8">
-            <li>
-              Gin & Tonic with lime <strong>(Scott’s signature)</strong>
-              <li>Martini with a citrus twist</li>
-            </li>
-            <li>
-              Negroni
-              <li>Served neat over ice</li>
-            </li>
-          </ul>
-        </p>
+        <ul className="[list-style:inside] my-8">
+          <li>
+            Gin & Tonic with lime <strong>(Scott’s signature)</strong>
+            <li>Martini with a citrus twist</li>
+          </li>
+          <li>
+            Negroni
+            <li>Served neat over ice</li>
+          </li>
+        </ul>
         <p>
           Ginkins’ smooth botanical balance makes it versatile in both classic
           and modern cocktails.
