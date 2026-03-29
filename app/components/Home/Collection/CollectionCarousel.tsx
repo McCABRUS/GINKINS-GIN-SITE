@@ -48,6 +48,8 @@ export default function CollectionCarousel() {
   >('desktop');
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [ghost, setGhost] = useState<GhostState>(null);
+  const [pendingDesktopReveal, setPendingDesktopReveal] = useState(false);
+  const [pendingCompactReveal, setPendingCompactReveal] = useState(false);
 
   const [slotCards, setSlotCards] = useState<[number, number, number]>(() => {
     if (total <= 1) return [0, 0, 0];
@@ -166,64 +168,10 @@ export default function CollectionCarousel() {
     );
 
     gsap.set(contentEls, {
-      autoAlpha: 0,
+      opacity: 0,
       y: 0,
+      visibility: 'hidden',
     });
-  }, []);
-
-  const revealDesktopContent = useCallback(() => {
-    const leftContent = slotRefs.current[0]?.querySelector(
-      '.collection-card__content',
-    );
-    const centerContent = slotRefs.current[1]?.querySelector(
-      '.collection-card__content',
-    );
-    const rightContent = slotRefs.current[2]?.querySelector(
-      '.collection-card__content',
-    );
-
-    const targets = [
-      { el: leftContent, opacity: 0.45 },
-      { el: centerContent, opacity: 1 },
-      { el: rightContent, opacity: 0.45 },
-    ].filter((item) => item.el) as { el: Element; opacity: number }[];
-
-    if (!targets.length) return;
-
-    const tl = gsap.timeline();
-
-    targets.forEach(({ el, opacity }, index) => {
-      tl.fromTo(
-        el,
-        { autoAlpha: 0, y: 8 },
-        {
-          autoAlpha: opacity,
-          y: 0,
-          duration: 0.28,
-          ease: 'power2.out',
-        },
-        index * 0.03,
-      );
-    });
-  }, []);
-
-  const revealCompactContent = useCallback(() => {
-    const content = mobileCardRef.current?.querySelector(
-      '.collection-card__content',
-    );
-
-    if (!content) return;
-
-    gsap.fromTo(
-      content,
-      { autoAlpha: 0, y: 8 },
-      {
-        autoAlpha: 1,
-        y: 0,
-        duration: 0.28,
-        ease: 'power2.out',
-      },
-    );
   }, []);
 
   const setDesktopBasePositions = useCallback(() => {
@@ -283,24 +231,122 @@ export default function CollectionCarousel() {
 
   useLayoutEffect(() => {
     if (isTransitioning) return;
+    if (pendingDesktopReveal || pendingCompactReveal) return;
 
     if (!isCompact) {
       setDesktopBasePositions();
-      revealDesktopContent();
     } else {
       setCompactBasePosition();
-      revealCompactContent();
     }
   }, [
     positions,
     slotCards,
     isCompact,
     isTransitioning,
+    pendingDesktopReveal,
+    pendingCompactReveal,
     setDesktopBasePositions,
     setCompactBasePosition,
-    revealDesktopContent,
-    revealCompactContent,
   ]);
+
+  useLayoutEffect(() => {
+    if (!pendingDesktopReveal) return;
+    if (isCompact) return;
+
+    setDesktopBasePositions();
+
+    const leftContent = slotRefs.current[0]?.querySelector(
+      '.collection-card__content',
+    );
+    const centerContent = slotRefs.current[1]?.querySelector(
+      '.collection-card__content',
+    );
+    const rightContent = slotRefs.current[2]?.querySelector(
+      '.collection-card__content',
+    );
+
+    const targets = [
+      { el: leftContent, opacity: 0.45 },
+      { el: centerContent, opacity: 1 },
+      { el: rightContent, opacity: 0.45 },
+    ].filter((item) => item.el) as { el: Element; opacity: number }[];
+
+    if (!targets.length) return;
+
+    gsap.set(
+      targets.map((item) => item.el),
+      {
+        opacity: 0,
+        y: 0,
+        visibility: 'visible',
+      },
+    );
+
+    const id = window.requestAnimationFrame(() => {
+      const tl = gsap.timeline({
+        onComplete: () => {
+          setPendingDesktopReveal(false);
+          setIsTransitioning(false);
+          isTransitioningRef.current = false;
+        },
+      });
+
+      targets.forEach(({ el, opacity }, index) => {
+        tl.to(
+          el,
+          {
+            opacity,
+            y: 0,
+            duration: 0.28,
+            ease: 'power2.out',
+            force3D: true,
+          },
+          index * 0.03,
+        );
+      });
+    });
+
+    return () => {
+      window.cancelAnimationFrame(id);
+    };
+  }, [isCompact, pendingDesktopReveal, setDesktopBasePositions]);
+
+  useLayoutEffect(() => {
+    if (!pendingCompactReveal) return;
+    if (!isCompact) return;
+
+    setCompactBasePosition();
+
+    const content = mobileCardRef.current?.querySelector(
+      '.collection-card__content',
+    );
+
+    if (!content) return;
+
+    gsap.set(content, {
+      opacity: 0,
+      y: 0,
+      visibility: 'visible',
+    });
+
+    const id = window.requestAnimationFrame(() => {
+      gsap.to(content, {
+        opacity: 1,
+        y: 0,
+        duration: 0.28,
+        ease: 'power2.out',
+        onComplete: () => {
+          setPendingCompactReveal(false);
+          setIsTransitioning(false);
+          isTransitioningRef.current = false;
+        },
+      });
+    });
+
+    return () => {
+      window.cancelAnimationFrame(id);
+    };
+  }, [isCompact, pendingCompactReveal, setCompactBasePosition]);
 
   const runTransition = useCallback(
     (direction: Direction) => {
@@ -345,7 +391,7 @@ export default function CollectionCarousel() {
         if (g) {
           const ghostContent = g.querySelector('.collection-card__content');
           if (ghostContent) {
-            gsap.set(ghostContent, { autoAlpha: 0 });
+            gsap.set(ghostContent, { opacity: 0, visibility: 'hidden' });
           }
         }
 
@@ -356,23 +402,19 @@ export default function CollectionCarousel() {
             ease: 'power3.inOut',
           },
           onComplete: () => {
-            flushSync(() => {
-              setSlotCards(nextSlots);
-              setGhost(null);
-            });
-
-            requestAnimationFrame(() => {
-              if (viewportModeRef.current === 'desktop') {
-                setDesktopBasePositions();
-                revealDesktopContent();
-              } else {
-                setCompactBasePosition();
-                revealCompactContent();
-              }
-
-              setIsTransitioning(false);
-              isTransitioningRef.current = false;
-            });
+            if (viewportModeRef.current === 'desktop') {
+              flushSync(() => {
+                setPendingDesktopReveal(true);
+                setSlotCards(nextSlots);
+                setGhost(null);
+              });
+            } else {
+              flushSync(() => {
+                setPendingCompactReveal(true);
+                setSlotCards(nextSlots);
+                setGhost(null);
+              });
+            }
           },
         });
 
@@ -545,15 +587,7 @@ export default function CollectionCarousel() {
         }
       });
     },
-    [
-      getNextSlots,
-      hideAllContent,
-      revealDesktopContent,
-      revealCompactContent,
-      setDesktopBasePositions,
-      setCompactBasePosition,
-      total,
-    ],
+    [getNextSlots, hideAllContent, total],
   );
 
   const next = useCallback(() => runTransition(1), [runTransition]);
@@ -686,7 +720,11 @@ export default function CollectionCarousel() {
                   ref={(el) => {
                     slotRefs.current[slot] = el;
                   }}
-                  className="absolute top-0 left-0 w-[min(92vw,980px)] will-change-transform"
+                  className={`absolute top-0 left-0 w-[min(92vw,980px)] will-change-transform ${
+                    pendingDesktopReveal
+                      ? '[&_.collection-card__content]:opacity-0'
+                      : ''
+                  }`}
                   style={{
                     zIndex: slot === 1 ? 20 : 10,
                   }}
@@ -722,9 +760,12 @@ export default function CollectionCarousel() {
           ) : (
             <>
               <div
-                key={`compact-active-${slotCards[1]}`}
                 ref={mobileCardRef}
-                className={`absolute top-0 left-1/2 -translate-x-1/2 ${compactWidthClass} will-change-transform`}
+                className={`absolute top-0 left-1/2 -translate-x-1/2 ${compactWidthClass} will-change-transform ${
+                  pendingCompactReveal
+                    ? '[&_.collection-card__content]:opacity-0'
+                    : ''
+                }`}
                 style={{ zIndex: 20 }}
               >
                 <CollectionCard
@@ -738,7 +779,6 @@ export default function CollectionCarousel() {
 
               {ghost && (
                 <div
-                  key={`compact-ghost-${ghost.index}-${ghost.direction}`}
                   ref={ghostRef}
                   className={`absolute top-0 left-1/2 -translate-x-1/2 ${compactWidthClass} pointer-events-none will-change-transform`}
                   style={{ zIndex: 15 }}
