@@ -270,9 +270,9 @@ const RIGHT_ITEMS: BotanicalItem[] = [
     labelClassName:
       'text-base font-normal text-(--secondary-black) justify-self-center text-center whitespace-nowrap xl:mt-2.5 invisible group-hover:visible group-active:visible [.is-auto-active_&]:visible place-content-center grid',
     baseClassName:
-      '-mt-45 xl:-mt-55.75 2xl:-mt-65.75 group-hover:invisible group-active:invisible [.is-auto-active_&]:invisible',
+      '-mt-45 xl:-mt-56 2xl:-mt-65.75 group-hover:invisible group-active:invisible [.is-auto-active_&]:invisible',
     hoverClassName:
-      '-mt-15 xl:-mt-11 2xl:-mt-6 invisible group-hover:visible group-active:visible [.is-auto-active_&]:visible',
+      '-mt-15 xl:-mt-11.25 2xl:-mt-6.5 invisible group-hover:visible group-active:visible [.is-auto-active_&]:visible',
     extraClassName:
       'mt-11.25 2xl:mt-5.75 mb-12.25 xl:mb-6 2xl:-mb-6 invisible group-hover:visible group-active:visible [.is-auto-active_&]:visible',
     iosBaseFixClassName: 'translate-y-[63px]',
@@ -309,9 +309,9 @@ const RIGHT_ITEMS: BotanicalItem[] = [
     labelClassName:
       'text-base font-normal text-(--secondary-black) justify-self-center text-center whitespace-nowrap mt-2.5 invisible group-hover:visible group-active:visible [.is-auto-active_&]:visible place-content-center grid',
     baseClassName:
-      '-mt-47.75 2xl:-mt-65.75 group-hover:invisible group-active:invisible [.is-auto-active_&]:invisible',
+      '-mt-47.75 xl:-mt-55.75 2xl:-mt-65.75 group-hover:invisible group-active:invisible [.is-auto-active_&]:invisible',
     hoverClassName:
-      '-mt-15.25 2xl:-mt-6.5 invisible group-hover:visible group-active:visible [.is-auto-active_&]:visible',
+      '-mt-15.25 2xl:-mt-6.5 xl:-mt-11.5 invisible group-hover:visible group-active:visible [.is-auto-active_&]:visible',
     extraClassName:
       'mt-10 2xl:mt-4 mb-12.25 xl:mb-6 2xl:-mb-6.25 invisible group-hover:visible group-active:visible [.is-auto-active_&]:visible',
     iosBaseFixClassName: 'translate-y-[64px]',
