@@ -71,6 +71,7 @@ export default function CollectionCarousel() {
 
   const autoplayRef = useRef<number | null>(null);
   const pointerStartRef = useRef<{ x: number; y: number } | null>(null);
+  const touchStartRef = useRef<{ x: number; y: number } | null>(null);
 
   const isTransitioningRef = useRef(false);
   const slotCardsRef = useRef(slotCards);
@@ -611,24 +612,48 @@ export default function CollectionCarousel() {
     };
   }, [viewportMode, runTransition]);
 
+  const resolveSwipe = useCallback(
+    (start: { x: number; y: number } | null, endX: number, endY: number) => {
+      if (!start || isTransitioningRef.current) return;
+
+      const dx = endX - start.x;
+      const dy = endY - start.y;
+
+      if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > SWIPE_THRESHOLD) {
+        if (dx < 0) next();
+        else prev();
+      }
+    },
+    [next, prev],
+  );
+
   const handlePointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
     pointerStartRef.current = { x: e.clientX, y: e.clientY };
     e.currentTarget.setPointerCapture(e.pointerId);
   };
 
   const handlePointerUp = (e: React.PointerEvent<HTMLDivElement>) => {
-    const start = pointerStartRef.current;
-    if (!start || isTransitioningRef.current) return;
-
-    const dx = e.clientX - start.x;
-    const dy = e.clientY - start.y;
-
-    if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > SWIPE_THRESHOLD) {
-      if (dx < 0) next();
-      else prev();
-    }
-
+    resolveSwipe(pointerStartRef.current, e.clientX, e.clientY);
     pointerStartRef.current = null;
+  };
+
+  const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
+    const touch = e.touches[0];
+    if (!touch) return;
+
+    touchStartRef.current = { x: touch.clientX, y: touch.clientY };
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent<HTMLDivElement>) => {
+    const touch = e.changedTouches[0];
+    if (!touch) return;
+
+    resolveSwipe(touchStartRef.current, touch.clientX, touch.clientY);
+    touchStartRef.current = null;
+  };
+
+  const handleTouchCancel = () => {
+    touchStartRef.current = null;
   };
 
   const stopStageForButton = (e: React.PointerEvent<HTMLButtonElement>) => {
@@ -653,6 +678,9 @@ export default function CollectionCarousel() {
           onPointerLeave={() => {
             pointerStartRef.current = null;
           }}
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
+          onTouchCancel={handleTouchCancel}
         >
           <button
             type="button"
@@ -661,6 +689,10 @@ export default function CollectionCarousel() {
             onPointerUp={(e) => {
               stopStageForButton(e);
               prev();
+            }}
+            onTouchStart={(e) => {
+              e.stopPropagation();
+              touchStartRef.current = null;
             }}
             className="absolute left-5.25 md:left-10 lg:left-12.5 xl:left-53.75 lg:top-35 top-64 z-30 grid -translate-y-1/2 place-items-center transition hover:scale-105 focus:scale-105 active:scale-105"
           >
@@ -693,6 +725,10 @@ export default function CollectionCarousel() {
             onPointerUp={(e) => {
               stopStageForButton(e);
               next();
+            }}
+            onTouchStart={(e) => {
+              e.stopPropagation();
+              touchStartRef.current = null;
             }}
             className="absolute right-5.25 md:right-10 lg:right-12.5 xl:right-53.75 lg:top-35 top-64 z-30 grid -translate-y-1/2 place-items-center transition hover:scale-105 focus:scale-105 active:scale-105"
           >

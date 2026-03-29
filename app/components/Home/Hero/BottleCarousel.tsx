@@ -4,14 +4,9 @@ import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
 const windows = [
-  '/imgs/home/ginkins-gin-barn-window-red.png',
-  '/imgs/home/ginkins-gin-barn-window-white.png',
-  '/imgs/home/ginkins-gin-barn-window-black.png',
-];
-const bottles = [
-  '/imgs/home/ginkins-louisville-dry-gin-bottle.webp',
-  '/imgs/home/ginkins-golden-bloom-gin-bottle.webp',
-  '/imgs/home/ginkins-heritage-reserve-gin-bottle.webp',
+  '/imgs/home/ginkins-gin-barn-window-red.webp',
+  '/imgs/home/ginkins-gin-barn-window-white.webp',
+  '/imgs/home/ginkins-gin-barn-window-black.webp',
 ];
 
 const bottleAlts = [
@@ -20,18 +15,12 @@ const bottleAlts = [
   'Ginkins Heritage Reserve Gin bottle - Bold and traditional craft gin',
 ];
 
-const windowAlts = [
-  'Arched red wood barn window texture inspired by Kentucky distillery heritage',
-  'Arched light wood barn window texture for clean website interface design',
-  'Arched black wood barn window texture for website background',
-];
-
 export default function BottleCarousel() {
   const [active, setActive] = useState(0);
 
   useEffect(() => {
     const id = setInterval(
-      () => setActive((i) => (i + 1) % bottles.length),
+      () => setActive((i) => (i + 1) % windows.length),
       5000,
     );
     return () => clearInterval(id);
@@ -39,23 +28,15 @@ export default function BottleCarousel() {
 
   return (
     <div>
-      <div className="absolute w-63.5 xl:w-96.5 h-104 xl:h-158.25 top-29 xl:top-1 left-2/4 -translate-x-1/2">
+      <div className="absolute w-62 xl:w-81.75 h-104 xl:h-137.5 top-29 xl:top-6 left-2/4 -translate-x-1/2">
         <Image
           src={windows[active]}
-          alt={windowAlts[active]}
+          alt={bottleAlts[active]}
           fill
           className="object-cover"
           priority
         />
       </div>
-      <Image
-        src={bottles[active]}
-        alt={bottleAlts[active]}
-        height={553}
-        width={272}
-        className="w-44.75 xl:w-68 absolute object-contain top-42 xl:top-25 left-[48%] -translate-x-1/2"
-        priority
-      />
     </div>
   );
 }
