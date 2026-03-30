@@ -1,5 +1,8 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
+
 export default function GridCard({
   title,
   alt,
@@ -8,6 +11,9 @@ export default function GridCard({
   order,
   bgColor,
   isLeft,
+  buttonMode = 'link',
+  buttonLabel = 'Shop ONLINE',
+  onButtonClick,
 }: {
   title: string;
   image: string;
@@ -16,7 +22,13 @@ export default function GridCard({
   description: string;
   bgColor: string;
   isLeft?: boolean;
+  buttonMode?: 'link' | 'modal';
+  buttonLabel?: string;
+  onButtonClick?: () => void;
 }) {
+  const buttonClassName =
+    'relative w-40 lg:w-44.25 h-9.75 mt-9.5 flex mx-auto xl:mx-0 content-start items-center justify-center px-5 py-1.5 transition animatedButton group';
+
   return (
     <div
       className={`flex flex-col items-center z-50 ${order} ${isLeft ? 'lg:place-self-start' : 'lg:place-self-end'}`}
@@ -36,15 +48,29 @@ export default function GridCard({
         <p className="text-center xl:text-left text-base leading-6 font-normal text-background my-5">
           {description}
         </p>
-        <Link
-          href="https://ginkinsgin.distilleryspirits.com"
-          target="_blank"
-          className="relative w-40 lg:w-44.25 h-9.75 mt-9.5 flex mx-auto xl:mx-0 content-start items-center justify-center px-5 py-1.5 transition animatedButton group"
-        >
-          <h5 className="group-hover:text-(--primary-black)! group-active:text-(--primary-black)! group-focus:text-(--primary-black)!">
-            Shop ONLINE
-          </h5>
-        </Link>
+
+        {buttonMode === 'modal' ? (
+          <button
+            type="button"
+            onClick={onButtonClick}
+            aria-haspopup="dialog"
+            className={buttonClassName}
+          >
+            <h5 className="group-hover:text-(--primary-black)! group-active:text-(--primary-black)! group-focus:text-(--primary-black)!">
+              {buttonLabel}
+            </h5>
+          </button>
+        ) : (
+          <Link
+            href="https://ginkinsgin.distilleryspirits.com"
+            target="_blank"
+            className={buttonClassName}
+          >
+            <h5 className="group-hover:text-(--primary-black)! group-active:text-(--primary-black)! group-focus:text-(--primary-black)!">
+              {buttonLabel}
+            </h5>
+          </Link>
+        )}
       </div>
     </div>
   );

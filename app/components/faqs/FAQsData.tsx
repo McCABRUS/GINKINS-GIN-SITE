@@ -135,7 +135,7 @@ export const FAQS: FAQItem[] = [
       <p>
         No. Gin receives its flavor from botanicals through infusion and
         distillation—not barrel aging. Some brands experiment with barrel-aged
-        gin, but it's optional and not required. Ginkins Gin is crafted
+        gin, but it&apos;s optional and not required. Ginkins Gin is crafted
         traditionally for clarity, freshness, and flavor integrity.
       </p>
     ),
