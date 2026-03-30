@@ -317,7 +317,7 @@ export default function WhereToBuyModal({
               <div className="self-stretch h-0 border-t border-(--primary-red-main)" />
             </div>
 
-            <div className="mt-16 md:grid md:grid-cols-[1fr_1fr] flex flex-col items-start overflow-hidden gap-6">
+            <div className="mt-8 lg:mt-16 md:grid md:grid-cols-[1fr_1fr] flex flex-col items-start overflow-hidden gap-6">
               {retailers.map((location) => (
                 <RetailerRow
                   key={location.name}
@@ -375,7 +375,7 @@ export default function WhereToBuyModal({
               )}
             </div>
 
-            <div className="hidden lg:grid lg:grid-cols-2 lg:gap-x-10 lg:gap-y-6 mt-16 overflow-hidden">
+            <div className="hidden lg:grid lg:grid-cols-2 lg:gap-x-10 lg:gap-y-6 mt-8 lg:mt-16 overflow-hidden">
               <div className="flex flex-col gap-6">
                 {restaurantLeftColumn.map((location) => (
                   <RestaurantRow
