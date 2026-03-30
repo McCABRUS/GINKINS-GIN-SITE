@@ -178,6 +178,14 @@ function ModalShell({
         onClick={(e) => e.stopPropagation()}
         className="relative w-full grow bg-background shadow-2xl max-h-[calc(100dvh-2rem)] overflow-y-auto overscroll-contain lg:max-w-296.5 p-5 pt-16 pb-8 lg:px-5 lg:py-4.25 md:w-auto"
       >
+        <Image
+          src="/imgs/join-popup/union_ginkins.webp"
+          alt=""
+          width={610}
+          height={456}
+          aria-hidden
+          className="pointer-events-none select-none absolute opacity-[0.045] z-0 -left-6 -top-2 w-[135%] max-w-none lg:left-[52%] lg:top-1.5 lg:-translate-x-1/2 lg:w-[72%]"
+        />
         <button
           ref={closeButtonRef}
           onClick={onClose}
