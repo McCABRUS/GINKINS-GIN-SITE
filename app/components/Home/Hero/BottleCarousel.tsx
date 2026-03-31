@@ -53,7 +53,7 @@ export default function BottleCarousel({ slides, activeIndex }: Props) {
     }).fromTo(
       incomingEl,
       {
-        opacity: 0,
+        opacity: 1,
         scale: 1.08,
         y: 16,
         filter: 'blur(14px)',
