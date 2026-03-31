@@ -184,7 +184,7 @@ function ModalShell({
           width={610}
           height={456}
           aria-hidden
-          className="pointer-events-none select-none absolute opacity-[0.045] z-0 -left-6 -top-2 w-[135%] max-w-none lg:left-[52%] lg:top-1.5 lg:-translate-x-1/2 lg:w-[72%]"
+          className="pointer-events-none select-none absolute opacity-[0.022] z-0 -left-6 -top-2 w-[135%] max-w-none lg:left-[52%] lg:top-1.5 lg:-translate-x-1/2 lg:w-[72%] h-[90%]"
         />
         <button
           ref={closeButtonRef}
