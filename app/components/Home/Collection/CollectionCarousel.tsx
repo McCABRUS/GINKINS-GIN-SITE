@@ -181,7 +181,7 @@ export default function CollectionCarousel() {
     if (slotRefs.current[0]) {
       gsap.set(slotRefs.current[0], {
         x: p.left,
-        opacity: 0.45,
+        opacity: 0.15,
         zIndex: 10,
       });
     }
@@ -197,7 +197,7 @@ export default function CollectionCarousel() {
     if (slotRefs.current[2]) {
       gsap.set(slotRefs.current[2], {
         x: p.right,
-        opacity: 0.45,
+        opacity: 0.15,
         zIndex: 10,
       });
     }
