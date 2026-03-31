@@ -176,7 +176,7 @@ function ModalShell({
         ref={modalRef}
         tabIndex={-1}
         onClick={(e) => e.stopPropagation()}
-        className="relative w-full grow bg-background shadow-2xl max-h-[calc(100dvh-2rem)] overflow-y-auto overscroll-contain lg:max-w-296.5 p-5 pt-16 pb-8 lg:px-5 lg:py-4.25 md:w-auto"
+        className="relative w-full grow bg-background shadow-2xl max-h-[calc(100dvh-2rem)] overflow-y-auto overflow-x-hidden overscroll-contain lg:max-w-296.5 p-5 pt-16 pb-8 lg:px-5 lg:py-4.25 md:w-auto"
       >
         <Image
           src="/imgs/join-popup/union_ginkins.webp"
