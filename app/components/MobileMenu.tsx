@@ -47,7 +47,7 @@ export default function MobileMenu() {
             ✕
           </button>
 
-          <nav className="px-12 pt-24 space-y-8 text-sm uppercase">
+          <nav className="px-12 py-24 space-y-8 text-sm uppercase bg-(--primary-black)">
             <MenuItem
               label="About Ginkins"
               link="/about-ginkins"
