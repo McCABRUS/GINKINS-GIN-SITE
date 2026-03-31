@@ -167,7 +167,7 @@ function ModalShell({
 
   return (
     <div
-      className="fixed inset-0 z-500 flex items-start justify-center overflow-y-auto bg-black/80 px-4 py-4 md:px-10 md:py-0 md:items-center"
+      className="fixed inset-0 z-500 flex items-start justify-center overflow-y-auto overflow-x-hidden bg-black/80 px-4 py-4 md:px-10 md:py-0 md:items-center"
       onClick={onClose}
       role="dialog"
       aria-modal="true"
