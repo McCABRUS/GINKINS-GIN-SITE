@@ -357,7 +357,7 @@ export default function Hero() {
       </div>
 
       <div className="relative mx-auto max-w-400 h-250 z-30 justify-center flex">
-        <div className="absolute -top-7.5 lg:top-0 xl:top-56.5 justify-self-center">
+        <div className="absolute -top-7.5 lg:top-0 xl:top-55.75 justify-self-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="451"

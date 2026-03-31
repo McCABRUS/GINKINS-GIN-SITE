@@ -67,7 +67,7 @@ export default function FindWhereToBuy() {
             description="Interested in bringing Ginkins to your bar, store, or event? We’d love to connect."
             image="/imgs/where_to_buy/ginkins-gin-botanical-gift-box--high-res.webp"
             buttonLabel="PARTNER WITH US"
-            buttonLink="mailto:info@ginkins.com"
+            buttonLink="mailto:info@ginkins.com "
           />
           <CentralGridCard />
         </div>
@@ -86,7 +86,6 @@ export default function FindWhereToBuy() {
       />
       <div className="hidden lg:block absolute border-solid border-(--primary-gold-main) border-t border-r-0 border-b-0 border-l-0 shrink-0 w-50 2xl:w-[40%] lg:w-[30%] h-0 z-20 top-1/2 left-25 2xl:left-[15%] xl:left-[10%] lg:left-[15%] -translate-x-1/2" />
       <div className="hidden lg:block absolute border-solid border-(--primary-gold-main) border-t border-r-0 border-b-0 border-l-0 shrink-0 w-50 2xl:w-[40%] lg:w-[30%] h-0 z-20 top-1/2 -right-25 2xl:-right-[25%] xl:-right-[20%] lg:-right-[15%] -translate-x-1/2" />
-
       <WhereToBuyModal
         variant="retailers"
         open={activeModal === 'retailers'}

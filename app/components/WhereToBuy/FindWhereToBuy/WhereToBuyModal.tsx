@@ -1,7 +1,8 @@
 'use client';
 
 import Image from 'next/image';
-import { useEffect, useRef, useState, type ReactNode } from 'react';
+import { useEffect, useState, type ReactNode } from 'react';
+import AnimatedModalShell from '@/components/AnimatedModalShell';
 
 type Variant = 'retailers' | 'restaurants';
 
@@ -142,63 +143,24 @@ function ModalShell({
   onClose: () => void;
   children: ReactNode;
 }) {
-  const modalRef = useRef<HTMLDivElement | null>(null);
-  const closeButtonRef = useRef<HTMLButtonElement | null>(null);
-
-  useEffect(() => {
-    function onKey(e: KeyboardEvent) {
-      if (e.key === 'Escape') onClose();
-    }
-
-    if (!open) return;
-
-    const previousOverflow = document.body.style.overflow;
-    document.body.style.overflow = 'hidden';
-    document.addEventListener('keydown', onKey);
-    setTimeout(() => closeButtonRef.current?.focus(), 0);
-
-    return () => {
-      document.body.style.overflow = previousOverflow;
-      document.removeEventListener('keydown', onKey);
-    };
-  }, [open, onClose]);
-
-  if (!open) return null;
-
   return (
-    <div
-      className="fixed inset-0 z-500 flex items-start justify-center overflow-y-auto overflow-x-hidden bg-black/80 px-4 py-4 md:px-10 md:py-0 md:items-center"
-      onClick={onClose}
-      role="dialog"
-      aria-modal="true"
+    <AnimatedModalShell
+      open={open}
+      onClose={onClose}
+      panelClassName="relative w-full grow bg-background shadow-2xl max-h-[calc(100dvh-2rem)] overflow-y-auto overflow-x-hidden overscroll-contain lg:max-w-296.5 p-5 pt-16 pb-8 lg:px-5 lg:py-4.25 md:w-auto"
+      overlayClassName="fixed inset-0 z-500 flex items-start justify-center overflow-y-auto overflow-x-hidden bg-black/80 px-4 py-4 md:px-10 md:py-0 md:items-center"
     >
-      <div
-        ref={modalRef}
-        tabIndex={-1}
-        onClick={(e) => e.stopPropagation()}
-        className="relative w-full grow bg-background shadow-2xl max-h-[calc(100dvh-2rem)] overflow-y-auto overflow-x-hidden overscroll-contain lg:max-w-296.5 p-5 pt-16 pb-8 lg:px-5 lg:py-4.25 md:w-auto"
+      <button
+        onClick={onClose}
+        aria-label="Close"
+        className="absolute top-3 md:top-5 right-3 md:right-5 z-20 text-background hover:text-(--primary-gold-300) w-6.5 h-6.5 md:w-8.5 md:h-8.5 transition-colors duration-300"
+        type="button"
       >
-        <Image
-          src="/imgs/join-popup/union_ginkins.webp"
-          alt=""
-          width={610}
-          height={456}
-          aria-hidden
-          className="pointer-events-none select-none absolute opacity-[0.022] z-0 -left-6 -top-2 w-[135%] max-w-none lg:left-[52%] lg:top-1.5 lg:-translate-x-1/2 lg:w-[72%] h-[90%]"
-        />
-        <button
-          ref={closeButtonRef}
-          onClick={onClose}
-          aria-label="Close"
-          className="absolute top-3 md:top-5 right-3 md:right-5 z-20 text-background hover:text-(--primary-gold-300) w-6.5 h-6.5 md:w-8.5 md:h-8.5 transition-colors duration-300"
-          type="button"
-        >
-          <CloseButtonSvg />
-        </button>
+        <CloseButtonSvg />
+      </button>
 
-        {children}
-      </div>
-    </div>
+      {children}
+    </AnimatedModalShell>
   );
 }
 
