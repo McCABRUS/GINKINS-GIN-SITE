@@ -5,6 +5,7 @@ import HeaderServer from './components/HeaderServer';
 import Footer from './components/Footer';
 import './globals.css';
 import ClientShell from './components/ClientShell';
+import ScrollAnimations from './components/ScrollAnimations';
 
 export const metadata: Metadata = {
   title: 'Ginkins: Explore the Exquisite Range of Masterfully Distilled Gins',
@@ -35,6 +36,7 @@ export default function RootLayout({
       <body
         className={`${cormorant.className} ${barlow.className} antialiased bg-(--secondary-beige)!`}
       >
+        <ScrollAnimations />
         <HeaderServer />
         <SpeedInsights />
         <ClientShell />

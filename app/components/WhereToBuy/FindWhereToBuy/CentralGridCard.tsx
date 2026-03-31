@@ -10,7 +10,7 @@ export default function CentralGridCard() {
           fill
           className="object-cover rounded-full"
         />
-        <div className="absolute bottom-6 -right-14 w-38.25">
+        <div className="absolute bottom-6 -right-12.25 w-38.25">
           <Image
             src="/imgs/where_to_buy/ginkins-gin-icon-stars-white.svg"
             alt=""
