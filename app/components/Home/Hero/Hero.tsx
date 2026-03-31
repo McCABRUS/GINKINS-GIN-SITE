@@ -45,7 +45,7 @@ const bottleSlides = [
   },
 ];
 
-const BOTTLE_STEP_MS = 12000;
+const BOTTLE_STEP_MS = 6000;
 
 function shuffle<T>(array: T[]): T[] {
   const copy = [...array];
