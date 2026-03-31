@@ -1,10 +1,11 @@
 import Link from 'next/link';
 import HeaderClient from './HeaderClient';
 import MobileMenu from './MobileMenu';
+import HeaderScrollFade from './HeaderScrollFade';
 
 export default function HeaderServer() {
   return (
-    <header className="bg-(--primary-black) text-(--primary-gold-main)">
+    <HeaderScrollFade>
       <nav
         className="max-w-360 mx-auto px-12 xl:px-6 py-6"
         aria-label="Main navigation"
@@ -114,6 +115,6 @@ export default function HeaderServer() {
           </div>
         </div>
       </nav>
-    </header>
+    </HeaderScrollFade>
   );
 }
