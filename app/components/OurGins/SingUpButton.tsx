@@ -16,7 +16,7 @@ export default function SingUpButton() {
           setIsJoinOpen(true);
         }}
       >
-        <h5 className="whitespace-nowrap text-lg! lg:text-base! hover:text-(--primary-black)! group-hover:text-(--primary-black)! group-active:text-(--primary-black)! group-focus:text-(--primary-black)!">
+        <h5 className="whitespace-nowrap 2xl:text-base! xl:text-[13px]! hover:text-(--primary-black)! group-hover:text-(--primary-black)! group-active:text-(--primary-black)! group-focus:text-(--primary-black)!">
           Sign up for our newsletter to be the first to know what’s next
         </h5>
       </button>

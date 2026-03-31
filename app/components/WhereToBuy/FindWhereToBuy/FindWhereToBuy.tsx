@@ -23,7 +23,7 @@ export default function FindWhereToBuy() {
             bgColor="bg-(--primary-gold-main)"
             isLeft
             buttonMode="modal"
-            buttonLabel="Shop online"
+            buttonLabel="FIND A RETAILER"
             onButtonClick={() => setActiveModal('retailers')}
           />
           <hr
@@ -38,7 +38,7 @@ export default function FindWhereToBuy() {
             image="/imgs/where_to_buy/ginkins-gin-branded-coasters-set--opt.webp"
             bgColor="bg-(--primary-red-main)"
             buttonMode="modal"
-            buttonLabel="Shop online"
+            buttonLabel="WHERE TO SIP GINKINS"
             onButtonClick={() => setActiveModal('restaurants')}
           />
           <hr
@@ -52,6 +52,7 @@ export default function FindWhereToBuy() {
             title="Order Online"
             description="Prefer delivery to your door? Check out our online retail partners for easy, secure ordering."
             image="/imgs/where_to_buy/ginkins-gin-single-bottle-gift-box--high.webp"
+            buttonLink="https://ginkinsgin.distilleryspirits.com"
             isLeft
           />
           <hr
@@ -65,6 +66,8 @@ export default function FindWhereToBuy() {
             title="Wholesale &amp; Distribution"
             description="Interested in bringing Ginkins to your bar, store, or event? We’d love to connect."
             image="/imgs/where_to_buy/ginkins-gin-botanical-gift-box--high-res.webp"
+            buttonLabel="PARTNER WITH US"
+            buttonLink="mailto:info@ginkins.com"
           />
           <CentralGridCard />
         </div>

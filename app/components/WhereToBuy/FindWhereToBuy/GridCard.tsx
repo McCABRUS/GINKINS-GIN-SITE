@@ -13,6 +13,7 @@ export default function GridCard({
   isLeft,
   buttonMode = 'link',
   buttonLabel = 'Shop ONLINE',
+  buttonLink,
   onButtonClick,
 }: {
   title: string;
@@ -24,10 +25,11 @@ export default function GridCard({
   isLeft?: boolean;
   buttonMode?: 'link' | 'modal';
   buttonLabel?: string;
+  buttonLink?: string;
   onButtonClick?: () => void;
 }) {
   const buttonClassName =
-    'relative w-40 lg:w-44.25 h-9.75 mt-9.5 flex mx-auto xl:mx-0 content-start items-center justify-center px-5 py-1.5 transition animatedButton group';
+    'relative w-60 h-9.75 mt-9.5 flex mx-auto xl:mx-0 content-start items-center justify-center px-5 py-1.5 transition animatedButton group';
 
   return (
     <div
@@ -62,7 +64,7 @@ export default function GridCard({
           </button>
         ) : (
           <Link
-            href="https://ginkinsgin.distilleryspirits.com"
+            href={`${buttonLink}`}
             target="_blank"
             className={buttonClassName}
           >
