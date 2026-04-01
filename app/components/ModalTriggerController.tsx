@@ -44,7 +44,7 @@ export default function ModalTriggerController({ openModal }: Props) {
         clearTimer();
         timerRef.current = setTimeout(() => {
           openModal();
-        }, 10_000);
+        }, 18_000);
       }
     };
     maybeStartTimer();

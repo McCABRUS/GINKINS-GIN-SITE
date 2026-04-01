@@ -15,6 +15,10 @@ type Props = {
   activeIndex: number;
 };
 
+type LayerStyle = React.CSSProperties & {
+  ['--reveal']?: string;
+};
+
 export default function BottleCarousel({ slides, activeIndex }: Props) {
   const [displayIndex, setDisplayIndex] = useState(activeIndex);
   const [incomingIndex, setIncomingIndex] = useState(activeIndex);
@@ -43,30 +47,35 @@ export default function BottleCarousel({ slides, activeIndex }: Props) {
       },
     });
 
-    tl.to(outgoingEl, {
-      opacity: 0,
-      scale: 1.05,
-      y: -10,
-      filter: 'blur(12px)',
-      duration: 0.7,
-      ease: 'power2.inOut',
-    }).fromTo(
-      incomingEl,
+    gsap.set(outgoingEl, {
+      opacity: 1,
+      filter: 'blur(0px)',
+      zIndex: 1,
+    });
+
+    gsap.set(incomingEl, {
+      opacity: 1,
+      filter: 'blur(5px)',
+      zIndex: 2,
+      '--reveal': '0%',
+    });
+
+    tl.to(incomingEl, {
+      '--reveal': '120%',
+      filter: 'blur(0px)',
+      duration: 1.1,
+      ease: 'power3.out',
+    });
+
+    tl.to(
+      outgoingEl,
       {
-        opacity: 1,
-        scale: 1.08,
-        y: 16,
-        filter: 'blur(14px)',
+        opacity: 0,
+        filter: 'blur(8px)',
+        duration: 0.36,
+        ease: 'power2.inOut',
       },
-      {
-        opacity: 1,
-        scale: 1,
-        y: 0,
-        filter: 'blur(0px)',
-        duration: 0.85,
-        ease: 'power3.out',
-      },
-      '<0.08',
+      '-=0.34',
     );
 
     return () => {
@@ -77,10 +86,55 @@ export default function BottleCarousel({ slides, activeIndex }: Props) {
   const current = slides[displayIndex] ?? slides[0];
   const next = slides[incomingIndex] ?? slides[0];
 
+  const baseLayerStyle: LayerStyle = {
+    backgroundColor: 'transparent',
+    willChange: 'transform, opacity, filter, mask-size',
+    transform: 'translateZ(0)',
+    WebkitTransform: 'translateZ(0)',
+    backfaceVisibility: 'hidden',
+    WebkitBackfaceVisibility: 'hidden',
+    contain: 'paint',
+    overflow: 'hidden',
+  };
+
+  const incomingLayerStyle: LayerStyle = {
+    ...baseLayerStyle,
+    ['--reveal']: '0%',
+    maskImage:
+      'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 82%, rgba(0,0,0,0.2) 94%, rgba(0,0,0,0) 100%)',
+    WebkitMaskImage:
+      'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 82%, rgba(0,0,0,0.2) 94%, rgba(0,0,0,0) 100%)',
+    maskRepeat: 'no-repeat',
+    WebkitMaskRepeat: 'no-repeat',
+    maskPosition: 'top',
+    WebkitMaskPosition: 'top',
+    maskSize: '100% var(--reveal)',
+    WebkitMaskSize: '100% var(--reveal)',
+  };
+
+  const outgoingLayerStyle: LayerStyle = {
+    ...baseLayerStyle,
+    ['--reveal']: '100%',
+    maskImage:
+      'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 100%)',
+    WebkitMaskImage:
+      'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 100%)',
+    maskRepeat: 'no-repeat',
+    WebkitMaskRepeat: 'no-repeat',
+    maskPosition: 'top',
+    WebkitMaskPosition: 'top',
+    maskSize: '100% 10%',
+    WebkitMaskSize: '100% 100%',
+  };
+
   return (
     <div>
-      <div className="absolute w-62 xl:w-81.75 lg:w-56.25 h-104 lg:h-95 xl:h-137.5 top-26 lg:top-33 xl:top-25.5 left-2/4 -translate-x-1/2">
-        <div ref={outgoingRef} className="absolute inset-0">
+      <div className="absolute w-62 xl:w-81.75 lg:w-56.25 h-104 lg:h-95 xl:h-137.5 top-26 lg:top-33 xl:top-25.5 left-2/4 -translate-x-1/2 overflow-hidden isolate contain-[paint]">
+        <div
+          ref={outgoingRef}
+          className="absolute inset-0 pointer-events-none"
+          style={outgoingLayerStyle}
+        >
           <Image
             draggable={false}
             src={current.src}
@@ -91,7 +145,11 @@ export default function BottleCarousel({ slides, activeIndex }: Props) {
           />
         </div>
 
-        <div ref={incomingRef} className="absolute inset-0 opacity-0">
+        <div
+          ref={incomingRef}
+          className="absolute inset-0 pointer-events-none"
+          style={incomingLayerStyle}
+        >
           <Image
             draggable={false}
             src={next.src}
