@@ -66,7 +66,7 @@ export default function CollectionCard({
               className="items-center justify-center px-5 py-1.5 transition animatedButton mx-auto md:mx-0 grid max-w-65 group"
             >
               <h5 className="text-lg! group-hover:text-(--primary-black)! group-active:text-(--primary-black)! group-focus:text-(--primary-black)!">
-                Find Ginkins Near to You
+                Find Ginkins Near You
               </h5>
             </Link>
           </div>
