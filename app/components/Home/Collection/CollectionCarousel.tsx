@@ -86,6 +86,7 @@ const getMediaVisuals = (ratio: number) => {
     scale: 1 - ratio * 0.015,
     opacity: 0.35 + 0.65 * easeOutQuint(progress),
     brightness: 1 - ratio * 0.08,
+    blur: ratio * MAX_SIDE_BLUR,
   };
 };
 
@@ -333,7 +334,7 @@ export default function CollectionCarousel() {
         gsap.set(media, {
           scale: visuals.scale,
           opacity: visuals.opacity,
-          filter: `brightness(${visuals.brightness})`,
+          filter: `blur(${visuals.blur}px) brightness(${visuals.brightness})`,
           transformOrigin: 'center center',
           force3D: true,
         });
@@ -473,7 +474,7 @@ export default function CollectionCarousel() {
         gsap.set(media, {
           scale: visuals.scale,
           opacity: visuals.opacity,
-          filter: `brightness(${visuals.brightness})`,
+          filter: `blur(${visuals.blur}px) brightness(${visuals.brightness})`,
           transformOrigin: 'center center',
           force3D: true,
         });
