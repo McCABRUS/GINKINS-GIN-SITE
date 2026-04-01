@@ -4,7 +4,7 @@ export default function Hero() {
   return (
     <section className="relative w-screen overflow-hidden bg-(--secondary-beige) pt-12.75 lg:pt-27.75">
       <div className="absolute inset-0 pointer-events-none opacity-50">
-        <picture className="absolute">
+        <picture className="absolute w-full">
           <source
             media="(max-width: 640px)"
             srcSet="/imgs/about/ginkins-gin-heritage-farm-illustration-480.webp"
@@ -16,7 +16,7 @@ export default function Hero() {
           <img
             src="/imgs/about/ginkins-gin-heritage-farm-illustration-1200.webp"
             alt="Golden line art illustration of a Kentucky farm and distillery at sunset for Ginkins Gin background"
-            className="h-full w-full relative object-cover object-center xl:top-15"
+            className="h-full w-full relative object-cover object-center xl:top-15 2xl:-top-55"
             loading="eager"
             fetchPriority="high"
           />
@@ -25,7 +25,8 @@ export default function Hero() {
       </div>
       <div className="relative text-center max-xl:px-5 max-4xl:px-27.5 place-self-center">
         <h1 className="text-center text-(--primary-black)!">
-          Connections that distill into something greater
+          Connections that distill
+          <br className="hidden 2xl:block" /> into something greater
         </h1>
         <div className="my-16 flex justify-center">
           <div className="h-47.5 w-50 md:h-64.25 md:w-65.5">

@@ -4,7 +4,7 @@ export default function GinsHero() {
   return (
     <section className="relative w-screen overflow-hidden bg-(--secondary-beige) pt-12.75 lg:pt-46">
       <div className="absolute inset-0 pointer-events-none opacity-50">
-        <picture className="absolute">
+        <picture className="absolute w-full">
           <source
             media="(max-width: 640px)"
             srcSet="/imgs/about/ginkins-gin-heritage-farm-illustration-480.webp"
@@ -16,7 +16,7 @@ export default function GinsHero() {
           <img
             src="/imgs/about/ginkins-gin-heritage-farm-illustration-1200.webp"
             alt="Golden line art illustration of a Kentucky farm and distillery at sunset for Ginkins Gin background"
-            className="h-full w-full object-none md:object-cover object-center relative -top-55 xl:top-15"
+            className="h-full w-full object-none md:object-cover object-center relative -top-55 xl:top-15 2xl:-top-55"
             loading="eager"
             fetchPriority="high"
           />
