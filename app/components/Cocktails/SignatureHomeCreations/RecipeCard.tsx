@@ -47,11 +47,12 @@ export default function RecipeCard({
           {title}
         </h3>
       </div>
-      <div className="absolute inset-0 z-20 flex items-center bg-black/70 opacity-0 transition-all duration-300 group-hover:opacity-100 group-focus-within:opacity-100 group-active:opacity-100 group-active-within:opacity-100">
-        <div className="px-2 sm:px-6 py-2 sm:py-6 text-sm text-background space-y-6 max-h-full overflow-y-auto place-self-start">
+      <div className="absolute inset-0 z-20 flex items-center bg-black/80 opacity-0 transition-all duration-300 group-hover:opacity-100 group-focus-within:opacity-100 group-active:opacity-100 group-active-within:opacity-100">
+        <div className="px-2 sm:px-7.5 py-2 sm:py-7.5 xl:px-7.5 xl:py-7.5 lg:px-2 lg:py-2 text-sm lg:text-[11px] 2xl:text-sm text-background space-y-6 max-h-full overflow-y-auto place-self-start">
           <p className="leading-relaxed">
             <strong>{description}</strong>
           </p>
+          <hr className="w-full text-background my-3" aria-hidden="true" />
           {ingredients.length > 0 && (
             <div>
               <p className="font-semibold mb-2">Ingredients</p>
@@ -60,6 +61,7 @@ export default function RecipeCard({
                   <li key={index}>{item}</li>
                 ))}
               </ul>
+              <hr className="w-full text-background my-3" aria-hidden="true" />
             </div>
           )}
           {instructions.length > 0 && (
