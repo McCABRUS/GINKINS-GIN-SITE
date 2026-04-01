@@ -102,13 +102,6 @@ export default function PressHighlights() {
             </div>
           </div>
         </div>
-        <div className="mt-20 text-center">
-          <button className="inline-flex items-center justify-center px-8 py-3 text-lg font-medium uppercase transition animatedButton mt-1 group">
-            <h5 className="group-hover:text-(--primary-black)! group-active:text-(--primary-black)! group-focus:text-(--primary-black)!">
-              SEE ALL AWARDS
-            </h5>
-          </button>
-        </div>
       </div>
     </section>
   );
