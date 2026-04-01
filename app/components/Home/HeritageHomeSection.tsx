@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export default function HeritageHomeSection() {
   return (
-    <section className="relative w-full bg-(--secondary-beige) pt-37.25 md:pt-30 xl:pt-71 mb-0 xs:-mb-35.25 overflow-hidden max-w-480">
+    <section className="relative w-full bg-(--secondary-beige) pt-37.25 md:pt-30 xl:pt-71 mb-0 xs:-mb-35.25 overflow-hidden max-w-480 pb-30 md:pb-0">
       <div className="relative mb-10 px-6 2xl:px-24">
         <h1 className="mt-30 md:mt-0 mx-auto text-center leading-[1.05] tracking-[-0.015em]">
           ROOTED IN
@@ -70,7 +70,7 @@ export default function HeritageHomeSection() {
             />
           </div>
         </div>
-        <div className="-mt-197 md:mt-0 max-w-full md:max-w-md z-1">
+        <div className="md:mt-0 -mt-177.5 max-w-full md:max-w-md z-1">
           <p className="text-base leading-relaxed text-(--secondary-black) text-center md:text-left ">
             A gin born not in the shadows of the past, but in the bold, soulful
             light of bourbon country. Here, roots run deep and quality means
