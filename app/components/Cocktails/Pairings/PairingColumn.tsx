@@ -35,6 +35,7 @@ export default function PairingColumn({
         {items.map((item, index) => (
           <li key={index} className="flex items-center gap-4">
             <Image
+              draggable={false}
               src={item.icon}
               alt=""
               width={24}

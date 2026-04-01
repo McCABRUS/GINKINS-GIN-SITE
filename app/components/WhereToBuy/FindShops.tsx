@@ -9,6 +9,7 @@ export default function FindShops() {
           <div className="space-y-6 px-5 xl:px-0">
             <h5 className="mb-6 lg:mb-18.75">Find us</h5>
             <Image
+              draggable={false}
               src="/imgs/home/ginkins-gin-icon-mortar-pestle.svg"
               alt=""
               width={56}
@@ -44,6 +45,7 @@ export default function FindShops() {
           <div className="relative">
             <div className="mx-0 w-full">
               <Image
+                draggable={false}
                 src="/imgs/where_to_buy/ginkins-gin-golden-tray-service.webp"
                 alt="Ginkins Gin bottle and a martini glass served on a golden tray with a shaker"
                 width={608}

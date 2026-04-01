@@ -64,8 +64,8 @@ function BotanicalCard({
       case 'base':
         return (
           <Image
-            key={`base-${index}`}
             draggable={false}
+            key={`base-${index}`}
             aria-hidden
             src={item.baseSrc}
             alt=""
@@ -82,8 +82,8 @@ function BotanicalCard({
       case 'hover':
         return (
           <Image
-            key={`hover-${index}`}
             draggable={false}
+            key={`hover-${index}`}
             aria-hidden
             src={item.hoverSrc}
             alt=""
@@ -96,8 +96,8 @@ function BotanicalCard({
       case 'extra':
         return item.extraSrc ? (
           <Image
-            key={`extra-${index}`}
             draggable={false}
+            key={`extra-${index}`}
             aria-hidden
             src={item.extraSrc}
             alt=""

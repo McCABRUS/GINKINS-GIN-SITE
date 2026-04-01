@@ -20,6 +20,7 @@ export default function AwardItem({
       className={`flex flex-col items-center text-center ${showDivider ? 'lg:border-r lg:border-(--primary-black)' : ''}`}
     >
       <Image
+        draggable={false}
         src={image}
         alt={alt}
         width={130}

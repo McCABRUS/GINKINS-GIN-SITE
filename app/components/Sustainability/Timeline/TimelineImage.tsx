@@ -9,7 +9,13 @@ export default function TimelineImage({
 }) {
   return (
     <div className="relative w-43.75 h-59.5 rounded-full overflow-hidden">
-      <Image src={src} alt={alt} fill className="object-cover" />
+      <Image
+        draggable={false}
+        src={src}
+        alt={alt}
+        fill
+        className="object-cover"
+      />
     </div>
   );
 }

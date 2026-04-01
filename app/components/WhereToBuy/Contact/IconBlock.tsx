@@ -15,6 +15,7 @@ export default function IconBlock({
   return (
     <div className="flex flex-col items-center gap-4 text-center">
       <Image
+        draggable={false}
         src={svgImg}
         alt={svgAlt}
         width={svgWidth}

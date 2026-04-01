@@ -19,6 +19,7 @@ export default function HeritageHomeSection() {
         </h1>
         <div className="absolute -top-57 md:-top-17.5 xl:-top-35 left-[64%] md:left-[49.5%] -translate-x-1/2 mr-7.5 w-20.25 h-27.5 xl:w-40 xl:h-56 pointer-events-none">
           <Image
+            draggable={false}
             src="/imgs/home/ginkins-gin-distillation-process.webp"
             alt="Handcrafted distillation in copper stills at Ginkins Distillery"
             fill
@@ -27,6 +28,7 @@ export default function HeritageHomeSection() {
         </div>
         <div className="absolute -top-32 md:top-10.5 xl:top-22.5 w-25 h-25 xl:w-40 xl:h-40 -ml-10 md:-ml-66.25 xl:-ml-132.5  left-1/2 -translate-x-1/2">
           <Image
+            draggable={false}
             src="/imgs/home/ginkins-gin-heritage-barn.webp"
             alt="Ginkins Gin historic red barn in the Kentucky countryside"
             fill
@@ -35,6 +37,7 @@ export default function HeritageHomeSection() {
         </div>
         <div className="absolute -ml-10 left-1/2 -translate-x-1/2 h-21 w-21.5 -top-47 md:hidden pointer-events-none">
           <Image
+            draggable={false}
             src="/imgs/home/ginkins-gin-icon-botanical-flower.svg"
             alt="Decorative flower"
             width={86}
@@ -48,6 +51,7 @@ export default function HeritageHomeSection() {
         <div className="relative h-150 z-0">
           <div className="hidden md:block absolute top-110 2xs:top-80 xs:top-70  md:top-0 right-0 w-33.5 h-44 xl:w-52 xl:h-72">
             <Image
+              draggable={false}
               src="/imgs/home/ginkins-gin-louisville-skyline.webp"
               alt="Louisville skyline at sunset - The heart of Ginkins Gin roots"
               fill
@@ -56,6 +60,7 @@ export default function HeritageHomeSection() {
           </div>
           <div className="hidden md:block absolute w-39 h-38 md:w-58.25 md:h-56.5 top-125 xs:top-90 md:top-15 xl:top-30 right-25 xl:right-35 pointer-events-none">
             <Image
+              draggable={false}
               src="/imgs/home/ginkins-gin-icon-botanical-flower.svg"
               alt=""
               width={233}

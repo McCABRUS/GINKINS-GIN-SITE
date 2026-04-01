@@ -27,6 +27,7 @@ export default function CocktailsHome() {
             <span className="relative inline-block align-text-top mx-2 z-0 ">
               <span className="inline-block w-40.25 h-40.25 md:h-52.5 md:w-52.5 rounded-full overflow-hidden relative z-10">
                 <Image
+                  draggable={false}
                   src="/imgs/home/ginkins-gin-signature-cocktail-grapefruit.webp"
                   alt="Ginkins Gin signature cocktail being prepared with fresh grapefruit and premium botanicals"
                   className="h-full w-full object-cover"
@@ -35,6 +36,7 @@ export default function CocktailsHome() {
                 />
               </span>
               <Image
+                draggable={false}
                 src="/imgs/home/ginkins-gin-icon-botanical-flower.svg"
                 alt=""
                 width={227}
@@ -64,6 +66,7 @@ export default function CocktailsHome() {
             <div key={i} className="hidden md:block">
               <div className="aspect-390/565 overflow-hidden">
                 <Image
+                  draggable={false}
                   src={card.img}
                   height={565}
                   width={395}

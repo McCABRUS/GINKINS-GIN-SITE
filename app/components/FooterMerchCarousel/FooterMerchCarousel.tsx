@@ -8,6 +8,7 @@ interface ImagesProps {
 export default function FooterMerchCarousel({ img, alt }: ImagesProps) {
   return (
     <Image
+      draggable={false}
       src={img}
       alt={alt}
       className="h-95 md:h-140.75 w-100 object-cover"

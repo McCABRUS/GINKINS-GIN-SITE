@@ -29,6 +29,7 @@ export default function SustainabilityHero() {
         <div className="my-13.75 lg:my-16 flex justify-center">
           <div className="w-32.75 h-32.75 lg:h-48 lg:w-48">
             <Image
+              draggable={false}
               src="/imgs/sustainability/ginkins-gin-icon-botanical-flower-red.svg"
               alt="Leaves icon"
               height={192}

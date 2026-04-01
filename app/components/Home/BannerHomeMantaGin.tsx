@@ -10,6 +10,7 @@ export default function BannerHomeMantaGin() {
         }}
       ></div>
       <Image
+        draggable={false}
         src="/imgs/home/ginkins-gin-lifestyle-picnic.webp"
         alt="Manta Gin Bottle"
         fill

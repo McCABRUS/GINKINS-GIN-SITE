@@ -167,6 +167,7 @@ export default function HeritageMobile() {
               style={{ width: `${slideWidth}px` }}
             >
               <Image
+                draggable={false}
                 src={item.img}
                 alt={item.alt}
                 width={391}
@@ -174,6 +175,7 @@ export default function HeritageMobile() {
                 className="w-full object-cover h-140.75"
               />
               <Image
+                draggable={false}
                 src="/imgs/home/ginkins-gin-icon-martini-decoration.svg"
                 alt=""
                 width={31}

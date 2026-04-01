@@ -14,6 +14,7 @@ export default function Heritage() {
             Crafted to Inspire.
           </h4>
           <Image
+            draggable={false}
             src="/imgs/about/ginkins-gin-scott-botanicals.webp"
             alt="Expert distiller Scott Ginkins showcasing the botanical craftsmanship and traditional copper still used in creating Ginkins Gin."
             className="w-screen lg:w-142.25 h-129.5 lg:h-202.5 lg:justify-self-end lg:self-end object-cover relative object-top"
@@ -64,6 +65,7 @@ export default function Heritage() {
           {heritageData.map((item, index) => (
             <div className="space-y-6" key={index}>
               <Image
+                draggable={false}
                 src={item.img}
                 alt={item.alt}
                 width={391}
@@ -71,6 +73,7 @@ export default function Heritage() {
                 className="w-full h-140.75 object-cover"
               />
               <Image
+                draggable={false}
                 src="/imgs/home/ginkins-gin-icon-martini-decoration.svg"
                 alt="Ginkins Gin Isotype"
                 width={31}

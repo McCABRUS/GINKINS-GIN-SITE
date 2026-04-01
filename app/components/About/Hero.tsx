@@ -30,6 +30,7 @@ export default function Hero() {
         <div className="my-16 flex justify-center">
           <div className="h-47.5 w-50 md:h-64.25 md:w-65.5">
             <Image
+              draggable={false}
               src="/imgs/about/ginkins-copper-distiller.svg"
               alt="Ginkins gin copper distiller icon"
               height={262}

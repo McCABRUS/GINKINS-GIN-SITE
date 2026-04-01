@@ -122,6 +122,7 @@ export default function AnimatedModalShell({
           }}
         >
           <Image
+            draggable={false}
             src="/imgs/join-popup/union_ginkins.webp"
             alt=""
             width={610}

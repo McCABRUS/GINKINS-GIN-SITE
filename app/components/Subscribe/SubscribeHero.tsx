@@ -35,6 +35,7 @@ export default function SubscribeHero() {
         <div className="my-16 flex justify-center">
           <div className="h-57.75 w-58">
             <Image
+              draggable={false}
               src="/imgs/subscribe/icon-leaves-ginkins-gin.svg"
               alt="Leaves icon"
               height={231}

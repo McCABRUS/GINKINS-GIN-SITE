@@ -5,6 +5,7 @@ export default function ShopHero() {
   return (
     <section className="relative w-screen h-250 min-h-130  overflow-hidden">
       <Image
+        draggable={false}
         src="/imgs/where_to_buy/ginkins-gin-premium-gift-boxes.webp"
         alt="Person in a red dress holding a stack of Ginkins Gin luxury gold and black gift boxes"
         fill

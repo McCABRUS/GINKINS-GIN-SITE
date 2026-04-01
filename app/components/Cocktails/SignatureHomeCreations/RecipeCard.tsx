@@ -29,6 +29,7 @@ export default function RecipeCard({
       `}
     >
       <Image
+        draggable={false}
         src={image}
         alt={alt}
         width={405}

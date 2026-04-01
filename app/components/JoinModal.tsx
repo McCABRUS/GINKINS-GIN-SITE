@@ -39,6 +39,7 @@ export default function JoinModal({ open, onClose }: Props) {
       <div className="grid grid-cols-1 lg:grid-cols-[0.4815fr_0.5185fr] h-full bg-background lg:w-auto lg:h-auto gap-11.5">
         <div className="relative hidden lg:block md:aspect-533/818">
           <Image
+            draggable={false}
             src="/imgs/join-popup/ginkins-gin-hands-red-curtain-campaign.webp"
             alt="Elegant red-gloved hands holding a Ginkins Gin bottle and cocktail glass against a velvet curtain"
             fill
@@ -55,6 +56,7 @@ export default function JoinModal({ open, onClose }: Props) {
           </h5>
           <div className="flex justify-center mb-4.25">
             <Image
+              draggable={false}
               src="/imgs/join-popup/ginkins-gin-icon-botanical-leaves.svg"
               alt=""
               width={121}

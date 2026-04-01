@@ -9,6 +9,7 @@ export default function Story() {
           <div>
             <div className="mb-6">
               <Image
+                draggable={false}
                 src="/imgs/home/ginkins-gin-icon-martini-decoration.svg"
                 alt="Martini Ginkins Gin icon"
                 width={56}
@@ -53,6 +54,7 @@ export default function Story() {
           <div className="flex max-lg:mx-auto md:ml-auto">
             <div className="relative h-81.75 w-62 overflow-hidden rounded-t-full sm:h-130 sm:w-95 xl:h-160 xl:w-120">
               <Image
+                draggable={false}
                 src="/imgs/about/meaningful-connections-ginkins-gin.webp"
                 alt="Creating connections over a premium gin cocktail with red fruits and citrus in an elegant bar setting."
                 fill

@@ -40,6 +40,7 @@ export default function SubscribeContainer() {
               <li key={index} className="flex gap-x-6 gap-y-0 mb-0">
                 <div className="flex flex-col items-center">
                   <Image
+                    draggable={false}
                     src="/imgs/subscribe/icon-bullet.svg"
                     alt=""
                     width={41}

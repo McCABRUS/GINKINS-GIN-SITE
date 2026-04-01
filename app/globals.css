@@ -35,6 +35,15 @@ html {
   scrollbar-gutter: stable;
 }
 
+*,
+*::before,
+*::after {
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -moz-user-select: none;
+}
+
 .animatedButton {
   will-change: background-position;
   transition: background-position 0.6666666667s

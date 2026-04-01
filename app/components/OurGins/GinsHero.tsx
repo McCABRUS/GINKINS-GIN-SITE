@@ -34,6 +34,7 @@ export default function GinsHero() {
         </h1>
         <div className="flex justify-center gap-6 lg:gap-37.75 relative">
           <Image
+            draggable={false}
             src="/imgs/our_gins/ginkins-gin-icon-bottle-red.svg"
             alt=""
             width={160}
@@ -43,6 +44,7 @@ export default function GinsHero() {
             priority
           />
           <Image
+            draggable={false}
             src="/imgs/our_gins/ginkins-gin-icon-bottle-gold.svg"
             alt=""
             width={160}
@@ -52,6 +54,7 @@ export default function GinsHero() {
             priority
           />
           <Image
+            draggable={false}
             src="/imgs/our_gins/ginkins-gin-icon-bottle-black.svg"
             alt=""
             width={160}

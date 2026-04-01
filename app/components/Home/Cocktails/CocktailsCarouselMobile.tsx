@@ -163,6 +163,7 @@ export default function CocktailsCarouselMobile() {
                 style={{ width: `${slideWidth}px` }}
               >
                 <Image
+                  draggable={false}
                   src={item.img}
                   alt={item.alt}
                   width={395}

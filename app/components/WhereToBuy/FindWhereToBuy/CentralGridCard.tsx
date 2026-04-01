@@ -5,6 +5,7 @@ export default function CentralGridCard() {
     <div className="relative hidden lg:flex flex-col items-center justify-center -my-20 col-span-2 order-3 z-10">
       <div className="relative w-63 h-92.5 xl:h-131 xl:w-89.25">
         <Image
+          draggable={false}
           src="/imgs/where_to_buy/ginkins-gin-ice-cube-logo-detail.webp"
           alt="Top down view of a cocktail glass with a large clear ice cube embossed with the Ginkins Gin G logo"
           fill
@@ -12,6 +13,7 @@ export default function CentralGridCard() {
         />
         <div className="absolute bottom-6 -right-12.25 w-38.25">
           <Image
+            draggable={false}
             src="/imgs/where_to_buy/ginkins-gin-icon-stars-white.svg"
             alt=""
             width={153}

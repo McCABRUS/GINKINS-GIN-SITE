@@ -179,6 +179,7 @@ function Divider() {
     <div className="flex items-center justify-center gap-6">
       <span className="h-px w-full bg-(--primary-red-main)" aria-hidden />
       <Image
+        draggable={false}
         src="/imgs/our_gins/ginkins-gin-icon-sparkle-shield.svg"
         alt="Divider"
         width={40}

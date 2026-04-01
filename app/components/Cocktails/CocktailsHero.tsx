@@ -31,6 +31,7 @@ export default function CocktailsHero() {
         <div className="my-16 flex justify-center">
           <div className="h-57.75 w-43.75">
             <Image
+              draggable={false}
               src="/imgs/cocktails/ginkins-gin-icon-cocktail-glass-alt.svg"
               alt="cocktail glass icon"
               height={231}

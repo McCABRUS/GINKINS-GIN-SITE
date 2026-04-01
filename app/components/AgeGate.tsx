@@ -37,6 +37,7 @@ export default function AgeGate() {
       <div className="relative flex h-full w-full flex-col items-center justify-between px-6 py-10 text-center">
         <div className="">
           <Image
+            draggable={false}
             src="/imgs/preloader/ginkins-gin-logo.svg"
             alt="Ginkins Gin official logo in gold finish"
             width={69}
@@ -48,6 +49,7 @@ export default function AgeGate() {
         <div className="flex flex-col items-center">
           <div className="mb-8 flex lg:hidden h-17.5 w-17.5 items-center justify-center">
             <Image
+              draggable={false}
               src="/imgs/legal/ginkins-gin-lemon-icon.svg"
               alt="Ginkins Gin lemon brand element"
               width={70}
@@ -123,6 +125,7 @@ export default function AgeGate() {
       </div>
       <div className="hidden lg:flex h-24.25 w-24.25 items-center justify-center absolute top-1/2 right-64 -translate-y-1/2">
         <Image
+          draggable={false}
           src="/imgs/legal/ginkins-gin-lemon-icon.svg"
           alt="Ginkins Gin lemon brand element"
           width={97}
@@ -133,6 +136,7 @@ export default function AgeGate() {
       </div>
       <div className="hidden lg:flex h-24.25 w-24.25 items-center justify-center absolute top-1/2 left-64 -translate-y-1/2">
         <Image
+          draggable={false}
           src="/imgs/legal/ginkins-gin-lemon-icon.svg"
           alt="Ginkins Gin lemon brand element"
           width={97}

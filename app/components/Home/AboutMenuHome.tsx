@@ -46,6 +46,7 @@ export default function AboutHomeMenu() {
           <div className="relative flex justify-center lg:justify-end">
             <div className="absolute left-[67%] lg:-right-12.5 top-6 z-10 fill-(--primary-red-main)">
               <Image
+                draggable={false}
                 src="/imgs/home/ginkins-gin-icon-star-sparkles.svg"
                 alt=""
                 width={159}
@@ -56,6 +57,7 @@ export default function AboutHomeMenu() {
             </div>
             <div className="h-78.75 sm:h-127.5 w-53.75 sm:w-87 overflow-hidden xl:mr-6.25">
               <Image
+                draggable={false}
                 src="/imgs/home/scott-ginkins-founder-master-distiller.webp"
                 alt="Scott Ginkins, Founder and Master Distiller of Ginkins Gin"
                 width={565}

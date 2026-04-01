@@ -27,6 +27,7 @@ export default function Founder() {
           <div className="order-3 col-span-full flex items-center justify-center gap-8">
             <span className="h-px w-[41%] bg-(--primary-red-main)" />
             <Image
+              draggable={false}
               src="/imgs/home/ginkins-gin-icon-martini-decoration.svg"
               alt="Divider"
               width={40}
@@ -44,6 +45,7 @@ export default function Founder() {
 
             <div className="ml-11.25 relative w-full pr-24">
               <Image
+                draggable={false}
                 src="/imgs/home/scott-ginkins-founder-master-distiller.webp"
                 alt="Professional master distiller presenting a bottle of premium gin at an elegant bar"
                 width={816}

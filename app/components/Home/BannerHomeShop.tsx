@@ -7,6 +7,7 @@ export default function BannerHomeShop() {
       <div className="w-full h-full relative border-4 border-solid border-(--primary-gold-main) px-11.25 md:px-0 py-20 flex items-center justify-center">
         <div className="absolute lg:left-1/10 xl:left-1/4 top-1/10 lg:top-1/2 -translate-y-1/2  max-w-480 place-self-center">
           <Image
+            draggable={false}
             src="/imgs/home/ginkins-gin-icon-martini-decoration.svg"
             alt=""
             height={60}
@@ -38,6 +39,7 @@ export default function BannerHomeShop() {
         </div>
         <div className="absolute  lg:right-1/10 xl:right-1/4 top-9/10 lg:top-1/2 -translate-y-1/2">
           <Image
+            draggable={false}
             src="/imgs/home/ginkins-gin-icon-cocktail-cup.svg"
             alt=""
             height={67}

@@ -18,6 +18,7 @@ export default function Connections() {
           <div className="max-w-178.25 xl:max-w-169.5 pt-8.25 lg:pt-43.25 lg:mr-20">
             <div className="mb-8">
               <Image
+                draggable={false}
                 src="/imgs/home/ginkins-gin-icon-mortar-pestle.svg"
                 alt=""
                 width={56}

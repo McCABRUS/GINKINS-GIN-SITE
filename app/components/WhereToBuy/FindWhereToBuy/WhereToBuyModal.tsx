@@ -260,6 +260,7 @@ export default function WhereToBuyModal({
         <div className="w-full flex flex-col gap-8 lg:flex-row lg:items-start lg:gap-8">
           <div className="hidden lg:block w-115 h-150.25 shrink-0">
             <Image
+              draggable={false}
               src="/imgs/where_to_buy/ginkins-retailers.webp"
               alt="Retailers near you"
               width={460}
@@ -304,6 +305,7 @@ export default function WhereToBuyModal({
         <div className="w-full flex flex-col gap-8 lg:flex-row lg:items-start lg:gap-11">
           <div className="hidden lg:block w-115 h-154 shrink-0">
             <Image
+              draggable={false}
               src="/imgs/where_to_buy/ginkins-bar-restaurants.webp"
               alt="Restaurants and bars"
               width={460}

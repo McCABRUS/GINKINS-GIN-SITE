@@ -7,6 +7,7 @@ export default function HeritageInnovation() {
           <div>
             <div className="mx-auto h-15 w-15 flex md:hidden mb-16.5">
               <Image
+                draggable={false}
                 src="/imgs/home/ginkins-gin-isotype.svg"
                 alt="ginkins isotype"
                 height={60}
@@ -33,6 +34,7 @@ export default function HeritageInnovation() {
             </p>
             <div className="h-24 w-20.25 hidden md:flex">
               <Image
+                draggable={false}
                 src="/imgs/home/ginkins-gin-isotype.svg"
                 alt=""
                 height={81}

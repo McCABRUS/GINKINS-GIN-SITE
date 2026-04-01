@@ -6,6 +6,7 @@ export default function People() {
       <div className="grid grid-cols-1 lg:grid-cols-2">
         <div className="order-2 lg:order-1 relative h-125 lg:h-auto">
           <Image
+            draggable={false}
             src="/imgs/about/ginkins-gin-night-bar-friends.webp"
             alt="Group of people toasting with glasses of Gin Kings at the bar of an elegant bar during the night."
             height={747}

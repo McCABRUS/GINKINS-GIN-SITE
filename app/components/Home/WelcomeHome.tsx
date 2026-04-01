@@ -4,6 +4,7 @@ export default function WelcomeHome() {
     <section className="bg-(--primary-red-main) flex w-full h-51.25 flex-col justify-center items-center lg:-mt-101 xl:mt-0">
       <div className="flex flex-wrap flex-row justify-between items-center content-center w-[80%] h-6.75 lg:h-13.25 max-w-480">
         <Image
+          draggable={false}
           src="/imgs/home/ginkins-gin-welcome-banner-ornament.svg"
           alt=""
           height={53}
@@ -12,6 +13,7 @@ export default function WelcomeHome() {
           aria-hidden
         />
         <Image
+          draggable={false}
           src="/imgs/home/ginkins-gin-welcome-banner-ornament-mobile.svg"
           alt=""
           height={53}

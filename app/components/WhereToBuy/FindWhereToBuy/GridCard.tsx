@@ -39,7 +39,13 @@ export default function GridCard({
         className={`relative mb-8 w-40 h-40 lg:h-57.5 lg:w-57.5 rounded-full ${bgColor}`}
       >
         <div className="relative w-[132%] h-[131%] left-[-16%] top-[-16%]">
-          <Image src={image} alt={alt} fill className="object-cover" />
+          <Image
+            draggable={false}
+            src={image}
+            alt={alt}
+            fill
+            className="object-cover"
+          />
         </div>
       </div>
 

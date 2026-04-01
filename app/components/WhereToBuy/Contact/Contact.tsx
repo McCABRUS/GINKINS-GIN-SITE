@@ -52,6 +52,7 @@ export default function Contact() {
           </div>
           <div className="flex flex-col justify-center w-full my-10 md:mb-26.5 order-1 lg:order-2">
             <Image
+              draggable={false}
               src="/imgs/where_to_buy/ginkins-gin-golden-bloom-outdoor.webp"
               alt="Ginkins Golden Bloom Gin bottle placed on a stone pedestal in a sunny Mediterranean garden"
               width={405}
@@ -126,6 +127,7 @@ function Divider() {
     <div className="flex items-center justify-center gap-6">
       <span className="h-px w-full bg-(--primary-red-main)" aria-hidden />
       <Image
+        draggable={false}
         src="/imgs/our_gins/ginkins-gin-icon-sparkle-shield.svg"
         alt="Divider"
         width={40}

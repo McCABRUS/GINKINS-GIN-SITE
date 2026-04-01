@@ -10,11 +10,20 @@ import {
 } from 'react';
 import { flushSync } from 'react-dom';
 import { gsap } from 'gsap';
+import { CustomEase } from 'gsap/CustomEase';
 import CollectionCard from './CollectionCard';
 import { collectionData } from './data';
 
+gsap.registerPlugin(CustomEase);
+CustomEase.create('animistaEaseOutQuint', '0.23, 1, 0.32, 1');
+
 const AUTOPLAY_MS = 5500;
+const TRANSITION_MS = 2000;
+const DRAG_ACTIVATE_PX = 6;
 const SWIPE_THRESHOLD = 48;
+const VELOCITY_THRESHOLD = 0.45;
+const RELEASE_SNAP_MS = 0.7;
+const MAX_SIDE_BLUR = 7;
 
 const COMPACT_X = {
   center: 0,
@@ -39,6 +48,37 @@ type Positions = {
   offRight: number;
 };
 
+type DragState = {
+  isDown: boolean;
+  isDragging: boolean;
+  pointerId: number | null;
+  startX: number;
+  startY: number;
+  dx: number;
+  dy: number;
+  lastX: number;
+  lastT: number;
+  velocityX: number;
+  rafId: number | null;
+};
+
+const initialDragState = (): DragState => ({
+  isDown: false,
+  isDragging: false,
+  pointerId: null,
+  startX: 0,
+  startY: 0,
+  dx: 0,
+  dy: 0,
+  lastX: 0,
+  lastT: 0,
+  velocityX: 0,
+  rafId: null,
+});
+
+const clamp01 = (value: number) => Math.min(1, Math.max(0, value));
+const easeOutQuint = (t: number) => 1 - Math.pow(1 - clamp01(t), 5);
+
 export default function CollectionCarousel() {
   const items = useMemo(() => collectionData, []);
   const total = items.length;
@@ -48,8 +88,6 @@ export default function CollectionCarousel() {
   >('desktop');
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [ghost, setGhost] = useState<GhostState>(null);
-  const [pendingDesktopReveal, setPendingDesktopReveal] = useState(false);
-  const [pendingCompactReveal, setPendingCompactReveal] = useState(false);
 
   const [slotCards, setSlotCards] = useState<[number, number, number]>(() => {
     if (total <= 1) return [0, 0, 0];
@@ -72,6 +110,7 @@ export default function CollectionCarousel() {
   const autoplayRef = useRef<number | null>(null);
   const pointerStartRef = useRef<{ x: number; y: number } | null>(null);
   const touchStartRef = useRef<{ x: number; y: number } | null>(null);
+  const dragRef = useRef<DragState>(initialDragState());
 
   const isTransitioningRef = useRef(false);
   const slotCardsRef = useRef(slotCards);
@@ -161,57 +200,345 @@ export default function CollectionCarousel() {
     positionsRef.current = nextPositions;
   }, []);
 
-  const hideAllContent = useCallback(() => {
-    if (!stageRef.current) return;
-
-    const contentEls = stageRef.current.querySelectorAll(
+  const getDesktopContentEl = useCallback((slot: number) => {
+    return slotRefs.current[slot]?.querySelector(
       '.collection-card__content',
-    );
-
-    gsap.set(contentEls, {
-      opacity: 0,
-      y: 0,
-      visibility: 'hidden',
-    });
+    ) as HTMLElement | null;
   }, []);
+
+  const getDesktopMediaEl = useCallback((slot: number) => {
+    return slotRefs.current[slot]?.querySelector(
+      '.collection-card__media',
+    ) as HTMLElement | null;
+  }, []);
+
+  const getGhostContentEl = useCallback(() => {
+    return ghostRef.current?.querySelector(
+      '.collection-card__content',
+    ) as HTMLElement | null;
+  }, []);
+
+  const getGhostMediaEl = useCallback(() => {
+    return ghostRef.current?.querySelector(
+      '.collection-card__media',
+    ) as HTMLElement | null;
+  }, []);
+
+  const getCompactContentEl = useCallback(() => {
+    return mobileCardRef.current?.querySelector(
+      '.collection-card__content',
+    ) as HTMLElement | null;
+  }, []);
+
+  const getContentXPositions = useCallback(() => {
+    const stage = stageRef.current;
+
+    if (!stage) {
+      return {
+        leftContentX: 0,
+        centerContentX: 0,
+        rightContentX: 0,
+      };
+    }
+
+    const stageWidth = stage.getBoundingClientRect().width;
+
+    const leftContentX =
+      stageWidth >= 1920 ? -252 : stageWidth >= 1600 ? -244 : -236;
+
+    const centerContentX =
+      stageWidth >= 1920
+        ? 575
+        : stageWidth >= 1760
+          ? 545
+          : stageWidth >= 1600
+            ? 520
+            : 460;
+
+    const rightContentX =
+      stageWidth >= 1920 ? 248 : stageWidth >= 1600 ? 236 : 220;
+
+    return {
+      leftContentX,
+      centerContentX,
+      rightContentX,
+    };
+  }, []);
+
+  const applyDesktopContentPositions = useCallback(() => {
+    if (viewportModeRef.current !== 'desktop') return;
+
+    const { leftContentX, centerContentX, rightContentX } =
+      getContentXPositions();
+
+    const leftContent = getDesktopContentEl(0);
+    const centerContent = getDesktopContentEl(1);
+    const rightContent = getDesktopContentEl(2);
+    const ghostContent = getGhostContentEl();
+
+    if (leftContent) {
+      gsap.set(leftContent, { x: leftContentX });
+    }
+
+    if (centerContent) {
+      gsap.set(centerContent, { x: centerContentX });
+    }
+
+    if (rightContent) {
+      gsap.set(rightContent, { x: rightContentX });
+    }
+
+    if (ghostContent && ghost) {
+      gsap.set(ghostContent, {
+        x: ghost.direction === 1 ? rightContentX : leftContentX,
+      });
+    }
+  }, [ghost, getContentXPositions, getDesktopContentEl, getGhostContentEl]);
+
+  const syncDesktopVisuals = useCallback(() => {
+    if (viewportModeRef.current !== 'desktop') return;
+
+    const p = positionsRef.current;
+    const maxDistance =
+      Math.max(Math.abs(p.left - p.center), Math.abs(p.right - p.center)) || 1;
+
+    const syncSlot = (slot: number) => {
+      const media = getDesktopMediaEl(slot);
+      const content = getDesktopContentEl(slot);
+
+      if (!media) return;
+
+      const currentX = Number(gsap.getProperty(media, 'x')) || 0;
+      const distance = Math.abs(currentX - p.center);
+      const ratio = clamp01(distance / maxDistance);
+      const progress = 1 - ratio;
+
+      gsap.set(media, {
+        filter: `blur(${ratio * MAX_SIDE_BLUR}px)`,
+        scale: 1 - ratio * 0.015,
+        opacity: 0.35 + 0.65 * easeOutQuint(progress),
+        transformOrigin: 'center center',
+      });
+
+      if (content) {
+        const distToCenter = Math.abs(currentX - p.center);
+        const distToLeft = Math.abs(currentX - p.left);
+
+        const centerOpacity =
+          distToCenter >= 140 ? 0 : easeOutQuint(1 - distToCenter / 140);
+        const leftOpacity =
+          distToLeft >= 120 ? 0 : easeOutQuint(1 - distToLeft / 120);
+
+        const opacity = Math.max(centerOpacity, leftOpacity);
+
+        gsap.set(content, {
+          opacity,
+          visibility: opacity <= 0.001 ? 'hidden' : 'visible',
+        });
+      }
+    };
+
+    syncSlot(0);
+    syncSlot(1);
+    syncSlot(2);
+
+    const ghostMedia = getGhostMediaEl();
+    const ghostContent = getGhostContentEl();
+
+    if (ghostMedia) {
+      const currentX = Number(gsap.getProperty(ghostMedia, 'x')) || 0;
+      const distance = Math.abs(currentX - p.center);
+      const ratio = clamp01(distance / maxDistance);
+      const progress = 1 - ratio;
+
+      gsap.set(ghostMedia, {
+        filter: `blur(${ratio * MAX_SIDE_BLUR}px)`,
+        scale: 1 - ratio * 0.015,
+        opacity: 0.35 + 0.65 * easeOutQuint(progress),
+        transformOrigin: 'center center',
+      });
+
+      if (ghostContent) {
+        const distToCenter = Math.abs(currentX - p.center);
+        const distToLeft = Math.abs(currentX - p.left);
+
+        const centerOpacity =
+          distToCenter >= 140 ? 0 : easeOutQuint(1 - distToCenter / 140);
+        const leftOpacity =
+          distToLeft >= 120 ? 0 : easeOutQuint(1 - distToLeft / 120);
+
+        const opacity = Math.max(centerOpacity, leftOpacity);
+
+        gsap.set(ghostContent, {
+          opacity,
+          visibility: opacity <= 0.001 ? 'hidden' : 'visible',
+        });
+      }
+    }
+  }, [
+    getDesktopContentEl,
+    getDesktopMediaEl,
+    getGhostContentEl,
+    getGhostMediaEl,
+  ]);
+
+  const syncCompactVisuals = useCallback(() => {
+    if (viewportModeRef.current === 'desktop') return;
+
+    const card = mobileCardRef.current;
+    const content = getCompactContentEl();
+
+    if (!card || !content) return;
+
+    const currentX = Number(gsap.getProperty(card, 'x')) || 0;
+    const maxDistance =
+      Math.max(
+        Math.abs(COMPACT_X.enterFromLeft - COMPACT_X.center),
+        Math.abs(COMPACT_X.enterFromRight - COMPACT_X.center),
+      ) || 1;
+
+    const distance = Math.abs(currentX - COMPACT_X.center);
+    const ratio = clamp01(distance / maxDistance);
+    const progress = 1 - ratio;
+
+    gsap.set(content, {
+      opacity: easeOutQuint(progress),
+      visibility: progress <= 0.001 ? 'hidden' : 'visible',
+    });
+  }, [getCompactContentEl]);
+
+  const syncAllVisuals = useCallback(() => {
+    syncDesktopVisuals();
+    syncCompactVisuals();
+  }, [syncDesktopVisuals, syncCompactVisuals]);
 
   const setDesktopBasePositions = useCallback(() => {
     const p = positionsRef.current;
 
+    const l = getDesktopMediaEl(0);
+    const c = getDesktopMediaEl(1);
+    const r = getDesktopMediaEl(2);
+
     if (slotRefs.current[0]) {
-      gsap.set(slotRefs.current[0], {
-        x: p.left,
-        opacity: 0.15,
-        zIndex: 10,
-      });
+      gsap.set(slotRefs.current[0], { zIndex: 10 });
     }
 
     if (slotRefs.current[1]) {
-      gsap.set(slotRefs.current[1], {
-        x: p.center,
-        opacity: 1,
-        zIndex: 20,
-      });
+      gsap.set(slotRefs.current[1], { zIndex: 20 });
     }
 
     if (slotRefs.current[2]) {
-      gsap.set(slotRefs.current[2], {
-        x: p.right,
-        opacity: 0.15,
+      gsap.set(slotRefs.current[2], { zIndex: 10 });
+    }
+
+    if (l) gsap.set(l, { x: p.left });
+    if (c) gsap.set(c, { x: p.center });
+    if (r) gsap.set(r, { x: p.right });
+
+    if (ghostRef.current && ghost) {
+      gsap.set(ghostRef.current, {
         zIndex: 10,
       });
+
+      const ghostMedia = getGhostMediaEl();
+
+      if (ghostMedia) {
+        gsap.set(ghostMedia, {
+          x: ghost.direction === 1 ? p.offRight : p.offLeft,
+        });
+      }
     }
-  }, []);
+
+    applyDesktopContentPositions();
+    syncAllVisuals();
+  }, [
+    applyDesktopContentPositions,
+    getDesktopMediaEl,
+    getGhostMediaEl,
+    ghost,
+    syncAllVisuals,
+  ]);
 
   const setCompactBasePosition = useCallback(() => {
     if (mobileCardRef.current) {
       gsap.set(mobileCardRef.current, {
         x: COMPACT_X.center,
-        opacity: 1,
         zIndex: 20,
       });
     }
-  }, []);
+
+    syncAllVisuals();
+  }, [syncAllVisuals]);
+
+  const snapBackToBase = useCallback(
+    (animate = true) => {
+      if (viewportModeRef.current === 'desktop') {
+        const p = positionsRef.current;
+        const duration = animate ? RELEASE_SNAP_MS : 0;
+
+        const l = getDesktopMediaEl(0);
+        const c = getDesktopMediaEl(1);
+        const r = getDesktopMediaEl(2);
+        const g = getGhostMediaEl();
+
+        if (l) {
+          gsap.to(l, {
+            x: p.left,
+            duration,
+            ease: 'animistaEaseOutQuint',
+            overwrite: true,
+            onUpdate: syncAllVisuals,
+            onComplete: syncAllVisuals,
+          });
+        }
+
+        if (c) {
+          gsap.to(c, {
+            x: p.center,
+            duration,
+            ease: 'animistaEaseOutQuint',
+            overwrite: true,
+            onUpdate: syncAllVisuals,
+            onComplete: syncAllVisuals,
+          });
+        }
+
+        if (r) {
+          gsap.to(r, {
+            x: p.right,
+            duration,
+            ease: 'animistaEaseOutQuint',
+            overwrite: true,
+            onUpdate: syncAllVisuals,
+            onComplete: syncAllVisuals,
+          });
+        }
+
+        if (g && ghost) {
+          const ghostBaseX = ghost.direction === 1 ? p.offRight : p.offLeft;
+
+          gsap.to(g, {
+            x: ghostBaseX,
+            duration,
+            ease: 'animistaEaseOutQuint',
+            overwrite: true,
+            onUpdate: syncAllVisuals,
+            onComplete: syncAllVisuals,
+          });
+        }
+      } else if (mobileCardRef.current) {
+        gsap.to(mobileCardRef.current, {
+          x: COMPACT_X.center,
+          duration: animate ? RELEASE_SNAP_MS : 0,
+          ease: 'animistaEaseOutQuint',
+          overwrite: true,
+          onUpdate: syncAllVisuals,
+          onComplete: syncAllVisuals,
+        });
+      }
+    },
+    [getDesktopMediaEl, getGhostMediaEl, ghost, syncAllVisuals],
+  );
 
   useLayoutEffect(() => {
     if (isCompact) return;
@@ -220,8 +547,13 @@ export default function CollectionCarousel() {
 
     const ro = new ResizeObserver(() => {
       computePositions();
+
       if (!isTransitioningRef.current) {
-        setDesktopBasePositions();
+        requestAnimationFrame(() => {
+          if (!isTransitioningRef.current) {
+            setDesktopBasePositions();
+          }
+        });
       }
     });
 
@@ -232,7 +564,6 @@ export default function CollectionCarousel() {
 
   useLayoutEffect(() => {
     if (isTransitioning) return;
-    if (pendingDesktopReveal || pendingCompactReveal) return;
 
     if (!isCompact) {
       setDesktopBasePositions();
@@ -244,110 +575,13 @@ export default function CollectionCarousel() {
     slotCards,
     isCompact,
     isTransitioning,
-    pendingDesktopReveal,
-    pendingCompactReveal,
     setDesktopBasePositions,
     setCompactBasePosition,
   ]);
 
   useLayoutEffect(() => {
-    if (!pendingDesktopReveal) return;
-    if (isCompact) return;
-
-    setDesktopBasePositions();
-
-    const leftContent = slotRefs.current[0]?.querySelector(
-      '.collection-card__content',
-    );
-    const centerContent = slotRefs.current[1]?.querySelector(
-      '.collection-card__content',
-    );
-    const rightContent = slotRefs.current[2]?.querySelector(
-      '.collection-card__content',
-    );
-
-    const targets = [
-      { el: leftContent, opacity: 0.45 },
-      { el: centerContent, opacity: 1 },
-      { el: rightContent, opacity: 0.45 },
-    ].filter((item) => item.el) as { el: Element; opacity: number }[];
-
-    if (!targets.length) return;
-
-    gsap.set(
-      targets.map((item) => item.el),
-      {
-        opacity: 0,
-        y: 0,
-        visibility: 'visible',
-      },
-    );
-
-    const id = window.requestAnimationFrame(() => {
-      const tl = gsap.timeline({
-        onComplete: () => {
-          setPendingDesktopReveal(false);
-          setIsTransitioning(false);
-          isTransitioningRef.current = false;
-        },
-      });
-
-      targets.forEach(({ el, opacity }, index) => {
-        tl.to(
-          el,
-          {
-            opacity,
-            y: 0,
-            duration: 0.28,
-            ease: 'power2.out',
-            force3D: true,
-          },
-          index * 0.03,
-        );
-      });
-    });
-
-    return () => {
-      window.cancelAnimationFrame(id);
-    };
-  }, [isCompact, pendingDesktopReveal, setDesktopBasePositions]);
-
-  useLayoutEffect(() => {
-    if (!pendingCompactReveal) return;
-    if (!isCompact) return;
-
-    setCompactBasePosition();
-
-    const content = mobileCardRef.current?.querySelector(
-      '.collection-card__content',
-    );
-
-    if (!content) return;
-
-    gsap.set(content, {
-      opacity: 0,
-      y: 0,
-      visibility: 'visible',
-    });
-
-    const id = window.requestAnimationFrame(() => {
-      gsap.to(content, {
-        opacity: 1,
-        y: 0,
-        duration: 0.28,
-        ease: 'power2.out',
-        onComplete: () => {
-          setPendingCompactReveal(false);
-          setIsTransitioning(false);
-          isTransitioningRef.current = false;
-        },
-      });
-    });
-
-    return () => {
-      window.cancelAnimationFrame(id);
-    };
-  }, [isCompact, pendingCompactReveal, setCompactBasePosition]);
+    syncAllVisuals();
+  }, [ghost, slotCards, positions, syncAllVisuals]);
 
   const runTransition = useCallback(
     (direction: Direction) => {
@@ -356,6 +590,13 @@ export default function CollectionCarousel() {
       const current = slotCardsRef.current;
       const nextSlots = getNextSlots(direction, current);
 
+      const drag = dragRef.current;
+      drag.isDown = false;
+      drag.isDragging = false;
+      drag.dx = 0;
+      drag.dy = 0;
+      drag.velocityX = 0;
+
       setIsTransitioning(true);
       isTransitioningRef.current = true;
 
@@ -363,8 +604,6 @@ export default function CollectionCarousel() {
         window.clearInterval(autoplayRef.current);
         autoplayRef.current = null;
       }
-
-      hideAllContent();
 
       const incomingGhostIndex =
         viewportModeRef.current === 'desktop'
@@ -381,41 +620,31 @@ export default function CollectionCarousel() {
       });
 
       requestAnimationFrame(() => {
-        const l = slotRefs.current[0];
-        const c = slotRefs.current[1];
-        const r = slotRefs.current[2];
-        const g = ghostRef.current;
+        const l = getDesktopMediaEl(0);
+        const c = getDesktopMediaEl(1);
+        const r = getDesktopMediaEl(2);
+        const g = getGhostMediaEl();
         const m = mobileCardRef.current;
 
         gsap.killTweensOf([l, c, r, g, m].filter(Boolean));
 
-        if (g) {
-          const ghostContent = g.querySelector('.collection-card__content');
-          if (ghostContent) {
-            gsap.set(ghostContent, { opacity: 0, visibility: 'hidden' });
-          }
-        }
-
         const p = positionsRef.current;
+        const duration = TRANSITION_MS / 1000;
 
         const tl = gsap.timeline({
           defaults: {
-            ease: 'power3.inOut',
+            ease: 'animistaEaseOutQuint',
           },
+          onUpdate: syncAllVisuals,
           onComplete: () => {
-            if (viewportModeRef.current === 'desktop') {
-              flushSync(() => {
-                setPendingDesktopReveal(true);
-                setSlotCards(nextSlots);
-                setGhost(null);
-              });
-            } else {
-              flushSync(() => {
-                setPendingCompactReveal(true);
-                setSlotCards(nextSlots);
-                setGhost(null);
-              });
-            }
+            flushSync(() => {
+              setSlotCards(nextSlots);
+              setGhost(null);
+              setIsTransitioning(false);
+              isTransitioningRef.current = false;
+            });
+
+            setDesktopBasePositions();
           },
         });
 
@@ -426,8 +655,7 @@ export default function CollectionCarousel() {
                 l,
                 {
                   x: p.offLeft,
-                  opacity: 0,
-                  duration: 0.78,
+                  duration,
                 },
                 0,
               );
@@ -438,8 +666,7 @@ export default function CollectionCarousel() {
                 c,
                 {
                   x: p.left,
-                  opacity: 0.45,
-                  duration: 0.78,
+                  duration,
                 },
                 0,
               );
@@ -450,8 +677,7 @@ export default function CollectionCarousel() {
                 r,
                 {
                   x: p.center,
-                  opacity: 1,
-                  duration: 0.78,
+                  duration,
                 },
                 0,
               );
@@ -460,16 +686,13 @@ export default function CollectionCarousel() {
             if (g) {
               gsap.set(g, {
                 x: p.offRight,
-                opacity: 0,
-                zIndex: 10,
               });
 
               tl.to(
                 g,
                 {
                   x: p.right,
-                  opacity: 0.45,
-                  duration: 0.78,
+                  duration,
                 },
                 0,
               );
@@ -480,8 +703,7 @@ export default function CollectionCarousel() {
                 r,
                 {
                   x: p.offRight,
-                  opacity: 0,
-                  duration: 0.78,
+                  duration,
                 },
                 0,
               );
@@ -492,8 +714,7 @@ export default function CollectionCarousel() {
                 c,
                 {
                   x: p.right,
-                  opacity: 0.45,
-                  duration: 0.78,
+                  duration,
                 },
                 0,
               );
@@ -504,8 +725,7 @@ export default function CollectionCarousel() {
                 l,
                 {
                   x: p.center,
-                  opacity: 1,
-                  duration: 0.78,
+                  duration,
                 },
                 0,
               );
@@ -514,16 +734,13 @@ export default function CollectionCarousel() {
             if (g) {
               gsap.set(g, {
                 x: p.offLeft,
-                opacity: 0,
-                zIndex: 10,
               });
 
               tl.to(
                 g,
                 {
                   x: p.left,
-                  opacity: 0.45,
-                  duration: 0.78,
+                  duration,
                 },
                 0,
               );
@@ -542,7 +759,7 @@ export default function CollectionCarousel() {
               m,
               {
                 x: COMPACT_X.exitToLeft,
-                duration: 0.62,
+                duration,
               },
               0,
             );
@@ -552,7 +769,7 @@ export default function CollectionCarousel() {
                 g,
                 {
                   x: COMPACT_X.center,
-                  duration: 0.62,
+                  duration,
                 },
                 0,
               );
@@ -569,7 +786,7 @@ export default function CollectionCarousel() {
               m,
               {
                 x: COMPACT_X.exitToRight,
-                duration: 0.62,
+                duration,
               },
               0,
             );
@@ -579,7 +796,7 @@ export default function CollectionCarousel() {
                 g,
                 {
                   x: COMPACT_X.center,
-                  duration: 0.62,
+                  duration,
                 },
                 0,
               );
@@ -588,7 +805,14 @@ export default function CollectionCarousel() {
         }
       });
     },
-    [getNextSlots, hideAllContent, total],
+    [
+      getDesktopMediaEl,
+      getGhostMediaEl,
+      getNextSlots,
+      setDesktopBasePositions,
+      syncAllVisuals,
+      total,
+    ],
   );
 
   const next = useCallback(() => runTransition(1), [runTransition]);
@@ -628,13 +852,161 @@ export default function CollectionCarousel() {
   );
 
   const handlePointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
+    const drag = dragRef.current;
+
+    drag.isDown = true;
+    drag.isDragging = false;
+    drag.pointerId = e.pointerId;
+    drag.startX = e.clientX;
+    drag.startY = e.clientY;
+    drag.dx = 0;
+    drag.dy = 0;
+    drag.lastX = e.clientX;
+    drag.lastT = performance.now();
+    drag.velocityX = 0;
+
     pointerStartRef.current = { x: e.clientX, y: e.clientY };
-    e.currentTarget.setPointerCapture(e.pointerId);
+
+    try {
+      e.currentTarget.setPointerCapture(e.pointerId);
+    } catch {
+      void 0;
+    }
+  };
+
+  const handlePointerMove = (e: React.PointerEvent<HTMLDivElement>) => {
+    const drag = dragRef.current;
+    if (!drag.isDown || isTransitioningRef.current) return;
+
+    const dx = e.clientX - drag.startX;
+    const dy = e.clientY - drag.startY;
+    const now = performance.now();
+    const dt = Math.max(now - drag.lastT, 16);
+
+    drag.dx = dx;
+    drag.dy = dy;
+    drag.velocityX = (e.clientX - drag.lastX) / dt;
+    drag.lastX = e.clientX;
+    drag.lastT = now;
+
+    if (!drag.isDragging) {
+      const hasIntent =
+        Math.abs(dx) > DRAG_ACTIVATE_PX || Math.abs(dy) > DRAG_ACTIVATE_PX;
+
+      if (!hasIntent) return;
+
+      drag.isDragging = Math.abs(dx) > Math.abs(dy);
+      if (!drag.isDragging) return;
+    }
+
+    pointerStartRef.current = { x: drag.startX, y: drag.startY };
+
+    if (drag.rafId !== null) return;
+
+    drag.rafId = window.requestAnimationFrame(() => {
+      drag.rafId = null;
+
+      if (!drag.isDragging || isTransitioningRef.current) return;
+
+      const p = positionsRef.current;
+      const dxLocal = drag.dx;
+
+      if (viewportModeRef.current === 'desktop') {
+        const leftMedia = getDesktopMediaEl(0);
+        const centerMedia = getDesktopMediaEl(1);
+        const rightMedia = getDesktopMediaEl(2);
+
+        if (leftMedia) {
+          gsap.set(leftMedia, {
+            x: p.left + dxLocal * 0.18,
+          });
+        }
+
+        if (centerMedia) {
+          gsap.set(centerMedia, {
+            x: p.center + dxLocal * 0.32,
+          });
+        }
+
+        if (rightMedia) {
+          gsap.set(rightMedia, {
+            x: p.right + dxLocal * 0.18,
+          });
+        }
+
+        syncAllVisuals();
+      } else if (mobileCardRef.current) {
+        gsap.set(mobileCardRef.current, {
+          x: COMPACT_X.center + dxLocal * 0.28,
+        });
+
+        syncAllVisuals();
+      }
+    });
   };
 
   const handlePointerUp = (e: React.PointerEvent<HTMLDivElement>) => {
-    resolveSwipe(pointerStartRef.current, e.clientX, e.clientY);
+    const drag = dragRef.current;
+
+    if (!drag.isDown) {
+      pointerStartRef.current = null;
+      return;
+    }
+
+    const dx = e.clientX - drag.startX;
+    const dy = e.clientY - drag.startY;
+    const absDx = Math.abs(dx);
+    const absDy = Math.abs(dy);
+    const velocity = drag.velocityX;
+
+    drag.isDown = false;
+    drag.pointerId = null;
+
     pointerStartRef.current = null;
+
+    if (drag.isDragging) {
+      if (
+        (absDx > absDy && absDx > SWIPE_THRESHOLD) ||
+        Math.abs(velocity) > VELOCITY_THRESHOLD
+      ) {
+        if (dx < 0) next();
+        else prev();
+      } else {
+        snapBackToBase(true);
+      }
+    } else {
+      resolveSwipe({ x: drag.startX, y: drag.startY }, e.clientX, e.clientY);
+    }
+
+    drag.isDragging = false;
+    drag.dx = 0;
+    drag.dy = 0;
+    drag.velocityX = 0;
+
+    if (drag.rafId !== null) {
+      window.cancelAnimationFrame(drag.rafId);
+      drag.rafId = null;
+    }
+  };
+
+  const handlePointerCancel = () => {
+    const drag = dragRef.current;
+
+    drag.isDown = false;
+    drag.isDragging = false;
+    drag.pointerId = null;
+    drag.dx = 0;
+    drag.dy = 0;
+    drag.velocityX = 0;
+
+    pointerStartRef.current = null;
+
+    if (drag.rafId !== null) {
+      window.cancelAnimationFrame(drag.rafId);
+      drag.rafId = null;
+    }
+
+    snapBackToBase(true);
   };
 
   const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
@@ -644,16 +1016,118 @@ export default function CollectionCarousel() {
     touchStartRef.current = { x: touch.clientX, y: touch.clientY };
   };
 
+  const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
+    const touch = e.touches[0];
+    if (!touch) return;
+
+    const drag = dragRef.current;
+
+    if (!drag.isDown) {
+      drag.isDown = true;
+      drag.startX = touch.clientX;
+      drag.startY = touch.clientY;
+      drag.lastX = touch.clientX;
+      drag.lastT = performance.now();
+    }
+
+    drag.dx = touch.clientX - drag.startX;
+    drag.dy = touch.clientY - drag.startY;
+
+    if (!drag.isDragging) {
+      const hasIntent =
+        Math.abs(drag.dx) > DRAG_ACTIVATE_PX ||
+        Math.abs(drag.dy) > DRAG_ACTIVATE_PX;
+
+      if (!hasIntent) return;
+
+      drag.isDragging = Math.abs(drag.dx) > Math.abs(drag.dy);
+      if (!drag.isDragging) return;
+    }
+
+    if (drag.rafId !== null) return;
+
+    drag.rafId = window.requestAnimationFrame(() => {
+      drag.rafId = null;
+
+      if (!drag.isDragging || isTransitioningRef.current) return;
+
+      const p = positionsRef.current;
+      const dxLocal = drag.dx;
+
+      if (viewportModeRef.current === 'desktop') {
+        const leftMedia = getDesktopMediaEl(0);
+        const centerMedia = getDesktopMediaEl(1);
+        const rightMedia = getDesktopMediaEl(2);
+
+        if (leftMedia) {
+          gsap.set(leftMedia, {
+            x: p.left + dxLocal * 0.18,
+          });
+        }
+
+        if (centerMedia) {
+          gsap.set(centerMedia, {
+            x: p.center + dxLocal * 0.32,
+          });
+        }
+
+        if (rightMedia) {
+          gsap.set(rightMedia, {
+            x: p.right + dxLocal * 0.18,
+          });
+        }
+
+        syncAllVisuals();
+      } else if (mobileCardRef.current) {
+        gsap.set(mobileCardRef.current, {
+          x: COMPACT_X.center + dxLocal * 0.28,
+        });
+
+        syncAllVisuals();
+      }
+    });
+  };
+
   const handleTouchEnd = (e: React.TouchEvent<HTMLDivElement>) => {
     const touch = e.changedTouches[0];
     if (!touch) return;
 
-    resolveSwipe(touchStartRef.current, touch.clientX, touch.clientY);
+    const drag = dragRef.current;
+
+    if (drag.isDragging) {
+      const dx = touch.clientX - drag.startX;
+      const dy = touch.clientY - drag.startY;
+      const absDx = Math.abs(dx);
+      const absDy = Math.abs(dy);
+
+      if (absDx > absDy && absDx > SWIPE_THRESHOLD) {
+        if (dx < 0) next();
+        else prev();
+      } else {
+        snapBackToBase(true);
+      }
+    } else {
+      resolveSwipe(touchStartRef.current, touch.clientX, touch.clientY);
+    }
+
+    drag.isDown = false;
+    drag.isDragging = false;
+    drag.pointerId = null;
+    drag.dx = 0;
+    drag.dy = 0;
+    drag.velocityX = 0;
+
     touchStartRef.current = null;
+
+    if (drag.rafId !== null) {
+      window.cancelAnimationFrame(drag.rafId);
+      drag.rafId = null;
+    }
   };
 
   const handleTouchCancel = () => {
     touchStartRef.current = null;
+    handlePointerCancel();
   };
 
   const stopStageForButton = (e: React.PointerEvent<HTMLButtonElement>) => {
@@ -671,14 +1145,14 @@ export default function CollectionCarousel() {
           className="relative h-full w-full overflow-hidden touch-pan-y"
           style={{ touchAction: 'pan-y' }}
           onPointerDown={handlePointerDown}
+          onPointerMove={handlePointerMove}
           onPointerUp={handlePointerUp}
-          onPointerCancel={() => {
-            pointerStartRef.current = null;
-          }}
+          onPointerCancel={handlePointerCancel}
           onPointerLeave={() => {
             pointerStartRef.current = null;
           }}
           onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
           onTouchCancel={handleTouchCancel}
         >
@@ -756,11 +1230,7 @@ export default function CollectionCarousel() {
                   ref={(el) => {
                     slotRefs.current[slot] = el;
                   }}
-                  className={`absolute top-0 left-0 w-[min(92vw,980px)] will-change-transform ${
-                    pendingDesktopReveal
-                      ? '[&_.collection-card__content]:opacity-0'
-                      : ''
-                  }`}
+                  className="absolute top-0 left-0 w-[min(92vw,980px)]"
                   style={{
                     zIndex: slot === 1 ? 20 : 10,
                   }}
@@ -778,18 +1248,16 @@ export default function CollectionCarousel() {
               {ghost && (
                 <div
                   ref={ghostRef}
-                  className="absolute top-0 left-0 w-[min(92vw,980px)] pointer-events-none will-change-transform"
+                  className="absolute top-0 left-0 w-[min(92vw,980px)] pointer-events-none"
                   style={{ zIndex: 10 }}
                 >
-                  <div className="[&_.collection-card__content]:opacity-0">
-                    <CollectionCard
-                      title={items[ghost.index].title}
-                      text={items[ghost.index].text}
-                      img={items[ghost.index].img}
-                      alt={items[ghost.index].alt}
-                      linkId={items[ghost.index].linkId}
-                    />
-                  </div>
+                  <CollectionCard
+                    title={items[ghost.index].title}
+                    text={items[ghost.index].text}
+                    img={items[ghost.index].img}
+                    alt={items[ghost.index].alt}
+                    linkId={items[ghost.index].linkId}
+                  />
                 </div>
               )}
             </>
@@ -797,11 +1265,7 @@ export default function CollectionCarousel() {
             <>
               <div
                 ref={mobileCardRef}
-                className={`absolute top-0 left-1/2 -translate-x-1/2 ${compactWidthClass} will-change-transform ${
-                  pendingCompactReveal
-                    ? '[&_.collection-card__content]:opacity-0'
-                    : ''
-                }`}
+                className={`absolute top-0 left-1/2 -translate-x-1/2 ${compactWidthClass}`}
                 style={{ zIndex: 20 }}
               >
                 <CollectionCard
@@ -816,18 +1280,16 @@ export default function CollectionCarousel() {
               {ghost && (
                 <div
                   ref={ghostRef}
-                  className={`absolute top-0 left-1/2 -translate-x-1/2 ${compactWidthClass} pointer-events-none will-change-transform`}
+                  className={`absolute top-0 left-1/2 -translate-x-1/2 ${compactWidthClass} pointer-events-none`}
                   style={{ zIndex: 15 }}
                 >
-                  <div className="[&_.collection-card__content]:opacity-0">
-                    <CollectionCard
-                      title={items[ghost.index].title}
-                      text={items[ghost.index].text}
-                      img={items[ghost.index].img}
-                      alt={items[ghost.index].alt}
-                      linkId={items[ghost.index].linkId}
-                    />
-                  </div>
+                  <CollectionCard
+                    title={items[ghost.index].title}
+                    text={items[ghost.index].text}
+                    img={items[ghost.index].img}
+                    alt={items[ghost.index].alt}
+                    linkId={items[ghost.index].linkId}
+                  />
                 </div>
               )}
             </>

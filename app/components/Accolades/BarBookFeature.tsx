@@ -18,6 +18,7 @@ export default function BarBookFeature() {
               <div className="pointer-events-none absolute inset-0 rounded-t-full z-30 bg-linear-to-b from-black/0 to-black/90" />
 
               <Image
+                draggable={false}
                 src="/imgs/accolades/ginkins-gin-trio-silver-tray.webp"
                 alt="Elegant hands holding a silver tray with a trio of Ginkins Gin bottles against a red velvet curtain"
                 width={414}
@@ -27,6 +28,7 @@ export default function BarBookFeature() {
               <div className="absolute bottom-0 -right-5.5 lg:-right-9.5 xl:-right-11.25 h-37.25 md:h-55 xl:h-80 lg:h-60 w-63.5 md:w-91 lg:w-101.5 xl:w-131.25 bg-(--primary-gold-main) z-10" />
               <div className="absolute inset-x-0 bottom-0 lg:bottom-8 z-30 flex justify-center">
                 <Image
+                  draggable={false}
                   src="/imgs/accolades/ginkins-gin-the-bar-book-feature.png"
                   alt="The Bar Book official logo - As featured and recommended premium gin"
                   width={290}
@@ -39,6 +41,7 @@ export default function BarBookFeature() {
           <div className="text-center lg:text-left justify-center lg:justify-start">
             <div className="mb-6 flex justify-center lg:justify-start">
               <Image
+                draggable={false}
                 src="/imgs/accolades/ginkins-gin-icon-sparkle-shield.svg"
                 alt=""
                 width={42}

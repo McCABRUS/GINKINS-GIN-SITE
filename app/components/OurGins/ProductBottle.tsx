@@ -24,6 +24,7 @@ export function ProductBottle({
 
       <div className="absolute bottom-[-50%] xl:left-[60%] left-[51%] -translate-x-1/2 z-20 xl:w-[53%] w-[65%]">
         <Image
+          draggable={false}
           src={bottleSrc}
           alt={bottleAlt}
           width={294}

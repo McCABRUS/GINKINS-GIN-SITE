@@ -35,6 +35,7 @@ export default function AccoladesHero() {
         <div className="my-16 flex justify-center">
           <div className="h-79.75 w-76">
             <Image
+              draggable={false}
               src="/imgs/accolades/ginkins-gin-icon-stars-black-duo.svg"
               alt="Leaves icon"
               height={304}

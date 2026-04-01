@@ -85,6 +85,7 @@ export default function FoodPairings() {
         </div>
         <div className="mt-15 flex justify-center">
           <Image
+            draggable={false}
             src="/imgs/cocktails/food-pairings-icons/ginkins-gin-icon-fish-citrus-mix.svg"
             alt=""
             width={140}

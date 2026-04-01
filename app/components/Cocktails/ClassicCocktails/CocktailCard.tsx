@@ -10,6 +10,7 @@ export default function CocktailCard({ title, image, alt }: CocktailCardProps) {
   return (
     <div className="w-full min-w-0 overflow-hidden rounded-xl bg-[#FFFAEE] text-black">
       <Image
+        draggable={false}
         src={image}
         alt={alt}
         width={400}

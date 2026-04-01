@@ -82,6 +82,7 @@ export default function BottleCarousel({ slides, activeIndex }: Props) {
       <div className="absolute w-62 xl:w-81.75 lg:w-56.25 h-104 lg:h-95 xl:h-137.5 top-26 lg:top-33 xl:top-25.5 left-2/4 -translate-x-1/2">
         <div ref={outgoingRef} className="absolute inset-0">
           <Image
+            draggable={false}
             src={current.src}
             alt={current.alt}
             fill
@@ -92,6 +93,7 @@ export default function BottleCarousel({ slides, activeIndex }: Props) {
 
         <div ref={incomingRef} className="absolute inset-0 opacity-0">
           <Image
+            draggable={false}
             src={next.src}
             alt={next.alt}
             fill
