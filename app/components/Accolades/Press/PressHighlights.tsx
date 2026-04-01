@@ -93,7 +93,7 @@ export default function PressHighlights() {
           </svg>
         </button>
         <div className="relative mx-auto">
-          <div className="pointer-events-none absolute left-1/2 top-0 hidden xl:h-95.5 h-65 w-px bg-white lg:block" />
+          <div className="pointer-events-none absolute left-1/2 top-0 hidden xl:h-80 h-65 w-px bg-white lg:block" />
 
           <div className="grid grid-cols-1 gap-16 lg:grid-cols-2 lg:gap-24">
             <PressSlide {...leftSlide} />
