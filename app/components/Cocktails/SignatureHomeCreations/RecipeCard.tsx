@@ -47,8 +47,8 @@ export default function RecipeCard({
           {title}
         </h3>
       </div>
-      <div className="absolute inset-0 z-20 flex items-center bg-black/70 opacity-0 translate-y-4 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0 group-focus-within:opacity-100 group-focus-within:translate-y-0 group-active:opacity-100 group-active:translate-y-0 group-active-within:opacity-100 group-active-within:translate-y-0">
-        <div className="px-2 sm:px-6 py-2 sm:py-6 text-sm text-background space-y-6 max-h-full overflow-y-auto 2xl:pr-35">
+      <div className="absolute inset-0 z-20 flex items-center bg-black/70 opacity-0 transition-all duration-300 group-hover:opacity-100 group-focus-within:opacity-100 group-active:opacity-100 group-active-within:opacity-100">
+        <div className="px-2 sm:px-6 py-2 sm:py-6 text-sm text-background space-y-6 max-h-full overflow-y-auto place-self-start">
           <p className="leading-relaxed">
             <strong>{description}</strong>
           </p>
