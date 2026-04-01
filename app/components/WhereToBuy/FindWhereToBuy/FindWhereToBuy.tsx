@@ -18,7 +18,7 @@ export default function FindWhereToBuy() {
             order="lg:order-1"
             alt="Luxury red shopping bag with gold botanical pattern for Ginkins Gin"
             title="Retailers Near You"
-            description="From boutique bottle shops to trusted liquor stores, Ginkins is on shelves across Kentucky and beyond."
+            description="From curated bottle shops to trusted liquor stores, Ginkins is finding its place on shelves across Kentucky—and beyond. "
             image="/imgs/where_to_buy/ginkins-gin-premium-shopping-bag--high.webp"
             bgColor="bg-(--primary-gold-main)"
             isLeft
