@@ -50,7 +50,7 @@ export default function PressHighlights() {
         </h1>
         <button
           onClick={prev}
-          className="absolute left-5 xl:left-0  md:top-1/2 -translate-y-1/2 h-7.5 w-7.5 lg:w-12 lg:h-12 xl:h-14.5 xl:w-14.5 rounded-full border border-(--primary-gold-main) bg-background flex items-center justify-center text-(--primary-gold-main) hover:bg-(--primary-gold-main) hover:text-background hover:border-background transition duration-300 ease-in-out z-10"
+          className="absolute left-5 md:top-1/2 -translate-y-1/2 h-7.5 w-7.5 lg:w-12 lg:h-12 xl:h-14.5 xl:w-14.5 rounded-full border border-(--primary-gold-main) bg-background flex items-center justify-center text-(--primary-gold-main) hover:bg-(--primary-gold-main) hover:text-background hover:border-background transition duration-300 ease-in-out z-10"
           aria-label="Previous Press Highlight"
         >
           <svg
@@ -75,7 +75,7 @@ export default function PressHighlights() {
         </button>
         <button
           onClick={next}
-          className="absolute right-5 xl:right-0 md:top-1/2 -translate-y-1/2 h-7.5 w-7.5 lg:w-12 lg:h-12 xl:h-14.5 xl:w-14.5 rounded-full border border-(--primary-gold-main) bg-background flex items-center justify-center text-(--primary-gold-main) hover:bg-(--primary-gold-main) hover:text-background hover:border-background transition duration-300 ease-in-out z-10"
+          className="absolute right-5 md:top-1/2 -translate-y-1/2 h-7.5 w-7.5 lg:w-12 lg:h-12 xl:h-14.5 xl:w-14.5 rounded-full border border-(--primary-gold-main) bg-background flex items-center justify-center text-(--primary-gold-main) hover:bg-(--primary-gold-main) hover:text-background hover:border-background transition duration-300 ease-in-out z-10"
           aria-label="Next Press Highlight"
         >
           <svg
