@@ -44,7 +44,7 @@ export default function AboutHomeMenu() {
           </div>
 
           <div className="relative flex justify-center lg:justify-end h-full">
-            <div className="absolute left-[67%] lg:-right-12.5 top-6 z-10 fill-(--primary-red-main)">
+            <div className="absolute left-[53%] lg:left-[unset] -lg:-right-1.25 top-6 z-10 fill-(--primary-red-main) lg:w-39.75 lg:h-39.25 w-25">
               <Image
                 draggable={false}
                 src="/imgs/home/ginkins-gin-icon-star-sparkles.svg"
@@ -55,7 +55,7 @@ export default function AboutHomeMenu() {
                 aria-hidden
               />
             </div>
-            <div className="h-full w-auto aspect-348/510 overflow-hidden xl:mr-17">
+            <div className="xl:h-full lg:h-120 h-78.75 w-auto aspect-348/510 overflow-hidden xl:mr-17 lg:mr-5">
               <Image
                 draggable={false}
                 src="/imgs/home/scott-ginkins-founder-master-distiller.webp"
