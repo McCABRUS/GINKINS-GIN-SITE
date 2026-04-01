@@ -32,7 +32,7 @@ export default function BannerHomeShop() {
               className=" inline-block items-center justify-center animatedButton px-5 py-1.5 text-sm font-medium uppercase  transition group"
             >
               <h5 className="group-hover:text-(--primary-black)! group-active:text-(--primary-black)! group-focus:text-(--primary-black)!">
-                Find Ginkins
+                Find Ginkins Near You
               </h5>
             </Link>
           </div>
