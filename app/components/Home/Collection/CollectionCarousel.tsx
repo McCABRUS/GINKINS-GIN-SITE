@@ -489,6 +489,7 @@ export default function CollectionCarousel() {
     if (ghostRef.current) {
       gsap.set(ghostRef.current, {
         opacity: 0,
+        filter: `blur(${MAX_SIDE_BLUR}px)`,
         pointerEvents: 'none',
       });
 
@@ -498,7 +499,7 @@ export default function CollectionCarousel() {
       if (ghostMedia) {
         gsap.set(ghostMedia, {
           opacity: 0,
-          filter: 'brightness(0.92)',
+          filter: `brightness(0.92), blur(${MAX_SIDE_BLUR}px)`,
           transformOrigin: 'center center',
           force3D: true,
         });
@@ -507,6 +508,7 @@ export default function CollectionCarousel() {
       if (ghostContent) {
         gsap.set(ghostContent, {
           opacity: 0,
+          filter: `brightness(0.92), blur(${MAX_SIDE_BLUR}px)`,
           visibility: 'hidden',
         });
       }
