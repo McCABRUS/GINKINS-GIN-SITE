@@ -2,7 +2,7 @@ export default function HeroFAQs() {
   return (
     <section className="w-full bg-(--primary-beige) py-15">
       <div className="absolute inset-0 pointer-events-none max-xl:px-5 max-4xl:px-37.25 md:max-w-480">
-        <picture>
+        <picture className="absolute">
           <source
             media="(max-width: 640px)"
             srcSet="/imgs/about/ginkins-gin-heritage-farm-illustration-480.webp"
@@ -14,7 +14,7 @@ export default function HeroFAQs() {
           <img
             src="/imgs/about/ginkins-gin-heritage-farm-illustration-1200.webp"
             alt="Golden line art illustration of a Kentucky farm and distillery at sunset for Ginkins Gin background"
-            className="h-full w-full object-cover object-bottom xl:-top-45 opacity-20 relative"
+            className="h-full w-full object-cover object-bottom xl:top-27.5 opacity-20 relative"
             loading="eager"
             fetchPriority="high"
           />

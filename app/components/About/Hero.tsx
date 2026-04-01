@@ -2,9 +2,9 @@ import Image from 'next/image';
 
 export default function Hero() {
   return (
-    <section className="relative w-screen overflow-hidden bg-(--secondary-beige) pt-12.75">
-      <div className="absolute inset-0 pointer-events-none">
-        <picture>
+    <section className="relative w-screen overflow-hidden bg-(--secondary-beige) pt-12.75 lg:pt-27.75">
+      <div className="absolute inset-0 pointer-events-none opacity-50">
+        <picture className="absolute">
           <source
             media="(max-width: 640px)"
             srcSet="/imgs/about/ginkins-gin-heritage-farm-illustration-480.webp"
@@ -16,14 +16,14 @@ export default function Hero() {
           <img
             src="/imgs/about/ginkins-gin-heritage-farm-illustration-1200.webp"
             alt="Golden line art illustration of a Kentucky farm and distillery at sunset for Ginkins Gin background"
-            className="h-full w-full object-cover object-center xl:top-50"
+            className="h-full w-full relative object-cover object-center xl:top-15"
             loading="eager"
             fetchPriority="high"
           />
         </picture>
         <div className="absolute inset-x-0 bottom-0 h-20 bg-linear-to-t from-(--secondary-beige) to-transparent" />
       </div>
-      <div className="relative text-center max-xl:px-5 max-4xl:px-37.25 md:max-w-480 place-self-center">
+      <div className="relative text-center max-xl:px-5 max-4xl:px-27.5 place-self-center">
         <h1 className="text-center text-(--primary-black)!">
           Connections that distill into something greater
         </h1>

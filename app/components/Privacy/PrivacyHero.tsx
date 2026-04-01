@@ -1,8 +1,8 @@
 export default function PrivacyHero() {
   return (
     <section className="w-full bg-(--primary-beige) px-6 py-15 md:px-12 lg:px-36.75">
-      <div className="absolute inset-0 pointer-events-none">
-        <picture>
+      <div className="absolute inset-0 pointer-events-none opacity-50">
+        <picture className="absolute">
           <source
             media="(max-width: 640px)"
             srcSet="/imgs/about/ginkins-gin-heritage-farm-illustration-480.webp"
@@ -14,7 +14,7 @@ export default function PrivacyHero() {
           <img
             src="/imgs/about/ginkins-gin-heritage-farm-illustration-1200.webp"
             alt="Golden line art illustration of a Kentucky farm and distillery at sunset for Ginkins Gin background"
-            className="h-full w-full object-cover object-bottom xl:-top-45 opacity-20 relative"
+            className="h-full w-full object-cover object-bottom xl:top-27.5 opacity-20 relative"
             loading="eager"
             fetchPriority="high"
           />

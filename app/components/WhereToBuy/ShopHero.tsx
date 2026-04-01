@@ -3,7 +3,7 @@ import { ShieldSVG } from './ShieldSVG';
 
 export default function ShopHero() {
   return (
-    <section className="relative w-screen h-250 min-h-130  overflow-hidden">
+    <section className="relative w-screen overflow-hidden px-5 sm:px-28.25 py-12.75 lg:pt-44.75 lg:pb-20.25">
       <Image
         draggable={false}
         src="/imgs/where_to_buy/ginkins-gin-premium-gift-boxes.webp"
@@ -29,7 +29,7 @@ export default function ShopHero() {
         </h3>
       </div>
       <div
-        className="absolute border-solid border-background border-t border-r-0 border-b-0 border-l-0 shrink-0 w-20.5 md:w-20.5 h-0 z-20 bottom-84.25 md:bottom-80 xl:bottom-68.5 left-1/2 -translate-x-1/2"
+        className="absolute border-solid border-background border-t border-r-0 border-b-0 border-l-0 shrink-0 w-20.5 md:w-20.5 h-0 z-20 bottom-84.25 md:bottom-80 xl:bottom-41.25 left-1/2 -translate-x-1/2"
         style={{
           transform: 'rotate(90deg) scale(1, 1)',
         }}

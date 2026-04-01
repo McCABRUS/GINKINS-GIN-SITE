@@ -3,8 +3,8 @@ import Image from 'next/image';
 export default function SubscribeHero() {
   return (
     <section className="relative w-screen overflow-hidden bg-(--secondary-beige) px-5 sm:px-28.25 py-12.75">
-      <div className="absolute inset-0 pointer-events-none">
-        <picture>
+      <div className="absolute inset-0 pointer-events-none opacity-50">
+        <picture className="absolute">
           <source
             media="(max-width: 640px)"
             srcSet="/imgs/about/ginkins-gin-heritage-farm-illustration-480.webp"
@@ -16,7 +16,7 @@ export default function SubscribeHero() {
           <img
             src="/imgs/about/ginkins-gin-heritage-farm-illustration-1200.webp"
             alt="Golden line art illustration of a Kentucky farm and distillery at sunset for Ginkins Gin background"
-            className="h-full w-full object-cover object-center xl:top-50"
+            className="h-full w-full relative object-cover object-center xl:top-15"
             loading="eager"
             fetchPriority="high"
           />

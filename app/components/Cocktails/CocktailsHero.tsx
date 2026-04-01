@@ -2,9 +2,9 @@ import Image from 'next/image';
 
 export default function CocktailsHero() {
   return (
-    <section className="relative w-screen overflow-hidden bg-(--secondary-beige) px-5 sm:px-28.25 py-12.75">
-      <div className="absolute inset-0 pointer-events-none">
-        <picture>
+    <section className="relative w-screen overflow-hidden bg-(--secondary-beige) px-5 sm:px-28.25 py-12.75 lg:py-30.5">
+      <div className="absolute inset-0 pointer-events-none opacity-50">
+        <picture className="absolute">
           <source
             media="(max-width: 640px)"
             srcSet="/imgs/about/ginkins-gin-heritage-farm-illustration-480.webp"
@@ -16,7 +16,7 @@ export default function CocktailsHero() {
           <img
             src="/imgs/about/ginkins-gin-heritage-farm-illustration-1200.webp"
             alt="Golden line art illustration of a Kentucky farm and distillery at sunset for Ginkins Gin background"
-            className="h-full w-full object-cover object-center xl:top-50"
+            className="h-full w-full relative object-cover object-center xl:top-15"
             loading="eager"
             fetchPriority="high"
           />
@@ -28,26 +28,26 @@ export default function CocktailsHero() {
           Cocktails &amp; Pairings <br />
           <span className="text-(--primary-black)!">Drink Like a Pro</span>
         </h1>
-        <div className="my-16 flex justify-center">
-          <div className="h-57.75 w-43.75">
+        <div className="mt-7.75 mb-30 flex justify-center">
+          <div className="h-66.75 w-44">
             <Image
               draggable={false}
               src="/imgs/cocktails/ginkins-gin-icon-cocktail-glass-alt.svg"
               alt="cocktail glass icon"
-              height={231}
-              width={175}
+              height={267}
+              width={176}
               aria-hidden
               priority
             />
           </div>
         </div>
-        <div className="flex flex-col items-center gap-4">
+        <div className="items-center gap-4">
           <span className="h-12 w-px" />
           <h3 className="text-center">Try</h3>
         </div>
       </div>
       <div
-        className="absolute border-solid border-(--primary-red-main) border-t border-r-0 border-b-0 border-l-0 shrink-0 w-18.75 h-0 z-20 bottom-30 left-1/2 -translate-x-1/2"
+        className="absolute border-solid border-(--primary-red-main) border-t border-r-0 border-b-0 border-l-0 shrink-0 w-18.75 h-0 z-20 bottom-52.5 left-1/2 -translate-x-1/2"
         style={{
           transform: 'rotate(90deg) scale(1, 1)',
         }}
