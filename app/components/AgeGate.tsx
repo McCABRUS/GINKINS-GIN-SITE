@@ -54,7 +54,7 @@ export default function AgeGate() {
               alt="Ginkins Gin lemon brand element"
               width={70}
               height={70}
-              className="w-17.5 h-17.5"
+              className="w-17.5 h-17.5 lemomIcon"
               aria-hidden
             />
           </div>
