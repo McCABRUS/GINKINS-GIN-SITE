@@ -1,28 +1,9 @@
 import Image from 'next/image';
-
+import HeroCover from './../HeroCover';
 export default function SubscribeHero() {
   return (
     <section className="relative w-screen overflow-hidden bg-(--secondary-beige) px-5 sm:px-28.25 py-12.75">
-      <div className="absolute inset-0 pointer-events-none opacity-50">
-        <picture className="absolute w-full">
-          <source
-            media="(max-width: 640px)"
-            srcSet="/imgs/about/ginkins-gin-heritage-farm-illustration-480.webp"
-          />
-          <source
-            media="(max-width: 1024px)"
-            srcSet="/imgs/about/ginkins-gin-heritage-farm-illustration-768.webp"
-          />
-          <img
-            src="/imgs/about/ginkins-gin-heritage-farm-illustration-1200.webp"
-            alt="Golden line art illustration of a Kentucky farm and distillery at sunset for Ginkins Gin background"
-            className="h-full w-full relative object-cover object-center xl:top-15 2xl:-top-55"
-            loading="eager"
-            fetchPriority="high"
-          />
-        </picture>
-        <div className="absolute inset-x-0 bottom-0 h-20 bg-linear-to-t from-(--secondary-beige) to-transparent" />
-      </div>
+      <HeroCover translateYClassName="-translate-y-[45%] xs:-translate-y-[50%] pq:translate-y-[5%] md:-translate-y-[20%] lg:-translate-y-[30%] xl:-translate-y-[40%] 2xl:-translate-y-[40%] 3xl:-translate-y-[50%]" />
       <div className="relative  text-center">
         <h2 className="mb-11.25 text-center block lg:hidden">
           Join the Inner Circle – Gin Notes Newsletter
@@ -51,7 +32,7 @@ export default function SubscribeHero() {
         </div>
       </div>
       <div
-        className="absolute border-solid border-(--primary-red-main) border-t border-r-0 border-b-0 border-l-0 shrink-0 w-18.75 h-0 z-20 bottom-38 lg:bottom-51.25 left-1/2 -translate-x-1/2"
+        className="absolute border-solid border-(--primary-red-main) border-t border-r-0 border-b-0 border-l-0 shrink-0 w-18.75 h-0 z-20 bottom-35 left-1/2 -translate-x-1/2"
         style={{
           transform: 'rotate(90deg) scale(1, 1)',
         }}

@@ -29,7 +29,7 @@ export default function ShopHero() {
         </h3>
       </div>
       <div
-        className="absolute border-solid border-background border-t border-r-0 border-b-0 border-l-0 shrink-0 w-20.5 md:w-20.5 h-0 z-20 bottom-84.25 md:bottom-80 xl:bottom-41.25 left-1/2 -translate-x-1/2"
+        className="absolute border-solid border-background border-t border-r-0 border-b-0 border-l-0 shrink-0 w-20.5 md:w-20.5 h-0 z-20 lg:bottom-41.25 bottom-35 xl:bottom-41.25 left-1/2 -translate-x-1/2"
         style={{
           transform: 'rotate(90deg) scale(1, 1)',
         }}

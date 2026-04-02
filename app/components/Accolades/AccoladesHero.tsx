@@ -1,28 +1,10 @@
 import Image from 'next/image';
+import HeroCover from './../HeroCover';
 
 export default function AccoladesHero() {
   return (
     <section className="relative w-screen overflow-hidden bg-(--secondary-beige) px-5 sm:px-28.25 py-12.75 lg:pt-26.5 lg:py-12.5">
-      <div className="absolute inset-0 pointer-events-none opacity-50">
-        <picture className="absolute w-full">
-          <source
-            media="(max-width: 640px)"
-            srcSet="/imgs/about/ginkins-gin-heritage-farm-illustration-480.webp"
-          />
-          <source
-            media="(max-width: 1024px)"
-            srcSet="/imgs/about/ginkins-gin-heritage-farm-illustration-768.webp"
-          />
-          <img
-            src="/imgs/about/ginkins-gin-heritage-farm-illustration-1200.webp"
-            alt="Golden line art illustration of a Kentucky farm and distillery at sunset for Ginkins Gin background"
-            className="h-full w-full relative object-cover object-center xl:top-15 2xl:-top-55"
-            loading="eager"
-            fetchPriority="high"
-          />
-        </picture>
-        <div className="absolute inset-x-0 bottom-0 h-20 bg-linear-to-t from-(--secondary-beige) to-transparent" />
-      </div>
+      <HeroCover translateYClassName="-translate-y-[36%]  xs:-translate-y-[45%] pq:-translate-y-[0%] md:-translate-y-[15%] lg:-translate-y-[28%] xl:-translate-y-[30%] 2xl:-translate-y-[40%]" />
       <div className="relative  text-center">
         <h2 className="mb-11.25 text-center">ACCOLADES &amp; PRESS</h2>
         <h1 className="text-center">
