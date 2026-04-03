@@ -14,6 +14,7 @@ import FooterMerch from './components/FooterMerchCarousel/FooterMerch';
 export default function Home() {
   return (
     <div className="flex min-h-screen items-center justify-center overflow-x-hidden">
+      <div className="absolute w-full h-25 top-0 bg-(--primary-black)"></div>
       <main className="flex min-h-screen w-full flex-col items-center justify-between">
         <Hero />
         <WelcomeHome />

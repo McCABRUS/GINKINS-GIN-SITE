@@ -8,6 +8,7 @@ import ShopHero from '../components/WhereToBuy/ShopHero';
 export default function WhereToBuy() {
   return (
     <div className="flex min-h-screen items-center justify-center overflow-x-hidden">
+      <div className="absolute w-full h-25 top-0 bg-[#8f171c]"></div>
       <main className="flex min-h-screen w-full flex-col items-center justify-between">
         <ShopHero />
         <FindShops />

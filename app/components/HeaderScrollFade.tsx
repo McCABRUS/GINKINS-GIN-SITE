@@ -13,6 +13,7 @@ export default function HeaderScrollFade({
 }) {
   const rootRef = useRef<HTMLElement | null>(null);
   const isHiddenRef = useRef(false);
+  const lastScrollYRef = useRef(0);
 
   useLayoutEffect(() => {
     const root = rootRef.current;
@@ -20,8 +21,10 @@ export default function HeaderScrollFade({
 
     const ctx = gsap.context(() => {
       gsap.set(root, {
-        y: 0,
+        yPercent: 0,
         autoAlpha: 1,
+        force3D: true,
+        willChange: 'transform, opacity',
       });
 
       const showHeader = () => {
@@ -29,11 +32,12 @@ export default function HeaderScrollFade({
         isHiddenRef.current = false;
 
         gsap.to(root, {
-          y: 0,
+          yPercent: 0,
           autoAlpha: 1,
-          duration: 0.55,
+          duration: 0.7,
           ease: 'power3.out',
           overwrite: 'auto',
+          force3D: true,
         });
       };
 
@@ -42,28 +46,31 @@ export default function HeaderScrollFade({
         isHiddenRef.current = true;
 
         gsap.to(root, {
-          y: -250,
+          yPercent: -105,
           autoAlpha: 0,
-          duration: 0.45,
-          ease: 'power3.out',
+          duration: 1,
+          ease: 'power2.out',
           overwrite: 'auto',
+          force3D: true,
         });
       };
 
       ScrollTrigger.create({
         start: 0,
         end: 'max',
-        onUpdate: (self) => {
+        onUpdate(self) {
           const scrollY = self.scroll();
+          const delta = scrollY - lastScrollYRef.current;
+          lastScrollYRef.current = scrollY;
 
-          if (scrollY < 40) {
+          if (scrollY < 48) {
             showHeader();
             return;
           }
 
-          if (self.direction === 1) {
+          if (delta > 2) {
             hideHeader();
-          } else {
+          } else if (delta < -2) {
             showHeader();
           }
         },
