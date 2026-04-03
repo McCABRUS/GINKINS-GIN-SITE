@@ -48,8 +48,24 @@ export default function CollectionCard({
       )}
 
       {showContent && (
-        <div className="collection-card__content pb-16.5 flex flex-col lg:gap-13.5 items-start justify-start shrink-0 w-full lg:w-82 relative top-5 lg:top-30 px-0 reveal-on-scroll-top">
-          <div className="flex flex-col gap-8.25 items-start self-stretch shrink-0 relative flex-1 px-10 md:px-37.25 lg:px-0 place-content-end flex-wrap justify-end">
+        <div
+          className="collection-card__content pb-16.5 flex flex-col lg:gap-13.5 items-start justify-start shrink-0 w-full lg:w-82 relative top-5 lg:top-30 px-0 reveal-on-scroll-top"
+          style={{
+            willChange: 'opacity, filter, transform',
+            backfaceVisibility: 'hidden',
+            WebkitBackfaceVisibility: 'hidden',
+            transform: 'translateZ(0)',
+          }}
+        >
+          <div
+            className="flex flex-col gap-8.25 items-start self-stretch shrink-0 relative flex-1 px-10 md:px-37.25 lg:px-0 place-content-end flex-wrap justify-end"
+            style={{
+              willChange: 'opacity, filter, transform',
+              backfaceVisibility: 'hidden',
+              WebkitBackfaceVisibility: 'hidden',
+              transform: 'translateZ(0)',
+            }}
+          >
             <h2 className="text-(--primary-gold-main)! text-center lg:text-left w-full lg:w-65 whitespace-pre-wrap uppercase relative self-stretch">
               {title}
             </h2>

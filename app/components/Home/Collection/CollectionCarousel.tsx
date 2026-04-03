@@ -24,6 +24,8 @@ const SWIPE_THRESHOLD = 48;
 const VELOCITY_THRESHOLD = 0.45;
 const RELEASE_SNAP_MS = 0.7;
 const MAX_SIDE_BLUR = 7;
+const CONTENT_REVEAL_BLUR = 12;
+const CONTENT_REVEAL_SCALE = 1.02;
 
 const COMPACT_X = {
   center: 0,
@@ -89,6 +91,24 @@ const getMediaVisuals = (ratio: number) => {
     blur: ratio * MAX_SIDE_BLUR,
   };
 };
+
+const getContentRevealVisuals = (opacity: number) => ({
+  autoAlpha: opacity,
+  opacity,
+  filter: 'blur(0px)',
+  scale: 1,
+  transformOrigin: 'center center',
+  force3D: true,
+});
+
+const getContentHideVisuals = () => ({
+  autoAlpha: 0,
+  opacity: 0,
+  filter: `blur(${CONTENT_REVEAL_BLUR}px)`,
+  scale: CONTENT_REVEAL_SCALE,
+  transformOrigin: 'center center',
+  force3D: true,
+});
 
 export default function CollectionCarousel() {
   const items = useMemo(() => collectionData, []);
@@ -256,9 +276,13 @@ export default function CollectionCarousel() {
     );
 
     gsap.set(contentEls, {
+      autoAlpha: 0,
       opacity: 0,
       y: 0,
-      visibility: 'hidden',
+      filter: `blur(${CONTENT_REVEAL_BLUR}px)`,
+      scale: CONTENT_REVEAL_SCALE,
+      transformOrigin: 'center center',
+      force3D: true,
     });
   }, []);
 
@@ -342,10 +366,7 @@ export default function CollectionCarousel() {
 
       if (content) {
         if (hideContent) {
-          gsap.set(content, {
-            opacity: 0,
-            visibility: 'hidden',
-          });
+          gsap.set(content, getContentHideVisuals());
           return;
         }
 
@@ -360,8 +381,13 @@ export default function CollectionCarousel() {
         }
 
         gsap.set(content, {
+          autoAlpha: opacity,
           opacity,
+          filter: 'blur(0px)',
+          scale: 1,
           visibility: opacity <= 0.001 ? 'hidden' : 'visible',
+          transformOrigin: 'center center',
+          force3D: true,
         });
       }
     };
@@ -425,16 +451,20 @@ export default function CollectionCarousel() {
     const hideContent = isTransitioningRef.current || pendingCompactReveal;
 
     if (hideContent) {
-      gsap.set(content, {
-        opacity: 0,
-        visibility: 'hidden',
-      });
+      gsap.set(content, getContentHideVisuals());
       return;
     }
 
+    const opacity = easeOutQuint(progress);
+
     gsap.set(content, {
-      opacity: easeOutQuint(progress),
+      autoAlpha: opacity,
+      opacity,
+      filter: 'blur(0px)',
+      scale: 1,
       visibility: progress <= 0.001 ? 'hidden' : 'visible',
+      transformOrigin: 'center center',
+      force3D: true,
     });
   }, [getCompactContentEl, pendingCompactReveal]);
 
@@ -481,10 +511,7 @@ export default function CollectionCarousel() {
       }
 
       if (content) {
-        gsap.set(content, {
-          opacity: 0,
-          visibility: 'hidden',
-        });
+        gsap.set(content, getContentHideVisuals());
       }
     });
     if (ghostRef.current) {
@@ -536,9 +563,7 @@ export default function CollectionCarousel() {
     }
 
     if (content) {
-      gsap.set(content, {
-        opacity: 1,
-      });
+      gsap.set(content, getContentHideVisuals());
     }
   }, [getCompactContentEl]);
 
@@ -710,13 +735,19 @@ export default function CollectionCarousel() {
     ].filter((item) => item.el) as { el: Element; opacity: number }[];
 
     if (!targets.length) return;
+
     gsap.killTweensOf(targets.map((item) => item.el));
     gsap.set(
       targets.map((item) => item.el),
       {
+        autoAlpha: 0,
         opacity: 0,
+        filter: `blur(${CONTENT_REVEAL_BLUR}px)`,
+        scale: CONTENT_REVEAL_SCALE,
         y: 0,
         visibility: 'visible',
+        transformOrigin: 'center center',
+        force3D: true,
       },
     );
 
@@ -740,14 +771,12 @@ export default function CollectionCarousel() {
         tl.to(
           el,
           {
-            opacity,
-            y: 0,
-            duration: 0.28,
+            ...getContentRevealVisuals(opacity),
+            duration: 0.42,
             ease: 'animistaEaseOutQuint',
-            force3D: true,
             overwrite: 'auto',
           },
-          index * 0.03,
+          index * 0.05,
         );
       });
     });
@@ -770,16 +799,20 @@ export default function CollectionCarousel() {
     if (!content) return;
 
     gsap.set(content, {
+      autoAlpha: 0,
       opacity: 0,
+      filter: `blur(${CONTENT_REVEAL_BLUR}px)`,
+      scale: CONTENT_REVEAL_SCALE,
       y: 0,
       visibility: 'visible',
+      transformOrigin: 'center center',
+      force3D: true,
     });
 
     const id = window.requestAnimationFrame(() => {
       gsap.to(content, {
-        opacity: 1,
-        y: 0,
-        duration: 0.28,
+        ...getContentRevealVisuals(1),
+        duration: 0.42,
         ease: 'animistaEaseOutQuint',
         overwrite: 'auto',
         onComplete: () => {
@@ -858,10 +891,8 @@ export default function CollectionCarousel() {
                 setGhost(null);
               });
 
-              requestAnimationFrame(() => {
-                setDesktopBasePositions();
-                applyDesktopFinalVisualState();
-              });
+              setDesktopBasePositions();
+              applyDesktopFinalVisualState();
             } else {
               flushSync(() => {
                 setPendingCompactReveal(true);
@@ -869,10 +900,8 @@ export default function CollectionCarousel() {
                 setGhost(null);
               });
 
-              requestAnimationFrame(() => {
-                setCompactBasePosition();
-                applyCompactFinalVisualState();
-              });
+              setCompactBasePosition();
+              applyCompactFinalVisualState();
             }
           },
         });
@@ -1408,11 +1437,7 @@ export default function CollectionCarousel() {
                   ref={(el) => {
                     slotRefs.current[slot] = el;
                   }}
-                  className={`absolute top-0 left-0 w-[min(92vw,980px)] will-change-transform ${
-                    pendingDesktopReveal
-                      ? '[&_.collection-card__content]:opacity-0'
-                      : ''
-                  }`}
+                  className="absolute top-0 left-0 w-[min(92vw,980px)] will-change-transform"
                   style={{
                     zIndex: slot === 1 ? 20 : 10,
                   }}
@@ -1449,11 +1474,7 @@ export default function CollectionCarousel() {
             <>
               <div
                 ref={mobileCardRef}
-                className={`absolute top-0 left-1/2 -translate-x-1/2 ${compactWidthClass} will-change-transform ${
-                  pendingCompactReveal
-                    ? '[&_.collection-card__content]:opacity-0'
-                    : ''
-                }`}
+                className={`absolute top-0 left-1/2 -translate-x-1/2 ${compactWidthClass} will-change-transform`}
                 style={{ zIndex: 20 }}
               >
                 <CollectionCard
