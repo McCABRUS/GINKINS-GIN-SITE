@@ -14,12 +14,12 @@ export default function CocktailsHome() {
       ></div>
       <div className="mx-auto max-4xl:px-37.25 max-w-480 max-xl:px-5">
         <div className="text-center mx-auto relative">
-          <h3 className="text-lg! inline-block text-(--primary-red-main)! mb-10">
+          <h3 className="text-lg! inline-block text-(--primary-red-main)! mb-10 reveal-on-scroll-top">
             Cocktails &amp; Pairings – Drink <br className="block md:hidden" />{' '}
             Like a Pro
           </h3>
 
-          <h1 className="font-serif text-[56px] leading-[1.05] uppercase text-(--primary-black)! relative">
+          <h1 className="font-serif text-[56px] leading-[1.05] uppercase text-(--primary-black)! relative reveal-on-scroll-center">
             Shake
             <br className="block md:hidden" /> Things Up.
             <br />
@@ -52,7 +52,7 @@ export default function CocktailsHome() {
           </h1>
         </div>
         <div className="mt-16 lg:-mt-20 max-w-2xl md:mx-auto text-left mx-7.5 md:ml-[50%] grid z-1 relative">
-          <p className="text-center md:text-left text-base leading-relaxed text-(--primary-black)">
+          <p className="text-center md:text-left text-base leading-relaxed text-(--primary-black) reveal-on-scroll-left">
             At Ginkins, we believe cocktails should be both elevated and easy to
             enjoy. Whether you’re mixing for one or making magic for a crowd,
             our recipes are designed to spark joy, surprise your palate, and
@@ -71,15 +71,15 @@ export default function CocktailsHome() {
                   height={565}
                   width={395}
                   alt={card.alt}
-                  className="h-full w-full object-cover"
+                  className="h-full w-full object-cover reveal-on-scroll-center"
                 />
               </div>
 
-              <h6 className="mt-8">{card.title}</h6>
-              <p className="mt-4 text-base leading-relaxed text-(--primary-black)">
+              <h6 className="mt-8 reveal-on-scroll-top">{card.title}</h6>
+              <p className="mt-4 text-base leading-relaxed text-(--primary-black) reveal-on-scroll-top">
                 {card.text}
               </p>
-              <div className="mt-6">
+              <div className="mt-6 reveal-on-scroll-top">
                 <Link
                   href={`/cocktails#${card.sectionTarget}`}
                   className="inline-flex items-baseline justify-center animatedButton px-5 py-1.5 transition group"

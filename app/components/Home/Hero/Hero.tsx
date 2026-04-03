@@ -357,7 +357,7 @@ export default function Hero() {
       </div>
 
       <div className="relative mx-auto max-w-400 h-250 z-30 justify-center flex">
-        <div className="absolute -top-7.5 lg:top-0 xl:top-55.75 justify-self-center">
+        <div className="absolute -top-7.5 lg:top-0 xl:top-55.75 justify-self-center reveal-on-load-top">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="451"
@@ -400,13 +400,13 @@ export default function Hero() {
           </svg>
         </div>
 
-        <div className="hidden lg:block absolute left-[10.25%] xl:top-86 lg:top-22 text-background text-center">
+        <div className="hidden lg:block absolute left-[10.25%] xl:top-86 lg:top-22 text-background text-center reveal-on-load-top">
           <p className="font-cormorant-garamond leading-relaxed text-3xl">
             WE BOTTLE <br /> CONNECTION.
           </p>
         </div>
 
-        <div className="hidden lg:block absolute right-[10.25%] xl:top-86 lg:top-22 text-background text-center">
+        <div className="hidden lg:block absolute right-[10.25%] xl:top-86 lg:top-22 text-background text-center reveal-on-load-top">
           <p className="font-cormorant-garamond text-3xl leading-relaxed top-86">
             YOU POUR IT <br /> FORWARD.
           </p>
@@ -446,7 +446,7 @@ export default function Hero() {
           <Link
             href="/our-gins"
             role="button"
-            className="inline-flex items-center justify-center px-5 py-1.5 w-81.25 text-sm transition group animatedButton"
+            className="inline-flex items-center justify-center px-5 py-1.5 w-81.25 text-sm transition group animatedButton reveal-on-load-top"
           >
             <h5 className="text-lg! group-hover:text-(--primary-black)! group-active:text-(--primary-black)! group-focus:text-(--primary-black)!">
               EXPLORE THE COLLECTION

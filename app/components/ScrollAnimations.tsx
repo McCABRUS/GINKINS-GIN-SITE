@@ -104,7 +104,7 @@ export default function ScrollAnimations() {
         animateOnLoad(
           '.reveal-on-load-center',
           { autoAlpha: 0, scale: 0.995 },
-          { autoAlpha: 1, scale: 1, duration: 1, delay: 0.15 },
+          { autoAlpha: 1, scale: 1, duration: 2, delay: 0.15 },
         );
 
         ScrollTrigger.refresh();
@@ -168,7 +168,7 @@ export default function ScrollAnimations() {
         {
           autoAlpha: 1,
           scale: 1,
-          duration: 1,
+          duration: 2,
           delay: 0.2,
           ease: 'power3.out',
         },

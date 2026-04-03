@@ -210,7 +210,7 @@ export default function Testimonials() {
             return (
               <div
                 key={`testimonial-${renderIndex}`}
-                className="w-full shrink-0 flex items-center justify-center text-center px-5 md:px-25 lg:px-38.5"
+                className="w-full shrink-0 flex items-center justify-center text-center px-5 md:px-25 lg:px-38.5 reveal-on-scroll-center"
               >
                 <div>
                   <div className="mb-6 flex justify-center gap-1 text-xl">
@@ -219,7 +219,7 @@ export default function Testimonials() {
                     ))}
                   </div>
 
-                  <blockquote className="font-cormorant-garamond font-medium mx-auto italic text-3xl md:text-4xl leading-relaxed text-(--secondary-black)">
+                  <blockquote className="font-cormorant-garamond font-medium mx-auto italic text-3xl md:text-4xl leading-relaxed text-(--secondary-black) reveal-on-scroll-top">
                     “{quote}”
                   </blockquote>
 

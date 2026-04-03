@@ -231,7 +231,7 @@ export default function FooterMerch() {
 
   return (
     <section
-      className="w-screen h-95 md:h-140.75 bg-(--secondary-beige) overflow-hidden my-[17.5px]"
+      className="w-screen h-95 md:h-140.75 bg-(--secondary-beige) overflow-hidden my-[17.5px] reveal-on-scroll-center"
       onPointerEnter={handlePointerEnter}
       onPointerLeave={handlePointerLeave}
     >

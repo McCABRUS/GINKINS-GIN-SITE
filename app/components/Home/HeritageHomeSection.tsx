@@ -5,7 +5,7 @@ export default function HeritageHomeSection() {
   return (
     <section className="relative w-full bg-(--secondary-beige) pt-37.25 md:pt-30 xl:pt-71 mb-0 xs:-mb-35.25 overflow-hidden max-w-480 pb-30 md:pb-0">
       <div className="relative mb-10 px-6 2xl:px-24">
-        <h1 className="mt-30 md:mt-0 mx-auto text-center leading-[1.05] tracking-[-0.015em]">
+        <h1 className="mt-30 md:mt-0 mx-auto text-center leading-[1.05] tracking-[-0.015em] reveal-on-scroll-center">
           ROOTED IN
           <span className="hidden md:inline my-0 mx-10 xl:mx-24"></span>
           <br className="inline md:hidden" />
@@ -17,7 +17,7 @@ export default function HeritageHomeSection() {
           RAISED IN <br className="inline md:hidden" />
           LOUISVILLE
         </h1>
-        <div className="absolute -top-57 md:-top-17.5 xl:-top-35 left-[64%] md:left-[49.5%] -translate-x-1/2 mr-7.5 w-20.25 h-27.5 xl:w-40 xl:h-56 pointer-events-none">
+        <div className="absolute -top-57 md:-top-17.5 xl:-top-35 left-[64%] md:left-[49.5%] -translate-x-1/2 mr-7.5 w-20.25 h-27.5 xl:w-40 xl:h-56 pointer-events-none reveal-on-scroll-center">
           <Image
             draggable={false}
             src="/imgs/home/ginkins-gin-distillation-process.webp"
@@ -26,7 +26,7 @@ export default function HeritageHomeSection() {
             className="object-cover rounded-[999px]"
           />
         </div>
-        <div className="absolute -top-32 md:top-10.5 xl:top-22.5 w-25 h-25 xl:w-40 xl:h-40 -ml-10 md:-ml-66.25 xl:-ml-132.5  left-1/2 -translate-x-1/2">
+        <div className="absolute -top-32 md:top-10.5 xl:top-22.5 w-25 h-25 xl:w-40 xl:h-40 -ml-10 md:-ml-66.25 xl:-ml-132.5  left-1/2 -translate-x-1/2 reveal-on-scroll-center">
           <Image
             draggable={false}
             src="/imgs/home/ginkins-gin-heritage-barn.webp"
@@ -49,7 +49,7 @@ export default function HeritageHomeSection() {
       </div>
       <div className="relative grid grid-cols-1 md:grid-cols-2 gap-20 px-6 lg:px-24 -mb-66.25 md:mb-10 lg:mb-0">
         <div className="relative h-150 z-0">
-          <div className="hidden md:block absolute top-110 2xs:top-80 xs:top-70  md:top-0 right-0 w-33.5 h-44 xl:w-52 xl:h-72">
+          <div className="hidden md:block absolute top-110 2xs:top-80 xs:top-70  md:top-0 right-0 w-33.5 h-44 xl:w-52 xl:h-72 reveal-on-scroll-center">
             <Image
               draggable={false}
               src="/imgs/home/ginkins-gin-louisville-skyline.webp"
@@ -58,7 +58,7 @@ export default function HeritageHomeSection() {
               className="object-cover rounded-[999px]"
             />
           </div>
-          <div className="hidden md:block absolute w-39 h-38 md:w-58.25 md:h-56.5 top-125 xs:top-90 md:top-15 xl:top-30 right-25 xl:right-35 pointer-events-none">
+          <div className="hidden md:block absolute w-39 h-38 md:w-58.25 md:h-56.5 top-125 xs:top-90 md:top-15 xl:top-30 right-25 xl:right-35 pointer-events-none reveal-on-scroll">
             <Image
               draggable={false}
               src="/imgs/home/ginkins-gin-icon-botanical-flower.svg"
@@ -84,7 +84,7 @@ export default function HeritageHomeSection() {
           </p>
           <Link
             href="/where-to-buy"
-            className="mt-15.75 items-center justify-center px-5 py-1.5 transition animatedButton mx-auto md:mx-0 grid max-w-65 group z-10000"
+            className="mt-15.75 items-center justify-center px-5 py-1.5 transition animatedButton mx-auto md:mx-0 grid max-w-65 group z-10000 reveal-on-scroll-left"
           >
             <h5 className="text-lg! group-hover:text-(--primary-black)! group-active:text-(--primary-black)! group-focus:text-(--primary-black)!">
               Find Ginkins Near You

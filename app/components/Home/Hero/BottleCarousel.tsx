@@ -129,7 +129,7 @@ export default function BottleCarousel({ slides, activeIndex }: Props) {
 
   return (
     <div>
-      <div className="absolute w-62 xl:w-81.75 lg:w-56.25 h-104 lg:h-95 xl:h-137.5 top-26 lg:top-33 xl:top-25.5 left-2/4 -translate-x-1/2 overflow-hidden isolate contain-[paint]">
+      <div className="absolute w-62 xl:w-81.75 lg:w-56.25 h-104 lg:h-95 xl:h-137.5 top-26 lg:top-33 xl:top-25.5 left-2/4 -translate-x-1/2 overflow-hidden isolate contain-[paint] reveal-on-load-top">
         <div
           ref={outgoingRef}
           className="absolute inset-0 pointer-events-none"

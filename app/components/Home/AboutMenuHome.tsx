@@ -25,7 +25,7 @@ export default function AboutHomeMenu() {
             <ul className="space-y-14">
               {items.map((item, i) => (
                 <li key={i}>
-                  <div className="flex items-center gap-6">
+                  <div className="flex items-center gap-6 reveal-on-scroll-top">
                     <Link href={item.href} target="_blank">
                       <div className="group">
                         <h6 className="text-[35px]! text-(--secondary-gray-300)! group-hover:text-(--primary-red-200)! relative inline mr-8 -top-2.5 group-hover:font-bold!">
@@ -43,7 +43,7 @@ export default function AboutHomeMenu() {
             </ul>
           </div>
 
-          <div className="relative flex justify-center lg:justify-end h-full">
+          <div className="relative flex justify-center lg:justify-end h-full reveal-on-scroll-left">
             <div className="absolute left-[53%] lg:left-[unset] -lg:-right-1.25 top-6 z-10 fill-(--primary-red-main) lg:w-39.75 lg:h-39.25 w-25">
               <Image
                 draggable={false}

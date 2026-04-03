@@ -32,7 +32,7 @@ export default function CollectionCard({
       }
     >
       {showMedia && (
-        <div className="collection-card__media shrink-0 w-full lg:w-95 h-86 lg:h-168.25 relative mt-8 lg:mt-0">
+        <div className="collection-card__media shrink-0 w-full lg:w-95 h-86 lg:h-168.25 relative mt-8 lg:mt-0 reveal-on-scroll-center">
           <Image
             className="object-contain filter-[drop-shadow(26px_10px_4px_#111)] lg:filter-[drop-shadow(60px_8px_10px_#111)] -ml-6.25 lg:ml-0"
             fill
@@ -48,7 +48,7 @@ export default function CollectionCard({
       )}
 
       {showContent && (
-        <div className="collection-card__content pb-16.5 flex flex-col lg:gap-13.5 items-start justify-start shrink-0 w-full lg:w-82 relative top-5 lg:top-30 px-0">
+        <div className="collection-card__content pb-16.5 flex flex-col lg:gap-13.5 items-start justify-start shrink-0 w-full lg:w-82 relative top-5 lg:top-30 px-0 reveal-on-scroll-top">
           <div className="flex flex-col gap-8.25 items-start self-stretch shrink-0 relative flex-1 px-10 md:px-37.25 lg:px-0 place-content-end flex-wrap justify-end">
             <h2 className="text-(--primary-gold-main)! text-center lg:text-left w-full lg:w-65 whitespace-pre-wrap uppercase relative self-stretch">
               {title}

@@ -12,13 +12,13 @@ export default function CollectionHome() {
       <div className="bg-(--primary-black) w-full h-393.5 xs:h-387.5 md:h-332.5 lg:h-329 absolute left-0"></div>
       <div className="flex flex-col gap-4 items-center justify-start w-full absolute top-23">
         <div className="p-2.5 flex flex-row gap-2.5 items-center justify-center shrink-0 w-113.5 relative">
-          <h3 className="text-(--primary-gold-main)! text-center uppercase relative flex-1">
+          <h3 className="text-(--primary-gold-main)! text-center uppercase relative flex-1 reveal-on-scroll-top">
             The Gin Collection (Our Craft, <br className="inline lg:hidden" />
             Your Experience)
           </h3>
         </div>
         <div className="p-2.5 flex flex-col gap-2.5 items-center justify-center self-stretch shrink-0 relative">
-          <h1 className="text-background! text-center font-global-tokens-headings-h1-desktop-font-family text-global-tokens-headings-h1-desktop-font-size leading-global-tokens-headings-h1-desktop-line-height font-global-tokens-headings-h1-desktop-font-weight uppercase relative self-stretch">
+          <h1 className="text-background! text-center font-global-tokens-headings-h1-desktop-font-family text-global-tokens-headings-h1-desktop-font-size leading-global-tokens-headings-h1-desktop-line-height font-global-tokens-headings-h1-desktop-font-weight uppercase relative self-stretch reveal-on-scroll-top">
             THREE <br className="inline xl:hidden" /> EXPRESSIONS.
             <br />
             ONE SPIRIT OF <br className="inline xl:hidden" /> CONNECTION{' '}
@@ -54,7 +54,7 @@ export default function CollectionHome() {
         ></div>
         <div className="flex flex-row items-start justify-center self-stretch shrink-0 h-[216.5px] relative mt-20 md:mt-0">
           <div className="flex flex-col lg:flex-row gap-0 items-start justify-center flex-1 h-[216.5px] relative">
-            <div className="text-background text-left text-base leading-[24.16px] relative flex-1 h-37 mb-12.75 md:mb-0">
+            <div className="text-background text-left text-base leading-[24.16px] relative flex-1 h-37 mb-12.75 md:mb-0 reveal-on-scroll">
               Every bottle of Ginkins is a celebration—of tradition reimagined,
               of botanicals brought to life, and of the shared joy in
               discovering something truly exceptional.{' '}
@@ -66,7 +66,7 @@ export default function CollectionHome() {
                 transform: 'rotate(90deg) scale(1, 1)',
               }}
             ></div>
-            <div className="text-background text-left text-base leading-[24.16px] font-normal relative flex-1">
+            <div className="text-background text-left text-base leading-[24.16px] font-normal relative flex-1 reveal-on-scroll-left">
               Our collection reflects a devotion to detail, a passion for
               people, and a belief that the best gin doesn’t just taste great—it
               makes you feel something. Whether you’re savoring a quiet moment

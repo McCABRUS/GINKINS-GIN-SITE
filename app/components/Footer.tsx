@@ -168,7 +168,7 @@ export default function Footer() {
                 className="w-full text-(--primary-red-main)"
                 aria-hidden="true"
               />
-              <span className="flex items-center justify-center relative top-0">
+              <span className="flex items-center justify-center relative top-0 reveal-on-scroll-top">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="40"
