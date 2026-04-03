@@ -39,7 +39,7 @@ export default function Founder() {
           </div>
 
           <div className="max-lg:mx-auto order-4">
-            <h3 className="mb-15 lg:mb-13.75 text-center lg:text-left ">
+            <h3 className="mb-15 lg:mb-13.75 text-center lg:text-left reveal-on-scroll-top">
               Meet the creator
             </h3>
 

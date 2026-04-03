@@ -5,7 +5,7 @@ export default function Hero() {
   return (
     <section className="relative w-screen overflow-hidden bg-(--secondary-beige) pt-12.75 lg:pt-27.75">
       <HeroCover />
-      <div className="relative text-center max-xl:px-5 max-4xl:px-27.5 place-self-center">
+      <div className="relative text-center max-xl:px-5 max-4xl:px-27.5 place-self-center reveal-on-load-top">
         <h1 className="text-center text-(--primary-black)!">
           Connections that distill
           <br className="hidden 2xl:block" /> into something greater

@@ -1,18 +1,31 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useLayoutEffect, useRef } from 'react';
 import { usePathname } from 'next/navigation';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
+import { isAgeVerified } from '@/lib/ageGate';
 
 gsap.registerPlugin(ScrollTrigger);
 
+declare global {
+  interface Window {
+    __APP_STATE__?: {
+      preloaderDone?: boolean;
+      ageGateAccepted?: boolean;
+    };
+  }
+}
+
 export default function ScrollAnimations() {
   const pathname = usePathname();
+  const didRunLoadRef = useRef(false);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
+    didRunLoadRef.current = false;
+
     const ctx = gsap.context(() => {
-      const animate = (
+      const animateScroll = (
         selector: string,
         from: gsap.TweenVars,
         to: gsap.TweenVars,
@@ -29,7 +42,75 @@ export default function ScrollAnimations() {
         });
       };
 
-      animate(
+      const runLoadAnimations = () => {
+        if (didRunLoadRef.current) return;
+
+        const appState = window.__APP_STATE__ || {};
+        const ready =
+          appState.preloaderDone &&
+          (appState.ageGateAccepted || isAgeVerified());
+
+        if (!ready) return;
+
+        didRunLoadRef.current = true;
+
+        const animateOnLoad = (
+          selector: string,
+          from: gsap.TweenVars,
+          to: gsap.TweenVars,
+        ) => {
+          const elements = gsap.utils.toArray<HTMLElement>(selector);
+          if (!elements.length) return;
+
+          gsap.killTweensOf(elements);
+          gsap.set(elements, from);
+
+          gsap.timeline({ defaults: { ease: 'power3.out' } }).to(elements, {
+            autoAlpha: 1,
+            x: to.x as number | undefined,
+            y: to.y as number | undefined,
+            scale: to.scale as number | undefined,
+            duration: to.duration ?? 1,
+            delay: to.delay ?? 0,
+            stagger: 0.06,
+            overwrite: 'auto',
+          });
+        };
+
+        animateOnLoad(
+          '.reveal-on-load',
+          { autoAlpha: 0, x: -24, scale: 0.995 },
+          { autoAlpha: 1, x: 0, scale: 1, duration: 1, delay: 0.15 },
+        );
+
+        animateOnLoad(
+          '.reveal-on-load-left',
+          { autoAlpha: 0, x: 24, scale: 0.995 },
+          { autoAlpha: 1, x: 0, scale: 1, duration: 1, delay: 0.15 },
+        );
+
+        animateOnLoad(
+          '.reveal-on-load-top',
+          { autoAlpha: 0, y: 48, scale: 0.995 },
+          { autoAlpha: 1, y: 0, scale: 1, duration: 1, delay: 0.15 },
+        );
+
+        animateOnLoad(
+          '.reveal-on-load-bottom',
+          { autoAlpha: 0, y: -48, scale: 0.995 },
+          { autoAlpha: 1, y: 0, scale: 1, duration: 1, delay: 0.15 },
+        );
+
+        animateOnLoad(
+          '.reveal-on-load-center',
+          { autoAlpha: 0, scale: 0.995 },
+          { autoAlpha: 1, scale: 1, duration: 1, delay: 0.15 },
+        );
+
+        ScrollTrigger.refresh();
+      };
+
+      animateScroll(
         '.reveal-on-scroll',
         { autoAlpha: 0, x: -24, scale: 0.995 },
         {
@@ -42,7 +123,7 @@ export default function ScrollAnimations() {
         },
       );
 
-      animate(
+      animateScroll(
         '.reveal-on-scroll-left',
         { autoAlpha: 0, x: 24, scale: 0.995 },
         {
@@ -55,7 +136,7 @@ export default function ScrollAnimations() {
         },
       );
 
-      animate(
+      animateScroll(
         '.reveal-on-scroll-top',
         { autoAlpha: 0, y: 48, scale: 0.995 },
         {
@@ -68,7 +149,20 @@ export default function ScrollAnimations() {
         },
       );
 
-      animate(
+      animateScroll(
+        '.reveal-on-scroll-bottom',
+        { autoAlpha: 0, y: -48, scale: 0.995 },
+        {
+          autoAlpha: 1,
+          y: 0,
+          scale: 1,
+          duration: 1,
+          delay: 0.2,
+          ease: 'power3.out',
+        },
+      );
+
+      animateScroll(
         '.reveal-on-scroll-center',
         { autoAlpha: 0, scale: 0.995 },
         {
@@ -79,9 +173,25 @@ export default function ScrollAnimations() {
           ease: 'power3.out',
         },
       );
-    });
 
-    ScrollTrigger.refresh();
+      const onStateChange = () => {
+        requestAnimationFrame(() => {
+          requestAnimationFrame(runLoadAnimations);
+        });
+      };
+
+      window.addEventListener('app:state-changed', onStateChange);
+
+      if (document.readyState === 'complete') {
+        onStateChange();
+      } else {
+        window.addEventListener('load', onStateChange, { once: true });
+      }
+
+      return () => {
+        window.removeEventListener('app:state-changed', onStateChange);
+      };
+    });
 
     return () => ctx.revert();
   }, [pathname]);
