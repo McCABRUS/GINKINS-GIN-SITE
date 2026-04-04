@@ -264,13 +264,13 @@ h6 {
   }
   .animate-left-carousel {
     animation: connectionsScrollLeft 50s linear infinite;
-    @media (width < 64rem) {
+    @media (width < 80rem) {
       animation: connectionsScrollLeftMobile 50s linear infinite;
     }
   }
   .animate-right-carousel {
     animation: connectionsScrollRight 50s linear infinite;
-    @media (width < 64rem) {
+    @media (width < 80rem) {
       animation: connectionsScrollRightMobile 50s linear infinite;
     }
   }

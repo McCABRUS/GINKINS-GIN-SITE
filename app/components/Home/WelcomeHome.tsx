@@ -21,7 +21,7 @@ export default function WelcomeHome() {
           className="absolute left-1/2 -translate-x-1/2 block lg:hidden"
           aria-hidden
         />
-        <h2 className="text-center text-background! text-2xl! 2xs:text-3xl! xs:text-4xl! md:text-6xl! lg:text-4xl! z-10 left-1/2 -translate-x-1/2 absolute lg:whitespace-nowrap">
+        <h2 className="text-center text-background! text-xl! 2xs:text-2xl! xs:text-3xl! md:text-5xl! lg:text-4xl! z-10 left-1/2 -translate-x-1/2 absolute lg:whitespace-nowrap">
           WELCOME TO GINKINS
         </h2>
         <div></div>
