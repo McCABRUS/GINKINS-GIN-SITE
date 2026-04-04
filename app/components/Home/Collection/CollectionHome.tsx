@@ -44,7 +44,7 @@ export default function CollectionHome() {
           }}
         ></div>
       </div>
-      <div className="flex flex-col gap-11 w-full absolute max-md:px-10 2xs:bottom-86.75 xs:bottom-93 md:bottom-34.75 lg:-bottom-11.25 bottom-87 max-4xl:px-37.25 md:max-w-480 place-self-center">
+      <div className="absolute left-1/2 -translate-x-1/2 flex flex-col gap-11 w-full max-md:px-10 2xs:bottom-86.75 xs:bottom-93 md:bottom-34.75 lg:-bottom-11.25 bottom-87 max-4xl:px-37.25 md:max-w-480">
         <div
           className="border-solid border-(--primary-gold-main) border-t mt-35 md:-mt-5 lg:-mt-2.5 border-r-0 border-b-0 border-l-0 self-stretch shrink-0 h-0 relative"
           style={{

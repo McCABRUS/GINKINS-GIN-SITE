@@ -106,7 +106,7 @@ export default function Contact() {
         ></div>
       </div>
       <Divider />
-      <div className="place-self-center max-xl:px-5 max-4xl:px-37.25 md:max-w-480 mt-20 text-center w-full">
+      <div className="place-self-center max-xl:px-5 max-4xl:px-37.25 md:max-w-480 mt-20 text-center w-full mx-auto">
         <h5 className="">Connect</h5>
 
         <h4 className="mt-4 mb-6 text-(--primary-black)! max-xl:text-[42px]!">
