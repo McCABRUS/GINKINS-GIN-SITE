@@ -33,14 +33,28 @@ export default function AgeGate() {
       const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
 
       tl.fromTo(
-        '.agegate-reveal',
-        { autoAlpha: 0, y: 24, scale: 0.995 },
-        { autoAlpha: 1, y: 0, scale: 1, duration: 0.9, stagger: 0.08 },
+        '.agegate-reveal-on-scroll-top',
+        { autoAlpha: 0, y: 48, scale: 0.995 },
+        {
+          autoAlpha: 1,
+          y: 0,
+          scale: 1,
+          duration: 1,
+          delay: 0.2,
+          ease: 'power3.out',
+        },
       );
       tl.fromTo(
-        '.agegate-reveal-center',
-        { autoAlpha: 0, scale: 0.995 },
-        { autoAlpha: 1, scale: 1, duration: 0.9, stagger: 0.08 },
+        '.agegate-reveal-on-scroll-bottom',
+        { autoAlpha: 0, y: -48, scale: 0.995 },
+        {
+          autoAlpha: 1,
+          y: 0,
+          scale: 1,
+          duration: 1,
+          delay: 0.2,
+          ease: 'power3.out',
+        },
       );
     }, rootRef);
 
@@ -60,7 +74,7 @@ export default function AgeGate() {
       <div className="absolute inset-0 opacity-[0.04] bg-[url('/imgs/legal/ginkins-gin-logo-watermark.svg')] bg-center bg-no-repeat bg-cover bg-(--secondary-beige)" />
 
       <div className="relative flex h-full w-full flex-col items-center justify-between px-6 py-10 text-center">
-        <div className="agegate-reveal-center">
+        <div className="agegate-reveal-on-scroll-top">
           <Image
             draggable={false}
             src="/imgs/preloader/ginkins-gin-logo.svg"
@@ -73,7 +87,7 @@ export default function AgeGate() {
         </div>
 
         <div className="flex flex-col items-center">
-          <div className="agegate-reveal-center mb-8 flex lg:hidden h-17.5 w-17.5 items-center justify-center">
+          <div className="agegate-reveal-on-scroll-bottom mb-8 flex lg:hidden h-17.5 w-17.5 items-center justify-center">
             <Image
               draggable={false}
               src="/imgs/legal/ginkins-gin-lemon-icon.svg"
@@ -87,15 +101,15 @@ export default function AgeGate() {
 
           {!denied ? (
             <>
-              <h5 className="agegate-reveal mb-2.5 text-(--primary-red-main)! leading-6! lg:leading-6.75!">
+              <h5 className="agegate-reveal-on-scroll-top mb-2.5 text-(--primary-red-main)! leading-6! lg:leading-6.75!">
                 ROOTED IN TRADITION, INSPIRED BY LOUISVILLE
               </h5>
 
-              <h2 className="agegate-reveal mb-10 text-(--primary-red-main)! max-w-103.25">
+              <h2 className="agegate-reveal-on-scroll-top mb-10 text-(--primary-red-main)! max-w-103.25">
                 ARE YOU OF LEGAL DRINKING AGE IN YOUR COUNTRY?
               </h2>
 
-              <div className="agegate-reveal flex gap-4">
+              <div className="agegate-reveal-on-scroll-top flex gap-4">
                 <AgeGateButton
                   label="YES"
                   onClick={() => {
@@ -119,17 +133,17 @@ export default function AgeGate() {
             </>
           ) : (
             <>
-              <h2 className="agegate-reveal mb-53 text-(--primary-red-main)! max-w-103.25">
+              <h2 className="agegate-reveal-on-scroll-top mb-53 text-(--primary-red-main)! max-w-103.25">
                 YOU CANNOT ACCESS THIS WEBSITE
               </h2>
-              <h5 className="agegate-reveal text-(--primary-red-main)! leading-6! lg:leading-6.75!">
+              <h5 className="agegate-reveal-on-scroll-top text-(--primary-red-main)! leading-6! lg:leading-6.75!">
                 Come back when you are of legal drinking age
               </h5>
             </>
           )}
         </div>
 
-        <p className="agegate-reveal max-w-217.75 text-[14px] text-(--primary-red-main) leading-5.25">
+        <p className="agegate-reveal-on-scroll-top max-w-217.75 text-[14px] text-(--primary-red-main) leading-5.25">
           * The cookies on this website are used for offering you a better
           browsing experience. To know more read our privacy policy{' '}
           <Link
@@ -151,7 +165,7 @@ export default function AgeGate() {
         </p>
       </div>
 
-      <div className="agegate-reveal-center hidden lg:flex h-24.25 w-24.25 items-center justify-center absolute top-1/2 right-64 -translate-y-1/2">
+      <div className="agegate-reveal-on-scroll-bottom hidden lg:flex h-24.25 w-24.25 items-center justify-center absolute top-1/2 right-64 -translate-y-1/2">
         <Image
           draggable={false}
           src="/imgs/legal/ginkins-gin-lemon-icon.svg"
@@ -163,7 +177,7 @@ export default function AgeGate() {
         />
       </div>
 
-      <div className="agegate-reveal-center hidden lg:flex h-24.25 w-24.25 items-center justify-center absolute top-1/2 left-64 -translate-y-1/2">
+      <div className="agegate-reveal-on-scroll-bottom hidden lg:flex h-24.25 w-24.25 items-center justify-center absolute top-1/2 left-64 -translate-y-1/2">
         <Image
           draggable={false}
           src="/imgs/legal/ginkins-gin-lemon-icon.svg"

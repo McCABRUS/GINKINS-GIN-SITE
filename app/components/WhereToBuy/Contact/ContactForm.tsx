@@ -46,17 +46,29 @@ export function ContactForm() {
     const res = await fetch(
       `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/contact`,
       {
-        cache: 'force-cache',
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
         body: JSON.stringify(parsed.data),
       },
     );
 
     setLoading(false);
 
+    const raw = await res.text();
+    let body: unknown = null;
+
+    try {
+      body = JSON.parse(raw);
+    } catch {
+      body = null;
+    }
+
     if (!res.ok) {
       const body = await res.json();
+      console.error('CONTACT ERROR BODY:', body);
 
       setErrors({
         form: [body.error ?? 'Something went wrong'],
@@ -130,10 +142,11 @@ export function ContactForm() {
       </div>
       <Turnstile
         options={{ appearance: 'execute' }}
-        siteKey="0x4AAAAAACbQx4jTii3yXBNt" //{process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!} TEMP Vercel Preview
+        siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
         ref={turnstileRef}
         onSuccess={(t) => setToken(t)}
         onExpire={() => setToken(null)}
+        onError={() => setToken(null)}
       />
       <button
         type="submit"
