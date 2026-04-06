@@ -67,13 +67,20 @@ export function ContactForm() {
     }
 
     if (!res.ok) {
-      const body = await res.json();
-      console.error('CONTACT ERROR BODY:', body);
+      const errorMessage =
+        typeof body === 'object' &&
+        body !== null &&
+        'error' in body &&
+        typeof (body as { error?: unknown }).error === 'string'
+          ? (body as { error: string }).error
+          : typeof body === 'object' &&
+              body !== null &&
+              'details' in body &&
+              typeof (body as { details?: unknown }).details === 'string'
+            ? (body as { details: string }).details
+            : raw || 'Something went wrong';
 
-      setErrors({
-        form: [body.error ?? 'Something went wrong'],
-      });
-
+      setErrors({ form: [errorMessage] });
       return;
     }
 

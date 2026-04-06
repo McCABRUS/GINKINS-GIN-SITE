@@ -30,7 +30,7 @@ export default function AgeGate() {
     if (!isOpen || denied || !rootRef.current) return;
 
     const ctx = gsap.context(() => {
-      const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+      const tl = gsap.timeline({ defaults: { ease: 'expo.out' } });
 
       tl.fromTo(
         '.agegate-reveal-on-scroll-top',
@@ -39,9 +39,9 @@ export default function AgeGate() {
           autoAlpha: 1,
           y: 0,
           scale: 1,
-          duration: 1,
-          delay: 0.2,
-          ease: 'power3.out',
+          duration: 1.2,
+          delay: 1,
+          ease: 'Cubic.easeOut',
         },
       );
       tl.fromTo(
@@ -51,10 +51,11 @@ export default function AgeGate() {
           autoAlpha: 1,
           y: 0,
           scale: 1,
-          duration: 1,
-          delay: 0.2,
-          ease: 'power3.out',
+          duration: 1.2,
+          delay: 0,
+          ease: 'Cubic.easeOut',
         },
+        '<',
       );
     }, rootRef);
 

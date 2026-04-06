@@ -18,7 +18,7 @@ gsap.registerPlugin(CustomEase);
 CustomEase.create('animistaEaseOutQuint', '0.23, 1, 0.32, 1');
 
 const AUTOPLAY_MS = 5500;
-const TRANSITION_MS = 2000;
+const TRANSITION_MS = 1000;
 const DRAG_ACTIVATE_PX = 6;
 const SWIPE_THRESHOLD = 48;
 const VELOCITY_THRESHOLD = 0.45;
@@ -751,39 +751,35 @@ export default function CollectionCarousel() {
       },
     );
 
-    const id = window.requestAnimationFrame(() => {
-      const tl = gsap.timeline({
-        onComplete: () => {
-          if (pendingGhostCleanupRef.current) {
-            pendingGhostCleanupRef.current = false;
-            flushSync(() => {
-              setGhost(null);
-            });
-          }
+    const tl = gsap.timeline({
+      onComplete: () => {
+        if (pendingGhostCleanupRef.current) {
+          pendingGhostCleanupRef.current = false;
+          flushSync(() => {
+            setGhost(null);
+          });
+        }
 
-          setPendingDesktopReveal(false);
-          setIsTransitioning(false);
-          isTransitioningRef.current = false;
-        },
-      });
-
-      targets.forEach(({ el, opacity }, index) => {
-        tl.to(
-          el,
-          {
-            ...getContentRevealVisuals(opacity),
-            duration: 0.42,
-            ease: 'animistaEaseOutQuint',
-            overwrite: 'auto',
-          },
-          index * 0.05,
-        );
-      });
+        setPendingDesktopReveal(false);
+        setIsTransitioning(false);
+        isTransitioningRef.current = false;
+      },
     });
 
-    return () => {
-      window.cancelAnimationFrame(id);
-    };
+    targets.forEach(({ el, opacity }) => {
+      tl.to(
+        el,
+        {
+          ...getContentRevealVisuals(opacity),
+          duration: 0.42,
+          ease: 'animistaEaseOutQuint',
+          overwrite: 'auto',
+        },
+        'syncStart',
+      );
+    });
+
+    return;
   }, [isCompact, pendingDesktopReveal, setDesktopBasePositions]);
 
   useLayoutEffect(() => {
