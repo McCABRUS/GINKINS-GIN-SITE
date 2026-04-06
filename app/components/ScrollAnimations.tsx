@@ -106,8 +106,6 @@ export default function ScrollAnimations() {
           { autoAlpha: 0, scale: 0.995 },
           { autoAlpha: 1, scale: 1, duration: 2, delay: 0.15 },
         );
-
-        ScrollTrigger.refresh();
       };
 
       animateScroll(

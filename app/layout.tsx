@@ -6,6 +6,7 @@ import Footer from './components/Footer';
 import './globals.css';
 import ClientShell from './components/ClientShell';
 import ScrollAnimations from './components/ScrollAnimations';
+import ScrollToTopOnRouteChange from '@/components/ScrollToTopOnRouteChange';
 
 export const metadata: Metadata = {
   title: 'Ginkins: Explore the Exquisite Range of Masterfully Distilled Gins',
@@ -36,6 +37,7 @@ export default function RootLayout({
       <body
         className={`${cormorant.className} ${barlow.className} antialiased bg-(--secondary-beige)!`}
       >
+        <ScrollToTopOnRouteChange />
         <ScrollAnimations />
         <HeaderServer />
         <SpeedInsights />

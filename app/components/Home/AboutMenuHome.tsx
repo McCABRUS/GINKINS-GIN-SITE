@@ -26,7 +26,7 @@ export default function AboutHomeMenu() {
               {items.map((item, i) => (
                 <li key={i}>
                   <div className="flex items-center gap-6 reveal-on-scroll-top">
-                    <Link href={item.href} target="_blank">
+                    <Link href={item.href}>
                       <div className="group">
                         <h6 className="text-[35px]! text-(--secondary-gray-300)! group-hover:text-(--primary-red-200)! relative inline mr-8 -top-2.5 group-hover:font-bold!">
                           {String(i + 1).padStart(2, '0')}
