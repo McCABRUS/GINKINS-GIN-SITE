@@ -775,7 +775,7 @@ export default function CollectionCarousel() {
           ease: 'animistaEaseOutQuint',
           overwrite: 'auto',
         },
-        'syncStart',
+        0,
       );
     });
 

@@ -5,7 +5,7 @@ export default function Founder() {
     <section className="w-screen bg-(--secondary-beige)" id="founder">
       <div className="mx-auto max-xl:px-5 max-4xl:px-37.25 md:max-w-480 lg:pt-32 pb-16.75 lg:pb-32 pt-15 relative">
         <div className="grid grid-cols-1 gap-y-15 lg:grid-cols-2 lg:gap-x-24">
-          <div className="max-lg:mx-auto order-1 space-y-6">
+          <div className="max-lg:mx-auto order-1 space-y-6 reveal-on-scroll">
             <h6 className="text-center lg:text-left text-[35px]! text-(--secondary-black)!">
               We’re here to build more than a spirit.
             </h6>
@@ -18,7 +18,7 @@ export default function Founder() {
             </p>
           </div>
 
-          <div className="lg:ml-auto text-center lg:text-left order-2 space-y-6">
+          <div className="lg:ml-auto text-center lg:text-left order-2 space-y-6 reveal-on-scroll-top">
             <h2>Because at Ginkins, we know:</h2>
             <h2 className="text-(--primary-red-main)!">
               It’s not just what’s in the glass. It’s who’s around it.
@@ -50,21 +50,21 @@ export default function Founder() {
                 alt="Professional master distiller presenting a bottle of premium gin at an elegant bar"
                 width={816}
                 height={1198}
-                className="aspect-434/637 object-cover relative rounded-t-full z-20 w-full"
+                className="aspect-434/637 object-cover relative rounded-t-full z-20 w-full reveal-on-scroll-center"
               />
               <div className="absolute bottom-0 -left-11 h-37.25 2xs:h-50 md:h-120 2xl:h-150 xl:h-80 lg:h-60 w-full bg-(--primary-red-main) z-10" />
             </div>
 
-            <h5 className="mt-4 text-center lg:text-left">
+            <h5 className="mt-4 text-center lg:text-left reveal-on-scroll">
               “The man behind the gin.”
             </h5>
           </div>
           <div className="lg:ml-auto order-5 space-y-6">
-            <h4 className="text-(--secondary-black)! text-center lg:text-left text-[35px]! font-medium! leading-10.5! lg:leading-16.75!">
+            <h4 className="text-(--secondary-black)! text-center lg:text-left text-[35px]! font-medium! leading-10.5! lg:leading-16.75! reveal-on-scroll-top">
               Phillip Scott Ginkins
             </h4>
 
-            <div className="text-center lg:text-left space-y-4 text-base leading-6 text-(--secondary-black)">
+            <div className="text-center lg:text-left space-y-4 text-base leading-6 text-(--secondary-black) reveal-on-scroll-top">
               <p>
                 Born in Southern Indiana and shaped by the culture of nearby
                 Louisville, <strong>Scott Ginkins</strong> grew up where the
@@ -93,7 +93,7 @@ export default function Founder() {
               </p>
             </div>
 
-            <p className="font-cormorant-garamond text-3xl lg:text-4xl italic text-(--primary-black) font-bold lg:font-medium text-center lg:text-left mb-15 lg:mb-0">
+            <p className="font-cormorant-garamond text-3xl lg:text-4xl italic text-(--primary-black) font-bold lg:font-medium text-center lg:text-left mb-15 lg:mb-0 reveal-on-scroll-top">
               We bottle connection. <br />
               You pour it forward.
             </p>

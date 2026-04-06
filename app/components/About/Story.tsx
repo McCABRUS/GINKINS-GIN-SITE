@@ -14,12 +14,12 @@ export default function Story() {
                 alt="Martini Ginkins Gin icon"
                 width={56}
                 height={71}
-                className="mb-10.75 mx-auto lg:mx-0"
+                className="mb-10.75 mx-auto lg:mx-0 reveal-on-load-top"
                 aria-hidden
                 priority
               />
             </div>
-            <div className="text-center lg:text-left text-base leading-6 text-(--primary-black)">
+            <div className="text-center lg:text-left text-base leading-6 text-(--primary-black) reveal-on-load-top">
               <p className="mb-4">
                 When people think of Louisville, they picture Derby hats,
                 hometown legends, crackling bats, and that unmistakable bourbon
@@ -43,7 +43,7 @@ export default function Story() {
             <Link
               href="https://ginkinsgin.distilleryspirits.com"
               target="_blank"
-              className="w-40 lg:w-44.25 h-9.75 mt-10.75 flex items-center justify-center px-5 py-1.5  transition animatedButton mx-auto lg:mx-0 group"
+              className="w-40 lg:w-44.25 h-9.75 mt-10.75 flex items-center justify-center px-5 py-1.5  transition animatedButton mx-auto lg:mx-0 group reveal-on-scroll-top"
             >
               <h5 className="text-lg! group-hover:text-(--primary-black)! group-active:text-(--primary-black)! group-focus:text-(--primary-black)!">
                 Shop ONLINE
@@ -58,7 +58,7 @@ export default function Story() {
                 src="/imgs/about/meaningful-connections-ginkins-gin.webp"
                 alt="Creating connections over a premium gin cocktail with red fruits and citrus in an elegant bar setting."
                 fill
-                className="object-cover"
+                className="object-cover reveal-on-scroll-center"
                 priority
               />
             </div>

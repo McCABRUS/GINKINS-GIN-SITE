@@ -65,12 +65,12 @@ export default function GinProductsSection() {
         <Divider />
         <div className="lg:grid-cols-2 lg:gap-24 hidden xl:grid max-xl:px-5 max-4xl:px-37.25 md:max-w-480 place-self-center mx-auto">
           <div>
-            <h5>Crafted</h5>
-            <h4 className="text-(--secondary-black)!">
+            <h5 className="reveal-on-scroll-top">Crafted</h5>
+            <h4 className="text-(--secondary-black)! reveal-on-scroll-top">
               Limited Editions <br /> &amp; Future Releases
             </h4>
           </div>
-          <div className="space-y-4 text-sm leading-relaxed text-(--primary-black) grid grid-cols-2 gap-5 relative">
+          <div className="space-y-4 text-sm leading-relaxed text-(--primary-black) grid grid-cols-2 gap-5 relative reveal-on-scroll">
             <div>
               <p className="text-lg leading-6.75 font-medium mb-4">
                 Crafted in curiosity.
@@ -127,22 +127,24 @@ function ProductRow({
 }) {
   return (
     <div className="grid grid-cols-1 items-center gap-29.25 lg:grid-cols-2 max-xl:px-5 max-4xl:px-37.25 md:max-w-480 place-self-center mx-auto">
-      <div className="order-1 justify-center lg:justify-end flex lg:order-2 mb-15 xl:mb-30 relative">
+      <div className="order-1 justify-center lg:justify-end flex lg:order-2 mb-15 xl:mb-30 relative reveal-on-scroll-center">
         {bottle}
       </div>
       <div className="order-2 space-y-6 lg:order-1 mt-5 md:mt-45 lg:mt-0 px-0">
-        <h4 className="text-(--primary-red-main)! text-[35px]! xl:text-[56px]! font-medium! xl:font-normal! text-center lg:text-left leading-10.5! xl:leading-16.75!">
+        <h4 className="text-(--primary-red-main)! text-[35px]! xl:text-[56px]! font-medium! xl:font-normal! text-center lg:text-left leading-10.5! xl:leading-16.75! reveal-on-scroll-top">
           {title}
         </h4>
         <hr
           className="w-25 text-(--primary-red-main) my-8.5 mx-auto lg:mx-0"
           aria-hidden
         />
-        <h2 className="text-center lg:text-left">{subtitle}</h2>
-        <p className="text-base leading-6 text-(--secondary-black) mb-9.5 text-center lg:text-left">
+        <h2 className="text-center lg:text-left reveal-on-scroll">
+          {subtitle}
+        </h2>
+        <p className="text-base leading-6 text-(--secondary-black) mb-9.5 text-center lg:text-left reveal-on-scroll-top">
           {description}
         </p>
-        <ul className="space-y-4 list-disc text-base leading-6 text-(--secondary-black) marker:text-(--primary-red-main) pl-5">
+        <ul className="space-y-4 list-disc text-base leading-6 text-(--secondary-black) marker:text-(--primary-red-main) pl-5 reveal-on-scroll-top">
           <li>
             <strong>Tasting Notes:</strong> {tasting}
           </li>
@@ -163,7 +165,7 @@ function ProductRow({
         <Link
           href={`https://ginkinsgin.distilleryspirits.com` + `#${linkId}`}
           target="_blank"
-          className="w-40 lg:w-44.25 h-9.75 mt-9.5 flex items-center justify-center px-5 py-1.5 transition animatedButton mx-auto lg:mx-0 group"
+          className="w-40 lg:w-44.25 h-9.75 mt-9.5 flex items-center justify-center px-5 py-1.5 transition animatedButton mx-auto lg:mx-0 group reveal-on-scroll-top"
         >
           <h5 className="group-hover:text-(--primary-black)! group-active:text-(--primary-black)! group-focus:text-(--primary-black)!">
             Shop ONLINE
@@ -176,7 +178,7 @@ function ProductRow({
 
 function Divider() {
   return (
-    <div className="flex items-center justify-center gap-6">
+    <div className="flex items-center justify-center gap-6 reveal-on-scroll-center">
       <span className="h-px w-full bg-(--primary-red-main)" aria-hidden />
       <Image
         draggable={false}

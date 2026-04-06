@@ -9,7 +9,7 @@ export default function Heritage() {
       <HeritageInnovation />
       <div className="w-full bg-(--primary-red-main) -mt-24 lg:-mt-px">
         <div className="bg-(--primary-red-main) lg:max-h-50 lg:mx-auto w-screen relative lg:grid-cols-2 max-xl:px-5 max-4xl:px-37.25 md:max-w-480 grid">
-          <h4 className="text-background! justify-self-start self-start text-left hidden lg:block">
+          <h4 className="text-background! justify-self-start self-start text-left hidden lg:block reveal-on-scroll-top">
             Rooted in Louisville. <br />
             Crafted to Inspire.
           </h4>
@@ -17,7 +17,7 @@ export default function Heritage() {
             draggable={false}
             src="/imgs/about/ginkins-gin-scott-botanicals.webp"
             alt="Expert distiller Scott Ginkins showcasing the botanical craftsmanship and traditional copper still used in creating Ginkins Gin."
-            className="w-screen lg:w-142.25 h-129.5 lg:h-202.5 lg:justify-self-end lg:self-end object-cover relative object-top"
+            className="w-screen lg:w-142.25 h-129.5 lg:h-202.5 lg:justify-self-end lg:self-end object-cover relative object-top reveal-on-scroll-center"
             height={814}
             width={852}
           />
@@ -26,20 +26,20 @@ export default function Heritage() {
 
       <div className="mx-auto max-xl:px-5 max-4xl:px-37.25 md:max-w-480 py-10 2xl:py-24 grid grid-cols-1 gap-16 lg:grid-cols-2 lg:gap-24">
         <div className="space-y-2 2xl:space-y-15">
-          <p className="text-center lg:text-left text-lg leading-6.75 font-medium text-(--primary-black)">
+          <p className="text-center lg:text-left text-lg leading-6.75 font-medium text-(--primary-black) reveal-on-scroll">
             Ginkins began with a simple idea:
             <br /> What if gin could carry the same soul, pride, and
             storytelling power as bourbon?
           </p>
 
-          <p className="text-center lg:text-left  text-base leading-6 text-(--primary-black)">
+          <p className="text-center lg:text-left  text-base leading-6 text-(--primary-black) reveal-on-scroll">
             In the heart of Kentucky—where bourbon reigns—we’re starting a new
             tradition. Ginkins Gin is rooted in Southern hospitality and crafted
             with intention. Every bottle captures the warmth, boldness, and
             unapologetic creativity of our region. It’s not just something you
             sip—it’s something you share. A spirit born to connect.
           </p>
-          <p className="text-center lg:text-left  text-base leading-6 text-(--primary-black)">
+          <p className="text-center lg:text-left  text-base leading-6 text-(--primary-black) reveal-on-scroll">
             <strong>Founder Scott Ginkins</strong> was raised in Southern
             Indiana, just across the river from Louisville, where the lines
             between community and craft, legacy and innovation, are beautifully
@@ -51,7 +51,7 @@ export default function Heritage() {
             world’s most respected programs in the field.
           </p>
 
-          <p className="text-center lg:text-left  text-(--primary-red-main) text-3xl lg:text-4xl font-cormorant-garamond font-medium">
+          <p className="text-center lg:text-left  text-(--primary-red-main) text-3xl lg:text-4xl font-cormorant-garamond font-medium reveal-on-scroll">
             The name Ginkins isn’t just a brand—it’s his family name.
             <strong>
               And every bottle is a personal expression of craftsmanship,
@@ -70,7 +70,7 @@ export default function Heritage() {
                 alt={item.alt}
                 width={391}
                 height={563}
-                className="w-full h-140.75 object-cover"
+                className="w-full h-140.75 object-cover reveal-on-scroll-center"
               />
               <Image
                 draggable={false}
@@ -78,10 +78,10 @@ export default function Heritage() {
                 alt="Ginkins Gin Isotype"
                 width={31}
                 height={39}
-                className="w-7.75 object-cover mx-auto lg:mx-0"
+                className="w-7.75 object-cover mx-auto lg:mx-0 reveal-on-scroll-top"
                 aria-hidden
               />
-              <p className="text-base leading-6 text-(--primary-black)">
+              <p className="text-base leading-6 text-(--primary-black) reveal-on-scroll-top">
                 <strong>{item.text}</strong>
               </p>
             </div>

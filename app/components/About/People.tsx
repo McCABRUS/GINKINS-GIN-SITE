@@ -15,7 +15,7 @@ export default function People() {
           />
         </div>
         <div className="order-1 lg:order-2 flex items-cender bg-(--primary-black) py-10 xl:py-20 max-xl:px-5 px-37.25">
-          <div className="w-full md:max-w-205">
+          <div className="w-full md:max-w-205 reveal-on-scroll-left">
             <p className="text-center lg:text-left text-4xl text-(--primary-gold-main) italic font-bold font-cormorant-garamond md:mb-11.75 mb-23.25">
               We believe great gin begins with
               <br />
