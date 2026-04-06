@@ -65,7 +65,7 @@ export default function ScrollAnimations() {
           gsap.killTweensOf(elements);
           gsap.set(elements, from);
 
-          gsap.timeline({ defaults: { ease: 'power3.out' } }).to(elements, {
+          gsap.timeline({ defaults: { ease: 'Cubic.easeOut' } }).to(elements, {
             autoAlpha: 1,
             x: to.x as number | undefined,
             y: to.y as number | undefined,
@@ -80,31 +80,70 @@ export default function ScrollAnimations() {
         animateOnLoad(
           '.reveal-on-load',
           { autoAlpha: 0, x: -24, scale: 0.995 },
-          { autoAlpha: 1, x: 0, scale: 1, duration: 1, delay: 0.15 },
+          {
+            autoAlpha: 1,
+            x: 0,
+            scale: 1,
+            duration: 1.2,
+            delay: 0.15,
+            stagger: 0.06,
+            ease: 'Cubic.easeOut',
+          },
         );
 
         animateOnLoad(
           '.reveal-on-load-left',
           { autoAlpha: 0, x: 24, scale: 0.995 },
-          { autoAlpha: 1, x: 0, scale: 1, duration: 1, delay: 0.15 },
+          {
+            autoAlpha: 1,
+            x: 0,
+            scale: 1,
+            duration: 1.2,
+            delay: 0.15,
+            stagger: 0.06,
+            ease: 'Cubic.easeOut',
+          },
         );
 
         animateOnLoad(
           '.reveal-on-load-top',
           { autoAlpha: 0, y: 48, scale: 0.995 },
-          { autoAlpha: 1, y: 0, scale: 1, duration: 1, delay: 0.15 },
+          {
+            autoAlpha: 1,
+            y: 0,
+            scale: 1,
+            duration: 1.2,
+            delay: 0.15,
+            stagger: 0.06,
+            ease: 'Cubic.easeOut',
+          },
         );
 
         animateOnLoad(
           '.reveal-on-load-bottom',
           { autoAlpha: 0, y: -48, scale: 0.995 },
-          { autoAlpha: 1, y: 0, scale: 1, duration: 1, delay: 0.15 },
+          {
+            autoAlpha: 1,
+            y: 0,
+            scale: 1,
+            duration: 1.2,
+            delay: 0.15,
+            stagger: 0.06,
+            ease: 'Cubic.easeOut',
+          },
         );
 
         animateOnLoad(
           '.reveal-on-load-center',
           { autoAlpha: 0, scale: 0.995 },
-          { autoAlpha: 1, scale: 1, duration: 2, delay: 0.15 },
+          {
+            autoAlpha: 1,
+            scale: 1,
+            duration: 2,
+            delay: 0.15,
+            stagger: 0.06,
+            ease: 'Cubic.easeOut',
+          },
         );
       };
 
@@ -115,9 +154,10 @@ export default function ScrollAnimations() {
           autoAlpha: 1,
           x: 0,
           scale: 1,
-          duration: 1,
+          duration: 1.2,
           delay: 0.2,
-          ease: 'power3.out',
+          stagger: 0.06,
+          ease: 'Cubic.easeOut',
         },
       );
 
@@ -128,9 +168,10 @@ export default function ScrollAnimations() {
           autoAlpha: 1,
           x: 0,
           scale: 1,
-          duration: 1,
+          duration: 1.2,
           delay: 0.2,
-          ease: 'power3.out',
+          stagger: 0.06,
+          ease: 'Cubic.easeOut',
         },
       );
 
@@ -141,9 +182,10 @@ export default function ScrollAnimations() {
           autoAlpha: 1,
           y: 0,
           scale: 1,
-          duration: 1,
+          duration: 1.2,
           delay: 0.2,
-          ease: 'power3.out',
+          stagger: 0.06,
+          ease: 'Cubic.easeOut',
         },
       );
 
@@ -154,9 +196,10 @@ export default function ScrollAnimations() {
           autoAlpha: 1,
           y: 0,
           scale: 1,
-          duration: 1,
+          duration: 1.2,
           delay: 0.2,
-          ease: 'power3.out',
+          stagger: 0.06,
+          ease: 'Cubic.easeOut',
         },
       );
 
@@ -168,7 +211,8 @@ export default function ScrollAnimations() {
           scale: 1,
           duration: 2,
           delay: 0.2,
-          ease: 'power3.out',
+          stagger: 0.06,
+          ease: 'Cubic.easeOut',
         },
       );
 

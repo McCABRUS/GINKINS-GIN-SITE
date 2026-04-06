@@ -190,6 +190,14 @@ h6 {
   font-family: 'Cormorant Garamond';
 }
 
+.reveal-on-load,
+.reveal-on-load-top,
+.reveal-on-load-center,
+.reveal-on-load-bottom,
+.reveal-on-load-left {
+  opacity: 0;
+}
+
 @keyframes collectionScroll {
   0% {
     transform: translateX(0);

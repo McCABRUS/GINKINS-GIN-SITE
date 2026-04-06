@@ -400,13 +400,13 @@ export default function Hero() {
           </svg>
         </div>
 
-        <div className="hidden lg:block absolute left-[10.25%] xl:top-86 lg:top-22 text-background text-center reveal-on-load-top">
+        <div className="hidden lg:block absolute left-[10.25%] xl:top-86 lg:top-22 text-background text-center reveal-on-load-bottom">
           <p className="font-cormorant-garamond leading-relaxed text-3xl">
             WE BOTTLE <br /> CONNECTION.
           </p>
         </div>
 
-        <div className="hidden lg:block absolute right-[10.25%] xl:top-86 lg:top-22 text-background text-center reveal-on-load-top">
+        <div className="hidden lg:block absolute right-[10.25%] xl:top-86 lg:top-22 text-background text-center reveal-on-load-bottom">
           <p className="font-cormorant-garamond text-3xl leading-relaxed top-86">
             YOU POUR IT <br /> FORWARD.
           </p>
@@ -441,7 +441,7 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="relative grid z-50 lg:top-0 xl:-top-25 m-auto justify-center">
+      <div className="relative grid z-50 lg:top-0 xl:-top-25 m-auto justify-center reveal-on-load-bottom">
         <div className="absolute left-1/2 bottom-118 xl:bottom-[6%] -translate-x-1/2 z-40">
           <Link
             href="/our-gins"
@@ -455,7 +455,7 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="relative block xl:hidden text-center -top-33.5">
+      <div className="relative block xl:hidden text-center -top-33.5 reveal-on-load-bottom">
         <BotanicalGridMobile />
         <div className="lg:hidden relative bg-background -top-70 -mb-102 h-41.25 py-[17.5px] grid">
           <h2 className="text-3xl! text-(--primary-red-main)! content-end">
