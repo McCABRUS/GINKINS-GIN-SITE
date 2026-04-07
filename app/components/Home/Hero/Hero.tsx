@@ -455,7 +455,7 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="relative block xl:hidden text-center -top-33.5 reveal-on-load-bottom">
+      <div className="relative block xl:hidden text-center -top-33.5 reveal-on-load-bottom z-10000">
         <BotanicalGridMobile />
         <div className="lg:hidden relative bg-background -top-70 -mb-102 h-41.25 py-[17.5px] grid">
           <h2 className="text-3xl! text-(--primary-red-main)! content-end">
