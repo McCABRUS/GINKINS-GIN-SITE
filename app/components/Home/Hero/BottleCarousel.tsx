@@ -61,7 +61,7 @@ export default function BottleCarousel({ slides, activeIndex }: Props) {
       {
         opacity: 1,
         filter: 'blur(0px)',
-        duration: 0.75,
+        duration: 2,
         ease: 'power3.out',
       },
       0,
@@ -69,7 +69,7 @@ export default function BottleCarousel({ slides, activeIndex }: Props) {
       outgoingEl,
       {
         opacity: 0,
-        duration: 0.18,
+        duration: 2,
         ease: 'power2.out',
       },
       0.58,
