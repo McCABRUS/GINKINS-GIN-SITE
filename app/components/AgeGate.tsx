@@ -68,8 +68,8 @@ export default function AgeGate() {
     <div
       ref={rootRef}
       className={clsx(
-        'fixed inset-0 z-9999 bg-(--secondary-beige) transition-opacity duration-600',
-        exiting && 'opacity-0',
+        'fixed inset-0 z-9999 bg-(--secondary-beige) [transition:all_1s_cubic-bezier(0.65,0,0.35,1)]',
+        exiting && 'translate-y-[-100vh]',
       )}
     >
       <div className="absolute inset-0 opacity-[0.04] bg-[url('/imgs/legal/ginkins-gin-logo-watermark.svg')] bg-center bg-no-repeat bg-cover bg-(--secondary-beige)" />
@@ -125,7 +125,7 @@ export default function AgeGate() {
                         };
 
                         window.dispatchEvent(new Event('app:state-changed'));
-                      }, 400);
+                      }, 1400);
                     }, 200);
                   }}
                 />

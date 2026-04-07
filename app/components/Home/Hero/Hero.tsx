@@ -357,7 +357,7 @@ export default function Hero() {
       </div>
 
       <div className="relative mx-auto max-w-400 h-250 z-30 justify-center flex">
-        <div className="absolute -top-7.5 lg:top-0 xl:top-55.75 justify-self-center reveal-on-load-top">
+        <div className="absolute -top-7.5 lg:-top-2.5 xl:top-55.75 justify-self-center reveal-on-load-top">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="451"
@@ -455,17 +455,17 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="relative block xl:hidden text-center -top-33.5 reveal-on-load-bottom z-100">
+      <div className="relative block xl:hidden text-center -top-33.5 z-100">
         <BotanicalGridMobile />
-        <div className="lg:hidden relative bg-background -top-70 -mb-102 h-41.25 py-[17.5px] grid">
-          <h2 className="text-3xl! text-(--primary-red-main)! content-end">
+        <div className="lg:hidden relative bg-background -top-70 -mb-102 h-41.25 py-[17.5px] grid reveal-on-scroll-bottom">
+          <h2 className="text-3xl! text-(--primary-red-main)! content-end reveal-on-load-bottom">
             WE BOTTLE <br /> CONNECTION.
           </h2>
           <hr
             className="w-16 text-(--primary-black) place-self-center lg:my-1.25"
             aria-hidden="true"
           />
-          <h2 className="text-3xl! text-(--primary-red-main)!">
+          <h2 className="text-3xl! text-(--primary-red-main)! reveal-on-load-bottom">
             YOU POUR IT <br /> FORWARD.
           </h2>
         </div>

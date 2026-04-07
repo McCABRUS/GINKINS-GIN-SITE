@@ -28,6 +28,24 @@ export default function RootLayout({
           as="image"
           type="image/svg+xml"
         />
+        <link
+          rel="icon"
+          href="/imgs/cropped-faviconginkins-32x32.png"
+          sizes="32x32"
+        ></link>
+        <link
+          rel="icon"
+          href="/imgs/cropped-faviconginkins-192x192.png"
+          sizes="192x192"
+        ></link>
+        <link
+          rel="apple-touch-icon"
+          href="/imgs/cropped-faviconginkins-180x180.png"
+        ></link>
+        <meta
+          name="msapplication-TileImage"
+          content="/imgs/cropped-faviconginkins-270x270.png"
+        ></meta>
         <script
           src="https://challenges.cloudflare.com/turnstile/v0/api.js"
           async

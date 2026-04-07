@@ -19,12 +19,36 @@ declare global {
 
 export default function ScrollAnimations() {
   const pathname = usePathname();
-  const didRunLoadRef = useRef(false);
+  const cleanupTimeoutRef = useRef<number | null>(null);
 
   useLayoutEffect(() => {
-    didRunLoadRef.current = false;
-
     const ctx = gsap.context(() => {
+      const removeRevealClasses = (el: HTMLElement) => {
+        Array.from(el.classList).forEach((className) => {
+          if (className.startsWith('reveal-on-load')) {
+            el.classList.remove(className);
+          }
+        });
+      };
+
+      const forceFinalState = (el: HTMLElement) => {
+        removeRevealClasses(el);
+
+        gsap.set(el, {
+          clearProps: 'all',
+        });
+
+        el.style.opacity = 'unset';
+      };
+
+      const globalCleanup = () => {
+        document
+          .querySelectorAll<HTMLElement>('[class*="reveal-on-load"]')
+          .forEach((el) => {
+            forceFinalState(el);
+          });
+      };
+
       const animateScroll = (
         selector: string,
         from: gsap.TweenVars,
@@ -37,14 +61,34 @@ export default function ScrollAnimations() {
               trigger: el,
               start: 'top bottom',
               once: true,
+              invalidateOnRefresh: true,
+            },
+            clearProps: 'transform,opacity,visibility',
+          });
+        });
+      };
+
+      const animateLoad = (
+        selector: string,
+        from: gsap.TweenVars,
+        to: gsap.TweenVars,
+      ) => {
+        gsap.utils.toArray<HTMLElement>(selector).forEach((el, index) => {
+          gsap.fromTo(el, from, {
+            ...to,
+            delay: 0.15 + index * 0.06,
+            clearProps: 'transform,opacity,visibility',
+            onComplete: () => {
+              forceFinalState(el);
+            },
+            onInterrupt: () => {
+              forceFinalState(el);
             },
           });
         });
       };
 
       const runLoadAnimations = () => {
-        if (didRunLoadRef.current) return;
-
         const appState = window.__APP_STATE__ || {};
         const ready =
           appState.preloaderDone &&
@@ -52,98 +96,34 @@ export default function ScrollAnimations() {
 
         if (!ready) return;
 
-        didRunLoadRef.current = true;
-
-        const animateOnLoad = (
-          selector: string,
-          from: gsap.TweenVars,
-          to: gsap.TweenVars,
-        ) => {
-          const elements = gsap.utils.toArray<HTMLElement>(selector);
-          if (!elements.length) return;
-
-          gsap.killTweensOf(elements);
-          gsap.set(elements, from);
-
-          gsap.timeline({ defaults: { ease: 'Cubic.easeOut' } }).to(elements, {
-            autoAlpha: 1,
-            x: to.x as number | undefined,
-            y: to.y as number | undefined,
-            scale: to.scale as number | undefined,
-            duration: to.duration ?? 1,
-            delay: to.delay ?? 0,
-            stagger: 0.06,
-            overwrite: 'auto',
-          });
-        };
-
-        animateOnLoad(
+        animateLoad(
           '.reveal-on-load',
           { autoAlpha: 0, x: -24, scale: 0.995 },
-          {
-            autoAlpha: 1,
-            x: 0,
-            scale: 1,
-            duration: 1.8,
-            delay: 0.15,
-            stagger: 0.06,
-            ease: 'Cubic.easeOut',
-          },
+          { autoAlpha: 1, x: 0, scale: 1, duration: 1.8, ease: 'power2.out' },
         );
 
-        animateOnLoad(
+        animateLoad(
           '.reveal-on-load-left',
           { autoAlpha: 0, x: 24, scale: 0.995 },
-          {
-            autoAlpha: 1,
-            x: 0,
-            scale: 1,
-            duration: 1.8,
-            delay: 0.15,
-            stagger: 0.06,
-            ease: 'Cubic.easeOut',
-          },
+          { autoAlpha: 1, x: 0, scale: 1, duration: 1.8, ease: 'power2.out' },
         );
 
-        animateOnLoad(
+        animateLoad(
           '.reveal-on-load-top',
           { autoAlpha: 0, y: 48, scale: 0.995 },
-          {
-            autoAlpha: 1,
-            y: 0,
-            scale: 1,
-            duration: 1.8,
-            delay: 0.15,
-            stagger: 0.06,
-            ease: 'Cubic.easeOut',
-          },
+          { autoAlpha: 1, y: 0, scale: 1, duration: 1.8, ease: 'power2.out' },
         );
 
-        animateOnLoad(
+        animateLoad(
           '.reveal-on-load-bottom',
           { autoAlpha: 0, y: -48, scale: 0.995 },
-          {
-            autoAlpha: 1,
-            y: 0,
-            scale: 1,
-            duration: 1.8,
-            delay: 0.15,
-            stagger: 0.06,
-            ease: 'Cubic.easeOut',
-          },
+          { autoAlpha: 1, y: 0, scale: 1, duration: 1.8, ease: 'power2.out' },
         );
 
-        animateOnLoad(
+        animateLoad(
           '.reveal-on-load-center',
           { autoAlpha: 0, scale: 0.995 },
-          {
-            autoAlpha: 1,
-            scale: 1,
-            duration: 2,
-            delay: 0.15,
-            stagger: 0.06,
-            ease: 'Cubic.easeOut',
-          },
+          { autoAlpha: 1, scale: 1, duration: 2, ease: 'power2.out' },
         );
       };
 
@@ -156,8 +136,7 @@ export default function ScrollAnimations() {
           scale: 1,
           duration: 1.8,
           delay: 0.3,
-          stagger: 0.06,
-          ease: 'Cubic.easeOut',
+          ease: 'power2.out',
         },
       );
 
@@ -170,8 +149,7 @@ export default function ScrollAnimations() {
           scale: 1,
           duration: 1.8,
           delay: 0.3,
-          stagger: 0.06,
-          ease: 'Cubic.easeOut',
+          ease: 'power2.out',
         },
       );
 
@@ -184,8 +162,7 @@ export default function ScrollAnimations() {
           scale: 1,
           duration: 1.8,
           delay: 0.3,
-          stagger: 0.06,
-          ease: 'Cubic.easeOut',
+          ease: 'power2.out',
         },
       );
 
@@ -198,8 +175,7 @@ export default function ScrollAnimations() {
           scale: 1,
           duration: 1.8,
           delay: 0.3,
-          stagger: 0.06,
-          ease: 'Cubic.easeOut',
+          ease: 'power2.out',
         },
       );
 
@@ -211,8 +187,7 @@ export default function ScrollAnimations() {
           scale: 1,
           duration: 2,
           delay: 0.3,
-          stagger: 0.06,
-          ease: 'Cubic.easeOut',
+          ease: 'power2.out',
         },
       );
 
@@ -230,8 +205,16 @@ export default function ScrollAnimations() {
         window.addEventListener('load', onStateChange, { once: true });
       }
 
+      cleanupTimeoutRef.current = window.setTimeout(() => {
+        globalCleanup();
+      }, 5000);
+
       return () => {
         window.removeEventListener('app:state-changed', onStateChange);
+
+        if (cleanupTimeoutRef.current) {
+          window.clearTimeout(cleanupTimeoutRef.current);
+        }
       };
     });
 
