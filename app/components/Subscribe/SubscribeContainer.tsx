@@ -35,7 +35,7 @@ export default function SubscribeContainer() {
             <br />
             You’ll Get:
           </h4>
-          <ul className="space-y-10 mx-auto lg:mx-0  reveal-on-load-top">
+          <ul className="space-y-10 mx-auto lg:mx-0 reveal-on-load-top">
             {benefits.map((benefit, index) => (
               <li key={index} className="flex gap-x-6 gap-y-0 mb-0">
                 <div className="flex flex-col items-center">
@@ -51,7 +51,7 @@ export default function SubscribeContainer() {
                     <span className="my-4 h-6 w-px bg-black/30" />
                   )}
                 </div>
-                <p className="text-lg leading-6.75 font-medium text-(--primary-black)">
+                <p className="text-lg leading-6.75 font-medium text-(--primary-black) reveal-on-scroll-top">
                   {benefit}
                 </p>
               </li>

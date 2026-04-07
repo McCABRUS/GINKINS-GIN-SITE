@@ -11,8 +11,8 @@ export default function Celebrated() {
       <div className="pointer-events-none absolute inset-0 vignette-overlay bg-black/50 xl:bg-black/10" />
       <div className="relative mx-auto max-xl:px-5 max-4xl:px-37.25 md:max-w-480 py-15 xl:py-16.5 h-full">
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-20 h-full">
-          <div className="flex items-end lg:items-baseline justify-center lg:justify-start">
-            <h4 className="text-background! text-center lg:text-left">
+          <div className="flex items-end lg:items-baseline justify-center lg:justify-start reveal-on-scroll">
+            <h4 className="text-background! text-center lg:text-left reveal-on-load">
               Celebrated by Experts. <br />
               Loved by Explorers.
             </h4>
@@ -26,14 +26,14 @@ export default function Celebrated() {
               className="mb-10 block h-px w-full bg-background lg:hidden"
               aria-hidden
             />
-            <div className="space-y-6">
-              <p className="text-lg leading-6 font-normal text-background text-center lg:text-left">
+            <div className="space-y-6 reveal-on-load-top">
+              <p className="text-lg leading-6 font-normal text-background text-center lg:text-left reveal-on-scroll-top">
                 We don’t make gin for trophies—but it’s nice when the world
                 notices. From prestigious competitions to top-tier press
                 coverage, Ginkins has earned recognition for doing things our
                 way:
               </p>
-              <p className="text-3xl lg:text-4xl italic font-cormorant-garamond text-(--primary-gold-main) text-center lg:text-left">
+              <p className="text-3xl lg:text-4xl italic font-cormorant-garamond text-(--primary-gold-main) text-center lg:text-left reveal-on-scroll-top">
                 Bold, refined, and rooted in connection.
               </p>
             </div>

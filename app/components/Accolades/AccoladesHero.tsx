@@ -6,16 +6,18 @@ export default function AccoladesHero() {
     <section className="relative w-screen overflow-hidden bg-(--secondary-beige) px-5 sm:px-28.25 py-12.75 lg:pt-26.5 lg:py-12.5">
       <HeroCover translateYClassName="-translate-y-[36%]  xs:-translate-y-[45%] pq:-translate-y-[0%] md:-translate-y-[15%] lg:-translate-y-[28%] xl:-translate-y-[30%] 2xl:-translate-y-[40%]" />
       <div className="relative  text-center">
-        <h2 className="mb-11.25 text-center">ACCOLADES &amp; PRESS</h2>
+        <h2 className="mb-11.25 text-center reveal-on-load-top">
+          ACCOLADES &amp; PRESS
+        </h2>
         <h1 className="text-center">
           RAISING THE BAR,{' '}
-          <span className="text-(--primary-black)!">
+          <span className="text-(--primary-black)! reveal-on-load-top">
             ONE <br />
             AWARD AT A TIME
           </span>
         </h1>
         <div className="mb-33.75 mt-12.5 flex justify-center">
-          <div className="h-67.25 w-69">
+          <div className="h-67.25 w-69  reveal-on-load-center">
             <Image
               draggable={false}
               src="/imgs/accolades/ginkins-gin-icon-stars-black-duo.svg"
@@ -29,7 +31,7 @@ export default function AccoladesHero() {
         </div>
         <div className="items-center gap-5.5">
           <span className="h-12 w-px" />
-          <h3 className="text-center">EXPERIENCE</h3>
+          <h3 className="text-center  reveal-on-load-top">EXPERIENCE</h3>
         </div>
       </div>
       <div

@@ -7,7 +7,7 @@ export default function Story() {
       <div className="mx-auto max-xl:px-5 max-4xl:px-37.25 md:max-w-480 py-8.25">
         <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
           <div>
-            <div className="mb-6">
+            <div className="mb-6 reveal-on-scroll-top">
               <Image
                 draggable={false}
                 src="/imgs/home/ginkins-gin-icon-martini-decoration.svg"
@@ -20,18 +20,18 @@ export default function Story() {
               />
             </div>
             <div className="text-center lg:text-left text-base leading-6 text-(--primary-black) reveal-on-load-top">
-              <p className="mb-4">
+              <p className="mb-4 reveal-on-scroll-top">
                 When people think of Louisville, they picture Derby hats,
                 hometown legends, crackling bats, and that unmistakable bourbon
                 swagger. But look a little closer and you’ll find a city alive
                 with fresh ideas, forward momentum, and a creative spirit that
                 refuses to be boxed in. That’s the soul of Ginkins Gin.
               </p>
-              <p className="mb-4">
+              <p className="mb-4 reveal-on-scroll-top">
                 Born from tradition but built for what’s next, it’s our tribute
                 to a city that honors its heritage while embracing its future.
               </p>
-              <p>
+              <p className="reveal-on-scroll-top">
                 Founded by <strong>Phillip Scott Ginkins</strong>, this gin was
                 inspired by the warmth of Southern hospitality and the thrill of
                 discovery. With a last name that almost predestined his calling,

@@ -15,11 +15,11 @@ export default function RecentAwards() {
           </div>
         </div>
         <h1 className="relative z-10 mb-37.5 lg:mb-16 text-center">
-          <span className="lg:mr-21">RECENT</span>
+          <span className="lg:mr-21 reveal-on-scroll-top">RECENT</span>
           <br className="inline lg:hidden" />
-          <span className="lg:ml-21">AWARDS</span>
+          <span className="lg:ml-21 reveal-on-scroll-bottom">AWARDS</span>
         </h1>
-        <div className="relative z-10 grid grid-cols-2 gap-y-20 lg:grid-cols-6 lg:gap-y-0 gap-x-5 lg:gap-x-0">
+        <div className="relative z-10 grid grid-cols-2 gap-y-20 lg:grid-cols-6 lg:gap-y-0 gap-x-5 lg:gap-x-0 reveal-on-scroll-bottom">
           <AwardItem
             image="/imgs/accolades/ginkins-gin-usa-spirits-ratings-gold-2025.png"
             alt="USA Spirits Ratings Gold 2025 award medal for Ginkins Gin"

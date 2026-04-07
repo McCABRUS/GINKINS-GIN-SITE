@@ -45,7 +45,7 @@ export default function PressHighlights() {
   return (
     <section className="relative bg-(--primary-gold-main) py-25 overflow-hidden w-full">
       <div className="relative mx-auto max-xl:px-5 max-4xl:px-37.25 md:max-w-480">
-        <h1 className="text-center text-(--primary-gold-400)! mb-20">
+        <h1 className="text-center text-(--primary-gold-400)! mb-20 reveal-on-scroll-top">
           PRESS <br className="block lg:hidden" /> HIGHLIGHTS
         </h1>
         <button
@@ -95,9 +95,9 @@ export default function PressHighlights() {
         <div className="relative mx-auto">
           <div className="pointer-events-none absolute left-1/2 top-0 hidden xl:h-80 h-65 w-px bg-white lg:block" />
 
-          <div className="grid grid-cols-1 gap-16 lg:grid-cols-2 lg:gap-24">
+          <div className="grid grid-cols-1 gap-16 lg:grid-cols-2 lg:gap-24 reveal-on-scroll-top">
             <PressSlide {...leftSlide} />
-            <div className="hidden lg:block">
+            <div className="hidden lg:block reveal-on-scroll-top">
               <PressSlide {...rightSlide} />
             </div>
           </div>
