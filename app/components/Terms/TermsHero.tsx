@@ -7,14 +7,16 @@ export default function TermsHero() {
         translateYClassName="-translate-y-[65%] xs:-translate-y-[70%] pq:-translate-y-[85%] md:-translate-y-[90%] lg:-translate-y-[80%] xl:-translate-y-[64%] 2xl:-translate-y-[70%]"
       />
       <div className="mx-auto text-center">
-        <h1 className="text-(--primary-black)!">
+        <h1 className="text-(--primary-black)! reveal-on-load-top">
           Terms &amp; <br />
           Conditions
         </h1>
-        <h2 className="mt-11.5 text-(--primary-red-main)! md:mt-8">
+        <h2 className="mt-11.5 text-(--primary-red-main)! md:mt-8 reveal-on-load-top">
           The Fine Print, But Make It Clear
         </h2>
-        <h3 className="mt-45.25">Legal Stuff You’ll Actually Understand</h3>
+        <h3 className="mt-45.25 reveal-on-load-top">
+          Legal Stuff You’ll Actually Understand
+        </h3>
       </div>
     </section>
   );

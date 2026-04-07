@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function TimelineMarker() {
   return (
-    <div className="flex items-center justify-center">
+    <div className="flex items-center justify-center reveal-on-load-top">
       <Image
         draggable={false}
         src="/imgs/sustainability/ginkins-gin-icon-botanical-flower-red.svg"

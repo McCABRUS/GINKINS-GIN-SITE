@@ -24,7 +24,7 @@ export default function RecipeCard({
   return (
     <article
       className={`
-        group relative w-full min-w-0 overflow-hidden lg:rounded-xl
+        group relative w-full min-w-0 overflow-hidden lg:rounded-xl reveal-on-scroll-top
         ${area}
       `}
     >

@@ -6,10 +6,10 @@ export default function Contact() {
   return (
     <section className="w-screen bg-(--secondary-beige)  pb-27 relative">
       <div className="pt-26.5 lg:pt-45.25 pb-13.25 w-screen bg-(--primary-red-main) mx-auto text-center">
-        <h3 className="text-(--primary-gold-main)!">
+        <h3 className="text-(--primary-gold-main)! reveal-on-scroll-top">
           Contact &amp; Partnerships
         </h3>
-        <h1 className="mt-10 text-background!">
+        <h1 className="mt-10 text-background! reveal-on-scroll-top">
           Let’s Make <br className="block lg:hidden" />
           Something
           <br />
@@ -18,23 +18,23 @@ export default function Contact() {
         </h1>
       </div>
       <div className="mt-13.25 mx-auto max-xl:px-5 max-4xl:px-37.25 md:max-w-480 text-center flex flex-col">
-        <h5>Get in touch</h5>
+        <h5 className="reveal-on-scroll-top">Get in touch</h5>
 
-        <h4 className="mt-4 mb-6 text-(--primary-black)! max-xl:text-[42px]!">
+        <h4 className="mt-4 mb-6 text-(--primary-black)! max-xl:text-[42px]! reveal-on-scroll-top">
           Whether You’re Pouring or <br className="block lg:hidden" />
           Partnering
           <br />
           We’re Listening.
         </h4>
 
-        <p className="text-base leading-6 text-(--primary-black) font-normal max-w-240 place-self-center">
+        <p className="text-base leading-6 text-(--primary-black) font-normal max-w-240 place-self-center reveal-on-scroll-top">
           We believe the best things happen when passionate people connect.
           Whether you&apos;re looking to stock Ginkins in your bar, collaborate
           on a killer event, or just want to say hello—we’re all ears (and good
           vibes).
         </p>
         <div className="mt-20 grid grid-cols-1 lg:grid-cols-3">
-          <div className="flex flex-col justify-center space-y-16 lg:justify-self-start order-2 lg:order-1 mb-10 lg:mb-0">
+          <div className="flex flex-col justify-center space-y-16 lg:justify-self-start order-2 lg:order-1 mb-10 lg:mb-0 reveal-on-scroll">
             <IconBlock
               label="General Inquiries"
               svgImg="/imgs/where_to_buy/ginkins-gin-icon-cocktail-shaker.svg"
@@ -57,12 +57,12 @@ export default function Contact() {
               alt="Ginkins Golden Bloom Gin bottle placed on a stone pedestal in a sunny Mediterranean garden"
               width={405}
               height={628}
-              className="object-cover w-full h-full"
+              className="object-cover w-full h-full  reveal-on-scroll-center"
             />
             <div className="mt-16 w-full hidden lg:block">
               <a
                 href={`mailto:${'info'}@${'ginkins'}.com`}
-                className="relative w-full h-9.75 mt-9.5 flex mx-auto items-center justify-center px-5 py-1.5 transition animatedButton group"
+                className="relative w-full h-9.75 mt-9.5 flex mx-auto items-center justify-center px-5 py-1.5 transition animatedButton group  reveal-on-scroll-top"
               >
                 <h5 className="group-hover:text-(--primary-black)! group-active:text-(--primary-black)! group-focus:text-(--primary-black)!">
                   INFO@GINKINS.COM
@@ -70,7 +70,7 @@ export default function Contact() {
               </a>
             </div>
           </div>
-          <div className="flex flex-col justify-center space-y-16 lg:justify-self-end order-3">
+          <div className="flex flex-col justify-center space-y-16 lg:justify-self-end order-3  reveal-on-scroll-left">
             <IconBlock
               label="Wholesale &amp; Distribution"
               svgImg="/imgs/where_to_buy/ginkins-gin-icon-bottle-slim.svg"
@@ -90,7 +90,7 @@ export default function Contact() {
         <div className="mt-16 mb-26.5 w-full block lg:hidden">
           <a
             href={`mailto:${'info'}@${'ginkins'}.com`}
-            className="relative w-full lg:w-1/2 h-9.75 mt-9.5 flex mx-auto items-center justify-center px-5 py-1.5 transition animatedButton group"
+            className="relative w-full lg:w-1/2 h-9.75 mt-9.5 flex mx-auto items-center justify-center px-5 py-1.5 transition animatedButton group  reveal-on-scroll-top"
           >
             <h5 className="group-hover:text-(--primary-black)! group-active:text-(--primary-black)! group-focus:text-(--primary-black)!">
               INFO@GINKINS.COM
@@ -107,13 +107,13 @@ export default function Contact() {
       </div>
       <Divider />
       <div className="place-self-center max-xl:px-5 max-4xl:px-37.25 md:max-w-480 mt-20 text-center w-full mx-auto">
-        <h5 className="">Connect</h5>
+        <h5 className="reveal-on-scroll-top">Connect</h5>
 
-        <h4 className="mt-4 mb-6 text-(--primary-black)! max-xl:text-[42px]!">
+        <h4 className="mt-4 mb-6 text-(--primary-black)! max-xl:text-[42px]! reveal-on-scroll-top">
           Let’s Partner
         </h4>
 
-        <p className="mt-2 text-base leading-6 font-normal text-(--primary-black)">
+        <p className="mt-2 text-base leading-6 font-normal text-(--primary-black) reveal-on-scroll">
           Whether You&apos;re Pouring or Partnering—We’re Listening.
         </p>
         <ContactForm />

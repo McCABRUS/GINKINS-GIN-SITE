@@ -27,15 +27,15 @@ export default function ClassicGinkinsCocktails() {
             image="/imgs/cocktails/classic-ginkins-cocktails/ginkins-gin-heritage-martini-cocktail.webp"
             alt="Crystal clear Heritage Martini made with Ginkins Gin and a classic lemon peel"
           />
-          <div className="hidden lg:flex lg:col-span-2 justify-center text-center">
+          <div className="hidden lg:flex lg:col-span-2 justify-center text-center reveal-on-scroll-top">
             <div>
               <h3 className="text-(--primary-gold-main)!">Enjoy</h3>
-              <h4 className="text-[#7E8589]! uppercase my-8">
+              <h4 className="text-[#7E8589]! uppercase my-8 reveal-on-scroll-top">
                 Classic Ginkins
                 <br />
                 Cocktails
               </h4>
-              <h5 className="text-(--primary-gold-main)!">
+              <h5 className="text-(--primary-gold-main)! reveal-on-scroll-top">
                 Recipes that showcase our gin’s character.
               </h5>
             </div>

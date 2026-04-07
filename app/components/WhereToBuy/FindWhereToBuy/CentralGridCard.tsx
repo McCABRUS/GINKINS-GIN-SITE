@@ -9,7 +9,7 @@ export default function CentralGridCard() {
           src="/imgs/where_to_buy/ginkins-gin-ice-cube-logo-detail.webp"
           alt="Top down view of a cocktail glass with a large clear ice cube embossed with the Ginkins Gin G logo"
           fill
-          className="object-cover rounded-full"
+          className="object-cover rounded-full reveal-on-scroll-center"
         />
         <div className="absolute bottom-6 -right-12.25 w-38.25">
           <Image
@@ -18,7 +18,7 @@ export default function CentralGridCard() {
             alt=""
             width={153}
             height={191}
-            className="w-full h-auto fill-background"
+            className="w-full h-auto fill-background reveal-on-scroll-top"
             aria-hidden
           />
         </div>

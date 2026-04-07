@@ -14,7 +14,7 @@ export default function ShopHero() {
       />
       <div className="absolute inset-0 bg-(--primary-red-main) mix-blend-multiply" />
       <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center text-background">
-        <h1 className="text-background! whitespace-nowrap">
+        <h1 className="text-background! whitespace-nowrap reveal-on-load-top">
           From Our <br className="block md:hidden" />
           Still
           <br className="hidden md:block" />
@@ -22,9 +22,9 @@ export default function ShopHero() {
           Glass
         </h1>
         <div className="mt-20 mb-31.5 w-31 md:w-48.5">
-          <ShieldSVG className="w-full h-auto fill-background" />
+          <ShieldSVG className="w-full h-auto fill-background reveal-on-load-center" />
         </div>
-        <h3 className="text-background! text-lg! leading-6.75 font-normal">
+        <h3 className="text-background! text-lg! leading-6.75 font-normal reveal-on-load-top">
           Where to find Ginkins
         </h3>
       </div>

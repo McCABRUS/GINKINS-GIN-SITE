@@ -12,7 +12,7 @@ export default function CocktailsMenu() {
       <div className="mx-auto max-xl:px-5 max-4xl:px-37.25 md:max-w-480">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_480px] gap-0 items-center">
           <div className="text-center lg:text-left order-2 lg:order-1">
-            <h3 className="text-lg! inline-block uppercase text-background! mb-10">
+            <h3 className="text-lg! inline-block uppercase text-background! mb-10 reveal-on-scroll">
               Try a Recipe | Mix It Up | Pair &amp; Pour
             </h3>
             <ul className="space-y-14">
@@ -24,7 +24,7 @@ export default function CocktailsMenu() {
                         <h6 className="text-[35px]! text-(--secondary-gray-300)! group-hover:text-(--primary-red-200)! relative inline mr-8 -top-2.5 group-hover:font-bold! align-bottom">
                           {String(i + 1).padStart(2, '0')}
                         </h6>
-                        <h4 className="text-left text-background! xl:text-(--secondary-gray-300)! group-hover:text-(--primary-red-200)! transition inline group-hover:font-bold!">
+                        <h4 className="text-left text-background! xl:text-(--secondary-gray-300)! group-hover:text-(--primary-red-200)! transition inline group-hover:font-bold!  reveal-on-scroll-top">
                           {item.label}
                         </h4>
                       </div>
@@ -45,7 +45,7 @@ export default function CocktailsMenu() {
                 alt=""
                 width={159}
                 height={157}
-                className="fill-(--primary-gold-main)"
+                className="fill-(--primary-gold-main) reveal-on-scroll-top"
                 aria-hidden
               />
             </div>
@@ -56,7 +56,7 @@ export default function CocktailsMenu() {
                 alt="Man in a tailored tan suit with Ginkins Gin embroidery holding a Negroni cocktail with orange zest"
                 width={520}
                 height={492}
-                className="h-full w-full object-cover object-center rounded-[200px_200px_200px_200px]"
+                className="h-full w-full object-cover object-center rounded-[200px_200px_200px_200px]  reveal-on-scroll-center"
               />
             </div>
           </div>

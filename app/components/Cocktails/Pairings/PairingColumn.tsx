@@ -28,10 +28,10 @@ export default function PairingColumn({
         <span className="block h-px w-full bg-(--primary-black)" aria-hidden />
       </div>
 
-      <h2 className="text-center text-(--primary-red-main)! mb-12.5">
+      <h2 className="text-center text-(--primary-red-main)! mb-12.5 reveal-on-scroll">
         {title}
       </h2>
-      <ul className="space-y-6">
+      <ul className="space-y-6 reveal-on-scroll">
         {items.map((item, index) => (
           <li key={index} className="flex items-center gap-4">
             <Image

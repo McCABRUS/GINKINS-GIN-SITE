@@ -7,14 +7,14 @@ export default function PrivacyHero() {
         translateYClassName="-translate-y-[65%] xs:-translate-y-[70%] pq:-translate-y-[85%] md:-translate-y-[90%] lg:-translate-y-[80%] xl:-translate-y-[64%] 2xl:-translate-y-[70%]"
       />
       <div className="mx-auto text-center">
-        <h1 className="text-(--primary-black)!">
+        <h1 className="text-(--primary-black)! reveal-on-load-top">
           Privacy &amp; <br />
           Cookies Policy
         </h1>
-        <h2 className="mt-11.5 text-(--primary-red-main)! md:mt-8">
+        <h2 className="mt-11.5 text-(--primary-red-main)! md:mt-8 reveal-on-load-top">
           Protecting Your Data, One Sip at a Time
         </h2>
-        <p className="mt-8 text-lg leading-6.75 text-(--primary-black) font-semibold">
+        <p className="mt-8 text-lg leading-6.75 text-(--primary-black) font-semibold reveal-on-load-top">
           We respect your privacy like we respect our craft—with care, clarity,
           and no unnecessary extras. When you visit our site, we may collect
           limited data to improve your experience, but we’ll always be

@@ -4,12 +4,12 @@ import HelpFooter from '../HelpFooter';
 export default function PrivacySection() {
   return (
     <section className="bg-transparent w-screen pb-20 relative">
-      <div className="mx-auto max-xl:px-5 max-4xl:px-37.25 md:max-w-480">
+      <div className="mx-auto max-xl:px-5 max-4xl:px-37.25 md:max-w-480 reveal-on-load">
         {PrivacyItems.map((item) => {
           return (
             <div
               key={item.id}
-              className="py-6 border border-(--secondary-gray-100) px-6 mb-4 rounded-lg"
+              className="py-6 border border-(--secondary-gray-100) px-6 mb-4 rounded-lg reveal-on-scroll"
             >
               <span className="text-base font-bold leading-6 text-(--primary-black)">
                 {item.title}

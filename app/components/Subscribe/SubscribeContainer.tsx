@@ -14,28 +14,28 @@ export default function SubscribeContainer() {
     <section className="w-full bg-(--secondary-beige) py-28 max-xl:px-5 max-4xl:px-37.25 md:max-w-360">
       <div className="mx-auto ">
         <div className="mx-auto text-center">
-          <p className="text-lg leading-6.75 font-medium text-(--primary-black)">
+          <p className="text-lg leading-6.75 font-medium text-(--primary-black) reveal-on-load-top">
             This isn’t just a mailing list. It’s a front-row seat to everything
             we’re creating—and an invitation to be part of it. When you join the
             Inner Circle, you’ll get early access to limited releases, private
             tastings, and behind-the-scenes peeks at what’s brewing (or
             distilling) at Ginkins HQ.
           </p>
-          <div className="mt-10">
+          <div className="mt-10  reveal-on-load-center">
             <NewsletterForm isFooter={false} />
           </div>
-          <p className="mt-4 text-[14px] text-(--primary-black) leading-5.25">
+          <p className="mt-4 text-[14px] text-(--primary-black) leading-5.25  reveal-on-load-center">
             By clicking Sign Up you&apos;re confirming that you agree with our
             Terms and Conditions.
           </p>
         </div>
         <div className="mt-20.75 grid gap-16 lg:grid-cols-2">
-          <h4 className="lg:text-[56px]! text-[46px]! text-(--primary-black)! text-center lg:text-left font-medium! lg:font-normal! leading-12! lg:leading-16.75!">
+          <h4 className="lg:text-[56px]! text-[46px]! text-(--primary-black)! text-center lg:text-left font-medium! lg:font-normal! leading-12! lg:leading-16.75!  reveal-on-load">
             As a Member,
             <br />
             You’ll Get:
           </h4>
-          <ul className="space-y-10 mx-auto lg:mx-0">
+          <ul className="space-y-10 mx-auto lg:mx-0  reveal-on-load-top">
             {benefits.map((benefit, index) => (
               <li key={index} className="flex gap-x-6 gap-y-0 mb-0">
                 <div className="flex flex-col items-center">

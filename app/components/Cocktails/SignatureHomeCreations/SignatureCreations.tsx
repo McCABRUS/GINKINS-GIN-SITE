@@ -9,13 +9,15 @@ export default function SignatureHouseCreations() {
       <div className="mx-auto max-xl:px-0 max-4xl:px-37.25 md:max-w-480">
         <div className="signature-grid grid grid-cols-1 gap-x-0 gap-y-0 lg:gap-x-10.5 lg:gap-y-8">
           <div className="area-title text-center space-y-9 mt-20 lg:mt-0 mb-20 lg:mb-0">
-            <h3 className="text-(--primary-red-main)!">Savor</h3>
-            <h1 className="text-(--secondary-black)! xl:text-[56px]! xl:leading-16.75!">
+            <h3 className="text-(--primary-red-main)! reveal-on-scroll-top">
+              Savor
+            </h3>
+            <h1 className="text-(--secondary-black)! xl:text-[56px]! xl:leading-16.75! reveal-on-scroll-top">
               Signature <br />
               House <br />
               Creations
             </h1>
-            <h5 className="text-(--primary-red-main)!">
+            <h5 className="text-(--primary-red-main)! reveal-on-scroll-top">
               Try a recipe | Mix it up | Pair &amp; pour
             </h5>
           </div>

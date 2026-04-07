@@ -5,16 +5,18 @@ export default function SubscribeHero() {
     <section className="relative w-screen overflow-hidden bg-(--secondary-beige) px-5 sm:px-28.25 py-12.75">
       <HeroCover translateYClassName="-translate-y-[45%] xs:-translate-y-[50%] pq:translate-y-[5%] md:-translate-y-[20%] lg:-translate-y-[30%] xl:-translate-y-[40%] 2xl:-translate-y-[40%] 3xl:-translate-y-[50%]" />
       <div className="relative  text-center">
-        <h2 className="mb-11.25 text-center block lg:hidden">
+        <h2 className="mb-11.25 text-center block lg:hidden reveal-on-load-top">
           Join the Inner Circle – Gin Notes Newsletter
         </h2>
-        <h1 className="text-center">
+        <h1 className="text-center reveal-on-load-top">
           Sip First. Know First.
           <br />
-          <span className="text-(--primary-black)!">Belong Always.</span>
+          <span className="text-(--primary-black)! reveal-on-load-top">
+            Belong Always.
+          </span>
         </h1>
         <div className="my-16 flex justify-center">
-          <div className="h-57.75 w-58">
+          <div className="h-57.75 w-58 reveal-on-load-center">
             <Image
               draggable={false}
               src="/imgs/subscribe/icon-leaves-ginkins-gin.svg"
@@ -28,7 +30,7 @@ export default function SubscribeHero() {
         </div>
         <div className="flex flex-col items-center gap-4">
           <span className="h-12 w-px" />
-          <h3 className="text-center">GET EARLY ACCESS</h3>
+          <h3 className="text-center reveal-on-load-top">GET EARLY ACCESS</h3>
         </div>
       </div>
       <div

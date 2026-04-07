@@ -8,7 +8,7 @@ interface CocktailCardProps {
 
 export default function CocktailCard({ title, image, alt }: CocktailCardProps) {
   return (
-    <div className="w-full min-w-0 overflow-hidden rounded-xl bg-[#FFFAEE] text-black">
+    <div className="w-full min-w-0 overflow-hidden rounded-xl bg-[#FFFAEE] text-black reveal-on-scroll-top">
       <Image
         draggable={false}
         src={image}

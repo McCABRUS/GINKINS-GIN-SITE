@@ -38,7 +38,7 @@ export default function GridCard({
       <div
         className={`relative mb-8 w-40 h-40 lg:h-57.5 lg:w-57.5 rounded-full ${bgColor}`}
       >
-        <div className="relative w-[132%] h-[131%] left-[-16%] top-[-16%]">
+        <div className="relative w-[132%] h-[131%] left-[-16%] top-[-16%] reveal-on-scroll-top">
           <Image
             draggable={false}
             src={image}
@@ -49,10 +49,10 @@ export default function GridCard({
         </div>
       </div>
 
-      <h2 className="text-center xl:text-left xl:place-self-start text-background! w-65 mt-3.5 text-4xl! leading-10!">
+      <h2 className="text-center xl:text-left xl:place-self-start text-background! w-65 mt-3.5 text-4xl! leading-10! reveal-on-scroll-top">
         {title}
       </h2>
-      <div className="w-[80%] lg:w-80">
+      <div className="w-[80%] lg:w-80  reveal-on-scroll-top">
         <p className="text-center xl:text-left text-base leading-6 font-normal text-background my-5">
           {description}
         </p>

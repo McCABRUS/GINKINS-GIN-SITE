@@ -93,7 +93,7 @@ export function ContactForm() {
     <form
       ref={formRef}
       onSubmit={handleSubmit}
-      className="mt-12 space-y-6 text-left max-w-480 mx-auto text-(--primary-black) text-base leading-6"
+      className="mt-12 space-y-6 text-left max-w-480 mx-auto text-(--primary-black) text-base leading-6  reveal-on-scroll-top"
     >
       <div>
         <label className="block mb-1">Name</label>

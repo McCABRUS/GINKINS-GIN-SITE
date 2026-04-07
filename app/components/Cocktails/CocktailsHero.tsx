@@ -6,7 +6,7 @@ export default function CocktailsHero() {
     <section className="relative w-screen overflow-hidden bg-(--secondary-beige) px-5 sm:px-28.25 py-12.75 lg:py-30.5">
       <HeroCover translateYClassName="-translate-y-[36%] pq:-translate-y-[0%] xs:-translate-y-[45%] md:-translate-y-[26%] lg:-translate-y-[36%] xl:-translate-y-[35%] 2xl:-translate-y-[45%]" />
       <div className="relative  text-center">
-        <h1 className="text-center">
+        <h1 className="text-center reveal-on-load-top">
           Cocktails &amp; Pairings <br />
           <span className="text-(--primary-black)!">Drink Like a Pro</span>
         </h1>
@@ -15,7 +15,7 @@ export default function CocktailsHero() {
             <Image
               draggable={false}
               src="/imgs/cocktails/ginkins-gin-icon-cocktail-glass-alt.svg"
-              alt="cocktail glass icon"
+              alt="cocktail glass icon  reveal-on-load-center"
               height={267}
               width={176}
               aria-hidden
@@ -25,7 +25,7 @@ export default function CocktailsHero() {
         </div>
         <div className="items-center gap-4">
           <span className="h-12 w-px" />
-          <h3 className="text-center">Try</h3>
+          <h3 className="text-center  reveal-on-load-top">Try</h3>
         </div>
       </div>
       <div

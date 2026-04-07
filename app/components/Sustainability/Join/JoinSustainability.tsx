@@ -14,13 +14,13 @@ export default function JoinSustainability() {
           <CornerIcon className="absolute -bottom-81.5  left-0 h-20.75 w-20.75" />
           <CornerIcon className="absolute -bottom-81.5 right-0 h-20.75 w-20.75" />
         </div>
-        <h2 className="text-(--primary-red-main)!">
+        <h2 className="text-(--primary-red-main)! reveal-on-scroll-top">
           JOIN US
           <br />
           IN SUSTAINING <br className="block lg:hidden" />
           THE FUTURE:
         </h2>
-        <p className="mt-6 text-base md:text-lg leading-relaxed text-black/80">
+        <p className="mt-6 text-base md:text-lg leading-relaxed text-black/80 reveal-on-scroll-top">
           So when you choose Ginkins, you&apos;re not just enjoying a remarkable
           spirit. You&apos;re joining us in raising the bar—for sustainability,
           craftsmanship, and the future of small-batch distilling.

@@ -14,7 +14,7 @@ export default function TimelineImage({
         src={src}
         alt={alt}
         fill
-        className="object-cover"
+        className="object-cover reveal-on-scroll-center"
       />
     </div>
   );

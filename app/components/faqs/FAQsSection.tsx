@@ -14,7 +14,7 @@ export default function FAQsSection() {
   return (
     <section className="w-screen bg-transparent pt-9 lg:pt-20 pb-24 lg:pb-31.5 relative">
       <div className="mx-auto max-xl:px-5 max-4xl:px-37.25 md:max-w-480">
-        <h2 className="text-center text-(--primary-black)! text-4xl!">
+        <h2 className="text-center text-(--primary-black)! text-4xl! reveal-on-load-center">
           FREQUENTLY ASKED QUESTIONS
         </h2>
 
@@ -26,9 +26,9 @@ export default function FAQsSection() {
               <div key={item.id} className="py-6">
                 <button
                   onClick={() => toggle(item.id)}
-                  className="flex w-full items-center justify-between text-left"
+                  className="flex w-full items-center justify-between text-left reveal-on-scroll-top"
                 >
-                  <span className="text-base font-bold leading-6 text-(--primary-black)">
+                  <span className="text-base font-bold leading-6 text-(--primary-black) reveal-on-load-top">
                     {item.id}. {item.question}
                   </span>
                   <span
@@ -59,7 +59,7 @@ export default function FAQsSection() {
                       : 'grid-rows-[0fr] opacity-0'
                   }`}
                 >
-                  <div className="overflow-hidden text-base font-normal leading-6 text-(--primary-black)">
+                  <div className="overflow-hidden text-base font-normal leading-6 text-(--primary-black)  reveal-on-load-center">
                     {item.answer}
                   </div>
                 </div>
