@@ -13,11 +13,12 @@ import { cocktailsData } from './CocktailsData';
 import Image from 'next/image';
 import { gsap } from 'gsap';
 
+type PointerKind = 'mouse' | 'touch' | 'pen';
+
 export default function CocktailsCarouselMobile() {
   const [index, setIndex] = useState(0);
   const [slideWidth, setSlideWidth] = useState(0);
 
-  const SWIPE_RATIO = 0.22;
   const AUTOPLAY_DELAY = 5000;
   const GAP_PX = 12;
 
@@ -39,6 +40,7 @@ export default function CocktailsCarouselMobile() {
   const isDragging = useRef(false);
   const lastMove = useRef({ x: 0, t: 0 });
   const velocity = useRef(0);
+  const pointerKind = useRef<PointerKind>('mouse');
 
   const autoplayRef = useRef<NodeJS.Timeout | null>(null);
   const resumeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
@@ -75,7 +77,7 @@ export default function CocktailsCarouselMobile() {
 
       gsap.to(trackRef.current, {
         x: target,
-        duration: 0.36,
+        duration: 0.38,
         ease: 'power3.out',
         overwrite: true,
         onComplete: () => {
@@ -153,12 +155,23 @@ export default function CocktailsCarouselMobile() {
     }
   }, [baseX, slideWidth]);
 
+  const rubberBand = (value: number, limit: number, resistance: number) => {
+    const abs = Math.abs(value);
+
+    if (abs <= limit) {
+      return value;
+    }
+
+    return Math.sign(value) * (limit + (abs - limit) * resistance);
+  };
+
   const onPointerDown = (e: React.PointerEvent) => {
     if (!containerRef.current || !trackRef.current || !slideWidth) return;
 
     stopAutoplay();
 
     isDragging.current = true;
+    pointerKind.current = e.pointerType as PointerKind;
     touchStartX.current = e.clientX;
     dragDelta.current = 0;
     lastMove.current = { x: e.clientX, t: performance.now() };
@@ -175,10 +188,13 @@ export default function CocktailsCarouselMobile() {
     if (!isDragging.current || !trackRef.current || !slideWidth) return;
 
     const rawDelta = e.clientX - touchStartX.current;
-    const maxDrag = slideWidth * 0.34;
+    const isTouch = pointerKind.current === 'touch';
 
-    const clamped = Math.max(-maxDrag, Math.min(maxDrag, rawDelta));
-    const eased = clamped * 0.92;
+    const limit = slideWidth * (isTouch ? 0.72 : 0.34);
+    const resistance = isTouch ? 0.18 : 0.28;
+    const follow = isTouch ? 1 : 0.92;
+
+    const eased = rubberBand(rawDelta, limit, resistance) * follow;
 
     const now = performance.now();
     const dt = Math.max(now - lastMove.current.t, 1);
@@ -198,9 +214,13 @@ export default function CocktailsCarouselMobile() {
 
     isDragging.current = false;
 
+    const isTouch = pointerKind.current === 'touch';
+    const swipeRatio = isTouch ? 0.12 : 0.22;
+    const velocityThreshold = isTouch ? 0.22 : 0.45;
+
     const shouldSnap =
-      Math.abs(dragDelta.current) > slideWidth * SWIPE_RATIO ||
-      Math.abs(velocity.current) > 0.45;
+      Math.abs(dragDelta.current) > slideWidth * swipeRatio ||
+      Math.abs(velocity.current) > velocityThreshold;
 
     if (!shouldSnap) {
       gsap.to(trackRef.current, {
