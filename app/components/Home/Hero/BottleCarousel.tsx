@@ -15,9 +15,7 @@ type Props = {
   activeIndex: number;
 };
 
-type LayerStyle = React.CSSProperties & {
-  ['--reveal']?: string;
-};
+type LayerStyle = React.CSSProperties;
 
 export default function BottleCarousel({ slides, activeIndex }: Props) {
   const [displayIndex, setDisplayIndex] = useState(activeIndex);
@@ -27,7 +25,6 @@ export default function BottleCarousel({ slides, activeIndex }: Props) {
 
   useLayoutEffect(() => {
     if (activeIndex === displayIndex) return;
-
     setIncomingIndex(activeIndex);
   }, [activeIndex, displayIndex]);
 
@@ -41,12 +38,6 @@ export default function BottleCarousel({ slides, activeIndex }: Props) {
 
     gsap.killTweensOf([outgoingEl, incomingEl]);
 
-    const tl = gsap.timeline({
-      onComplete: () => {
-        setDisplayIndex(incomingIndex);
-      },
-    });
-
     gsap.set(outgoingEl, {
       opacity: 1,
       filter: 'blur(0px)',
@@ -54,28 +45,34 @@ export default function BottleCarousel({ slides, activeIndex }: Props) {
     });
 
     gsap.set(incomingEl, {
-      opacity: 1,
-      filter: 'blur(5px)',
+      opacity: 0,
+      filter: 'blur(4px)',
       zIndex: 2,
-      '--reveal': '0%',
     });
 
-    tl.to(incomingEl, {
-      '--reveal': '120%',
-      filter: 'blur(0px)',
-      duration: 1.1,
-      ease: 'power3.out',
+    const tl = gsap.timeline({
+      onComplete: () => {
+        setDisplayIndex(incomingIndex);
+      },
     });
 
     tl.to(
+      incomingEl,
+      {
+        opacity: 1,
+        filter: 'blur(0px)',
+        duration: 0.75,
+        ease: 'power3.out',
+      },
+      0,
+    ).to(
       outgoingEl,
       {
         opacity: 0,
-        filter: 'blur(8px)',
-        duration: 0.36,
-        ease: 'power2.inOut',
+        duration: 0.18,
+        ease: 'power2.out',
       },
-      '-=0.34',
+      0.58,
     );
 
     return () => {
@@ -88,7 +85,7 @@ export default function BottleCarousel({ slides, activeIndex }: Props) {
 
   const baseLayerStyle: LayerStyle = {
     backgroundColor: 'transparent',
-    willChange: 'transform, opacity, filter, mask-size',
+    willChange: 'transform, opacity, filter',
     transform: 'translateZ(0)',
     WebkitTransform: 'translateZ(0)',
     backfaceVisibility: 'hidden',
@@ -97,34 +94,27 @@ export default function BottleCarousel({ slides, activeIndex }: Props) {
     overflow: 'hidden',
   };
 
-  const incomingLayerStyle: LayerStyle = {
-    ...baseLayerStyle,
-    ['--reveal']: '0%',
+  const hardMask = {
     maskImage:
-      'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 82%, rgba(0,0,0,0.2) 94%, rgba(0,0,0,0) 100%)',
+      'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 100%)',
     WebkitMaskImage:
-      'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 82%, rgba(0,0,0,0.2) 94%, rgba(0,0,0,0) 100%)',
+      'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 100%)',
     maskRepeat: 'no-repeat',
     WebkitMaskRepeat: 'no-repeat',
     maskPosition: 'top',
     WebkitMaskPosition: 'top',
-    maskSize: '100% var(--reveal)',
-    WebkitMaskSize: '100% var(--reveal)',
+    maskSize: '100% 100%',
+    WebkitMaskSize: '100% 100%',
+  } as const;
+
+  const incomingLayerStyle: LayerStyle = {
+    ...baseLayerStyle,
+    ...hardMask,
   };
 
   const outgoingLayerStyle: LayerStyle = {
     ...baseLayerStyle,
-    ['--reveal']: '100%',
-    maskImage:
-      'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 100%)',
-    WebkitMaskImage:
-      'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 100%)',
-    maskRepeat: 'no-repeat',
-    WebkitMaskRepeat: 'no-repeat',
-    maskPosition: 'top',
-    WebkitMaskPosition: 'top',
-    maskSize: '100% 10%',
-    WebkitMaskSize: '100% 100%',
+    ...hardMask,
   };
 
   return (
