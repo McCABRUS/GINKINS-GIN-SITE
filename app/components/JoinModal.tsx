@@ -18,7 +18,7 @@ export default function JoinModal({ open, onClose }: Props) {
       <button
         onClick={onClose}
         aria-label="Close"
-        className="absolute top-4 md:top-5 right-7 md:right-5 z-20 text-background hover:text-(--primary-gold-300) w-6.5 h-6.5 md:w-8.5 md:h-8.5 transition-colors duration-300"
+        className="absolute top-4 md:top-5 right-4 md:right-5 z-20 text-background hover:text-(--primary-gold-300) w-6.5 h-6.5 md:w-8.5 md:h-8.5 transition-colors duration-300"
         type="button"
       >
         <svg
