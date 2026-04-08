@@ -4,7 +4,13 @@ import Contact from '../components/WhereToBuy/Contact/Contact';
 import FindWhereToBuy from '../components/WhereToBuy/FindWhereToBuy/FindWhereToBuy';
 import FindShops from '../components/WhereToBuy/FindShops';
 import ShopHero from '../components/WhereToBuy/ShopHero';
+import type { Metadata } from 'next';
 
+export const metadata: Metadata = {
+  alternates: {
+    canonical: '/where-to-buy',
+  },
+};
 export default function WhereToBuy() {
   return (
     <div className="flex min-h-screen items-center justify-center overflow-x-hidden">

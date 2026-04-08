@@ -5,6 +5,13 @@ import People from '../components/About/People';
 import ShopBanner from '../components/About/ShopBanner';
 import Story from '../components/About/Story';
 import FooterMerch from '../components/FooterMerchCarousel/FooterMerch';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: '/about-ginkins',
+  },
+};
 
 export default function About() {
   return (

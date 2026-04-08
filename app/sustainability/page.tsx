@@ -3,7 +3,13 @@ import FooterMerch from '../components/FooterMerchCarousel/FooterMerch';
 import JoinSustainability from '../components/Sustainability/Join/JoinSustainability';
 import SustainabilityHero from '../components/Sustainability/SustainabilityHero';
 import SustainabilityTimeline from '../components/Sustainability/Timeline/SustainabilityTimeline';
+import type { Metadata } from 'next';
 
+export const metadata: Metadata = {
+  alternates: {
+    canonical: '/sustainability',
+  },
+};
 export default function sustainability() {
   return (
     <div className="flex min-h-screen items-center justify-center overflow-x-hidden">

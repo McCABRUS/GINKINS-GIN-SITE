@@ -5,7 +5,13 @@ import Celebrated from '../components/Accolades/Celebrated';
 import PressHighlights from '../components/Accolades/Press/PressHighlights';
 import ShopBannerCocktails from '../components/Cocktails/ShopBannerCocktails';
 import FooterMerch from '../components/FooterMerchCarousel/FooterMerch';
+import type { Metadata } from 'next';
 
+export const metadata: Metadata = {
+  alternates: {
+    canonical: '/accolades',
+  },
+};
 export default function Accolades() {
   return (
     <div className="flex min-h-screen items-center justify-center overflow-x-hidden">

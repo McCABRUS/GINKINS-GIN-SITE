@@ -6,6 +6,13 @@ import RecipesIntro from '../components/Cocktails/RecipesIntro';
 import ShopBannerCocktails from '../components/Cocktails/ShopBannerCocktails';
 import SignatureCreations from '../components/Cocktails/SignatureHomeCreations/SignatureCreations';
 import FooterMerch from '../components/FooterMerchCarousel/FooterMerch';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: '/cocktails',
+  },
+};
 
 export default function Cocktails() {
   return (

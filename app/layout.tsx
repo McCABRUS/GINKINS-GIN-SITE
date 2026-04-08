@@ -1,4 +1,3 @@
-import { SpeedInsights } from '@vercel/speed-insights/next';
 import type { Metadata } from 'next';
 import { cormorant, barlow } from './ui/fonts';
 import HeaderServer from './components/HeaderServer';
@@ -9,9 +8,41 @@ import ScrollAnimations from './components/ScrollAnimations';
 import ScrollToTopOnRouteChange from '@/components/ScrollToTopOnRouteChange';
 
 export const metadata: Metadata = {
-  title: 'Ginkins: Explore the Exquisite Range of Masterfully Distilled Gins',
+  metadataBase: new URL('https://ginkinsgin.com'),
+  title: {
+    default:
+      'Ginkins: Explore the Exquisite Range of Masterfully Distilled Gins',
+    template: '%s | Ginkins Gin',
+  },
   description:
-    "Discover Louisville's Finest: Carefully Crafted Ginkins Gin, Distilled to Perfection in Kentucky",
+    'Discover Ginkins Gin, premium craft gin distilled in Louisville, KY. Explore our botanical collections, find a bottle near you, and sip like a pro.',
+  openGraph: {
+    title: 'Ginkins: Explore the Exquisite Range of Masterfully Distilled Gins',
+    description:
+      'Discover Ginkins Gin, premium craft gin distilled in Louisville, KY. Explore our botanical collections, find a bottle near you, and sip like a pro.',
+    url: 'https://ginkinsgin.com',
+    siteName: 'Ginkins Gin',
+    type: 'website',
+    images: [
+      {
+        url: '/imgs/ginkinsgin-cover.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Ginkins Gin cover',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Ginkins: Explore the Exquisite Range of Masterfully Distilled Gins',
+    description:
+      'Discover Ginkins Gin, premium craft gin distilled in Louisville, KY. Explore our botanical collections, find a bottle near you, and sip like a pro.',
+    images: ['/imgs/ginkinsgin-cover.webp'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
@@ -22,7 +53,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth!">
       <head>
-        <meta charSet="UTF-8"></meta>
+        <meta charSet="UTF-8" />
         <link
           rel="preload"
           href="/imgs/preloader/ginkins-gin-logo-watermark.svg"
@@ -33,62 +64,29 @@ export default function RootLayout({
           rel="icon"
           href="/imgs/cropped-faviconginkins-32x32.png"
           sizes="32x32"
-        ></link>
+        />
         <link
           rel="icon"
           href="/imgs/cropped-faviconginkins-192x192.png"
           sizes="192x192"
-        ></link>
+        />
         <link
           rel="apple-touch-icon"
           href="/imgs/cropped-faviconginkins-180x180.png"
-        ></link>
+        />
         <meta
           name="msapplication-TileImage"
           content="/imgs/cropped-faviconginkins-270x270.png"
-        ></meta>
+        />
         <script
           src="https://challenges.cloudflare.com/turnstile/v0/api.js"
           async
           defer
         />
-        <title>
-          Ginkins: Explore the Exquisite Range of Masterfully Distilled Gins
-        </title>
-        <meta
-          property="og:title"
-          content="Ginkins: Explore the Exquisite Range of Masterfully Distilled Gins"
-        ></meta>
-        <meta
-          name="description"
-          content="Discover Ginkins Gin, premium craft gin distilled in Louisville, KY. Explore our botanical collections, find a bottle near you, and sip like a pro."
-        ></meta>
-        <meta
-          property="og:image"
-          itemProp="image"
-          content="/imgs/ginkinsgin-cover.webp"
-        ></meta>
-        <meta
-          property="og:description"
-          content="Discover Ginkins Gin, premium craft gin distilled in Louisville, KY. Explore our botanical collections, find a bottle near you, and sip like a pro."
-        ></meta>
-        <meta
-          name="description"
-          content="Discover Ginkins Gin, premium craft gin distilled in Louisville, KY. Explore our botanical collections, find a bottle near you, and sip like a pro."
-        ></meta>
-        <meta name="twitter:image" content="/imgs/ginkinsgin-cover.webp"></meta>
-        <meta
-          name="twitter:title"
-          content="Ginkins: Explore the Exquisite Range of Masterfully Distilled Gins"
-        ></meta>
-        <meta
-          name="twitter:description"
-          content="Discover Ginkins Gin, premium craft gin distilled in Louisville, KY. Explore our botanical collections, find a bottle near you, and sip like a pro."
-        ></meta>
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1.0,viewport-fit=cover"
-        ></meta>
+        />
       </head>
       <body
         className={`${cormorant.className} ${barlow.className} antialiased bg-(--secondary-beige)!`}
@@ -96,7 +94,6 @@ export default function RootLayout({
         <ScrollToTopOnRouteChange />
         <ScrollAnimations />
         <HeaderServer />
-        <SpeedInsights />
         <ClientShell />
         {children}
         <Footer />

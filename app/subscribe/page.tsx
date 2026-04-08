@@ -2,7 +2,13 @@ import ShopBannerCocktails from '../components/Cocktails/ShopBannerCocktails';
 import FooterMerch from '../components/FooterMerchCarousel/FooterMerch';
 import SubscribeContainer from '../components/Subscribe/SubscribeContainer';
 import SubscribeHero from '../components/Subscribe/SubscribeHero';
+import type { Metadata } from 'next';
 
+export const metadata: Metadata = {
+  alternates: {
+    canonical: '/subscribe',
+  },
+};
 export default function Subscribe() {
   return (
     <div className="flex min-h-screen items-center justify-center overflow-x-hidden">

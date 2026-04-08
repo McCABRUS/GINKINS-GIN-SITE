@@ -11,6 +11,13 @@ import CocktailsHome from './components/Home/Cocktails/CocktailsHome';
 import Testimonials from './components/Home/Testimonials';
 import BottleConnection from './components/Home/BottleConnection';
 import FooterMerch from './components/FooterMerchCarousel/FooterMerch';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: '/',
+  },
+};
 export default function Home() {
   return (
     <div className="flex min-h-screen items-center justify-center overflow-x-hidden">

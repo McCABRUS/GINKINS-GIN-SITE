@@ -1,6 +1,12 @@
 import TermsHero from '../components/Terms/TermsHero';
 import TermsSection from '../components/Terms/TermsSection';
+import type { Metadata } from 'next';
 
+export const metadata: Metadata = {
+  alternates: {
+    canonical: '/terms',
+  },
+};
 export default function Terms() {
   return (
     <div className="flex min-h-screen items-center justify-center overflow-x-hidden">
