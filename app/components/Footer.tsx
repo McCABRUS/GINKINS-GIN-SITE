@@ -120,7 +120,14 @@ export default function Footer() {
             </Link>
           </div>
           <p className="text-sm mb-25">
-            © 2026 Ginkins Distillery. All rights reserved.
+            © 2026 Ginkins Distillery. All rights reserved. Designed by{' '}
+            <Link
+              href="https://www.amagentastudio.com"
+              target="_blank"
+              className="hover:text-(--primary-red-main) active:text-(--primary-red-main) focus:text-(--primary-red-main)"
+            >
+              Amagenta Studio
+            </Link>
           </p>
 
           <svg
@@ -150,16 +157,6 @@ export default function Footer() {
               </clipPath>
             </defs>
           </svg>
-          <div className="text-center mt-6">
-            Designed by{' '}
-            <Link
-              href="https://www.amagentastudio.com"
-              target="_blank"
-              className="hover:text-(--primary-red-main) active:text-(--primary-red-main) focus:text-(--primary-red-main)"
-            >
-              Amagenta Studio
-            </Link>
-          </div>
         </div>
         <div className="hidden xl:block">
           <div className="mb-10 flex items-center justify-center">
@@ -397,7 +394,14 @@ export default function Footer() {
           <div className="border-t border-(--primary-red-main) mt-6.25 pt-6">
             <div className="flex flex-row items-center justify-between gap-4">
               <p className="text-sm text-background">
-                © 2026 Ginkins Distillery. All rights reserved.
+                © 2026 Ginkins Distillery. All rights reserved. Designed by{' '}
+                <Link
+                  href="https://www.amagentastudio.com"
+                  target="_blank"
+                  className="hover:text-(--primary-red-main) active:text-(--primary-red-main) focus:text-(--primary-red-main)"
+                >
+                  Amagenta Studio
+                </Link>
               </p>
 
               <div className="flex items-center gap-4 text-sm">
@@ -422,16 +426,6 @@ export default function Footer() {
                   FAQs
                 </Link>
               </div>
-            </div>
-            <div className="text-right mt-6">
-              Designed by{' '}
-              <Link
-                href="https://www.amagentastudio.com"
-                target="_blank"
-                className="hover:text-(--primary-red-main) active:text-(--primary-red-main) focus:text-(--primary-red-main)"
-              >
-                Amagenta Studio
-              </Link>
             </div>
           </div>
         </div>

@@ -53,6 +53,7 @@ export default function FindWhereToBuy() {
             description="Prefer delivery to your door? Check out our online retail partners for easy, secure ordering."
             image="/imgs/where_to_buy/ginkins-gin-single-bottle-gift-box--high.webp"
             buttonLink="https://ginkinsgin.distilleryspirits.com"
+            urlTarget="_blank"
             isLeft
           />
           <hr
@@ -67,7 +68,8 @@ export default function FindWhereToBuy() {
             description="Interested in bringing Ginkins to your bar, store, or event? We’d love to connect."
             image="/imgs/where_to_buy/ginkins-gin-botanical-gift-box--high-res.webp"
             buttonLabel="PARTNER WITH US"
-            buttonLink="mailto:info@ginkins.com "
+            buttonLink="/where-to-buy#ContactSection"
+            urlTarget=""
           />
           <CentralGridCard />
         </div>

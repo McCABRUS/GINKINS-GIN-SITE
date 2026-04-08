@@ -9,7 +9,7 @@ export const collectionData = [
   {
     img: '/imgs/home/ginkins-golden-bloom-gin-bottle.webp',
     title: 'Golden Bloom Gin',
-    text: 'Floral Finesse Meets Refreshing Ease.Infused with elderflower, juniper, and a delicate botanical bouquet, Golden Bloom is an invitation to slow down and savor the softer side of gin.',
+    text: 'Floral Finesse Meets Refreshing Ease. Infused with elderflower, juniper, and a delicate botanical bouquet, Golden Bloom is an invitation to slow down and savor the softer side of gin.',
     alt: 'Ginkins Golden Bloom Gin bottle - Floral and honeyed premium gin',
     linkId: 'productContents_productGroupA_productRepeater_ImageProduct_1',
   },

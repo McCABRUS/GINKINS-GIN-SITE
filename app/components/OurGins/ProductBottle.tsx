@@ -15,7 +15,7 @@ export function ProductBottle({
   bottleAlt,
 }: ProductBottleProps) {
   return (
-    <div className="relative w-full lg:max-w-137.5 overflow-visible xl:justify-items-end grid">
+    <div className="relative w-[50%] lg:w-full lg:max-w-137.5 overflow-visible xl:justify-items-end grid">
       <div className={`aspect-549/507 w-full xl:w-[80%] ${bgColor}`} />
       <div className="pointer-events-none absolute top-[12%] productsBackgroundAdapter max-xl:inset-x-[17%]  bottom-[-32.5%] bg-(--primary-black) rounded-t-full" />
       <div className="absolute top-[25%] xl:left-[59%] left-1/2 -translate-x-1/2 z-10 w-[20%]">

@@ -11,6 +11,7 @@ import {
 import { flushSync } from 'react-dom';
 import { cocktailsData } from './CocktailsData';
 import Image from 'next/image';
+import Link from 'next/link';
 import { gsap } from 'gsap';
 
 type PointerKind = 'mouse' | 'touch' | 'pen';
@@ -293,9 +294,12 @@ export default function CocktailsCarouselMobile() {
       </p>
 
       <div className="mt-6 grid w-40 mx-auto">
-        <button className="inline-flex items-baseline justify-center px-8 py-3 text-sm font-medium uppercase text-white hover:text-(--primary-black) transition animatedButton">
+        <Link
+          href={`/cocktails#${cocktailsData[index].sectionTarget}`}
+          className="inline-flex items-baseline justify-center px-8 py-3 text-sm font-medium uppercase text-white hover:text-(--primary-black) transition animatedButton"
+        >
           See More
-        </button>
+        </Link>
       </div>
     </section>
   );

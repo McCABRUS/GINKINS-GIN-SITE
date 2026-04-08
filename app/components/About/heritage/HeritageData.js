@@ -5,7 +5,8 @@ export const heritageData = [
     text: (
       <>
         <strong>
-          Hand-selected botanicals. Kentucky’s limestone-rich spring water. A
+          Hand-selected botanicals. Kentucky’s limestone-rich spring water. A{' '}
+          <br className="hidden md:block lg:hidden" />
           balance of citrus, spice, and story in every pour.
         </strong>
       </>

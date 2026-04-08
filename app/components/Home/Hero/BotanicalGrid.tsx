@@ -345,8 +345,8 @@ export default function BotanicalGrid({
   const items = isLeft ? LEFT_ITEMS : RIGHT_ITEMS;
 
   const containerClassName = isLeft
-    ? 'relative xl:absolute -top-85 xl:top-[55.1%] z-30 left-1/2 -translate-x-1/2 xl:translate-x-0 xl:left-[3%] grid grid-cols-5 grid-rows-2 min-w-78.75 reveal-on-load'
-    : 'relative xl:absolute -top-85 xl:top-[55.1%] z-30 left-1/2 -translate-x-1/2 xl:translate-x-0 xl:left-auto xl:right-[3%] grid grid-cols-5 grid-rows-2 min-w-78.75 reveal-on-load-left';
+    ? 'relative xl:absolute -top-81.75 xl:top-[55.1%] z-30 left-1/2 -translate-x-1/2 xl:translate-x-0 xl:left-[3%] grid grid-cols-5 grid-rows-2 min-w-78.75 reveal-on-load'
+    : 'relative xl:absolute -top-81.75 xl:top-[55.1%] z-30 left-1/2 -translate-x-1/2 xl:translate-x-0 xl:left-auto xl:right-[3%] grid grid-cols-5 grid-rows-2 min-w-78.75 reveal-on-load-left';
 
   return (
     <div className={containerClassName}>

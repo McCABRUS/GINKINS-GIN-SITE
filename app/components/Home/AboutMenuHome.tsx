@@ -28,10 +28,10 @@ export default function AboutHomeMenu() {
                   <div className="flex items-center gap-6 reveal-on-scroll-top">
                     <Link href={item.href}>
                       <div className="group">
-                        <h6 className="text-[35px]! text-(--secondary-gray-300)! group-hover:text-(--primary-red-200)! relative inline mr-8 -top-2.5 group-hover:font-bold!">
+                        <h6 className="text-[35px]! text-(--secondary-gray-300)! group-hover:text-(--primary-red-200)! relative inline mr-8 -top-2.5">
                           {String(i + 1).padStart(2, '0')}
                         </h6>
-                        <h4 className="text-left text-background! xl:text-(--secondary-gray-300)! group-hover:text-(--primary-red-200)! transition inline group-hover:font-bold!">
+                        <h4 className="text-left text-background! xl:text-(--secondary-gray-300)! group-hover:text-(--primary-red-200)! transition inline">
                           {item.label}
                         </h4>
                       </div>
@@ -69,7 +69,7 @@ export default function AboutHomeMenu() {
         </div>
       </div>
       <div
-        className="absolute border-solid border-background border-t border-r-0 border-b-0 border-l-0 shrink-0 w-22.75 mt-16.5 h-0 z-20 left-1/2 -translate-x-1/2"
+        className="absolute border-solid border-background border-t border-r-0 border-b-0 border-l-0 shrink-0 w-17.75 mt-19 h-0 z-20 left-1/2 -translate-x-1/2"
         style={{
           transform: 'rotate(90deg) scale(1, 1)',
         }}

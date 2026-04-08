@@ -1,17 +1,25 @@
 'use client';
 
-import { useState, useEffect, useRef, useLayoutEffect, useMemo } from 'react';
+import {
+  useState,
+  useEffect,
+  useRef,
+  useLayoutEffect,
+  useMemo,
+  useCallback,
+} from 'react';
+import { flushSync } from 'react-dom';
+import { gsap } from 'gsap';
 import { heritageData } from './HeritageData';
 import Image from 'next/image';
 
+type PointerKind = 'mouse' | 'touch' | 'pen';
+
 export default function HeritageMobile() {
   const [index, setIndex] = useState(0);
-  const [dragX, setDragX] = useState(0);
   const [slideWidth, setSlideWidth] = useState(0);
-  const [isAnimating, setIsAnimating] = useState(false);
 
-  const SWIPE_RATIO = 0.28;
-  const AUTOPLAY_ANIMATION_DURATION = 420;
+  const AUTOPLAY_DELAY = 5000;
   const GAP_PX = 12;
 
   const indicesToRender = useMemo(() => {
@@ -24,110 +32,116 @@ export default function HeritageMobile() {
     ];
   }, [index]);
 
-  const touchStartX = useRef<number | null>(null);
+  const wrapperRef = useRef<HTMLDivElement | null>(null);
+  const trackRef = useRef<HTMLDivElement | null>(null);
+
+  const touchStartX = useRef(0);
+  const dragDelta = useRef(0);
+  const isDragging = useRef(false);
+  const activePointerId = useRef<number | null>(null);
+  const lastMove = useRef({ x: 0, t: 0 });
+  const velocity = useRef(0);
+  const pointerKind = useRef<PointerKind>('mouse');
+
   const autoplayRef = useRef<NodeJS.Timeout | null>(null);
   const resumeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
-  const containerRef = useRef<HTMLDivElement | null>(null);
-  const dragXRef = useRef(0);
+  const animateToRef = useRef<
+    ((direction: 'next' | 'prev', afterComplete?: () => void) => void) | null
+  >(null);
 
-  const AUTOPLAY_DELAY = 5000;
+  const baseX = -(slideWidth + GAP_PX);
 
-  const stopAutoplay = () => {
+  const stopAutoplay = useCallback(() => {
     if (autoplayRef.current) {
       clearInterval(autoplayRef.current);
       autoplayRef.current = null;
     }
-  };
+  }, []);
 
-  const onTouchStart = (e: React.TouchEvent) => {
-    resetAutoplayTimer();
-    touchStartX.current = e.targetTouches[0].clientX;
-  };
-  const onTouchMove = (e: React.TouchEvent) => {
-    if (!touchStartX.current || !containerRef.current) return;
+  const finishTransition = useCallback(() => {
+    if (!trackRef.current) return;
 
-    const currentX = e.targetTouches[0].clientX;
-    const deltaPx = currentX - touchStartX.current;
-    const width = containerRef.current.offsetWidth;
-    const deltaRatio = deltaPx / width;
-    const resisted =
-      Math.sign(deltaRatio) * Math.min(Math.abs(deltaRatio), 0.75) * width;
+    gsap.set(trackRef.current, { x: baseX });
+    dragDelta.current = 0;
+    isDragging.current = false;
+  }, [baseX]);
 
-    dragXRef.current += (resisted - dragXRef.current) * 0.22;
-    setDragX(dragXRef.current);
-  };
+  const animateTo = useCallback(
+    (direction: 'next' | 'prev', afterComplete?: () => void) => {
+      if (!trackRef.current || !slideWidth) return;
 
-  const onTouchEnd = () => {
-    if (!containerRef.current) return;
+      const target =
+        baseX +
+        (direction === 'next' ? -(slideWidth + GAP_PX) : slideWidth + GAP_PX);
 
-    const width = containerRef.current.offsetWidth;
-    const ratio = dragX / width;
+      gsap.killTweensOf(trackRef.current);
 
-    if (Math.abs(ratio) > SWIPE_RATIO) {
-      animateTo(ratio < 0 ? 'next' : 'prev');
-    } else {
-      setIsAnimating(true);
-      setDragX(0);
-      setTimeout(() => setIsAnimating(false), 200);
-    }
+      gsap.to(trackRef.current, {
+        x: target,
+        duration: 0.38,
+        ease: 'power3.out',
+        overwrite: true,
+        onComplete: () => {
+          flushSync(() => {
+            setIndex((prev) =>
+              direction === 'next'
+                ? (prev + 1) % heritageData.length
+                : (prev - 1 + heritageData.length) % heritageData.length,
+            );
+          });
 
-    touchStartX.current = null;
-  };
+          finishTransition();
 
-  const startAutoplay = () => {
-    stopAutoplay();
-    autoplayRef.current = setInterval(() => {
-      animateTo('next');
-    }, AUTOPLAY_DELAY);
-  };
-
-  const animateTo = (direction: 'next' | 'prev') => {
-    if (!slideWidth) return;
-
-    const target =
-      direction === 'next' ? -(slideWidth + GAP_PX) : slideWidth + GAP_PX;
-    setIsAnimating(true);
-
-    setDragX(target);
-
-    setTimeout(() => {
-      setIsAnimating(false);
-      setIndex((prev) =>
-        direction === 'next'
-          ? (prev + 1) % heritageData.length
-          : (prev - 1 + heritageData.length) % heritageData.length,
-      );
-      dragXRef.current = 0;
-      setDragX(0);
-      requestAnimationFrame(() => {
-        setIsAnimating(false);
+          if (afterComplete) {
+            afterComplete();
+          }
+        },
       });
-    }, AUTOPLAY_ANIMATION_DURATION);
-  };
+    },
+    [baseX, finishTransition, slideWidth],
+  );
 
-  const resetAutoplayTimer = () => {
+  useEffect(() => {
+    animateToRef.current = animateTo;
+  }, [animateTo]);
+
+  const startAutoplay = useCallback(() => {
     stopAutoplay();
+
+    autoplayRef.current = setInterval(() => {
+      animateToRef.current?.('next');
+    }, AUTOPLAY_DELAY);
+  }, [stopAutoplay]);
+
+  const resetAutoplayTimer = useCallback(() => {
+    stopAutoplay();
+
     if (resumeTimeoutRef.current) {
       clearTimeout(resumeTimeoutRef.current);
     }
-    resumeTimeoutRef.current = setTimeout(startAutoplay, AUTOPLAY_DELAY);
-  };
+
+    resumeTimeoutRef.current = setTimeout(() => {
+      startAutoplay();
+    }, AUTOPLAY_DELAY);
+  }, [startAutoplay, stopAutoplay]);
 
   useEffect(() => {
     startAutoplay();
+
     return () => {
       stopAutoplay();
+
       if (resumeTimeoutRef.current) {
         clearTimeout(resumeTimeoutRef.current);
       }
     };
-  });
+  }, [startAutoplay, stopAutoplay]);
 
   useLayoutEffect(() => {
-    if (!containerRef.current) return;
+    if (!wrapperRef.current) return;
 
     const updateWidth = () => {
-      const containerWidth = containerRef.current!.offsetWidth;
+      const containerWidth = wrapperRef.current!.offsetWidth;
       setSlideWidth(containerWidth * 0.93);
     };
 
@@ -139,24 +153,125 @@ export default function HeritageMobile() {
     };
   }, []);
 
+  useLayoutEffect(() => {
+    if (trackRef.current && slideWidth) {
+      gsap.set(trackRef.current, { x: baseX });
+    }
+  }, [baseX, slideWidth]);
+
+  const rubberBand = (value: number, limit: number, resistance: number) => {
+    const abs = Math.abs(value);
+
+    if (abs <= limit) {
+      return value;
+    }
+
+    return Math.sign(value) * (limit + (abs - limit) * resistance);
+  };
+
+  const onPointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
+    if (!wrapperRef.current || !trackRef.current || !slideWidth) return;
+
+    stopAutoplay();
+
+    isDragging.current = true;
+    activePointerId.current = e.pointerId;
+    pointerKind.current = e.pointerType as PointerKind;
+    touchStartX.current = e.clientX;
+    dragDelta.current = 0;
+    lastMove.current = { x: e.clientX, t: performance.now() };
+    velocity.current = 0;
+
+    e.currentTarget.setPointerCapture(e.pointerId);
+
+    if (resumeTimeoutRef.current) {
+      clearTimeout(resumeTimeoutRef.current);
+    }
+  };
+
+  const onPointerMove = (e: React.PointerEvent<HTMLDivElement>) => {
+    if (
+      !isDragging.current ||
+      !trackRef.current ||
+      !slideWidth ||
+      activePointerId.current !== e.pointerId
+    ) {
+      return;
+    }
+
+    const rawDelta = e.clientX - touchStartX.current;
+    const isTouch = pointerKind.current === 'touch';
+
+    const limit = slideWidth * (isTouch ? 0.72 : 0.38);
+    const resistance = isTouch ? 0.18 : 0.28;
+    const follow = isTouch ? 1 : 0.98;
+
+    const eased = rubberBand(rawDelta, limit, resistance) * follow;
+
+    const now = performance.now();
+    const dt = Math.max(now - lastMove.current.t, 1);
+    velocity.current = (e.clientX - lastMove.current.x) / dt;
+    lastMove.current = { x: e.clientX, t: now };
+
+    dragDelta.current = eased;
+
+    gsap.set(trackRef.current, {
+      x: baseX + eased,
+      overwrite: true,
+    });
+  };
+
+  const finishDrag = (e: React.PointerEvent<HTMLDivElement>) => {
+    if (activePointerId.current !== e.pointerId) return;
+    if (!trackRef.current || !slideWidth || !isDragging.current) return;
+
+    isDragging.current = false;
+    activePointerId.current = null;
+
+    const isTouch = pointerKind.current === 'touch';
+    const swipeRatio = isTouch ? 0.12 : 0.24;
+    const velocityThreshold = isTouch ? 0.22 : 0.45;
+
+    const shouldSnap =
+      Math.abs(dragDelta.current) > slideWidth * swipeRatio ||
+      Math.abs(velocity.current) > velocityThreshold;
+
+    if (!shouldSnap) {
+      gsap.to(trackRef.current, {
+        x: baseX,
+        duration: 0.25,
+        ease: 'power3.out',
+        overwrite: true,
+        onComplete: () => {
+          dragDelta.current = 0;
+          resetAutoplayTimer();
+        },
+      });
+      return;
+    }
+
+    animateToRef.current?.(
+      dragDelta.current < 0 ? 'next' : 'prev',
+      resetAutoplayTimer,
+    );
+  };
+
+  const onPointerCancel = (e: React.PointerEvent<HTMLDivElement>) => {
+    if (activePointerId.current !== e.pointerId) return;
+    finishDrag(e);
+  };
+
   return (
     <div
-      className="overflow-hidden touch-pan-y"
-      onTouchStart={onTouchStart}
-      onTouchMove={onTouchMove}
-      onTouchEnd={onTouchEnd}
+      ref={wrapperRef}
+      className="overflow-hidden touch-pan-y select-none"
+      style={{ touchAction: 'pan-y' }}
+      onPointerDown={onPointerDown}
+      onPointerMove={onPointerMove}
+      onPointerUp={finishDrag}
+      onPointerCancel={onPointerCancel}
     >
-      <div
-        ref={containerRef}
-        className={`flex gap-3 ${
-          isAnimating
-            ? 'transition-transform duration-420 ease-[cubic-bezier(0.22,1,0.36,1)]'
-            : ''
-        }`}
-        style={{
-          transform: `translateX(calc(-${slideWidth}px - ${GAP_PX}px + ${dragX}px))`,
-        }}
-      >
+      <div ref={trackRef} className="flex gap-3 will-change-transform">
         {indicesToRender.map((i, index) => {
           const item = heritageData[i];
 

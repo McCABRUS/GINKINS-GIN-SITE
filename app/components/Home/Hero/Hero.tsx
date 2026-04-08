@@ -350,10 +350,10 @@ export default function Hero() {
   }, [activeBottleIndex]);
 
   return (
-    <section className="relative w-full overflow-hidden xl:-mt-34 lg:-mt-9">
+    <section className="relative w-full lg:overflow-hidden xl:-mt-34 lg:-mt-9">
       <div className="absolute inset-0">
         <div className="h-[37%] lg:h-[30%] xl:h-[65%] bg-(--primary-black)" />
-        <div className="h-[43%] lg:h-[34%] xl:h-[70%] bg-(--secondary-beige)" />
+        <div className="h-[50%] lg:h-[34%] xl:h-[70%] bg-(--secondary-beige)" />
       </div>
 
       <div className="relative mx-auto max-w-400 h-250 z-30 justify-center flex">
@@ -457,16 +457,16 @@ export default function Hero() {
 
       <div className="relative block xl:hidden text-center -top-33.5 z-100">
         <BotanicalGridMobile />
-        <div className="lg:hidden relative bg-background -top-70 -mb-102 h-41.25 py-[17.5px] grid reveal-on-scroll-bottom">
-          <h2 className="text-3xl! text-(--primary-red-main)! content-end reveal-on-load-bottom">
-            WE BOTTLE <br /> CONNECTION.
+        <div className="lg:hidden relative bg-background -top-65 -mb-102 h-60 md:h-41.25 py-8 grid reveal-on-scroll-bottom">
+          <h2 className="text-3xl! text-(--primary-red-main)! content-end reveal-on-load-bottom pb-4 lg:pb-0">
+            WE BOTTLE <br className="block xs:hidden" /> CONNECTION.
           </h2>
           <hr
             className="w-16 text-(--primary-black) place-self-center lg:my-1.25"
             aria-hidden="true"
           />
-          <h2 className="text-3xl! text-(--primary-red-main)! reveal-on-load-bottom">
-            YOU POUR IT <br /> FORWARD.
+          <h2 className="text-3xl! text-(--primary-red-main)! reveal-on-load-bottom pt-4 lg:pt-0">
+            YOU POUR IT <br className="block xs:hidden" /> FORWARD.
           </h2>
         </div>
       </div>

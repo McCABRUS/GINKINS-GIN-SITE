@@ -125,7 +125,7 @@ export default function AgeGate() {
                         };
 
                         window.dispatchEvent(new Event('app:state-changed'));
-                      }, 1400);
+                      }, 1000);
                     }, 200);
                   }}
                 />

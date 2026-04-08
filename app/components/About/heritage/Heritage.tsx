@@ -24,22 +24,22 @@ export default function Heritage() {
         </div>
       </div>
 
-      <div className="mx-auto max-xl:px-5 max-4xl:px-37.25 md:max-w-480 py-10 2xl:py-24 grid grid-cols-1 gap-16 lg:grid-cols-2 lg:gap-24">
+      <div className="mx-auto max-xl:px-5 max-4xl:px-37.25 md:max-w-480 pt-12 pb-24 xl:py-24 grid grid-cols-1 gap-16 lg:grid-cols-2 lg:gap-24">
         <div className="space-y-2 2xl:space-y-15">
-          <p className="text-center lg:text-left text-lg leading-6.75 font-medium text-(--primary-black) reveal-on-scroll">
+          <p className="text-center lg:text-left text-lg leading-6.75 font-medium text-(--primary-black) reveal-on-scroll mb-4">
             Ginkins began with a simple idea:
             <br /> What if gin could carry the same soul, pride, and
             storytelling power as bourbon?
           </p>
 
-          <p className="text-center lg:text-left  text-base leading-6 text-(--primary-black) reveal-on-scroll">
+          <p className="text-center lg:text-left  text-base leading-6 text-(--primary-black) reveal-on-scroll mb-4">
             In the heart of Kentucky—where bourbon reigns—we’re starting a new
             tradition. Ginkins Gin is rooted in Southern hospitality and crafted
             with intention. Every bottle captures the warmth, boldness, and
             unapologetic creativity of our region. It’s not just something you
             sip—it’s something you share. A spirit born to connect.
           </p>
-          <p className="text-center lg:text-left  text-base leading-6 text-(--primary-black) reveal-on-scroll">
+          <p className="text-center lg:text-left  text-base leading-6 text-(--primary-black) reveal-on-scroll mb-8">
             <strong>Founder Scott Ginkins</strong> was raised in Southern
             Indiana, just across the river from Louisville, where the lines
             between community and craft, legacy and innovation, are beautifully
@@ -82,12 +82,12 @@ export default function Heritage() {
                 aria-hidden
               />
               <p className="text-base leading-6 text-(--primary-black) reveal-on-scroll-top">
-                <strong>{item.text}</strong>
+                <span>{item.text}</span>
               </p>
             </div>
           ))}
         </div>
-        <div className="mx-auto max-xl:px-5 max-lg:px-0 max-4xl:px-37.25 md:max-w-480 pb-28 lg:mt-15.75 lg:hidden">
+        <div className="mx-auto max-xl:px-5 max-lg:px-0 max-4xl:px-37.25 md:max-w-480 lg:pb-28 lg:mt-15.75 lg:hidden">
           <HeritageMobile />
         </div>
       </div>

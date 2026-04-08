@@ -21,10 +21,10 @@ export default function CocktailsMenu() {
                   <div className="flex items-center gap-6">
                     <Link href={item.href}>
                       <div className="group">
-                        <h6 className="text-[35px]! text-(--secondary-gray-300)! group-hover:text-(--primary-red-200)! relative inline mr-8 -top-2.5 group-hover:font-bold! align-bottom">
+                        <h6 className="text-[35px]! text-(--secondary-gray-300)! group-hover:text-(--primary-red-200)! relative inline mr-8 -top-2.5 align-bottom">
                           {String(i + 1).padStart(2, '0')}
                         </h6>
-                        <h4 className="text-left text-background! xl:text-(--secondary-gray-300)! group-hover:text-(--primary-red-200)! transition inline group-hover:font-bold!  reveal-on-scroll-top">
+                        <h4 className="text-left text-background! xl:text-(--secondary-gray-300)! group-hover:text-(--primary-red-200)! transition inline reveal-on-scroll-top">
                           {item.label}
                         </h4>
                       </div>

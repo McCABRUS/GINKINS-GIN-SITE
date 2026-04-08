@@ -25,7 +25,10 @@ export default function ScrollAnimations() {
     const ctx = gsap.context(() => {
       const removeRevealClasses = (el: HTMLElement) => {
         Array.from(el.classList).forEach((className) => {
-          if (className.startsWith('reveal-on-load')) {
+          if (
+            className.startsWith('reveal-on-load') ||
+            className.startsWith('reveal-on-scroll')
+          ) {
             el.classList.remove(className);
           }
         });
@@ -33,11 +36,9 @@ export default function ScrollAnimations() {
 
       const forceFinalState = (el: HTMLElement) => {
         removeRevealClasses(el);
-
         gsap.set(el, {
-          clearProps: 'all',
+          clearProps: 'transform,opacity,visibility',
         });
-
         el.style.opacity = 'unset';
       };
 
@@ -64,6 +65,13 @@ export default function ScrollAnimations() {
               invalidateOnRefresh: true,
             },
             clearProps: 'transform,opacity,visibility',
+            overwrite: 'auto',
+            onComplete: () => {
+              forceFinalState(el);
+            },
+            onInterrupt: () => {
+              forceFinalState(el);
+            },
           });
         });
       };
@@ -78,6 +86,7 @@ export default function ScrollAnimations() {
             ...to,
             delay: 0.15 + index * 0.06,
             clearProps: 'transform,opacity,visibility',
+            overwrite: 'auto',
             onComplete: () => {
               forceFinalState(el);
             },
@@ -212,8 +221,9 @@ export default function ScrollAnimations() {
       return () => {
         window.removeEventListener('app:state-changed', onStateChange);
 
-        if (cleanupTimeoutRef.current) {
+        if (cleanupTimeoutRef.current !== null) {
           window.clearTimeout(cleanupTimeoutRef.current);
+          cleanupTimeoutRef.current = null;
         }
       };
     });

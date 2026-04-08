@@ -12,13 +12,13 @@ export default function JoinModal({ open, onClose }: Props) {
     <AnimatedModalShell
       open={open}
       onClose={onClose}
-      panelClassName="relative w-full grow bg-background shadow-2xl max-h-[calc(100dvh-2rem)] overflow-y-auto overflow-x-hidden overscroll-contain lg:max-w-296.5 p-5 lg:px-5 lg:py-4.25 md:w-auto"
+      panelClassName="relative lg:w-full grow bg-background shadow-2xl max-h-[calc(100dvh-2rem)] overflow-y-auto overflow-x-hidden overscroll-contain lg:max-w-296.5 w-140 p-5 lg:px-5 lg:py-4.25"
       overlayClassName="fixed inset-0 z-500 flex items-start justify-center overflow-x-hidden overflow-y-auto bg-black/80 px-4 py-4 md:px-10 md:py-0 md:items-center"
     >
       <button
         onClick={onClose}
         aria-label="Close"
-        className="absolute top-3 md:top-5 right-3 md:right-5 z-20 text-background hover:text-(--primary-gold-300) w-6.5 h-6.5 md:w-8.5 md:h-8.5 transition-colors duration-300"
+        className="absolute top-4 md:top-5 right-7 md:right-5 z-20 text-background hover:text-(--primary-gold-300) w-6.5 h-6.5 md:w-8.5 md:h-8.5 transition-colors duration-300"
         type="button"
       >
         <svg
@@ -47,7 +47,7 @@ export default function JoinModal({ open, onClose }: Props) {
           />
         </div>
 
-        <div className="xl:pl-0 xl:py-0 xl:pr-8.25 text-center relative content-center">
+        <div className="xl:pl-0 xl:py-0 xl:pr-8.25 text-center relative content-center grid">
           <h2 className="text-(--primary-red-main)! xs:max-w-133.5 2xs:max-w-58.25 place-self-center">
             Join the Inner Circle
           </h2>

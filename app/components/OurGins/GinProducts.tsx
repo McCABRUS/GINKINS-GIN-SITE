@@ -127,10 +127,10 @@ function ProductRow({
 }) {
   return (
     <div className="grid grid-cols-1 items-center gap-29.25 lg:grid-cols-2 max-xl:px-5 max-4xl:px-37.25 md:max-w-480 place-self-center mx-auto">
-      <div className="order-1 justify-center lg:justify-end flex lg:order-2 mb-15 xl:mb-30 relative reveal-on-scroll-center">
+      <div className="order-1 justify-center lg:justify-end self-start flex lg:order-2 mb-15 xl:mb-30 relative reveal-on-scroll-center">
         {bottle}
       </div>
-      <div className="order-2 space-y-6 lg:order-1 mt-5 md:mt-45 lg:mt-0 px-0">
+      <div className="order-2 space-y-6 lg:order-1 -mt-25 pq:-mt-5 xs:-mt-15 2xs:-mt-20 md:mt-10 lg:mt-0 px-0">
         <h4 className="text-(--primary-red-main)! text-[35px]! xl:text-[56px]! font-medium! xl:font-normal! text-center lg:text-left leading-10.5! xl:leading-16.75! reveal-on-scroll-top">
           {title}
         </h4>

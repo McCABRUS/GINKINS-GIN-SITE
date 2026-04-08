@@ -2,8 +2,8 @@ import Link from 'next/link';
 
 export default function BottleConnectionBuy() {
   return (
-    <section className="relative w-full aspect-4/5 md:aspect-16/7 bg-cover bg-center md:bg-[url('/imgs/where_to_buy/ginkins-gin-trio-serving-tray.webp')]">
-      <div className="absolute inset-0 bg-black visible lg:invisible" />
+    <section className="relative w-full aspect-4/5 md:aspect-16/7 bg-cover bg-position-[80%_50%] lg:bg-center bg-[url('/imgs/where_to_buy/ginkins-gin-trio-serving-tray.webp')]">
+      <div className="absolute inset-0 bg-black/70 lg:invisible " />
       <div className="relative mx-auto w-full max-xl:px-5 max-4xl:px-37.25 md:max-w-480 h-full">
         <div className="flex h-full items-center justify-center lg:justify-start">
           <div className="max-w-127.25 text-center py-20 2xs:py-0">
@@ -41,11 +41,11 @@ export default function BottleConnectionBuy() {
               <br />
               You pour it forward.
             </h4>
-            <div className="mt-8">
+            <div className="mt-8 grid">
               <Link
                 href="https://ginkinsgin.distilleryspirits.com"
                 target="_blank"
-                className="relative w-40 lg:w-44.25 h-9.75 mt-9.5 flex mx-auto xl:mx-0 content-start items-center justify-center px-5 py-1.5 transition animatedButton group reveal-on-scroll-top"
+                className="relative w-40 lg:w-44.25 h-9.75 mt-9.5 flex mx-auto xl:mx-0 content-center place-self-center items-center justify-center px-5 py-1.5 transition animatedButton group reveal-on-scroll-top"
               >
                 <h5 className="group-hover:text-(--primary-black)! group-active:text-(--primary-black)! group-focus:text-(--primary-black)!">
                   Shop ONLINE

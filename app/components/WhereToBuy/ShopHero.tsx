@@ -16,8 +16,7 @@ export default function ShopHero() {
       <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center text-background">
         <h1 className="text-background! whitespace-nowrap reveal-on-load-top">
           From Our <br className="block md:hidden" />
-          Still
-          <br className="hidden md:block" />
+          Still <br className="hidden md:block" />
           To Your <br className="block md:hidden" />
           Glass
         </h1>

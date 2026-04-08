@@ -111,11 +111,11 @@ export default function AnimatedModalShell({
       className={`backdrop-blur-xs ${overlayClassName}`}
       style={{ willChange: 'opacity' }}
     >
-      <div className="flex min-h-dvh items-start justify-center overflow-y-auto px-4 py-4 md:items-center md:px-10 md:py-0">
+      <div className="flex min-h-dvh justify-center overflow-y-auto px-4 py-4 items-center md:px-10 md:py-0">
         <div
           ref={panelRef}
           onClick={(e) => e.stopPropagation()}
-          className={`relative w-full grow bg-background shadow-2xl max-h-[calc(100dvh-2rem)] overflow-y-auto overscroll-contain ${panelClassName}`}
+          className={`relative lg:w-full grow bg-background shadow-2xl max-h-[calc(100dvh-2rem)] overflow-y-auto overscroll-contain ${panelClassName}`}
           style={{
             willChange: 'transform, opacity',
             transform: 'translate3d(0,0,0)',

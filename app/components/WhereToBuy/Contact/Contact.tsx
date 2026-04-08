@@ -4,12 +4,12 @@ import { ContactForm } from './ContactForm';
 
 export default function Contact() {
   return (
-    <section className="w-screen bg-(--secondary-beige)  pb-27 relative">
+    <section className="w-screen bg-(--secondary-beige) pb-27 relative">
       <div className="pt-26.5 lg:pt-45.25 pb-13.25 w-screen bg-(--primary-red-main) mx-auto text-center">
         <h3 className="text-(--primary-gold-main)! reveal-on-scroll-top">
           Contact &amp; Partnerships
         </h3>
-        <h1 className="mt-10 text-background! reveal-on-scroll-top">
+        <h1 className="mt-10 pq:mt-5 text-background! reveal-on-scroll-top">
           Let’s Make <br className="block lg:hidden" />
           Something
           <br />
@@ -17,7 +17,7 @@ export default function Contact() {
           Together
         </h1>
       </div>
-      <div className="mt-13.25 mx-auto max-xl:px-5 max-4xl:px-37.25 md:max-w-480 text-center flex flex-col">
+      <div className="mt-18 mx-auto max-xl:px-5 max-4xl:px-37.25 md:max-w-480 text-center flex flex-col">
         <h5 className="reveal-on-scroll-top">Get in touch</h5>
 
         <h4 className="mt-4 mb-6 text-(--primary-black)! max-xl:text-[42px]! reveal-on-scroll-top">
@@ -33,8 +33,8 @@ export default function Contact() {
           on a killer event, or just want to say hello—we’re all ears (and good
           vibes).
         </p>
-        <div className="mt-20 grid grid-cols-1 lg:grid-cols-3">
-          <div className="flex flex-col justify-center space-y-16 lg:justify-self-start order-2 lg:order-1 mb-10 lg:mb-0 reveal-on-scroll">
+        <div className="grid grid-cols-1 lg:grid-cols-3">
+          <div className="flex md:hidden lg:flex flex-col md:flex-row lg:flex-col justify-center space-y-16 lg:justify-self-start order-2 lg:order-1 mb-10 lg:mb-0 reveal-on-scroll">
             <IconBlock
               label="General Inquiries"
               svgImg="/imgs/where_to_buy/ginkins-gin-icon-cocktail-shaker.svg"
@@ -70,7 +70,37 @@ export default function Contact() {
               </a>
             </div>
           </div>
-          <div className="flex flex-col justify-center space-y-16 lg:justify-self-end order-3  reveal-on-scroll-left">
+          <div className="flex md:hidden lg:flex flex-col md:flex-row lg:flex-col justify-center space-y-16 lg:justify-self-end order-3 reveal-on-scroll-left">
+            <IconBlock
+              label="Wholesale &amp; Distribution"
+              svgImg="/imgs/where_to_buy/ginkins-gin-icon-bottle-slim.svg"
+              svgAlt=""
+              svgWidth={96}
+              svgHeight={120}
+            />
+            <IconBlock
+              label="Retailers"
+              svgImg="/imgs/where_to_buy/ginkins-gin-icon-round-glass.svg"
+              svgAlt=""
+              svgWidth={108}
+              svgHeight={120}
+            />
+          </div>
+          <div className="hidden md:flex lg:hidden flex-row justify-center space-y-16 order-2 reveal-on-scroll-left gap-4">
+            <IconBlock
+              label="General Inquiries"
+              svgImg="/imgs/where_to_buy/ginkins-gin-icon-cocktail-shaker.svg"
+              svgAlt=""
+              svgWidth={96}
+              svgHeight={120}
+            />
+            <IconBlock
+              label="Events &amp; Collaborations"
+              svgImg="/imgs/where_to_buy/ginkins-gin-icon-botanical-pattern.svg"
+              svgAlt=""
+              svgWidth={128}
+              svgHeight={120}
+            />
             <IconBlock
               label="Wholesale &amp; Distribution"
               svgImg="/imgs/where_to_buy/ginkins-gin-icon-bottle-slim.svg"
@@ -87,7 +117,7 @@ export default function Contact() {
             />
           </div>
         </div>
-        <div className="mt-16 mb-26.5 w-full block lg:hidden">
+        <div className="mt-16 mb-26.5 w-1/2 self-center lg:w-full block lg:hidden">
           <a
             href={`mailto:${'info'}@${'ginkins'}.com`}
             className="relative w-full lg:w-1/2 h-9.75 mt-9.5 flex mx-auto items-center justify-center px-5 py-1.5 transition animatedButton group  reveal-on-scroll-top"
@@ -106,7 +136,10 @@ export default function Contact() {
         ></div>
       </div>
       <Divider />
-      <div className="place-self-center max-xl:px-5 max-4xl:px-37.25 md:max-w-480 mt-20 text-center w-full mx-auto">
+      <div
+        id="ContactSection"
+        className="place-self-center max-xl:px-5 max-4xl:px-37.25 md:max-w-480 mt-20 text-center w-full mx-auto"
+      >
         <h5 className="reveal-on-scroll-top">Connect</h5>
 
         <h4 className="mt-4 mb-6 text-(--primary-black)! max-xl:text-[42px]! reveal-on-scroll-top">

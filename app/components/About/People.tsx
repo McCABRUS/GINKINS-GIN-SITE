@@ -14,14 +14,14 @@ export default function People() {
             className="object-cover h-full"
           />
         </div>
-        <div className="order-1 lg:order-2 flex items-cender bg-(--primary-black) py-10 xl:py-20 max-xl:px-5 px-37.25">
-          <div className="w-full md:max-w-205 reveal-on-scroll-left">
-            <p className="text-center lg:text-left text-4xl text-(--primary-gold-main) italic font-bold font-cormorant-garamond md:mb-11.75 mb-23.25">
-              We believe great gin begins with
-              <br />
+        <div className="order-1 lg:order-2 flex items-center bg-(--primary-black) py-15 xl:py-20 max-xl:px-5 px-37.25">
+          <div className="w-full lg:max-w-205 reveal-on-scroll-left content-center">
+            <p className="text-center xl:text-left lg:text-4xl text-(--primary-gold-main) italic font-bold font-cormorant-garamond md:mb-11.75 mb-15 text-3xl">
+              We believe great gin begins <br className="block lg:hidden" />
+              with <br className="hidden 2xl:block" />
               great people
             </p>
-            <p className="text-center lg:text-left text-4xl leading-relaxed text-background italic font-medium font-cormorant-garamond">
+            <p className="text-center xl:text-left lg:text-4xl leading-relaxed text-background italic font-medium font-cormorant-garamond text-3xl">
               That’s why every bottle of Ginkins is a result of real
               collaboration—from the farmers who grow our botanicals to the
               friends and fans who raise a glass and share the moment.

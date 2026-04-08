@@ -1,7 +1,6 @@
 'use client';
 
 import Image from 'next/image';
-import Link from 'next/link';
 
 export default function GridCard({
   title,
@@ -14,6 +13,7 @@ export default function GridCard({
   buttonMode = 'link',
   buttonLabel = 'Shop ONLINE',
   buttonLink,
+  urlTarget,
   onButtonClick,
 }: {
   title: string;
@@ -26,6 +26,7 @@ export default function GridCard({
   buttonMode?: 'link' | 'modal';
   buttonLabel?: string;
   buttonLink?: string;
+  urlTarget?: string;
   onButtonClick?: () => void;
 }) {
   const buttonClassName =
@@ -33,7 +34,7 @@ export default function GridCard({
 
   return (
     <div
-      className={`flex flex-col items-center z-50 ${order} ${isLeft ? 'lg:place-self-start' : 'lg:place-self-end'}`}
+      className={`flex flex-col items-center lg:items-start z-50 ${order} ${isLeft ? 'lg:place-self-start' : 'lg:place-self-end'}`}
     >
       <div
         className={`relative mb-8 w-40 h-40 lg:h-57.5 lg:w-57.5 rounded-full ${bgColor}`}
@@ -56,7 +57,6 @@ export default function GridCard({
         <p className="text-center xl:text-left text-base leading-6 font-normal text-background my-5">
           {description}
         </p>
-
         {buttonMode === 'modal' ? (
           <button
             type="button"
@@ -69,15 +69,15 @@ export default function GridCard({
             </h5>
           </button>
         ) : (
-          <Link
+          <a
             href={`${buttonLink}`}
-            target="_blank"
             className={buttonClassName}
+            target={urlTarget}
           >
             <h5 className="group-hover:text-(--primary-black)! group-active:text-(--primary-black)! group-focus:text-(--primary-black)!">
               {buttonLabel}
             </h5>
-          </Link>
+          </a>
         )}
       </div>
     </div>

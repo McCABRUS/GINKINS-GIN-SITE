@@ -63,7 +63,7 @@ export default function CocktailsHome() {
         </div>
         <div className="mt-28 grid grid-cols-1 md:grid-cols-3 gap-4">
           {cocktailsData.map((card, i) => (
-            <div key={i} className="hidden md:block">
+            <div key={i} className="hidden md:grid    ">
               <div className="aspect-390/565 overflow-hidden">
                 <Image
                   draggable={false}
@@ -79,7 +79,7 @@ export default function CocktailsHome() {
               <p className="mt-4 text-base leading-relaxed text-(--primary-black) reveal-on-scroll-top">
                 {card.text}
               </p>
-              <div className="mt-6 reveal-on-scroll-top">
+              <div className="mt-6 self-end reveal-on-scroll-top">
                 <Link
                   href={`/cocktails#${card.sectionTarget}`}
                   className="inline-flex items-baseline justify-center animatedButton px-5 py-1.5 transition group"

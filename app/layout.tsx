@@ -22,6 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth!">
       <head>
+        <meta charSet="UTF-8"></meta>
         <link
           rel="preload"
           href="/imgs/preloader/ginkins-gin-logo-watermark.svg"
@@ -51,6 +52,43 @@ export default function RootLayout({
           async
           defer
         />
+        <title>
+          Ginkins: Explore the Exquisite Range of Masterfully Distilled Gins
+        </title>
+        <meta
+          property="og:title"
+          content="Ginkins: Explore the Exquisite Range of Masterfully Distilled Gins"
+        ></meta>
+        <meta
+          name="description"
+          content="Discover Ginkins Gin, premium craft gin distilled in Louisville, KY. Explore our botanical collections, find a bottle near you, and sip like a pro."
+        ></meta>
+        <meta
+          property="og:image"
+          itemProp="image"
+          content="/imgs/ginkinsgin-cover.webp"
+        ></meta>
+        <meta
+          property="og:description"
+          content="Discover Ginkins Gin, premium craft gin distilled in Louisville, KY. Explore our botanical collections, find a bottle near you, and sip like a pro."
+        ></meta>
+        <meta
+          name="description"
+          content="Discover Ginkins Gin, premium craft gin distilled in Louisville, KY. Explore our botanical collections, find a bottle near you, and sip like a pro."
+        ></meta>
+        <meta name="twitter:image" content="/imgs/ginkinsgin-cover.webp"></meta>
+        <meta
+          name="twitter:title"
+          content="Ginkins: Explore the Exquisite Range of Masterfully Distilled Gins"
+        ></meta>
+        <meta
+          name="twitter:description"
+          content="Discover Ginkins Gin, premium craft gin distilled in Louisville, KY. Explore our botanical collections, find a bottle near you, and sip like a pro."
+        ></meta>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0,viewport-fit=cover"
+        ></meta>
       </head>
       <body
         className={`${cormorant.className} ${barlow.className} antialiased bg-(--secondary-beige)!`}
