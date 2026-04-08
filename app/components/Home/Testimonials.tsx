@@ -71,7 +71,7 @@ export default function Testimonials() {
   const [slideWidth, setSlideWidth] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
 
-  const SWIPE_RATIO = 0.22;
+  const SWIPE_RATIO = 0.16;
   const AUTOPLAY_DELAY = 6000;
   const ANIMATION_DURATION = 320;
 
@@ -83,7 +83,10 @@ export default function Testimonials() {
 
   const containerRef = useRef<HTMLDivElement | null>(null);
   const touchStartX = useRef<number | null>(null);
+  const touchLastX = useRef<number | null>(null);
+  const touchLastTime = useRef<number>(0);
   const dragXRef = useRef(0);
+  const dragVelocityRef = useRef(0);
   const autoplayRef = useRef<NodeJS.Timeout | null>(null);
   const resumeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -92,6 +95,24 @@ export default function Testimonials() {
       clearInterval(autoplayRef.current);
       autoplayRef.current = null;
     }
+  };
+
+  const animateTo = (direction: 'next' | 'prev') => {
+    if (!slideWidth) return;
+
+    const target = direction === 'next' ? -slideWidth : slideWidth;
+    setIsAnimating(true);
+    setDragX(target);
+
+    setTimeout(() => {
+      setIndex((prev) =>
+        direction === 'next' ? (prev + 1) % total : (prev - 1 + total) % total,
+      );
+
+      dragXRef.current = 0;
+      setDragX(0);
+      setIsAnimating(false);
+    }, ANIMATION_DURATION);
   };
 
   const startAutoplay = () => {
@@ -112,30 +133,50 @@ export default function Testimonials() {
   const onTouchStart = (e: React.TouchEvent) => {
     resetAutoplayTimer();
     touchStartX.current = e.targetTouches[0].clientX;
+    touchLastX.current = e.targetTouches[0].clientX;
+    touchLastTime.current = performance.now();
+    dragVelocityRef.current = 0;
   };
 
   const onTouchMove = (e: React.TouchEvent) => {
-    if (!touchStartX.current || !containerRef.current) return;
+    if (touchStartX.current === null || !containerRef.current) return;
 
     const currentX = e.targetTouches[0].clientX;
     const deltaPx = currentX - touchStartX.current;
     const width = containerRef.current.offsetWidth;
-    const deltaRatio = deltaPx / width;
+
+    const now = performance.now();
+    const deltaTime = Math.max(now - touchLastTime.current, 1);
+    if (touchLastX.current !== null) {
+      dragVelocityRef.current = (currentX - touchLastX.current) / deltaTime;
+    }
+    touchLastX.current = currentX;
+    touchLastTime.current = now;
+
+    const limit = width * 0.82;
+    const resistance = 0.14;
 
     const resisted =
-      Math.sign(deltaRatio) * Math.min(Math.abs(deltaRatio), 0.7) * width;
+      Math.sign(deltaPx) *
+      (Math.min(Math.abs(deltaPx), limit) +
+        Math.max(0, Math.abs(deltaPx) - limit) * resistance);
 
-    dragXRef.current += (resisted - dragXRef.current) * 0.25;
+    dragXRef.current += (resisted - dragXRef.current) * 0.42;
     setDragX(dragXRef.current);
   };
 
   const onTouchEnd = () => {
-    if (!containerRef.current) return;
+    if (touchStartX.current === null || !containerRef.current) return;
 
     const width = containerRef.current.offsetWidth;
-    const ratio = dragX / width;
+    const currentX = touchLastX.current ?? touchStartX.current;
+    const deltaPx = currentX - touchStartX.current;
+    const ratio = deltaPx / width;
 
-    if (Math.abs(ratio) > SWIPE_RATIO) {
+    const shouldAdvance =
+      Math.abs(ratio) > SWIPE_RATIO || Math.abs(dragVelocityRef.current) > 0.18;
+
+    if (shouldAdvance) {
       animateTo(ratio < 0 ? 'next' : 'prev');
     } else {
       setIsAnimating(true);
@@ -144,25 +185,8 @@ export default function Testimonials() {
     }
 
     touchStartX.current = null;
-  };
-
-  const animateTo = (direction: 'next' | 'prev') => {
-    if (!slideWidth) return;
-
-    const target = direction === 'next' ? -slideWidth : slideWidth;
-
-    setIsAnimating(true);
-    setDragX(target);
-
-    setTimeout(() => {
-      setIndex((prev) =>
-        direction === 'next' ? (prev + 1) % total : (prev - 1 + total) % total,
-      );
-
-      dragXRef.current = 0;
-      setDragX(0);
-      setIsAnimating(false);
-    }, ANIMATION_DURATION);
+    touchLastX.current = null;
+    dragVelocityRef.current = 0;
   };
 
   useEffect(() => {
@@ -173,7 +197,7 @@ export default function Testimonials() {
         clearTimeout(resumeTimeoutRef.current);
       }
     };
-  });
+  }, []);
 
   useLayoutEffect(() => {
     if (!containerRef.current) return;

@@ -47,9 +47,9 @@ export default function GinsHero() {
         </div>
       </div>
       <div className="bg-(--primary-black) -mt-19 relative z-10">
-        <div className="mx-auto md:py-45 pb-18.5 pt-22.75 max-xl:px-5 max-4xl:px-37.25 md:max-w-480">
-          <div className="grid grid-cols-1 gap-10 md:gap-20 xl:grid-cols-2 reveal-on-scroll">
-            <h4 className="text-background! whitespace-nowrap text-center xl:text-left mt-30 md:mt-0 reveal-on-load">
+        <div className="mx-auto md:py-30 xl:py-45 pb-18.5 pt-22.75 max-xl:px-5 max-4xl:px-37.25 md:max-w-480">
+          <div className="grid grid-cols-1 gap-10 md:gap-10 xl:gap-20 xl:grid-cols-2 reveal-on-scroll">
+            <h4 className="text-background! whitespace-nowrap text-center xl:text-left mt-10 md:mt-0 reveal-on-load">
               Three Expressions. <br className="block xl:hidden" />
               One <br className="hidden xl:block" />
               Spirit of <br className="block 2xs:hidden" />

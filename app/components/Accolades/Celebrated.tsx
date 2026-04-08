@@ -1,6 +1,6 @@
 export default function Celebrated() {
   return (
-    <section className="relative aspect-3/5 md:aspect-1/2 lg:aspect-16/7 bg-cover bg-center  w-full">
+    <section className="relative aspect-3/5 pq:aspect-5/3 lg:aspect-16/7 bg-cover bg-center w-full">
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{

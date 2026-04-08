@@ -23,7 +23,7 @@ export default function ShopBannerCocktails() {
                 target="_blank"
                 className="inline-flex items-center justify-center px-5 py-1.5 transition animatedButton group  reveal-on-scroll-top"
               >
-                <h5 className="group-hover:text-(--primary-black)! group-active:text-(--primary-black)! group-focus:text-(--primary-black)!">
+                <h5 className="text-lg! group-hover:text-(--primary-black)! group-active:text-(--primary-black)! group-focus:text-(--primary-black)!">
                   Shop Online
                 </h5>
               </Link>

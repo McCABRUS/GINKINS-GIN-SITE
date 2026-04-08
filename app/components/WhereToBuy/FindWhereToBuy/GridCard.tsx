@@ -53,7 +53,7 @@ export default function GridCard({
       <h2 className="text-center xl:text-left xl:place-self-start text-background! w-65 mt-3.5 text-4xl! leading-10! reveal-on-scroll-top">
         {title}
       </h2>
-      <div className="w-[80%] lg:w-80  reveal-on-scroll-top">
+      <div className="w-[60%] lg:w-80  reveal-on-scroll-top">
         <p className="text-center xl:text-left text-base leading-6 font-normal text-background my-5">
           {description}
         </p>

@@ -38,12 +38,12 @@ export default function Founder() {
             <span className="h-px w-[41%] bg-(--primary-red-main)" />
           </div>
 
-          <div className="max-lg:mx-auto order-4">
+          <div className="max-lg:mx-auto order-4 grid">
             <h3 className="mb-15 lg:mb-13.75 text-center lg:text-left">
               Meet the creator
             </h3>
 
-            <div className="ml-11.25 relative w-full pr-24">
+            <div className="ml-11.25 relative w-full pr-24 md:w-1/2 lg:w-full place-self-center">
               <Image
                 draggable={false}
                 src="/imgs/home/scott-ginkins-founder-master-distiller.webp"

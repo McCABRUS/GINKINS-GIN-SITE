@@ -41,11 +41,11 @@ export default function BottleConnectionBuy() {
               <br />
               You pour it forward.
             </h4>
-            <div className="mt-8 grid">
+            <div className="grid">
               <Link
                 href="https://ginkinsgin.distilleryspirits.com"
                 target="_blank"
-                className="relative w-40 lg:w-44.25 h-9.75 mt-9.5 flex mx-auto xl:mx-0 content-center place-self-center items-center justify-center px-5 py-1.5 transition animatedButton group reveal-on-scroll-top"
+                className="relative w-40 lg:w-44.25 h-9.75 flex mx-auto xl:mx-0 content-center place-self-center items-center justify-center px-5 py-1.5 transition animatedButton group reveal-on-scroll-top"
               >
                 <h5 className="group-hover:text-(--primary-black)! group-active:text-(--primary-black)! group-focus:text-(--primary-black)!">
                   Shop ONLINE

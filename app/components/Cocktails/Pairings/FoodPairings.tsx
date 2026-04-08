@@ -13,7 +13,8 @@ export default function FoodPairings() {
             Discover
           </h3>
           <h1 className="my-13.25 text-(--primary-black)! lg:text-[56px]! leading-16.75! lg:font-normal! reveal-on-scroll-top">
-            Food Pairings by Ginkins
+            Food Pairings <br className="pq:hidden" />
+            by Ginkins
           </h1>
           <h5 className="text-(--primary-red-main)! mb-15 text-[18px]! leading-6.75! reveal-on-scroll-top">
             Perfect dishes to complement your gin.

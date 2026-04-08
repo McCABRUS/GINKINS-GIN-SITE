@@ -14,17 +14,17 @@ export default function CocktailsHome() {
       ></div>
       <div className="mx-auto max-4xl:px-37.25 max-w-480 max-xl:px-5">
         <div className="text-center mx-auto relative">
-          <h3 className="text-lg! inline-block text-(--primary-red-main)! mb-10 reveal-on-scroll-top">
+          <h3 className="text-lg! inline-block text-(--primary-red-main)! mb-16 reveal-on-scroll-top">
             Cocktails &amp; Pairings – Drink <br className="block md:hidden" />{' '}
             Like a Pro
           </h3>
 
-          <h1 className="font-serif text-[56px] leading-[1.05] uppercase text-(--primary-black)! relative reveal-on-scroll-center">
+          <h1 className="font-serif text-[42px]! leading-[1.05] uppercase text-(--primary-black)! relative lg:text-[76px]! 2xl:text-[90px]! reveal-on-scroll-center">
             Shake
             <br className="block md:hidden" /> Things Up.
             <br />
             <span className="hidden md:inline">Sip</span>
-            <span className="relative inline-block align-text-top mx-2 z-0 ">
+            <span className="relative inline-block align-text-top mx-2 z-0 md:mt-1 xl:mt-0">
               <span className="inline-block w-40.25 h-40.25 md:h-52.5 md:w-52.5 rounded-full overflow-hidden relative z-10">
                 <Image
                   draggable={false}
@@ -41,7 +41,7 @@ export default function CocktailsHome() {
                 alt=""
                 width={227}
                 height={226}
-                className="top-20 md:top-25 -right-12 md:-right-25 absolute z-0 blur-sm"
+                className="top-20 md:top-25 -right-12 md:-right-15 lg:-right-25 absolute z-0 blur-sm"
                 aria-hidden
               />
             </span>
@@ -51,7 +51,7 @@ export default function CocktailsHome() {
             <span className="z-50 relative">New</span>.
           </h1>
         </div>
-        <div className="mt-16 lg:-mt-20 max-w-2xl md:mx-auto text-left mx-7.5 md:ml-[50%] grid z-1 relative">
+        <div className="mt-16 md:-mt-36 lg:-mt-20 max-w-2xl md:mx-auto text-left mx-7.5 md:ml-[50%] grid z-1 relative">
           <p className="text-center md:text-left text-base leading-relaxed text-(--primary-black) reveal-on-scroll-left">
             At Ginkins, we believe cocktails should be both elevated and easy to
             enjoy. Whether you’re mixing for one or making magic for a crowd,

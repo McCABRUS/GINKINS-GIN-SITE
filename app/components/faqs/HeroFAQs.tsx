@@ -7,7 +7,9 @@ export default function HeroFAQs() {
         translateYClassName="-translate-y-[65%] xs:-translate-y-[70%] pq:-translate-y-[85%] md:-translate-y-[90%] lg:-translate-y-[80%] xl:-translate-y-[64%] 2xl:-translate-y-[70%]"
       />
       <div className="mx-auto text-center max-xl:px-5 max-4xl:px-37.25 md:max-w-480">
-        <h1 className="text-(--primary-black)! reveal-on-load-top">FAQS</h1>
+        <h1 className="text-(--primary-black)! reveal-on-load-top normal-case!">
+          FAQs
+        </h1>
         <h2 className="mt-11.5 text-(--primary-red-main)! md:mt-8  reveal-on-load-top">
           Ginkins <br className="block md:hidden" />
           Gin

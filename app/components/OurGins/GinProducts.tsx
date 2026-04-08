@@ -6,7 +6,7 @@ import SingUpButton from './SingUpButton';
 
 export default function GinProductsSection() {
   return (
-    <section className="w-screen bg-(--secondary-beige) lg:mt-0 -mt-9.75 pb-10">
+    <section className="w-screen bg-(--secondary-beige) lg:mt-0 -mt-9.75 lg:pb-10">
       <div className="mx-auto px-0 pt-28.5 xl:pb-21.5 space-y-32">
         <ProductRow
           title="Louisville Dry Gin"

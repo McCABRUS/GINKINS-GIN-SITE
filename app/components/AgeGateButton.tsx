@@ -11,10 +11,10 @@ export default function AgeGateButton({
     <button
       type="button"
       onClick={onClick}
-      className="group relative flex items-center justify-center text-background transition-colors duration-300 hover:text-(--primary-red-main)"
+      className="group relative flex items-center justify-center text-background transition-colors duration-300 hover:text-(--primary-red-main) focus:text-(--primary-red-main) active:text-(--primary-red-main)"
     >
       <AgeGateButtonShape className="group w-40 h-40 transition-colors duration-300" />
-      <span className="absolute font-bold text-(--primary-red-main) group-hover:text-background text-[22px]">
+      <span className="absolute font-bold text-(--primary-red-main) group-hover:text-background group-active:text-background group-focus:text-background text-[22px]">
         {label}
       </span>
     </button>

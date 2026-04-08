@@ -4,8 +4,8 @@ import NewsletterForm from './NewsletterForm';
 export default function Footer() {
   return (
     <footer className="bg-(--primary-black) text-background">
-      <div className="mx-auto max-xl:px-5 max-4xl:px-37.25 md:max-w-480 pb-15 pt-30 md:py-30">
-        <div className="xl:hidden flex flex-col items-center text-center">
+      <div className="mx-auto max-xl:px-5 max-4xl:px-37.25 md:max-w-480 pb-15 pt-30 md:py-30 grid">
+        <div className="xl:hidden flex flex-col items-center text-center md:max-w-4/5 xl:max-w-full place-self-center">
           <Link
             href="/"
             className="inline-flex items-center gap-3 text-(--primary-gold-main) hover:text-(--primary-red-main) active:text-(--primary-red-main) focus:text-(--primary-red-main) mb-10"
@@ -421,7 +421,7 @@ export default function Footer() {
                 <span className="text-background text-sm">|</span>
                 <Link
                   href="/faqs"
-                  className="hover:text-(--primary-red-main) active:text-(--primary-red-main) focus:text-(--primary-red-main)"
+                  className="hover:text-(--primary-red-main) active:text-(--primary-red-main) focus:text-(--primary-red-main) normal-case"
                 >
                   FAQs
                 </Link>

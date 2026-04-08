@@ -18,7 +18,7 @@ export default function CocktailsMenu() {
             <ul className="space-y-14">
               {items.map((item, i) => (
                 <li key={i}>
-                  <div className="flex items-center gap-6">
+                  <div className="flex items-center gap-6 place-self-center xs:place-self-start">
                     <Link href={item.href}>
                       <div className="group">
                         <h6 className="text-[35px]! text-(--secondary-gray-300)! group-hover:text-(--primary-red-200)! relative inline mr-8 -top-2.5 align-bottom">

@@ -119,7 +119,7 @@ export default function HeaderClient() {
                   className="block px-4 py-4 text-(--primary-gold-main) hover:text-background hover:underline transition-colors text-center underline-offset-4 decoration-(--primary-gold-main)"
                   role="menuitem"
                 >
-                  <h5 className="text-center text-(--primary-gold-main)! inline">
+                  <h5 className="text-center text-(--primary-gold-main)! inline normal-case!">
                     FAQs
                   </h5>
                 </Link>

@@ -5,7 +5,7 @@ import { ContactForm } from './ContactForm';
 export default function Contact() {
   return (
     <section className="w-screen bg-(--secondary-beige) pb-27 relative">
-      <div className="pt-26.5 lg:pt-45.25 pb-13.25 w-screen bg-(--primary-red-main) mx-auto text-center">
+      <div className="py-26.5 lg:py-45.25 w-screen bg-(--primary-red-main) mx-auto text-center">
         <h3 className="text-(--primary-gold-main)! reveal-on-scroll-top">
           Contact &amp; Partnerships
         </h3>
@@ -27,14 +27,14 @@ export default function Contact() {
           We’re Listening.
         </h4>
 
-        <p className="text-base leading-6 text-(--primary-black) font-normal max-w-240 place-self-center reveal-on-scroll-top">
+        <p className="text-base leading-6 text-(--primary-black) font-normal max-w-240 md:max-w-[80%] xl:max-w-240 place-self-center reveal-on-scroll-top">
           We believe the best things happen when passionate people connect.
           Whether you&apos;re looking to stock Ginkins in your bar, collaborate
           on a killer event, or just want to say hello—we’re all ears (and good
           vibes).
         </p>
         <div className="grid grid-cols-1 lg:grid-cols-3">
-          <div className="flex md:hidden lg:flex flex-col md:flex-row lg:flex-col justify-center space-y-16 lg:justify-self-start order-2 lg:order-1 mb-10 lg:mb-0 reveal-on-scroll">
+          <div className="grid grid-cols-[1fr_1fr] md:hidden lg:flex flex-col md:flex-row lg:flex-col justify-center space-y-16 order-2 lg:order-1 mb-10 lg:mb-0 reveal-on-scroll">
             <IconBlock
               label="General Inquiries"
               svgImg="/imgs/where_to_buy/ginkins-gin-icon-cocktail-shaker.svg"
@@ -50,7 +50,7 @@ export default function Contact() {
               svgHeight={120}
             />
           </div>
-          <div className="flex flex-col justify-center w-full my-10 md:mb-26.5 order-1 lg:order-2">
+          <div className="flex flex-col justify-center w-full my-10 md:mb-26.5 order-1 lg:order-2 md:w-4/5 xl:w-full justify-self-center">
             <Image
               draggable={false}
               src="/imgs/where_to_buy/ginkins-gin-golden-bloom-outdoor.webp"
@@ -70,7 +70,7 @@ export default function Contact() {
               </a>
             </div>
           </div>
-          <div className="flex md:hidden lg:flex flex-col md:flex-row lg:flex-col justify-center space-y-16 lg:justify-self-end order-3 reveal-on-scroll-left">
+          <div className="grid grid-cols-[1fr_1fr] md:hidden lg:flex flex-col md:flex-row lg:flex-col justify-center space-y-16 lg:justify-self-end order-3 reveal-on-scroll-left">
             <IconBlock
               label="Wholesale &amp; Distribution"
               svgImg="/imgs/where_to_buy/ginkins-gin-icon-bottle-slim.svg"
@@ -117,10 +117,10 @@ export default function Contact() {
             />
           </div>
         </div>
-        <div className="mt-16 mb-26.5 w-1/2 self-center lg:w-full block lg:hidden">
+        <div className="mt-0 mb-16 xl:mt-16 xl:mb-26.5 xs:w-1/2 w-2/3 self-center lg:w-full block lg:hidden">
           <a
             href={`mailto:${'info'}@${'ginkins'}.com`}
-            className="relative w-full lg:w-1/2 h-9.75 mt-9.5 flex mx-auto items-center justify-center px-5 py-1.5 transition animatedButton group  reveal-on-scroll-top"
+            className="relative w-full lg:w-1/2 h-9.75 md:mt-9.5 flex mx-auto items-center justify-center px-5 py-1.5 transition animatedButton group  reveal-on-scroll-top"
           >
             <h5 className="group-hover:text-(--primary-black)! group-active:text-(--primary-black)! group-focus:text-(--primary-black)!">
               INFO@GINKINS.COM
@@ -138,7 +138,7 @@ export default function Contact() {
       <Divider />
       <div
         id="ContactSection"
-        className="place-self-center max-xl:px-5 max-4xl:px-37.25 md:max-w-480 mt-20 text-center w-full mx-auto"
+        className="place-self-center max-xl:px-5 max-4xl:px-37.25 md:max-w-480 mt-20 text-center w-full md:w-4/5 xl:w-full mx-auto"
       >
         <h5 className="reveal-on-scroll-top">Connect</h5>
 

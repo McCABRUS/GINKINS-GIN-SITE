@@ -19,13 +19,13 @@ export default function AboutHomeMenu() {
       <div className="mx-auto max-xl:px-5 max-4xl:px-37.25 md:max-w-480">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_480px] gap-20 items-center">
           <div className="text-center lg:text-left">
-            <h3 className="text-lg! inline-block uppercase text-background! mb-10">
+            <h3 className="text-lg! inline-block uppercase text-background! mb-20">
               About Us
             </h3>
             <ul className="space-y-14">
               {items.map((item, i) => (
                 <li key={i}>
-                  <div className="flex items-center gap-6 reveal-on-scroll-top">
+                  <div className="flex items-center gap-6 reveal-on-scroll-top place-self-center xs:place-self-start">
                     <Link href={item.href}>
                       <div className="group">
                         <h6 className="text-[35px]! text-(--secondary-gray-300)! group-hover:text-(--primary-red-200)! relative inline mr-8 -top-2.5">

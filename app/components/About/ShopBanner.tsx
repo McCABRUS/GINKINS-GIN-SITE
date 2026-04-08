@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function ShopBanner() {
   return (
-    <section className="relative w-full aspect-4/5 md:aspect-16/7 bg-cover md:bg-center bg-left bg-[url('/imgs/about/ginkins-gin-products.webp')]">
+    <section className="relative w-full aspect-4/5 md:aspect-1920/945 bg-cover md:bg-center bg-left bg-[url('/imgs/about/ginkins-gin-products.webp')]">
       <div className="absolute inset-0 bg-black/60 visible md:invisible" />
       <div className="relative mx-auto w-full max-xl:px-5 max-4xl:px-37.25 md:max-w-480 h-full">
         <div className="flex h-full items-center justify-center">
@@ -49,7 +49,7 @@ export default function ShopBanner() {
                 target="_blank"
                 className="inline-flex items-center justify-center px-5 py-1.5 transition animatedButton group reveal-on-scroll-top"
               >
-                <h5 className="group-hover:text-(--primary-black)! group-active:text-(--primary-black)! group-focus:text-(--primary-black)!">
+                <h5 className="text-lg! group-hover:text-(--primary-black)! group-active:text-(--primary-black)! group-focus:text-(--primary-black)!">
                   Shop Online
                 </h5>
               </Link>

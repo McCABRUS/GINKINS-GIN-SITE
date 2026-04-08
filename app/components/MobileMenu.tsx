@@ -133,7 +133,7 @@ export default function MobileMenu() {
                           setMoreOpen(false);
                         }}
                       >
-                        <h5 className="text-left text-(--primary-gold-main)! inline">
+                        <h5 className="text-left text-(--primary-gold-main)! inline normal-case!">
                           FAQs
                         </h5>
                       </Link>

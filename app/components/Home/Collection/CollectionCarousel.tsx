@@ -1371,7 +1371,7 @@ export default function CollectionCarousel() {
               e.stopPropagation();
               touchStartRef.current = null;
             }}
-            className="absolute left-5.25 md:left-10 lg:left-12.5 xl:left-53.75 lg:top-35 top-64 z-30 grid -translate-y-1/2 place-items-center transition hover:scale-105 focus:scale-105 active:scale-105  text-(--primary-red-main) hover:text-(--primary-gold-main) reveal-on-scroll"
+            className="absolute left-5.25 md:left-10 lg:left-12.5 xl:left-53.75 lg:top-35 top-64 z-30 grid -translate-y-1/2 place-items-center transition hover:scale-105 focus:scale-105 active:scale-105  text-(--primary-red-main) hover:text-(--primary-gold-main) active:text-(--primary-gold-main) focus:text-(--primary-gold-main) reveal-on-scroll"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -1407,7 +1407,7 @@ export default function CollectionCarousel() {
               e.stopPropagation();
               touchStartRef.current = null;
             }}
-            className="absolute right-5.25 md:right-10 lg:right-12.5 xl:right-53.75 lg:top-35 top-64 z-30 grid -translate-y-1/2 place-items-center transition hover:scale-105 focus:scale-105 active:scale-105 text-(--primary-red-main) hover:text-(--primary-gold-main) reveal-on-scroll-left"
+            className="absolute right-5.25 md:right-10 lg:right-12.5 xl:right-53.75 lg:top-35 top-64 z-30 grid -translate-y-1/2 place-items-center transition hover:scale-105 focus:scale-105 active:scale-105 text-(--primary-red-main) hover:text-(--primary-gold-main) active:text-(--primary-gold-main) focus:text-(--primary-gold-main) reveal-on-scroll-left"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"

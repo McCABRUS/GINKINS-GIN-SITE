@@ -13,7 +13,7 @@ export default function IconBlock({
   svgHeight: number;
 }) {
   return (
-    <div className="flex flex-col items-center gap-4 text-center">
+    <div className="flex flex-col items-center gap-4 text-center w-full md:w-2/5 lg:w-full h-full md:h-2/5 lg:h-full">
       <Image
         draggable={false}
         src={svgImg}
@@ -22,7 +22,7 @@ export default function IconBlock({
         height={svgHeight}
         aria-hidden
       />
-      <h5 className="">{label}</h5>
+      <h5 className="leading-5!">{label}</h5>
     </div>
   );
 }

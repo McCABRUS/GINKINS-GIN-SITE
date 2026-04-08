@@ -197,6 +197,7 @@ export const FAQS: FAQItem[] = [
           <li>Kentucky</li>
           <li>Washington, DC</li>
           <li>New York</li>
+          <li>California</li>
         </ul>
         <p>
           Retail distribution in Kentucky continues to expand, with more states

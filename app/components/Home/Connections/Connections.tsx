@@ -13,10 +13,10 @@ export default function Connections() {
   ];
   return (
     <section className="w-screen 2xs:h-395.75 xs:h-379.25 md:h-339.75 lg:h-294.5 xl:h-316 2xl:h-230 bg-(--secondary-beige) overflow-hidden">
-      <div className="mx-auto max-xl:px-5 max-4xl:px-37.25 md:max-w-480 h-full">
+      <div className="mx-auto max-xl:px-0 max-4xl:px-37.25 md:max-w-480 h-full">
         <div className="h-full flex xl:grid xl:grid-cols-[minmax(0,1fr)_max-content] flex-col gap-3.75 xl:gap-25.5 relative items-center">
-          <div className="h-full max-w-178.25 xl:max-w-169.5 py-8.25 xl:py-0 xl:mr-20 self-center xl:self-start reveal-on-scroll-top place-content-center content-center">
-            <div className="mb-8">
+          <div className="h-full max-w-178.25 xl:max-w-169.5 py-8.25 md:pb-5 xl:py-0 xl:mr-20 self-center xl:self-start reveal-on-scroll-top place-content-center content-center">
+            <div className="mb-10">
               <Image
                 draggable={false}
                 src="/imgs/home/ginkins-gin-icon-mortar-pestle.svg"
@@ -31,13 +31,13 @@ export default function Connections() {
             <h2 className="leading-12! lg:leading-10! text-center xl:text-left text-[42px]! lg:text-4xl! uppercase">
               Connections
               <br />
-              that distill <br className="inline lg:hidden" /> into
+              that distill <br className="inline md:hidden" /> into
               <br />
-              something <br className="inline lg:hidden" />
+              something <br className="inline md:hidden" />
               greater
             </h2>
 
-            <p className="mt-8 text-base leading-relaxed text-(--primary-black) text-center xl:text-left">
+            <p className="mt-10 text-base leading-relaxed text-(--primary-black) text-center xl:text-left">
               When people think of Louisville, they picture Derby hats, hometown
               legends, crackling bats, and that unmistakable bourbon swagger.
               But look a little closer and you’ll find a city alive with fresh
@@ -50,7 +50,7 @@ export default function Connections() {
               a city that honors its heritage while embracing its future.
             </p>
 
-            <div className="flex xl:items-start items-center justify-center xl:justify-start mt-10 lg:mt-8 xl:mt-0 lg:mb-0 mb-13.25">
+            <div className="flex xl:items-start items-center justify-center xl:justify-start mt-10 lg:mt-8 xl:mt-0 md:mb-0 mb-13.25">
               <Link
                 href="/about-ginkins"
                 className="w-40 lg:w-87.5 h-9.75 xl:mt-8 flex items-center justify-center px-5 py-1.5 transition animatedButton group"

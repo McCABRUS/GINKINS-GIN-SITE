@@ -10,7 +10,7 @@ export default function HeaderServer() {
         className="max-w-360 mx-auto px-12 xl:px-6 py-6"
         aria-label="Main navigation"
       >
-        <div className="grid grid-cols-[1fr] xl:grid-cols-[1fr_0.7fr_1fr] items-center justify-between">
+        <div className="grid grid-cols-[1fr] xl:grid-cols-[1fr_0.6fr_1fr] 2xl:grid-cols-[1fr_0.7fr_1fr] items-center justify-between">
           <div className="hidden xl:flex items-center gap-0 lg:gap-4 flex-wrap justify-between">
             <Link href="/about-ginkins" className="px-1 py-1 hover:underline">
               <h5 className="text-(--primary-gold-main)! inline">
