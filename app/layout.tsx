@@ -78,11 +78,6 @@ export default function RootLayout({
           name="msapplication-TileImage"
           content="/imgs/cropped-faviconginkins-270x270.png"
         />
-        <script
-          src="https://challenges.cloudflare.com/turnstile/v0/api.js"
-          async
-          defer
-        />
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1.0,viewport-fit=cover"
