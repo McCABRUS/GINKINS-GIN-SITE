@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import TrackableLink from '../TrackableLink';
 
 export default function BottleConnection() {
   return (
@@ -48,15 +48,17 @@ export default function BottleConnection() {
               You pour it forward.
             </h4>
             <div className="mt-8">
-              <Link
+              <TrackableLink
                 href="https://ginkinsgin.distilleryspirits.com"
                 target="_blank"
                 className="inline-flex items-center justify-center px-5 py-1.5 transition animatedButton group"
+                eventName="click_shop"
+                location="shop_bottle_connection_banner"
               >
                 <h5 className="text-lg! group-hover:text-(--primary-black)! group-active:text-(--primary-black)! group-focus:text-(--primary-black)!">
                   Shop Online
                 </h5>
-              </Link>
+              </TrackableLink>
             </div>
           </div>
         </div>

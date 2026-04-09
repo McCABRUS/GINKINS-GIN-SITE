@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import TrackableLink from '../TrackableLink';
 
 export default function ShopBannerCocktails() {
   return (
@@ -18,15 +18,17 @@ export default function ShopBannerCocktails() {
               Ginkins Gin
             </h4>
             <div className="mt-8">
-              <Link
+              <TrackableLink
                 href="https://ginkinsgin.distilleryspirits.com"
+                eventName="click_shop"
+                location="Shop_banner_cocktails"
                 target="_blank"
                 className="inline-flex items-center justify-center px-5 py-1.5 transition animatedButton group  reveal-on-scroll-top"
               >
                 <h5 className="text-lg! group-hover:text-(--primary-black)! group-active:text-(--primary-black)! group-focus:text-(--primary-black)!">
                   Shop Online
                 </h5>
-              </Link>
+              </TrackableLink>
             </div>
           </div>
         </div>

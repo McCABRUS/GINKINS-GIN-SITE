@@ -2,6 +2,7 @@
 
 import { useRef, useState } from 'react';
 import { Turnstile, TurnstileInstance } from '@marsidev/react-turnstile';
+import { trackEvent } from '@/lib/gtag';
 
 type Status =
   | 'idle'
@@ -199,6 +200,11 @@ export default function NewsletterForm({ isFooter }: Props) {
             type="submit"
             disabled={status === 'verifying' || status === 'loading'}
             className={buttonStyles}
+            onClick={() => {
+              trackEvent('click_Newsletter_button_join', {
+                location: 'Newsletter_Form',
+              });
+            }}
           >
             <h5 className="hover:text-(--primary-black)! whitespace-nowrap">
               {status === 'verifying' || status === 'loading'

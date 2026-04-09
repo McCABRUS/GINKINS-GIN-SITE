@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+import { trackEvent } from '@/lib/gtag';
 
 type CollectionCardProps = {
   title: string;
@@ -80,6 +81,11 @@ export default function CollectionCard({
               href={`https://ginkinsgin.distilleryspirits.com/#${linkId}`}
               target="_blank"
               className="items-center justify-center px-5 py-1.5 transition animatedButton mx-auto md:mx-0 grid max-w-65 group"
+              onClick={() => {
+                trackEvent('click_Find_Ginkins_Near_You', {
+                  location: 'Home_Collection_Carousel',
+                });
+              }}
             >
               <h5 className="text-lg! group-hover:text-(--primary-black)! group-active:text-(--primary-black)! group-focus:text-(--primary-black)!">
                 Find Ginkins Near You

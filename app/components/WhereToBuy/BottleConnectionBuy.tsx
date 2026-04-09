@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import TrackableLink from '../TrackableLink';
 
 export default function BottleConnectionBuy() {
   return (
@@ -42,15 +42,17 @@ export default function BottleConnectionBuy() {
               You pour it forward.
             </h4>
             <div className="grid">
-              <Link
+              <TrackableLink
                 href="https://ginkinsgin.distilleryspirits.com"
                 target="_blank"
                 className="relative w-40 lg:w-44.25 h-9.75 flex mx-auto xl:mx-0 content-center place-self-center items-center justify-center px-5 py-1.5 transition animatedButton group reveal-on-scroll-top"
+                eventName="click_shop"
+                location="Where_To_Buy_Bottle_Connection"
               >
                 <h5 className="group-hover:text-(--primary-black)! group-active:text-(--primary-black)! group-focus:text-(--primary-black)!">
                   Shop ONLINE
                 </h5>
-              </Link>
+              </TrackableLink>
             </div>
           </div>
         </div>

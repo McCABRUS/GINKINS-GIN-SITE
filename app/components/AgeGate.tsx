@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import clsx from 'clsx';
 import gsap from 'gsap';
+import { trackEvent } from '@/lib/gtag';
 
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { isAgeVerified, setAgeVerified } from '@/lib/ageGate';
@@ -114,6 +115,9 @@ export default function AgeGate() {
                 <AgeGateButton
                   label="YES"
                   onClick={() => {
+                    trackEvent('click_Age_validation_Yes', {
+                      location: 'Legal_modal',
+                    });
                     setTimeout(() => {
                       setExiting(true);
                       setTimeout(() => {
@@ -129,7 +133,15 @@ export default function AgeGate() {
                     }, 200);
                   }}
                 />
-                <AgeGateButton label="NO" onClick={() => setDenied(true)} />
+                <AgeGateButton
+                  label="NO"
+                  onClick={() => {
+                    trackEvent('click_Age_validation_No', {
+                      location: 'Legal_modal',
+                    });
+                    setDenied(true);
+                  }}
+                />
               </div>
             </>
           ) : (
@@ -151,6 +163,9 @@ export default function AgeGate() {
             className="underline hover:font-bold"
             href="/privacy"
             onClick={() => {
+              trackEvent('click_privacy_policy_age_validation', {
+                location: 'Age_Validation',
+              });
               setAgeVerified();
               setIsOpen(false);
               window.__APP_STATE__ = {

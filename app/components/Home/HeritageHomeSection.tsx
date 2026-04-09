@@ -1,6 +1,5 @@
 import Image from 'next/image';
-import Link from 'next/link';
-
+import TrackableLink from '../TrackableLink';
 export default function HeritageHomeSection() {
   return (
     <section className="relative w-full bg-(--secondary-beige) pt-37.25 md:pt-36 xl:pt-71 mb-0 md:mb-0 overflow-hidden max-w-480 pb-30 md:pb-0">
@@ -82,14 +81,16 @@ export default function HeritageHomeSection() {
             than gin. It’s a celebration of connection, flavor, and the moments
             that bring us together.
           </p>
-          <Link
+          <TrackableLink
             href="/where-to-buy"
             className="mt-10 mb-15 md:mb-19.25 xl:mb-44 items-center justify-center px-5 py-1.5 transition animatedButton mx-auto md:mx-0 grid max-w-65 group z-10000 reveal-on-scroll-left"
+            eventName="click_find_ginkins_near_you"
+            location="header"
           >
             <h5 className="text-lg! group-hover:text-(--primary-black)! group-active:text-(--primary-black)! group-focus:text-(--primary-black)!">
               Find Ginkins Near You
             </h5>
-          </Link>
+          </TrackableLink>
         </div>
       </div>
       <div

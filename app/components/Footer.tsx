@@ -1,15 +1,18 @@
-import Link from 'next/link';
 import NewsletterForm from './NewsletterForm';
+import TrackableA from './TrackableA';
+import TrackableLink from './TrackableLink';
 
 export default function Footer() {
   return (
     <footer className="bg-(--primary-black) text-background">
       <div className="mx-auto max-xl:px-5 max-4xl:px-37.25 md:max-w-480 pb-15 pt-30 md:py-30 grid">
         <div className="xl:hidden flex flex-col items-center text-center md:max-w-4/5 xl:max-w-full place-self-center">
-          <Link
+          <TrackableLink
             href="/"
             className="inline-flex items-center gap-3 text-(--primary-gold-main) hover:text-(--primary-red-main) active:text-(--primary-red-main) focus:text-(--primary-red-main) mb-10"
             aria-label="Ginkins home"
+            eventName="click_home"
+            location="footer"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -23,7 +26,7 @@ export default function Footer() {
                 fill="currentColor"
               />
             </svg>
-          </Link>
+          </TrackableLink>
           <h5 className="text-(--secondary-gray-100)! text-lg! leading-normal! mb-6">
             JOIN OUR NEWSLETTER TO STAY UP TO DATE ON FEATURES AND RELEASES.
           </h5>
@@ -33,11 +36,13 @@ export default function Footer() {
             to receive updates from our company.
           </p>
           <div className="flex gap-12 mt-10 mb-8">
-            <a
+            <TrackableA
               href="https://www.instagram.com/ginkinsgin/"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 hover:text-(--primary-red-main) active:text-(--primary-red-main) focus:text-(--primary-red-main) text-base"
+              eventName="click_instagram"
+              location="footer"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -53,12 +58,14 @@ export default function Footer() {
                   fill="currentColor"
                 />
               </svg>
-            </a>
-            <a
+            </TrackableA>
+            <TrackableA
               href="https://www.linkedin.com/company/ginkins-distillery/"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 hover:text-(--primary-red-main) active:text-(--primary-red-main) focus:text-(--primary-red-main) text-base"
+              eventName="click_linkedin"
+              location="footer"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -74,12 +81,14 @@ export default function Footer() {
                   fill="currentColor"
                 />
               </svg>
-            </a>
-            <a
+            </TrackableA>
+            <TrackableA
               href="https://www.facebook.com/ginkinsgin"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 hover:text-(--primary-red-main) active:text-(--primary-red-main) focus:text-(--primary-red-main) text-base"
+              eventName="click_facebook"
+              location="footer"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -93,41 +102,49 @@ export default function Footer() {
                   fill="currentColor"
                 />
               </svg>
-            </a>
+            </TrackableA>
           </div>
           <hr
             className="w-full text-(--primary-red-main) mb-7"
             aria-hidden="true"
           />
           <div className="flex gap-6 text-sm mb-6">
-            <Link
+            <TrackableLink
               href="/privacy"
               className="hover:text-(--primary-red-main) active:text-(--primary-red-main) focus:text-(--primary-red-main)"
+              eventName="click_privacy"
+              location="footer"
             >
               Privacy Policy
-            </Link>
-            <Link
+            </TrackableLink>
+            <TrackableLink
               href="/terms"
+              eventName="click_terms"
+              location="footer"
               className="hover:text-(--primary-red-main) active:text-(--primary-red-main) focus:text-(--primary-red-main)"
             >
               Terms of Service
-            </Link>
-            <Link
+            </TrackableLink>
+            <TrackableLink
+              eventName="click_about_ginkins"
+              location="footer"
               href="/about-ginkins"
               className="hover:text-(--primary-red-main) active:text-(--primary-red-main) focus:text-(--primary-red-main)"
             >
               About Us
-            </Link>
+            </TrackableLink>
           </div>
           <p className="text-sm mb-25">
             © 2026 Ginkins Distillery. All rights reserved. Designed by{' '}
-            <Link
+            <TrackableLink
               href="https://www.amagentastudio.com"
+              eventName="click_amagenta_studio_web"
+              location="footer"
               target="_blank"
               className="hover:text-(--primary-red-main) active:text-(--primary-red-main) focus:text-(--primary-red-main)"
             >
               Amagenta Studio
-            </Link>
+            </TrackableLink>
           </p>
 
           <svg
@@ -202,8 +219,10 @@ export default function Footer() {
           </div>
           <div className="grid grid-cols-12 gap-8 items-start">
             <div className="col-span-5">
-              <Link
+              <TrackableLink
                 href="/"
+                eventName="click_home"
+                location="footer"
                 className="inline-flex items-center gap-3 text-(--primary-gold-main) hover:text-(--primary-red-main) active:text-(--primary-red-main) focus:text-(--primary-red-main)"
                 aria-label="Ginkins home"
               >
@@ -219,7 +238,7 @@ export default function Footer() {
                     fill="currentColor"
                   />
                 </svg>
-              </Link>
+              </TrackableLink>
 
               <h5 className="text-background! text-lg! leading-normal! text-start px-0">
                 JOIN OUR NEWSLETTER TO STAY UP TO DATE ON FEATURES AND RELEASES.
@@ -238,36 +257,44 @@ export default function Footer() {
                 </span>
                 <ul className="mt-4 space-y-2 text-sm text-background">
                   <li>
-                    <Link
+                    <TrackableLink
+                      eventName="click_about_ginkins"
+                      location="footer"
                       href="/about-ginkins"
                       className="hover:text-(--primary-red-main) active:text-(--primary-red-main) focus:text-(--primary-red-main) text-base"
                     >
                       About Us
-                    </Link>
+                    </TrackableLink>
                   </li>
                   <li>
-                    <Link
+                    <TrackableLink
                       href="/our-gins"
+                      eventName="click_our_gins"
+                      location="footer"
                       className="hover:text-(--primary-red-main) active:text-(--primary-red-main) focus:text-(--primary-red-main) text-base"
                     >
                       Our Gins
-                    </Link>
+                    </TrackableLink>
                   </li>
                   <li>
-                    <Link
+                    <TrackableLink
+                      eventName="click_accolades"
+                      location="footer"
                       href="/accolades"
                       className="hover:text-(--primary-red-main) active:text-(--primary-red-main) focus:text-(--primary-red-main) text-base"
                     >
                       Accolades &amp; Press
-                    </Link>
+                    </TrackableLink>
                   </li>
                   <li>
-                    <Link
+                    <TrackableLink
+                      eventName="click_sustainability"
+                      location="footer"
                       href="/sustainability"
                       className="hover:text-(--primary-red-main) active:text-(--primary-red-main) focus:text-(--primary-red-main) text-base"
                     >
                       Sustainability practices
-                    </Link>
+                    </TrackableLink>
                   </li>
                 </ul>
               </div>
@@ -278,36 +305,44 @@ export default function Footer() {
                 </span>
                 <ul className="mt-4 space-y-2 text-sm text-background">
                   <li>
-                    <Link
+                    <TrackableLink
+                      eventName="click_home"
+                      location="footer"
                       href="/"
                       className="hover:text-(--primary-red-main) active:text-(--primary-red-main) focus:text-(--primary-red-main) text-base"
                     >
                       Home
-                    </Link>
+                    </TrackableLink>
                   </li>
                   <li>
-                    <Link
+                    <TrackableLink
+                      eventName="click_where_to_buy"
+                      location="footer"
                       href="/where-to-buy"
                       className="hover:text-(--primary-red-main) active:text-(--primary-red-main) focus:text-(--primary-red-main) text-base"
                     >
                       Where to Buy
-                    </Link>
+                    </TrackableLink>
                   </li>
                   <li>
-                    <Link
+                    <TrackableLink
+                      eventName="click_cocktails"
+                      location="footer"
                       href="/cocktails"
                       className="hover:text-(--primary-red-main) active:text-(--primary-red-main) focus:text-(--primary-red-main) text-base"
                     >
                       Cocktails &amp; Pairings
-                    </Link>
+                    </TrackableLink>
                   </li>
                   <li>
-                    <Link
+                    <TrackableLink
+                      eventName="click_subscribe"
+                      location="footer"
                       href="/subscribe"
                       className="hover:text-(--primary-red-main) active:text-(--primary-red-main) focus:text-(--primary-red-main) text-base"
                     >
                       Subscribe
-                    </Link>
+                    </TrackableLink>
                   </li>
                 </ul>
               </div>
@@ -318,11 +353,13 @@ export default function Footer() {
                 </span>
                 <ul className="mt-4 space-y-3 text-sm text-background">
                   <li>
-                    <a
+                    <TrackableA
                       href="https://www.facebook.com/ginkinsgin"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 hover:text-(--primary-red-main) active:text-(--primary-red-main) focus:text-(--primary-red-main) text-base"
+                      eventName="click_facebook"
+                      location="footer"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -337,14 +374,16 @@ export default function Footer() {
                         />
                       </svg>
                       Facebook
-                    </a>
+                    </TrackableA>
                   </li>
                   <li>
-                    <a
+                    <TrackableA
                       href="https://www.instagram.com/ginkinsgin/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 hover:text-(--primary-red-main) active:text-(--primary-red-main) focus:text-(--primary-red-main) text-base"
+                      eventName="click_instagram"
+                      location="footer"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -361,14 +400,16 @@ export default function Footer() {
                         />
                       </svg>
                       Instagram
-                    </a>
+                    </TrackableA>
                   </li>
                   <li>
-                    <a
+                    <TrackableA
                       href="https://www.linkedin.com/company/ginkins-distillery/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 hover:text-(--primary-red-main) active:text-(--primary-red-main) focus:text-(--primary-red-main) text-base"
+                      eventName="click_linkedin"
+                      location="footer"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -385,7 +426,7 @@ export default function Footer() {
                         />
                       </svg>
                       LinkedIn
-                    </a>
+                    </TrackableA>
                   </li>
                 </ul>
               </div>
@@ -395,36 +436,44 @@ export default function Footer() {
             <div className="flex flex-row items-center justify-between gap-4">
               <p className="text-sm text-background">
                 © 2026 Ginkins Distillery. All rights reserved. Designed by{' '}
-                <Link
+                <TrackableLink
+                  eventName="click_amagenta_studio_web"
+                  location="footer"
                   href="https://www.amagentastudio.com"
                   target="_blank"
                   className="hover:text-(--primary-red-main) active:text-(--primary-red-main) focus:text-(--primary-red-main)"
                 >
                   Amagenta Studio
-                </Link>
+                </TrackableLink>
               </p>
 
               <div className="flex items-center gap-4 text-sm">
-                <Link
+                <TrackableLink
+                  eventName="click_privacy"
+                  location="footer"
                   href="/privacy"
                   className="hover:text-(--primary-red-main) active:text-(--primary-red-main) focus:text-(--primary-red-main)"
                 >
                   Privacy Policy
-                </Link>
+                </TrackableLink>
                 <span className="text-background text-sm">|</span>
-                <Link
+                <TrackableLink
+                  eventName="click_terms"
+                  location="footer"
                   href="/terms"
                   className="hover:text-(--primary-red-main) active:text-(--primary-red-main) focus:text-(--primary-red-main)"
                 >
                   Terms of Service
-                </Link>
+                </TrackableLink>
                 <span className="text-background text-sm">|</span>
-                <Link
+                <TrackableLink
+                  eventName="click_faqs"
+                  location="footer"
                   href="/faqs"
                   className="hover:text-(--primary-red-main) active:text-(--primary-red-main) focus:text-(--primary-red-main) normal-case"
                 >
                   FAQs
-                </Link>
+                </TrackableLink>
               </div>
             </div>
           </div>

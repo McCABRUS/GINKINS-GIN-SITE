@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { trackEvent } from '@/lib/gtag';
 
 export default function JoinNowForm() {
   const [email, setEmail] = useState('');
@@ -48,6 +49,11 @@ export default function JoinNowForm() {
           type="submit"
           disabled={loading}
           className="min-w-min[124px] h-10 inline-flex items-center justify-center animatedButton px-5 py-1.5 transition disabled:opacity-50 group"
+          onClick={() => {
+            trackEvent('click_join_newsletter_subscribe_section', {
+              location: 'Subscribe',
+            });
+          }}
         >
           <h5 className="whitespace-nowrap group-hover:text-(--primary-gold-300)! group-active:text-(--primary-gold-300)! group-focus:text-(--primary-gold-300)!">
             {loading ? 'Joining...' : 'Join Now'}

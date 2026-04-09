@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import Link from 'next/link';
+import TrackableLink from '../../TrackableLink';
 import { connectionsLeftData, connectionsRightData } from './connectionsData';
 import ConnectionsCarousel from './ConnectionsCarousel';
 export default function Connections() {
@@ -51,14 +51,16 @@ export default function Connections() {
             </p>
 
             <div className="flex xl:items-start items-center justify-center xl:justify-start mt-10 lg:mt-8 xl:mt-0 md:mb-0 mb-13.25">
-              <Link
+              <TrackableLink
                 href="/about-ginkins"
                 className="w-40 lg:w-87.5 h-9.75 xl:mt-8 flex items-center justify-center px-5 py-1.5 transition animatedButton group"
+                eventName="click_know_more"
+                location="Home_Connections"
               >
                 <h5 className="text-lg! group-hover:text-(--primary-black)! group-active:text-(--primary-black)! group-focus:text-(--primary-black)!">
                   Know more
                 </h5>
-              </Link>
+              </TrackableLink>
             </div>
           </div>
           <div className="relative overflow-hidden ml-auto shrink-0 w-max h-full">

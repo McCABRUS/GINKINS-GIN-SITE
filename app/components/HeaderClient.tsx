@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
+import { trackEvent } from '@/lib/gtag';
 
 export default function HeaderClient() {
   const [open, setOpen] = useState(false);
@@ -103,6 +104,11 @@ export default function HeaderClient() {
                   ref={firstItemRef}
                   className="block px-4 py-4 text-(--primary-gold-main) hover:text-background hover:underline transition-colors focus:outline-none text-center underline-offset-4 decoration-(--primary-gold-main)"
                   role="menuitem"
+                  onClick={() => {
+                    trackEvent('click_accolades', {
+                      location: 'header',
+                    });
+                  }}
                 >
                   <h5 className="text-(--primary-gold-main)! inline">
                     ACCOLADES
@@ -115,6 +121,11 @@ export default function HeaderClient() {
               />
               <li>
                 <Link
+                  onClick={() => {
+                    trackEvent('click_faqs', {
+                      location: 'header',
+                    });
+                  }}
                   href="/faqs"
                   className="block px-4 py-4 text-(--primary-gold-main) hover:text-background hover:underline transition-colors text-center underline-offset-4 decoration-(--primary-gold-main)"
                   role="menuitem"
@@ -130,6 +141,11 @@ export default function HeaderClient() {
               />
               <li>
                 <Link
+                  onClick={() => {
+                    trackEvent('click_sustainability', {
+                      location: 'header',
+                    });
+                  }}
                   href="/sustainability"
                   className="block px-4 py-4 text-(--primary-gold-main) hover:text-background hover:underline transition-colors text-center underline-offset-4 decoration-(--primary-gold-main)"
                   role="menuitem"

@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import Link from 'next/link';
+import TrackableLink from '../TrackableLink';
 
 const items = [
   { label: 'Signature House Creations', href: '#signature' },
@@ -19,7 +19,11 @@ export default function CocktailsMenu() {
               {items.map((item, i) => (
                 <li key={i}>
                   <div className="flex items-center gap-6 place-self-center xs:place-self-start">
-                    <Link href={item.href}>
+                    <TrackableLink
+                      href={item.href}
+                      eventName={`click_cocktails_menu_item_${i + 1}`}
+                      location="Cocktails_Menu"
+                    >
                       <div className="group">
                         <h6 className="text-[35px]! text-(--secondary-gray-300)! group-hover:text-(--primary-red-200)! relative inline mr-8 -top-2.5 align-bottom">
                           {String(i + 1).padStart(2, '0')}
@@ -28,7 +32,7 @@ export default function CocktailsMenu() {
                           {item.label}
                         </h4>
                       </div>
-                    </Link>
+                    </TrackableLink>
                   </div>
 
                   <div className="mt-6 h-px w-full bg-(--primary-red-main)" />

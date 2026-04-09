@@ -1,8 +1,7 @@
-import Link from 'next/link';
 import HeaderClient from './HeaderClient';
 import MobileMenu from './MobileMenu';
 import HeaderScrollFade from './HeaderScrollFade';
-
+import TrackableLink from './TrackableLink';
 export default function HeaderServer() {
   return (
     <HeaderScrollFade>
@@ -12,27 +11,44 @@ export default function HeaderServer() {
       >
         <div className="grid grid-cols-[1fr] xl:grid-cols-[1fr_0.6fr_1fr] 2xl:grid-cols-[1fr_0.7fr_1fr] items-center justify-between">
           <div className="hidden xl:flex items-center gap-0 lg:gap-4 flex-wrap justify-between">
-            <Link href="/about-ginkins" className="px-1 py-1 hover:underline">
+            <TrackableLink
+              href="/about-ginkins"
+              className="px-1 py-1 hover:underline"
+              eventName="click_about_ginkins"
+              location="header"
+            >
               <h5 className="text-(--primary-gold-main)! inline">
                 ABOUT GINKINS
               </h5>
-            </Link>
+            </TrackableLink>
             <span className="mx-3">•</span>
-            <Link href="/our-gins" className="px-1 py-1 hover:underline">
+            <TrackableLink
+              href="/our-gins"
+              className="px-1 py-1 hover:underline"
+              eventName="click_our_gins"
+              location="header"
+            >
               <h5 className="text-(--primary-gold-main)! inline">OUR GINS</h5>
-            </Link>
+            </TrackableLink>
             <span className="mx-3">•</span>
-            <Link href="/where-to-buy" className="px-1 py-1 hover:underline">
+            <TrackableLink
+              href="/where-to-buy"
+              className="px-1 py-1 hover:underline"
+              eventName="click_where_to_buy"
+              location="header"
+            >
               <h5 className="text-(--primary-gold-main)! inline">
                 WHERE TO BUY
               </h5>
-            </Link>
+            </TrackableLink>
           </div>
           <div className="flex-1 hidden xl:flex justify-center mx-20">
-            <Link
+            <TrackableLink
               href="/"
               className="text-(--primary-gold-main) hover:text-(--primary-red-main)"
               aria-label="Home"
+              eventName="click_home"
+              location="header"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -46,34 +62,41 @@ export default function HeaderServer() {
                   fill="currentColor"
                 />
               </svg>
-            </Link>
+            </TrackableLink>
           </div>
           <div className="flex">
             <div className="hidden xl:flex items-center gap-0 lg:gap-4">
-              <Link href="/cocktails" className="px-1 py-1 hover:underline">
+              <TrackableLink
+                href="/cocktails"
+                className="px-1 py-1 hover:underline"
+                eventName="click_cocktails"
+                location="header"
+              >
                 <h5 className="text-(--primary-gold-main)! inline">
                   COCKTAILS &amp; PAIRINGS
                 </h5>
-              </Link>
+              </TrackableLink>
               <span className="mx-3">•</span>
             </div>
             <div className="hidden xl:flex items-center xl:ml-4">
               <HeaderClient />
             </div>
             <div className="hidden xl:flex items-center gap-0 lg:gap-4 md:ml-4">
-              <Link
+              <TrackableLink
                 href="/subscribe"
                 className="inline-block px-4 py-1 border border-(--primary-gold-main) rounded text-sm font-medium transition-colors group group-hover:text-(--primary-red-main) hover:border-(--primary-red-main)"
+                eventName="click_subscribe"
+                location="header"
               >
                 <h5 className="text-(--primary-gold-main)! group-hover:text-(--primary-red-200)! inline">
                   SUBSCRIBE
                 </h5>
-              </Link>
+              </TrackableLink>
             </div>
           </div>
           <div className="xl:hidden w-full flex justify-between">
             <div className="justify-start">
-              <Link href="/">
+              <TrackableLink href="/" eventName="click_home" location="header">
                 <div className="hidden max-lg:block">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -109,7 +132,7 @@ export default function HeaderServer() {
                     />
                   </svg>
                 </div>
-              </Link>
+              </TrackableLink>
             </div>
             <MobileMenu />
           </div>

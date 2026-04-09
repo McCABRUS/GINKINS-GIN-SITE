@@ -1,4 +1,5 @@
 'use client';
+import { trackEvent } from '@/lib/gtag';
 
 import {
   useCallback,
@@ -447,6 +448,11 @@ export default function Hero() {
             href="/our-gins"
             role="button"
             className="inline-flex items-center justify-center px-5 py-1.5 w-81.25 text-sm transition group animatedButton reveal-on-load-top"
+            onClick={() => {
+              trackEvent('click_explore_the_collection', {
+                location: 'home',
+              });
+            }}
           >
             <h5 className="text-lg! group-hover:text-(--primary-black)! group-active:text-(--primary-black)! group-focus:text-(--primary-black)!">
               EXPLORE THE COLLECTION

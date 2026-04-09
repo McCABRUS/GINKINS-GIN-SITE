@@ -1,6 +1,5 @@
 import Image from 'next/image';
-import Link from 'next/link';
-
+import TrackableLink from '../TrackableLink';
 import { ProductBottle } from './ProductBottle';
 import SingUpButton from './SingUpButton';
 
@@ -162,15 +161,17 @@ function ProductRow({
             </li>
           )}
         </ul>
-        <Link
+        <TrackableLink
           href={`https://ginkinsgin.distilleryspirits.com` + `#${linkId}`}
           target="_blank"
           className="w-40 lg:w-44.25 h-9.75 mt-9.5 flex items-center justify-center px-5 py-1.5 transition animatedButton mx-auto lg:mx-0 group reveal-on-scroll-top"
+          eventName="click_shop"
+          location="Our_Gins"
         >
           <h5 className="group-hover:text-(--primary-black)! group-active:text-(--primary-black)! group-focus:text-(--primary-black)!">
             Shop ONLINE
           </h5>
-        </Link>
+        </TrackableLink>
       </div>
     </div>
   );

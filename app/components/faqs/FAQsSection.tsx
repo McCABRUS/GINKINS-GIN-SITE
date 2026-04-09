@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { FAQS } from './FAQsData';
 import HelpFooter from '../HelpFooter';
+import { trackEvent } from '@/lib/gtag';
 
 export default function FAQsSection() {
   const [openId, setOpenId] = useState<number | null>(null);
@@ -25,7 +26,12 @@ export default function FAQsSection() {
             return (
               <div key={item.id} className="py-6">
                 <button
-                  onClick={() => toggle(item.id)}
+                  onClick={() => {
+                    toggle(item.id);
+                    trackEvent(`click_FAQ_id_${item.id}`, {
+                      location: 'FAQs',
+                    });
+                  }}
                   className="flex w-full items-center justify-between text-left reveal-on-scroll-top"
                 >
                   <span className="text-base font-bold leading-6 text-(--primary-black) reveal-on-load-top">

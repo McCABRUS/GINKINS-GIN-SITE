@@ -73,6 +73,7 @@ export default function GridCard({
             href={`${buttonLink}`}
             className={buttonClassName}
             target={urlTarget}
+            onClick={onButtonClick}
           >
             <h5 className="group-hover:text-(--primary-black)! group-active:text-(--primary-black)! group-focus:text-(--primary-black)!">
               {buttonLabel}

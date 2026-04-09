@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
-
+import { trackEvent } from '@/lib/gtag';
 export default function MobileMenu() {
   const [open, setOpen] = useState(false);
   const [moreOpen, setMoreOpen] = useState(false);
@@ -18,7 +18,12 @@ export default function MobileMenu() {
     <>
       <button
         className="xl:hidden text-(--primary-gold-main)"
-        onClick={() => setOpen(true)}
+        onClick={() => {
+          trackEvent('click_open_menu_mobile', {
+            location: 'header',
+          });
+          setOpen(true);
+        }}
         aria-label="Open menu"
       >
         <svg
@@ -40,6 +45,9 @@ export default function MobileMenu() {
             onClick={() => {
               setOpen(false);
               setMoreOpen(false);
+              trackEvent('click_close_menu_mobile', {
+                location: 'header',
+              });
             }}
             aria-label="Close menu"
             className="absolute top-6 right-12 text-2xl"
@@ -75,7 +83,12 @@ export default function MobileMenu() {
 
             <div>
               <button
-                onClick={() => setMoreOpen((v) => !v)}
+                onClick={() => {
+                  setMoreOpen((v) => !v);
+                  trackEvent('click_more_menu_mobile', {
+                    location: 'header',
+                  });
+                }}
                 className="flex items-center gap-3"
               >
                 <span className="mx-3">•</span>{' '}
@@ -112,6 +125,9 @@ export default function MobileMenu() {
                         onClick={() => {
                           setOpen(false);
                           setMoreOpen(false);
+                          trackEvent('click_accolades', {
+                            location: 'header',
+                          });
                         }}
                       >
                         <h5 className="text-(--primary-gold-main)! inline">
@@ -131,6 +147,9 @@ export default function MobileMenu() {
                         onClick={() => {
                           setOpen(false);
                           setMoreOpen(false);
+                          trackEvent('click_faqs', {
+                            location: 'header',
+                          });
                         }}
                       >
                         <h5 className="text-left text-(--primary-gold-main)! inline normal-case!">
@@ -150,6 +169,9 @@ export default function MobileMenu() {
                         onClick={() => {
                           setOpen(false);
                           setMoreOpen(false);
+                          trackEvent('click_sustainability', {
+                            location: 'header',
+                          });
                         }}
                       >
                         <h5 className="text-(--primary-gold-main)! inline">
@@ -169,6 +191,9 @@ export default function MobileMenu() {
                 onClick={() => {
                   setOpen(false);
                   setMoreOpen(false);
+                  trackEvent('click_subscribe', {
+                    location: 'header',
+                  });
                 }}
               >
                 <h5 className="text-(--primary-gold-main)! inline">
@@ -203,6 +228,9 @@ function MenuItem({
         onClick={() => {
           setOpen(false);
           setMoreOpen(false);
+          trackEvent('click_menu', {
+            location: 'header',
+          });
         }}
       >
         <h5 className="text-(--primary-gold-main)! inline">{label}</h5>

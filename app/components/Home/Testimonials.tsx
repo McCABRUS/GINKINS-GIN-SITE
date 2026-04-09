@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useRef, useEffect, useLayoutEffect, useMemo } from 'react';
+import { trackEvent } from '@/lib/gtag';
 
 const testimonials = [
   {
@@ -256,7 +257,12 @@ export default function Testimonials() {
           })}
         </div>
         <button
-          onClick={() => animateTo('prev')}
+          onClick={() => {
+            animateTo('prev');
+            trackEvent('click_prev_testimonial', {
+              location: 'Home',
+            });
+          }}
           className="absolute md:flex hidden left-5 3xl:left-10 top-[106%] xs:top-[108%] md:top-1/2 -translate-y-1/2 h-14.5 w-14.5 rounded-full border border-(--primary-gold-main) items-center justify-center text-(--primary-gold-main) hover:bg-(--primary-gold-main) hover:text-background transition duration-300 ease-in-out"
           aria-label="Previous testimonial"
         >
@@ -282,7 +288,12 @@ export default function Testimonials() {
         </button>
 
         <button
-          onClick={() => animateTo('next')}
+          onClick={() => {
+            animateTo('next');
+            trackEvent('click_next_testimonial', {
+              location: 'Home',
+            });
+          }}
           className="absolute md:flex hidden right-5 3xl:right-10 top-[106%] xs:top-[108%] md:top-1/2 -translate-y-1/2 h-14.5 w-14.5 rounded-full border border-(--primary-gold-main) items-center justify-center text-(--primary-gold-main) hover:bg-(--primary-gold-main) hover:text-background transition duration-300 ease-in-out"
           aria-label="Next testimonial"
         >

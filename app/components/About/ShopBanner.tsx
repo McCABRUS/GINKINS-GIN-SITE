@@ -1,5 +1,4 @@
-import Link from 'next/link';
-
+import TrackableLink from '../TrackableLink';
 export default function ShopBanner() {
   return (
     <section className="relative w-full aspect-4/5 md:aspect-1920/945 bg-cover md:bg-center bg-left bg-[url('/imgs/about/ginkins-gin-products.webp')]">
@@ -44,15 +43,17 @@ export default function ShopBanner() {
               Raised in Louisville.
             </h4>
             <div className="mt-8">
-              <Link
+              <TrackableLink
                 href="https://ginkinsgin.distilleryspirits.com"
                 target="_blank"
                 className="inline-flex items-center justify-center px-5 py-1.5 transition animatedButton group reveal-on-scroll-top"
+                eventName="click_shop"
+                location="Shop_banner"
               >
                 <h5 className="text-lg! group-hover:text-(--primary-black)! group-active:text-(--primary-black)! group-focus:text-(--primary-black)!">
                   Shop Online
                 </h5>
-              </Link>
+              </TrackableLink>
             </div>
           </div>
         </div>

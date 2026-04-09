@@ -1,3 +1,4 @@
+import TrackableA from './TrackableA';
 export default function HelpFooter() {
   return (
     <>
@@ -6,14 +7,16 @@ export default function HelpFooter() {
           Need help or want to access your data? Email us at <br />
           <span className="text-(--primary-red-main)!">info@ginkins.com.</span>
         </h5>
-        <a
+        <TrackableA
           href={`mailto:${'info'}@${'ginkins'}.com`}
           className="relative w-40 lg:w-44.25 h-9.75 mt-6 flex mx-auto items-center justify-center px-5 py-1.5 transition animatedButton group reveal-on-scroll-top"
+          eventName="click_mailto_contact"
+          location="mailto"
         >
           <h5 className="group-hover:text-(--primary-black)! group-active:text-(--primary-black)! group-focus:text-(--primary-black)!">
             CONTACT
           </h5>
-        </a>
+        </TrackableA>
       </div>
       <div
         className="absolute border-solid border-(--primary-red-main) border-t border-r-0 border-b-0 border-l-0 shrink-0 w-18.75 h-0 z-20 bottom-75 md:bottom-66.75 lg:bottom-88.25 left-1/2 -translate-x-1/2"

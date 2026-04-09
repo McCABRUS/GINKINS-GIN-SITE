@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Script from 'next/script';
 import { cormorant, barlow } from './ui/fonts';
 import HeaderServer from './components/HeaderServer';
 import Footer from './components/Footer';
@@ -6,6 +7,8 @@ import './globals.css';
 import ClientShell from './components/ClientShell';
 import ScrollAnimations from './components/ScrollAnimations';
 import ScrollToTopOnRouteChange from '@/components/ScrollToTopOnRouteChange';
+import GoogleAnalyticsTracker from './components/GoogleAnalyticsTracker';
+import ScrollDepthTracker from './components/ScrollDepthTracker';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://ginkinsgin.com'),
@@ -43,6 +46,11 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  verification: {
+    other: {
+      'facebook-domain-verification': 'nd72fkbrrw4am3mlzk26nms7bvci69',
+    },
+  },
 };
 
 export default function RootLayout({
@@ -51,9 +59,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth!">
+    <html lang="en" className="scroll-smooth">
       <head>
         <meta charSet="UTF-8" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+        />
         <link
           rel="preload"
           href="/imgs/preloader/ginkins-gin-logo-watermark.svg"
@@ -78,14 +90,26 @@ export default function RootLayout({
           name="msapplication-TileImage"
           content="/imgs/cropped-faviconginkins-270x270.png"
         />
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1.0,viewport-fit=cover"
-        />
       </head>
+
       <body
         className={`${cormorant.className} ${barlow.className} antialiased bg-(--secondary-beige)!`}
       >
+        {/* Google Analytics GA4 */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-KKVH5K5QP2"
+          strategy="afterInteractive"
+        />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-KKVH5K5QP2');
+          `}
+        </Script>
+        <GoogleAnalyticsTracker />
+        <ScrollDepthTracker />
         <ScrollToTopOnRouteChange />
         <ScrollAnimations />
         <HeaderServer />

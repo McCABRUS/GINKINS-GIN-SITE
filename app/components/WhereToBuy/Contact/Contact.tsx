@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import IconBlock from './IconBlock';
 import { ContactForm } from './ContactForm';
+import TrackableA from '@/components/TrackableA';
 
 export default function Contact() {
   return (
@@ -60,14 +61,16 @@ export default function Contact() {
               className="object-cover w-full h-full  reveal-on-scroll-center"
             />
             <div className="mt-16 w-full hidden lg:block">
-              <a
+              <TrackableA
                 href={`mailto:${'info'}@${'ginkins'}.com`}
                 className="relative w-full h-9.75 mt-9.5 flex mx-auto items-center justify-center px-5 py-1.5 transition animatedButton group  reveal-on-scroll-top"
+                eventName="click_mailto_contact"
+                location="Where_To_Buy_contact"
               >
                 <h5 className="group-hover:text-(--primary-black)! group-active:text-(--primary-black)! group-focus:text-(--primary-black)!">
                   INFO@GINKINS.COM
                 </h5>
-              </a>
+              </TrackableA>
             </div>
           </div>
           <div className="grid grid-cols-[1fr_1fr] md:hidden lg:flex flex-col md:flex-row lg:flex-col justify-center space-y-16 lg:justify-self-end order-3 reveal-on-scroll-left">
@@ -118,14 +121,16 @@ export default function Contact() {
           </div>
         </div>
         <div className="mt-0 mb-16 xl:mt-16 xl:mb-26.5 xs:w-1/2 w-2/3 self-center lg:w-full block lg:hidden">
-          <a
+          <TrackableA
             href={`mailto:${'info'}@${'ginkins'}.com`}
             className="relative w-full lg:w-1/2 h-9.75 md:mt-9.5 flex mx-auto items-center justify-center px-5 py-1.5 transition animatedButton group  reveal-on-scroll-top"
+            eventName="click_mailto_contact"
+            location="where_to_bu_contact"
           >
             <h5 className="group-hover:text-(--primary-black)! group-active:text-(--primary-black)! group-focus:text-(--primary-black)!">
               INFO@GINKINS.COM
             </h5>
-          </a>
+          </TrackableA>
         </div>
 
         <div

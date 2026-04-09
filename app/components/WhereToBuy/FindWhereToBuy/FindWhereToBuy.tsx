@@ -4,6 +4,7 @@ import { useState } from 'react';
 import GridCard from './GridCard';
 import CentralGridCard from './CentralGridCard';
 import WhereToBuyModal from './WhereToBuyModal';
+import { trackEvent } from '@/lib/gtag';
 
 export default function FindWhereToBuy() {
   const [activeModal, setActiveModal] = useState<
@@ -24,7 +25,12 @@ export default function FindWhereToBuy() {
             isLeft
             buttonMode="modal"
             buttonLabel="FIND A RETAILER"
-            onButtonClick={() => setActiveModal('retailers')}
+            onButtonClick={() => {
+              setActiveModal('retailers');
+              trackEvent('click_retailers', {
+                location: 'where_to_buy',
+              });
+            }}
           />
           <hr
             className="block lg:hidden mx-auto  w-[80%] text-(--primary-gold-main)"
@@ -39,7 +45,12 @@ export default function FindWhereToBuy() {
             bgColor="bg-(--primary-red-main)"
             buttonMode="modal"
             buttonLabel="WHERE TO SIP GINKINS"
-            onButtonClick={() => setActiveModal('restaurants')}
+            onButtonClick={() => {
+              setActiveModal('restaurants');
+              trackEvent('click_bars_restaurants', {
+                location: 'where_to_buy',
+              });
+            }}
           />
           <hr
             className="block lg:hidden mx-auto  w-[80%] text-(--primary-gold-main)"
@@ -55,6 +66,12 @@ export default function FindWhereToBuy() {
             buttonLink="https://ginkinsgin.distilleryspirits.com"
             urlTarget="_blank"
             isLeft
+            onButtonClick={() => {
+              setActiveModal('restaurants');
+              trackEvent('click_order_online', {
+                location: 'where_to_buy',
+              });
+            }}
           />
           <hr
             className="block lg:hidden mx-auto  w-[80%] text-(--primary-gold-main)"
@@ -70,6 +87,12 @@ export default function FindWhereToBuy() {
             buttonLabel="PARTNER WITH US"
             buttonLink="/where-to-buy#ContactSection"
             urlTarget=""
+            onButtonClick={() => {
+              setActiveModal('restaurants');
+              trackEvent('click_wholesale_and_distribution', {
+                location: 'where_to_buy',
+              });
+            }}
           />
           <CentralGridCard />
         </div>

@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import { useEffect, useState, type ReactNode } from 'react';
 import AnimatedModalShell from '@/components/AnimatedModalShell';
+import { trackEvent } from '@/lib/gtag';
 
 type Variant = 'retailers' | 'restaurants';
 
@@ -216,6 +217,11 @@ function RestaurantRow({
       rel="noreferrer"
       className="group flex w-full items-start gap-3 text-left"
       aria-label={`${name}, open external link`}
+      onClick={() => {
+        trackEvent(`click_restaurant_${name.replaceAll(' ', '_')}`, {
+          location: 'header',
+        });
+      }}
     >
       <div className="py-1.25 flex justify-start items-start gap-2.5 shrink-0 text-(--primary-black) group-hover:text-(--primary-red-main)">
         <GlobeIcon mobile={mobile} />

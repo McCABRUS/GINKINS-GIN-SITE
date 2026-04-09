@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import Link from 'next/link';
+import TrackableLink from '../TrackableLink';
 
 export default function BarBookFeature() {
   return (
@@ -65,15 +65,17 @@ export default function BarBookFeature() {
               <br />
               November 5, 2025
             </p>
-            <Link
+            <TrackableLink
               href="https://thebarbook.app/bar-stories/f/ginkins-distillery-louisville-dry-gin-tasting-recap"
               target="_blank"
               className="inline-flex items-center justify-center px-1 md:px-8 py-3 text-lg font-medium uppercase transition animatedButton group reveal-on-scroll"
+              eventName="click_the_bar_book_feature"
+              location="header"
             >
               <h5 className="group-hover:text-(--primary-black)! group-active:text-(--primary-black)! group-focus:text-(--primary-black)!">
                 Read the feature on The Bar Book
               </h5>
-            </Link>
+            </TrackableLink>
           </div>
         </div>
       </div>

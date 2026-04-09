@@ -13,6 +13,7 @@ import { gsap } from 'gsap';
 import { CustomEase } from 'gsap/CustomEase';
 import CollectionCard from './CollectionCard';
 import { collectionData } from './data';
+import { trackEvent } from '@/lib/gtag';
 
 gsap.registerPlugin(CustomEase);
 CustomEase.create('animistaEaseOutQuint', '0.23, 1, 0.32, 1');
@@ -1367,6 +1368,11 @@ export default function CollectionCarousel() {
               stopStageForButton(e);
               prev();
             }}
+            onClick={() => {
+              trackEvent('click_previous_bottle_home_carousel', {
+                location: 'Home',
+              });
+            }}
             onTouchStart={(e) => {
               e.stopPropagation();
               touchStartRef.current = null;
@@ -1402,6 +1408,11 @@ export default function CollectionCarousel() {
             onPointerUp={(e) => {
               stopStageForButton(e);
               next();
+            }}
+            onClick={() => {
+              trackEvent('click_next_bottle_home_carousel', {
+                location: 'Home',
+              });
             }}
             onTouchStart={(e) => {
               e.stopPropagation();

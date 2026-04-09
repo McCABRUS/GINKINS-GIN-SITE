@@ -13,6 +13,7 @@ import { cocktailsData } from './CocktailsData';
 import Image from 'next/image';
 import Link from 'next/link';
 import { gsap } from 'gsap';
+import { trackEvent } from '@/lib/gtag';
 
 type PointerKind = 'mouse' | 'touch' | 'pen';
 
@@ -297,6 +298,11 @@ export default function CocktailsCarouselMobile() {
         <Link
           href={`/cocktails#${cocktailsData[index].sectionTarget}`}
           className="inline-flex items-baseline justify-center px-8 py-3 text-sm font-medium uppercase text-white hover:text-(--primary-black) transition animatedButton"
+          onClick={() => {
+            trackEvent('click_more', {
+              location: 'cocktail_carousel_mobile',
+            });
+          }}
         >
           See More
         </Link>

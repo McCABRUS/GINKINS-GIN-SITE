@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import Link from 'next/link';
+import TrackableLink from '../../TrackableLink';
 import { cocktailsData } from './CocktailsData';
 import CocktailsCarouselMobile from './CocktailsCarouselMobile';
 
@@ -80,14 +80,16 @@ export default function CocktailsHome() {
                 {card.text}
               </p>
               <div className="mt-6 self-end reveal-on-scroll-top">
-                <Link
+                <TrackableLink
                   href={`/cocktails#${card.sectionTarget}`}
                   className="inline-flex items-baseline justify-center animatedButton px-5 py-1.5 transition group"
+                  eventName="click_see_more"
+                  location="home_cocktails_section"
                 >
                   <h5 className="text-lg! group-hover:text-(--primary-black)! group-active:text-(--primary-black)! group-focus:text-(--primary-black)!">
                     See More
                   </h5>
-                </Link>
+                </TrackableLink>
               </div>
             </div>
           ))}

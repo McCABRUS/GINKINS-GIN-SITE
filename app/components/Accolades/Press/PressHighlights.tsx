@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import PressSlide from './PressSlide';
+import { trackEvent } from '@/lib/gtag';
 
 interface Slide {
   id: number;
@@ -33,10 +34,16 @@ export default function PressHighlights() {
 
   const prev = () => {
     setIndex((prev) => (prev - 1 + slides.length) % slides.length);
+    trackEvent('click_prev_press_highlight', {
+      location: 'Accolades',
+    });
   };
 
   const next = () => {
     setIndex((prev) => (prev + 1) % slides.length);
+    trackEvent('click_next_press_highlight', {
+      location: 'Accolades',
+    });
   };
 
   const leftSlide = slides[index];

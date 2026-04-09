@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import clsx from 'clsx';
 import { setAgeVerified } from '@/lib/ageGate';
+import { trackEvent } from '@/lib/gtag';
 
 export default function Preloader() {
   const [visible, setVisible] = useState(true);
@@ -76,6 +77,9 @@ export default function Preloader() {
           onClick={(e) => {
             e.preventDefault();
             e.stopPropagation();
+            trackEvent('click_read_privacy_from_preloader', {
+              location: 'preloader',
+            });
             setAgeVerified();
             setTimeout(() => {
               setExiting(true);

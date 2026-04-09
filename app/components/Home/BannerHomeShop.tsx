@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import Link from 'next/link';
+import TrackableLink from '../TrackableLink';
 
 export default function BannerHomeShop() {
   return (
@@ -26,15 +26,17 @@ export default function BannerHomeShop() {
           </h3>
 
           <div className="mt-6 xl:mt-14">
-            <Link
+            <TrackableLink
               href="https://ginkinsgin.distilleryspirits.com"
               target="_blank"
               className=" inline-block items-center justify-center animatedButton px-5 py-1.5 text-sm font-medium uppercase  transition group"
+              eventName="click_shop"
+              location="shop_banner"
             >
               <h5 className="text-lg! group-hover:text-(--primary-black)! group-active:text-(--primary-black)! group-focus:text-(--primary-black)!">
                 Find Ginkins Near You
               </h5>
-            </Link>
+            </TrackableLink>
           </div>
         </div>
         <div className="absolute  lg:right-1/10 xl:right-1/4 top-9/10 md:top-7/8 lg:top-1/2 -translate-y-1/2">
