@@ -1,6 +1,6 @@
 'use client';
 
-import { usePathname, useSearchParams } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 import { useEffect } from 'react';
 
 export {};
@@ -16,14 +16,14 @@ declare global {
 
 export default function GoogleAnalyticsTracker() {
   const pathname = usePathname();
-  const searchParams = useSearchParams();
 
   useEffect(() => {
-    const url = pathname + (searchParams?.toString() ? `?${searchParams}` : '');
-    window.gtag?.('config', 'G-KKVH5K5QP2', {
-      page_path: url,
+    if (typeof window.gtag !== 'function') return;
+
+    window.gtag('config', 'G-KKVH5K5QP2', {
+      page_path: window.location.pathname + window.location.search,
     });
-  }, [pathname, searchParams]);
+  }, [pathname]);
 
   return null;
 }
