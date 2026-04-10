@@ -51,13 +51,13 @@ export default function PressHighlights() {
 
   return (
     <section className="relative bg-(--primary-gold-main) py-25 overflow-hidden w-full">
-      <div className="relative mx-auto max-xl:px-5 max-4xl:px-37.25 md:max-w-480">
+      <div className="relative mx-auto max-xl:px-5 max-4xl:px-37.25">
         <h1 className="text-center text-(--primary-gold-400)! mb-20 reveal-on-scroll-top">
           PRESS <br className="block lg:hidden" /> HIGHLIGHTS
         </h1>
         <button
           onClick={prev}
-          className="absolute left-5 md:top-1/2 -translate-y-1/2 h-7.5 w-7.5 lg:w-12 lg:h-12 xl:h-14.5 xl:w-14.5 rounded-full border border-(--primary-gold-main) bg-background flex items-center justify-center text-(--primary-gold-main) hover:bg-(--primary-gold-main) hover:text-background hover:border-background transition duration-300 ease-in-out z-10"
+          className="absolute left-5 xl:left-37.25 2xl:left-80 md:top-1/2 -translate-y-1/2 h-7.5 w-7.5 lg:w-12 lg:h-12 xl:h-14.5 xl:w-14.5 rounded-full border border-(--primary-gold-main) bg-background flex items-center justify-center text-(--primary-gold-main) hover:bg-(--primary-gold-main) hover:text-background hover:border-background transition duration-300 ease-in-out z-10"
           aria-label="Previous Press Highlight"
         >
           <svg
@@ -82,7 +82,7 @@ export default function PressHighlights() {
         </button>
         <button
           onClick={next}
-          className="absolute right-5 md:top-1/2 -translate-y-1/2 h-7.5 w-7.5 lg:w-12 lg:h-12 xl:h-14.5 xl:w-14.5 rounded-full border border-(--primary-gold-main) bg-background flex items-center justify-center text-(--primary-gold-main) hover:bg-(--primary-gold-main) hover:text-background hover:border-background transition duration-300 ease-in-out z-10"
+          className="absolute right-5 xl:right-37.25 2xl:right-80 md:top-1/2 -translate-y-1/2 h-7.5 w-7.5 lg:w-12 lg:h-12 xl:h-14.5 xl:w-14.5 rounded-full border border-(--primary-gold-main) bg-background flex items-center justify-center text-(--primary-gold-main) hover:bg-(--primary-gold-main) hover:text-background hover:border-background transition duration-300 ease-in-out z-10"
           aria-label="Next Press Highlight"
         >
           <svg
