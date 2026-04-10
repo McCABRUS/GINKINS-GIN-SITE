@@ -67,7 +67,6 @@ export default function FindWhereToBuy() {
             urlTarget="_blank"
             isLeft
             onButtonClick={() => {
-              setActiveModal('restaurants');
               trackEvent('click_order_online', {
                 location: 'where_to_buy',
               });
@@ -85,10 +84,9 @@ export default function FindWhereToBuy() {
             description="Interested in bringing Ginkins to your bar, store, or event? We’d love to connect."
             image="/imgs/where_to_buy/ginkins-gin-botanical-gift-box--high-res.webp"
             buttonLabel="PARTNER WITH US"
-            buttonLink="/where-to-buy#ContactSection"
+            buttonLink="#ContactSection"
             urlTarget=""
             onButtonClick={() => {
-              setActiveModal('restaurants');
               trackEvent('click_wholesale_and_distribution', {
                 location: 'where_to_buy',
               });
