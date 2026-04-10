@@ -80,8 +80,13 @@ export default function CollectionCard({
             <Link
               href={`https://ginkinsgin.distilleryspirits.com/#${linkId}`}
               target="_blank"
+              rel="noopener noreferrer"
               className="items-center justify-center px-5 py-1.5 transition animatedButton mx-auto md:mx-0 grid max-w-65 group"
-              onClick={() => {
+              onPointerDown={(e) => e.stopPropagation()}
+              onPointerUp={(e) => e.stopPropagation()}
+              onTouchStart={(e) => e.stopPropagation()}
+              onClick={(e) => {
+                e.stopPropagation();
                 trackEvent('click_Find_Ginkins_Near_You', {
                   location: 'Home_Collection_Carousel',
                 });

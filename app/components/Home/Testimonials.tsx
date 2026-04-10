@@ -1,6 +1,13 @@
 'use client';
 
-import { useState, useRef, useEffect, useLayoutEffect, useMemo } from 'react';
+import {
+  useState,
+  useRef,
+  useEffect,
+  useLayoutEffect,
+  useMemo,
+  useCallback,
+} from 'react';
 import { trackEvent } from '@/lib/gtag';
 
 const testimonials = [
@@ -66,6 +73,8 @@ const testimonials = [
   },
 ];
 
+type PointerKind = 'mouse' | 'touch' | 'pen';
+
 export default function Testimonials() {
   const [index, setIndex] = useState(0);
   const [dragX, setDragX] = useState(0);
@@ -90,104 +99,151 @@ export default function Testimonials() {
   const dragVelocityRef = useRef(0);
   const autoplayRef = useRef<NodeJS.Timeout | null>(null);
   const resumeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const animateToRef = useRef<
+    ((direction: 'next' | 'prev', afterComplete?: () => void) => void) | null
+  >(null);
+  const activePointerId = useRef<number | null>(null);
+  const pointerKindRef = useRef<PointerKind>('mouse');
 
-  const stopAutoplay = () => {
+  const stopAutoplay = useCallback(() => {
     if (autoplayRef.current) {
       clearInterval(autoplayRef.current);
       autoplayRef.current = null;
     }
-  };
+  }, []);
 
-  const animateTo = (direction: 'next' | 'prev') => {
-    if (!slideWidth) return;
+  const animateTo = useCallback(
+    (direction: 'next' | 'prev', afterComplete?: () => void) => {
+      if (!slideWidth) return;
 
-    const target = direction === 'next' ? -slideWidth : slideWidth;
-    setIsAnimating(true);
-    setDragX(target);
+      const target = direction === 'next' ? -slideWidth : slideWidth;
 
-    setTimeout(() => {
-      setIndex((prev) =>
-        direction === 'next' ? (prev + 1) % total : (prev - 1 + total) % total,
-      );
+      setIsAnimating(true);
+      setDragX(target);
 
-      dragXRef.current = 0;
-      setDragX(0);
-      setIsAnimating(false);
-    }, ANIMATION_DURATION);
-  };
+      setTimeout(() => {
+        setIndex((prev) =>
+          direction === 'next'
+            ? (prev + 1) % total
+            : (prev - 1 + total) % total,
+        );
 
-  const startAutoplay = () => {
+        dragXRef.current = 0;
+        setDragX(0);
+        setIsAnimating(false);
+
+        if (afterComplete) {
+          afterComplete();
+        }
+      }, ANIMATION_DURATION);
+    },
+    [slideWidth, total],
+  );
+
+  useEffect(() => {
+    animateToRef.current = animateTo;
+  }, [animateTo]);
+
+  const startAutoplay = useCallback(() => {
     stopAutoplay();
     autoplayRef.current = setInterval(() => {
-      animateTo('next');
+      animateToRef.current?.('next');
     }, AUTOPLAY_DELAY);
-  };
+  }, [stopAutoplay]);
 
-  const resetAutoplayTimer = () => {
+  const resetAutoplayTimer = useCallback(() => {
     stopAutoplay();
     if (resumeTimeoutRef.current) {
       clearTimeout(resumeTimeoutRef.current);
     }
     resumeTimeoutRef.current = setTimeout(startAutoplay, AUTOPLAY_DELAY);
-  };
+  }, [startAutoplay, stopAutoplay]);
 
-  const onTouchStart = (e: React.TouchEvent) => {
+  const onPointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
+    if (!containerRef.current) return;
+
     resetAutoplayTimer();
-    touchStartX.current = e.targetTouches[0].clientX;
-    touchLastX.current = e.targetTouches[0].clientX;
+
+    activePointerId.current = e.pointerId;
+    pointerKindRef.current = e.pointerType as PointerKind;
+    touchStartX.current = e.clientX;
+    touchLastX.current = e.clientX;
     touchLastTime.current = performance.now();
     dragVelocityRef.current = 0;
+
+    try {
+      e.currentTarget.setPointerCapture(e.pointerId);
+    } catch {
+      void 0;
+    }
   };
 
-  const onTouchMove = (e: React.TouchEvent) => {
-    if (touchStartX.current === null || !containerRef.current) return;
+  const onPointerMove = (e: React.PointerEvent<HTMLDivElement>) => {
+    if (!containerRef.current) return;
+    if (activePointerId.current !== e.pointerId) return;
+    if (touchStartX.current === null) return;
 
-    const currentX = e.targetTouches[0].clientX;
+    const currentX = e.clientX;
     const deltaPx = currentX - touchStartX.current;
     const width = containerRef.current.offsetWidth;
 
     const now = performance.now();
     const deltaTime = Math.max(now - touchLastTime.current, 1);
+
     if (touchLastX.current !== null) {
       dragVelocityRef.current = (currentX - touchLastX.current) / deltaTime;
     }
+
     touchLastX.current = currentX;
     touchLastTime.current = now;
 
-    const limit = width * 0.82;
-    const resistance = 0.14;
+    const isTouch = pointerKindRef.current === 'touch';
+
+    const limit = width * (isTouch ? 0.82 : 0.72);
+    const resistance = isTouch ? 0.14 : 0.16;
+    const follow = isTouch ? 0.42 : 0.36;
 
     const resisted =
       Math.sign(deltaPx) *
       (Math.min(Math.abs(deltaPx), limit) +
         Math.max(0, Math.abs(deltaPx) - limit) * resistance);
 
-    dragXRef.current += (resisted - dragXRef.current) * 0.42;
+    dragXRef.current += (resisted - dragXRef.current) * follow;
     setDragX(dragXRef.current);
   };
 
-  const onTouchEnd = () => {
-    if (touchStartX.current === null || !containerRef.current) return;
+  const finishDrag = () => {
+    if (!containerRef.current) return;
+    if (touchStartX.current === null) return;
 
     const width = containerRef.current.offsetWidth;
     const currentX = touchLastX.current ?? touchStartX.current;
     const deltaPx = currentX - touchStartX.current;
     const ratio = deltaPx / width;
 
+    const isTouch = pointerKindRef.current === 'touch';
+    const swipeRatio = isTouch ? 0.11 : 0.16;
+    const velocityThreshold = isTouch ? 0.18 : 0.22;
+
     const shouldAdvance =
-      Math.abs(ratio) > SWIPE_RATIO || Math.abs(dragVelocityRef.current) > 0.18;
+      Math.abs(ratio) > swipeRatio ||
+      Math.abs(dragVelocityRef.current) > velocityThreshold;
 
     if (shouldAdvance) {
-      animateTo(ratio < 0 ? 'next' : 'prev');
+      animateToRef.current?.(ratio < 0 ? 'next' : 'prev', resetAutoplayTimer);
     } else {
       setIsAnimating(true);
       setDragX(0);
-      setTimeout(() => setIsAnimating(false), 180);
+      setTimeout(() => {
+        setIsAnimating(false);
+        resetAutoplayTimer();
+      }, 180);
     }
 
     touchStartX.current = null;
     touchLastX.current = null;
     dragVelocityRef.current = 0;
+    activePointerId.current = null;
   };
 
   useEffect(() => {
@@ -198,7 +254,7 @@ export default function Testimonials() {
         clearTimeout(resumeTimeoutRef.current);
       }
     };
-  }, []);
+  }, [startAutoplay, stopAutoplay]);
 
   useLayoutEffect(() => {
     if (!containerRef.current) return;
@@ -224,10 +280,13 @@ export default function Testimonials() {
           }`}
           style={{
             transform: `translateX(calc(-100% + ${dragX}px))`,
+            touchAction: 'pan-y',
+            userSelect: 'none',
           }}
-          onTouchStart={onTouchStart}
-          onTouchMove={onTouchMove}
-          onTouchEnd={onTouchEnd}
+          onPointerDown={onPointerDown}
+          onPointerMove={onPointerMove}
+          onPointerUp={finishDrag}
+          onPointerCancel={finishDrag}
         >
           {indicesToRender.map((i, renderIndex) => {
             const { quote, author, rating } = testimonials[i];
@@ -263,7 +322,7 @@ export default function Testimonials() {
               location: 'Home',
             });
           }}
-          className="absolute md:flex hidden left-5 3xl:left-10 top-[106%] xs:top-[108%] md:top-1/2 -translate-y-1/2 h-14.5 w-14.5 rounded-full border border-(--primary-gold-main) items-center justify-center text-(--primary-gold-main) hover:bg-(--primary-gold-main) hover:text-background transition duration-300 ease-in-out"
+          className="absolute bg-(--secondary-beige) md:flex hidden left-5 3xl:left-10 top-[106%] xs:top-[108%] md:top-1/2 -translate-y-1/2 h-14.5 w-14.5 rounded-full border border-(--primary-gold-main) items-center justify-center text-(--primary-gold-main) hover:bg-(--primary-gold-main) hover:text-background transition duration-300 ease-in-out"
           aria-label="Previous testimonial"
         >
           <svg
@@ -294,7 +353,7 @@ export default function Testimonials() {
               location: 'Home',
             });
           }}
-          className="absolute md:flex hidden right-5 3xl:right-10 top-[106%] xs:top-[108%] md:top-1/2 -translate-y-1/2 h-14.5 w-14.5 rounded-full border border-(--primary-gold-main) items-center justify-center text-(--primary-gold-main) hover:bg-(--primary-gold-main) hover:text-background transition duration-300 ease-in-out"
+          className="absolute bg-(--secondary-beige) md:flex hidden right-5 3xl:right-10 top-[106%] xs:top-[108%] md:top-1/2 -translate-y-1/2 h-14.5 w-14.5 rounded-full border border-(--primary-gold-main) items-center justify-center text-(--primary-gold-main) hover:bg-(--primary-gold-main) hover:text-background transition duration-300 ease-in-out"
           aria-label="Next testimonial"
         >
           <svg

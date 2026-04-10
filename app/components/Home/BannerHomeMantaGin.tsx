@@ -14,7 +14,9 @@ export default function BannerHomeMantaGin() {
         src="/imgs/home/ginkins-gin-lifestyle-picnic.webp"
         alt="Manta Gin Bottle"
         fill
+        sizes="100vw"
         className="object-cover object-right"
+        priority
       />
     </section>
   );

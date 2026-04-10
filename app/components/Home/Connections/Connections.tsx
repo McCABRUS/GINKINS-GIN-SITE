@@ -15,7 +15,7 @@ export default function Connections() {
     <section className="w-screen 2xs:h-395.75 xs:h-379.25 md:h-339.75 lg:h-294.5 xl:h-316 2xl:h-230 bg-(--secondary-beige) overflow-hidden">
       <div className="mx-auto max-xl:px-0 max-4xl:px-37.25 md:max-w-480 h-full">
         <div className="h-full flex xl:grid xl:grid-cols-[minmax(0,1fr)_max-content] flex-col gap-3.75 xl:gap-25.5 relative items-center">
-          <div className="h-full max-w-178.25 xl:max-w-169.5 py-8.25 md:pb-5 xl:py-0 xl:mr-20 self-center xl:self-start reveal-on-scroll-top place-content-center content-center">
+          <div className="h-full max-w-178.25 xl:max-w-169.5 py-8.25 md:pb-5 xl:py-0 xl:mr-20 self-center xl:self-start reveal-on-scroll-top place-content-center content-center px-5 md:px-0">
             <div className="mb-10">
               <Image
                 draggable={false}
