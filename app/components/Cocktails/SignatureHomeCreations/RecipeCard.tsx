@@ -146,7 +146,7 @@ export default function RecipeCard({
     <article
       tabIndex={0}
       role="button"
-      aria-expanded={isTouchLike ? isOpen : undefined}
+      aria-expanded={isOpen}
       onClick={handleActivate}
       onKeyDown={handleKeyDown}
       className={`

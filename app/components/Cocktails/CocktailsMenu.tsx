@@ -1,11 +1,11 @@
 import Image from 'next/image';
 import TrackableLink from '../TrackableLink';
-
 const items = [
-  { label: 'Signature House Creations', href: '#signature' },
+  { label: 'Signature Home Creations', href: '#signature' },
   { label: 'Classic Ginkins Cocktails', href: '#classic' },
   { label: 'Food Pairings', href: '#pairings' },
 ];
+
 export default function CocktailsMenu() {
   return (
     <section className="w-screen bg-(--primary-black) pt-15 pb-32.5 lg:pb-36.5 lg:pt-36.5 -mt-px">
@@ -18,22 +18,22 @@ export default function CocktailsMenu() {
             <ul className="space-y-14">
               {items.map((item, i) => (
                 <li key={i}>
-                  <div className="flex items-center gap-6 place-self-center xs:place-self-start">
-                    <TrackableLink
-                      href={item.href}
-                      eventName={`click_cocktails_menu_item_${i + 1}`}
-                      location="Cocktails_Menu"
-                    >
-                      <div className="group">
-                        <h6 className="text-[35px]! text-(--secondary-gray-300)! group-hover:text-(--primary-red-200)! relative inline mr-8 -top-2.5 align-bottom">
-                          {String(i + 1).padStart(2, '0')}
-                        </h6>
-                        <h4 className="text-left text-background! xl:text-(--secondary-gray-300)! group-hover:text-(--primary-red-200)! transition inline reveal-on-scroll-top">
-                          {item.label}
-                        </h4>
-                      </div>
-                    </TrackableLink>
-                  </div>
+                  <TrackableLink
+                    href={item.href}
+                    eventName={`click_cocktails_menu_item_${i + 1}`}
+                    location="Cocktails_Menu"
+                    className="block w-full"
+                  >
+                    <div className="grid w-full grid-cols-[3rem_minmax(0,1fr)] items-center gap-x-6 text-left group">
+                      <h6 className="text-[35px]! leading-none! text-(--secondary-gray-300)! group-hover:text-(--primary-red-200)! transition">
+                        {String(i + 1).padStart(2, '0')}
+                      </h6>
+
+                      <h4 className="min-w-0! leading-[1.05]! text-background! xl:text-(--secondary-gray-300)! group-hover:text-(--primary-red-200)! transition">
+                        {item.label}
+                      </h4>
+                    </div>
+                  </TrackableLink>
 
                   <div className="mt-6 h-px w-full bg-(--primary-red-main)" />
                 </li>

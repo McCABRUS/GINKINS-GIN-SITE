@@ -63,7 +63,7 @@ export default function CocktailsHome() {
         </div>
         <div className="mt-28 grid grid-cols-1 md:grid-cols-3 gap-4">
           {cocktailsData.map((card, i) => (
-            <div key={i} className="hidden md:grid    ">
+            <div key={i} className="hidden md:grid">
               <div className="aspect-390/565 overflow-hidden">
                 <Image
                   draggable={false}
