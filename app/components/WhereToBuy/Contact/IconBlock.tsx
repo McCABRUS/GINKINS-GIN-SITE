@@ -21,6 +21,7 @@ export default function IconBlock({
         width={svgWidth}
         height={svgHeight}
         aria-hidden
+        className="h-1/4 md:h-full"
       />
       <h5 className="leading-5!">{label}</h5>
     </div>
