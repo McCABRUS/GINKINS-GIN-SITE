@@ -28,10 +28,14 @@ class ContactController extends Controller
                 );
 
                 if (! $response->successful() || ! $response->json('success')) {
-                    return response()->json([
-                        'error' => 'Captcha verification failed',
-                    ], 403);
-                }
+    return response()->json([
+        'error' => 'Captcha verification failed',
+        'turnstile_response' => $response->json(),
+        'sitekey_env' => env('TURNSTILE_SITE_KEY'),
+        'secret_exists' => !empty(config('services.turnstile.secret')),
+        'hostname' => $request->getHost(),
+    ], 403);
+}
             }
 
             $resend->send($data);
