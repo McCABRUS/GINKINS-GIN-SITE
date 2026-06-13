@@ -15,7 +15,6 @@ export default function GinProductsSection() {
           serving="Try it in a G&T with a grapefruit twist or sip it neat to let the citrus shine."
           awards1="Gold Medal – Gin of the Year™ 2024"
           awards2="Gold Medal – 2024 Gin Masters (Microdistillery Round)"
-          linkId="productContents_productGroupA_productRepeater_ImageProduct_2"
           bottle={
             <ProductBottle
               bgColor="bg-(--primary-red-main)"
@@ -33,7 +32,6 @@ export default function GinProductsSection() {
           description="Infused with elderflower, juniper, and a delicate botanical bouquet, Golden Bloom is an invitation to slow down and savor the softer side of gin. Crafted with precision and care, this crisp, floral expression captures the essence of nature in every sip. Light, fragrant, and endlessly mixable, it balances the natural sweetness of elderflower with bright citrus, subtle herbs, and the grounding clarity of juniper for a refined, aromatic experience."
           tasting="Elderflower’s elegance, orange zest, and juniper."
           serving="Ideal in a spritz with tonic, ice, and a slice of cucumber or lemon."
-          linkId="productContents_productGroupA_productRepeater_ImageProduct_1"
           bottle={
             <ProductBottle
               bgColor="bg-(--primary-gold-main)"
@@ -51,7 +49,6 @@ export default function GinProductsSection() {
           description="For those who seek warmth and complexity, Heritage Reserve delivers. Bold cinnamon, smooth nutmeg, and crisp juniper meet in a slow-sipped blend that honors old-world flavor with a modern edge. It opens with a deep, spiced warmth on the nose, followed by a rich taste of cinnamon, nutmeg, and crisp juniper. The finish is long, layered, and unforgettable—crafted for those who appreciate depth in every detail."
           tasting="Spiced and sophisticated, with warming notes of cinnamon and nutmeg, brightened by crisp juniper and finished with smooth depth."
           serving="Best enjoyed over a large ice cube or in a Negroni variation."
-          linkId="productContents_productGroupA_productRepeater_ImageProduct_0"
           bottle={
             <ProductBottle
               bgColor="bg-(--secondary-gray-500)"
@@ -112,7 +109,6 @@ function ProductRow({
   awards1,
   awards2,
   bottle,
-  linkId,
 }: {
   title: string;
   subtitle: string;
@@ -122,7 +118,6 @@ function ProductRow({
   awards1?: string;
   awards2?: string;
   bottle: React.ReactNode;
-  linkId: string;
 }) {
   return (
     <div className="grid grid-cols-1 items-center gap-29.25 lg:grid-cols-2 max-xl:px-5 max-4xl:px-37.25 md:max-w-480 place-self-center mx-auto">
@@ -162,14 +157,13 @@ function ProductRow({
           )}
         </ul>
         <TrackableLink
-          href={`https://ginkinsgin.distilleryspirits.com` + `#${linkId}`}
-          target="_blank"
-          className="w-40 lg:w-44.25 h-9.75 mt-9.5 flex items-center justify-center px-5 py-1.5 transition animatedButton mx-auto lg:mx-0 group reveal-on-scroll-top"
+          href="/where-to-buy"
+          className="w-60 h-9.75 mt-9.5 flex items-center justify-center px-5 py-1.5 transition animatedButton mx-auto lg:mx-0 group reveal-on-scroll-top"
           eventName="click_shop"
           location="Our_Gins"
         >
           <h5 className="group-hover:text-(--primary-black)! group-active:text-(--primary-black)! group-focus:text-(--primary-black)!">
-            Shop ONLINE
+            Find Ginkins Near You
           </h5>
         </TrackableLink>
       </div>

@@ -33,14 +33,13 @@ export default function FindShops() {
             </p>
 
             <TrackableLink
-              href="https://ginkinsgin.distilleryspirits.com"
-              target="_blank"
-              className="w-40 lg:w-44.25 h-9.75 lg:mt-9.5 flex items-center justify-center px-5 py-1.5 transition animatedButton group reveal-on-scroll-top"
+              href="/retailers"
+              className="w-60 h-9.75 lg:mt-9.5 flex items-center justify-center px-5 py-1.5 transition animatedButton group reveal-on-scroll-top"
               eventName="click_shop"
               location="Where_to_Buy_find_shops"
             >
               <h5 className="group-hover:text-(--primary-black)! group-active:text-(--primary-black)! group-focus:text-(--primary-black)!">
-                Shop ONLINE
+                Retailers Near You
               </h5>
             </TrackableLink>
           </div>

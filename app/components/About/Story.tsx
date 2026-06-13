@@ -41,14 +41,13 @@ export default function Story() {
             </div>
 
             <TrackableLink
-              href="https://ginkinsgin.distilleryspirits.com"
-              target="_blank"
-              className="w-40 lg:w-44.25 h-9.75 mt-10.75 flex items-center justify-center px-5 py-1.5  transition animatedButton mx-auto lg:mx-0 group reveal-on-scroll-top"
+              href="/where-to-buy"
+              className="w-60 h-9.75 mt-10.75 flex items-center justify-center px-5 py-1.5  transition animatedButton mx-auto lg:mx-0 group reveal-on-scroll-top"
               eventName="click_shop"
               location="About"
             >
               <h5 className="text-lg! group-hover:text-(--primary-black)! group-active:text-(--primary-black)! group-focus:text-(--primary-black)!">
-                Shop ONLINE
+                Find Ginkins Near You
               </h5>
             </TrackableLink>
           </div>

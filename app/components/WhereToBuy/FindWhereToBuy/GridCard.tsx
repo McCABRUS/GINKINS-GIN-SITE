@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function GridCard({
   title,
@@ -11,7 +12,7 @@ export default function GridCard({
   bgColor,
   isLeft,
   buttonMode = 'link',
-  buttonLabel = 'Shop ONLINE',
+  buttonLabel = 'Find Ginkins Near You',
   buttonLink,
   urlTarget,
   onButtonClick,
@@ -23,7 +24,7 @@ export default function GridCard({
   description: string;
   bgColor: string;
   isLeft?: boolean;
-  buttonMode?: 'link' | 'modal';
+  buttonMode?: 'link' | 'modal' | 'localLink' | 'disabled';
   buttonLabel?: string;
   buttonLink?: string;
   urlTarget?: string;
@@ -68,6 +69,28 @@ export default function GridCard({
               {buttonLabel}
             </h5>
           </button>
+        ) : buttonMode === 'localLink' ? (
+          <Link
+            href={`${buttonLink}`}
+            className={buttonClassName}
+            onClick={onButtonClick}
+          >
+            <h5 className="group-hover:text-(--primary-black)! group-active:text-(--primary-black)! group-focus:text-(--primary-black)!">
+              {buttonLabel}
+            </h5>
+          </Link>
+        ) : buttonMode === 'disabled' ? (
+          <a
+            href=""
+            className={`${buttonClassName} pointer-events-none opacity-50 cursor-not-allowed`}
+            aria-disabled="true"
+            target={urlTarget}
+            onClick={onButtonClick}
+          >
+            <h5 className="group-hover:text-(--primary-black)! group-active:text-(--primary-black)! group-focus:text-(--primary-black)!">
+              {buttonLabel}
+            </h5>
+          </a>
         ) : (
           <a
             href={`${buttonLink}`}

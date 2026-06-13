@@ -48,5 +48,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/terms`,
       lastModified: new Date(),
     },
+    {
+      url: `${baseUrl}/retailers`,
+      lastModified: new Date(),
+    },
   ];
 }

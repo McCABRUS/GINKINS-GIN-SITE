@@ -9,7 +9,6 @@ type CollectionCardProps = {
   text: string;
   img: string;
   alt: string;
-  linkId: string;
   variant?: 'full' | 'media' | 'content';
 };
 
@@ -18,7 +17,6 @@ export default function CollectionCard({
   text,
   img,
   alt,
-  linkId,
   variant = 'full',
 }: CollectionCardProps) {
   const showMedia = variant !== 'content';
@@ -78,15 +76,13 @@ export default function CollectionCard({
 
           <div className="flex flex-col gap-2.5 items-start justify-start shrink-0 relative lg:-top-25 mx-auto lg:mx-0">
             <Link
-              href={`https://ginkinsgin.distilleryspirits.com/#${linkId}`}
-              target="_blank"
+              href="/where-to-buy"
               rel="noopener noreferrer"
               className="items-center justify-center px-5 py-1.5 transition animatedButton mx-auto md:mx-0 grid max-w-65 group"
               onPointerDown={(e) => e.stopPropagation()}
               onPointerUp={(e) => e.stopPropagation()}
               onTouchStart={(e) => e.stopPropagation()}
-              onClick={(e) => {
-                e.stopPropagation();
+              onClick={() => {
                 trackEvent('click_Find_Ginkins_Near_You', {
                   location: 'Home_Collection_Carousel',
                 });

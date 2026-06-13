@@ -44,14 +44,13 @@ export default function ShopBanner() {
             </h4>
             <div className="mt-8">
               <TrackableLink
-                href="https://ginkinsgin.distilleryspirits.com"
-                target="_blank"
+                href="/where-to-buy"
                 className="inline-flex items-center justify-center px-5 py-1.5 transition animatedButton group reveal-on-scroll-top"
                 eventName="click_shop"
                 location="Shop_banner"
               >
                 <h5 className="text-lg! group-hover:text-(--primary-black)! group-active:text-(--primary-black)! group-focus:text-(--primary-black)!">
-                  Shop Online
+                  Find Ginkins Near You
                 </h5>
               </TrackableLink>
             </div>

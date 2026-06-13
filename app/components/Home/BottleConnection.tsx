@@ -49,14 +49,13 @@ export default function BottleConnection() {
             </h4>
             <div className="mt-8">
               <TrackableLink
-                href="https://ginkinsgin.distilleryspirits.com"
-                target="_blank"
+                href="/where-to-buy"
                 className="inline-flex items-center justify-center px-5 py-1.5 transition animatedButton group"
                 eventName="click_shop"
                 location="shop_bottle_connection_banner"
               >
                 <h5 className="text-lg! group-hover:text-(--primary-black)! group-active:text-(--primary-black)! group-focus:text-(--primary-black)!">
-                  Shop Online
+                  Find Ginkins Near You
                 </h5>
               </TrackableLink>
             </div>

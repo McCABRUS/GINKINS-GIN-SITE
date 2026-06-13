@@ -7,35 +7,11 @@ import { trackEvent } from '@/lib/gtag';
 
 type Variant = 'retailers' | 'restaurants';
 
-type RetailerLocation = {
-  name: string;
-  address: string;
-  phone: string;
-};
-
 type RestaurantLocation = {
   name: string;
   address: string;
   restaurantUrl: string;
 };
-
-const retailers: RetailerLocation[] = [
-  {
-    name: 'Old Town Wine & Spirits',
-    address: '1529 Bardstown Rd, Louisville, KY 40205',
-    phone: '(502) 409-6285',
-  },
-  {
-    name: 'World Buzz Wine & Spirits',
-    address: '9301 Dayflower St, Prospect, KY 40059',
-    phone: '(502) 618-2660',
-  },
-  {
-    name: 'Skyway Beverage Shoppe',
-    address: '2216 Hikes Ln, Louisville, KY 40218',
-    phone: '(502) 459-5116',
-  },
-];
 
 const restaurantLeftColumn: RestaurantLocation[] = [
   {
@@ -76,11 +52,12 @@ const restaurantRightColumn: RestaurantLocation[] = [
     address: '1765 Bardstown Rd, Louisville, KY 40205',
     restaurantUrl: 'https://www.darlingsbar.com',
   },
+  {
+    name: "Juniper's Gin Bar",
+    address: '409 West 6th Street, Covington, KY 41011',
+    restaurantUrl: 'https://junipersginbar.net',
+  },
 ];
-
-function formatTel(phone: string) {
-  return `tel:${phone.replace(/[^\d+]/g, '')}`;
-}
 
 function CloseButtonSvg() {
   return (
@@ -100,23 +77,6 @@ function CloseButtonSvg() {
   );
 }
 
-function MapPinIcon({ mobile = false }: { mobile?: boolean }) {
-  return (
-    <svg
-      width={mobile ? '16' : '22'}
-      height={mobile ? '20' : '27'}
-      viewBox="0 0 22 27"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden
-    >
-      <path
-        d="M20.1143 10.9884C20.1143 5.96003 16.0337 1.88373 11 1.88373C5.96632 1.88373 1.88571 5.96003 1.88571 10.9884C1.88571 13.464 3.00397 15.7742 4.83214 18.1456C6.50886 20.3205 8.696 22.4433 11 24.73C13.304 22.4433 15.4911 20.3205 17.1679 18.1456C18.996 15.7742 20.1143 13.464 20.1143 10.9884ZM13.8286 10.9884C13.8286 9.42787 12.5622 8.16281 11 8.16281C9.43782 8.16281 8.17143 9.42787 8.17143 10.9884C8.17143 12.5489 9.43782 13.814 11 13.814C12.5622 13.814 13.8286 12.5489 13.8286 10.9884ZM15.7143 10.9884C15.7143 13.5893 13.6036 15.6977 11 15.6977C8.39637 15.6977 6.28571 13.5893 6.28571 10.9884C6.28571 8.38752 8.39637 6.27909 11 6.27909C13.6036 6.27909 15.7143 8.38752 15.7143 10.9884ZM22 10.9884C22 14.0613 20.6038 16.7743 18.6607 19.2947C16.7269 21.8031 14.1496 24.2438 11.6666 26.7241C11.2984 27.092 10.7016 27.092 10.3334 26.7241C7.85044 24.2438 5.27313 21.8031 3.33929 19.2947C1.39616 16.7743 0 14.0613 0 10.9884C0 4.91967 4.92487 0 11 0C17.0751 0 22 4.91967 22 10.9884Z"
-        fill="currentColor"
-      />
-    </svg>
-  );
-}
 function GlobeIcon({ mobile = false }: { mobile?: boolean }) {
   return (
     <svg
@@ -165,45 +125,6 @@ function ModalShell({
   );
 }
 
-function RetailerRow({
-  name,
-  address,
-  phone,
-  mobile,
-}: RetailerLocation & { mobile: boolean }) {
-  return (
-    <button
-      type="button"
-      onClick={() => {
-        if (mobile) {
-          window.location.href = formatTel(phone);
-        }
-      }}
-      className="group flex w-full items-start gap-3 text-left"
-      aria-label={`${name}, ${phone}`}
-    >
-      <div className="py-1.25 flex justify-start items-start gap-2.5 shrink-0 text-(--primary-black) transition-colors duration-200 group-hover:text-(--primary-red-main)">
-        <MapPinIcon mobile={mobile} />
-      </div>
-
-      <div className="min-w-0 flex-1">
-        <div className="text-base font-bold font-['Barlow'] leading-6 text-(--primary-black) transition-colors duration-200 group-hover:text-(--primary-red-main)">
-          {name}
-        </div>
-        <div className="text-sm font-normal font-['Barlow'] leading-5 text-(--primary-black) transition-colors duration-200 group-hover:text-(--secondary-gray-300)">
-          {address}
-        </div>
-        <div className="text-sm font-normal font-['Barlow'] leading-5 text-(--primary-black) transition-colors duration-200 group-hover:text-(--secondary-gray-300)">
-          <span className="font-bold group-hover:text-(--primary-red-main)">
-            Ph:{' '}
-          </span>
-          {phone}
-        </div>
-      </div>
-    </button>
-  );
-}
-
 function RestaurantRow({
   name,
   address,
@@ -240,7 +161,6 @@ function RestaurantRow({
 }
 
 export default function WhereToBuyModal({
-  variant,
   open,
   onClose,
 }: {
@@ -262,125 +182,76 @@ export default function WhereToBuyModal({
 
   return (
     <ModalShell open={open} onClose={onClose}>
-      {variant === 'retailers' ? (
-        <div className="w-full flex flex-col gap-8 lg:flex-row lg:items-start lg:gap-8">
-          <div className="hidden lg:block w-115 h-150.25 shrink-0">
-            <Image
-              draggable={false}
-              src="/imgs/where_to_buy/ginkins-retailers.webp"
-              alt="Retailers near you"
-              width={460}
-              height={601}
-              className="h-full w-full object-cover"
-            />
+      <div className="w-full flex flex-col gap-8 lg:flex-row lg:items-start lg:gap-11">
+        <div className="hidden lg:block w-115 h-154 shrink-0">
+          <Image
+            draggable={false}
+            src="/imgs/where_to_buy/ginkins-bar-restaurants.webp"
+            alt="Restaurants and bars"
+            width={460}
+            height={616}
+            className="h-full w-full object-cover"
+          />
+        </div>
+        <div className="flex-1 pt-3 lg:py-6">
+          <div className="flex flex-col items-start gap-4 self-stretch">
+            <div
+              className="self-stretch text-[36px] font-medium uppercase leading-10 text-(--primary-red-main)"
+              style={{ fontFamily: 'Cormorant Garamond' }}
+            >
+              Restaurants / Bars
+            </div>
+            <div
+              className="self-stretch text-sm font-normal leading-5 text-(--primary-black)"
+              style={{ fontFamily: 'Barlow' }}
+            >
+              Served in some of Louisville’s most distinctive bars and
+              restaurants—where every pour reflects craftsmanship, care, and
+              connection.
+            </div>
+            <div className="self-stretch h-0 border-t border-(--primary-red-main)" />
           </div>
 
-          <div className="flex-1 pt-3 lg:py-6">
-            <div className="flex flex-col items-start gap-4 self-stretch">
-              <div
-                className="self-stretch text-[36px] font-medium uppercase leading-10 text-(--primary-red-main)"
-                style={{ fontFamily: 'Cormorant Garamond' }}
-              >
-                Retailers NEAR YOU
-              </div>
-              <div
-                className="self-stretch text-sm font-normal leading-5 text-(--primary-black)"
-                style={{ fontFamily: 'Barlow' }}
-              >
-                Available at select wine and spirits destinations across
-                Kentucky —places known for curating distinctive selections with
-                intention and expertise.
-              </div>
-              <div className="self-stretch h-0 border-t border-(--primary-red-main)" />
-            </div>
-
-            <div className="mt-8 lg:mt-16 md:grid md:grid-cols-[1fr_1fr] flex flex-col items-start overflow-hidden gap-6">
-              {retailers.map((location) => (
-                <RetailerRow
+          <div className="mt-8 lg:hidden flex flex-col items-start overflow-hidden gap-5">
+            {[...restaurantLeftColumn, ...restaurantRightColumn].map(
+              (location) => (
+                <RestaurantRow
                   key={location.name}
                   name={location.name}
                   address={location.address}
-                  phone={location.phone}
                   mobile={isMobile}
+                  restaurantUrl={location.restaurantUrl}
+                />
+              ),
+            )}
+          </div>
+          <div className="hidden lg:grid lg:grid-cols-2 lg:gap-x-10 lg:gap-y-6 mt-8 lg:mt-16 overflow-hidden">
+            <div className="flex flex-col gap-6">
+              {restaurantLeftColumn.map((location) => (
+                <RestaurantRow
+                  key={location.name}
+                  name={location.name}
+                  address={location.address}
+                  mobile={isMobile}
+                  restaurantUrl={location.restaurantUrl}
+                />
+              ))}
+            </div>
+
+            <div className="flex flex-col gap-6">
+              {restaurantRightColumn.map((location) => (
+                <RestaurantRow
+                  key={location.name}
+                  name={location.name}
+                  address={location.address}
+                  mobile={isMobile}
+                  restaurantUrl={location.restaurantUrl}
                 />
               ))}
             </div>
           </div>
         </div>
-      ) : (
-        <div className="w-full flex flex-col gap-8 lg:flex-row lg:items-start lg:gap-11">
-          <div className="hidden lg:block w-115 h-154 shrink-0">
-            <Image
-              draggable={false}
-              src="/imgs/where_to_buy/ginkins-bar-restaurants.webp"
-              alt="Restaurants and bars"
-              width={460}
-              height={616}
-              className="h-full w-full object-cover"
-            />
-          </div>
-
-          <div className="flex-1 pt-3 lg:py-6">
-            <div className="flex flex-col items-start gap-4 self-stretch">
-              <div
-                className="self-stretch text-[36px] font-medium uppercase leading-10 text-(--primary-red-main)"
-                style={{ fontFamily: 'Cormorant Garamond' }}
-              >
-                Restaurants / Bars
-              </div>
-              <div
-                className="self-stretch text-sm font-normal leading-5 text-(--primary-black)"
-                style={{ fontFamily: 'Barlow' }}
-              >
-                Served in some of Louisville’s most distinctive bars and
-                restaurants—where every pour reflects craftsmanship, care, and
-                connection.
-              </div>
-              <div className="self-stretch h-0 border-t border-(--primary-red-main)" />
-            </div>
-
-            <div className="mt-8 lg:hidden flex flex-col items-start overflow-hidden gap-5">
-              {[...restaurantLeftColumn, ...restaurantRightColumn].map(
-                (location) => (
-                  <RestaurantRow
-                    key={location.name}
-                    name={location.name}
-                    address={location.address}
-                    mobile={isMobile}
-                    restaurantUrl={location.restaurantUrl}
-                  />
-                ),
-              )}
-            </div>
-
-            <div className="hidden lg:grid lg:grid-cols-2 lg:gap-x-10 lg:gap-y-6 mt-8 lg:mt-16 overflow-hidden">
-              <div className="flex flex-col gap-6">
-                {restaurantLeftColumn.map((location) => (
-                  <RestaurantRow
-                    key={location.name}
-                    name={location.name}
-                    address={location.address}
-                    mobile={isMobile}
-                    restaurantUrl={location.restaurantUrl}
-                  />
-                ))}
-              </div>
-
-              <div className="flex flex-col gap-6">
-                {restaurantRightColumn.map((location) => (
-                  <RestaurantRow
-                    key={location.name}
-                    name={location.name}
-                    address={location.address}
-                    mobile={isMobile}
-                    restaurantUrl={location.restaurantUrl}
-                  />
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
+      </div>
     </ModalShell>
   );
 }

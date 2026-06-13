@@ -43,14 +43,13 @@ export default function BottleConnectionBuy() {
             </h4>
             <div className="grid">
               <TrackableLink
-                href="https://ginkinsgin.distilleryspirits.com"
-                target="_blank"
-                className="relative w-40 lg:w-44.25 h-9.75 flex mx-auto xl:mx-0 content-center place-self-center items-center justify-center px-5 py-1.5 transition animatedButton group reveal-on-scroll-top"
+                href="/retailers"
+                className="relative w-60 h-9.75 flex mx-auto xl:mx-0 content-center place-self-center items-center justify-center px-5 py-1.5 transition animatedButton group reveal-on-scroll-top"
                 eventName="click_shop"
                 location="Where_To_Buy_Bottle_Connection"
               >
                 <h5 className="group-hover:text-(--primary-black)! group-active:text-(--primary-black)! group-focus:text-(--primary-black)!">
-                  Shop ONLINE
+                  Retailers Near You
                 </h5>
               </TrackableLink>
             </div>

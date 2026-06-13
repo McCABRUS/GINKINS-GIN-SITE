@@ -27,8 +27,7 @@ export default function BannerHomeShop() {
 
           <div className="mt-6 xl:mt-14">
             <TrackableLink
-              href="https://ginkinsgin.distilleryspirits.com"
-              target="_blank"
+              href="/where-to-buy"
               className=" inline-block items-center justify-center animatedButton px-5 py-1.5 text-sm font-medium uppercase  transition group"
               eventName="click_shop"
               location="shop_banner"

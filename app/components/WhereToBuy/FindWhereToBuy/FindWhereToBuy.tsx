@@ -23,10 +23,10 @@ export default function FindWhereToBuy() {
             image="/imgs/where_to_buy/ginkins-gin-premium-shopping-bag--high.webp"
             bgColor="bg-(--primary-gold-main)"
             isLeft
-            buttonMode="modal"
+            buttonLink="/retailers"
             buttonLabel="FIND A RETAILER"
+            buttonMode="localLink"
             onButtonClick={() => {
-              setActiveModal('retailers');
               trackEvent('click_retailers', {
                 location: 'where_to_buy',
               });
@@ -63,8 +63,9 @@ export default function FindWhereToBuy() {
             title="Order Online"
             description="Prefer delivery to your door? Check out our online retail partners for easy, secure ordering."
             image="/imgs/where_to_buy/ginkins-gin-single-bottle-gift-box--high.webp"
-            buttonLink="https://ginkinsgin.distilleryspirits.com"
-            urlTarget="_blank"
+            buttonLink=""
+            buttonMode="disabled"
+            buttonLabel="Coming Soon"
             isLeft
             onButtonClick={() => {
               trackEvent('click_order_online', {
