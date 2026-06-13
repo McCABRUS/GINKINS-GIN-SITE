@@ -6,7 +6,7 @@ export default function HeroRetailers() {
         imageOpacity={0.2}
         translateYClassName="-translate-y-[65%] xs:-translate-y-[70%] pq:-translate-y-[85%] md:-translate-y-[90%] lg:-translate-y-[80%] xl:-translate-y-[64%] 2xl:-translate-y-[70%]"
       />
-      <div className="mx-auto text-center max-xl:px-5 max-4xl:px-37.25 md:max-w-480">
+      <div className="mx-auto text-center max-xl:px-5 max-4xl:px-37.25 md:max-w-480 relative z-10">
         <h1 className="text-(--primary-black)! reveal-on-load-top normal-case!">
           RETAILERS NEAR YOU
         </h1>
