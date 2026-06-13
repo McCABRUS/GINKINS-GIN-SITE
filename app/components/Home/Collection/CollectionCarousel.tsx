@@ -1454,7 +1454,6 @@ export default function CollectionCarousel() {
                     text={items[cardIndex].text}
                     img={items[cardIndex].img}
                     alt={items[cardIndex].alt}
-                    linkId={items[cardIndex].linkId}
                   />
                 </div>
               ))}
@@ -1471,7 +1470,6 @@ export default function CollectionCarousel() {
                       text={items[ghost.index].text}
                       img={items[ghost.index].img}
                       alt={items[ghost.index].alt}
-                      linkId={items[ghost.index].linkId}
                     />
                   </div>
                 </div>
@@ -1489,7 +1487,6 @@ export default function CollectionCarousel() {
                   text={items[slotCards[1]].text}
                   img={items[slotCards[1]].img}
                   alt={items[slotCards[1]].alt}
-                  linkId={items[slotCards[1]].linkId}
                 />
               </div>
 
@@ -1505,7 +1502,6 @@ export default function CollectionCarousel() {
                       text={items[ghost.index].text}
                       img={items[ghost.index].img}
                       alt={items[ghost.index].alt}
-                      linkId={items[ghost.index].linkId}
                     />
                   </div>
                 </div>
