@@ -10,8 +10,9 @@ export default function HelpFooter({ isRetailers }: FooterProps) {
           {isRetailers
             ? "Have a question about our gin, retail availability, parnerships, or events? We'd love to hear from you. Email us at"
             : 'Need help or want to access your data? Email us at'}{' '}
-          <br />
-          <span className="text-(--primary-red-main)!">info@ginkins.com.</span>
+	  <br />
+          <br className={`${isRetailers ? '' : 'hidden'}`} />
+          <span className="text-(--primary-red-main)! uppercase!">info@ginkins.com.</span>
         </h5>
         <TrackableA
           href={`mailto:${'info'}@${'ginkins'}.com`}
@@ -20,7 +21,9 @@ export default function HelpFooter({ isRetailers }: FooterProps) {
           location="mailto"
         >
           <h5 className="group-hover:text-(--primary-black)! group-active:text-(--primary-black)! group-focus:text-(--primary-black)!">
-            CONTACT
+{isRetailers
+            ? "LET'S CONNECT"
+            : 'CONTACT'}{' '}
           </h5>
         </TrackableA>
       </div>
