@@ -1,10 +1,16 @@
 import TrackableA from './TrackableA';
-export default function HelpFooter() {
+interface FooterProps {
+  isRetailers?: boolean;
+}
+export default function HelpFooter({ isRetailers }: FooterProps) {
   return (
     <>
       <div className="flex flex-col items-center justify-center mt-42.75 md:mt-50 lg:mt-58.75 max-xl:px-5 max-4xl:px-37.25 md:max-w-480 place-content-center mx-auto">
-        <h5 className="text-center text-lg! font-normal! text-(--primary-black)! leading-6.75! reveal-on-scroll-top">
-          Need help or want to access your data? Email us at <br />
+        <h5 className={`text-center text-lg! font-normal! text-(--primary-black)! leading-6.75! reveal-on-scroll-top max-w-140 ${isRetailers ? 'normal-case!' : ''}`}>
+          {isRetailers
+            ? "Have a question about our gin, retail availability, parnerships, or events? We'd love to hear from you. Email us at"
+            : 'Need help or want to access your data? Email us at'}{' '}
+          <br />
           <span className="text-(--primary-red-main)!">info@ginkins.com.</span>
         </h5>
         <TrackableA

@@ -227,7 +227,7 @@ export default function RetailersContent() {
             ))}
           </div>
         </div>
-        <HelpFooter />
+        <HelpFooter isRetailers />
       </div>
     </section>
   );
