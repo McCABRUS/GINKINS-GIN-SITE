@@ -52,9 +52,15 @@ function MediaRelationsBanner({ mobile = false }: { mobile?: boolean }) {
         className="object-cover object-center"
         draggable={false}
       />
-      <div className="absolute inset-0 flex items-center justify-center">
+      <div
+        className={
+          mobile
+            ? 'absolute inset-0 flex items-start justify-center pt-3'
+            : 'absolute inset-0 flex items-center justify-center'
+        }
+      >
         <p
-          className={`${cormorant.className} flex flex-col text-center text-[30px] font-medium uppercase leading-[0.9] text-white lg:text-4xl lg:leading-10`}
+          className={`${cormorant.className} flex flex-col text-center text-4xl font-medium uppercase leading-10 text-[#FFF8E8]`}
         >
           <span>Media</span>
           <span>Relations</span>
