@@ -81,7 +81,6 @@ export default function Testimonials() {
   const [slideWidth, setSlideWidth] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
 
-  const SWIPE_RATIO = 0.16;
   const AUTOPLAY_DELAY = 6000;
   const ANIMATION_DURATION = 320;
 

@@ -6,26 +6,28 @@ import clsx from 'clsx';
 import gsap from 'gsap';
 import { trackEvent } from '@/lib/gtag';
 
-import { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { useLayoutEffect, useRef, useState, useSyncExternalStore } from 'react';
 import { isAgeVerified, setAgeVerified } from '@/lib/ageGate';
 import AgeGateButton from './AgeGateButton';
 
+const subscribeToAgeGate = (callback: () => void) => {
+  window.addEventListener('app:state-changed', callback);
+  return () => window.removeEventListener('app:state-changed', callback);
+};
+
+const getAgeGateSnapshot = () => !isAgeVerified();
+const getServerAgeGateSnapshot = () => false;
+
 export default function AgeGate() {
-  const [isOpen, setIsOpen] = useState(false);
+  const isOpen = useSyncExternalStore(
+    subscribeToAgeGate,
+    getAgeGateSnapshot,
+    getServerAgeGateSnapshot,
+  );
   const [denied, setDenied] = useState(false);
   const [exiting, setExiting] = useState(false);
 
-  const hasCheckedRef = useRef(false);
   const rootRef = useRef<HTMLDivElement | null>(null);
-
-  useEffect(() => {
-    if (hasCheckedRef.current) return;
-    hasCheckedRef.current = true;
-
-    if (!isAgeVerified()) {
-      setIsOpen(true);
-    }
-  }, []);
 
   useLayoutEffect(() => {
     if (!isOpen || denied || !rootRef.current) return;
@@ -122,7 +124,6 @@ export default function AgeGate() {
                       setExiting(true);
                       setTimeout(() => {
                         setAgeVerified();
-                        setIsOpen(false);
                         window.__APP_STATE__ = {
                           ...(window.__APP_STATE__ || {}),
                           ageGateAccepted: true,
@@ -167,7 +168,6 @@ export default function AgeGate() {
                 location: 'Age_Validation',
               });
               setAgeVerified();
-              setIsOpen(false);
               window.__APP_STATE__ = {
                 ...(window.__APP_STATE__ || {}),
                 ageGateAccepted: true,

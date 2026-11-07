@@ -48,10 +48,12 @@ function useMobileBotanicalCycle() {
 
   const buildSideSequence = (nextSide: Side) => {
     const seq = shuffle(SIDE_IDS[nextSide]);
+    const sideChanged = sideRef.current !== nextSide;
     sideRef.current = nextSide;
     sequenceRef.current = seq;
     indexRef.current = 0;
-    setSide(nextSide);
+
+    if (sideChanged) setSide(nextSide);
   };
 
   useEffect(() => {
@@ -84,24 +86,30 @@ function useMobileBotanicalCycle() {
   }, [isPaused]);
 
   useEffect(() => {
-    const ua = window.navigator.userAgent;
-    const platform = window.navigator.platform;
+    const frame = window.requestAnimationFrame(() => {
+      const ua = window.navigator.userAgent;
+      const platform = window.navigator.platform;
+      const ios =
+        /iPhone|iPad|iPod/i.test(ua) ||
+        (platform === 'MacIntel' && window.navigator.maxTouchPoints > 1);
 
-    const ios =
-      /iPhone|iPad|iPod/i.test(ua) ||
-      (platform === 'MacIntel' && window.navigator.maxTouchPoints > 1);
+      setIsIOS(ios);
 
-    setIsIOS(ios);
+      const seq = shuffle(SIDE_IDS.left);
+      sequenceRef.current = seq;
+      sideRef.current = 'left';
+      indexRef.current = 0;
 
-    buildSideSequence('left');
+      if (seq.length) {
+        setActiveId(seq[indexRef.current]);
+        indexRef.current += 1;
+      }
+    });
 
-    const seq = sequenceRef.current;
-    if (seq.length) {
-      setActiveId(seq[0]);
-      indexRef.current = 1;
-    }
-
-    return () => clearTimers();
+    return () => {
+      window.cancelAnimationFrame(frame);
+      clearTimers();
+    };
   }, []);
 
   const registerInteraction = (id: string) => {

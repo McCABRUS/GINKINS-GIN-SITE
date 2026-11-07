@@ -344,6 +344,16 @@ export default function Footer() {
                       Subscribe
                     </TrackableLink>
                   </li>
+                  <li>
+                    <TrackableA
+                      href="mailto:aubrey@estespr.com"
+                      eventName="click_media_contact"
+                      location="footer"
+                      className="hover:text-(--primary-red-main) active:text-(--primary-red-main) focus:text-(--primary-red-main) text-base"
+                    >
+                      Media Contact
+                    </TrackableA>
+                  </li>
                 </ul>
               </div>
 

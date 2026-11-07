@@ -25,12 +25,13 @@ export default function AnimatedModalShell({
   const tlRef = useRef<gsap.core.Timeline | null>(null);
 
   useLayoutEffect(() => {
-    if (open) setMounted(true);
-  }, [open]);
+    if (!open || mounted) return;
+
+    const frame = window.requestAnimationFrame(() => setMounted(true));
+    return () => window.cancelAnimationFrame(frame);
+  }, [open, mounted]);
 
   useLayoutEffect(() => {
-    if (!mounted) return;
-
     const overlay = overlayRef.current;
     const panel = panelRef.current;
     if (!overlay || !panel) return;
@@ -83,7 +84,7 @@ export default function AnimatedModalShell({
     return () => {
       tlRef.current?.kill();
     };
-  }, [open, mounted]);
+  }, [open]);
 
   useLayoutEffect(() => {
     if (!mounted) return;
@@ -102,7 +103,7 @@ export default function AnimatedModalShell({
     };
   }, [mounted, onClose]);
 
-  if (!mounted) return null;
+  if (!mounted && !open) return null;
 
   return (
     <div

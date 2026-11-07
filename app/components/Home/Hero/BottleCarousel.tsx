@@ -19,17 +19,11 @@ type LayerStyle = React.CSSProperties;
 
 export default function BottleCarousel({ slides, activeIndex }: Props) {
   const [displayIndex, setDisplayIndex] = useState(activeIndex);
-  const [incomingIndex, setIncomingIndex] = useState(activeIndex);
   const outgoingRef = useRef<HTMLDivElement | null>(null);
   const incomingRef = useRef<HTMLDivElement | null>(null);
 
   useLayoutEffect(() => {
     if (activeIndex === displayIndex) return;
-    setIncomingIndex(activeIndex);
-  }, [activeIndex, displayIndex]);
-
-  useLayoutEffect(() => {
-    if (incomingIndex === displayIndex) return;
 
     const outgoingEl = outgoingRef.current;
     const incomingEl = incomingRef.current;
@@ -52,7 +46,7 @@ export default function BottleCarousel({ slides, activeIndex }: Props) {
 
     const tl = gsap.timeline({
       onComplete: () => {
-        setDisplayIndex(incomingIndex);
+        setDisplayIndex(activeIndex);
       },
     });
 
@@ -78,10 +72,10 @@ export default function BottleCarousel({ slides, activeIndex }: Props) {
     return () => {
       tl.kill();
     };
-  }, [incomingIndex, displayIndex]);
+  }, [activeIndex, displayIndex]);
 
   const current = slides[displayIndex] ?? slides[0];
-  const next = slides[incomingIndex] ?? slides[0];
+  const next = slides[activeIndex] ?? slides[0];
 
   const baseLayerStyle: LayerStyle = {
     backgroundColor: 'transparent',

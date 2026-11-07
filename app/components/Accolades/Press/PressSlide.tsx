@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { barlow, cormorant } from '@/ui/fonts';
 
 interface PressSlideProps {
   logo: string;
@@ -15,7 +16,7 @@ export default function PressSlide({
 }: PressSlideProps) {
   return (
     <div className="flex flex-col items-center text-center">
-      <div className="mb-6 lg:h-12 lg:w-12 h-18 w-18 relative">
+      <div className="relative mb-6 h-14 w-14">
         <Image
           draggable={false}
           src={logo}
@@ -25,9 +26,15 @@ export default function PressSlide({
         />
       </div>
 
-      <h2 className="mb-4 max-w-81.25">{title}</h2>
+      <h2
+        className={`${cormorant.className} mb-4 max-w-81.25 text-2xl font-medium uppercase leading-8 text-(--primary-black) lg:text-4xl lg:leading-10`}
+      >
+        {title}
+      </h2>
 
-      <p className="max-w-81.25 text-base text-(--primary-black) leading-6 font-normal">
+      <p
+        className={`${barlow.className} max-w-81.25 text-base font-normal leading-6 text-(--secondary-black)`}
+      >
         {description}
       </p>
     </div>
